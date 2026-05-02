@@ -12,16 +12,17 @@ const xml = new XMLParser({ ignoreAttributes: true });
 
 // ---- Generic RSS ----------------------------------------------------------
 async function fetchRss(s: SourceConfig, kw: string[]): Promise<RawItem[]> {
-  const feed = await withRetry(() => rss.parseURL(s.url));
+  const feed = await rss.parseString(await fetchText(s.url));
   const items = (feed.items ?? []).slice(0, s.limit);
+  const isDiscussionFeed = s.id === "lobsters_ai" || s.id.startsWith("r_");
   return items
     .map((it) => normalize(s, {
       title: it.title ?? "",
       url: it.link ?? "",
       summary: stripHtml(it.contentSnippet ?? it.content ?? ""),
       published_at: it.isoDate ?? it.pubDate ?? new Date().toISOString(),
-      discussion_url: s.id === "lobsters_ai" ? it.link ?? "" : undefined,
-      discussion_source: s.id === "lobsters_ai" ? "Lobsters" : undefined,
+      discussion_url: isDiscussionFeed ? it.link ?? "" : undefined,
+      discussion_source: isDiscussionFeed ? s.name : undefined,
     }))
     .filter(Boolean)
     .filter((it) => !s.ai_filter || isAiRelevant(it as RawItem, kw)) as RawItem[];

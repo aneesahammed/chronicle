@@ -124,16 +124,18 @@ sources:
 
   - id: r_localllama
     name: r/LocalLLaMA
-    type: reddit
-    url: https://old.reddit.com/r/LocalLLaMA/top/.json?t=day&limit=25
+    type: rss
+    url: https://old.reddit.com/r/LocalLLaMA/top/.rss?t=day
     trust: 0.50
+    kind_hint: discussion
     limit: 25
 
   - id: r_ml
     name: r/MachineLearning
-    type: reddit
-    url: https://old.reddit.com/r/MachineLearning/top/.json?t=day&limit=25
+    type: rss
+    url: https://old.reddit.com/r/MachineLearning/top/.rss?t=day
     trust: 0.55
+    kind_hint: discussion
     limit: 25
 
   # ── Official labs ───────────────────────────────────────────────────────
