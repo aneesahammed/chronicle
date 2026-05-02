@@ -1,0 +1,29 @@
+{
+  "name": "chronicle",
+  "version": "0.1.0",
+  "description": "Chronicle — a daily AI signal filter for builders.",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "run:pipeline": "node --experimental-strip-types src/index.ts",
+    "dev": "node --experimental-strip-types --watch src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test \"src/**/*.test.ts\"",
+    "check": "npm run typecheck && npm test",
+    "verify:feed": "node scripts/verify-chronicle-feed.mjs public/feed.json"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.30.0",
+    "fast-xml-parser": "^5.7.2",
+    "rss-parser": "^3.13.0",
+    "yaml": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}

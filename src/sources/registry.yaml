@@ -1,0 +1,252 @@
+# Chronicle source registry.
+# trust:    0.0 - 1.0, used in final scoring. Tune by eyeballing output.
+# kind_hint: rough prior on what this source publishes. Used as a tiebreaker
+#           when the LLM classifier is uncertain. Optional.
+# limit:    max items to fetch per run. Keeps cost predictable.
+# url_include/url_exclude: optional substring filters for sitemap sources.
+
+sources:
+  # ── Research ────────────────────────────────────────────────────────────
+  - id: arxiv_cl
+    name: arXiv cs.CL
+    type: rss
+    url: https://rss.arxiv.org/rss/cs.CL
+    trust: 0.90
+    kind_hint: paper
+    limit: 30
+
+  - id: arxiv_lg
+    name: arXiv cs.LG
+    type: rss
+    url: https://rss.arxiv.org/rss/cs.LG
+    trust: 0.90
+    kind_hint: paper
+    limit: 30
+
+  - id: hf_papers
+    name: Hugging Face Daily Papers
+    type: hf_papers
+    url: https://huggingface.co/api/daily_papers
+    trust: 0.85
+    kind_hint: paper
+    limit: 20
+
+  # ── Model & tool releases ───────────────────────────────────────────────
+  - id: hf_trending_models
+    name: Hugging Face trending models
+    type: hf_models
+    url: https://huggingface.co/api/models?sort=trendingScore&direction=-1&limit=20
+    trust: 0.58
+    kind_hint: model_release
+    limit: 20
+
+  # ── Builders / operators ────────────────────────────────────────────────
+  - id: simonw
+    name: Simon Willison
+    type: rss
+    url: https://simonwillison.net/atom/everything/
+    trust: 0.90
+    ai_filter: true
+    limit: 15
+
+  - id: latent_space
+    name: Latent Space
+    type: rss
+    url: https://www.latent.space/feed
+    trust: 0.85
+    limit: 10
+
+  - id: interconnects
+    name: Interconnects (Lambert)
+    type: rss
+    url: https://www.interconnects.ai/feed
+    trust: 0.85
+    limit: 10
+
+  - id: import_ai
+    name: Import AI (Jack Clark)
+    type: rss
+    url: https://importai.substack.com/feed
+    trust: 0.85
+    limit: 10
+
+  - id: eugene_yan
+    name: Eugene Yan
+    type: rss
+    url: https://eugeneyan.com/rss/
+    trust: 0.85
+    limit: 10
+
+  - id: hamel
+    name: Hamel Husain
+    type: rss
+    url: https://hamel.dev/index.xml
+    trust: 0.85
+    limit: 10
+
+  - id: lilian_weng
+    name: Lilian Weng
+    type: rss
+    url: https://lilianweng.github.io/posts/index.xml
+    trust: 0.85
+    limit: 10
+
+  - id: chip_huyen
+    name: Chip Huyen
+    type: rss
+    url: https://huyenchip.com/feed.xml
+    trust: 0.88
+    limit: 10
+
+  - id: daniel_miessler
+    name: Daniel Miessler
+    type: rss
+    url: https://danielmiessler.com/feed.rss
+    # "Security | AI | Purpose". Recent feed is AI-dominant, no filter needed.
+    trust: 0.78
+    limit: 10
+
+  # ── Discussion / front pages ────────────────────────────────────────────
+  - id: hn_ai
+    name: Hacker News (AI-filtered)
+    type: hn_algolia
+    # Pulls front-page-quality items, then we keyword-filter to AI topics.
+    url: https://hn.algolia.com/api/v1/search?tags=front_page&hitsPerPage=100
+    trust: 0.65
+    limit: 40
+
+  - id: lobsters_ai
+    name: Lobsters (AI tag)
+    type: rss
+    url: https://lobste.rs/t/ai.rss
+    trust: 0.70
+    limit: 20
+
+  - id: r_localllama
+    name: r/LocalLLaMA
+    type: reddit
+    url: https://www.reddit.com/r/LocalLLaMA/top.json?t=day&limit=25
+    trust: 0.50
+    limit: 25
+
+  - id: r_ml
+    name: r/MachineLearning
+    type: reddit
+    url: https://www.reddit.com/r/MachineLearning/top.json?t=day&limit=25
+    trust: 0.55
+    limit: 25
+
+  # ── Official labs ───────────────────────────────────────────────────────
+  - id: openai
+    name: OpenAI
+    type: rss
+    url: https://openai.com/news/rss.xml
+    trust: 0.90
+    kind_hint: company_announcement
+    limit: 10
+
+  - id: deepmind
+    name: Google DeepMind
+    type: rss
+    url: https://deepmind.google/blog/rss.xml
+    trust: 0.90
+    kind_hint: company_announcement
+    limit: 10
+
+  - id: anthropic
+    name: Anthropic
+    type: sitemap
+    url: https://www.anthropic.com/sitemap.xml
+    trust: 0.92
+    kind_hint: company_announcement
+    title_prefix: Anthropic
+    url_include:
+      - anthropic.com/news/
+      - anthropic.com/engineering/
+    limit: 12
+
+  - id: mistral
+    name: Mistral AI
+    type: sitemap
+    url: https://mistral.ai/sitemap.xml
+    trust: 0.90
+    kind_hint: company_announcement
+    title_prefix: Mistral AI
+    url_include:
+      - mistral.ai/news/
+    limit: 10
+
+  # ── Inference / serving layer ───────────────────────────────────────────
+  - id: together
+    name: Together AI
+    type: rss
+    url: https://www.together.ai/blog/rss.xml
+    trust: 0.80
+    kind_hint: tool
+    limit: 10
+
+  - id: modal
+    name: Modal
+    type: rss
+    url: https://modal.com/blog/atom.xml
+    trust: 0.80
+    kind_hint: tool
+    limit: 10
+
+  # ── AI dev tools / agent platforms ──────────────────────────────────────
+  - id: cursor
+    name: Cursor
+    type: sitemap
+    url: https://cursor.com/sitemap.xml
+    trust: 0.82
+    kind_hint: company_announcement
+    title_prefix: Cursor
+    url_include:
+      - cursor.com/blog/
+    url_exclude:
+      - /blog/topic/
+    limit: 12
+
+# Keywords used to filter HN front page down to AI-relevant items.
+# Lowercase match against title.
+hn_ai_keywords:
+  - llm
+  - gpt
+  - claude
+  - anthropic
+  - openai
+  - gemini
+  - deepmind
+  - mistral
+  - llama
+  - qwen
+  - deepseek
+  - rag
+  - vector
+  - rerank
+  - embedding
+  - transformer
+  - diffusion
+  - " ai "
+  - " ml "
+  - neural
+  - inference
+  - multimodal
+  - vlm
+  - fine-tun
+  - finetun
+  - lora
+  - dpo
+  - rlhf
+  - pretrain
+  - agent
+  - mcp
+  - prompt
+  - tokenizer
+  - quantiz
+  - moe
+  - "context window"
+  - "synthetic data"
+  - alignment
+  - "reasoning model"
+  - cuda
