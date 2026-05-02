@@ -4,7 +4,7 @@ import { canonicalizeUrl, urlHash } from "../pipeline/canonicalize.ts";
 import type { FetchResult, RawItem, Registry, SourceConfig, SourceFetchFailure } from "../types.ts";
 
 const TIMEOUT_MS = 20_000;
-const USER_AGENT = "chronicle/0.1 (+https://github.com/aneesahammed/chronicle)";
+const USER_AGENT = "Chronicle/0.1 by aneesahammed (+https://github.com/aneesahammed/chronicle)";
 // rss-parser delegates to xml2js/sax-js, which does not dereference external
 // entities. We still strip HTML from summaries before they enter the feed.
 const rss = new Parser({ timeout: TIMEOUT_MS });
@@ -61,7 +61,8 @@ interface HnHit {
 // ---- Reddit ---------------------------------------------------------------
 async function fetchReddit(s: SourceConfig): Promise<RawItem[]> {
   const data = await fetchJson<RedditListing>(s.url, {
-    "user-agent": USER_AGENT,
+    "Accept": "application/json",
+    "User-Agent": USER_AGENT,
   });
   const posts = (data.data?.children ?? []).map((c) => c.data);
   const filtered = posts.filter((p) => (p.score ?? 0) >= 25 && !p.stickied);
