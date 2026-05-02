@@ -72,25 +72,14 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
   // 5. Novelty against history
   const history = pruneHistory(await loadHistory(historyOut), now);
 
-  if (clusters.length === 0 && (previous?.clusters.length ?? 0) > 0) {
-    const previousFeed = previous as FeedFile;
-    const preserved: FeedFile = {
-      generated_at: now.toISOString(),
-      last_successful_generated_at:
-        previousFeed.last_successful_generated_at ?? previousFeed.generated_at ?? null,
-      refresh_status: "failed",
-      classification_mode: previousFeed.classification_mode ?? "fallback",
-      window_hours: windowHours,
-      source_total: fetched.source_total,
-      source_ok: fetched.source_ok,
-      source_failed: fetched.source_failed,
-      failed_sources: fetched.failed_sources,
-      count: previousFeed.clusters.length,
-      clusters: previousFeed.clusters,
-    };
-    await fs.mkdir(publicDir, { recursive: true });
-    await fs.writeFile(feedOut, JSON.stringify(preserved, null, 2));
-    console.warn("[write] preserved previous feed because refresh produced zero clusters");
+  if (clusters.length === 0 && previous && previous.clusters.length > 0) {
+    await preservePreviousFeed(previous, feedOut, publicDir, {
+      now,
+      windowHours,
+      fetched,
+      classificationMode: previous.classification_mode ?? "fallback",
+      reason: "refresh produced zero clusters",
+    });
     return;
   }
 
@@ -103,6 +92,20 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
     .slice(0, maxOutput);
 
   console.log(`[score] kept ${scored.length} after filtering`);
+
+  if (scored.length === 0 && previous && previous.clusters.length > 0) {
+    await preservePreviousFeed(previous, feedOut, publicDir, {
+      now,
+      windowHours,
+      fetched,
+      classificationMode: cls.mode,
+      reason: "refresh produced zero scored items",
+    });
+    const updated = appendToHistory(history, clusters, now);
+    await saveHistory(historyOut, updated);
+    console.log(`[write] ${historyOut}  entries=${updated.entries.length}`);
+    return;
+  }
 
   // 7. Emit feed
   const feed: FeedFile = {
@@ -149,4 +152,40 @@ async function loadExistingFeed(feedPath: string): Promise<FeedFile | null> {
     }
     return null;
   }
+}
+
+async function preservePreviousFeed(
+  previousFeed: FeedFile,
+  feedOut: string,
+  publicDir: string,
+  options: {
+    now: Date;
+    windowHours: number;
+    fetched: {
+      source_total: number;
+      source_ok: number;
+      source_failed: number;
+      failed_sources: FeedFile["failed_sources"];
+    };
+    classificationMode: FeedFile["classification_mode"];
+    reason: string;
+  },
+) {
+  const preserved: FeedFile = {
+    generated_at: options.now.toISOString(),
+    last_successful_generated_at:
+      previousFeed.last_successful_generated_at ?? previousFeed.generated_at ?? null,
+    refresh_status: "failed",
+    classification_mode: options.classificationMode,
+    window_hours: options.windowHours,
+    source_total: options.fetched.source_total,
+    source_ok: options.fetched.source_ok,
+    source_failed: options.fetched.source_failed,
+    failed_sources: options.fetched.failed_sources,
+    count: previousFeed.clusters.length,
+    clusters: previousFeed.clusters,
+  };
+  await fs.mkdir(publicDir, { recursive: true });
+  await fs.writeFile(feedOut, JSON.stringify(preserved, null, 2));
+  console.warn(`[write] preserved previous feed because ${options.reason}`);
 }

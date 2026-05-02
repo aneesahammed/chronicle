@@ -91,6 +91,105 @@ test("fetchAll reads sitemap sources with include filters and newest entries fir
   assert.equal(result.items[0].published_at, "2026-05-01T00:00:00.000Z");
 });
 
+test("fetchAll uses page published date instead of sitemap lastmod", async () => {
+  globalThis.fetch = async (input) => {
+    const url = String(input);
+    if (url.endsWith("/sitemap.xml")) {
+      return new Response(`
+        <?xml version="1.0" encoding="UTF-8"?>
+        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+          <url>
+            <loc>https://cursor.example/blog/self-hosted-cloud-agents</loc>
+            <lastmod>2026-05-02T16:00:29.929Z</lastmod>
+          </url>
+        </urlset>
+      `);
+    }
+    return new Response(`
+      <html>
+        <head>
+          <meta property="og:title" content="Run cloud agents in your own infrastructure · Cursor">
+          <meta name="description" content="Self-hosted cloud agents.">
+          <script type="application/ld+json">
+            {"@type":"BlogPosting","datePublished":"2026-03-25T12:00:00.000Z"}
+          </script>
+        </head>
+      </html>
+    `);
+  };
+
+  const result = await fetchAll({
+    sources: [{
+      id: "cursor",
+      name: "Cursor",
+      type: "sitemap",
+      url: "https://cursor.example/sitemap.xml",
+      trust: 0.82,
+      kind_hint: "company_announcement",
+      title_prefix: "Cursor",
+      url_include: ["cursor.example/blog/"],
+      limit: 5,
+    }],
+    hn_ai_keywords: [],
+  });
+
+  assert.equal(result.items.length, 1);
+  assert.equal(result.items[0].title, "Cursor: Run cloud agents in your own infrastructure");
+  assert.equal(result.items[0].summary, "Self-hosted cloud agents.");
+  assert.equal(result.items[0].published_at, "2026-03-25T12:00:00.000Z");
+});
+
+test("fetchAll follows more than five child sitemaps", async () => {
+  globalThis.fetch = async (input) => {
+    const url = String(input);
+    if (url.endsWith("/sitemap.xml")) {
+      return new Response(`
+        <?xml version="1.0" encoding="UTF-8"?>
+        <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+          ${Array.from({ length: 6 }, (_, i) => `
+            <sitemap><loc>https://example.com/sitemap-${i + 1}.xml</loc></sitemap>
+          `).join("")}
+        </sitemapindex>
+      `);
+    }
+    const child = url.match(/sitemap-(\d+)\.xml/)?.[1];
+    if (child) {
+      return new Response(`
+        <?xml version="1.0" encoding="UTF-8"?>
+        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+          <url>
+            <loc>https://example.com/news/item-${child}</loc>
+            <lastmod>2026-05-0${child}T00:00:00.000Z</lastmod>
+          </url>
+        </urlset>
+      `);
+    }
+    const item = url.match(/item-(\d+)/)?.[1] ?? "1";
+    return new Response(`
+      <script type="application/ld+json">
+        {"datePublished":"2026-05-0${item}T00:00:00.000Z"}
+      </script>
+    `);
+  };
+
+  const result = await fetchAll({
+    sources: [{
+      id: "lab",
+      name: "Example Lab",
+      type: "sitemap",
+      url: "https://example.com/sitemap.xml",
+      trust: 0.9,
+      kind_hint: "company_announcement",
+      url_include: ["example.com/news/"],
+      limit: 10,
+    }],
+    hn_ai_keywords: [],
+  });
+
+  assert.equal(result.items.length, 6);
+  assert.ok(result.items.some((item) => item.url === "https://example.com/news/item-6"));
+});
+
 function registry(type: Registry["sources"][number]["type"]): Registry {
   return {
     sources: [{

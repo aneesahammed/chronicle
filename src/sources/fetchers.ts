@@ -4,7 +4,11 @@ import { canonicalizeUrl, urlHash } from "../pipeline/canonicalize.ts";
 import type { FetchResult, RawItem, Registry, SourceConfig, SourceFetchFailure } from "../types.ts";
 
 const TIMEOUT_MS = 20_000;
+const SITEMAP_PAGE_TIMEOUT_MS = 8_000;
 const USER_AGENT = "Chronicle/0.1 by aneesahammed (+https://github.com/aneesahammed/chronicle)";
+const SITEMAP_CHILD_LIMIT = 25;
+const SITEMAP_CANDIDATE_MULTIPLIER = 8;
+const SITEMAP_MIN_CANDIDATES = 40;
 // rss-parser delegates to xml2js/sax-js, which does not dereference external
 // entities. We still strip HTML from summaries before they enter the feed.
 const rss = new Parser({ timeout: TIMEOUT_MS });
@@ -143,17 +147,27 @@ interface HfModel {
 // ---- Sitemap --------------------------------------------------------------
 async function fetchSitemap(s: SourceConfig, kw: string[]): Promise<RawItem[]> {
   const data = await fetchSitemapEntries(s.url);
-  return data
+  const candidateLimit = Math.max(s.limit * SITEMAP_CANDIDATE_MULTIPLIER, SITEMAP_MIN_CANDIDATES);
+  const candidates = data
     .filter((entry) => sourceUrlMatches(entry.loc, s))
     .sort((a, b) => timestamp(b.lastmod) - timestamp(a.lastmod))
-    .slice(0, s.limit)
-    .map((entry) => normalize(s, {
-      title: titleFromUrl(entry.loc, s.title_prefix),
+    .slice(0, candidateLimit);
+
+  const pages = await mapLimit(candidates, 4, async (entry) => ({
+    entry,
+    details: await fetchPageDetails(entry.loc),
+  }));
+
+  return pages
+    .map(({ entry, details }) => normalize(s, {
+      title: titleWithPrefix(details.title ?? titleFromUrl(entry.loc), s.title_prefix),
       url: entry.loc,
-      summary: "",
-      published_at: validDateOrFallback(entry.lastmod),
+      summary: details.description ?? "",
+      published_at: validDateOrFallback(details.published_at ?? entry.lastmod),
     }))
     .filter(Boolean)
+    .sort((a, b) => timestamp((b as RawItem).published_at) - timestamp((a as RawItem).published_at))
+    .slice(0, s.limit)
     .filter((it) => !s.ai_filter || isAiRelevant(it as RawItem, kw)) as RawItem[];
 }
 
@@ -173,7 +187,7 @@ async function fetchSitemapEntries(url: string, depth = 0): Promise<SitemapEntry
   const childSitemaps = asArray(parsed.sitemapindex?.sitemap)
     .map((entry) => String(entry.loc ?? "").trim())
     .filter(Boolean)
-    .slice(0, 5);
+    .slice(0, SITEMAP_CHILD_LIMIT);
   const nested = await Promise.all(childSitemaps.map((child) => fetchSitemapEntries(child, depth + 1)));
   return nested.flat();
 }
@@ -189,6 +203,39 @@ interface SitemapUrl {
 interface SitemapEntry {
   loc: string;
   lastmod?: string;
+}
+
+interface PageDetails {
+  title?: string;
+  description?: string;
+  published_at?: string;
+}
+
+async function fetchPageDetails(url: string): Promise<PageDetails> {
+  try {
+    const html = await fetchPageText(url);
+    return {
+      title: extractTitle(html),
+      description: extractMetaContent(html, [
+        "description",
+        "og:description",
+        "twitter:description",
+      ]),
+      published_at: extractPublishedDate(html),
+    };
+  } catch (e) {
+    console.warn(`[sitemap] could not inspect ${url}: ${(e as Error).message}`);
+    return {};
+  }
+}
+
+async function fetchPageText(url: string): Promise<string> {
+  const r = await fetch(url, {
+    signal: AbortSignal.timeout(SITEMAP_PAGE_TIMEOUT_MS),
+    headers: { "user-agent": USER_AGENT },
+  });
+  if (!r.ok) throw new Error(`HTTP ${r.status} ${r.statusText}`.trim());
+  return await r.text();
 }
 
 // ---- Normalization --------------------------------------------------------
@@ -294,7 +341,105 @@ function titleFromUrl(url: string, prefix?: string): string {
     .split(" ")
     .map(titleWord)
     .join(" ");
-  return prefix ? `${prefix}: ${title}` : title;
+  return titleWithPrefix(title, prefix);
+}
+
+function titleWithPrefix(title: string, prefix?: string): string {
+  const clean = title
+    .replace(/\s+[·|-]\s+.*$/u, "")
+    .trim();
+  if (!prefix) return clean;
+  return clean.toLowerCase().startsWith(prefix.toLowerCase())
+    ? clean
+    : `${prefix}: ${clean}`;
+}
+
+function extractTitle(html: string): string | undefined {
+  const metaTitle = extractMetaContent(html, ["og:title", "twitter:title"]);
+  const rawTitle = metaTitle ?? matchFirst(html, /<title[^>]*>([\s\S]*?)<\/title>/i);
+  return rawTitle ? decodeHtml(rawTitle).replace(/\s+/g, " ").trim() : undefined;
+}
+
+function extractPublishedDate(html: string): string | undefined {
+  const candidates = [
+    extractJsonDate(html, "datePublished"),
+    extractMetaContent(html, [
+      "article:published_time",
+      "datePublished",
+      "date",
+      "publish_date",
+      "pubdate",
+      "sailthru.date",
+    ]),
+    matchTimeDatetime(html),
+    matchVisibleDate(html),
+  ];
+
+  for (const candidate of candidates) {
+    const valid = isoDate(candidate);
+    if (valid) return valid;
+  }
+  return undefined;
+}
+
+function extractJsonDate(html: string, key: string): string | undefined {
+  return matchFirst(html, new RegExp(`"${key}"\\s*:\\s*"([^"]+)"`, "i"));
+}
+
+function extractMetaContent(html: string, names: string[]): string | undefined {
+  const wanted = new Set(names.map((name) => name.toLowerCase()));
+  const metaTags = html.match(/<meta\b[^>]*>/gi) ?? [];
+  for (const tag of metaTags) {
+    const name =
+      attr(tag, "property") ??
+      attr(tag, "name") ??
+      attr(tag, "itemprop");
+    if (!name || !wanted.has(name.toLowerCase())) continue;
+    const content = attr(tag, "content");
+    if (content) return decodeHtml(content);
+  }
+  return undefined;
+}
+
+function matchTimeDatetime(html: string): string | undefined {
+  const timeTags = html.match(/<time\b[^>]*>/gi) ?? [];
+  for (const tag of timeTags) {
+    const datetime = attr(tag, "datetime");
+    if (datetime) return decodeHtml(datetime);
+  }
+  return undefined;
+}
+
+function matchVisibleDate(html: string): string | undefined {
+  return matchFirst(
+    html,
+    /\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?\s+\d{1,2},\s+\d{4}\b/i,
+  );
+}
+
+function attr(tag: string, name: string): string | undefined {
+  const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const match = tag.match(new RegExp(`\\b${escaped}\\s*=\\s*(["'])(.*?)\\1`, "i"));
+  return match?.[2];
+}
+
+function matchFirst(value: string, pattern: RegExp): string | undefined {
+  return value.match(pattern)?.[1];
+}
+
+function isoDate(value?: string): string | undefined {
+  if (!value) return undefined;
+  const ms = Date.parse(decodeHtml(value).trim());
+  return Number.isFinite(ms) ? new Date(ms).toISOString() : undefined;
+}
+
+function decodeHtml(value: string): string {
+  return value
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, " ");
 }
 
 function titleWord(word: string): string {
@@ -332,6 +477,18 @@ function timestamp(value?: string): number {
 function asArray<T>(value: T | T[] | undefined): T[] {
   if (!value) return [];
   return Array.isArray(value) ? value : [value];
+}
+
+async function mapLimit<T, U>(
+  values: T[],
+  limit: number,
+  mapper: (value: T) => Promise<U>,
+): Promise<U[]> {
+  const out: U[] = [];
+  for (let i = 0; i < values.length; i += limit) {
+    out.push(...await Promise.all(values.slice(i, i + limit).map(mapper)));
+  }
+  return out;
 }
 
 // ---- Public API -----------------------------------------------------------
