@@ -59,6 +59,7 @@ jobs:
           git config user.name "chronicle-bot"
           git config user.email "actions@users.noreply.github.com"
           git add \
+            data/enrichments.json \
             data/history.json \
             public/feed.json \
             public/daily \
@@ -68,7 +69,7 @@ jobs:
             echo "No Chronicle feed changes."
             exit 0
           fi
-          unexpected="$(git diff --cached --name-only | grep -Ev '^(data/history\.json|public/feed\.json|public/daily/index\.json|public/daily/[0-9]{4}-[0-9]{2}-[0-9]{2}/feed\.json|public/robots\.txt|public/sitemap\.xml)$' || true)"
+          unexpected="$(git diff --cached --name-only | grep -Ev '^(data/enrichments\.json|data/history\.json|public/feed\.json|public/daily/index\.json|public/daily/index\.html|public/daily/[0-9]{4}-[0-9]{2}-[0-9]{2}/feed\.json|public/daily/[0-9]{4}-[0-9]{2}-[0-9]{2}/index\.html|public/robots\.txt|public/sitemap\.xml)$' || true)"
           if [ -n "$unexpected" ]; then
             echo "::error::Unexpected files staged for Chronicle feed commit:"
             printf '%s\n' "$unexpected"
