@@ -14,7 +14,7 @@
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@600;700&family=Public+Sans:wght@400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <script>
   (function () {
     try {
@@ -48,10 +48,12 @@
     --bad: #b3261e;
     --warn-bg: #fff5d9;
     --warn-rule: #d9a93a;
-    /* Atkinson Hyperlegible Next — Braille Institute, designed for character disambiguation */
+    /* Display: Atkinson Hyperlegible Next (character disambiguation, Braille Institute).
+       Body: Public Sans (neutral newsroom body, USWDS).
+       Mono: IBM Plex Mono (canonical Public Sans companion). */
     --font-display: "Atkinson Hyperlegible Next", system-ui, -apple-system, sans-serif;
-    --font-body: "Atkinson Hyperlegible Next", system-ui, -apple-system, sans-serif;
-    --font-mono: "Atkinson Hyperlegible Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --font-body: "Public Sans", system-ui, -apple-system, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   }
   :root[data-theme="dark"] {
     color-scheme: dark;
@@ -239,14 +241,65 @@
     color: var(--paper);
   }
   .chip:active { transform: translateY(1px); }
-  .archive-select {
-    min-height: 28px;
+  .masthead-controls {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .archive-pick {
+    min-height: 32px;
     border: 1px solid var(--rule);
     border-radius: 0;
-    background: transparent;
+    background-color: transparent;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' fill='none' stroke='%23767b83' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-position: right 10px center;
+    background-size: 9px 6px;
+    background-repeat: no-repeat;
     color: var(--ink-2);
-    padding: 0 24px 0 8px;
-    font: 12px/1 var(--font-mono);
+    cursor: pointer;
+    padding: 0 26px 0 10px;
+    font: 11px/1 var(--font-mono);
+    letter-spacing: 0.04em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+  .archive-pick:hover { border-color: var(--accent); color: var(--accent-2); }
+  .archive-pick:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  :root[data-theme="dark"] .archive-pick {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' fill='none' stroke='%237e828a' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  }
+  .archive-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 14px;
+    padding: 10px 14px;
+    border-left: 2px solid var(--accent);
+    background: color-mix(in srgb, var(--accent) 6%, var(--paper));
+    color: var(--ink-2);
+    font: 12px/1.4 var(--font-mono);
+    letter-spacing: 0.03em;
+  }
+  .archive-banner[hidden] { display: none; }
+  .archive-pick[hidden] { display: none; }
+  .archive-banner strong { color: var(--ink); font-weight: 600; }
+  .archive-banner button {
+    border: 0;
+    background: none;
+    color: var(--accent);
+    cursor: pointer;
+    padding: 4px 0;
+    font: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--rule);
+    text-underline-offset: 4px;
+  }
+  .archive-banner button:hover {
+    color: var(--accent-2);
+    text-decoration-color: var(--accent);
   }
   .reset-link {
     background: none;
@@ -471,7 +524,10 @@
   <header class="masthead">
     <span class="wordmark">Chronicle</span>
     <span class="status-line" id="statusLine"><span class="dot" aria-hidden="true"></span><span id="statusText">loading…</span></span>
-    <button class="theme-toggle" id="themeToggle" type="button">theme</button>
+    <div class="masthead-controls">
+      <select class="archive-pick" id="archiveSelect" aria-label="View archive day" hidden></select>
+      <button class="theme-toggle" id="themeToggle" type="button">theme</button>
+    </div>
   </header>
 
   <section class="lede" aria-labelledby="page-title">
@@ -485,13 +541,16 @@
       <span class="filter-label">type</span>
     </div>
     <div class="filter-row filter-extra">
-      <span class="filter-label" id="archiveLabel" hidden>archive</span>
-      <select class="archive-select" id="archiveSelect" aria-labelledby="archiveLabel" hidden></select>
       <button class="chip" id="noveltyChip" type="button" aria-pressed="false">high novelty</button>
       <button class="chip" id="discussionChip" type="button" aria-pressed="false">discussion</button>
       <button class="reset-link" id="resetFilters" type="button">reset</button>
     </div>
   </nav>
+
+  <div class="archive-banner" id="archiveBanner" hidden>
+    <span>Viewing <strong id="archiveDateLabel"></strong></span>
+    <button type="button" id="exitArchive">← Back to today</button>
+  </div>
 
   <main class="feed" id="feed" aria-live="polite">
     <div class="skeleton"><div class="skeleton-line long"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div></div>
@@ -594,6 +653,11 @@ function wireFilterControls() {
     syncUrl();
     loadFeed();
   });
+  document.getElementById("exitArchive").addEventListener("click", () => {
+    state.archiveDate = null;
+    syncUrl();
+    loadFeed();
+  });
 }
 
 async function loadFeed() {
@@ -603,6 +667,7 @@ async function loadFeed() {
     state.data = await response.json();
     updateStatus();
     renderArchiveSelect();
+    renderArchiveBanner();
     renderFilterShell();
     renderFeed();
   } catch (error) {
@@ -644,8 +709,7 @@ function updateStatus() {
   else if (stale) statusLine.classList.add("is-stale");
   const updatedRel = generated ? relTime(generated, true) : "unknown";
   const count = data.count ?? data.clusters?.length ?? 0;
-  const archiveLabel = state.archiveDate ? ` · ${formatDay(state.archiveDate)}` : "";
-  statusText.textContent = `${count} items · updated ${updatedRel}${archiveLabel}`;
+  statusText.textContent = `${count} items · updated ${updatedRel}`;
 
   // Footer health strip — DOM-built, no innerHTML
   const health = document.getElementById("healthStrip");
@@ -670,22 +734,50 @@ function updateStatus() {
 
 function renderArchiveSelect() {
   const select = document.getElementById("archiveSelect");
-  const label = document.getElementById("archiveLabel");
   const days = state.archiveIndex?.days ?? [];
   if (!days.length) {
     select.hidden = true;
-    label.hidden = true;
     return;
   }
 
   const options = [new Option("today", "")];
   for (const day of days) {
-    options.push(new Option(`${day.date} · ${day.count}`, day.date));
+    const label = formatRelativeDay(day.date);
+    if (label === "today") continue;
+    options.push(new Option(`${label} · ${day.count}`, day.date));
+  }
+  if (options.length === 1) {
+    select.hidden = true;
+    return;
   }
   select.replaceChildren(...options);
   select.value = state.archiveDate || "";
   select.hidden = false;
-  label.hidden = false;
+}
+
+function renderArchiveBanner() {
+  const banner = document.getElementById("archiveBanner");
+  const label = document.getElementById("archiveDateLabel");
+  if (!state.archiveDate) {
+    banner.hidden = true;
+    return;
+  }
+  label.textContent = formatRelativeDay(state.archiveDate);
+  banner.hidden = false;
+}
+
+function formatRelativeDay(isoDate) {
+  if (!isoDate) return "today";
+  const target = new Date(`${isoDate}T00:00:00`);
+  if (Number.isNaN(target.getTime())) return isoDate;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  target.setHours(0, 0, 0, 0);
+  const days = Math.round((today - target) / 86400000);
+  if (days === 0) return "today";
+  if (days === 1) return "yesterday";
+  if (days >= 2 && days <= 6) return `${days} days ago`;
+  return target.toLocaleDateString(undefined, { month: "short", day: "numeric" });
 }
 
 function renderFilterShell() {
