@@ -691,9 +691,7 @@
       order: 3;
     }
     .wordmark::after {
-      display: inline-block;
-      margin-left: 10px;
-      padding-left: 10px;
+      display: none;
     }
     .filterbar { gap: 10px; padding: 12px 0; }
     .filter-row.filter-extra { margin-left: 0; }
@@ -701,7 +699,9 @@
     .top-story.has-image {
       grid-template-columns: 1fr;
     }
-    .top-story-title { font-size: 21px; }
+    /* Equalize Top News header sizes on mobile so the lead doesn't read as a section title */
+    .top-story-title { font-size: 18px; line-height: 1.3; }
+    .top-row-title { font-size: 17px; line-height: 1.32; }
     .top-list { border-top: 0; }
     .item-title { font-size: 18px; }
     .item-meta { gap: 6px; }
