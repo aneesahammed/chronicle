@@ -11,7 +11,13 @@
 <meta property="og:description" content="Past daily snapshots of the Chronicle feed.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://chronicle.tinycrafts.ai/daily/">
-<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Chronicle">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@600;700&family=Public+Sans:wght@400&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -315,6 +321,7 @@
 const state = { days: [] };
 
 initTheme();
+registerServiceWorker();
 loadIndex();
 document.getElementById("searchInput").addEventListener("input", (event) => {
   render(event.target.value);
@@ -336,6 +343,14 @@ function initTheme() {
     try { localStorage.setItem("chronicle-theme", next); } catch (_) {}
     setLabel();
   });
+}
+
+function registerServiceWorker() {
+  if (!("serviceWorker" in navigator) || !window.isSecureContext) return;
+  const root = new URL("../", location.href);
+  navigator.serviceWorker
+    .register(new URL("sw.js", root).toString(), { scope: root.toString(), updateViaCache: "none" })
+    .catch((error) => console.warn("[chronicle-pwa] service worker registration failed", error));
 }
 
 async function loadIndex() {

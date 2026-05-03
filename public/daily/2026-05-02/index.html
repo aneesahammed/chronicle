@@ -11,7 +11,13 @@
 <meta property="og:description" content="Daily AI/ML links clustered, classified, and ranked for builders.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://chronicle.tinycrafts.ai/">
-<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Chronicle">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@600;700&family=Public+Sans:wght@400&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -842,6 +848,7 @@ wireFilterControls();
 wireReadingControls();
 document.getElementById("archiveCtaButton").href = rootUrl("daily/");
 document.getElementById("homeLink").href = rootUrl("");
+registerServiceWorker();
 loadFeed();
 
 function initTheme() {
@@ -1345,6 +1352,13 @@ function feedUrl() {
 
 function rootUrl(path) {
   return new URL(path, new URL(ROOT_PREFIX, location.href)).toString();
+}
+
+function registerServiceWorker() {
+  if (!("serviceWorker" in navigator) || !window.isSecureContext) return;
+  navigator.serviceWorker
+    .register(rootUrl("sw.js"), { scope: rootUrl(""), updateViaCache: "none" })
+    .catch((error) => console.warn("[chronicle-pwa] service worker registration failed", error));
 }
 
 function scrollToTop() {
