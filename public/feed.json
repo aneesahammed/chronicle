@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-03T09:36:24.508Z",
-  "last_successful_generated_at": "2026-05-03T09:36:24.508Z",
+  "generated_at": "2026-05-03T10:11:09.600Z",
+  "last_successful_generated_at": "2026-05-03T10:11:09.600Z",
   "refresh_status": "ok",
-  "classification_mode": "partial",
+  "classification_mode": "llm",
   "window_hours": 36,
   "source_total": 34,
   "source_ok": 34,
@@ -160,8 +160,8 @@
       "name": "MIT Technology Review AI",
       "status": "ok",
       "fetched_count": 10,
-      "fresh_count": 1,
-      "stale_count": 9,
+      "fresh_count": 0,
+      "stale_count": 10,
       "oldest_published_at": "2026-04-22T10:05:06.000Z",
       "newest_published_at": "2026-05-01T22:08:19.000Z"
     },
@@ -260,17 +260,17 @@
       "fetched_count": 25,
       "fresh_count": 25,
       "stale_count": 0,
-      "oldest_published_at": "2026-05-02T09:44:12.000Z",
+      "oldest_published_at": "2026-05-02T10:25:24.000Z",
       "newest_published_at": "2026-05-03T09:05:12.000Z"
     },
     {
       "id": "r_ml",
       "name": "r/MachineLearning",
       "status": "ok",
-      "fetched_count": 6,
-      "fresh_count": 6,
+      "fetched_count": 5,
+      "fresh_count": 5,
       "stale_count": 0,
-      "oldest_published_at": "2026-05-02T09:55:56.000Z",
+      "oldest_published_at": "2026-05-02T14:37:53.000Z",
       "newest_published_at": "2026-05-03T05:53:18.000Z"
     },
     {
@@ -346,13 +346,27 @@
   ],
   "top_news": [
     {
+      "cluster_id": "1as0hrk",
+      "title": "GLaDOS TTS Build Kit: Train GLaDOS Voice if You Own Portal 1 and 2",
+      "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t29tf8/glados_tts_build_kit_train_glados_voice_if_you",
+      "source_name": "r/LocalLLaMA",
+      "published_at": "2026-05-03T03:05:51.000Z",
+      "kind": "tool",
+      "score": 0.763,
+      "dek": "Train GLaDOS-style TTS voice using Portal 1/2 game files",
+      "brief": "A GitHub repo provides a pipeline to train a GLaDOS text-to-speech model using locally installed Portal game audio. Requires users to supply their own game files; no pre-extracted audio or checkpoints are included. Intended for local training only.",
+      "image_alt": "GLaDOS text-to-speech interface example",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-05-03T09:36:24.508Z"
+    },
+    {
       "cluster_id": "1s86k6",
       "title": "Qwen/SAE-Res-Qwen3.5-27B-W80K-L0_100 · Hugging Face",
       "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t22s9l/qwensaeresqwen3527bw80kl0_100_hugging_face",
       "source_name": "r/LocalLLaMA",
       "published_at": "2026-05-02T21:45:51.000Z",
       "kind": "model_release",
-      "score": 0.737,
+      "score": 0.736,
       "dek": "Qwen releases SAE-Res-Qwen3.5-27B for model steering research",
       "brief": "Qwen shares a Hugging Face model for vector-based steering research, with a YouTube demo showing its capabilities. The SAE-Res-Qwen3.5-27B-W80K-L0_100 model is positioned as a tool for advancing interpretability in large language models.",
       "image_url": "https://external-preview.redd.it/M0btJg7Jb8lcoAvzPl4EuE2WcA4DFQxutVmbFQZcLdI.png?width=640&crop=smart&auto=webp&s=35adfaebca1ced315ab00223374c3aff039fff5b",
@@ -367,7 +381,7 @@
       "source_name": "The Decoder",
       "published_at": "2026-05-03T07:00:50.000Z",
       "kind": "news",
-      "score": 0.72,
+      "score": 0.719,
       "dek": "Benchmark reveals ethical divergence in frontier AI models on 100 scenarios",
       "brief": "A new benchmark tests leading language models on 100 ethical dilemmas, exposing inconsistent responses to scenarios like data misuse and protocol violations. Results highlight unresolved questions about whose ethics AI should follow and who governs AI behavior.",
       "image_url": "https://the-decoder.com/wp-content/uploads/2026/04/Philosophy-Bench.png",
@@ -377,27 +391,13 @@
       "enriched_at": "2026-05-03T09:32:37.325Z"
     },
     {
-      "cluster_id": "1as0hrk",
-      "title": "GLaDOS TTS Build Kit: Train GLaDOS Voice if You Own Portal 1 and 2",
-      "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t29tf8/glados_tts_build_kit_train_glados_voice_if_you",
-      "source_name": "r/LocalLLaMA",
-      "published_at": "2026-05-03T03:05:51.000Z",
-      "kind": "tool",
-      "score": 0.765,
-      "dek": "Train GLaDOS-style TTS voice using Portal 1/2 game files",
-      "brief": "A GitHub repo provides a pipeline to train a GLaDOS text-to-speech model using locally installed Portal game audio. Requires users to supply their own game files; no pre-extracted audio or checkpoints are included. Intended for local training only.",
-      "image_alt": "GLaDOS text-to-speech interface example",
-      "enrichment_status": "ok",
-      "enriched_at": "2026-05-03T09:36:24.508Z"
-    },
-    {
       "cluster_id": "1mwb2ol",
-      "title": "Co-pilot becomes a co-author in VS Code without being asked",
+      "title": "Microsoft caught sneaking \"Co-Authored-by Copilot\" into VS Code commits - even with AI off",
       "url": "https://the-decoder.com/co-pilot-becomes-a-co-author-in-vs-code-without-being-asked",
       "source_name": "The Decoder",
       "published_at": "2026-05-03T09:31:15.000Z",
       "kind": "news",
-      "score": 0.727,
+      "score": 0.716,
       "dek": "VS Code adds Co-pilot co-author tag without user consent",
       "brief": "Microsoft's VS Code automatically added \"Co-Authored-by Copilot\" to Git commits, even for users who disabled AI features. The change occurred without explicit opt-in or notification to developers.",
       "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/microsoft_logo.png",
@@ -407,21 +407,21 @@
       "enriched_at": "2026-05-03T09:36:24.508Z"
     },
     {
-      "cluster_id": "knvdu4",
-      "title": "Meta buys robotics startup to bolster its humanoid AI ambitions",
-      "url": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions",
-      "source_name": "TechCrunch AI",
-      "published_at": "2026-05-01T22:13:27.000Z",
-      "kind": "company_announcement",
-      "score": 0.49,
-      "dek": "Meta acquires robotics startup for humanoid AI development",
-      "brief": "Meta purchased Assured Robot Intelligence to advance its humanoid robot projects. The acquisition aims to improve AI models for physical robots, aligning with Meta's long-term robotics goals.",
-      "image_alt": "Meta's humanoid robot with AR glasses",
+      "cluster_id": "3lmzq5",
+      "title": "Kimi K2.6 just beat Claude, GPT-5.5, and Gemini in a coding challenge",
+      "url": "https://thinkpol.ca/2026/04/30/an-open-weights-chinese-model-just-beat-claude-gpt-5-5-and-gemini-in-a-programming-challenge",
+      "source_name": "Hacker News (AI-filtered)",
+      "published_at": "2026-05-03T04:05:28Z",
+      "kind": "model_release",
+      "score": 0.687,
+      "dek": "Kimi K2.6 outperforms top models in coding challenge",
+      "brief": "Kimi K2.6, an open-weights model from Chinese startup Moons, topped a 7x7 Word Gem Puzzle challenge in the ongoing AI Coding Contest. The model outperformed Claude, GPT-5.5, and Gemini, surprising many. The contest tests real-time programming tasks with objective scoring, featuring 10 models in this round.",
+      "image_alt": "Colorful 7x7 Word Gem Puzzle board with KIMI and CLAUDE highlighted",
       "enrichment_status": "ok",
-      "enriched_at": "2026-05-03T09:36:24.508Z"
+      "enriched_at": "2026-05-03T10:11:09.600Z"
     }
   ],
-  "count": 51,
+  "count": 49,
   "clusters": [
     {
       "id": "1as0hrk",
@@ -475,10 +475,10 @@
       "also_seen_on": [],
       "kind": "tool",
       "quality": "signal",
-      "one_liner": "GLaDOS TTS training kit for Portal voice using local models",
+      "one_liner": "GLaDOS-style TTS training kit for local voice synthesis",
       "novelty": 0.899,
       "trust": 0.5,
-      "score": 0.765
+      "score": 0.763
     },
     {
       "id": "1s86k6",
@@ -536,65 +536,10 @@
       "also_seen_on": [],
       "kind": "model_release",
       "quality": "signal",
-      "one_liner": "Hugging Face releases Qwen3.5-27B SAE model for vector steering",
+      "one_liner": "Qwen releases SAE-Res-Qwen3.5-27B model steering tool",
       "novelty": 0.844,
       "trust": 0.5,
-      "score": 0.737
-    },
-    {
-      "id": "1mwb2ol",
-      "primary": {
-        "id": "1mwb2ol",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
-        "trust": 0.74,
-        "kind_hint": "news",
-        "title": "Co-pilot becomes a co-author in VS Code without being asked",
-        "url": "https://the-decoder.com/co-pilot-becomes-a-co-author-in-vs-code-without-being-asked",
-        "original_url": "https://the-decoder.com/co-pilot-becomes-a-co-author-in-vs-code-without-being-asked/",
-        "summary": "Microsoft quietly slipped a \"Co-Authored-by Copilot\" line into Git commits in Visual Studio Code - even for developers who had turned off the AI features entirely. The article Co-pilot becomes a co-author in VS Code without being asked appeared first on The Decoder.",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/microsoft_logo.png",
-        "image_source": "rss_content",
-        "published_at": "2026-05-03T09:31:15.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1mwb2ol",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "trust": 0.74,
-          "kind_hint": "news",
-          "title": "Co-pilot becomes a co-author in VS Code without being asked",
-          "url": "https://the-decoder.com/co-pilot-becomes-a-co-author-in-vs-code-without-being-asked",
-          "original_url": "https://the-decoder.com/co-pilot-becomes-a-co-author-in-vs-code-without-being-asked/",
-          "summary": "Microsoft quietly slipped a \"Co-Authored-by Copilot\" line into Git commits in Visual Studio Code - even for developers who had turned off the AI features entirely. The article Co-pilot becomes a co-author in VS Code without being asked appeared first on The Decoder.",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/microsoft_logo.png",
-          "image_source": "rss_content",
-          "published_at": "2026-05-03T09:31:15.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "Co-pilot becomes a co-author in VS Code without being asked",
-          "url": "https://the-decoder.com/co-pilot-becomes-a-co-author-in-vs-code-without-being-asked",
-          "published_at": "2026-05-03T09:31:15.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "Microsoft adds AI co-author credits in VS Code without user consent",
-      "novelty": 0.903,
-      "trust": 0.74,
-      "score": 0.727
+      "score": 0.736
     },
     {
       "id": "147068",
@@ -649,7 +594,62 @@
       "one_liner": "A new benchmark puts leading language models through 100 everyday ethical scenarios, from data misuse in sales to protocol violations in oncology. Behind the results lies a bigger question: who decide",
       "novelty": 0.899,
       "trust": 0.74,
-      "score": 0.72
+      "score": 0.719
+    },
+    {
+      "id": "1mwb2ol",
+      "primary": {
+        "id": "1mwb2ol",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Microsoft caught sneaking \"Co-Authored-by Copilot\" into VS Code commits - even with AI off",
+        "url": "https://the-decoder.com/co-pilot-becomes-a-co-author-in-vs-code-without-being-asked",
+        "original_url": "https://the-decoder.com/co-pilot-becomes-a-co-author-in-vs-code-without-being-asked/",
+        "summary": "Microsoft quietly slipped a \"Co-Authored-by Copilot\" line into Git commits in Visual Studio Code - even for developers who had turned off the AI features entirely. The article Microsoft caught sneaking \"Co-Authored-by Copilot\" into VS Code commits - even with AI off appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/microsoft_logo.png",
+        "image_source": "rss_content",
+        "published_at": "2026-05-03T09:31:15.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1mwb2ol",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Microsoft caught sneaking \"Co-Authored-by Copilot\" into VS Code commits - even with AI off",
+          "url": "https://the-decoder.com/co-pilot-becomes-a-co-author-in-vs-code-without-being-asked",
+          "original_url": "https://the-decoder.com/co-pilot-becomes-a-co-author-in-vs-code-without-being-asked/",
+          "summary": "Microsoft quietly slipped a \"Co-Authored-by Copilot\" line into Git commits in Visual Studio Code - even for developers who had turned off the AI features entirely. The article Microsoft caught sneaking \"Co-Authored-by Copilot\" into VS Code commits - even with AI off appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/microsoft_logo.png",
+          "image_source": "rss_content",
+          "published_at": "2026-05-03T09:31:15.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Microsoft caught sneaking \"Co-Authored-by Copilot\" into VS Code commits - even with AI off",
+          "url": "https://the-decoder.com/co-pilot-becomes-a-co-author-in-vs-code-without-being-asked",
+          "published_at": "2026-05-03T09:31:15.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Microsoft quietly slipped a \"Co-Authored-by Copilot\" line into Git commits in Visual Studio Code - even for developers who had turned off the AI features entirely. The article Microsoft caught sneakin",
+      "novelty": 0.873,
+      "trust": 0.74,
+      "score": 0.716
     },
     {
       "id": "1rye6wu",
@@ -701,10 +701,10 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "US report claims China is 8 months behind in AI race",
+      "one_liner": "A US government agency says China is now eight months behind in the AI race, but independent data doesn't back that up. And while US labs keep chasing smarter models, the price edge from Deepseek and ",
       "novelty": 0.864,
       "trust": 0.74,
-      "score": 0.712
+      "score": 0.711
     },
     {
       "id": "1b74om4",
@@ -759,7 +759,7 @@
       "one_liner": "Xiaomi's new MiMo-V2.5-Pro nearly matches Anthropic's Claude Opus 4.6 on coding benchmarks while burning 40 to 60 percent fewer tokens, according to the company. The release pushes Xiaomi deeper into ",
       "novelty": 0.822,
       "trust": 0.74,
-      "score": 0.698
+      "score": 0.697
     },
     {
       "id": "1s5irjl",
@@ -777,8 +777,8 @@
         "published_at_source": "api",
         "date_confidence": "high",
         "engagement": {
-          "score": 104,
-          "comments": 88
+          "score": 113,
+          "comments": 107
         }
       },
       "members": [
@@ -796,8 +796,8 @@
           "published_at_source": "api",
           "date_confidence": "high",
           "engagement": {
-            "score": 104,
-            "comments": 88
+            "score": 113,
+            "comments": 107
           }
         }
       ],
@@ -815,12 +815,12 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "unknown",
+      "kind": "opinion",
       "quality": "mixed",
-      "one_liner": "",
+      "one_liner": "Blog advocates YAML specs to avoid AI psychosis",
       "novelty": 0.892,
       "trust": 0.65,
-      "score": 0.694
+      "score": 0.693
     },
     {
       "id": "3lmzq5",
@@ -838,8 +838,8 @@
         "published_at_source": "api",
         "date_confidence": "high",
         "engagement": {
-          "score": 273,
-          "comments": 131
+          "score": 282,
+          "comments": 141
         }
       },
       "members": [
@@ -857,8 +857,8 @@
           "published_at_source": "api",
           "date_confidence": "high",
           "engagement": {
-            "score": 273,
-            "comments": 131
+            "score": 282,
+            "comments": 141
           }
         }
       ],
@@ -876,12 +876,12 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "unknown",
+      "kind": "model_release",
       "quality": "mixed",
-      "one_liner": "",
+      "one_liner": "Kimi K2.6 outperforms major models in coding benchmarks",
       "novelty": 0.888,
       "trust": 0.65,
-      "score": 0.688
+      "score": 0.687
     },
     {
       "id": "1p340vm",
@@ -935,10 +935,10 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Discussion of Solidity language model with tool calling capabilities",
+      "one_liner": "Discussion about Solidity LM development and tool calling",
       "novelty": 0.935,
       "trust": 0.5,
-      "score": 0.675
+      "score": 0.674
     },
     {
       "id": "hwtgjx",
@@ -992,10 +992,10 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Technical question about HuggingFace Transformers pipeline module usage.",
+      "one_liner": "Discussion about using HuggingFace pipeline for question answering",
       "novelty": 0.912,
       "trust": 0.55,
-      "score": 0.674
+      "score": 0.673
     },
     {
       "id": "1g63x2m",
@@ -1049,10 +1049,10 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Thread asking about ML journal submission experiences (ACM vs TMLR).",
+      "one_liner": "",
       "novelty": 0.934,
       "trust": 0.55,
-      "score": 0.673
+      "score": 0.672
     },
     {
       "id": "1o5xda6",
@@ -1106,10 +1106,10 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Discussion on workflow tool rejections (Flyte/Prefect/Temporal).",
+      "one_liner": "Discussion on why teams reject workflow orchestration tools",
       "novelty": 0.908,
       "trust": 0.55,
-      "score": 0.673
+      "score": 0.672
     },
     {
       "id": "1gpyz9d",
@@ -1127,8 +1127,8 @@
         "published_at_source": "api",
         "date_confidence": "high",
         "engagement": {
-          "score": 102,
-          "comments": 77
+          "score": 104,
+          "comments": 80
         }
       },
       "members": [
@@ -1146,8 +1146,8 @@
           "published_at_source": "api",
           "date_confidence": "high",
           "engagement": {
-            "score": 102,
-            "comments": 77
+            "score": 104,
+            "comments": 80
           }
         }
       ],
@@ -1165,12 +1165,12 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "unknown",
+      "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "",
+      "one_liner": "Agent harness design debate: sandbox vs external",
       "novelty": 0.845,
       "trust": 0.65,
-      "score": 0.661
+      "score": 0.66
     },
     {
       "id": "q7czhe",
@@ -1227,7 +1227,7 @@
       "one_liner": "",
       "novelty": 0.918,
       "trust": 0.5,
-      "score": 0.655
+      "score": 0.654
     },
     {
       "id": "90gabp",
@@ -1284,7 +1284,7 @@
       "one_liner": "",
       "novelty": 0.914,
       "trust": 0.5,
-      "score": 0.653
+      "score": 0.652
     },
     {
       "id": "1vfk7ml",
@@ -1338,10 +1338,67 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "User prefers Qwen3.6-35B over 27B despite community focus on 27B",
+      "one_liner": "I've had better results quality wise with 35B AND it's much faster than 27B. Just curious cause I see lots of people post about 27B. Am I doing something wrong with 27B? Use cases are multi-stage pipe",
       "novelty": 0.838,
       "trust": 0.5,
-      "score": 0.627
+      "score": 0.626
+    },
+    {
+      "id": "1k2xd2b",
+      "primary": {
+        "id": "1k2xd2b",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Having an always-on machine running LLMs locally at home while on the move with a lightweight machine - Experiences?",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1p7b1/having_an_alwayson_machine_running_llms_locally",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1p7b1/having_an_alwayson_machine_running_llms_locally/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1p7b1/having_an_alwayson_machine_running_llms_locally",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "Hi! I’m currently retraining in data science and my current laptop is an 8 GB MacBook Air, so naturally I’m looking to upgrade. I’m also interested in AI and running LLMs locally, and Ive been thinking about two options: a) Get a MacBook Pro with 48-64 GB RAM b) Get a Mac Studio / Mac mini with 64 GB RAM and keep using my MacBook Air I’m on the go a lot and often work in cafés etc, so having the power directly in the laptop seems useful. But I’m also intrigued by the idea of having an always-on machine at home, for example running my OpenClaw / local LLM stuff 24/7. What I'm wondering is: if I",
+        "published_at": "2026-05-02T12:58:05.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1k2xd2b",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Having an always-on machine running LLMs locally at home while on the move with a lightweight machine - Experiences?",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1p7b1/having_an_alwayson_machine_running_llms_locally",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1p7b1/having_an_alwayson_machine_running_llms_locally/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1p7b1/having_an_alwayson_machine_running_llms_locally",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "Hi! I’m currently retraining in data science and my current laptop is an 8 GB MacBook Air, so naturally I’m looking to upgrade. I’m also interested in AI and running LLMs locally, and Ive been thinking about two options: a) Get a MacBook Pro with 48-64 GB RAM b) Get a Mac Studio / Mac mini with 64 GB RAM and keep using my MacBook Air I’m on the go a lot and often work in cafés etc, so having the power directly in the laptop seems useful. But I’m also intrigued by the idea of having an always-on machine at home, for example running my OpenClaw / local LLM stuff 24/7. What I'm wondering is: if I",
+          "published_at": "2026-05-02T12:58:05.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Having an always-on machine running LLMs locally at home while on the move with a lightweight machine - Experiences?",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1p7b1/having_an_alwayson_machine_running_llms_locally",
+          "published_at": "2026-05-02T12:58:05.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1p7b1/having_an_alwayson_machine_running_llms_locally",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "Hi! I’m currently retraining in data science and my current laptop is an 8 GB MacBook Air, so naturally I’m looking to upgrade. I’m also interested in AI and running LLMs locally, and Ive been thinkin",
+      "novelty": 0.837,
+      "trust": 0.5,
+      "score": 0.603
     },
     {
       "id": "10kx02t",
@@ -1399,10 +1456,116 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Qwen3.6-27B vs Coder-Next comparison shows \"it depends\" results",
+      "one_liner": "Burned about 20 hours of side-by-side compute on my two RTX PRO 6000 Blackwells trying to get a definitive answer on which of these two models was clearly better. As with many things in life, after ma",
       "novelty": 0.707,
       "trust": 0.5,
-      "score": 0.595
+      "score": 0.594
+    },
+    {
+      "id": "1aph4si",
+      "primary": {
+        "id": "1aph4si",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "AI-generated actors and scripts are now ineligible for Oscars",
+        "url": "https://techcrunch.com/2026/05/02/ai-generated-actors-and-scripts-are-now-ineligible-for-oscars",
+        "original_url": "https://techcrunch.com/2026/05/02/ai-generated-actors-and-scripts-are-now-ineligible-for-oscars/",
+        "summary": "Bad news for Tilly Norwood.",
+        "published_at": "2026-05-02T21:54:58.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1aph4si",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "AI-generated actors and scripts are now ineligible for Oscars",
+          "url": "https://techcrunch.com/2026/05/02/ai-generated-actors-and-scripts-are-now-ineligible-for-oscars",
+          "original_url": "https://techcrunch.com/2026/05/02/ai-generated-actors-and-scripts-are-now-ineligible-for-oscars/",
+          "summary": "Bad news for Tilly Norwood.",
+          "published_at": "2026-05-02T21:54:58.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "AI-generated actors and scripts are now ineligible for Oscars",
+          "url": "https://techcrunch.com/2026/05/02/ai-generated-actors-and-scripts-are-now-ineligible-for-oscars",
+          "published_at": "2026-05-02T21:54:58.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "AI-generated actors and scripts now ineligible for Oscars",
+      "novelty": 0,
+      "trust": 0.72,
+      "score": 0.538
+    },
+    {
+      "id": "1mo2qol",
+      "primary": {
+        "id": "1mo2qol",
+        "source_id": "lobsters_ai",
+        "source_name": "Lobsters (AI tag)",
+        "trust": 0.7,
+        "title": "fabrica - A terminal-based minimal coding agent harness",
+        "url": "https://github.com/Endi1/fabrica",
+        "original_url": "https://github.com/Endi1/fabrica",
+        "discussion_url": "https://github.com/Endi1/fabrica",
+        "discussion_source": "Lobsters (AI tag)",
+        "summary": "Comments",
+        "published_at": "2026-05-02T19:49:07.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1mo2qol",
+          "source_id": "lobsters_ai",
+          "source_name": "Lobsters (AI tag)",
+          "trust": 0.7,
+          "title": "fabrica - A terminal-based minimal coding agent harness",
+          "url": "https://github.com/Endi1/fabrica",
+          "original_url": "https://github.com/Endi1/fabrica",
+          "discussion_url": "https://github.com/Endi1/fabrica",
+          "discussion_source": "Lobsters (AI tag)",
+          "summary": "Comments",
+          "published_at": "2026-05-02T19:49:07.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "lobsters_ai",
+          "source_name": "Lobsters (AI tag)",
+          "title": "fabrica - A terminal-based minimal coding agent harness",
+          "url": "https://github.com/Endi1/fabrica",
+          "published_at": "2026-05-02T19:49:07.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://github.com/Endi1/fabrica",
+          "discussion_source": "Lobsters (AI tag)"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "fabrica: Minimal terminal-based coding agent tool",
+      "novelty": 0,
+      "trust": 0.7,
+      "score": 0.528
     },
     {
       "id": "1bj3zod",
@@ -1452,63 +1615,67 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "tutorial",
+      "kind": "tool",
       "quality": "signal",
-      "one_liner": "DuckDB Labs recently released DuckLake 1.0, a data lake format that stores table metadata in a SQL database rather than across many files in object storage. The first implementation is available as a ",
+      "one_liner": "DuckLake 1.0 introduces SQL-based data lake metadata",
       "novelty": 0,
       "trust": 0.78,
-      "score": 0.522
+      "score": 0.521
     },
     {
-      "id": "knvdu4",
+      "id": "xearsd",
       "primary": {
-        "id": "knvdu4",
-        "source_id": "techcrunch_ai",
-        "source_name": "TechCrunch AI",
-        "trust": 0.72,
+        "id": "xearsd",
+        "source_id": "ars_ai",
+        "source_name": "Ars Technica AI",
+        "trust": 0.78,
         "kind_hint": "news",
-        "title": "Meta buys robotics startup to bolster its humanoid AI ambitions",
-        "url": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions",
-        "original_url": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions/",
-        "summary": "Meta bought humanoid startup Assured Robot Intelligence to beef up its AI models for robots, the company said.",
-        "published_at": "2026-05-01T22:13:27.000Z",
+        "title": "Study: AI models that consider user's feeling are more likely to make errors",
+        "url": "https://arstechnica.com/ai/2026/05/study-ai-models-that-consider-users-feeling-are-more-likely-to-make-errors",
+        "original_url": "https://arstechnica.com/ai/2026/05/study-ai-models-that-consider-users-feeling-are-more-likely-to-make-errors/",
+        "summary": "Overtuning can cause models to \"prioritize user satisfaction over truthfulness.”",
+        "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/05/GettyImages-1338190481-1152x648.jpg",
+        "image_source": "rss_media",
+        "published_at": "2026-05-01T22:23:36.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "knvdu4",
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "trust": 0.72,
+          "id": "xearsd",
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "trust": 0.78,
           "kind_hint": "news",
-          "title": "Meta buys robotics startup to bolster its humanoid AI ambitions",
-          "url": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions",
-          "original_url": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions/",
-          "summary": "Meta bought humanoid startup Assured Robot Intelligence to beef up its AI models for robots, the company said.",
-          "published_at": "2026-05-01T22:13:27.000Z",
+          "title": "Study: AI models that consider user's feeling are more likely to make errors",
+          "url": "https://arstechnica.com/ai/2026/05/study-ai-models-that-consider-users-feeling-are-more-likely-to-make-errors",
+          "original_url": "https://arstechnica.com/ai/2026/05/study-ai-models-that-consider-users-feeling-are-more-likely-to-make-errors/",
+          "summary": "Overtuning can cause models to \"prioritize user satisfaction over truthfulness.”",
+          "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/05/GettyImages-1338190481-1152x648.jpg",
+          "image_source": "rss_media",
+          "published_at": "2026-05-01T22:23:36.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "title": "Meta buys robotics startup to bolster its humanoid AI ambitions",
-          "url": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions",
-          "published_at": "2026-05-01T22:13:27.000Z",
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "title": "Study: AI models that consider user's feeling are more likely to make errors",
+          "url": "https://arstechnica.com/ai/2026/05/study-ai-models-that-consider-users-feeling-are-more-likely-to-make-errors",
+          "published_at": "2026-05-01T22:23:36.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "also_seen_on": [],
-      "kind": "company_announcement",
+      "kind": "paper",
       "quality": "signal",
-      "one_liner": "Meta acquires robotics startup for humanoid AI development",
+      "one_liner": "AI models prioritizing user feelings may increase errors",
       "novelty": 0,
-      "trust": 0.72,
-      "score": 0.49
+      "trust": 0.78,
+      "score": 0.504
     },
     {
       "id": "a87hoq",
@@ -1566,10 +1733,10 @@
       "also_seen_on": [],
       "kind": "tool",
       "quality": "signal",
-      "one_liner": "hfviewer.com visualizes Hugging Face model architectures interactively",
+      "one_liner": "Tool for visualizing Hugging Face model architectures",
       "novelty": 0,
       "trust": 0.5,
-      "score": 0.487
+      "score": 0.486
     },
     {
       "id": "1hd7urc",
@@ -1623,43 +1790,43 @@
       "also_seen_on": [],
       "kind": "model_release",
       "quality": "signal",
-      "one_liner": "Public implementation of Meta AI's Scaling Test-Time Compute paper.",
+      "one_liner": "Implementation of Meta AI's Scaling-Test-Time-Compute paper released",
       "novelty": 0,
       "trust": 0.55,
-      "score": 0.481
+      "score": 0.48
     },
     {
-      "id": "npjb44",
+      "id": "bg5cas",
       "primary": {
-        "id": "npjb44",
+        "id": "bg5cas",
         "source_id": "r_localllama",
         "source_name": "r/LocalLLaMA",
         "trust": 0.5,
         "kind_hint": "discussion",
-        "title": "I built a transformer in C++17 from scratch — no PyTorch, no BLAS, no dependencies. Trains on CPU. 0.83M params, full analytical backprop, 76 min to val loss 1.64.",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1x9jv/i_built_a_transformer_in_c17_from_scratch_no",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1x9jv/i_built_a_transformer_in_c17_from_scratch_no/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1x9jv/i_built_a_transformer_in_c17_from_scratch_no",
+        "title": "I BUILT MY FIRST MODEL FROM SCRATCH",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch",
         "discussion_source": "r/LocalLLaMA",
-        "summary": "For the past few months I've been working on Quadtrix.cpp — a complete GPT-style language model implemented in C++17. No PyTorch. No LibTorch. No BLAS. No auto-differentiation library of any kind. The only dependency is the C++17 standard library and POSIX sockets. Repo: https://github.com/Eamon2009/Quadtrix.cpp Everything is hand-written: the tensor library, all forward pass operations, and the full analytical backward pass with explicit gradient derivations for every operator. Training run v1.0 Architecture: 4 layers x 4 heads x 200d decoder-only transformer Parameters: 826,985 (0.83 M) Cont",
-        "published_at": "2026-05-02T18:11:34.000Z",
+        "summary": "Sup, I'm Crownelius, I made that popular opus distill dataset. TODAY YOU ARE INTRODUCED TO SHARD a 40m parameter mal-formed LLM. Right now I'm working on a series of tiny LLM's, with a goal to run a coherent model for IoT tasks. I've researched atomic models, and while doing that I came across a project called Compact AI. Since joining them, I've learned a lot and even made my own model from scratch. The model is available here: CompactAI-O[HF Organization] About my model named \"Shard\"-I call it Scamp. submitted by /u/volious-ka [link] [comments]",
+        "published_at": "2026-05-02T19:21:27.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "npjb44",
+          "id": "bg5cas",
           "source_id": "r_localllama",
           "source_name": "r/LocalLLaMA",
           "trust": 0.5,
           "kind_hint": "discussion",
-          "title": "I built a transformer in C++17 from scratch — no PyTorch, no BLAS, no dependencies. Trains on CPU. 0.83M params, full analytical backprop, 76 min to val loss 1.64.",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1x9jv/i_built_a_transformer_in_c17_from_scratch_no",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1x9jv/i_built_a_transformer_in_c17_from_scratch_no/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1x9jv/i_built_a_transformer_in_c17_from_scratch_no",
+          "title": "I BUILT MY FIRST MODEL FROM SCRATCH",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch",
           "discussion_source": "r/LocalLLaMA",
-          "summary": "For the past few months I've been working on Quadtrix.cpp — a complete GPT-style language model implemented in C++17. No PyTorch. No LibTorch. No BLAS. No auto-differentiation library of any kind. The only dependency is the C++17 standard library and POSIX sockets. Repo: https://github.com/Eamon2009/Quadtrix.cpp Everything is hand-written: the tensor library, all forward pass operations, and the full analytical backward pass with explicit gradient derivations for every operator. Training run v1.0 Architecture: 4 layers x 4 heads x 200d decoder-only transformer Parameters: 826,985 (0.83 M) Cont",
-          "published_at": "2026-05-02T18:11:34.000Z",
+          "summary": "Sup, I'm Crownelius, I made that popular opus distill dataset. TODAY YOU ARE INTRODUCED TO SHARD a 40m parameter mal-formed LLM. Right now I'm working on a series of tiny LLM's, with a goal to run a coherent model for IoT tasks. I've researched atomic models, and while doing that I came across a project called Compact AI. Since joining them, I've learned a lot and even made my own model from scratch. The model is available here: CompactAI-O[HF Organization] About my model named \"Shard\"-I call it Scamp. submitted by /u/volious-ka [link] [comments]",
+          "published_at": "2026-05-02T19:21:27.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -1668,22 +1835,22 @@
         {
           "source_id": "r_localllama",
           "source_name": "r/LocalLLaMA",
-          "title": "I built a transformer in C++17 from scratch — no PyTorch, no BLAS, no dependencies. Trains on CPU. 0.83M params, full analytical backprop, 76 min to val loss 1.64.",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1x9jv/i_built_a_transformer_in_c17_from_scratch_no",
-          "published_at": "2026-05-02T18:11:34.000Z",
+          "title": "I BUILT MY FIRST MODEL FROM SCRATCH",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch",
+          "published_at": "2026-05-02T19:21:27.000Z",
           "published_at_source": "feed",
           "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1x9jv/i_built_a_transformer_in_c17_from_scratch_no",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch",
           "discussion_source": "r/LocalLLaMA"
         }
       ],
       "also_seen_on": [],
-      "kind": "tool",
+      "kind": "model_release",
       "quality": "signal",
-      "one_liner": "C++17 transformer implementation with full analytical backprop",
+      "one_liner": "40M-parameter LLM SHARD for IoT tasks built from scratch",
       "novelty": 0,
       "trust": 0.5,
-      "score": 0.476
+      "score": 0.477
     },
     {
       "id": "cx5ngs",
@@ -1741,43 +1908,43 @@
       "also_seen_on": [],
       "kind": "tool",
       "quality": "signal",
-      "one_liner": "Open-source launcher for running Qwen 35B+ models on RTX Pro",
+      "one_liner": "Open-source Llama.cpp launcher for Qwen 35b/27b models",
       "novelty": 0,
       "trust": 0.5,
-      "score": 0.475
+      "score": 0.474
     },
     {
-      "id": "1d4nm4o",
+      "id": "2p5v0n",
       "primary": {
-        "id": "1d4nm4o",
+        "id": "2p5v0n",
         "source_id": "r_localllama",
         "source_name": "r/LocalLLaMA",
         "trust": 0.5,
         "kind_hint": "discussion",
-        "title": "[RELEASE] - Finally, my first TTS model is out! 🎙️ Flare-TTS 28M",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out",
+        "title": "We are finally there: Qwen3.6-27B + agentic search; 95.7% SimpleQA on a single 3090, fully local",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1n6o8/we_are_finally_there_qwen3627b_agentic_search_957",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1n6o8/we_are_finally_there_qwen3627b_agentic_search_957/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1n6o8/we_are_finally_there_qwen3627b_agentic_search_957",
         "discussion_source": "r/LocalLLaMA",
-        "summary": "Hey r/LocalLLaMA ! I am back with a new model, and it's something special today 😃 It's Flare-TTS 28M, my first text to speech (TTS) model trained completely from scratch on a single A6000 GPU for ~24 hours, ~300 epochs and the full LJSpeech dataset! Link to the HF model: https://huggingface.co/LH-Tech-AI/Flare-TTS-28M Example result: https://cdn-uploads.huggingface.co/production/uploads/697f2832c2c5e4daa93cece7/vluuHSnp9Ietk7Uk1-hvG.mpga It speaks english, but it still sounds a bit robotish 😂 You can use if you want - it's free and open-source 😃 Have fun ❤️ submitted by /u/LH-Tech_AI [link]",
-        "published_at": "2026-05-02T10:52:10.000Z",
+        "summary": "LDR maintainer here. Thanks to the strong support of r/LocalLLaMA community LDR got very far. I haven't reported in a while because I thought I was not ready for another prominent post in one of the leading outlets of Local LLM research. But I think the LDR community finally there again. I think it is finally time to report again. Setup RTX 3090, 24GB Ollama backend (qwen3.6:27b) LDR's langgraph_agent strategy — LangChain create_agent() with tool-calling, parallel subtopic decomposition, up to 50 iterations LLM grader: qwen3.6:27b self-graded (I have used opus to review examples and it general",
+        "published_at": "2026-05-02T11:21:25.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "1d4nm4o",
+          "id": "2p5v0n",
           "source_id": "r_localllama",
           "source_name": "r/LocalLLaMA",
           "trust": 0.5,
           "kind_hint": "discussion",
-          "title": "[RELEASE] - Finally, my first TTS model is out! 🎙️ Flare-TTS 28M",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out",
+          "title": "We are finally there: Qwen3.6-27B + agentic search; 95.7% SimpleQA on a single 3090, fully local",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1n6o8/we_are_finally_there_qwen3627b_agentic_search_957",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1n6o8/we_are_finally_there_qwen3627b_agentic_search_957/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1n6o8/we_are_finally_there_qwen3627b_agentic_search_957",
           "discussion_source": "r/LocalLLaMA",
-          "summary": "Hey r/LocalLLaMA ! I am back with a new model, and it's something special today 😃 It's Flare-TTS 28M, my first text to speech (TTS) model trained completely from scratch on a single A6000 GPU for ~24 hours, ~300 epochs and the full LJSpeech dataset! Link to the HF model: https://huggingface.co/LH-Tech-AI/Flare-TTS-28M Example result: https://cdn-uploads.huggingface.co/production/uploads/697f2832c2c5e4daa93cece7/vluuHSnp9Ietk7Uk1-hvG.mpga It speaks english, but it still sounds a bit robotish 😂 You can use if you want - it's free and open-source 😃 Have fun ❤️ submitted by /u/LH-Tech_AI [link]",
-          "published_at": "2026-05-02T10:52:10.000Z",
+          "summary": "LDR maintainer here. Thanks to the strong support of r/LocalLLaMA community LDR got very far. I haven't reported in a while because I thought I was not ready for another prominent post in one of the leading outlets of Local LLM research. But I think the LDR community finally there again. I think it is finally time to report again. Setup RTX 3090, 24GB Ollama backend (qwen3.6:27b) LDR's langgraph_agent strategy — LangChain create_agent() with tool-calling, parallel subtopic decomposition, up to 50 iterations LLM grader: qwen3.6:27b self-graded (I have used opus to review examples and it general",
+          "published_at": "2026-05-02T11:21:25.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -1786,19 +1953,19 @@
         {
           "source_id": "r_localllama",
           "source_name": "r/LocalLLaMA",
-          "title": "[RELEASE] - Finally, my first TTS model is out! 🎙️ Flare-TTS 28M",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out",
-          "published_at": "2026-05-02T10:52:10.000Z",
+          "title": "We are finally there: Qwen3.6-27B + agentic search; 95.7% SimpleQA on a single 3090, fully local",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1n6o8/we_are_finally_there_qwen3627b_agentic_search_957",
+          "published_at": "2026-05-02T11:21:25.000Z",
           "published_at_source": "feed",
           "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1n6o8/we_are_finally_there_qwen3627b_agentic_search_957",
           "discussion_source": "r/LocalLLaMA"
         }
       ],
       "also_seen_on": [],
       "kind": "model_release",
       "quality": "signal",
-      "one_liner": "Flare-TTS 28M text-to-speech model trained from scratch on A6000",
+      "one_liner": "Qwen3.6-27B achieves 95.7% accuracy on local hardware",
       "novelty": 0,
       "trust": 0.5,
       "score": 0.461
@@ -1847,10 +2014,10 @@
       "also_seen_on": [],
       "kind": "opinion",
       "quality": "mixed",
-      "one_liner": "Opinion: Most companies lack readiness for AI adoption",
+      "one_liner": "Opinion piece on companies' unpreparedness for AI adoption",
       "novelty": 0,
       "trust": 0.78,
-      "score": 0.435
+      "score": 0.434
     },
     {
       "id": "1wvgp8w",
@@ -1903,113 +2070,7 @@
       "one_liner": "Call for speakers at AI Engineer World's Fair event",
       "novelty": 0,
       "trust": 0.85,
-      "score": 0.429
-    },
-    {
-      "id": "1aph4si",
-      "primary": {
-        "id": "1aph4si",
-        "source_id": "techcrunch_ai",
-        "source_name": "TechCrunch AI",
-        "trust": 0.72,
-        "kind_hint": "news",
-        "title": "AI-generated actors and scripts are now ineligible for Oscars",
-        "url": "https://techcrunch.com/2026/05/02/ai-generated-actors-and-scripts-are-now-ineligible-for-oscars",
-        "original_url": "https://techcrunch.com/2026/05/02/ai-generated-actors-and-scripts-are-now-ineligible-for-oscars/",
-        "summary": "Bad news for Tilly Norwood.",
-        "published_at": "2026-05-02T21:54:58.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1aph4si",
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "trust": 0.72,
-          "kind_hint": "news",
-          "title": "AI-generated actors and scripts are now ineligible for Oscars",
-          "url": "https://techcrunch.com/2026/05/02/ai-generated-actors-and-scripts-are-now-ineligible-for-oscars",
-          "original_url": "https://techcrunch.com/2026/05/02/ai-generated-actors-and-scripts-are-now-ineligible-for-oscars/",
-          "summary": "Bad news for Tilly Norwood.",
-          "published_at": "2026-05-02T21:54:58.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "title": "AI-generated actors and scripts are now ineligible for Oscars",
-          "url": "https://techcrunch.com/2026/05/02/ai-generated-actors-and-scripts-are-now-ineligible-for-oscars",
-          "published_at": "2026-05-02T21:54:58.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "AI-generated actors and scripts excluded from Oscars",
-      "novelty": 0,
-      "trust": 0.72,
-      "score": 0.426
-    },
-    {
-      "id": "1mo2qol",
-      "primary": {
-        "id": "1mo2qol",
-        "source_id": "lobsters_ai",
-        "source_name": "Lobsters (AI tag)",
-        "trust": 0.7,
-        "title": "fabrica - A terminal-based minimal coding agent harness",
-        "url": "https://github.com/Endi1/fabrica",
-        "original_url": "https://github.com/Endi1/fabrica",
-        "discussion_url": "https://github.com/Endi1/fabrica",
-        "discussion_source": "Lobsters (AI tag)",
-        "summary": "Comments",
-        "published_at": "2026-05-02T19:49:07.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1mo2qol",
-          "source_id": "lobsters_ai",
-          "source_name": "Lobsters (AI tag)",
-          "trust": 0.7,
-          "title": "fabrica - A terminal-based minimal coding agent harness",
-          "url": "https://github.com/Endi1/fabrica",
-          "original_url": "https://github.com/Endi1/fabrica",
-          "discussion_url": "https://github.com/Endi1/fabrica",
-          "discussion_source": "Lobsters (AI tag)",
-          "summary": "Comments",
-          "published_at": "2026-05-02T19:49:07.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "lobsters_ai",
-          "source_name": "Lobsters (AI tag)",
-          "title": "fabrica - A terminal-based minimal coding agent harness",
-          "url": "https://github.com/Endi1/fabrica",
-          "published_at": "2026-05-02T19:49:07.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://github.com/Endi1/fabrica",
-          "discussion_source": "Lobsters (AI tag)"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "unknown",
-      "quality": "mixed",
-      "one_liner": "",
-      "novelty": 0,
-      "trust": 0.7,
-      "score": 0.417
+      "score": 0.427
     },
     {
       "id": "160rybq",
@@ -2055,12 +2116,12 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "tool",
+      "kind": "news",
       "quality": "mixed",
-      "one_liner": "Review and ranking of top AI-powered dictation apps",
+      "one_liner": "AI-powered dictation apps are useful for replying to emails, taking notes, and even coding through your voice",
       "novelty": 0,
       "trust": 0.72,
-      "score": 0.414
+      "score": 0.413
     },
     {
       "id": "akpdhl",
@@ -2115,7 +2176,7 @@
       "one_liner": "The ARC Prize Foundation analyzed 160 game runs of OpenAI's GPT-5.5 and Anthropic's Opus 4.7 on the ARC-AGI-3 benchmark. Three systematic error patterns explain why both models stay below 1 percent on",
       "novelty": 0,
       "trust": 0.74,
-      "score": 0.414
+      "score": 0.413
     },
     {
       "id": "4mpubp",
@@ -2167,10 +2228,10 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Plus: The NSA tests Anthropic’s Mythos Preview to find vulnerabilities, a Finnish teen is charged over the Scattered Spider hacking spree, and more.",
+      "one_liner": "Disneyland deploys facial recognition for visitors",
       "novelty": 0,
       "trust": 0.76,
-      "score": 0.413
+      "score": 0.411
     },
     {
       "id": "1cqygp5",
@@ -2225,7 +2286,7 @@
       "one_liner": "xAI now lets developers clone their own voices for AI applications. The new \"Custom Voices\" feature builds on the recently launched Grok Speech-to-Text and Text-to-Speech APIs. The article xAI's new C",
       "novelty": 0,
       "trust": 0.74,
-      "score": 0.411
+      "score": 0.41
     },
     {
       "id": "1pcpsqc",
@@ -2275,12 +2336,12 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "news",
+      "kind": "company_announcement",
       "quality": "mixed",
-      "one_liner": "AI scaremongering costs jobs instead of protecting them, says Nvidia CEO Jensen Huang. Talking young people out of future careers, he argues, does real harm to society. The article Nvidia CEO Jensen H",
+      "one_liner": "Nvidia CEO criticizes AI job loss predictions as harmful",
       "novelty": 0,
       "trust": 0.74,
-      "score": 0.408
+      "score": 0.407
     },
     {
       "id": "rnvydt",
@@ -2332,10 +2393,10 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Elon Musk called himself a \"fool\" in court, warned of a \"Terminator\" future, and admitted that xAI taps OpenAI's models for its own AI training. Week one of Musk's trial against Sam Altman delivered p",
+      "one_liner": "Elon Musk calls himself a fool for OpenAI funding",
       "novelty": 0,
       "trust": 0.74,
-      "score": 0.406
+      "score": 0.404
     },
     {
       "id": "12qj9qg",
@@ -2385,118 +2446,12 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "news",
+      "kind": "company_announcement",
       "quality": "mixed",
-      "one_liner": "OpenAI has turned on marketing cookies by default for free ChatGPT users in countries where ads are running. Tracking is automatically active for free accounts but not for paying subscribers. You can ",
+      "one_liner": "ChatGPT enables ad tracking for free users by default",
       "novelty": 0,
       "trust": 0.74,
-      "score": 0.404
-    },
-    {
-      "id": "1hf02bh",
-      "primary": {
-        "id": "1hf02bh",
-        "source_id": "mit_tech_review_ai",
-        "source_name": "MIT Technology Review AI",
-        "trust": 0.82,
-        "kind_hint": "news",
-        "title": "Musk v. Altman week 1: Elon Musk says he was duped, warns AI could kill us all, and admits that xAI distills OpenAI’s models",
-        "url": "https://technologyreview.com/2026/05/01/1136800/musk-v-altman-week-1-musk-says-he-was-duped-warns-ai-could-kill-us-all-and-admits-that-xai-distills-openais-models",
-        "original_url": "https://www.technologyreview.com/2026/05/01/1136800/musk-v-altman-week-1-musk-says-he-was-duped-warns-ai-could-kill-us-all-and-admits-that-xai-distills-openais-models/",
-        "summary": "In the first week of the landmark trial between Elon Musk and OpenAI, Musk took the stand in a crisp black suit and tie and argued that OpenAI CEO Sam Altman and president Greg Brockman had deceived him into bankrolling the company. Along the way, he warned that AI could destroy us all and sat through…",
-        "published_at": "2026-05-01T22:08:19.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1hf02bh",
-          "source_id": "mit_tech_review_ai",
-          "source_name": "MIT Technology Review AI",
-          "trust": 0.82,
-          "kind_hint": "news",
-          "title": "Musk v. Altman week 1: Elon Musk says he was duped, warns AI could kill us all, and admits that xAI distills OpenAI’s models",
-          "url": "https://technologyreview.com/2026/05/01/1136800/musk-v-altman-week-1-musk-says-he-was-duped-warns-ai-could-kill-us-all-and-admits-that-xai-distills-openais-models",
-          "original_url": "https://www.technologyreview.com/2026/05/01/1136800/musk-v-altman-week-1-musk-says-he-was-duped-warns-ai-could-kill-us-all-and-admits-that-xai-distills-openais-models/",
-          "summary": "In the first week of the landmark trial between Elon Musk and OpenAI, Musk took the stand in a crisp black suit and tie and argued that OpenAI CEO Sam Altman and president Greg Brockman had deceived him into bankrolling the company. Along the way, he warned that AI could destroy us all and sat through…",
-          "published_at": "2026-05-01T22:08:19.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "mit_tech_review_ai",
-          "source_name": "MIT Technology Review AI",
-          "title": "Musk v. Altman week 1: Elon Musk says he was duped, warns AI could kill us all, and admits that xAI distills OpenAI’s models",
-          "url": "https://technologyreview.com/2026/05/01/1136800/musk-v-altman-week-1-musk-says-he-was-duped-warns-ai-could-kill-us-all-and-admits-that-xai-distills-openais-models",
-          "published_at": "2026-05-01T22:08:19.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "In the first week of the landmark trial between Elon Musk and OpenAI, Musk took the stand in a crisp black suit and tie and argued that OpenAI CEO Sam Altman and president Greg Brockman had deceived h",
-      "novelty": 0,
-      "trust": 0.82,
       "score": 0.402
-    },
-    {
-      "id": "xearsd",
-      "primary": {
-        "id": "xearsd",
-        "source_id": "ars_ai",
-        "source_name": "Ars Technica AI",
-        "trust": 0.78,
-        "kind_hint": "news",
-        "title": "Study: AI models that consider user's feeling are more likely to make errors",
-        "url": "https://arstechnica.com/ai/2026/05/study-ai-models-that-consider-users-feeling-are-more-likely-to-make-errors",
-        "original_url": "https://arstechnica.com/ai/2026/05/study-ai-models-that-consider-users-feeling-are-more-likely-to-make-errors/",
-        "summary": "Overtuning can cause models to \"prioritize user satisfaction over truthfulness.”",
-        "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/05/GettyImages-1338190481-1152x648.jpg",
-        "image_source": "rss_media",
-        "published_at": "2026-05-01T22:23:36.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "xearsd",
-          "source_id": "ars_ai",
-          "source_name": "Ars Technica AI",
-          "trust": 0.78,
-          "kind_hint": "news",
-          "title": "Study: AI models that consider user's feeling are more likely to make errors",
-          "url": "https://arstechnica.com/ai/2026/05/study-ai-models-that-consider-users-feeling-are-more-likely-to-make-errors",
-          "original_url": "https://arstechnica.com/ai/2026/05/study-ai-models-that-consider-users-feeling-are-more-likely-to-make-errors/",
-          "summary": "Overtuning can cause models to \"prioritize user satisfaction over truthfulness.”",
-          "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/05/GettyImages-1338190481-1152x648.jpg",
-          "image_source": "rss_media",
-          "published_at": "2026-05-01T22:23:36.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "ars_ai",
-          "source_name": "Ars Technica AI",
-          "title": "Study: AI models that consider user's feeling are more likely to make errors",
-          "url": "https://arstechnica.com/ai/2026/05/study-ai-models-that-consider-users-feeling-are-more-likely-to-make-errors",
-          "published_at": "2026-05-01T22:23:36.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "Overtuning can cause models to \"prioritize user satisfaction over truthfulness.”",
-      "novelty": 0,
-      "trust": 0.78,
-      "score": 0.392
     },
     {
       "id": "1uefvu5",
@@ -2550,10 +2505,10 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Toy experiment using Pythia-70M with forward-derived fast memory.",
+      "one_liner": "Experiment with Pythia-70M using forward-derived memory for recall",
       "novelty": 0,
       "trust": 0.55,
-      "score": 0.385
+      "score": 0.384
     },
     {
       "id": "8aovpv",
@@ -2599,12 +2554,63 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "company_announcement",
+      "kind": "news",
       "quality": "mixed",
-      "one_liner": "Replit CEO discusses Cursor deal and business strategy",
+      "one_liner": "At TechCrunch's sold-out StrictlyVC event in San Francisco on Thursday night, we covered a lot of ground in a short time, beginning with the question everyone in the industry is asking right now: in a",
       "novelty": 0,
       "trust": 0.72,
-      "score": 0.379
+      "score": 0.378
+    },
+    {
+      "id": "knvdu4",
+      "primary": {
+        "id": "knvdu4",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "Meta buys robotics startup to bolster its humanoid AI ambitions",
+        "url": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions",
+        "original_url": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions/",
+        "summary": "Meta bought humanoid startup Assured Robot Intelligence to beef up its AI models for robots, the company said.",
+        "published_at": "2026-05-01T22:13:27.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "knvdu4",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "Meta buys robotics startup to bolster its humanoid AI ambitions",
+          "url": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions",
+          "original_url": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions/",
+          "summary": "Meta bought humanoid startup Assured Robot Intelligence to beef up its AI models for robots, the company said.",
+          "published_at": "2026-05-01T22:13:27.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "Meta buys robotics startup to bolster its humanoid AI ambitions",
+          "url": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions",
+          "published_at": "2026-05-01T22:13:27.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Meta bought humanoid startup Assured Robot Intelligence to beef up its AI models for robots, the company said.",
+      "novelty": 0,
+      "trust": 0.72,
+      "score": 0.376
     },
     {
       "id": "17c2a2",
@@ -2665,7 +2671,7 @@
       "one_liner": "",
       "novelty": 0,
       "trust": 0.5,
-      "score": 0.374
+      "score": 0.373
     },
     {
       "id": "15kv94z",
@@ -2726,7 +2732,7 @@
       "one_liner": "",
       "novelty": 0,
       "trust": 0.5,
-      "score": 0.37
+      "score": 0.369
     },
     {
       "id": "ay4x4p",
@@ -2780,43 +2786,43 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "User reports discrepancies in TurboQuant implementation results",
+      "one_liner": "I attempted to implement TurboQuant (arXiv:2504.19874) from scratch over the last few days. Thought I would check something with folks here since my numbers do not match those in the paper. Observatio",
       "novelty": 0,
       "trust": 0.5,
-      "score": 0.368
+      "score": 0.366
     },
     {
-      "id": "bg5cas",
+      "id": "npjb44",
       "primary": {
-        "id": "bg5cas",
+        "id": "npjb44",
         "source_id": "r_localllama",
         "source_name": "r/LocalLLaMA",
         "trust": 0.5,
         "kind_hint": "discussion",
-        "title": "I BUILT MY FIRST MODEL FROM SCRATCH",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch",
+        "title": "I built a transformer in C++17 from scratch — no PyTorch, no BLAS, no dependencies. Trains on CPU. 0.83M params, full analytical backprop, 76 min to val loss 1.64.",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1x9jv/i_built_a_transformer_in_c17_from_scratch_no",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1x9jv/i_built_a_transformer_in_c17_from_scratch_no/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1x9jv/i_built_a_transformer_in_c17_from_scratch_no",
         "discussion_source": "r/LocalLLaMA",
-        "summary": "Sup, I'm Crownelius, I made that popular opus distill dataset. TODAY YOU ARE INTRODUCED TO SHARD a 40m parameter mal-formed LLM. Right now I'm working on a series of tiny LLM's, with a goal to run a coherent model for IoT tasks. I've researched atomic models, and while doing that I came across a project called Compact AI. Since joining them, I've learned a lot and even made my own model from scratch. The model is available here: CompactAI-O[HF Organization] About my model named \"Shard\"-I call it Scamp. submitted by /u/volious-ka [link] [comments]",
-        "published_at": "2026-05-02T19:21:27.000Z",
+        "summary": "For the past few months I've been working on Quadtrix.cpp — a complete GPT-style language model implemented in C++17. No PyTorch. No LibTorch. No BLAS. No auto-differentiation library of any kind. The only dependency is the C++17 standard library and POSIX sockets. Repo: https://github.com/Eamon2009/Quadtrix.cpp Everything is hand-written: the tensor library, all forward pass operations, and the full analytical backward pass with explicit gradient derivations for every operator. Training run v1.0 Architecture: 4 layers x 4 heads x 200d decoder-only transformer Parameters: 826,985 (0.83 M) Cont",
+        "published_at": "2026-05-02T18:11:34.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "bg5cas",
+          "id": "npjb44",
           "source_id": "r_localllama",
           "source_name": "r/LocalLLaMA",
           "trust": 0.5,
           "kind_hint": "discussion",
-          "title": "I BUILT MY FIRST MODEL FROM SCRATCH",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch",
+          "title": "I built a transformer in C++17 from scratch — no PyTorch, no BLAS, no dependencies. Trains on CPU. 0.83M params, full analytical backprop, 76 min to val loss 1.64.",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1x9jv/i_built_a_transformer_in_c17_from_scratch_no",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1x9jv/i_built_a_transformer_in_c17_from_scratch_no/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1x9jv/i_built_a_transformer_in_c17_from_scratch_no",
           "discussion_source": "r/LocalLLaMA",
-          "summary": "Sup, I'm Crownelius, I made that popular opus distill dataset. TODAY YOU ARE INTRODUCED TO SHARD a 40m parameter mal-formed LLM. Right now I'm working on a series of tiny LLM's, with a goal to run a coherent model for IoT tasks. I've researched atomic models, and while doing that I came across a project called Compact AI. Since joining them, I've learned a lot and even made my own model from scratch. The model is available here: CompactAI-O[HF Organization] About my model named \"Shard\"-I call it Scamp. submitted by /u/volious-ka [link] [comments]",
-          "published_at": "2026-05-02T19:21:27.000Z",
+          "summary": "For the past few months I've been working on Quadtrix.cpp — a complete GPT-style language model implemented in C++17. No PyTorch. No LibTorch. No BLAS. No auto-differentiation library of any kind. The only dependency is the C++17 standard library and POSIX sockets. Repo: https://github.com/Eamon2009/Quadtrix.cpp Everything is hand-written: the tensor library, all forward pass operations, and the full analytical backward pass with explicit gradient derivations for every operator. Training run v1.0 Architecture: 4 layers x 4 heads x 200d decoder-only transformer Parameters: 826,985 (0.83 M) Cont",
+          "published_at": "2026-05-02T18:11:34.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -2825,22 +2831,22 @@
         {
           "source_id": "r_localllama",
           "source_name": "r/LocalLLaMA",
-          "title": "I BUILT MY FIRST MODEL FROM SCRATCH",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch",
-          "published_at": "2026-05-02T19:21:27.000Z",
+          "title": "I built a transformer in C++17 from scratch — no PyTorch, no BLAS, no dependencies. Trains on CPU. 0.83M params, full analytical backprop, 76 min to val loss 1.64.",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1x9jv/i_built_a_transformer_in_c17_from_scratch_no",
+          "published_at": "2026-05-02T18:11:34.000Z",
           "published_at_source": "feed",
           "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1x9jv/i_built_a_transformer_in_c17_from_scratch_no",
           "discussion_source": "r/LocalLLaMA"
         }
       ],
       "also_seen_on": [],
-      "kind": "model_release",
+      "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "40M-parameter LLM for IoT tasks by first-time model builder",
+      "one_liner": "For the past few months I've been working on Quadtrix.cpp — a complete GPT-style language model implemented in C++17. No PyTorch. No LibTorch. No BLAS. No auto-differentiation library of any kind. The",
       "novelty": 0,
       "trust": 0.5,
-      "score": 0.366
+      "score": 0.363
     },
     {
       "id": "s5rajc",
@@ -2901,64 +2907,7 @@
       "one_liner": "Hey guys, A couple of weeks ago, I asked this sub for the hardest Vision use cases you were dealing with to test the newly dropped Qwen 3.6 against Gemma 4. I finally finished running the gauntlet sid",
       "novelty": 0,
       "trust": 0.5,
-      "score": 0.359
-    },
-    {
-      "id": "kmrdbn",
-      "primary": {
-        "id": "kmrdbn",
-        "source_id": "r_ml",
-        "source_name": "r/MachineLearning",
-        "trust": 0.55,
-        "kind_hint": "discussion",
-        "title": "Real World Physics-Informed AI Applications [D]",
-        "url": "https://old.reddit.com/r/MachineLearning/comments/1t1lmq0/real_world_physicsinformed_ai_applications_d",
-        "original_url": "https://old.reddit.com/r/MachineLearning/comments/1t1lmq0/real_world_physicsinformed_ai_applications_d/",
-        "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t1lmq0/real_world_physicsinformed_ai_applications_d",
-        "discussion_source": "r/MachineLearning",
-        "summary": "I'm curios to find any real-world applications of physics-informed AI. Conventional AI, talking only about Neural Networks, have already become something casual, they are in hundreds of tools/services we use daily. But I'm curios, apart from academia, are there industries/fields where physics-informed AI is already a thing? submitted by /u/Adorable-Driver-583 [link] [comments]",
-        "published_at": "2026-05-02T09:55:56.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "kmrdbn",
-          "source_id": "r_ml",
-          "source_name": "r/MachineLearning",
-          "trust": 0.55,
-          "kind_hint": "discussion",
-          "title": "Real World Physics-Informed AI Applications [D]",
-          "url": "https://old.reddit.com/r/MachineLearning/comments/1t1lmq0/real_world_physicsinformed_ai_applications_d",
-          "original_url": "https://old.reddit.com/r/MachineLearning/comments/1t1lmq0/real_world_physicsinformed_ai_applications_d/",
-          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t1lmq0/real_world_physicsinformed_ai_applications_d",
-          "discussion_source": "r/MachineLearning",
-          "summary": "I'm curios to find any real-world applications of physics-informed AI. Conventional AI, talking only about Neural Networks, have already become something casual, they are in hundreds of tools/services we use daily. But I'm curios, apart from academia, are there industries/fields where physics-informed AI is already a thing? submitted by /u/Adorable-Driver-583 [link] [comments]",
-          "published_at": "2026-05-02T09:55:56.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_ml",
-          "source_name": "r/MachineLearning",
-          "title": "Real World Physics-Informed AI Applications [D]",
-          "url": "https://old.reddit.com/r/MachineLearning/comments/1t1lmq0/real_world_physicsinformed_ai_applications_d",
-          "published_at": "2026-05-02T09:55:56.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t1lmq0/real_world_physicsinformed_ai_applications_d",
-          "discussion_source": "r/MachineLearning"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "discussion",
-      "quality": "mixed",
-      "one_liner": "Discussion on real-world physics-informed AI applications beyond academia.",
-      "novelty": 0,
-      "trust": 0.55,
-      "score": 0.359
+      "score": 0.357
     },
     {
       "id": "1e7mkw9",
@@ -3012,10 +2961,10 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "User discusses Qwen-3.6 27B performance on vLLM with FP8 quantization",
+      "one_liner": "I run Qwen-3.6 27B with the FP8 safetensors on vllm for long-horizon agentic coding harness workloads with high context window and concurrent sub-agents. On two 3090s that aren’t used for anything els",
       "novelty": 0,
       "trust": 0.5,
-      "score": 0.358
+      "score": 0.357
     },
     {
       "id": "d7icty",
@@ -3069,10 +3018,10 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Query about Qwen 3.6 27B throughput on 3090 GPUs for agent tasks",
+      "one_liner": "Query about Qwen 3.6 27B performance on 3090 for tasks",
       "novelty": 0,
       "trust": 0.5,
-      "score": 0.351
+      "score": 0.349
     },
     {
       "id": "1rlnx6q",
@@ -3126,43 +3075,43 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Request for expressive local TTS systems for voice acting",
+      "one_liner": "Request for expressive local TTS for voice acting",
       "novelty": 0,
       "trust": 0.5,
-      "score": 0.351
+      "score": 0.349
     },
     {
-      "id": "2p5v0n",
+      "id": "1d4nm4o",
       "primary": {
-        "id": "2p5v0n",
+        "id": "1d4nm4o",
         "source_id": "r_localllama",
         "source_name": "r/LocalLLaMA",
         "trust": 0.5,
         "kind_hint": "discussion",
-        "title": "We are finally there: Qwen3.6-27B + agentic search; 95.7% SimpleQA on a single 3090, fully local",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1n6o8/we_are_finally_there_qwen3627b_agentic_search_957",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1n6o8/we_are_finally_there_qwen3627b_agentic_search_957/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1n6o8/we_are_finally_there_qwen3627b_agentic_search_957",
+        "title": "[RELEASE] - Finally, my first TTS model is out! 🎙️ Flare-TTS 28M",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out",
         "discussion_source": "r/LocalLLaMA",
-        "summary": "LDR maintainer here. Thanks to the strong support of r/LocalLLaMA community LDR got very far. I haven't reported in a while because I thought I was not ready for another prominent post in one of the leading outlets of Local LLM research. But I think the LDR community finally there again. I think it is finally time to report again. Setup RTX 3090, 24GB Ollama backend (qwen3.6:27b) LDR's langgraph_agent strategy — LangChain create_agent() with tool-calling, parallel subtopic decomposition, up to 50 iterations LLM grader: qwen3.6:27b self-graded (I have used opus to review examples and it general",
-        "published_at": "2026-05-02T11:21:25.000Z",
+        "summary": "Hey r/LocalLLaMA ! I am back with a new model, and it's something special today 😃 It's Flare-TTS 28M, my first text to speech (TTS) model trained completely from scratch on a single A6000 GPU for ~24 hours, ~300 epochs and the full LJSpeech dataset! Link to the HF model: https://huggingface.co/LH-Tech-AI/Flare-TTS-28M Example result: https://cdn-uploads.huggingface.co/production/uploads/697f2832c2c5e4daa93cece7/vluuHSnp9Ietk7Uk1-hvG.mpga It speaks english, but it still sounds a bit robotish 😂 You can use if you want - it's free and open-source 😃 Have fun ❤️ submitted by /u/LH-Tech_AI [link]",
+        "published_at": "2026-05-02T10:52:10.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "2p5v0n",
+          "id": "1d4nm4o",
           "source_id": "r_localllama",
           "source_name": "r/LocalLLaMA",
           "trust": 0.5,
           "kind_hint": "discussion",
-          "title": "We are finally there: Qwen3.6-27B + agentic search; 95.7% SimpleQA on a single 3090, fully local",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1n6o8/we_are_finally_there_qwen3627b_agentic_search_957",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1n6o8/we_are_finally_there_qwen3627b_agentic_search_957/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1n6o8/we_are_finally_there_qwen3627b_agentic_search_957",
+          "title": "[RELEASE] - Finally, my first TTS model is out! 🎙️ Flare-TTS 28M",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out",
           "discussion_source": "r/LocalLLaMA",
-          "summary": "LDR maintainer here. Thanks to the strong support of r/LocalLLaMA community LDR got very far. I haven't reported in a while because I thought I was not ready for another prominent post in one of the leading outlets of Local LLM research. But I think the LDR community finally there again. I think it is finally time to report again. Setup RTX 3090, 24GB Ollama backend (qwen3.6:27b) LDR's langgraph_agent strategy — LangChain create_agent() with tool-calling, parallel subtopic decomposition, up to 50 iterations LLM grader: qwen3.6:27b self-graded (I have used opus to review examples and it general",
-          "published_at": "2026-05-02T11:21:25.000Z",
+          "summary": "Hey r/LocalLLaMA ! I am back with a new model, and it's something special today 😃 It's Flare-TTS 28M, my first text to speech (TTS) model trained completely from scratch on a single A6000 GPU for ~24 hours, ~300 epochs and the full LJSpeech dataset! Link to the HF model: https://huggingface.co/LH-Tech-AI/Flare-TTS-28M Example result: https://cdn-uploads.huggingface.co/production/uploads/697f2832c2c5e4daa93cece7/vluuHSnp9Ietk7Uk1-hvG.mpga It speaks english, but it still sounds a bit robotish 😂 You can use if you want - it's free and open-source 😃 Have fun ❤️ submitted by /u/LH-Tech_AI [link]",
+          "published_at": "2026-05-02T10:52:10.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -3171,22 +3120,22 @@
         {
           "source_id": "r_localllama",
           "source_name": "r/LocalLLaMA",
-          "title": "We are finally there: Qwen3.6-27B + agentic search; 95.7% SimpleQA on a single 3090, fully local",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1n6o8/we_are_finally_there_qwen3627b_agentic_search_957",
-          "published_at": "2026-05-02T11:21:25.000Z",
+          "title": "[RELEASE] - Finally, my first TTS model is out! 🎙️ Flare-TTS 28M",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out",
+          "published_at": "2026-05-02T10:52:10.000Z",
           "published_at_source": "feed",
           "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1n6o8/we_are_finally_there_qwen3627b_agentic_search_957",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out",
           "discussion_source": "r/LocalLLaMA"
         }
       ],
       "also_seen_on": [],
-      "kind": "model_release",
+      "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Qwen3.6-27B achieves 95.7% SimpleQA with agentic search on a single 3090",
+      "one_liner": "",
       "novelty": 0,
       "trust": 0.5,
-      "score": 0.349
+      "score": 0.347
     },
     {
       "id": "1pd29iz",
@@ -3238,70 +3187,9 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "discussion",
+      "kind": "tool",
       "quality": "mixed",
-      "one_liner": "Proposal for community platform to share model configurations",
-      "novelty": 0,
-      "trust": 0.5,
-      "score": 0.348
-    },
-    {
-      "id": "wdambi",
-      "primary": {
-        "id": "wdambi",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "MiniMax M2.7 AWQ-4bit on 2x Spark vs 2x RTX 6000 96GB - performance and energy efficiency",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1lfhj/minimax_m27_awq4bit_on_2x_spark_vs_2x_rtx_6000",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1lfhj/minimax_m27_awq4bit_on_2x_spark_vs_2x_rtx_6000/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1lfhj/minimax_m27_awq4bit_on_2x_spark_vs_2x_rtx_6000",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "Hello, This model/quant is my daily driver and I wanted to have some reference benchs for comparing my setup with a 3x more expensive and 4x time power hungry setup. Results first, methodology after, link at the end with all results Model: cyankiwi/MiniMax-M2.7-AWQ-4bit Results (c1) https://preview.redd.it/dzp6qzfc0pyg1.png?width=858&format=png&auto=webp&s=368debb16760ecaaf8d5bd4013bfeaa5ef940a69 https://preview.redd.it/2gziemld0pyg1.png?width=859&format=png&auto=webp&s=84e2f3c389013854734fecf89a25d1dd095f4d62 (tried to upload the table as text, didn't work as expected) So to my surprise, the",
-        "image_url": "https://external-preview.redd.it/_EQgAAqztVkV0OOAhLve0ynDlxEx_QXNvUUJ8IrRHFE.png?width=140&height=75&auto=webp&s=c9d24c29dfe1b4351ed248783069abd434421c9e",
-        "image_source": "rss_media",
-        "published_at": "2026-05-02T09:44:12.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "wdambi",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "MiniMax M2.7 AWQ-4bit on 2x Spark vs 2x RTX 6000 96GB - performance and energy efficiency",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1lfhj/minimax_m27_awq4bit_on_2x_spark_vs_2x_rtx_6000",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1lfhj/minimax_m27_awq4bit_on_2x_spark_vs_2x_rtx_6000/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1lfhj/minimax_m27_awq4bit_on_2x_spark_vs_2x_rtx_6000",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "Hello, This model/quant is my daily driver and I wanted to have some reference benchs for comparing my setup with a 3x more expensive and 4x time power hungry setup. Results first, methodology after, link at the end with all results Model: cyankiwi/MiniMax-M2.7-AWQ-4bit Results (c1) https://preview.redd.it/dzp6qzfc0pyg1.png?width=858&format=png&auto=webp&s=368debb16760ecaaf8d5bd4013bfeaa5ef940a69 https://preview.redd.it/2gziemld0pyg1.png?width=859&format=png&auto=webp&s=84e2f3c389013854734fecf89a25d1dd095f4d62 (tried to upload the table as text, didn't work as expected) So to my surprise, the",
-          "image_url": "https://external-preview.redd.it/_EQgAAqztVkV0OOAhLve0ynDlxEx_QXNvUUJ8IrRHFE.png?width=140&height=75&auto=webp&s=c9d24c29dfe1b4351ed248783069abd434421c9e",
-          "image_source": "rss_media",
-          "published_at": "2026-05-02T09:44:12.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "MiniMax M2.7 AWQ-4bit on 2x Spark vs 2x RTX 6000 96GB - performance and energy efficiency",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1lfhj/minimax_m27_awq4bit_on_2x_spark_vs_2x_rtx_6000",
-          "published_at": "2026-05-02T09:44:12.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1lfhj/minimax_m27_awq4bit_on_2x_spark_vs_2x_rtx_6000",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "discussion",
-      "quality": "mixed",
-      "one_liner": "Hello, This model/quant is my daily driver and I wanted to have some reference benchs for comparing my setup with a 3x more expensive and 4x time power hungry setup. Results first, methodology after, ",
+      "one_liner": "Proposal for community site to share LLM hardware/config setups",
       "novelty": 0,
       "trust": 0.5,
       "score": 0.346
