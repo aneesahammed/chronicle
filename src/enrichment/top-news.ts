@@ -240,42 +240,56 @@ function summaryInput(draft: EnrichmentDraft, index: number): SummaryInput {
 }
 
 async function summarizeWithGroq(items: SummaryInput[], apiKey: string): Promise<SummaryOutput[]> {
+  const body = {
+    model: GROQ_MODEL,
+    temperature: 0,
+    max_completion_tokens: 1200,
+    response_format: { type: "json_object" },
+    messages: [
+      {
+        role: "system",
+        content: [
+          "You write compact AI news briefs for experienced builders.",
+          "Return only JSON. Do not quote long source text.",
+          "Summaries must be factual, plain English, and non-marketing.",
+        ].join(" "),
+      },
+      {
+        role: "user",
+        content: [
+          "For each item, write:",
+          "- dek: one sentence, <= 180 chars",
+          "- brief: one or two short paragraphs, <= 420 chars total",
+          "- image_alt: <= 120 chars, if an image is likely useful",
+          "",
+          "Return shape:",
+          '{"items":[{"index":0,"dek":"...","brief":"...","image_alt":"..."}]}',
+          "",
+          JSON.stringify(items, null, 2),
+        ].join("\n"),
+      },
+    ],
+  };
+  try {
+    return parseSummaryContent(await fetchGroqSummary(apiKey, body));
+  } catch (error) {
+    if (!isGroqJsonValidationError(error)) throw error;
+    console.warn("[top-news] Groq JSON mode validation failed; retrying without response_format");
+    return parseSummaryContent(await fetchGroqSummary(apiKey, withoutResponseFormat(body)));
+  }
+}
+
+async function fetchGroqSummary(
+  apiKey: string,
+  body: Record<string, unknown>,
+): Promise<string> {
   const response = await fetch(GROQ_CHAT_COMPLETIONS_URL, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${apiKey}`,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      model: GROQ_MODEL,
-      temperature: 0,
-      max_completion_tokens: 1200,
-      response_format: { type: "json_object" },
-      messages: [
-        {
-          role: "system",
-          content: [
-            "You write compact AI news briefs for experienced builders.",
-            "Return only JSON. Do not quote long source text.",
-            "Summaries must be factual, plain English, and non-marketing.",
-          ].join(" "),
-        },
-        {
-          role: "user",
-          content: [
-            "For each item, write:",
-            "- dek: one sentence, <= 180 chars",
-            "- brief: one or two short paragraphs, <= 420 chars total",
-            "- image_alt: <= 120 chars, if an image is likely useful",
-            "",
-            "Return shape:",
-            '{"items":[{"index":0,"dek":"...","brief":"...","image_alt":"..."}]}',
-            "",
-            JSON.stringify(items, null, 2),
-          ].join("\n"),
-        },
-      ],
-    }),
+    body: JSON.stringify(body),
   });
   const text = await response.text();
   let data: unknown;
@@ -290,14 +304,23 @@ async function summarizeWithGroq(items: SummaryInput[], apiKey: string): Promise
       : "unknown error";
     throw new Error(`Groq request failed (${response.status}): ${message}`);
   }
-  const content = isRecord(data)
+  return isRecord(data)
     && Array.isArray(data.choices)
     && isRecord(data.choices[0])
     && isRecord(data.choices[0].message)
     && typeof data.choices[0].message.content === "string"
     ? data.choices[0].message.content
     : "";
-  return parseSummaryContent(content);
+}
+
+function isGroqJsonValidationError(error: unknown): boolean {
+  const message = (error as Error).message?.toLowerCase?.() ?? "";
+  return message.includes("validate json") || message.includes("failed_generation");
+}
+
+function withoutResponseFormat<T extends Record<string, unknown>>(body: T): T {
+  const { response_format: _responseFormat, ...rest } = body;
+  return rest as T;
 }
 
 function parseSummaryContent(content: string): SummaryOutput[] {

@@ -27,7 +27,7 @@ test("classifyClusters reads Groq chat completion JSON in item order", async () 
   ], "test-key", async (request) => {
     assert.equal(request.model, "qwen/qwen3-32b");
     assert.equal(request.max_completion_tokens, 1024);
-    assert.equal(request.response_format.type, "json_object");
+    assert.equal(request.response_format?.type, "json_object");
     return {
       choices: [{
         message: {
@@ -57,6 +57,36 @@ test("classifyClusters reads Groq chat completion JSON in item order", async () 
   assert.equal(result.items[0].one_liner, "Paper improves inference throughput.");
   assert.equal(result.items[1].kind, "news");
   assert.equal(result.items[1].quality, "mixed");
+});
+
+test("classifyClusters retries without JSON mode when Groq rejects structured output", async () => {
+  let calls = 0;
+  const result = await classifyClusters([cluster()], "test-key", async (request) => {
+    calls++;
+    if (calls === 1) {
+      assert.equal(request.response_format?.type, "json_object");
+      throw new Error("Groq request failed (400): Failed to validate JSON. See failed_generation for more details.");
+    }
+    assert.equal(request.response_format, undefined);
+    return {
+      choices: [{
+        message: {
+          content: JSON.stringify({
+            items: [{
+              index: 0,
+              kind: "paper",
+              quality: "signal",
+              one_liner: "Retry returned valid JSON.",
+            }],
+          }),
+        },
+      }],
+    };
+  });
+
+  assert.equal(calls, 2);
+  assert.equal(result.mode, "llm");
+  assert.equal(result.items[0].one_liner, "Retry returned valid JSON.");
 });
 
 test("fallback classifier demotes low-effort single-source discussion prompts", async () => {

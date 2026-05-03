@@ -95,7 +95,7 @@ interface ChatCompletionRequest {
   model: string;
   temperature: number;
   max_completion_tokens: number;
-  response_format: { type: "json_object" };
+  response_format?: { type: "json_object" };
   messages: Array<{
     role: "system" | "user";
     content: string;
@@ -223,7 +223,7 @@ async function classifyBatch(
     `Return one entry per item, same index.\n\n` +
     JSON.stringify(payload, null, 2);
 
-  const resp = await runner({
+  const request: ChatCompletionRequest = {
     model: MODEL,
     temperature: 0,
     max_completion_tokens: MAX_COMPLETION_TOKENS,
@@ -232,7 +232,16 @@ async function classifyBatch(
       { role: "system", content: `${SYSTEM}\n\n${JSON_INSTRUCTIONS}` },
       { role: "user", content: userMsg },
     ],
-  });
+  };
+
+  let resp: ChatCompletionResponse;
+  try {
+    resp = await runner(request);
+  } catch (error) {
+    if (!isGroqJsonValidationError(error)) throw error;
+    console.warn("[llm] Groq JSON mode validation failed; retrying without response_format");
+    resp = await runner(withoutResponseFormat(request));
+  }
 
   const content = resp.choices?.[0]?.message?.content;
   if (!content) {
@@ -252,6 +261,16 @@ async function classifyBatch(
       one_liner: String(got.one_liner || c.primary.title).slice(0, 200),
     };
   });
+}
+
+function isGroqJsonValidationError(error: unknown): boolean {
+  const message = (error as Error).message?.toLowerCase?.() ?? "";
+  return message.includes("validate json") || message.includes("failed_generation");
+}
+
+function withoutResponseFormat(request: ChatCompletionRequest): ChatCompletionRequest {
+  const { response_format: _responseFormat, ...rest } = request;
+  return rest;
 }
 
 function fallback(c: Cluster): Classification {
