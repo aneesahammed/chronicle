@@ -18,6 +18,7 @@ export type Kind =
 export type Quality = "signal" | "mixed" | "hype";
 export type RefreshStatus = "ok" | "partial" | "failed";
 export type ClassificationMode = "llm" | "partial" | "fallback";
+export type EnrichmentStatus = "ok" | "metadata_only" | "failed";
 export type PublishedAtSource =
   | "feed"
   | "api"
@@ -58,6 +59,8 @@ export interface RawItem {
   discussion_url?: string;
   discussion_source?: string;
   summary?: string;
+  image_url?: string;
+  image_source?: string;
   published_at: string;   // ISO
   published_at_source: PublishedAtSource;
   date_confidence: DateConfidence;
@@ -117,8 +120,26 @@ export interface FeedFile {
   source_failed: number;
   failed_sources: SourceFetchFailure[];
   source_health: SourceHealth[];
+  top_news?: TopNewsItem[];
   count: number;
   clusters: ScoredCluster[];
+}
+
+export interface TopNewsItem {
+  cluster_id: string;
+  title: string;
+  url: string;
+  source_name: string;
+  published_at: string;
+  kind: Kind;
+  score: number;
+  dek: string;
+  brief: string;
+  image_url?: string;
+  image_alt?: string;
+  image_source?: string;
+  enrichment_status: EnrichmentStatus;
+  enriched_at: string;
 }
 
 export interface SourceFetchFailure {

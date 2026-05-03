@@ -199,6 +199,116 @@
   }
   .notice.is-visible { display: block; }
 
+  /* Top News — compact editorial layer, still feed-first */
+  .top-news {
+    display: grid;
+    gap: 12px;
+    padding: 16px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .top-news[hidden] { display: none; }
+  .top-news-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--ink-3);
+    font: 10px/1 var(--font-mono);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .top-news-head::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+  .top-news-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.18fr) minmax(260px, 0.82fr);
+    gap: 18px;
+  }
+  .top-story {
+    display: grid;
+    gap: 10px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .top-story.has-image {
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 34%);
+    align-items: start;
+  }
+  .top-story-title {
+    color: var(--ink);
+    font: 700 24px/1.18 var(--font-display);
+    letter-spacing: -0.006em;
+    text-wrap: pretty;
+  }
+  .top-story-title a,
+  .top-row-title a {
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s ease;
+  }
+  .top-story-title a:hover,
+  .top-row-title a:hover { border-color: var(--accent); }
+  .top-story-dek {
+    margin-top: 8px;
+    color: var(--ink-2);
+    font: 15px/1.5 var(--font-body);
+    text-wrap: pretty;
+  }
+  .top-story-brief {
+    margin-top: 8px;
+    color: var(--ink-2);
+    font: 13px/1.6 var(--font-body);
+    max-width: 72ch;
+  }
+  .top-news-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+    color: var(--ink-3);
+    font: 11px/1.4 var(--font-mono);
+    letter-spacing: 0.03em;
+  }
+  .top-news-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border: 1px solid var(--rule);
+    background: var(--paper-2);
+  }
+  .top-list {
+    display: grid;
+    align-content: start;
+    gap: 0;
+    border-top: 1px solid var(--rule);
+  }
+  .top-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 86px;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .top-row:not(.has-image) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .top-row-title {
+    color: var(--ink);
+    font: 600 15px/1.35 var(--font-display);
+    text-wrap: pretty;
+  }
+  .top-row-dek {
+    margin-top: 5px;
+    color: var(--ink-2);
+    font: 13px/1.45 var(--font-body);
+  }
+  .top-row .top-news-image {
+    aspect-ratio: 1 / 1;
+  }
+
   /* Filter bar — inline pill row */
   .filterbar {
     display: flex;
@@ -587,6 +697,12 @@
     }
     .filterbar { gap: 10px; padding: 12px 0; }
     .filter-row.filter-extra { margin-left: 0; }
+    .top-news-grid,
+    .top-story.has-image {
+      grid-template-columns: 1fr;
+    }
+    .top-story-title { font-size: 21px; }
+    .top-list { border-top: 0; }
     .item-title { font-size: 18px; }
     .item-meta { gap: 6px; }
     .item-meta .spacer { display: none; }
@@ -617,6 +733,11 @@
     <h1 id="page-title" class="vh">Chronicle</h1>
     <p class="lede-text">The latest in AI, clustered and ranked. Repeated hype gets pushed down so the actual signal stays up top.</p>
     <div class="notice" id="notice" role="status"></div>
+  </section>
+
+  <section class="top-news" id="topNews" aria-labelledby="top-news-title" hidden>
+    <div class="top-news-head" id="top-news-title">Top News</div>
+    <div class="top-news-grid" id="topNewsGrid"></div>
   </section>
 
   <nav class="filterbar" aria-label="Feed filters">
@@ -783,6 +904,7 @@ async function loadFeed() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     state.data = await response.json();
     updateStatus();
+    renderTopNews();
     renderArchiveSelect();
     renderArchiveBanner();
     renderFilterShell();
@@ -791,6 +913,8 @@ async function loadFeed() {
     showNotice(`Chronicle could not load the feed: ${error.message}`);
     document.getElementById("statusText").textContent = "feed unavailable";
     document.getElementById("statusLine").classList.add("is-failed");
+    document.getElementById("topNews").hidden = true;
+    document.getElementById("topNewsGrid").replaceChildren();
     document.getElementById("feed").replaceChildren(emptyState("Feed unavailable", "The static feed could not be loaded. Try refreshing in a minute."));
     document.getElementById("healthStrip").textContent = "feed unavailable";
   }
@@ -804,6 +928,101 @@ async function loadArchiveIndex() {
     renderArchiveSelect();
   } catch (_) {
     state.archiveIndex = null;
+  }
+}
+
+function renderTopNews() {
+  const section = document.getElementById("topNews");
+  const grid = document.getElementById("topNewsGrid");
+  const items = Array.isArray(state.data?.top_news) ? state.data.top_news.filter(isUsableTopNews) : [];
+  if (!items.length) {
+    section.hidden = true;
+    grid.replaceChildren();
+    return;
+  }
+
+  const lead = renderTopStory(items[0]);
+  const rest = node("div", "top-list");
+  items.slice(1).forEach((item) => rest.appendChild(renderTopRow(item)));
+  grid.replaceChildren(lead, rest);
+  section.hidden = false;
+}
+
+function isUsableTopNews(item) {
+  return item
+    && typeof item.title === "string"
+    && typeof item.url === "string"
+    && /^https?:\/\//i.test(item.url)
+    && typeof item.dek === "string"
+    && typeof item.brief === "string";
+}
+
+function renderTopStory(item) {
+  const article = node("article", "top-story");
+  const image = topNewsImage(item, "top-news-image");
+  if (image) article.classList.add("has-image");
+
+  const body = node("div", "top-story-body");
+  const title = node("h2", "top-story-title");
+  title.appendChild(link(item.url, decodeText(item.title)));
+  body.append(title);
+  body.append(node("p", "top-story-dek", decodeText(item.dek)));
+  if (item.brief && normalizeText(item.brief) !== normalizeText(item.dek)) {
+    body.append(node("p", "top-story-brief", decodeText(item.brief)));
+  }
+  body.append(renderTopNewsMeta(item));
+  article.append(body);
+  if (image) article.append(image);
+  return article;
+}
+
+function renderTopRow(item) {
+  const row = node("article", "top-row");
+  const image = topNewsImage(item, "top-news-image");
+  if (image) row.classList.add("has-image");
+  const body = node("div", "top-row-body");
+  const title = node("h3", "top-row-title");
+  title.appendChild(link(item.url, decodeText(item.title)));
+  body.append(title);
+  body.append(node("p", "top-row-dek", decodeText(item.dek)));
+  body.append(renderTopNewsMeta(item));
+  row.append(body);
+  if (image) row.append(image);
+  return row;
+}
+
+function renderTopNewsMeta(item) {
+  const meta = node("div", "top-news-meta");
+  meta.append(node("span", "source", item.source_name || "Unknown source"));
+  meta.append(sep(), document.createTextNode(relTime(parseDate(item.published_at)) || "unknown"));
+  if (item.kind && item.kind !== "unknown") meta.append(sep(), document.createTextNode(KIND_LABELS[item.kind] || item.kind));
+  const score = Number(item.score);
+  if (Number.isFinite(score)) meta.append(sep(), document.createTextNode(score.toFixed(2)));
+  return meta;
+}
+
+function topNewsImage(item, className) {
+  const src = safeImageUrl(item.image_url);
+  if (!src) return null;
+  const img = document.createElement("img");
+  img.className = className;
+  img.src = src;
+  img.alt = item.image_alt || "";
+  img.loading = "lazy";
+  img.decoding = "async";
+  img.referrerPolicy = "no-referrer";
+  img.addEventListener("error", () => {
+    img.remove();
+  }, { once: true });
+  return img;
+}
+
+function safeImageUrl(value) {
+  try {
+    const url = new URL(String(value || ""));
+    return url.protocol === "https:" ? url.toString() : "";
+  } catch (_) {
+    return "";
   }
 }
 

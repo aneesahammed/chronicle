@@ -1,5 +1,6 @@
 import Parser from "rss-parser";
 import { XMLParser } from "fast-xml-parser";
+import { extractFirstImageFromHtml, sanitizeImageUrl } from "../enrichment/images.ts";
 import { canonicalizeUrl, urlHash } from "../pipeline/canonicalize.ts";
 import type {
   DateConfidence,
@@ -21,7 +22,25 @@ const SITEMAP_MIN_CANDIDATES = 40;
 const UNKNOWN_PUBLISHED_AT = "1970-01-01T00:00:00.000Z";
 // rss-parser delegates to xml2js/sax-js, which does not dereference external
 // entities. We still strip HTML from summaries before they enter the feed.
-const rss = new Parser({ timeout: TIMEOUT_MS });
+interface RssMediaNode {
+  $?: {
+    url?: string;
+    type?: string;
+  };
+}
+interface RssCustomItem {
+  mediaContent?: RssMediaNode | RssMediaNode[];
+  mediaThumbnail?: RssMediaNode | RssMediaNode[];
+}
+const rss = new Parser<unknown, RssCustomItem>({
+  timeout: TIMEOUT_MS,
+  customFields: {
+    item: [
+      ["media:content", "mediaContent", { keepArray: true }],
+      ["media:thumbnail", "mediaThumbnail", { keepArray: true }],
+    ],
+  },
+});
 const xml = new XMLParser({ ignoreAttributes: true });
 
 // ---- Generic RSS ----------------------------------------------------------
@@ -30,16 +49,21 @@ async function fetchRss(s: SourceConfig, kw: string[]): Promise<RawItem[]> {
   const items = (feed.items ?? []).slice(0, s.limit);
   const isDiscussionFeed = s.id === "lobsters_ai" || s.id.startsWith("r_");
   return items
-    .map((it) => normalize(s, {
-      title: it.title ?? "",
-      url: it.link ?? "",
-      summary: stripHtml(it.contentSnippet ?? it.content ?? ""),
-      published_at: it.isoDate ?? it.pubDate ?? UNKNOWN_PUBLISHED_AT,
-      published_at_source: it.isoDate || it.pubDate ? "feed" : "generated_fallback",
-      date_confidence: it.isoDate || it.pubDate ? "high" : "low",
-      discussion_url: isDiscussionFeed ? it.link ?? "" : undefined,
-      discussion_source: isDiscussionFeed ? s.name : undefined,
-    }))
+    .map((it) => {
+      const image = extractRssImage(it);
+      return normalize(s, {
+        title: it.title ?? "",
+        url: it.link ?? "",
+        summary: stripHtml(it.contentSnippet ?? it.content ?? ""),
+        image_url: image?.url,
+        image_source: image?.source,
+        published_at: it.isoDate ?? it.pubDate ?? UNKNOWN_PUBLISHED_AT,
+        published_at_source: it.isoDate || it.pubDate ? "feed" : "generated_fallback",
+        date_confidence: it.isoDate || it.pubDate ? "high" : "low",
+        discussion_url: isDiscussionFeed ? it.link ?? "" : undefined,
+        discussion_source: isDiscussionFeed ? s.name : undefined,
+      });
+    })
     .filter(Boolean)
     .filter((it) => !s.ai_filter || isAiRelevant(it as RawItem, kw)) as RawItem[];
 }
@@ -190,6 +214,8 @@ async function fetchSitemap(s: SourceConfig, kw: string[]): Promise<RawItem[]> {
         title: titleWithPrefix(details.title ?? titleFromUrl(entry.loc), s.title_prefix),
         url: entry.loc,
         summary: details.description ?? "",
+        image_url: details.image_url,
+        image_source: details.image_url ? "page_metadata" : undefined,
         published_at: validDateOrFallback(details.published_at ?? entry.lastmod),
         published_at_source: hasPageDate
           ? "page_metadata"
@@ -242,6 +268,7 @@ interface SitemapEntry {
 interface PageDetails {
   title?: string;
   description?: string;
+  image_url?: string;
   published_at?: string;
 }
 
@@ -255,6 +282,11 @@ async function fetchPageDetails(url: string): Promise<PageDetails> {
         "og:description",
         "twitter:description",
       ]),
+      image_url: sanitizeImageUrl(extractMetaContent(html, [
+        "og:image",
+        "twitter:image",
+        "thumbnail",
+      ]), url),
       published_at: extractPublishedDate(html),
     };
   } catch (e) {
@@ -279,6 +311,8 @@ function normalize(
     title: string;
     url: string;
     summary?: string;
+    image_url?: string;
+    image_source?: string;
     published_at: string;
     published_at_source: PublishedAtSource;
     date_confidence: DateConfidence;
@@ -303,11 +337,34 @@ function normalize(
     discussion_url: discussion || undefined,
     discussion_source: discussion ? raw.discussion_source : undefined,
     summary: raw.summary?.trim() || undefined,
+    image_url: raw.image_url,
+    image_source: raw.image_url ? raw.image_source : undefined,
     published_at: raw.published_at,
     published_at_source: raw.published_at_source,
     date_confidence: raw.date_confidence,
     engagement: raw.engagement,
   };
+}
+
+function extractRssImage(item: Parser.Item & RssCustomItem): { url: string; source: string } | undefined {
+  const enclosure = item.enclosure;
+  const enclosureUrl = sanitizeImageUrl(enclosure?.url);
+  if (enclosureUrl && (!enclosure?.type || enclosure.type.toLowerCase().startsWith("image/"))) {
+    return { url: enclosureUrl, source: "rss_enclosure" };
+  }
+
+  for (const node of asArray(item.mediaContent)) {
+    const url = sanitizeImageUrl(node.$?.url);
+    const type = node.$?.type?.toLowerCase() ?? "";
+    if (url && (!type || type.startsWith("image/"))) return { url, source: "rss_media" };
+  }
+  for (const node of asArray(item.mediaThumbnail)) {
+    const url = sanitizeImageUrl(node.$?.url);
+    if (url) return { url, source: "rss_media" };
+  }
+
+  const htmlImage = extractFirstImageFromHtml(item.content);
+  return htmlImage ? { url: htmlImage, source: "rss_content" } : undefined;
 }
 
 function stripHtml(s: string): string {

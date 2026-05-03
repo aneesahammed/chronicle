@@ -9,7 +9,8 @@ import {
 } from "./pipeline/novelty.ts";
 import { classifyClusters } from "./llm/classify.ts";
 import { scoreCluster } from "./pipeline/score.ts";
-import type { FeedFile, Registry, SourceHealth } from "./types.ts";
+import { buildTopNews } from "./enrichment/top-news.ts";
+import type { FeedFile, Registry, SourceHealth, TopNewsItem } from "./types.ts";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -43,6 +44,7 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
   const dataDir = options.dataDir ?? DATA_DIR;
   const feedOut = path.join(publicDir, "feed.json");
   const historyOut = path.join(dataDir, "history.json");
+  const enrichmentsOut = path.join(dataDir, "enrichments.json");
   const windowHours = Number(env.WINDOW_HOURS ?? WINDOW_HOURS);
   const maxOutput = Number(env.MAX_OUTPUT ?? MAX_OUTPUT);
 
@@ -110,6 +112,12 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
     return;
   }
 
+  const topNews = await buildTopNewsSafely(scored, {
+    now,
+    cachePath: enrichmentsOut,
+    env,
+  });
+
   // 7. Emit feed
   const feed: FeedFile = {
     generated_at: now.toISOString(),
@@ -124,6 +132,7 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
     source_failed: fetched.source_failed,
     failed_sources: fetched.failed_sources,
     source_health: sourceHealth,
+    ...(topNews.length ? { top_news: topNews } : {}),
     count: scored.length,
     clusters: scored,
   };
@@ -191,12 +200,31 @@ async function preservePreviousFeed(
     source_failed: options.fetched.source_failed,
     failed_sources: options.fetched.failed_sources,
     source_health: options.fetched.source_health ?? [],
+    ...(previousFeed.top_news?.length ? { top_news: previousFeed.top_news } : {}),
     count: previousFeed.clusters.length,
     clusters: previousFeed.clusters,
   };
   await fs.mkdir(publicDir, { recursive: true });
   await fs.writeFile(feedOut, JSON.stringify(preserved, null, 2));
   console.warn(`[write] preserved previous feed because ${options.reason}`);
+}
+
+async function buildTopNewsSafely(
+  scored: FeedFile["clusters"],
+  options: {
+    now: Date;
+    cachePath: string;
+    env: NodeJS.ProcessEnv;
+  },
+): Promise<TopNewsItem[]> {
+  try {
+    const topNews = await buildTopNews(scored, options);
+    console.log(`[top-news] kept ${topNews.length}`);
+    return topNews;
+  } catch (error) {
+    console.warn(`[top-news] enrichment skipped: ${(error as Error).message}`);
+    return [];
+  }
 }
 
 function enrichSourceHealth(

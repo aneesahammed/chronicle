@@ -139,6 +139,81 @@ test("fetchAll uses page published date instead of sitemap lastmod", async () =>
   assert.equal(result.items[0].published_at, "2026-03-25T12:00:00.000Z");
 });
 
+test("fetchAll extracts safe RSS and page metadata images", async () => {
+  globalThis.fetch = async (input) => {
+    const url = String(input);
+    if (url.endsWith("/feed.xml")) {
+      return new Response(`
+        <?xml version="1.0" encoding="UTF-8"?>
+        <rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+          <channel>
+            <item>
+              <title>AI image story</title>
+              <link>https://example.com/news/image-story</link>
+              <pubDate>Sat, 02 May 2026 00:00:00 GMT</pubDate>
+              <media:content url="https://cdn.example.com/story.jpg" type="image/jpeg" />
+            </item>
+          </channel>
+        </rss>
+      `);
+    }
+    return new Response(`
+      <html>
+        <head>
+          <meta property="og:title" content="Page image story">
+          <meta property="og:image" content="/og.png">
+          <script type="application/ld+json">
+            {"datePublished":"2026-05-02T00:00:00.000Z"}
+          </script>
+        </head>
+      </html>
+    `);
+  };
+
+  const rssResult = await fetchAll({
+    sources: [{
+      id: "rss",
+      name: "RSS",
+      type: "rss",
+      url: "https://example.com/feed.xml",
+      trust: 0.7,
+      limit: 5,
+    }],
+    hn_ai_keywords: [],
+  });
+  assert.equal(rssResult.items[0].image_url, "https://cdn.example.com/story.jpg");
+
+  globalThis.fetch = async (input) => {
+    const url = String(input);
+    if (url.endsWith("/sitemap.xml")) {
+      return new Response(`
+        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+          <url><loc>https://example.com/news/page-image-story</loc><lastmod>2026-05-02T00:00:00.000Z</lastmod></url>
+        </urlset>
+      `);
+    }
+    return new Response(`
+      <meta property="og:title" content="Page image story">
+      <meta property="og:image" content="/og.png">
+      <script type="application/ld+json">{"datePublished":"2026-05-02T00:00:00.000Z"}</script>
+    `);
+  };
+
+  const sitemapResult = await fetchAll({
+    sources: [{
+      id: "site",
+      name: "Site",
+      type: "sitemap",
+      url: "https://example.com/sitemap.xml",
+      trust: 0.7,
+      url_include: ["example.com/news/"],
+      limit: 5,
+    }],
+    hn_ai_keywords: [],
+  });
+  assert.equal(sitemapResult.items[0].image_url, "https://example.com/og.png");
+});
+
 test("fetchAll follows more than five child sitemaps", async () => {
   globalThis.fetch = async (input) => {
     const url = String(input);

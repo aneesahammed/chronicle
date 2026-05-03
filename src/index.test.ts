@@ -26,6 +26,7 @@ sources:
     type: hf_models
     url: https://source.example.test/models
     trust: 0.5
+    kind_hint: model_release
     limit: 5
 hn_ai_keywords:
   - ai
@@ -82,6 +83,7 @@ sources:
     type: hf_models
     url: https://source.example.test/models
     trust: 0.5
+    kind_hint: model_release
     limit: 5
 hn_ai_keywords:
   - ai
@@ -137,6 +139,7 @@ sources:
     type: hf_models
     url: https://source.example.test/models
     trust: 0.5
+    kind_hint: model_release
     limit: 5
 hn_ai_keywords:
   - ai
@@ -154,9 +157,12 @@ hn_ai_keywords:
   assert.equal(feed.source_health[0].fresh_count, 1);
   assert.equal(feed.clusters[0].primary.published_at_source, "api_last_modified");
   assert.equal(feed.clusters[0].source_trail.length, 1);
+  assert.equal(feed.top_news.length, 1);
+  assert.equal(feed.top_news[0].enrichment_status, "metadata_only");
 
   const archived = JSON.parse(await fs.readFile(path.join(publicDir, "daily/2026-05-02/feed.json"), "utf8"));
   assert.equal(archived.generated_at, feed.generated_at);
+  assert.deepEqual(archived.top_news, feed.top_news);
   const archiveIndex = JSON.parse(await fs.readFile(path.join(publicDir, "daily/index.json"), "utf8"));
   assert.equal(archiveIndex.days[0].date, "2026-05-02");
   assert.match(await fs.readFile(path.join(publicDir, "sitemap.xml"), "utf8"), /chronicle\.tinycrafts\.ai\/daily\/2026-05-02\//);

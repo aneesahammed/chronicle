@@ -17,6 +17,7 @@ const kinds = new Set([
 const qualities = new Set(['signal', 'mixed', 'hype']);
 const refreshStatuses = new Set(['ok', 'partial', 'failed']);
 const classificationModes = new Set(['llm', 'partial', 'fallback']);
+const enrichmentStatuses = new Set(['ok', 'metadata_only', 'failed']);
 const publishedAtSources = new Set([
   'feed',
   'api',
@@ -91,6 +92,7 @@ export function validateChronicleFeed(feed) {
     failures.push('Chronicle feed clusters should be an array');
     return failures;
   }
+  if (feed.top_news !== undefined) validateTopNews(feed.top_news, failures);
   if (Number.isFinite(feed.count) && feed.count !== feed.clusters.length) {
     failures.push(`Chronicle count ${feed.count} does not match clusters length ${feed.clusters.length}`);
   }
@@ -100,6 +102,42 @@ export function validateChronicleFeed(feed) {
   });
 
   return failures;
+}
+
+function validateTopNews(topNews, failures) {
+  if (!Array.isArray(topNews)) {
+    failures.push('Chronicle top_news should be an array when present');
+    return;
+  }
+  if (topNews.length > 5) failures.push(`Chronicle top_news has too many items: ${topNews.length}`);
+  topNews.forEach((item, index) => validateTopNewsItem(item, index, failures));
+}
+
+function validateTopNewsItem(item, index, failures) {
+  const label = `Chronicle top_news ${index}`;
+  if (!item || typeof item !== 'object' || Array.isArray(item)) {
+    failures.push(`${label} should be an object`);
+    return;
+  }
+  for (const key of ['cluster_id', 'title', 'url', 'source_name', 'published_at', 'kind', 'dek', 'brief', 'enrichment_status', 'enriched_at']) {
+    if (!item[key] || typeof item[key] !== 'string') failures.push(`${label} missing string ${key}`);
+  }
+  if (!isHttpUrl(item.url)) failures.push(`${label} url should be http(s): ${item.url}`);
+  if (!isIsoDate(item.published_at)) failures.push(`${label} published_at should be an ISO date`);
+  if (!isIsoDate(item.enriched_at)) failures.push(`${label} enriched_at should be an ISO date`);
+  if (!kinds.has(item.kind)) failures.push(`${label} has invalid kind: ${item.kind}`);
+  if (!isUnitNumber(item.score)) failures.push(`${label} score should be a number from 0 to 1`);
+  if (!enrichmentStatuses.has(item.enrichment_status)) {
+    failures.push(`${label} has invalid enrichment_status: ${item.enrichment_status}`);
+  }
+  validateBoundedString(item.title, `${label} title`, 240, failures);
+  validateBoundedString(item.dek, `${label} dek`, 220, failures);
+  validateBoundedString(item.brief, `${label} brief`, 500, failures);
+  if (item.image_url !== undefined && !isHttpsUrl(item.image_url)) {
+    failures.push(`${label} image_url should be https: ${item.image_url}`);
+  }
+  if (item.image_alt !== undefined) validateBoundedString(item.image_alt, `${label} image_alt`, 140, failures);
+  if (item.image_source !== undefined) validateBoundedString(item.image_source, `${label} image_source`, 100, failures);
 }
 
 function validateCluster(cluster, index, failures) {
@@ -184,6 +222,21 @@ function isHttpUrl(value) {
     return url.protocol === 'http:' || url.protocol === 'https:';
   } catch {
     return false;
+  }
+}
+
+function isHttpsUrl(value) {
+  try {
+    const url = new URL(value);
+    return url.protocol === 'https:';
+  } catch {
+    return false;
+  }
+}
+
+function validateBoundedString(value, label, max, failures) {
+  if (value !== undefined && (typeof value !== 'string' || value.length > max)) {
+    failures.push(`${label} should be a string <= ${max} chars`);
   }
 }
 
