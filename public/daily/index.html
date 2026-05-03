@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#f7f8fa" id="themeColor">
-<title>Chronicle — daily AI signal</title>
-<meta name="description" content="Chronicle is a daily AI signal filter for builders, clustered, classified, and ranked so repeated hype stays down.">
-<link rel="canonical" href="https://chronicle.tinycrafts.ai/">
-<meta property="og:title" content="Chronicle">
-<meta property="og:description" content="Daily AI/ML links clustered, classified, and ranked for builders.">
+<title>Chronicle archive — daily AI signal</title>
+<meta name="description" content="Browse past daily snapshots of the Chronicle AI signal feed.">
+<link rel="canonical" href="https://chronicle.tinycrafts.ai/daily/">
+<meta property="og:title" content="Chronicle archive">
+<meta property="og:description" content="Past daily snapshots of the Chronicle feed.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://chronicle.tinycrafts.ai/">
-<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<meta property="og:url" content="https://chronicle.tinycrafts.ai/daily/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@600;700&family=Public+Sans:wght@400&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -30,7 +30,6 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; }
   * { margin: 0; }
-  /* Cool slate/neutral palette — deliberately not warm cream */
   :root {
     color-scheme: light;
     --paper: #f7f8fa;
@@ -44,16 +43,9 @@
     --accent: #1d4ed8;
     --accent-2: #1e3a8a;
     --good: #0f7a3e;
-    --mixed: #8a5a00;
-    --bad: #b3261e;
-    --warn-bg: #fff5d9;
-    --warn-rule: #d9a93a;
-    /* Display: Atkinson Hyperlegible Next (character disambiguation, Braille Institute).
-       Body: Public Sans (neutral newsroom body, USWDS).
-       Mono: IBM Plex Mono (canonical Public Sans companion). */
     --font-display: "Atkinson Hyperlegible Next", system-ui, -apple-system, sans-serif;
     --font-body: "Public Sans", system-ui, -apple-system, sans-serif;
-    --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   }
   :root[data-theme="dark"] {
     color-scheme: dark;
@@ -68,10 +60,6 @@
     --accent: #93b4ff;
     --accent-2: #c7d4ff;
     --good: #6ed7a0;
-    --mixed: #f0bd55;
-    --bad: #ff8e83;
-    --warn-bg: #2c2410;
-    --warn-rule: #80631f;
   }
   html { min-height: 100%; scroll-behavior: smooth; }
   body {
@@ -89,32 +77,9 @@
   a { color: inherit; text-decoration: none; }
   a:hover { color: var(--accent-2); }
   button, a { touch-action: manipulation; }
-  a:focus-visible, button:focus-visible, summary:focus-visible {
+  a:focus-visible, button:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 4px;
-  }
-  .skip-link {
-    position: fixed;
-    top: 16px;
-    left: 16px;
-    z-index: 30;
-    transform: translateY(-150%);
-    background: var(--ink);
-    color: var(--paper);
-    padding: 10px 14px;
-    font: 12px/1 var(--font-mono);
-  }
-  .skip-link:focus { transform: translateY(0); }
-  .vh {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    white-space: nowrap;
-    border: 0;
   }
   .shell {
     width: min(100%, 1080px);
@@ -122,7 +87,6 @@
     padding: 22px 40px 40px;
   }
 
-  /* Masthead — single-line, restrained */
   .masthead {
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -137,7 +101,7 @@
     letter-spacing: -0.01em;
   }
   .wordmark::after {
-    content: "daily AI signal";
+    content: "archive";
     color: var(--ink-3);
     font: 11px/1 var(--font-mono);
     letter-spacing: 0.12em;
@@ -146,501 +110,119 @@
     border-left: 1px solid var(--rule);
     padding-left: 12px;
   }
-  .status-line {
+  .back-link {
     justify-self: end;
     color: var(--ink-3);
-    font: 11px/1.4 var(--font-mono);
-    letter-spacing: 0.04em;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .status-line .dot {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--good);
-  }
-  .status-line.is-stale .dot { background: var(--mixed); }
-  .status-line.is-failed .dot { background: var(--bad); }
-  .theme-toggle {
-    min-height: 32px;
-    border: 1px solid var(--rule);
-    border-radius: 999px;
-    background: transparent;
-    color: var(--ink-2);
-    cursor: pointer;
-    padding: 0 12px;
     font: 11px/1 var(--font-mono);
     letter-spacing: 0.04em;
-    transition: border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+    text-decoration: underline;
+    text-decoration-color: var(--rule);
+    text-underline-offset: 4px;
   }
-  .theme-toggle:hover { border-color: var(--accent); color: var(--accent-2); }
-  .theme-toggle:active { transform: translateY(1px); }
+  .back-link:hover { color: var(--accent-2); text-decoration-color: var(--accent); }
 
-  /* Lede — one line, ~50px */
-  .lede {
-    padding: 18px 0 14px;
-  }
+  .lede { padding: 18px 0 14px; }
   .lede-text {
     color: var(--ink-2);
     font: 14px/1.55 var(--font-body);
     max-width: 60ch;
   }
-  .notice {
-    display: none;
-    margin-top: 10px;
-    border-left: 2px solid var(--warn-rule);
-    background: var(--warn-bg);
-    color: var(--ink);
-    padding: 8px 12px;
-    font: 13px/1.5 var(--font-body);
-  }
-  .notice.is-visible { display: block; }
-
-  /* Top News — compact editorial layer, still feed-first */
-  .top-news {
-    display: grid;
-    gap: 12px;
-    padding: 16px 0;
-    border-top: 1px solid var(--rule);
-  }
-  .top-news[hidden] { display: none; }
-  .top-news-head {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--ink-3);
-    font: 10px/1 var(--font-mono);
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-  }
-  .top-news-head::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: var(--rule);
-  }
-  .top-news-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.18fr) minmax(260px, 0.82fr);
-    gap: 18px;
-  }
-  .top-story {
-    display: grid;
-    gap: 10px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--rule);
-  }
-  .top-story.has-image {
-    grid-template-columns: minmax(0, 1fr) minmax(220px, 34%);
-    align-items: start;
-  }
-  .top-story-title {
-    color: var(--ink);
-    font: 700 24px/1.18 var(--font-display);
-    letter-spacing: -0.006em;
-    text-wrap: pretty;
-  }
-  .top-story-title a,
-  .top-row-title a {
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.15s ease;
-  }
-  .top-story-title a:hover,
-  .top-row-title a:hover { border-color: var(--accent); }
-  .top-story-dek {
-    margin-top: 8px;
-    color: var(--ink-2);
-    font: 15px/1.5 var(--font-body);
-    text-wrap: pretty;
-  }
-  .top-story-brief {
-    margin-top: 8px;
-    color: var(--ink-2);
-    font: 13px/1.6 var(--font-body);
-    max-width: 72ch;
-  }
-  .top-news-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 10px;
+  .lede-meta {
+    margin-top: 6px;
     color: var(--ink-3);
     font: 11px/1.4 var(--font-mono);
-    letter-spacing: 0.03em;
-  }
-  .top-news-image {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-    border: 1px solid var(--rule);
-    background: var(--paper-2);
-  }
-  .top-list {
-    display: grid;
-    align-content: start;
-    gap: 0;
-    border-top: 1px solid var(--rule);
-  }
-  .top-row {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 86px;
-    gap: 12px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--rule);
-  }
-  .top-row:not(.has-image) {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .top-row-title {
-    color: var(--ink);
-    font: 600 15px/1.35 var(--font-display);
-    text-wrap: pretty;
-  }
-  .top-row-dek {
-    margin-top: 5px;
-    color: var(--ink-2);
-    font: 13px/1.45 var(--font-body);
-  }
-  .top-row .top-news-image {
-    aspect-ratio: 1 / 1;
+    letter-spacing: 0.04em;
   }
 
-  /* Filter bar — inline pill row */
-  .filterbar {
+  .search-row {
     display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
     align-items: center;
+    gap: 10px;
     padding: 12px 0;
     border-top: 1px solid var(--rule);
     border-bottom: 1px solid var(--rule);
   }
-  .filter-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    align-items: center;
-  }
-  .filter-row.filter-extra { margin-left: auto; }
-  .filter-label {
+  .search-label {
     color: var(--ink-3);
     font: 10px/1 var(--font-mono);
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    margin-right: 6px;
   }
-  .chip {
-    min-height: 28px;
-    border: 1px solid var(--rule);
-    background: transparent;
-    color: var(--ink-2);
-    cursor: pointer;
-    padding: 0 10px;
-    font: 12px/1 var(--font-mono);
-    letter-spacing: 0.02em;
-    transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
-  }
-  .chip:hover { border-color: var(--accent); color: var(--accent-2); }
-  .chip[aria-pressed="true"] {
-    border-color: var(--rule-strong);
-    background: var(--ink);
-    color: var(--paper);
-  }
-  .chip:active { transform: translateY(1px); }
-  .masthead-controls {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .archive-pick {
-    min-height: 32px;
+  .search-input {
+    min-height: 30px;
+    padding: 0 8px;
     border: 1px solid var(--rule);
     border-radius: 0;
-    background-color: transparent;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' fill='none' stroke='%23767b83' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>");
-    background-position: right 10px center;
-    background-size: 9px 6px;
-    background-repeat: no-repeat;
+    background: transparent;
     color: var(--ink-2);
-    cursor: pointer;
-    padding: 0 26px 0 10px;
     font: 11px/1 var(--font-mono);
-    letter-spacing: 0.04em;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    transition: border-color 0.15s ease, color 0.15s ease;
-  }
-  .archive-pick:hover { border-color: var(--accent); color: var(--accent-2); }
-  .archive-pick:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  :root[data-theme="dark"] .archive-pick {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' fill='none' stroke='%237e828a' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>");
-  }
-  .archive-banner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    margin-top: 14px;
-    padding: 10px 14px;
-    border-left: 2px solid var(--accent);
-    background: color-mix(in srgb, var(--accent) 6%, var(--paper));
-    color: var(--ink-2);
-    font: 12px/1.4 var(--font-mono);
-    letter-spacing: 0.03em;
-  }
-  .archive-banner[hidden] { display: none; }
-  .archive-pick[hidden] { display: none; }
-  .archive-banner strong { color: var(--ink); font-weight: 600; }
-  .archive-banner button {
-    border: 0;
-    background: none;
-    color: var(--accent);
-    cursor: pointer;
-    padding: 4px 0;
-    font: inherit;
-    text-decoration: underline;
-    text-decoration-color: var(--rule);
-    text-underline-offset: 4px;
-  }
-  .archive-banner button:hover {
-    color: var(--accent-2);
-    text-decoration-color: var(--accent);
-  }
-  .resume-prompt {
-    margin-top: 12px;
-    color: var(--ink-3);
-    font: 11px/1.4 var(--font-mono);
-    letter-spacing: 0.04em;
-  }
-  .resume-prompt[hidden] { display: none; }
-  .resume-prompt button {
-    border: 0;
-    background: none;
-    color: inherit;
-    cursor: pointer;
-    padding: 4px 0;
-    font: inherit;
-    text-decoration: underline;
-    text-decoration-color: var(--rule);
-    text-underline-offset: 4px;
-  }
-  .resume-prompt button:hover { color: var(--accent-2); text-decoration-color: var(--accent); }
-  .reset-link {
-    background: none;
-    border: 0;
-    color: var(--ink-3);
-    cursor: pointer;
-    padding: 6px 4px;
-    font: 11px/1 var(--font-mono);
-    text-decoration: underline;
-    text-decoration-color: var(--rule);
-    text-underline-offset: 4px;
-  }
-  .reset-link:hover { color: var(--accent-2); text-decoration-color: var(--accent); }
-
-  /* Feed */
-  .feed { padding-top: 4px; }
-  .bucket-head {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 26px 0 6px;
-    color: var(--ink-3);
-    font: 10px/1 var(--font-mono);
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-  }
-  .bucket-head:first-child { padding-top: 14px; }
-  .bucket-head .count { opacity: 0.75; }
-  .bucket-head::after {
-    content: "";
     flex: 1;
-    height: 1px;
-    background: var(--rule);
+    max-width: 240px;
+  }
+  .search-input:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
   }
 
-  /* Item — title, line, micro-row, optional details */
-  .item {
-    display: block;
-    padding: 16px 0;
+  .month-section { padding: 26px 0 8px; }
+  .month-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding-bottom: 10px;
     border-bottom: 1px solid var(--rule);
   }
-  .item[data-tier="top"] {
-    padding-left: 14px;
-    border-left: 2px solid var(--accent);
-  }
-  .item-title {
+  .month-name {
     color: var(--ink);
-    font: 600 19px/1.32 var(--font-display);
-    text-wrap: pretty;
+    font: 600 16px/1 var(--font-display);
     letter-spacing: -0.005em;
   }
-  .item-title a {
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.15s ease;
-  }
-  .item-title a:hover { border-color: var(--accent); }
-  .item-line {
-    margin-top: 6px;
-    max-width: 70ch;
-    color: var(--ink-2);
-    font: 14px/1.6 var(--font-body);
-    text-wrap: pretty;
-  }
-  .item-meta {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 8px;
-    margin-top: 10px;
+  .month-stats {
     color: var(--ink-3);
-    font: 11px/1.4 var(--font-mono);
-    letter-spacing: 0.03em;
+    font: 10px/1 var(--font-mono);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
   }
-  .item-meta .sep { color: var(--ink-3); opacity: 0.4; }
-  .item-meta .source { color: var(--ink-2); }
-  .item-meta a { border-bottom: 1px solid transparent; }
-  .item-meta a:hover { border-bottom-color: var(--accent); color: var(--accent-2); }
-  .item-meta .spacer { flex: 1; min-width: 12px; }
-  .item-meta .score {
-    color: var(--ink);
-    font-variant-numeric: tabular-nums;
-  }
-  .item-meta .score-detail { display: none; }
-  body.is-detail .item-meta .score-detail {
-    display: inline;
-    color: var(--ink-3);
-    margin-left: 6px;
-  }
-  .item-also { margin-top: 8px; }
-  .item-also summary {
-    cursor: pointer;
-    color: var(--ink-3);
-    font: 11px/1.4 var(--font-mono);
-    letter-spacing: 0.04em;
-    list-style: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .item-also summary::-webkit-details-marker { display: none; }
-  .item-also summary::before {
-    content: "+";
-    width: 12px;
-    text-align: center;
-    color: var(--ink-3);
-  }
-  .item-also[open] summary::before { content: "−"; }
-  .item-also summary:hover { color: var(--accent-2); }
-  .also-list {
-    display: grid;
-    gap: 8px;
-    margin: 8px 0 0 16px;
-    padding: 0;
-    list-style: none;
-    color: var(--ink-2);
-    font: 13px/1.5 var(--font-body);
-  }
-  .also-list a { border-bottom: 1px solid var(--rule); }
-  .also-meta {
-    color: var(--ink-3);
-    font: 11px/1.4 var(--font-mono);
-    letter-spacing: 0.03em;
-    margin-left: 6px;
-  }
-  .also-title {
-    display: block;
-    color: var(--ink-3);
-    font: 12px/1.45 var(--font-body);
-    margin-top: 1px;
-  }
-  .completion-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-    padding: 22px 0 4px;
-    color: var(--ink-3);
-    font: 11px/1.4 var(--font-mono);
-    letter-spacing: 0.04em;
-  }
-  .completion-row strong {
-    color: var(--ink-2);
-    font-weight: 500;
-  }
-  .completion-row button {
-    border: 0;
-    background: none;
-    color: var(--ink-3);
-    cursor: pointer;
-    padding: 4px 0;
-    font: inherit;
-    text-decoration: underline;
-    text-decoration-color: var(--rule);
-    text-underline-offset: 4px;
-  }
-  .completion-row button:hover { color: var(--accent-2); text-decoration-color: var(--accent); }
-  .top-jump {
-    position: fixed;
-    right: max(18px, calc((100vw - 1080px) / 2 + 18px));
-    bottom: max(18px, env(safe-area-inset-bottom));
-    z-index: 20;
-    width: 34px;
-    height: 34px;
-    border: 1px solid var(--rule);
-    border-radius: 999px;
-    background: color-mix(in srgb, var(--panel) 88%, transparent);
-    color: var(--ink-3);
-    cursor: pointer;
-    font: 15px/1 var(--font-mono);
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(8px);
-    transition: opacity 0.18s ease, transform 0.18s ease, border-color 0.18s ease, color 0.18s ease;
-  }
-  .top-jump.is-visible {
-    opacity: 0.82;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-  .top-jump:hover,
-  .top-jump:focus-visible {
-    border-color: var(--accent);
-    color: var(--accent-2);
-    opacity: 1;
-  }
-  .top-jump:active { transform: translateY(1px); }
 
-  /* Skeleton */
-  .skeleton {
-    padding: 16px 0;
-    border-bottom: 1px solid var(--rule);
+  .day-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 8px;
+    padding-top: 14px;
   }
-  .skeleton-line {
-    height: 14px;
-    background: color-mix(in srgb, var(--ink) 6%, transparent);
-    border-radius: 2px;
-    animation: shimmer 1.4s ease-in-out infinite;
+  .day-cell {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 4px;
+    padding: 10px 12px;
+    border: 1px solid var(--rule);
+    background: var(--panel);
+    color: var(--ink-2);
+    text-decoration: none;
+    transition: border-color 0.15s ease, color 0.15s ease;
   }
-  .skeleton-line + .skeleton-line { margin-top: 10px; }
-  .skeleton-line.long { width: 78%; height: 22px; }
-  .skeleton-line.short { width: 42%; }
-  @keyframes shimmer {
-    0%, 100% { opacity: 0.55; }
-    50% { opacity: 0.95; }
+  .day-cell:hover { border-color: var(--accent); color: var(--accent-2); }
+  .day-date {
+    font: 600 13px/1.2 var(--font-display);
+    color: inherit;
   }
+  .day-count {
+    color: var(--ink-3);
+    font: 11px/1 var(--font-mono);
+    letter-spacing: 0.04em;
+  }
+  .day-cell:hover .day-count { color: var(--accent-2); }
+  .day-cell[data-weight="high"]   { background: color-mix(in srgb, var(--accent) 7%, var(--panel)); }
+  .day-cell[data-weight="medium"] { background: color-mix(in srgb, var(--accent) 3%, var(--panel)); }
+  .day-cell[data-weight="low"]    { background: var(--panel); }
 
   .empty {
-    border: 1px dashed var(--rule);
-    color: var(--ink-2);
-    margin: 20px 0;
-    padding: 28px 18px;
+    color: var(--ink-3);
+    font: 13px/1.5 var(--font-body);
+    padding: 32px 18px;
     text-align: center;
+    border: 1px dashed var(--rule);
+    margin-top: 24px;
   }
   .empty strong {
     display: block;
@@ -648,12 +230,7 @@
     font: 600 16px/1.2 var(--font-display);
     margin-bottom: 4px;
   }
-  .empty p {
-    color: var(--ink-3);
-    font: 13px/1.5 var(--font-body);
-  }
 
-  /* Footer */
   footer {
     display: flex;
     flex-wrap: wrap;
@@ -668,886 +245,194 @@
     letter-spacing: 0.04em;
   }
   footer a { border-bottom: 1px solid var(--rule); }
-  .health strong { color: var(--ink-2); font-weight: 500; }
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
-      scroll-behavior: auto !important;
       transition-duration: 0.01ms !important;
       animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
     }
   }
   @media (max-width: 720px) {
     .shell { padding: 16px 18px 32px; }
-    .masthead {
-      grid-template-columns: 1fr auto;
-      grid-auto-rows: auto;
-      row-gap: 8px;
-    }
-    .status-line {
-      grid-column: 1 / -1;
-      justify-self: start;
-      order: 3;
-    }
-    .wordmark::after {
-      display: none;
-    }
-    .filterbar { gap: 10px; padding: 12px 0; }
-    .filter-row.filter-extra { margin-left: 0; }
-    .top-news-grid,
-    .top-story.has-image {
-      grid-template-columns: 1fr;
-    }
-    /* Equalize Top News header sizes on mobile so the lead doesn't read as a section title */
-    .top-story-title { font-size: 18px; line-height: 1.3; }
-    .top-row-title { font-size: 17px; line-height: 1.32; }
-    .top-list { border-top: 0; }
-    .item-title { font-size: 18px; }
-    .item-meta { gap: 6px; }
-    .item-meta .spacer { display: none; }
-    .completion-row { padding-bottom: 8px; }
-    .top-jump {
-      right: 50%;
-      bottom: max(16px, env(safe-area-inset-bottom));
-      transform: translate(50%, 8px);
-    }
-    .top-jump.is-visible { transform: translate(50%, 0); }
-    .top-jump:active { transform: translate(50%, 1px); }
+    .wordmark::after { display: none; }
+    .day-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 6px; }
+    .month-section { padding: 20px 0 6px; }
+    .search-input { max-width: none; }
   }
 </style>
 </head>
 <body>
-<a class="skip-link" href="#feed">Skip to feed</a>
 <div class="shell">
   <header class="masthead">
     <span class="wordmark">Chronicle</span>
-    <span class="status-line" id="statusLine"><span class="dot" aria-hidden="true"></span><span id="statusText">loading…</span></span>
-    <div class="masthead-controls">
-      <select class="archive-pick" id="archiveSelect" aria-label="View archive day" hidden></select>
-      <button class="theme-toggle" id="themeToggle" type="button">theme</button>
-    </div>
+    <span></span>
+    <a class="back-link" href="../">← back to today</a>
   </header>
 
-  <section class="lede" aria-labelledby="page-title">
-    <h1 id="page-title" class="vh">Chronicle</h1>
-    <p class="lede-text">The latest in AI, clustered and ranked. Repeated hype gets pushed down so the actual signal stays up top.</p>
-    <div class="notice" id="notice" role="status"></div>
+  <section class="lede">
+    <p class="lede-text">Past daily snapshots of the Chronicle feed. Each tile is a frozen view of that day's clustered AI signal.</p>
+    <p class="lede-meta" id="ledeMeta">loading…</p>
   </section>
 
-  <section class="top-news" id="topNews" aria-labelledby="top-news-title" hidden>
-    <div class="top-news-head" id="top-news-title">Top News</div>
-    <div class="top-news-grid" id="topNewsGrid"></div>
-  </section>
-
-  <nav class="filterbar" aria-label="Feed filters">
-    <div class="filter-row" id="kindFilters" aria-label="Filter by type">
-      <span class="filter-label">type</span>
-    </div>
-    <div class="filter-row filter-extra">
-      <button class="chip" id="noveltyChip" type="button" aria-pressed="false">high novelty</button>
-      <button class="chip" id="discussionChip" type="button" aria-pressed="false">discussion</button>
-      <button class="reset-link" id="resetFilters" type="button">reset</button>
-    </div>
-  </nav>
-
-  <div class="archive-banner" id="archiveBanner" hidden>
-    <span>Viewing <strong id="archiveDateLabel"></strong></span>
-    <button type="button" id="exitArchive">← Back to today</button>
+  <div class="search-row">
+    <span class="search-label">jump to</span>
+    <input class="search-input" id="searchInput" type="search" placeholder="month or YYYY-MM-DD" aria-label="Filter days">
   </div>
 
-  <div class="resume-prompt" id="resumePrompt" hidden>
-    <button type="button" id="resumeReading"></button>
-  </div>
-
-  <main class="feed" id="feed" aria-live="polite">
-    <div class="skeleton"><div class="skeleton-line long"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div></div>
-    <div class="skeleton"><div class="skeleton-line long"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div></div>
-    <div class="skeleton"><div class="skeleton-line long"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div></div>
-  </main>
+  <main id="archiveMain"></main>
 
   <footer>
-    <div class="health" id="healthStrip">checking sources…</div>
-    <div>
+    <span>Chronicle archive · <a href="../">return to today</a></span>
+    <span>
       <a href="https://tinycrafts.ai">TinyCrafts</a>
       ·
       <a href="https://github.com/aneesahammed/chronicle">GitHub</a>
-      ·
-      Built by <a href="https://anees.xyz">Anees</a>
-    </div>
+    </span>
   </footer>
 </div>
-<button class="top-jump" id="topJump" type="button" aria-label="Back to top" title="Back to top">↑</button>
 
 <script type="module">
-const KIND_LABELS = {
-  paper: "papers",
-  model_release: "models",
-  company_announcement: "announcements",
-  tutorial: "tutorials",
-  opinion: "opinion",
-  discussion: "discussion",
-  tool: "tools",
-  news: "news",
-  unknown: "other",
-};
-const NOVELTY_TOP = 0.7;
-const DATE_PATH_MATCH = location.pathname.match(/\/daily\/(\d{4}-\d{2}-\d{2})\/?$/);
-const ROOT_PREFIX = DATE_PATH_MATCH
-  ? "../../"
-  : /\/daily\/?$/.test(location.pathname)
-    ? "../"
-    : "./";
+const state = { days: [] };
 
-const state = {
-  data: null,
-  archiveIndex: null,
-  archiveDate: null,
-  kinds: new Set(),
-  highNovelty: false,
-  discussionOnly: false,
-  resumePromptDay: null,
-  scrollTicking: false,
-};
+loadIndex();
+document.getElementById("searchInput").addEventListener("input", (event) => {
+  render(event.target.value);
+});
 
-initTheme();
-initDetailMode();
-initFiltersFromUrl();
-wireFilterControls();
-wireReadingControls();
-loadArchiveIndex();
-loadFeed();
-
-function initTheme() {
-  const button = document.getElementById("themeToggle");
-  const setLabel = () => {
-    const theme = document.documentElement.getAttribute("data-theme") || "light";
-    button.textContent = theme === "dark" ? "light" : "dark";
-    button.setAttribute("aria-label", `Switch to ${button.textContent} theme`);
-  };
-  setLabel();
-  button.addEventListener("click", () => {
-    const current = document.documentElement.getAttribute("data-theme") || "light";
-    const next = current === "dark" ? "light" : "dark";
-    document.documentElement.setAttribute("data-theme", next);
-    document.getElementById("themeColor").setAttribute("content", next === "dark" ? "#0c0e12" : "#f7f8fa");
-    try { localStorage.setItem("chronicle-theme", next); } catch (_) {}
-    setLabel();
-  });
-}
-
-function initDetailMode() {
-  const params = new URLSearchParams(location.search);
-  if (params.get("detail") === "1") document.body.classList.add("is-detail");
-}
-
-function wireFilterControls() {
-  document.getElementById("noveltyChip").addEventListener("click", () => {
-    state.highNovelty = !state.highNovelty;
-    syncUrl();
-    renderFilterShell();
-    renderFeed();
-  });
-  document.getElementById("discussionChip").addEventListener("click", () => {
-    state.discussionOnly = !state.discussionOnly;
-    syncUrl();
-    renderFilterShell();
-    renderFeed();
-  });
-  document.getElementById("resetFilters").addEventListener("click", () => {
-    state.kinds.clear();
-    state.highNovelty = false;
-    state.discussionOnly = false;
-    syncUrl();
-    renderFilterShell();
-    renderFeed();
-  });
-  document.getElementById("archiveSelect").addEventListener("change", (event) => {
-    state.archiveDate = event.target.value || null;
-    syncUrl();
-    loadFeed();
-  });
-  document.getElementById("exitArchive").addEventListener("click", () => {
-    state.archiveDate = null;
-    state.resumePromptDay = null;
-    hideResumePrompt();
-    syncUrl();
-    loadFeed();
-  });
-}
-
-function wireReadingControls() {
-  document.getElementById("topJump").addEventListener("click", () => scrollToTop());
-  document.getElementById("resumeReading").addEventListener("click", () => {
-    const prompt = document.getElementById("resumePrompt");
-    const y = Number(prompt.dataset.resumeY || 0);
-    hideResumePrompt();
-    window.scrollTo({ top: y, behavior: prefersReducedMotion() ? "auto" : "smooth" });
-  });
-  window.addEventListener("scroll", onReadingScroll, { passive: true });
-}
-
-function onReadingScroll() {
-  if (state.scrollTicking) return;
-  state.scrollTicking = true;
-  requestAnimationFrame(() => {
-    state.scrollTicking = false;
-    updateTopJump();
-    saveReadingProgress();
-    if (window.scrollY > 160) hideResumePrompt();
-  });
-}
-
-async function loadFeed() {
+async function loadIndex() {
   try {
-    const response = await fetch(feedUrl(), { cache: "no-cache" });
+    const response = await fetch("./index.json", { cache: "no-cache" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    state.data = await response.json();
-    updateStatus();
-    renderTopNews();
-    renderArchiveSelect();
-    renderArchiveBanner();
-    renderFilterShell();
-    renderFeed();
+    const data = await response.json();
+    state.days = (data.days ?? [])
+      .filter((day) => day && typeof day.date === "string")
+      .map((day) => ({
+        date: day.date,
+        count: Number(day.count) || 0,
+        title: typeof day.title === "string" ? day.title : "",
+        path: typeof day.path === "string" ? day.path : `${day.date}/`,
+        parsed: new Date(`${day.date}T00:00:00Z`),
+      }))
+      .filter((day) => !Number.isNaN(day.parsed.getTime()));
+    state.days.sort((a, b) => b.date.localeCompare(a.date));
+    renderMeta();
+    render();
   } catch (error) {
-    showNotice(`Chronicle could not load the feed: ${error.message}`);
-    document.getElementById("statusText").textContent = "feed unavailable";
-    document.getElementById("statusLine").classList.add("is-failed");
-    document.getElementById("topNews").hidden = true;
-    document.getElementById("topNewsGrid").replaceChildren();
-    document.getElementById("feed").replaceChildren(emptyState("Feed unavailable", "The static feed could not be loaded. Try refreshing in a minute."));
-    document.getElementById("healthStrip").textContent = "feed unavailable";
+    document.getElementById("ledeMeta").textContent = "Archive index unavailable.";
+    showEmpty("Archive unavailable", "Could not load the archive index. Try again in a minute.");
   }
 }
 
-async function loadArchiveIndex() {
-  try {
-    const response = await fetch(rootUrl("daily/index.json"), { cache: "no-cache" });
-    if (!response.ok) return;
-    state.archiveIndex = await response.json();
-    renderArchiveSelect();
-  } catch (_) {
-    state.archiveIndex = null;
+function renderMeta() {
+  const meta = document.getElementById("ledeMeta");
+  if (!state.days.length) {
+    meta.textContent = "No archived days yet.";
+    return;
   }
+  const newest = state.days[0].date;
+  const oldest = state.days[state.days.length - 1].date;
+  const total = state.days.reduce((sum, day) => sum + day.count, 0);
+  meta.textContent = `${state.days.length} days · ${oldest} → ${newest} · ${total} items`;
 }
 
-function renderTopNews() {
-  const section = document.getElementById("topNews");
-  const grid = document.getElementById("topNewsGrid");
-  const items = Array.isArray(state.data?.top_news) ? state.data.top_news.filter(isUsableTopNews) : [];
-  if (!items.length) {
-    section.hidden = true;
-    grid.replaceChildren();
+function render(filterTerm = "") {
+  const main = document.getElementById("archiveMain");
+  main.replaceChildren();
+  if (!state.days.length) return;
+
+  const term = filterTerm.trim().toLowerCase();
+  const filtered = term
+    ? state.days.filter((day) => {
+        const monthName = day.parsed
+          .toLocaleDateString(undefined, { month: "long", timeZone: "UTC" })
+          .toLowerCase();
+        return (
+          day.date.includes(term) ||
+          monthName.includes(term) ||
+          day.title.toLowerCase().includes(term)
+        );
+      })
+    : state.days;
+
+  if (!filtered.length) {
+    showEmpty("No days match", "Try a different month name, YYYY-MM-DD, or keyword from a top story.");
     return;
   }
 
-  const lead = renderTopStory(items[0]);
-  const rest = node("div", "top-list");
-  items.slice(1).forEach((item) => rest.appendChild(renderTopRow(item)));
-  grid.replaceChildren(lead, rest);
-  section.hidden = false;
-}
-
-function isUsableTopNews(item) {
-  return item
-    && typeof item.title === "string"
-    && typeof item.url === "string"
-    && safeHttpsUrl(item.url)
-    && typeof item.dek === "string"
-    && typeof item.brief === "string";
-}
-
-function renderTopStory(item) {
-  const article = node("article", "top-story");
-  // Top News image rendering is intentionally disabled while we evaluate
-  // whether images fit Chronicle's feed-first layout.
-  const image = null;
-
-  const body = node("div", "top-story-body");
-  const title = node("h2", "top-story-title");
-  title.appendChild(link(item.url, decodeText(item.title)));
-  body.append(title);
-  body.append(node("p", "top-story-dek", decodeText(item.dek)));
-  if (item.brief && normalizeText(item.brief) !== normalizeText(item.dek)) {
-    body.append(node("p", "top-story-brief", decodeText(item.brief)));
+  const groups = new Map();
+  for (const day of filtered) {
+    const key = monthKey(day.parsed);
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(day);
   }
-  body.append(renderTopNewsMeta(item));
-  article.append(body);
-  if (image) article.append(image);
-  return article;
-}
 
-function renderTopRow(item) {
-  const row = node("article", "top-row");
-  // Keep image data in the feed/cache, but do not render thumbnails yet.
-  const image = null;
-  const body = node("div", "top-row-body");
-  const title = node("h3", "top-row-title");
-  title.appendChild(link(item.url, decodeText(item.title)));
-  body.append(title);
-  body.append(node("p", "top-row-dek", decodeText(item.dek)));
-  body.append(renderTopNewsMeta(item));
-  row.append(body);
-  if (image) row.append(image);
-  return row;
-}
-
-function renderTopNewsMeta(item) {
-  const meta = node("div", "top-news-meta");
-  meta.append(node("span", "source", item.source_name || "Unknown source"));
-  meta.append(sep(), document.createTextNode(relTime(parseDate(item.published_at)) || "unknown"));
-  if (item.kind && item.kind !== "unknown") meta.append(sep(), document.createTextNode(KIND_LABELS[item.kind] || item.kind));
-  const score = Number(item.score);
-  if (Number.isFinite(score)) meta.append(sep(), document.createTextNode(score.toFixed(2)));
-  return meta;
-}
-
-function topNewsImage(item, className) {
-  const src = safeImageUrl(item.image_url);
-  if (!src) return null;
-  const img = document.createElement("img");
-  img.className = className;
-  img.src = src;
-  img.alt = item.image_alt || "";
-  img.loading = "lazy";
-  img.decoding = "async";
-  img.referrerPolicy = "no-referrer";
-  img.addEventListener("error", () => {
-    img.remove();
-  }, { once: true });
-  return img;
-}
-
-function safeImageUrl(value) {
-  return safeHttpsUrl(value);
-}
-
-function safeHttpsUrl(value) {
-  try {
-    const url = new URL(String(value || ""));
-    return url.protocol === "https:" ? url.toString() : "";
-  } catch (_) {
-    return "";
+  for (const [, group] of groups) {
+    main.append(renderMonth(group));
   }
 }
 
-function updateStatus() {
-  const data = state.data;
-  const generated = parseDate(data.generated_at);
-  const ageHours = generated ? (Date.now() - generated.getTime()) / 36e5 : Infinity;
-  const stale = ageHours > 30;
-  const sourceTotal = Number(data.source_total ?? 0);
-  const sourceOk = Number(data.source_ok ?? sourceTotal);
-  const sourceFailed = Number(data.source_failed ?? 0);
-  const mode = String(data.classification_mode ?? "fallback");
-  const status = String(data.refresh_status ?? "ok");
+function renderMonth(group) {
+  const section = document.createElement("section");
+  section.className = "month-section";
 
-  // Top status line
-  const statusLine = document.getElementById("statusLine");
-  const statusText = document.getElementById("statusText");
-  statusLine.classList.remove("is-stale", "is-failed");
-  if (status === "failed") statusLine.classList.add("is-failed");
-  else if (stale) statusLine.classList.add("is-stale");
-  const updatedRel = generated ? relTime(generated, true) : "unknown";
-  const count = data.count ?? data.clusters?.length ?? 0;
-  statusText.textContent = `${count} items · updated ${updatedRel}`;
+  const head = document.createElement("div");
+  head.className = "month-head";
+  const name = document.createElement("h2");
+  name.className = "month-name";
+  name.textContent = monthLabel(group[0].parsed);
+  const stats = document.createElement("span");
+  stats.className = "month-stats";
+  const total = group.reduce((sum, day) => sum + day.count, 0);
+  stats.textContent = `${group.length} day${group.length === 1 ? "" : "s"} · ${total} items`;
+  head.append(name, stats);
 
-  // Footer health strip — DOM-built, no innerHTML
-  const health = document.getElementById("healthStrip");
-  const sourceFrag = sourceTotal ? `${sourceOk}/${sourceTotal} sources` : "sources unknown";
-  const tail = [];
-  if (sourceFailed) tail.push(`${sourceFailed} failed`);
-  if (mode !== "llm") tail.push(`classify ${mode}`);
-  tail.push(`window ${data.window_hours ?? 36}h`);
-  health.replaceChildren(
-    Object.assign(document.createElement("strong"), { textContent: sourceFrag }),
-    document.createTextNode(tail.length ? ` · ${tail.join(" · ")}` : ""),
-  );
-
-  // Notice — only material problems
-  const notices = [];
-  if (status === "failed") notices.push("Latest refresh failed — showing the last successful feed.");
-  else if (status === "partial") notices.push("Some sources failed during the latest refresh.");
-  if (stale) notices.push("This feed is older than 30 hours.");
-  if (mode !== "llm") notices.push("Classification is degraded (LLM unavailable).");
-  if (notices.length) showNotice(notices.join(" "));
-}
-
-function renderArchiveSelect() {
-  const select = document.getElementById("archiveSelect");
-  const days = state.archiveIndex?.days ?? [];
-  if (!days.length) {
-    select.hidden = true;
-    return;
+  const grid = document.createElement("div");
+  grid.className = "day-grid";
+  for (const day of group) {
+    const cell = document.createElement("a");
+    cell.className = "day-cell";
+    cell.dataset.weight = weightFor(day.count);
+    cell.href = `./${day.date}/`;
+    if (day.title) cell.title = day.title;
+    const date = document.createElement("span");
+    date.className = "day-date";
+    date.textContent = dayLabel(day.parsed);
+    const count = document.createElement("span");
+    count.className = "day-count";
+    count.textContent = `${day.count} item${day.count === 1 ? "" : "s"}`;
+    cell.append(date, count);
+    grid.append(cell);
   }
 
-  const options = [new Option("today", "")];
-  for (const day of days) {
-    const label = formatRelativeDay(day.date);
-    if (label === "today") continue;
-    options.push(new Option(`${label} · ${day.count}`, day.date));
-  }
-  if (options.length === 1) {
-    select.hidden = true;
-    return;
-  }
-  select.replaceChildren(...options);
-  select.value = state.archiveDate || "";
-  select.hidden = false;
+  section.append(head, grid);
+  return section;
 }
 
-function renderArchiveBanner() {
-  const banner = document.getElementById("archiveBanner");
-  const label = document.getElementById("archiveDateLabel");
-  if (!state.archiveDate) {
-    banner.hidden = true;
-    return;
-  }
-  label.textContent = formatRelativeDay(state.archiveDate);
-  banner.hidden = false;
+function showEmpty(title, body) {
+  const main = document.getElementById("archiveMain");
+  const wrap = document.createElement("div");
+  wrap.className = "empty";
+  const heading = document.createElement("strong");
+  heading.textContent = title;
+  const para = document.createElement("p");
+  para.textContent = body;
+  wrap.append(heading, para);
+  main.replaceChildren(wrap);
 }
 
-function formatRelativeDay(isoDate) {
-  if (!isoDate) return "today";
-  const target = new Date(`${isoDate}T00:00:00`);
-  if (Number.isNaN(target.getTime())) return isoDate;
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  target.setHours(0, 0, 0, 0);
-  const days = Math.round((today - target) / 86400000);
-  if (days === 0) return "today";
-  if (days === 1) return "yesterday";
-  if (days >= 2 && days <= 6) return `${days} days ago`;
-  return target.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+function monthKey(d) {
+  return `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, "0")}`;
 }
-
-function renderFilterShell() {
-  const data = state.data;
-  if (!data) return;
-
-  const container = document.getElementById("kindFilters");
-  // Drop existing chips, keep label
-  container.querySelectorAll(".chip").forEach((node) => node.remove());
-
-  const counts = new Map();
-  for (const item of data.clusters ?? []) {
-    const k = item.kind || "unknown";
-    counts.set(k, (counts.get(k) || 0) + 1);
-  }
-  const kinds = [...counts.keys()].sort((a, b) => (counts.get(b) || 0) - (counts.get(a) || 0));
-  for (const value of kinds) {
-    container.appendChild(chip(KIND_LABELS[value] || value, state.kinds.has(value), () => {
-      toggleSet(state.kinds, value);
-      syncUrl();
-      renderFilterShell();
-      renderFeed();
-    }));
-  }
-
-  document.getElementById("noveltyChip").setAttribute("aria-pressed", String(state.highNovelty));
-  document.getElementById("discussionChip").setAttribute("aria-pressed", String(state.discussionOnly));
+function monthLabel(d) {
+  return d.toLocaleDateString(undefined, { month: "long", year: "numeric", timeZone: "UTC" });
 }
-
-function renderFeed() {
-  const main = document.getElementById("feed");
-  const items = visibleItems();
-  if (!items.length) {
-    main.replaceChildren(emptyState("No matching items", "Relax the filters or hit reset."));
-    hideResumePrompt();
-    return;
-  }
-
-  const now = Date.now();
-  const buckets = [
-    { label: "Last 3 hours", items: [] },
-    { label: "Earlier today", items: [] },
-    { label: "Yesterday & older", items: [] },
-  ];
-  for (const item of items) {
-    const date = parseDate(item.primary?.published_at);
-    const age = date ? (now - date.getTime()) / 36e5 : 999;
-    if (age <= 3) buckets[0].items.push(item);
-    else if (age <= 24) buckets[1].items.push(item);
-    else buckets[2].items.push(item);
-  }
-  for (const bucket of buckets) {
-    bucket.items.sort((a, b) => (Number(b.score) || 0) - (Number(a.score) || 0));
-  }
-
-  const fragments = [];
-  let displayIndex = 0;
-  for (const bucket of buckets) {
-    if (!bucket.items.length) continue;
-    const head = node("div", "bucket-head");
-    head.append(
-      document.createTextNode(bucket.label),
-      Object.assign(document.createElement("span"), { className: "count", textContent: `(${bucket.items.length})` }),
-    );
-    fragments.push(head);
-    for (const item of bucket.items) fragments.push(renderItem(item, ++displayIndex));
-  }
-  fragments.push(renderCompletionRow());
-  main.replaceChildren(...fragments);
-  prepareResumePrompt(displayIndex);
-  updateTopJump();
+function dayLabel(d) {
+  return d.toLocaleDateString(undefined, { weekday: "short", day: "numeric", timeZone: "UTC" });
 }
-
-function renderItem(item, displayIndex) {
-  const article = node("article", "item");
-  article.dataset.tier = Number(item.novelty || 0) >= NOVELTY_TOP ? "top" : "normal";
-  article.dataset.readIndex = String(displayIndex);
-
-  const h3 = node("h3", "item-title");
-  h3.appendChild(link(item.primary?.url, item.primary?.title || "Untitled item"));
-  article.appendChild(h3);
-
-  const title = item.primary?.title || "";
-  const oneLiner = readableLine(item, title);
-  if (oneLiner) {
-    article.appendChild(node("p", "item-line", oneLiner));
-  }
-
-  const meta = node("div", "item-meta");
-  meta.append(node("span", "source", item.primary?.source_name || "Unknown source"));
-  meta.append(sep(), document.createTextNode(relTime(parseDate(item.primary?.published_at)) || "unknown"));
-  if (item.kind && item.kind !== "unknown") meta.append(sep(), document.createTextNode(KIND_LABELS[item.kind] || item.kind));
-  const discussions = discussionLinks(item);
-  if (discussions.length) {
-    meta.append(sep());
-    discussions.forEach((d, index) => {
-      if (index) meta.append(document.createTextNode(", "));
-      meta.append(link(d.url, d.label));
-    });
-  }
-  meta.append(node("span", "spacer"));
-  const scoreNum = Number(item.score);
-  const scoreSpan = node("span", "score", Number.isFinite(scoreNum) ? scoreNum.toFixed(2) : "—");
-  scoreSpan.title = "score";
-  meta.append(scoreSpan);
-
-  const novelty = Number(item.novelty);
-  const trust = Number(item.trust);
-  if (Number.isFinite(novelty) || Number.isFinite(trust)) {
-    const parts = [];
-    if (Number.isFinite(novelty)) parts.push(`n ${novelty.toFixed(2)}`);
-    if (Number.isFinite(trust)) parts.push(`t ${trust.toFixed(2)}`);
-    meta.append(node("span", "score-detail", `(${parts.join(" · ")})`));
-  }
-
-  article.append(meta);
-  if (sourceTrail(item).length > 1 || item.primary?.date_confidence !== "high") {
-    article.appendChild(renderSourceTrail(item));
-  }
-  return article;
-}
-
-function renderCompletionRow() {
-  const row = node("div", "completion-row");
-  row.append(node("strong", "", "You're caught up"));
-  row.append(document.createTextNode("·"));
-  const top = document.createElement("button");
-  top.type = "button";
-  top.textContent = "Back to top";
-  top.addEventListener("click", () => scrollToTop());
-  row.append(top);
-  if (!state.highNovelty) {
-    row.append(document.createTextNode("·"));
-    const novelty = document.createElement("button");
-    novelty.type = "button";
-    novelty.textContent = "High novelty only";
-    novelty.addEventListener("click", () => {
-      state.highNovelty = true;
-      syncUrl();
-      renderFilterShell();
-      renderFeed();
-      scrollToTop();
-    });
-    row.append(novelty);
-  }
-  return row;
-}
-
-function renderSourceTrail(item) {
-  const details = node("details", "item-also");
-  const summary = document.createElement("summary");
-  const trail = sourceTrail(item);
-  summary.textContent = `source trail · ${trail.length}`;
-  const list = node("ul", "also-list");
-  trail.forEach((source) => {
-    const row = document.createElement("li");
-    row.append(link(source.url, source.source_name || "source"));
-    row.append(node("span", "also-meta", `${shortDate(parseDate(source.published_at))} · ${source.date_confidence || "unknown"} date`));
-    if (source.title && source.title !== item.primary?.title) {
-      row.append(node("span", "also-title", source.title));
-    }
-    if (source.discussion_url) {
-      row.append(document.createTextNode(" · "));
-      row.append(link(source.discussion_url, source.discussion_source || "discussion"));
-    }
-    list.appendChild(row);
-  });
-  details.append(summary, list);
-  return details;
-}
-
-function sourceTrail(item) {
-  if (item.source_trail?.length) return item.source_trail;
-  const primary = item.primary ? [{
-    source_id: item.primary.source_id,
-    source_name: item.primary.source_name,
-    title: item.primary.title,
-    url: item.primary.url,
-    published_at: item.primary.published_at,
-    published_at_source: item.primary.published_at_source,
-    date_confidence: item.primary.date_confidence,
-    discussion_url: item.primary.discussion_url,
-    discussion_source: item.primary.discussion_source,
-  }] : [];
-  return primary.concat(item.also_seen_on || []);
-}
-
-function visibleItems() {
-  return (state.data?.clusters ?? []).filter((item) => {
-    if (state.kinds.size && !state.kinds.has(item.kind || "unknown")) return false;
-    if (state.highNovelty && Number(item.novelty ?? 0) < NOVELTY_TOP) return false;
-    if (state.discussionOnly && discussionLinks(item).length === 0) return false;
-    return true;
-  });
-}
-
-function discussionLinks(item) {
-  const seen = new Set();
-  const links = [];
-  const add = (url, label) => {
-    if (!url || seen.has(url)) return;
-    seen.add(url);
-    links.push({ url, label: label || "discussion" });
-  };
-  add(item.primary?.discussion_url, item.primary?.discussion_source);
-  (item.also_seen_on || []).forEach((source) => add(source.discussion_url, source.discussion_source));
-  (item.source_trail || []).forEach((source) => add(source.discussion_url, source.discussion_source));
-  return links;
-}
-
-function initFiltersFromUrl() {
-  const params = new URLSearchParams(location.search);
-  const kinds = csv(params.get("kind"));
-  if (kinds.length) state.kinds = new Set(kinds);
-  state.archiveDate = DATE_PATH_MATCH?.[1] || params.get("day") || null;
-  state.highNovelty = params.get("novelty") === "high";
-  state.discussionOnly = params.get("discussion") === "1";
-}
-
-function syncUrl() {
-  const params = new URLSearchParams();
-  if (state.archiveDate) params.set("day", state.archiveDate);
-  if (state.kinds.size) params.set("kind", [...state.kinds].join(","));
-  if (state.highNovelty) params.set("novelty", "high");
-  if (state.discussionOnly) params.set("discussion", "1");
-  if (document.body.classList.contains("is-detail")) params.set("detail", "1");
-  const next = params.toString() ? `${location.pathname}?${params}` : location.pathname;
-  history.replaceState(null, "", next);
-}
-
-function feedUrl() {
-  return state.archiveDate
-    ? rootUrl(`daily/${state.archiveDate}/feed.json`)
-    : rootUrl("feed.json");
-}
-
-function rootUrl(path) {
-  return new URL(path, new URL(ROOT_PREFIX, location.href)).toString();
-}
-
-function scrollToTop() {
-  hideResumePrompt();
-  clearReadingProgress();
-  window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
-}
-
-function updateTopJump() {
-  const button = document.getElementById("topJump");
-  const feed = document.getElementById("feed");
-  const feedTop = feed.getBoundingClientRect().top + window.scrollY;
-  const nearTop = window.scrollY < Math.max(520, feedTop + 240);
-  button.classList.toggle("is-visible", !nearTop);
-}
-
-function prepareResumePrompt(total) {
-  const day = currentFeedDay();
-  if (!day || state.resumePromptDay === day) return;
-  state.resumePromptDay = day;
-  const saved = readReadingProgress(day);
-  if (!saved || saved.y < 640 || saved.index < 4) {
-    hideResumePrompt();
-    return;
-  }
-  const index = Math.max(1, Math.min(Number(saved.index) || 1, total));
-  const prompt = document.getElementById("resumePrompt");
-  const button = document.getElementById("resumeReading");
-  prompt.dataset.resumeY = String(Math.max(0, Number(saved.y) || 0));
-  button.textContent = `Resume at item ${index}`;
-  prompt.hidden = false;
-}
-
-function hideResumePrompt() {
-  const prompt = document.getElementById("resumePrompt");
-  prompt.hidden = true;
-  delete prompt.dataset.resumeY;
-}
-
-function saveReadingProgress() {
-  if (!state.data) return;
-  const day = currentFeedDay();
-  if (!day) return;
-  if (window.scrollY < 160) {
-    clearReadingProgress();
-    return;
-  }
-  const index = currentReadIndex();
-  try {
-    localStorage.setItem(progressKey(day), JSON.stringify({
-      y: Math.round(window.scrollY),
-      index,
-      ts: Date.now(),
-    }));
-  } catch (_) {}
-}
-
-function clearReadingProgress() {
-  const day = currentFeedDay();
-  if (!day) return;
-  try { localStorage.removeItem(progressKey(day)); } catch (_) {}
-}
-
-function readReadingProgress(day) {
-  try {
-    const value = JSON.parse(localStorage.getItem(progressKey(day)) || "null");
-    if (!value || Date.now() - Number(value.ts || 0) > 7 * 86400000) return null;
-    return value;
-  } catch (_) {
-    return null;
-  }
-}
-
-function currentReadIndex() {
-  const items = [...document.querySelectorAll(".item[data-read-index]")];
-  const anchor = Math.min(window.innerHeight * 0.35, 240);
-  let current = 1;
-  for (const item of items) {
-    if (item.getBoundingClientRect().top <= anchor) current = Number(item.dataset.readIndex) || current;
-    else break;
-  }
-  return current;
-}
-
-function currentFeedDay() {
-  return state.archiveDate || String(state.data?.generated_at || "").slice(0, 10) || "today";
-}
-
-function progressKey(day) {
-  return `chronicle-progress:${day}`;
-}
-
-function prefersReducedMotion() {
-  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-}
-
-function toggleSet(set, value) {
-  set.has(value) ? set.delete(value) : set.add(value);
-}
-function csv(value) {
-  return value ? value.split(",").map((v) => v.trim()).filter(Boolean) : [];
-}
-function normalizeText(value) {
-  return String(value || "").toLowerCase().replace(/\s+/g, " ").trim();
-}
-function readableLine(item, title) {
-  const line = item.one_liner || item.primary?.summary || "";
-  const titleText = normalizeText(title);
-  const lineText = normalizeText(line);
-  if (!lineText || lineText === titleText) return "";
-  if (titleText && lineText.startsWith(titleText)) return "";
-  if (titleText.length > 40 && lineText.length > 40 && titleText.startsWith(lineText.slice(0, 80))) return "";
-  if (isWeakLine(lineText)) return "";
-  return decodeText(line);
-}
-function isWeakLine(value) {
-  return value === "comments"
-    || value.includes("/images/")
-    || value.includes("[link] [comments]")
-    || value.includes("submitted by /u/");
-}
-function decodeText(value) {
-  return String(value || "")
-    .replace(/&amp;/g, "&")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;|&#x27;/g, "'")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">");
-}
-function node(tag, className, textContent) {
-  const element = document.createElement(tag);
-  if (className) element.className = className;
-  if (textContent !== undefined) element.textContent = textContent;
-  return element;
-}
-function chip(label, active, onClick) {
-  const button = document.createElement("button");
-  button.className = "chip";
-  button.type = "button";
-  button.textContent = label;
-  button.setAttribute("aria-pressed", String(active));
-  button.addEventListener("click", onClick);
-  return button;
-}
-function link(href, label) {
-  const a = document.createElement("a");
-  const safe = href && /^https?:\/\//i.test(href) ? href : "#";
-  a.href = safe;
-  a.textContent = label || href || "link";
-  if (safe !== "#") {
-    a.target = "_blank";
-    a.rel = "noopener";
-  }
-  return a;
-}
-function sep() {
-  return Object.assign(document.createElement("span"), { className: "sep", textContent: "·" });
-}
-function emptyState(title, body) {
-  const wrap = node("div", "empty");
-  wrap.append(
-    Object.assign(document.createElement("strong"), { textContent: title }),
-    Object.assign(document.createElement("p"), { textContent: body }),
-  );
-  return wrap;
-}
-function showNotice(message) {
-  const notice = document.getElementById("notice");
-  notice.textContent = message;
-  notice.classList.add("is-visible");
-}
-function parseDate(value) {
-  if (!value) return null;
-  const date = new Date(value);
-  return Number.isNaN(date.getTime()) ? null : date;
-}
-function relTime(date, includeNow = false) {
-  if (!date) return "unknown";
-  const diff = Math.max(0, (Date.now() - date.getTime()) / 1000);
-  if (diff < 60 && includeNow) return "just now";
-  if (diff < 3600) return `${Math.floor(diff / 60)}m ago`;
-  if (diff < 86400) return `${Math.floor(diff / 3600)}h ago`;
-  return `${Math.floor(diff / 86400)}d ago`;
-}
-function shortDate(date) {
-  if (!date) return "unknown";
-  return date.toLocaleDateString(undefined, { month: "short", day: "numeric" });
-}
-function formatDay(value) {
-  const date = parseDate(`${value}T00:00:00.000Z`);
-  return date ? date.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" }) : value;
+function weightFor(count) {
+  if (count >= 60) return "high";
+  if (count >= 45) return "medium";
+  return "low";
 }
 </script>
 </body>

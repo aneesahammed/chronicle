@@ -282,7 +282,8 @@ async function writeArchiveOutputs(publicDir: string, feed: FeedFile) {
   await fs.writeFile(dayFeedPath, JSON.stringify(feed, null, 2));
   console.log(`[write] ${dayFeedPath}`);
 
-  await copyArchiveShell(publicDir, dailyDir);
+  // Per-day snapshots reuse the main feed template; the daily index page is a
+  // bespoke archive grid (public/daily/index.html) that we never overwrite here.
   await copyArchiveShell(publicDir, dayDir);
 
   const indexPath = path.join(dailyDir, "index.json");
