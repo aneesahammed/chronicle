@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-03T01:34:30.016Z",
-  "last_successful_generated_at": "2026-05-03T01:34:30.016Z",
+  "generated_at": "2026-05-03T03:26:26.727Z",
+  "last_successful_generated_at": "2026-05-03T03:26:26.727Z",
   "refresh_status": "ok",
   "classification_mode": "llm",
   "window_hours": 36,
@@ -140,8 +140,8 @@
       "name": "TechCrunch AI",
       "status": "ok",
       "fetched_count": 12,
-      "fresh_count": 7,
-      "stale_count": 5,
+      "fresh_count": 6,
+      "stale_count": 6,
       "oldest_published_at": "2026-04-30T19:27:41.000Z",
       "newest_published_at": "2026-05-02T21:54:58.000Z"
     },
@@ -150,8 +150,8 @@
       "name": "The Decoder",
       "status": "ok",
       "fetched_count": 10,
-      "fresh_count": 10,
-      "stale_count": 0,
+      "fresh_count": 9,
+      "stale_count": 1,
       "oldest_published_at": "2026-05-01T14:41:45.000Z",
       "newest_published_at": "2026-05-02T13:31:52.000Z"
     },
@@ -190,8 +190,8 @@
       "name": "Stack Overflow Blog",
       "status": "ok",
       "fetched_count": 7,
-      "fresh_count": 1,
-      "stale_count": 6,
+      "fresh_count": 0,
+      "stale_count": 7,
       "oldest_published_at": "2026-04-21T07:40:00.000Z",
       "newest_published_at": "2026-05-01T14:00:00.000Z"
     },
@@ -200,8 +200,8 @@
       "name": "The Verge AI",
       "status": "ok",
       "fetched_count": 9,
-      "fresh_count": 2,
-      "stale_count": 7,
+      "fresh_count": 1,
+      "stale_count": 8,
       "oldest_published_at": "2026-04-30T16:00:00.000Z",
       "newest_published_at": "2026-05-01T19:14:51.000Z"
     },
@@ -237,10 +237,10 @@
       "id": "hn_ai",
       "name": "Hacker News (AI-filtered)",
       "status": "ok",
-      "fetched_count": 2,
-      "fresh_count": 2,
+      "fetched_count": 1,
+      "fresh_count": 1,
       "stale_count": 0,
-      "oldest_published_at": "2026-05-02T12:16:16.000Z",
+      "oldest_published_at": "2026-05-02T21:21:27.000Z",
       "newest_published_at": "2026-05-02T21:21:27.000Z"
     },
     {
@@ -260,18 +260,18 @@
       "fetched_count": 25,
       "fresh_count": 25,
       "stale_count": 0,
-      "oldest_published_at": "2026-05-02T02:39:46.000Z",
-      "newest_published_at": "2026-05-02T23:51:44.000Z"
+      "oldest_published_at": "2026-05-02T06:35:02.000Z",
+      "newest_published_at": "2026-05-03T01:54:42.000Z"
     },
     {
       "id": "r_ml",
       "name": "r/MachineLearning",
       "status": "ok",
-      "fetched_count": 5,
-      "fresh_count": 5,
+      "fetched_count": 4,
+      "fresh_count": 4,
       "stale_count": 0,
-      "oldest_published_at": "2026-05-02T02:15:08.000Z",
-      "newest_published_at": "2026-05-02T22:32:58.000Z"
+      "oldest_published_at": "2026-05-02T09:55:56.000Z",
+      "newest_published_at": "2026-05-03T02:18:27.000Z"
     },
     {
       "id": "openai",
@@ -344,7 +344,79 @@
       "newest_published_at": "2026-03-25T12:00:00.000Z"
     }
   ],
-  "count": 60,
+  "top_news": [
+    {
+      "cluster_id": "1gpyz9d",
+      "title": "The agent harness belongs outside the sandbox",
+      "url": "https://mendral.com/blog/agent-harness-belongs-outside-sandbox",
+      "source_name": "Hacker News (AI-filtered)",
+      "published_at": "2026-05-02T21:21:27Z",
+      "kind": "discussion",
+      "score": 0.787,
+      "dek": "Agent harness architecture debate: sandboxed vs. external execution",
+      "brief": "A blog post discusses security, failure modes, and scalability tradeoffs of placing agent harnesses inside or outside sandboxed environments. Multi-user systems face unique challenges compared to single-user setups. The author emphasizes implications for production agents managing tool calls and feedback loops.",
+      "image_alt": "Diagram comparing sandboxed and external agent harness architectures",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-05-03T03:26:26.727Z"
+    },
+    {
+      "cluster_id": "q7czhe",
+      "title": "Karpathy's MicroGPT running at 50,000 tps on an FPGA",
+      "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t28bfj/karpathys_microgpt_running_at_50000_tps_on_an_fpga",
+      "source_name": "r/LocalLLaMA",
+      "published_at": "2026-05-03T01:54:42.000Z",
+      "kind": "model_release",
+      "score": 0.78,
+      "dek": "MicroGPT achieves 50,000 tps on FPGA with onboard weights",
+      "brief": "A Reddit post highlights a 4,192-parameter GPT variant running at 50,000 tokens per second on FPGA hardware. The implementation uses onboard ROM for weights, enabling high throughput but limiting parameter count to 20-30 million on current FPGAs. Project details and code are available at the provided links.",
+      "image_alt": "FPGA chip with data flow visualization showing high-speed processing",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-05-03T03:26:26.727Z"
+    },
+    {
+      "cluster_id": "1aph4si",
+      "title": "AI-generated actors and scripts are now ineligible for Oscars",
+      "url": "https://techcrunch.com/2026/05/02/ai-generated-actors-and-scripts-are-now-ineligible-for-oscars",
+      "source_name": "TechCrunch AI",
+      "published_at": "2026-05-02T21:54:58.000Z",
+      "kind": "news",
+      "score": 0.552,
+      "dek": "AI-generated content excluded from Oscar eligibility",
+      "brief": "Bad news for Tilly Norwood.",
+      "enrichment_status": "metadata_only",
+      "enriched_at": "2026-05-03T03:26:26.727Z"
+    },
+    {
+      "cluster_id": "1mo2qol",
+      "title": "fabrica - A terminal-based minimal coding agent harness",
+      "url": "https://github.com/Endi1/fabrica",
+      "source_name": "Lobsters (AI tag)",
+      "published_at": "2026-05-02T19:49:07.000Z",
+      "kind": "tool",
+      "score": 0.542,
+      "dek": "fabrica: Minimal terminal-based coding agent harness",
+      "brief": "GitHub repository for fabrica, a terminal-based framework for building coding agents. The tool provides a lightweight interface for agent development and execution, with no mention of specific features or implementation details in the provided content.",
+      "image_alt": "Terminal window showing code execution with agent prompts",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-05-03T03:26:26.727Z"
+    },
+    {
+      "cluster_id": "1s2huha",
+      "title": "Meta acquires Assured Robot Intelligence to accelerate humanoid robot push",
+      "url": "https://the-decoder.com/meta-acquires-assured-robot-intelligence-to-accelerate-humanoid-robot-push",
+      "source_name": "The Decoder",
+      "published_at": "2026-05-02T08:02:06.000Z",
+      "kind": "company_announcement",
+      "score": 0.528,
+      "dek": "Meta acquires Assured Robot Intelligence to advance humanoid robots",
+      "brief": "Meta has acquired robotics AI startup Assured Robot Intelligence to accelerate its work on humanoid robots. The goal is an open platform for the entire industry, similar to what Android did for smartphones. The article Meta acquires Assured Robot Intelligence to accelerate humanoid robot push appeared first on The Decoder.",
+      "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/meta_humanoid_robot.png",
+      "image_source": "rss_content",
+      "enrichment_status": "metadata_only",
+      "enriched_at": "2026-05-03T03:26:26.727Z"
+    }
+  ],
+  "count": 58,
   "clusters": [
     {
       "id": "1gpyz9d",
@@ -362,8 +434,8 @@
         "published_at_source": "api",
         "date_confidence": "high",
         "engagement": {
-          "score": 64,
-          "comments": 51
+          "score": 71,
+          "comments": 56
         }
       },
       "members": [
@@ -381,8 +453,8 @@
           "published_at_source": "api",
           "date_confidence": "high",
           "engagement": {
-            "score": 64,
-            "comments": 51
+            "score": 71,
+            "comments": 56
           }
         }
       ],
@@ -401,11 +473,182 @@
       ],
       "also_seen_on": [],
       "kind": "discussion",
-      "quality": "mixed",
-      "one_liner": "Blog argues agent control systems should operate outside sandboxed environments",
+      "quality": "signal",
+      "one_liner": "Blog argues agent harness should be outside sandboxed environments",
       "novelty": 0.845,
       "trust": 0.65,
-      "score": 0.678
+      "score": 0.787
+    },
+    {
+      "id": "q7czhe",
+      "primary": {
+        "id": "q7czhe",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Karpathy's MicroGPT running at 50,000 tps on an FPGA",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t28bfj/karpathys_microgpt_running_at_50000_tps_on_an_fpga",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t28bfj/karpathys_microgpt_running_at_50000_tps_on_an_fpga/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t28bfj/karpathys_microgpt_running_at_50000_tps_on_an_fpga",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "Sure, it's only 4,192 parameters, but it's a start. Project write-up here: https://v2.talos.wtf/ and github repository here: https://github.com/Luthiraa/TALOS-V2 Some of the speed comes from having the weights onboard, rather than in external memory. Onboard ROM means with 16 bit weights current FPGAs max out at 20-30 million parameters, but maybe this and Taalas (https://taalas.com/ - similar names are unlikely a coincidence) will lead to more onboard ROM appearing in FPGAs or FPGAs dedicated to SLMs. submitted by /u/jawondo [link] [comments]",
+        "published_at": "2026-05-03T01:54:42.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "q7czhe",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Karpathy's MicroGPT running at 50,000 tps on an FPGA",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t28bfj/karpathys_microgpt_running_at_50000_tps_on_an_fpga",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t28bfj/karpathys_microgpt_running_at_50000_tps_on_an_fpga/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t28bfj/karpathys_microgpt_running_at_50000_tps_on_an_fpga",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "Sure, it's only 4,192 parameters, but it's a start. Project write-up here: https://v2.talos.wtf/ and github repository here: https://github.com/Luthiraa/TALOS-V2 Some of the speed comes from having the weights onboard, rather than in external memory. Onboard ROM means with 16 bit weights current FPGAs max out at 20-30 million parameters, but maybe this and Taalas (https://taalas.com/ - similar names are unlikely a coincidence) will lead to more onboard ROM appearing in FPGAs or FPGAs dedicated to SLMs. submitted by /u/jawondo [link] [comments]",
+          "published_at": "2026-05-03T01:54:42.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Karpathy's MicroGPT running at 50,000 tps on an FPGA",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t28bfj/karpathys_microgpt_running_at_50000_tps_on_an_fpga",
+          "published_at": "2026-05-03T01:54:42.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t28bfj/karpathys_microgpt_running_at_50000_tps_on_an_fpga",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "MicroGPT runs at 50k TPS on FPGA with onboard weights",
+      "novelty": 0.918,
+      "trust": 0.5,
+      "score": 0.78
+    },
+    {
+      "id": "1g63x2m",
+      "primary": {
+        "id": "1g63x2m",
+        "source_id": "r_ml",
+        "source_name": "r/MachineLearning",
+        "trust": 0.55,
+        "kind_hint": "discussion",
+        "title": "Anyone submit ML articles to ACM journals (eg. TOPML or TIST)? [D]",
+        "url": "https://old.reddit.com/r/MachineLearning/comments/1t28twe/anyone_submit_ml_articles_to_acm_journals_eg",
+        "original_url": "https://old.reddit.com/r/MachineLearning/comments/1t28twe/anyone_submit_ml_articles_to_acm_journals_eg/",
+        "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t28twe/anyone_submit_ml_articles_to_acm_journals_eg",
+        "discussion_source": "r/MachineLearning",
+        "summary": "Have any of you submitted ML articles to ACM journals (eg. TOPML or TIST)? How long did the process take, and were the reviews high-quality? How does it compare to other journals (eg. TMLR) in terms of difficulty? Thanks. submitted by /u/random_sydneysider [link] [comments]",
+        "published_at": "2026-05-03T02:18:27.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1g63x2m",
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "trust": 0.55,
+          "kind_hint": "discussion",
+          "title": "Anyone submit ML articles to ACM journals (eg. TOPML or TIST)? [D]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1t28twe/anyone_submit_ml_articles_to_acm_journals_eg",
+          "original_url": "https://old.reddit.com/r/MachineLearning/comments/1t28twe/anyone_submit_ml_articles_to_acm_journals_eg/",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t28twe/anyone_submit_ml_articles_to_acm_journals_eg",
+          "discussion_source": "r/MachineLearning",
+          "summary": "Have any of you submitted ML articles to ACM journals (eg. TOPML or TIST)? How long did the process take, and were the reviews high-quality? How does it compare to other journals (eg. TMLR) in terms of difficulty? Thanks. submitted by /u/random_sydneysider [link] [comments]",
+          "published_at": "2026-05-03T02:18:27.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "title": "Anyone submit ML articles to ACM journals (eg. TOPML or TIST)? [D]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1t28twe/anyone_submit_ml_articles_to_acm_journals_eg",
+          "published_at": "2026-05-03T02:18:27.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t28twe/anyone_submit_ml_articles_to_acm_journals_eg",
+          "discussion_source": "r/MachineLearning"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.934,
+      "trust": 0.55,
+      "score": 0.686
+    },
+    {
+      "id": "90gabp",
+      "primary": {
+        "id": "90gabp",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "GPT 5.5 just leaked its chain of thought to me in codex, and it looks like an idea from 5 months ago in this sub.",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t27wja/gpt_55_just_leaked_its_chain_of_thought_to_me_in",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t27wja/gpt_55_just_leaked_its_chain_of_thought_to_me_in/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t27wja/gpt_55_just_leaked_its_chain_of_thought_to_me_in",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "https://www.reddit.com/r/LocalLLaMA/comments/1p0lnlo/make_your_ai_talk_like_a_caveman_and_decrease/ In the middle of a project I'm working on, I got this output from GPT 5.5-medium via codex: Implemented the narrower fix in Homm3ImportUnitPreviewModelHook.cs? Need absolute path. Need know cwd absolute. v:... Use markdown. final with path. Need avoid bogus path. Use Homm3ImportUnitPreviewModelHook.cs? Format requires /abs/path. Windows abs maybe v:.... Use angle. Final no too long. Need include uncommitted. Proceed. submitted by /u/Homeschooled316 [link] [comments]",
+        "published_at": "2026-05-03T01:35:03.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "90gabp",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "GPT 5.5 just leaked its chain of thought to me in codex, and it looks like an idea from 5 months ago in this sub.",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t27wja/gpt_55_just_leaked_its_chain_of_thought_to_me_in",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t27wja/gpt_55_just_leaked_its_chain_of_thought_to_me_in/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t27wja/gpt_55_just_leaked_its_chain_of_thought_to_me_in",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "https://www.reddit.com/r/LocalLLaMA/comments/1p0lnlo/make_your_ai_talk_like_a_caveman_and_decrease/ In the middle of a project I'm working on, I got this output from GPT 5.5-medium via codex: Implemented the narrower fix in Homm3ImportUnitPreviewModelHook.cs? Need absolute path. Need know cwd absolute. v:... Use markdown. final with path. Need avoid bogus path. Use Homm3ImportUnitPreviewModelHook.cs? Format requires /abs/path. Windows abs maybe v:.... Use angle. Final no too long. Need include uncommitted. Proceed. submitted by /u/Homeschooled316 [link] [comments]",
+          "published_at": "2026-05-03T01:35:03.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "GPT 5.5 just leaked its chain of thought to me in codex, and it looks like an idea from 5 months ago in this sub.",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t27wja/gpt_55_just_leaked_its_chain_of_thought_to_me_in",
+          "published_at": "2026-05-03T01:35:03.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t27wja/gpt_55_just_leaked_its_chain_of_thought_to_me_in",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "Claim of GPT 5.5 leaking chain of thought from past discussion",
+      "novelty": 0.914,
+      "trust": 0.5,
+      "score": 0.666
     },
     {
       "id": "1vfk7ml",
@@ -459,10 +702,10 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "User prefers Qwen 35B over 27B for coding and research tasks.",
+      "one_liner": "User comparison of Qwen 3.6 27B vs 35B performance for coding/research",
       "novelty": 0.838,
       "trust": 0.5,
-      "score": 0.644
+      "score": 0.64
     },
     {
       "id": "1aph4si",
@@ -510,10 +753,10 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "signal",
-      "one_liner": "AI-generated actors/scripts now Oscar-ineligible.",
+      "one_liner": "AI-generated content excluded from Oscar eligibility",
       "novelty": 0,
       "trust": 0.72,
-      "score": 0.556
+      "score": 0.552
     },
     {
       "id": "1mo2qol",
@@ -565,61 +808,10 @@
       "also_seen_on": [],
       "kind": "tool",
       "quality": "signal",
-      "one_liner": "Fabrica provides minimal terminal-based coding agent interface for developers",
+      "one_liner": "fabrica: Terminal-based minimal coding agent harness",
       "novelty": 0,
       "trust": 0.7,
-      "score": 0.546
-    },
-    {
-      "id": "akpdhl",
-      "primary": {
-        "id": "akpdhl",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
-        "trust": 0.74,
-        "kind_hint": "news",
-        "title": "Even the latest AI models make three systematic reasoning errors, ARC-AGI-3 analysis shows",
-        "url": "https://the-decoder.com/even-the-latest-ai-models-make-three-systematic-reasoning-errors-arc-agi-3-analysis-shows",
-        "original_url": "https://the-decoder.com/even-the-latest-ai-models-make-three-systematic-reasoning-errors-arc-agi-3-analysis-shows/",
-        "summary": "The ARC Prize Foundation analyzed 160 game runs of OpenAI's GPT-5.5 and Anthropic's Opus 4.7 on the ARC-AGI-3 benchmark. Three systematic error patterns explain why both models stay below 1 percent on tasks that humans can solve without much trouble. The article Even the latest AI models make three systematic reasoning errors, ARC-AGI-3 analysis shows appeared first on The Decoder.",
-        "published_at": "2026-05-02T13:31:52.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "akpdhl",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "trust": 0.74,
-          "kind_hint": "news",
-          "title": "Even the latest AI models make three systematic reasoning errors, ARC-AGI-3 analysis shows",
-          "url": "https://the-decoder.com/even-the-latest-ai-models-make-three-systematic-reasoning-errors-arc-agi-3-analysis-shows",
-          "original_url": "https://the-decoder.com/even-the-latest-ai-models-make-three-systematic-reasoning-errors-arc-agi-3-analysis-shows/",
-          "summary": "The ARC Prize Foundation analyzed 160 game runs of OpenAI's GPT-5.5 and Anthropic's Opus 4.7 on the ARC-AGI-3 benchmark. Three systematic error patterns explain why both models stay below 1 percent on tasks that humans can solve without much trouble. The article Even the latest AI models make three systematic reasoning errors, ARC-AGI-3 analysis shows appeared first on The Decoder.",
-          "published_at": "2026-05-02T13:31:52.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "Even the latest AI models make three systematic reasoning errors, ARC-AGI-3 analysis shows",
-          "url": "https://the-decoder.com/even-the-latest-ai-models-make-three-systematic-reasoning-errors-arc-agi-3-analysis-shows",
-          "published_at": "2026-05-02T13:31:52.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "paper",
-      "quality": "signal",
-      "one_liner": "Analysis reveals systematic reasoning flaws in top AI models.",
-      "novelty": 0,
-      "trust": 0.74,
-      "score": 0.543
+      "score": 0.542
     },
     {
       "id": "1bj3zod",
@@ -633,6 +825,8 @@
         "url": "https://infoq.com/news/2026/05/ducklake-sql-catalog",
         "original_url": "https://www.infoq.com/news/2026/05/ducklake-sql-catalog/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
         "summary": "DuckDB Labs recently released DuckLake 1.0, a data lake format that stores table metadata in a SQL database rather than across many files in object storage. The first implementation is available as a DuckDB extension and includes catalog-stored small updates, improved sorting and partitioning options, and compatibility with Iceberg-style data features. By Renato Losio",
+        "image_url": "https://res.infoq.com/news/2026/05/ducklake-sql-catalog/en/headerimage/generatedHeaderImage-1776423164012.jpg",
+        "image_source": "rss_content",
         "published_at": "2026-05-02T06:48:00.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
@@ -648,6 +842,8 @@
           "url": "https://infoq.com/news/2026/05/ducklake-sql-catalog",
           "original_url": "https://www.infoq.com/news/2026/05/ducklake-sql-catalog/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
           "summary": "DuckDB Labs recently released DuckLake 1.0, a data lake format that stores table metadata in a SQL database rather than across many files in object storage. The first implementation is available as a DuckDB extension and includes catalog-stored small updates, improved sorting and partitioning options, and compatibility with Iceberg-style data features. By Renato Losio",
+          "image_url": "https://res.infoq.com/news/2026/05/ducklake-sql-catalog/en/headerimage/generatedHeaderImage-1776423164012.jpg",
+          "image_source": "rss_content",
           "published_at": "2026-05-02T06:48:00.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
@@ -665,12 +861,12 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "tool",
+      "kind": "tutorial",
       "quality": "signal",
-      "one_liner": "DuckLake 1.0 stores data lake metadata in SQL catalogs, improving query performance and updates",
+      "one_liner": "DuckDB Labs recently released DuckLake 1.0, a data lake format that stores table metadata in a SQL database rather than across many files in object storage. The first implementation is available as a ",
       "novelty": 0,
       "trust": 0.78,
-      "score": 0.539
+      "score": 0.535
     },
     {
       "id": "1s2huha",
@@ -684,6 +880,8 @@
         "url": "https://the-decoder.com/meta-acquires-assured-robot-intelligence-to-accelerate-humanoid-robot-push",
         "original_url": "https://the-decoder.com/meta-acquires-assured-robot-intelligence-to-accelerate-humanoid-robot-push/",
         "summary": "Meta has acquired robotics AI startup Assured Robot Intelligence to accelerate its work on humanoid robots. The goal is an open platform for the entire industry, similar to what Android did for smartphones. The article Meta acquires Assured Robot Intelligence to accelerate humanoid robot push appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/meta_humanoid_robot.png",
+        "image_source": "rss_content",
         "published_at": "2026-05-02T08:02:06.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
@@ -699,6 +897,8 @@
           "url": "https://the-decoder.com/meta-acquires-assured-robot-intelligence-to-accelerate-humanoid-robot-push",
           "original_url": "https://the-decoder.com/meta-acquires-assured-robot-intelligence-to-accelerate-humanoid-robot-push/",
           "summary": "Meta has acquired robotics AI startup Assured Robot Intelligence to accelerate its work on humanoid robots. The goal is an open platform for the entire industry, similar to what Android did for smartphones. The article Meta acquires Assured Robot Intelligence to accelerate humanoid robot push appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/meta_humanoid_robot.png",
+          "image_source": "rss_content",
           "published_at": "2026-05-02T08:02:06.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
@@ -721,335 +921,239 @@
       "one_liner": "Meta acquires Assured Robot Intelligence to advance humanoid robots",
       "novelty": 0,
       "trust": 0.74,
-      "score": 0.532
+      "score": 0.528
     },
     {
-      "id": "1khz442",
+      "id": "xearsd",
       "primary": {
-        "id": "1khz442",
-        "source_id": "hn_ai",
-        "source_name": "Hacker News (AI-filtered)",
-        "trust": 0.65,
-        "title": "Open Design: Use Your Coding Agent as a Design Engine",
-        "url": "https://github.com/nexu-io/open-design",
-        "original_url": "https://github.com/nexu-io/open-design",
-        "discussion_url": "https://news.ycombinator.com/item?id=47985750",
-        "discussion_source": "Hacker News",
-        "published_at": "2026-05-02T12:16:16Z",
-        "published_at_source": "api",
-        "date_confidence": "high",
-        "engagement": {
-          "score": 175,
-          "comments": 84
-        }
+        "id": "xearsd",
+        "source_id": "ars_ai",
+        "source_name": "Ars Technica AI",
+        "trust": 0.78,
+        "kind_hint": "news",
+        "title": "Study: AI models that consider user's feeling are more likely to make errors",
+        "url": "https://arstechnica.com/ai/2026/05/study-ai-models-that-consider-users-feeling-are-more-likely-to-make-errors",
+        "original_url": "https://arstechnica.com/ai/2026/05/study-ai-models-that-consider-users-feeling-are-more-likely-to-make-errors/",
+        "summary": "Overtuning can cause models to \"prioritize user satisfaction over truthfulness.”",
+        "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/05/GettyImages-1338190481-1152x648.jpg",
+        "image_source": "rss_media",
+        "published_at": "2026-05-01T22:23:36.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
       },
       "members": [
         {
-          "id": "1khz442",
-          "source_id": "hn_ai",
-          "source_name": "Hacker News (AI-filtered)",
-          "trust": 0.65,
-          "title": "Open Design: Use Your Coding Agent as a Design Engine",
-          "url": "https://github.com/nexu-io/open-design",
-          "original_url": "https://github.com/nexu-io/open-design",
-          "discussion_url": "https://news.ycombinator.com/item?id=47985750",
-          "discussion_source": "Hacker News",
-          "published_at": "2026-05-02T12:16:16Z",
-          "published_at_source": "api",
-          "date_confidence": "high",
-          "engagement": {
-            "score": 175,
-            "comments": 84
-          }
+          "id": "xearsd",
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "trust": 0.78,
+          "kind_hint": "news",
+          "title": "Study: AI models that consider user's feeling are more likely to make errors",
+          "url": "https://arstechnica.com/ai/2026/05/study-ai-models-that-consider-users-feeling-are-more-likely-to-make-errors",
+          "original_url": "https://arstechnica.com/ai/2026/05/study-ai-models-that-consider-users-feeling-are-more-likely-to-make-errors/",
+          "summary": "Overtuning can cause models to \"prioritize user satisfaction over truthfulness.”",
+          "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/05/GettyImages-1338190481-1152x648.jpg",
+          "image_source": "rss_media",
+          "published_at": "2026-05-01T22:23:36.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "hn_ai",
-          "source_name": "Hacker News (AI-filtered)",
-          "title": "Open Design: Use Your Coding Agent as a Design Engine",
-          "url": "https://github.com/nexu-io/open-design",
-          "published_at": "2026-05-02T12:16:16Z",
-          "published_at_source": "api",
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "title": "Study: AI models that consider user's feeling are more likely to make errors",
+          "url": "https://arstechnica.com/ai/2026/05/study-ai-models-that-consider-users-feeling-are-more-likely-to-make-errors",
+          "published_at": "2026-05-01T22:23:36.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "Study finds AI models prioritizing user satisfaction may increase errors",
+      "novelty": 0,
+      "trust": 0.78,
+      "score": 0.518
+    },
+    {
+      "id": "1w8yjl6",
+      "primary": {
+        "id": "1w8yjl6",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Eight tech giants sign Pentagon deals to build an \"AI-first fighting force\" across classified networks",
+        "url": "https://the-decoder.com/eight-tech-giants-sign-pentagon-deals-to-build-an-ai-first-fighting-force-across-classified-networks",
+        "original_url": "https://the-decoder.com/eight-tech-giants-sign-pentagon-deals-to-build-an-ai-first-fighting-force-across-classified-networks/",
+        "summary": "Eight tech companies are supplying AI for classified US military networks, part of the Pentagon's push to build an \"AI-first fighting force.\" Anthropic is notably absent from the list after the company rejected a usage clause and got flagged as a security risk. The article Eight tech giants sign Pentagon deals to build an \"AI-first fighting force\" across classified networks appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/pentagon_AI_strategy.png",
+        "image_source": "rss_content",
+        "published_at": "2026-05-01T16:30:38.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1w8yjl6",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Eight tech giants sign Pentagon deals to build an \"AI-first fighting force\" across classified networks",
+          "url": "https://the-decoder.com/eight-tech-giants-sign-pentagon-deals-to-build-an-ai-first-fighting-force-across-classified-networks",
+          "original_url": "https://the-decoder.com/eight-tech-giants-sign-pentagon-deals-to-build-an-ai-first-fighting-force-across-classified-networks/",
+          "summary": "Eight tech companies are supplying AI for classified US military networks, part of the Pentagon's push to build an \"AI-first fighting force.\" Anthropic is notably absent from the list after the company rejected a usage clause and got flagged as a security risk. The article Eight tech giants sign Pentagon deals to build an \"AI-first fighting force\" across classified networks appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/pentagon_AI_strategy.png",
+          "image_source": "rss_content",
+          "published_at": "2026-05-01T16:30:38.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Eight tech giants sign Pentagon deals to build an \"AI-first fighting force\" across classified networks",
+          "url": "https://the-decoder.com/eight-tech-giants-sign-pentagon-deals-to-build-an-ai-first-fighting-force-across-classified-networks",
+          "published_at": "2026-05-01T16:30:38.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "signal",
+      "one_liner": "Eight tech firms partner with Pentagon for AI in classified military networks",
+      "novelty": 0,
+      "trust": 0.74,
+      "score": 0.496
+    },
+    {
+      "id": "15kv94z",
+      "primary": {
+        "id": "15kv94z",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Ban phrases on llama.cpp with this script.",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t227hk/ban_phrases_on_llamacpp_with_this_script",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t227hk/ban_phrases_on_llamacpp_with_this_script/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t227hk/ban_phrases_on_llamacpp_with_this_script",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "Check the README for setup instructions: https://github.com/BigStationW/llama-cpp-phrase-ban submitted by /u/Total-Resort-3120 [link] [comments]",
+        "image_url": "https://preview.redd.it/qgokvp3xjsyg1.png?width=640&crop=smart&auto=webp&s=3b1fda00bff33d00711c413ba42de218c2a5297f",
+        "image_source": "rss_media",
+        "published_at": "2026-05-02T21:22:08.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "15kv94z",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Ban phrases on llama.cpp with this script.",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t227hk/ban_phrases_on_llamacpp_with_this_script",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t227hk/ban_phrases_on_llamacpp_with_this_script/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t227hk/ban_phrases_on_llamacpp_with_this_script",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "Check the README for setup instructions: https://github.com/BigStationW/llama-cpp-phrase-ban submitted by /u/Total-Resort-3120 [link] [comments]",
+          "image_url": "https://preview.redd.it/qgokvp3xjsyg1.png?width=640&crop=smart&auto=webp&s=3b1fda00bff33d00711c413ba42de218c2a5297f",
+          "image_source": "rss_media",
+          "published_at": "2026-05-02T21:22:08.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Ban phrases on llama.cpp with this script.",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t227hk/ban_phrases_on_llamacpp_with_this_script",
+          "published_at": "2026-05-02T21:22:08.000Z",
+          "published_at_source": "feed",
           "date_confidence": "high",
-          "discussion_url": "https://news.ycombinator.com/item?id=47985750",
-          "discussion_source": "Hacker News"
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t227hk/ban_phrases_on_llamacpp_with_this_script",
+          "discussion_source": "r/LocalLLaMA"
         }
       ],
       "also_seen_on": [],
       "kind": "tool",
       "quality": "signal",
-      "one_liner": "Open Design project uses coding agents for UI/UX design generation",
+      "one_liner": "Script to ban phrases in llama.cpp models",
       "novelty": 0,
-      "trust": 0.65,
-      "score": 0.518
+      "trust": 0.5,
+      "score": 0.496
     },
     {
-      "id": "1uefvu5",
+      "id": "cx5ngs",
       "primary": {
-        "id": "1uefvu5",
-        "source_id": "r_ml",
-        "source_name": "r/MachineLearning",
-        "trust": 0.55,
+        "id": "cx5ngs",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "trust": 0.5,
         "kind_hint": "discussion",
-        "title": "Toy experiment: frozen Pythia-70M can use a forward-derived fast memory for contextual one-shot symbolic recall [D]",
-        "url": "https://old.reddit.com/r/MachineLearning/comments/1t23wug/toy_experiment_frozen_pythia70m_can_use_a",
-        "original_url": "https://old.reddit.com/r/MachineLearning/comments/1t23wug/toy_experiment_frozen_pythia70m_can_use_a/",
-        "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t23wug/toy_experiment_frozen_pythia70m_can_use_a",
-        "discussion_source": "r/MachineLearning",
-        "summary": "Toy Experiment: Frozen Pythia-70M Using Forward-Derived Fast Memory for Contextual One-Shot Recall I have been running a small research/toy experiment around fast memory on top of a frozen open-weight transformer. The motivation is simple: normal transformer learning requires backprop and weight updates, but in-context adaptation feels more like temporary forward-pass memory. I wanted to test whether a frozen model exposes enough geometry that a small external memory can do limited one-shot binding without changing the transformer weights. Setup Model: frozen EleutherAI/pythia-70m No transform",
-        "published_at": "2026-05-02T22:32:58.000Z",
+        "title": "Warpdrv - my open-source Llama.cpp launcher for daily-driving Qwen 35b + 27b on Strix Halo + RTX Pro.",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1w920/warpdrv_my_opensource_llamacpp_launcher_for",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1w920/warpdrv_my_opensource_llamacpp_launcher_for/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1w920/warpdrv_my_opensource_llamacpp_launcher_for",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "I wanted to share an open-source app that I built for running LLMs locally on my setup. My setup Hardware FEVM FAEX1 (128GB) RTX Pro 5000 Blackwell (48GB), connected over OCuLink Aoostar AG02 2x2TB internal m.2 drives on raid-0 using mdadm. Software: Ubuntu 25.10, llama.cpp built from source for cuda + vulkan, rocm. How I use this app I generally run two models in parallel using different Llama backends simultaneously - Qwen3.6 27b UD-Q6-KXL or NVFP4 on CUDA, and Qwen3.6 35b A3B UD-Q6-KXL on the Strix Halo unified memory. I mostly use them with opencode for coding. The built in model-router co",
+        "image_url": "https://preview.redd.it/cocg2gtddryg1.png?width=140&height=96&auto=webp&s=4745515c141c6216e5aa5bb3e8a61010fde74943",
+        "image_source": "rss_media",
+        "published_at": "2026-05-02T17:33:52.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "1uefvu5",
-          "source_id": "r_ml",
-          "source_name": "r/MachineLearning",
-          "trust": 0.55,
+          "id": "cx5ngs",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "trust": 0.5,
           "kind_hint": "discussion",
-          "title": "Toy experiment: frozen Pythia-70M can use a forward-derived fast memory for contextual one-shot symbolic recall [D]",
-          "url": "https://old.reddit.com/r/MachineLearning/comments/1t23wug/toy_experiment_frozen_pythia70m_can_use_a",
-          "original_url": "https://old.reddit.com/r/MachineLearning/comments/1t23wug/toy_experiment_frozen_pythia70m_can_use_a/",
-          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t23wug/toy_experiment_frozen_pythia70m_can_use_a",
-          "discussion_source": "r/MachineLearning",
-          "summary": "Toy Experiment: Frozen Pythia-70M Using Forward-Derived Fast Memory for Contextual One-Shot Recall I have been running a small research/toy experiment around fast memory on top of a frozen open-weight transformer. The motivation is simple: normal transformer learning requires backprop and weight updates, but in-context adaptation feels more like temporary forward-pass memory. I wanted to test whether a frozen model exposes enough geometry that a small external memory can do limited one-shot binding without changing the transformer weights. Setup Model: frozen EleutherAI/pythia-70m No transform",
-          "published_at": "2026-05-02T22:32:58.000Z",
+          "title": "Warpdrv - my open-source Llama.cpp launcher for daily-driving Qwen 35b + 27b on Strix Halo + RTX Pro.",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1w920/warpdrv_my_opensource_llamacpp_launcher_for",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1w920/warpdrv_my_opensource_llamacpp_launcher_for/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1w920/warpdrv_my_opensource_llamacpp_launcher_for",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "I wanted to share an open-source app that I built for running LLMs locally on my setup. My setup Hardware FEVM FAEX1 (128GB) RTX Pro 5000 Blackwell (48GB), connected over OCuLink Aoostar AG02 2x2TB internal m.2 drives on raid-0 using mdadm. Software: Ubuntu 25.10, llama.cpp built from source for cuda + vulkan, rocm. How I use this app I generally run two models in parallel using different Llama backends simultaneously - Qwen3.6 27b UD-Q6-KXL or NVFP4 on CUDA, and Qwen3.6 35b A3B UD-Q6-KXL on the Strix Halo unified memory. I mostly use them with opencode for coding. The built in model-router co",
+          "image_url": "https://preview.redd.it/cocg2gtddryg1.png?width=140&height=96&auto=webp&s=4745515c141c6216e5aa5bb3e8a61010fde74943",
+          "image_source": "rss_media",
+          "published_at": "2026-05-02T17:33:52.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "r_ml",
-          "source_name": "r/MachineLearning",
-          "title": "Toy experiment: frozen Pythia-70M can use a forward-derived fast memory for contextual one-shot symbolic recall [D]",
-          "url": "https://old.reddit.com/r/MachineLearning/comments/1t23wug/toy_experiment_frozen_pythia70m_can_use_a",
-          "published_at": "2026-05-02T22:32:58.000Z",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Warpdrv - my open-source Llama.cpp launcher for daily-driving Qwen 35b + 27b on Strix Halo + RTX Pro.",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1w920/warpdrv_my_opensource_llamacpp_launcher_for",
+          "published_at": "2026-05-02T17:33:52.000Z",
           "published_at_source": "feed",
           "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t23wug/toy_experiment_frozen_pythia70m_can_use_a",
-          "discussion_source": "r/MachineLearning"
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1w920/warpdrv_my_opensource_llamacpp_launcher_for",
+          "discussion_source": "r/LocalLLaMA"
         }
       ],
       "also_seen_on": [],
-      "kind": "discussion",
+      "kind": "tool",
       "quality": "signal",
-      "one_liner": "Toy experiment using frozen Pythia-70M for memory-based recall",
+      "one_liner": "Open-source Llama.cpp launcher for Qwen models on high-end hardware",
       "novelty": 0,
-      "trust": 0.55,
-      "score": 0.515
-    },
-    {
-      "id": "knvdu4",
-      "primary": {
-        "id": "knvdu4",
-        "source_id": "techcrunch_ai",
-        "source_name": "TechCrunch AI",
-        "trust": 0.72,
-        "kind_hint": "news",
-        "title": "Meta buys robotics startup to bolster its humanoid AI ambitions",
-        "url": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions",
-        "original_url": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions/",
-        "summary": "Meta bought humanoid startup Assured Robot Intelligence to beef up its AI models for robots, the company said.",
-        "published_at": "2026-05-01T22:13:27.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "knvdu4",
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "trust": 0.72,
-          "kind_hint": "news",
-          "title": "Meta buys robotics startup to bolster its humanoid AI ambitions",
-          "url": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions",
-          "original_url": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions/",
-          "summary": "Meta bought humanoid startup Assured Robot Intelligence to beef up its AI models for robots, the company said.",
-          "published_at": "2026-05-01T22:13:27.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "title": "Meta buys robotics startup to bolster its humanoid AI ambitions",
-          "url": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions",
-          "published_at": "2026-05-01T22:13:27.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "company_announcement",
-      "quality": "signal",
-      "one_liner": "Meta acquires robotics startup for humanoid AI.",
-      "novelty": 0,
-      "trust": 0.72,
-      "score": 0.506
-    },
-    {
-      "id": "1hd7urc",
-      "primary": {
-        "id": "1hd7urc",
-        "source_id": "r_ml",
-        "source_name": "r/MachineLearning",
-        "trust": 0.55,
-        "kind_hint": "discussion",
-        "title": "I implemented meta paper [P]",
-        "url": "https://old.reddit.com/r/MachineLearning/comments/1t1rni9/i_implemented_meta_paper_p",
-        "original_url": "https://old.reddit.com/r/MachineLearning/comments/1t1rni9/i_implemented_meta_paper_p/",
-        "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t1rni9/i_implemented_meta_paper_p",
-        "discussion_source": "r/MachineLearning",
-        "summary": "github link : genji970/Scaling-Test-Time-Compute-for-Agentic-Coding-: paper implementation of Meta Ai paper link : https://arxiv.org/abs/2604.16529v1 As far as I know, there is no public implementation of this paper yet, so I built a minimal research implementation of the core PDR+RTV pipeline. I made project to run gemini-3.1-pro model and test on SWE benchmark(In paper, there is one more benchmark and used models such as opus and more) Need gemini-api-key to run. submitted by /u/Round_Apple2573 [link] [comments]",
-        "published_at": "2026-05-02T14:37:53.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1hd7urc",
-          "source_id": "r_ml",
-          "source_name": "r/MachineLearning",
-          "trust": 0.55,
-          "kind_hint": "discussion",
-          "title": "I implemented meta paper [P]",
-          "url": "https://old.reddit.com/r/MachineLearning/comments/1t1rni9/i_implemented_meta_paper_p",
-          "original_url": "https://old.reddit.com/r/MachineLearning/comments/1t1rni9/i_implemented_meta_paper_p/",
-          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t1rni9/i_implemented_meta_paper_p",
-          "discussion_source": "r/MachineLearning",
-          "summary": "github link : genji970/Scaling-Test-Time-Compute-for-Agentic-Coding-: paper implementation of Meta Ai paper link : https://arxiv.org/abs/2604.16529v1 As far as I know, there is no public implementation of this paper yet, so I built a minimal research implementation of the core PDR+RTV pipeline. I made project to run gemini-3.1-pro model and test on SWE benchmark(In paper, there is one more benchmark and used models such as opus and more) Need gemini-api-key to run. submitted by /u/Round_Apple2573 [link] [comments]",
-          "published_at": "2026-05-02T14:37:53.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_ml",
-          "source_name": "r/MachineLearning",
-          "title": "I implemented meta paper [P]",
-          "url": "https://old.reddit.com/r/MachineLearning/comments/1t1rni9/i_implemented_meta_paper_p",
-          "published_at": "2026-05-02T14:37:53.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t1rni9/i_implemented_meta_paper_p",
-          "discussion_source": "r/MachineLearning"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "model_release",
-      "quality": "signal",
-      "one_liner": "Implementation of Meta AI's coding agent paper released",
-      "novelty": 0,
-      "trust": 0.55,
-      "score": 0.498
-    },
-    {
-      "id": "1qymfe3",
-      "primary": {
-        "id": "1qymfe3",
-        "source_id": "techcrunch_ai",
-        "source_name": "TechCrunch AI",
-        "trust": 0.72,
-        "kind_hint": "news",
-        "title": "Pentagon inks deals with Nvidia, Microsoft, and AWS to deploy AI on classified networks",
-        "url": "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks",
-        "original_url": "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks/",
-        "summary": "The deals come as the DOD has doubled down on diversifying its exposure to AI vendors in the wake of its controversial dispute with Anthropic over usage terms of its AI models.",
-        "published_at": "2026-05-01T16:02:36.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1qymfe3",
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "trust": 0.72,
-          "kind_hint": "news",
-          "title": "Pentagon inks deals with Nvidia, Microsoft, and AWS to deploy AI on classified networks",
-          "url": "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks",
-          "original_url": "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks/",
-          "summary": "The deals come as the DOD has doubled down on diversifying its exposure to AI vendors in the wake of its controversial dispute with Anthropic over usage terms of its AI models.",
-          "published_at": "2026-05-01T16:02:36.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "title": "Pentagon inks deals with Nvidia, Microsoft, and AWS to deploy AI on classified networks",
-          "url": "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks",
-          "published_at": "2026-05-01T16:02:36.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "signal",
-      "one_liner": "Pentagon partners with AI giants for classified workloads.",
-      "novelty": 0,
-      "trust": 0.72,
-      "score": 0.493
-    },
-    {
-      "id": "1p47znn",
-      "primary": {
-        "id": "1p47znn",
-        "source_id": "the_verge_ai",
-        "source_name": "The Verge AI",
-        "trust": 0.68,
-        "kind_hint": "news",
-        "title": "Pentagon strikes classified AI deals with OpenAI, Google, and Nvidia — but not Anthropic",
-        "url": "https://theverge.com/ai-artificial-intelligence/922113/pentagon-ai-classified-openai-google-nvidia",
-        "original_url": "https://www.theverge.com/ai-artificial-intelligence/922113/pentagon-ai-classified-openai-google-nvidia",
-        "summary": "The Pentagon has struck deals with OpenAI, Google, Microsoft, Amazon, Nvidia, Elon Musk's xAI, and the startup Reflection, allowing the agency to use their AI tools in classified settings, according to an announcement on Friday. At the same time, the Defense Department has left out Anthropic - which it previously used for classified information - after declaring it a supply-chain risk. This builds upon deals with OpenAI and xAI, which have already reached agreements with the Pentagon for the \"lawful\" use of their AI systems. A report from The Information suggests Google has struck a similar ag",
-        "published_at": "2026-05-01T14:09:56.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1p47znn",
-          "source_id": "the_verge_ai",
-          "source_name": "The Verge AI",
-          "trust": 0.68,
-          "kind_hint": "news",
-          "title": "Pentagon strikes classified AI deals with OpenAI, Google, and Nvidia — but not Anthropic",
-          "url": "https://theverge.com/ai-artificial-intelligence/922113/pentagon-ai-classified-openai-google-nvidia",
-          "original_url": "https://www.theverge.com/ai-artificial-intelligence/922113/pentagon-ai-classified-openai-google-nvidia",
-          "summary": "The Pentagon has struck deals with OpenAI, Google, Microsoft, Amazon, Nvidia, Elon Musk's xAI, and the startup Reflection, allowing the agency to use their AI tools in classified settings, according to an announcement on Friday. At the same time, the Defense Department has left out Anthropic - which it previously used for classified information - after declaring it a supply-chain risk. This builds upon deals with OpenAI and xAI, which have already reached agreements with the Pentagon for the \"lawful\" use of their AI systems. A report from The Information suggests Google has struck a similar ag",
-          "published_at": "2026-05-01T14:09:56.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_verge_ai",
-          "source_name": "The Verge AI",
-          "title": "Pentagon strikes classified AI deals with OpenAI, Google, and Nvidia — but not Anthropic",
-          "url": "https://theverge.com/ai-artificial-intelligence/922113/pentagon-ai-classified-openai-google-nvidia",
-          "published_at": "2026-05-01T14:09:56.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "company_announcement",
-      "quality": "signal",
-      "one_liner": "Pentagon grants classified access to OpenAI, Google, and Nvidia AI tools",
-      "novelty": 0,
-      "trust": 0.68,
-      "score": 0.48
+      "trust": 0.5,
+      "score": 0.488
     },
     {
       "id": "2p5v0n",
@@ -1103,43 +1207,43 @@
       "also_seen_on": [],
       "kind": "model_release",
       "quality": "signal",
-      "one_liner": "LDR maintainer reports 95.7% SimpleQA accuracy on Qwen3.6-27B using a single 3090.",
+      "one_liner": "Qwen3.6-27B achieves 95.7% SimpleQA accuracy on single 3090",
       "novelty": 0,
       "trust": 0.5,
-      "score": 0.479
+      "score": 0.475
     },
     {
-      "id": "oe8p75",
+      "id": "1d4nm4o",
       "primary": {
-        "id": "oe8p75",
+        "id": "1d4nm4o",
         "source_id": "r_localllama",
         "source_name": "r/LocalLLaMA",
         "trust": 0.5,
         "kind_hint": "discussion",
-        "title": "Hybrid on-device inference on Android: llama.cpp + LiteRT + NPU/GPU routing",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1l7xj/hybrid_ondevice_inference_on_android_llamacpp",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1l7xj/hybrid_ondevice_inference_on_android_llamacpp/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1l7xj/hybrid_ondevice_inference_on_android_llamacpp",
+        "title": "[RELEASE] - Finally, my first TTS model is out! 🎙️ Flare-TTS 28M",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out",
         "discussion_source": "r/LocalLLaMA",
-        "summary": "Hi everyone, I’m the maintainer of Box — a fork of Google’s AI Edge Gallery that I’ve been extending into a fully offline AI assistant for Android. Full disclosure: I built this project. It runs entirely on-device (no cloud, no accounts, no external inference), and combines multiple local inference backends in a single app. What I’ve been experimenting with The goal was to see how far a fully offline mobile AI stack could be pushed using: llama.cpp (GGUF LLM inference) whisper.cpp (on-device STT) stable-diffusion.cpp (image generation) LiteRT (Google’s on-device runtime) All running on Android",
-        "published_at": "2026-05-02T09:31:55.000Z",
+        "summary": "Hey r/LocalLLaMA ! I am back with a new model, and it's something special today 😃 It's Flare-TTS 28M, my first text to speech (TTS) model trained completely from scratch on a single A6000 GPU for ~24 hours, ~300 epochs and the full LJSpeech dataset! Link to the HF model: https://huggingface.co/LH-Tech-AI/Flare-TTS-28M Example result: https://cdn-uploads.huggingface.co/production/uploads/697f2832c2c5e4daa93cece7/vluuHSnp9Ietk7Uk1-hvG.mpga It speaks english, but it still sounds a bit robotish 😂 You can use if you want - it's free and open-source 😃 Have fun ❤️ submitted by /u/LH-Tech_AI [link]",
+        "published_at": "2026-05-02T10:52:10.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "oe8p75",
+          "id": "1d4nm4o",
           "source_id": "r_localllama",
           "source_name": "r/LocalLLaMA",
           "trust": 0.5,
           "kind_hint": "discussion",
-          "title": "Hybrid on-device inference on Android: llama.cpp + LiteRT + NPU/GPU routing",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1l7xj/hybrid_ondevice_inference_on_android_llamacpp",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1l7xj/hybrid_ondevice_inference_on_android_llamacpp/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1l7xj/hybrid_ondevice_inference_on_android_llamacpp",
+          "title": "[RELEASE] - Finally, my first TTS model is out! 🎙️ Flare-TTS 28M",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out",
           "discussion_source": "r/LocalLLaMA",
-          "summary": "Hi everyone, I’m the maintainer of Box — a fork of Google’s AI Edge Gallery that I’ve been extending into a fully offline AI assistant for Android. Full disclosure: I built this project. It runs entirely on-device (no cloud, no accounts, no external inference), and combines multiple local inference backends in a single app. What I’ve been experimenting with The goal was to see how far a fully offline mobile AI stack could be pushed using: llama.cpp (GGUF LLM inference) whisper.cpp (on-device STT) stable-diffusion.cpp (image generation) LiteRT (Google’s on-device runtime) All running on Android",
-          "published_at": "2026-05-02T09:31:55.000Z",
+          "summary": "Hey r/LocalLLaMA ! I am back with a new model, and it's something special today 😃 It's Flare-TTS 28M, my first text to speech (TTS) model trained completely from scratch on a single A6000 GPU for ~24 hours, ~300 epochs and the full LJSpeech dataset! Link to the HF model: https://huggingface.co/LH-Tech-AI/Flare-TTS-28M Example result: https://cdn-uploads.huggingface.co/production/uploads/697f2832c2c5e4daa93cece7/vluuHSnp9Ietk7Uk1-hvG.mpga It speaks english, but it still sounds a bit robotish 😂 You can use if you want - it's free and open-source 😃 Have fun ❤️ submitted by /u/LH-Tech_AI [link]",
+          "published_at": "2026-05-02T10:52:10.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -1148,22 +1252,197 @@
         {
           "source_id": "r_localllama",
           "source_name": "r/LocalLLaMA",
-          "title": "Hybrid on-device inference on Android: llama.cpp + LiteRT + NPU/GPU routing",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1l7xj/hybrid_ondevice_inference_on_android_llamacpp",
-          "published_at": "2026-05-02T09:31:55.000Z",
+          "title": "[RELEASE] - Finally, my first TTS model is out! 🎙️ Flare-TTS 28M",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out",
+          "published_at": "2026-05-02T10:52:10.000Z",
           "published_at_source": "feed",
           "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1l7xj/hybrid_ondevice_inference_on_android_llamacpp",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "Flare-TTS 28M, a TTS model trained from scratch on A6000 GPU with LJSpeech dataset",
+      "novelty": 0,
+      "trust": 0.5,
+      "score": 0.474
+    },
+    {
+      "id": "fllyxt",
+      "primary": {
+        "id": "fllyxt",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Qwen3.6-27B at 72 tok/s on RTX 3090 on Windows using native vLLM (no WSL, no Docker), portable launcher and installer",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1judm/qwen3627b_at_72_toks_on_rtx_3090_on_windows_using",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1judm/qwen3627b_at_72_toks_on_rtx_3090_on_windows_using/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1judm/qwen3627b_at_72_toks_on_rtx_3090_on_windows_using",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "The angle here is native Windows, no WSL. Simple installation, open source, no telemetry. Not selling or promoting anything: https://github.com/devnen/qwen3.6-windows-server Numbers (RTX 3090, Windows 10): - 72 tok/s short prompt - 64.5 tok/s long prompt (~25k tokens) - 53.4 tok/s at 127k ctx (single GPU) - 160k ctx on PP=2 (2×3090 GPUs) Honestly, these aren't r/LocalLLaMA records. Community has hit 80–82 tok/s on a 3090 with TurboQuant 3-bit KV, and 160 tok/s on a 5090 on Linux. My launcher and patched vLLM closes that gap on Windows. Simple installation: 1. Download qwen3.6-windows-server-po",
+        "image_url": "https://preview.redd.it/iy44v5yzloyg1.png?width=640&crop=smart&auto=webp&s=2efd77e3ce68aba6d2b2c4078b3a4fed8448d5de",
+        "image_source": "rss_media",
+        "published_at": "2026-05-02T08:12:35.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "fllyxt",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Qwen3.6-27B at 72 tok/s on RTX 3090 on Windows using native vLLM (no WSL, no Docker), portable launcher and installer",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1judm/qwen3627b_at_72_toks_on_rtx_3090_on_windows_using",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1judm/qwen3627b_at_72_toks_on_rtx_3090_on_windows_using/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1judm/qwen3627b_at_72_toks_on_rtx_3090_on_windows_using",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "The angle here is native Windows, no WSL. Simple installation, open source, no telemetry. Not selling or promoting anything: https://github.com/devnen/qwen3.6-windows-server Numbers (RTX 3090, Windows 10): - 72 tok/s short prompt - 64.5 tok/s long prompt (~25k tokens) - 53.4 tok/s at 127k ctx (single GPU) - 160k ctx on PP=2 (2×3090 GPUs) Honestly, these aren't r/LocalLLaMA records. Community has hit 80–82 tok/s on a 3090 with TurboQuant 3-bit KV, and 160 tok/s on a 5090 on Linux. My launcher and patched vLLM closes that gap on Windows. Simple installation: 1. Download qwen3.6-windows-server-po",
+          "image_url": "https://preview.redd.it/iy44v5yzloyg1.png?width=640&crop=smart&auto=webp&s=2efd77e3ce68aba6d2b2c4078b3a4fed8448d5de",
+          "image_source": "rss_media",
+          "published_at": "2026-05-02T08:12:35.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Qwen3.6-27B at 72 tok/s on RTX 3090 on Windows using native vLLM (no WSL, no Docker), portable launcher and installer",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1judm/qwen3627b_at_72_toks_on_rtx_3090_on_windows_using",
+          "published_at": "2026-05-02T08:12:35.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1judm/qwen3627b_at_72_toks_on_rtx_3090_on_windows_using",
           "discussion_source": "r/LocalLLaMA"
         }
       ],
       "also_seen_on": [],
       "kind": "tool",
       "quality": "signal",
-      "one_liner": "Hybrid Android inference tool combining llama.cpp, LiteRT, and NPU/GPU routing.",
+      "one_liner": "Native Windows tool runs Qwen3.6-27B on RTX 3090 without WSL",
       "novelty": 0,
       "trust": 0.5,
-      "score": 0.475
+      "score": 0.468
+    },
+    {
+      "id": "17x3lp",
+      "primary": {
+        "id": "17x3lp",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Unsloth solved bug in Mistral Medium 3.5 implementation",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1itn1/unsloth_solved_bug_in_mistral_medium_35",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1itn1/unsloth_solved_bug_in_mistral_medium_35/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1itn1/unsloth_solved_bug_in_mistral_medium_35",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "https://unsloth.ai/docs/models/mistral-3.5 \"May 1, 2026 Update: We worked with Mistral to fix Mistral Medium 3.5 inference affecting some implementations, and released updated GGUFs with the fix (NOT related to Unsloth or our quants). The issue was caused by a YaRN parsing quirk affecting several implementations, including transformers and llama.cpp. Changing mscale_all_dim from 1 to 0 resolved it. We also fixed mmproj files not being generated correctly.\" submitted by /u/Snail_Inference [link] [comments]",
+        "published_at": "2026-05-02T07:13:13.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "17x3lp",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Unsloth solved bug in Mistral Medium 3.5 implementation",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1itn1/unsloth_solved_bug_in_mistral_medium_35",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1itn1/unsloth_solved_bug_in_mistral_medium_35/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1itn1/unsloth_solved_bug_in_mistral_medium_35",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "https://unsloth.ai/docs/models/mistral-3.5 \"May 1, 2026 Update: We worked with Mistral to fix Mistral Medium 3.5 inference affecting some implementations, and released updated GGUFs with the fix (NOT related to Unsloth or our quants). The issue was caused by a YaRN parsing quirk affecting several implementations, including transformers and llama.cpp. Changing mscale_all_dim from 1 to 0 resolved it. We also fixed mmproj files not being generated correctly.\" submitted by /u/Snail_Inference [link] [comments]",
+          "published_at": "2026-05-02T07:13:13.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Unsloth solved bug in Mistral Medium 3.5 implementation",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1itn1/unsloth_solved_bug_in_mistral_medium_35",
+          "published_at": "2026-05-02T07:13:13.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1itn1/unsloth_solved_bug_in_mistral_medium_35",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "signal",
+      "one_liner": "Unsloth fixes Mistral Medium 3.5 GGUF parsing issue with updated models",
+      "novelty": 0,
+      "trust": 0.5,
+      "score": 0.466
+    },
+    {
+      "id": "1ab9iz5",
+      "primary": {
+        "id": "1ab9iz5",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Mistral Medium 3.5 128b ggufs are fixed",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1ispj/mistral_medium_35_128b_ggufs_are_fixed",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1ispj/mistral_medium_35_128b_ggufs_are_fixed/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1ispj/mistral_medium_35_128b_ggufs_are_fixed",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "All ggufs were broken, resulting in bad outputs, especially at long context. Anyway, it is fixed now: https://huggingface.co/unsloth/Mistral-Medium-3.5-128B-GGUF/discussions/1 Edit: Unsloth Announcement: https://huggingface.co/unsloth/Mistral-Medium-3.5-128B-GGUF/discussions/5 Edit2: From my experience it is A LOT more stable, even at short context. I messed up the prompt format before and it quickly devolved into gibberish. The updated version doesn't really mind. submitted by /u/Sunija_Dev [link] [comments]",
+        "published_at": "2026-05-02T07:11:50.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1ab9iz5",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Mistral Medium 3.5 128b ggufs are fixed",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1ispj/mistral_medium_35_128b_ggufs_are_fixed",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1ispj/mistral_medium_35_128b_ggufs_are_fixed/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1ispj/mistral_medium_35_128b_ggufs_are_fixed",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "All ggufs were broken, resulting in bad outputs, especially at long context. Anyway, it is fixed now: https://huggingface.co/unsloth/Mistral-Medium-3.5-128B-GGUF/discussions/1 Edit: Unsloth Announcement: https://huggingface.co/unsloth/Mistral-Medium-3.5-128B-GGUF/discussions/5 Edit2: From my experience it is A LOT more stable, even at short context. I messed up the prompt format before and it quickly devolved into gibberish. The updated version doesn't really mind. submitted by /u/Sunija_Dev [link] [comments]",
+          "published_at": "2026-05-02T07:11:50.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Mistral Medium 3.5 128b ggufs are fixed",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1ispj/mistral_medium_35_128b_ggufs_are_fixed",
+          "published_at": "2026-05-02T07:11:50.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1ispj/mistral_medium_35_128b_ggufs_are_fixed",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "Fixed Mistral Medium 3.5 128B GGUFs for long-context outputs",
+      "novelty": 0,
+      "trust": 0.5,
+      "score": 0.466
     },
     {
       "id": "1ox37uf",
@@ -1209,10 +1488,10 @@
       "also_seen_on": [],
       "kind": "opinion",
       "quality": "mixed",
-      "one_liner": "Companies lack readiness for AI despite expectations.",
+      "one_liner": "Analysis on corporate unpreparedness for AI adoption",
       "novelty": 0,
       "trust": 0.78,
-      "score": 0.452
+      "score": 0.448
     },
     {
       "id": "1wvgp8w",
@@ -1225,6 +1504,8 @@
         "url": "https://latent.space/p/ainews-ai-engineer-worlds-fair-autoresearch",
         "original_url": "https://www.latent.space/p/ainews-ai-engineer-worlds-fair-autoresearch",
         "summary": "a quiet day lets us make a call for speakers!",
+        "image_url": "https://substackcdn.com/image/fetch/$s_!admO!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6045585a-7095-4a04-bbef-7f29cbc35fe5_1938x1276.png",
+        "image_source": "rss_enclosure",
         "published_at": "2026-05-02T07:21:55.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
@@ -1239,6 +1520,8 @@
           "url": "https://latent.space/p/ainews-ai-engineer-worlds-fair-autoresearch",
           "original_url": "https://www.latent.space/p/ainews-ai-engineer-worlds-fair-autoresearch",
           "summary": "a quiet day lets us make a call for speakers!",
+          "image_url": "https://substackcdn.com/image/fetch/$s_!admO!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6045585a-7095-4a04-bbef-7f29cbc35fe5_1938x1276.png",
+          "image_source": "rss_enclosure",
           "published_at": "2026-05-02T07:21:55.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
@@ -1256,12 +1539,12 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "discussion",
+      "kind": "company_announcement",
       "quality": "mixed",
-      "one_liner": "Call for speakers at AI Engineer World's Fair event.",
+      "one_liner": "Call for speakers at AI Engineer World's Fair event",
       "novelty": 0,
       "trust": 0.85,
-      "score": 0.445
+      "score": 0.442
     },
     {
       "id": "160rybq",
@@ -1307,12 +1590,67 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "tool",
+      "kind": "news",
       "quality": "mixed",
-      "one_liner": "Review of top AI-powered dictation apps.",
+      "one_liner": "AI-powered dictation apps are useful for replying to emails, taking notes, and even coding through your voice",
       "novelty": 0,
       "trust": 0.72,
-      "score": 0.431
+      "score": 0.427
+    },
+    {
+      "id": "akpdhl",
+      "primary": {
+        "id": "akpdhl",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Even the latest AI models make three systematic reasoning errors, ARC-AGI-3 analysis shows",
+        "url": "https://the-decoder.com/even-the-latest-ai-models-make-three-systematic-reasoning-errors-arc-agi-3-analysis-shows",
+        "original_url": "https://the-decoder.com/even-the-latest-ai-models-make-three-systematic-reasoning-errors-arc-agi-3-analysis-shows/",
+        "summary": "The ARC Prize Foundation analyzed 160 game runs of OpenAI's GPT-5.5 and Anthropic's Opus 4.7 on the ARC-AGI-3 benchmark. Three systematic error patterns explain why both models stay below 1 percent on tasks that humans can solve without much trouble. The article Even the latest AI models make three systematic reasoning errors, ARC-AGI-3 analysis shows appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/arc-agi-benchmark.png",
+        "image_source": "rss_content",
+        "published_at": "2026-05-02T13:31:52.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "akpdhl",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Even the latest AI models make three systematic reasoning errors, ARC-AGI-3 analysis shows",
+          "url": "https://the-decoder.com/even-the-latest-ai-models-make-three-systematic-reasoning-errors-arc-agi-3-analysis-shows",
+          "original_url": "https://the-decoder.com/even-the-latest-ai-models-make-three-systematic-reasoning-errors-arc-agi-3-analysis-shows/",
+          "summary": "The ARC Prize Foundation analyzed 160 game runs of OpenAI's GPT-5.5 and Anthropic's Opus 4.7 on the ARC-AGI-3 benchmark. Three systematic error patterns explain why both models stay below 1 percent on tasks that humans can solve without much trouble. The article Even the latest AI models make three systematic reasoning errors, ARC-AGI-3 analysis shows appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/arc-agi-benchmark.png",
+          "image_source": "rss_content",
+          "published_at": "2026-05-02T13:31:52.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Even the latest AI models make three systematic reasoning errors, ARC-AGI-3 analysis shows",
+          "url": "https://the-decoder.com/even-the-latest-ai-models-make-three-systematic-reasoning-errors-arc-agi-3-analysis-shows",
+          "published_at": "2026-05-02T13:31:52.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "The ARC Prize Foundation analyzed 160 game runs of OpenAI's GPT-5.5 and Anthropic's Opus 4.7 on the ARC-AGI-3 benchmark. Three systematic error patterns explain why both models stay below 1 percent on",
+      "novelty": 0,
+      "trust": 0.74,
+      "score": 0.427
     },
     {
       "id": "129izyh",
@@ -1362,12 +1700,12 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "opinion",
+      "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Critique argues NHS is restricting open source adoption in healthcare",
+      "one_liner": "NHS faces controversy over open-source policies",
       "novelty": 0,
       "trust": 0.7,
-      "score": 0.431
+      "score": 0.427
     },
     {
       "id": "4mpubp",
@@ -1381,6 +1719,8 @@
         "url": "https://wired.com/story/security-news-this-week-disneyland-now-uses-face-recognition-on-visitors",
         "original_url": "https://www.wired.com/story/security-news-this-week-disneyland-now-uses-face-recognition-on-visitors/",
         "summary": "Plus: The NSA tests Anthropic’s Mythos Preview to find vulnerabilities, a Finnish teen is charged over the Scattered Spider hacking spree, and more.",
+        "image_url": "https://media.wired.com/photos/69f53066ed110137695d66cd/master/pass/security_disney_getty.jpg",
+        "image_source": "rss_media",
         "published_at": "2026-05-02T10:30:00.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
@@ -1396,6 +1736,8 @@
           "url": "https://wired.com/story/security-news-this-week-disneyland-now-uses-face-recognition-on-visitors",
           "original_url": "https://www.wired.com/story/security-news-this-week-disneyland-now-uses-face-recognition-on-visitors/",
           "summary": "Plus: The NSA tests Anthropic’s Mythos Preview to find vulnerabilities, a Finnish teen is charged over the Scattered Spider hacking spree, and more.",
+          "image_url": "https://media.wired.com/photos/69f53066ed110137695d66cd/master/pass/security_disney_getty.jpg",
+          "image_source": "rss_media",
           "published_at": "2026-05-02T10:30:00.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
@@ -1415,10 +1757,65 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Disneyland deploys facial recognition for visitor identification",
+      "one_liner": "Disneyland deploys facial recognition for visitors",
       "novelty": 0,
       "trust": 0.76,
-      "score": 0.429
+      "score": 0.426
+    },
+    {
+      "id": "yt0xze",
+      "primary": {
+        "id": "yt0xze",
+        "source_id": "anthropic",
+        "source_name": "Anthropic",
+        "trust": 0.92,
+        "kind_hint": "company_announcement",
+        "title": "Anthropic: Claude for Creative Work",
+        "url": "https://anthropic.com/news/claude-for-creative-work",
+        "original_url": "https://www.anthropic.com/news/claude-for-creative-work",
+        "summary": "Anthropic is an AI safety and research company that&#x27;s working to build reliable, interpretable, and steerable AI systems.",
+        "image_url": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20ShapeArrow&backgroundColor=cactus",
+        "image_source": "page_metadata",
+        "published_at": "2026-05-01T15:44:00.000Z",
+        "published_at_source": "sitemap_lastmod",
+        "date_confidence": "medium"
+      },
+      "members": [
+        {
+          "id": "yt0xze",
+          "source_id": "anthropic",
+          "source_name": "Anthropic",
+          "trust": 0.92,
+          "kind_hint": "company_announcement",
+          "title": "Anthropic: Claude for Creative Work",
+          "url": "https://anthropic.com/news/claude-for-creative-work",
+          "original_url": "https://www.anthropic.com/news/claude-for-creative-work",
+          "summary": "Anthropic is an AI safety and research company that&#x27;s working to build reliable, interpretable, and steerable AI systems.",
+          "image_url": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20ShapeArrow&backgroundColor=cactus",
+          "image_source": "page_metadata",
+          "published_at": "2026-05-01T15:44:00.000Z",
+          "published_at_source": "sitemap_lastmod",
+          "date_confidence": "medium"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "anthropic",
+          "source_name": "Anthropic",
+          "title": "Anthropic: Claude for Creative Work",
+          "url": "https://anthropic.com/news/claude-for-creative-work",
+          "published_at": "2026-05-01T15:44:00.000Z",
+          "published_at_source": "sitemap_lastmod",
+          "date_confidence": "medium"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "mixed",
+      "one_liner": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+      "novelty": 0,
+      "trust": 0.92,
+      "score": 0.426
     },
     {
       "id": "1cqygp5",
@@ -1432,6 +1829,8 @@
         "url": "https://the-decoder.com/xais-new-custom-voices-feature-turns-a-minute-of-speech-into-a-usable-voice-clone",
         "original_url": "https://the-decoder.com/xais-new-custom-voices-feature-turns-a-minute-of-speech-into-a-usable-voice-clone/",
         "summary": "xAI now lets developers clone their own voices for AI applications. The new \"Custom Voices\" feature builds on the recently launched Grok Speech-to-Text and Text-to-Speech APIs. The article xAI's new Custom Voices feature turns a minute of speech into a usable voice clone appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/xai_gro_clone_voice.png",
+        "image_source": "rss_content",
         "published_at": "2026-05-02T12:14:46.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
@@ -1447,6 +1846,8 @@
           "url": "https://the-decoder.com/xais-new-custom-voices-feature-turns-a-minute-of-speech-into-a-usable-voice-clone",
           "original_url": "https://the-decoder.com/xais-new-custom-voices-feature-turns-a-minute-of-speech-into-a-usable-voice-clone/",
           "summary": "xAI now lets developers clone their own voices for AI applications. The new \"Custom Voices\" feature builds on the recently launched Grok Speech-to-Text and Text-to-Speech APIs. The article xAI's new Custom Voices feature turns a minute of speech into a usable voice clone appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/xai_gro_clone_voice.png",
+          "image_source": "rss_content",
           "published_at": "2026-05-02T12:14:46.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
@@ -1469,7 +1870,7 @@
       "one_liner": "xAI now lets developers clone their own voices for AI applications. The new \"Custom Voices\" feature builds on the recently launched Grok Speech-to-Text and Text-to-Speech APIs. The article xAI's new C",
       "novelty": 0,
       "trust": 0.74,
-      "score": 0.428
+      "score": 0.424
     },
     {
       "id": "1pcpsqc",
@@ -1483,6 +1884,8 @@
         "url": "https://the-decoder.com/nvidia-ceo-jensen-huang-calls-out-tech-leaders-god-complex-over-reckless-ai-job-loss-predictions",
         "original_url": "https://the-decoder.com/nvidia-ceo-jensen-huang-calls-out-tech-leaders-god-complex-over-reckless-ai-job-loss-predictions/",
         "summary": "AI scaremongering costs jobs instead of protecting them, says Nvidia CEO Jensen Huang. Talking young people out of future careers, he argues, does real harm to society. The article Nvidia CEO Jensen Huang calls out tech leaders' \"god complex\" over reckless AI job loss predictions appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/huang_sccp_ai_screenshot-scaled.png",
+        "image_source": "rss_content",
         "published_at": "2026-05-02T10:32:09.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
@@ -1498,6 +1901,8 @@
           "url": "https://the-decoder.com/nvidia-ceo-jensen-huang-calls-out-tech-leaders-god-complex-over-reckless-ai-job-loss-predictions",
           "original_url": "https://the-decoder.com/nvidia-ceo-jensen-huang-calls-out-tech-leaders-god-complex-over-reckless-ai-job-loss-predictions/",
           "summary": "AI scaremongering costs jobs instead of protecting them, says Nvidia CEO Jensen Huang. Talking young people out of future careers, he argues, does real harm to society. The article Nvidia CEO Jensen Huang calls out tech leaders' \"god complex\" over reckless AI job loss predictions appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/huang_sccp_ai_screenshot-scaled.png",
+          "image_source": "rss_content",
           "published_at": "2026-05-02T10:32:09.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
@@ -1520,7 +1925,7 @@
       "one_liner": "AI scaremongering costs jobs instead of protecting them, says Nvidia CEO Jensen Huang. Talking young people out of future careers, he argues, does real harm to society. The article Nvidia CEO Jensen H",
       "novelty": 0,
       "trust": 0.74,
-      "score": 0.425
+      "score": 0.421
     },
     {
       "id": "rnvydt",
@@ -1534,6 +1939,8 @@
         "url": "https://the-decoder.com/elon-musk-calls-himself-a-fool-for-giving-openai-38-million-that-became-an-800-billion-company",
         "original_url": "https://the-decoder.com/elon-musk-calls-himself-a-fool-for-giving-openai-38-million-that-became-an-800-billion-company/",
         "summary": "Elon Musk called himself a \"fool\" in court, warned of a \"Terminator\" future, and admitted that xAI taps OpenAI's models for its own AI training. Week one of Musk's trial against Sam Altman delivered plenty of drama; and the best may still be ahead. The article Elon Musk calls himself a fool for giving OpenAI $38 million that became an $800 billion company appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/sam_altman_vs_elon_musk.png",
+        "image_source": "rss_content",
         "published_at": "2026-05-02T09:27:21.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
@@ -1549,6 +1956,8 @@
           "url": "https://the-decoder.com/elon-musk-calls-himself-a-fool-for-giving-openai-38-million-that-became-an-800-billion-company",
           "original_url": "https://the-decoder.com/elon-musk-calls-himself-a-fool-for-giving-openai-38-million-that-became-an-800-billion-company/",
           "summary": "Elon Musk called himself a \"fool\" in court, warned of a \"Terminator\" future, and admitted that xAI taps OpenAI's models for its own AI training. Week one of Musk's trial against Sam Altman delivered plenty of drama; and the best may still be ahead. The article Elon Musk calls himself a fool for giving OpenAI $38 million that became an $800 billion company appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/sam_altman_vs_elon_musk.png",
+          "image_source": "rss_content",
           "published_at": "2026-05-02T09:27:21.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
@@ -1566,12 +1975,12 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "company_announcement",
+      "kind": "news",
       "quality": "mixed",
-      "one_liner": "Elon Musk calls himself a fool in OpenAI trial, admits xAI uses OpenAI models",
+      "one_liner": "Elon Musk called himself a \"fool\" in court, warned of a \"Terminator\" future, and admitted that xAI taps OpenAI's models for its own AI training. Week one of Musk's trial against Sam Altman delivered p",
       "novelty": 0,
       "trust": 0.74,
-      "score": 0.422
+      "score": 0.418
     },
     {
       "id": "12qj9qg",
@@ -1585,6 +1994,8 @@
         "url": "https://the-decoder.com/chatgpt-now-tracks-users-for-ads-by-default-as-openai-looks-for-new-revenue",
         "original_url": "https://the-decoder.com/chatgpt-now-tracks-users-for-ads-by-default-as-openai-looks-for-new-revenue/",
         "summary": "OpenAI has turned on marketing cookies by default for free ChatGPT users in countries where ads are running. Tracking is automatically active for free accounts but not for paying subscribers. You can disable it in your account settings. The article ChatGPT now tracks users for ads by default as OpenAI looks for new revenue appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/openai_chatgpt.png",
+        "image_source": "rss_content",
         "published_at": "2026-05-02T08:30:15.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
@@ -1600,6 +2011,8 @@
           "url": "https://the-decoder.com/chatgpt-now-tracks-users-for-ads-by-default-as-openai-looks-for-new-revenue",
           "original_url": "https://the-decoder.com/chatgpt-now-tracks-users-for-ads-by-default-as-openai-looks-for-new-revenue/",
           "summary": "OpenAI has turned on marketing cookies by default for free ChatGPT users in countries where ads are running. Tracking is automatically active for free accounts but not for paying subscribers. You can disable it in your account settings. The article ChatGPT now tracks users for ads by default as OpenAI looks for new revenue appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/openai_chatgpt.png",
+          "image_source": "rss_content",
           "published_at": "2026-05-02T08:30:15.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
@@ -1622,7 +2035,7 @@
       "one_liner": "OpenAI enables ad tracking by default for free ChatGPT users",
       "novelty": 0,
       "trust": 0.74,
-      "score": 0.42
+      "score": 0.416
     },
     {
       "id": "1hf02bh",
@@ -1668,12 +2081,12 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "news",
+      "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "In the first week of the landmark trial between Elon Musk and OpenAI, Musk took the stand in a crisp black suit and tie and argued that OpenAI CEO Sam Altman and president Greg Brockman had deceived h",
+      "one_liner": "Elon Musk accuses OpenAI of deception in ongoing legal battle",
       "novelty": 0,
       "trust": 0.82,
-      "score": 0.419
+      "score": 0.415
     },
     {
       "id": "1lk8fy1",
@@ -1687,6 +2100,8 @@
         "url": "https://the-decoder.com/xai-drops-grok-4-3-with-steep-price-cuts-and-an-imagine-agent-mode-for-creative-projects",
         "original_url": "https://the-decoder.com/xai-drops-grok-4-3-with-steep-price-cuts-and-an-imagine-agent-mode-for-creative-projects/",
         "summary": "With Grok 4.3, xAI is leaning into low prices and better tool use. The model shows gains on practical tasks, but it still trails the top models from OpenAI and Anthropic. The release also brings a new agent-based image generator. The article xAI drops Grok 4.3 with steep price cuts and an Imagine agent mode for creative projects appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/grok_xai_logo.png",
+        "image_source": "rss_content",
         "published_at": "2026-05-02T07:35:24.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
@@ -1702,6 +2117,8 @@
           "url": "https://the-decoder.com/xai-drops-grok-4-3-with-steep-price-cuts-and-an-imagine-agent-mode-for-creative-projects",
           "original_url": "https://the-decoder.com/xai-drops-grok-4-3-with-steep-price-cuts-and-an-imagine-agent-mode-for-creative-projects/",
           "summary": "With Grok 4.3, xAI is leaning into low prices and better tool use. The model shows gains on practical tasks, but it still trails the top models from OpenAI and Anthropic. The release also brings a new agent-based image generator. The article xAI drops Grok 4.3 with steep price cuts and an Imagine agent mode for creative projects appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/grok_xai_logo.png",
+          "image_source": "rss_content",
           "published_at": "2026-05-02T07:35:24.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
@@ -1721,61 +2138,10 @@
       "also_seen_on": [],
       "kind": "model_release",
       "quality": "mixed",
-      "one_liner": "xAI releases Grok 4.3 with price cuts and new creative mode",
+      "one_liner": "xAI launches Grok 4.3 with lower prices and new creative agent mode",
       "novelty": 0,
       "trust": 0.74,
-      "score": 0.418
-    },
-    {
-      "id": "xearsd",
-      "primary": {
-        "id": "xearsd",
-        "source_id": "ars_ai",
-        "source_name": "Ars Technica AI",
-        "trust": 0.78,
-        "kind_hint": "news",
-        "title": "Study: AI models that consider user's feeling are more likely to make errors",
-        "url": "https://arstechnica.com/ai/2026/05/study-ai-models-that-consider-users-feeling-are-more-likely-to-make-errors",
-        "original_url": "https://arstechnica.com/ai/2026/05/study-ai-models-that-consider-users-feeling-are-more-likely-to-make-errors/",
-        "summary": "Overtuning can cause models to \"prioritize user satisfaction over truthfulness.”",
-        "published_at": "2026-05-01T22:23:36.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "xearsd",
-          "source_id": "ars_ai",
-          "source_name": "Ars Technica AI",
-          "trust": 0.78,
-          "kind_hint": "news",
-          "title": "Study: AI models that consider user's feeling are more likely to make errors",
-          "url": "https://arstechnica.com/ai/2026/05/study-ai-models-that-consider-users-feeling-are-more-likely-to-make-errors",
-          "original_url": "https://arstechnica.com/ai/2026/05/study-ai-models-that-consider-users-feeling-are-more-likely-to-make-errors/",
-          "summary": "Overtuning can cause models to \"prioritize user satisfaction over truthfulness.”",
-          "published_at": "2026-05-01T22:23:36.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "ars_ai",
-          "source_name": "Ars Technica AI",
-          "title": "Study: AI models that consider user's feeling are more likely to make errors",
-          "url": "https://arstechnica.com/ai/2026/05/study-ai-models-that-consider-users-feeling-are-more-likely-to-make-errors",
-          "published_at": "2026-05-01T22:23:36.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "Overtuning can cause models to \"prioritize user satisfaction over truthfulness.”",
-      "novelty": 0,
-      "trust": 0.78,
-      "score": 0.409
+      "score": 0.414
     },
     {
       "id": "y3217j",
@@ -1821,12 +2187,12 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "news",
+      "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Cybersecurity was already under strain before AI entered the stack. Now, as AI expands the attack surface and adds new complexity, the limits of legacy approaches are becoming harder to ignore. This s",
+      "one_liner": "MIT discusses AI's impact on expanding cybersecurity challenges",
       "novelty": 0,
       "trust": 0.82,
-      "score": 0.406
+      "score": 0.402
     },
     {
       "id": "tc74xi",
@@ -1872,12 +2238,69 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "news",
+      "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Companies are taking control of their own data to tailor AI for their needs. The challenge lies in balancing ownership with the safe, trusted flow of high‑quality data needed to power reliable insight",
+      "one_liner": "MIT explores balancing data ownership and AI reliability",
       "novelty": 0,
       "trust": 0.82,
-      "score": 0.405
+      "score": 0.401
+    },
+    {
+      "id": "1uefvu5",
+      "primary": {
+        "id": "1uefvu5",
+        "source_id": "r_ml",
+        "source_name": "r/MachineLearning",
+        "trust": 0.55,
+        "kind_hint": "discussion",
+        "title": "Toy experiment: frozen Pythia-70M can use a forward-derived fast memory for contextual one-shot symbolic recall [D]",
+        "url": "https://old.reddit.com/r/MachineLearning/comments/1t23wug/toy_experiment_frozen_pythia70m_can_use_a",
+        "original_url": "https://old.reddit.com/r/MachineLearning/comments/1t23wug/toy_experiment_frozen_pythia70m_can_use_a/",
+        "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t23wug/toy_experiment_frozen_pythia70m_can_use_a",
+        "discussion_source": "r/MachineLearning",
+        "summary": "Toy Experiment: Frozen Pythia-70M Using Forward-Derived Fast Memory for Contextual One-Shot Recall I have been running a small research/toy experiment around fast memory on top of a frozen open-weight transformer. The motivation is simple: normal transformer learning requires backprop and weight updates, but in-context adaptation feels more like temporary forward-pass memory. I wanted to test whether a frozen model exposes enough geometry that a small external memory can do limited one-shot binding without changing the transformer weights. Setup Model: frozen EleutherAI/pythia-70m No transform",
+        "published_at": "2026-05-02T22:32:58.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1uefvu5",
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "trust": 0.55,
+          "kind_hint": "discussion",
+          "title": "Toy experiment: frozen Pythia-70M can use a forward-derived fast memory for contextual one-shot symbolic recall [D]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1t23wug/toy_experiment_frozen_pythia70m_can_use_a",
+          "original_url": "https://old.reddit.com/r/MachineLearning/comments/1t23wug/toy_experiment_frozen_pythia70m_can_use_a/",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t23wug/toy_experiment_frozen_pythia70m_can_use_a",
+          "discussion_source": "r/MachineLearning",
+          "summary": "Toy Experiment: Frozen Pythia-70M Using Forward-Derived Fast Memory for Contextual One-Shot Recall I have been running a small research/toy experiment around fast memory on top of a frozen open-weight transformer. The motivation is simple: normal transformer learning requires backprop and weight updates, but in-context adaptation feels more like temporary forward-pass memory. I wanted to test whether a frozen model exposes enough geometry that a small external memory can do limited one-shot binding without changing the transformer weights. Setup Model: frozen EleutherAI/pythia-70m No transform",
+          "published_at": "2026-05-02T22:32:58.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "title": "Toy experiment: frozen Pythia-70M can use a forward-derived fast memory for contextual one-shot symbolic recall [D]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1t23wug/toy_experiment_frozen_pythia70m_can_use_a",
+          "published_at": "2026-05-02T22:32:58.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t23wug/toy_experiment_frozen_pythia70m_can_use_a",
+          "discussion_source": "r/MachineLearning"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "Toy Experiment: Frozen Pythia-70M Using Forward-Derived Fast Memory for Contextual One-Shot Recall I have been running a small research/toy experiment around fast memory on top of a frozen open-weight",
+      "novelty": 0,
+      "trust": 0.55,
+      "score": 0.398
     },
     {
       "id": "m2bwc7",
@@ -1891,6 +2314,8 @@
         "url": "https://arstechnica.com/tech-policy/2026/05/minnesota-set-to-be-first-state-to-ban-nudification-apps",
         "original_url": "https://arstechnica.com/tech-policy/2026/05/minnesota-set-to-be-first-state-to-ban-nudification-apps/",
         "summary": "More evidence of Grok CSAM seen as Minnesota passes nudifying app ban.",
+        "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/05/GettyImages-1211553945-1152x648.jpg",
+        "image_source": "rss_media",
         "published_at": "2026-05-01T17:36:29.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
@@ -1906,6 +2331,8 @@
           "url": "https://arstechnica.com/tech-policy/2026/05/minnesota-set-to-be-first-state-to-ban-nudification-apps",
           "original_url": "https://arstechnica.com/tech-policy/2026/05/minnesota-set-to-be-first-state-to-ban-nudification-apps/",
           "summary": "More evidence of Grok CSAM seen as Minnesota passes nudifying app ban.",
+          "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/05/GettyImages-1211553945-1152x648.jpg",
+          "image_source": "rss_media",
           "published_at": "2026-05-01T17:36:29.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
@@ -1928,7 +2355,7 @@
       "one_liner": "More evidence of Grok CSAM seen as Minnesota passes nudifying app ban.",
       "novelty": 0,
       "trust": 0.78,
-      "score": 0.399
+      "score": 0.395
     },
     {
       "id": "8aovpv",
@@ -1974,12 +2401,12 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "company_announcement",
+      "kind": "news",
       "quality": "mixed",
-      "one_liner": "Replit CEO discusses Cursor deal and business strategy.",
+      "one_liner": "At TechCrunch's sold-out StrictlyVC event in San Francisco on Thursday night, we covered a lot of ground in a short time, beginning with the question everyone in the industry is asking right now: in a",
       "novelty": 0,
       "trust": 0.72,
-      "score": 0.396
+      "score": 0.392
     },
     {
       "id": "1i3c9sf",
@@ -1993,6 +2420,8 @@
         "url": "https://arstechnica.com/ai/2026/05/amid-mythos-hyped-cybersecurity-prowess-researchers-find-gpt-5-5-is-just-as-good",
         "original_url": "https://arstechnica.com/ai/2026/05/amid-mythos-hyped-cybersecurity-prowess-researchers-find-gpt-5-5-is-just-as-good/",
         "summary": "New results suggest Mythos' cyber threat isn't \"a breakthrough specific to one model.\"",
+        "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/05/GettyImages-2234175849-1152x648.jpg",
+        "image_source": "rss_media",
         "published_at": "2026-05-01T15:32:27.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
@@ -2008,6 +2437,8 @@
           "url": "https://arstechnica.com/ai/2026/05/amid-mythos-hyped-cybersecurity-prowess-researchers-find-gpt-5-5-is-just-as-good",
           "original_url": "https://arstechnica.com/ai/2026/05/amid-mythos-hyped-cybersecurity-prowess-researchers-find-gpt-5-5-is-just-as-good/",
           "summary": "New results suggest Mythos' cyber threat isn't \"a breakthrough specific to one model.\"",
+          "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/05/GettyImages-2234175849-1152x648.jpg",
+          "image_source": "rss_media",
           "published_at": "2026-05-01T15:32:27.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
@@ -2027,10 +2458,61 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "GPT-5.5 matches Mythos Preview in cybersecurity benchmarks, challenging claims of unique breakthroughs",
+      "one_liner": "New results suggest Mythos' cyber threat isn't \"a breakthrough specific to one model.\"",
       "novelty": 0,
       "trust": 0.78,
-      "score": 0.395
+      "score": 0.391
+    },
+    {
+      "id": "knvdu4",
+      "primary": {
+        "id": "knvdu4",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "Meta buys robotics startup to bolster its humanoid AI ambitions",
+        "url": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions",
+        "original_url": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions/",
+        "summary": "Meta bought humanoid startup Assured Robot Intelligence to beef up its AI models for robots, the company said.",
+        "published_at": "2026-05-01T22:13:27.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "knvdu4",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "Meta buys robotics startup to bolster its humanoid AI ambitions",
+          "url": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions",
+          "original_url": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions/",
+          "summary": "Meta bought humanoid startup Assured Robot Intelligence to beef up its AI models for robots, the company said.",
+          "published_at": "2026-05-01T22:13:27.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "Meta buys robotics startup to bolster its humanoid AI ambitions",
+          "url": "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions",
+          "published_at": "2026-05-01T22:13:27.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Meta bought humanoid startup Assured Robot Intelligence to beef up its AI models for robots, the company said.",
+      "novelty": 0,
+      "trust": 0.72,
+      "score": 0.39
     },
     {
       "id": "17c2a2",
@@ -2046,6 +2528,8 @@
         "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t24qle/tinygrad_driver_testing",
         "discussion_source": "r/LocalLLaMA",
         "summary": "Boutta Thrash some MoE speeds on a blackwell + m3 Ultra RDMA cluster. Theres a bit less than 2tb of ram here. I want to exchange ideas with you guys and make some cool experiments. what benches would you guys like to see? EDIT: Given all the interest on this post, I will be streaming this on the sub’s discord. Let me know what you guys want to do and I’ll add these to the list! Follow me on x @mlx_reaper submitted by /u/Street-Buyer-2428 [link] [comments]",
+        "image_url": "https://preview.redd.it/o23vc9h53tyg1.jpeg?width=640&crop=smart&auto=webp&s=9f1920fd238880d195909e99d6de233536fbb6a2",
+        "image_source": "rss_media",
         "published_at": "2026-05-02T23:09:06.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
@@ -2063,6 +2547,8 @@
           "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t24qle/tinygrad_driver_testing",
           "discussion_source": "r/LocalLLaMA",
           "summary": "Boutta Thrash some MoE speeds on a blackwell + m3 Ultra RDMA cluster. Theres a bit less than 2tb of ram here. I want to exchange ideas with you guys and make some cool experiments. what benches would you guys like to see? EDIT: Given all the interest on this post, I will be streaming this on the sub’s discord. Let me know what you guys want to do and I’ll add these to the list! Follow me on x @mlx_reaper submitted by /u/Street-Buyer-2428 [link] [comments]",
+          "image_url": "https://preview.redd.it/o23vc9h53tyg1.jpeg?width=640&crop=smart&auto=webp&s=9f1920fd238880d195909e99d6de233536fbb6a2",
+          "image_source": "rss_media",
           "published_at": "2026-05-02T23:09:06.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
@@ -2082,117 +2568,9 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "discussion",
+      "kind": "tool",
       "quality": "mixed",
-      "one_liner": "Testing Tinygrad driver performance on a Blackwell cluster with MoE models.",
-      "novelty": 0,
-      "trust": 0.5,
-      "score": 0.391
-    },
-    {
-      "id": "1w8yjl6",
-      "primary": {
-        "id": "1w8yjl6",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
-        "trust": 0.74,
-        "kind_hint": "news",
-        "title": "Eight tech giants sign Pentagon deals to build an \"AI-first fighting force\" across classified networks",
-        "url": "https://the-decoder.com/eight-tech-giants-sign-pentagon-deals-to-build-an-ai-first-fighting-force-across-classified-networks",
-        "original_url": "https://the-decoder.com/eight-tech-giants-sign-pentagon-deals-to-build-an-ai-first-fighting-force-across-classified-networks/",
-        "summary": "Eight tech companies are supplying AI for classified US military networks, part of the Pentagon's push to build an \"AI-first fighting force.\" Anthropic is notably absent from the list after the company rejected a usage clause and got flagged as a security risk. The article Eight tech giants sign Pentagon deals to build an \"AI-first fighting force\" across classified networks appeared first on The Decoder.",
-        "published_at": "2026-05-01T16:30:38.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1w8yjl6",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "trust": 0.74,
-          "kind_hint": "news",
-          "title": "Eight tech giants sign Pentagon deals to build an \"AI-first fighting force\" across classified networks",
-          "url": "https://the-decoder.com/eight-tech-giants-sign-pentagon-deals-to-build-an-ai-first-fighting-force-across-classified-networks",
-          "original_url": "https://the-decoder.com/eight-tech-giants-sign-pentagon-deals-to-build-an-ai-first-fighting-force-across-classified-networks/",
-          "summary": "Eight tech companies are supplying AI for classified US military networks, part of the Pentagon's push to build an \"AI-first fighting force.\" Anthropic is notably absent from the list after the company rejected a usage clause and got flagged as a security risk. The article Eight tech giants sign Pentagon deals to build an \"AI-first fighting force\" across classified networks appeared first on The Decoder.",
-          "published_at": "2026-05-01T16:30:38.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "Eight tech giants sign Pentagon deals to build an \"AI-first fighting force\" across classified networks",
-          "url": "https://the-decoder.com/eight-tech-giants-sign-pentagon-deals-to-build-an-ai-first-fighting-force-across-classified-networks",
-          "published_at": "2026-05-01T16:30:38.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "Eight tech firms partner with Pentagon for AI military projects",
-      "novelty": 0,
-      "trust": 0.74,
-      "score": 0.387
-    },
-    {
-      "id": "15kv94z",
-      "primary": {
-        "id": "15kv94z",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "Ban phrases on llama.cpp with this script.",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t227hk/ban_phrases_on_llamacpp_with_this_script",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t227hk/ban_phrases_on_llamacpp_with_this_script/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t227hk/ban_phrases_on_llamacpp_with_this_script",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "Check the README for setup instructions: https://github.com/BigStationW/llama-cpp-phrase-ban submitted by /u/Total-Resort-3120 [link] [comments]",
-        "published_at": "2026-05-02T21:22:08.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "15kv94z",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "Ban phrases on llama.cpp with this script.",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t227hk/ban_phrases_on_llamacpp_with_this_script",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t227hk/ban_phrases_on_llamacpp_with_this_script/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t227hk/ban_phrases_on_llamacpp_with_this_script",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "Check the README for setup instructions: https://github.com/BigStationW/llama-cpp-phrase-ban submitted by /u/Total-Resort-3120 [link] [comments]",
-          "published_at": "2026-05-02T21:22:08.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "Ban phrases on llama.cpp with this script.",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t227hk/ban_phrases_on_llamacpp_with_this_script",
-          "published_at": "2026-05-02T21:22:08.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t227hk/ban_phrases_on_llamacpp_with_this_script",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "discussion",
-      "quality": "mixed",
-      "one_liner": "",
+      "one_liner": "Tinygrad driver testing on Blackwell + M3 Ultra RDMA cluster",
       "novelty": 0,
       "trust": 0.5,
       "score": 0.387
@@ -2209,6 +2587,8 @@
         "url": "https://the-decoder.com/first-chinese-ai-startups-are-reportedly-ditching-offshore-structures-to-register-directly-in-china",
         "original_url": "https://the-decoder.com/first-chinese-ai-startups-are-reportedly-ditching-offshore-structures-to-register-directly-in-china/",
         "summary": "After Beijing blocked Meta's takeover of Manus, China's securities regulator signaled that companies hoping to go public should be registered at home. Now AI startups like Moonshot AI and StepFun are considering dissolving their foreign holding structures and registering directly in China as part of Beijing's broader push to keep its AI industry under tight control. The article First Chinese AI startups are reportedly ditching offshore structures to register directly in China appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/china_dragon_ai.png",
+        "image_source": "rss_content",
         "published_at": "2026-05-01T16:06:04.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
@@ -2224,6 +2604,8 @@
           "url": "https://the-decoder.com/first-chinese-ai-startups-are-reportedly-ditching-offshore-structures-to-register-directly-in-china",
           "original_url": "https://the-decoder.com/first-chinese-ai-startups-are-reportedly-ditching-offshore-structures-to-register-directly-in-china/",
           "summary": "After Beijing blocked Meta's takeover of Manus, China's securities regulator signaled that companies hoping to go public should be registered at home. Now AI startups like Moonshot AI and StepFun are considering dissolving their foreign holding structures and registering directly in China as part of Beijing's broader push to keep its AI industry under tight control. The article First Chinese AI startups are reportedly ditching offshore structures to register directly in China appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/china_dragon_ai.png",
+          "image_source": "rss_content",
           "published_at": "2026-05-01T16:06:04.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
@@ -2243,10 +2625,10 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Chinese AI startups shift registration to China amid regulatory changes",
+      "one_liner": "Chinese AI startups shift registration to comply with new regulations",
       "novelty": 0,
       "trust": 0.74,
-      "score": 0.386
+      "score": 0.382
     },
     {
       "id": "1fq9ep8",
@@ -2298,10 +2680,67 @@
       "also_seen_on": [],
       "kind": "company_announcement",
       "quality": "mixed",
-      "one_liner": "Blender announces new development fund and upcoming AI policy changes",
+      "one_liner": "Blender announces new development fund and AI policies",
       "novelty": 0,
       "trust": 0.7,
-      "score": 0.386
+      "score": 0.382
+    },
+    {
+      "id": "1hd7urc",
+      "primary": {
+        "id": "1hd7urc",
+        "source_id": "r_ml",
+        "source_name": "r/MachineLearning",
+        "trust": 0.55,
+        "kind_hint": "discussion",
+        "title": "I implemented meta paper [P]",
+        "url": "https://old.reddit.com/r/MachineLearning/comments/1t1rni9/i_implemented_meta_paper_p",
+        "original_url": "https://old.reddit.com/r/MachineLearning/comments/1t1rni9/i_implemented_meta_paper_p/",
+        "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t1rni9/i_implemented_meta_paper_p",
+        "discussion_source": "r/MachineLearning",
+        "summary": "github link : genji970/Scaling-Test-Time-Compute-for-Agentic-Coding-: paper implementation of Meta Ai paper link : https://arxiv.org/abs/2604.16529v1 As far as I know, there is no public implementation of this paper yet, so I built a minimal research implementation of the core PDR+RTV pipeline. I made project to run gemini-3.1-pro model and test on SWE benchmark(In paper, there is one more benchmark and used models such as opus and more) Need gemini-api-key to run. submitted by /u/Round_Apple2573 [link] [comments]",
+        "published_at": "2026-05-02T14:37:53.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1hd7urc",
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "trust": 0.55,
+          "kind_hint": "discussion",
+          "title": "I implemented meta paper [P]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1t1rni9/i_implemented_meta_paper_p",
+          "original_url": "https://old.reddit.com/r/MachineLearning/comments/1t1rni9/i_implemented_meta_paper_p/",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t1rni9/i_implemented_meta_paper_p",
+          "discussion_source": "r/MachineLearning",
+          "summary": "github link : genji970/Scaling-Test-Time-Compute-for-Agentic-Coding-: paper implementation of Meta Ai paper link : https://arxiv.org/abs/2604.16529v1 As far as I know, there is no public implementation of this paper yet, so I built a minimal research implementation of the core PDR+RTV pipeline. I made project to run gemini-3.1-pro model and test on SWE benchmark(In paper, there is one more benchmark and used models such as opus and more) Need gemini-api-key to run. submitted by /u/Round_Apple2573 [link] [comments]",
+          "published_at": "2026-05-02T14:37:53.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "title": "I implemented meta paper [P]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1t1rni9/i_implemented_meta_paper_p",
+          "published_at": "2026-05-02T14:37:53.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t1rni9/i_implemented_meta_paper_p",
+          "discussion_source": "r/MachineLearning"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0,
+      "trust": 0.55,
+      "score": 0.382
     },
     {
       "id": "jy781g",
@@ -2349,10 +2788,10 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Elon Musk's OpenAI lawsuit enters courtroom phase.",
+      "one_liner": "Elon Musk spent the better part of three days on the witness stand this week in his lawsuit against OpenAI, and it’s already getting messy. Emails, texts, and his own tweets are surfacing in court, an",
       "novelty": 0,
       "trust": 0.72,
-      "score": 0.385
+      "score": 0.381
     },
     {
       "id": "ay4x4p",
@@ -2406,50 +2845,107 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "TurboQuant implementation discrepancies compared to original paper results.",
+      "one_liner": "I attempted to implement TurboQuant (arXiv:2504.19874) from scratch over the last few days. Thought I would check something with folks here since my numbers do not match those in the paper. Observatio",
       "novelty": 0,
       "trust": 0.5,
-      "score": 0.384
+      "score": 0.381
     },
     {
-      "id": "1vk6qr7",
+      "id": "bg5cas",
       "primary": {
-        "id": "1vk6qr7",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
-        "trust": 0.74,
-        "kind_hint": "news",
-        "title": "Big tech's AI spending balloons to $725 billion this year",
-        "url": "https://the-decoder.com/big-techs-ai-spending-balloons-to-725-billion-this-year",
-        "original_url": "https://the-decoder.com/big-techs-ai-spending-balloons-to-725-billion-this-year/",
-        "summary": "Big tech keeps pouring more money into AI data centers, chips, and infrastructure. According to the Financial Times, Google, Amazon, Microsoft, and Meta have a combined budget of around $725 billion for next year. The article Big tech's AI spending balloons to $725 billion this year appeared first on The Decoder.",
-        "published_at": "2026-05-01T14:41:45.000Z",
+        "id": "bg5cas",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "I BUILT MY FIRST MODEL FROM SCRATCH",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "Sup, I'm Crownelius, I made that popular opus distill dataset. TODAY YOU ARE INTRODUCED TO SHARD a 40m parameter mal-formed LLM. Right now I'm working on a series of tiny LLM's, with a goal to run a coherent model for IoT tasks. I've researched atomic models, and while doing that I came across a project called Compact AI. Since joining them, I've learned a lot and even made my own model from scratch. The model is available here: CompactAI-O[HF Organization] About my model named \"Shard\"-I call it Scamp. submitted by /u/volious-ka [link] [comments]",
+        "published_at": "2026-05-02T19:21:27.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "1vk6qr7",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "trust": 0.74,
-          "kind_hint": "news",
-          "title": "Big tech's AI spending balloons to $725 billion this year",
-          "url": "https://the-decoder.com/big-techs-ai-spending-balloons-to-725-billion-this-year",
-          "original_url": "https://the-decoder.com/big-techs-ai-spending-balloons-to-725-billion-this-year/",
-          "summary": "Big tech keeps pouring more money into AI data centers, chips, and infrastructure. According to the Financial Times, Google, Amazon, Microsoft, and Meta have a combined budget of around $725 billion for next year. The article Big tech's AI spending balloons to $725 billion this year appeared first on The Decoder.",
-          "published_at": "2026-05-01T14:41:45.000Z",
+          "id": "bg5cas",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "I BUILT MY FIRST MODEL FROM SCRATCH",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "Sup, I'm Crownelius, I made that popular opus distill dataset. TODAY YOU ARE INTRODUCED TO SHARD a 40m parameter mal-formed LLM. Right now I'm working on a series of tiny LLM's, with a goal to run a coherent model for IoT tasks. I've researched atomic models, and while doing that I came across a project called Compact AI. Since joining them, I've learned a lot and even made my own model from scratch. The model is available here: CompactAI-O[HF Organization] About my model named \"Shard\"-I call it Scamp. submitted by /u/volious-ka [link] [comments]",
+          "published_at": "2026-05-02T19:21:27.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "Big tech's AI spending balloons to $725 billion this year",
-          "url": "https://the-decoder.com/big-techs-ai-spending-balloons-to-725-billion-this-year",
-          "published_at": "2026-05-01T14:41:45.000Z",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "I BUILT MY FIRST MODEL FROM SCRATCH",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch",
+          "published_at": "2026-05-02T19:21:27.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0,
+      "trust": 0.5,
+      "score": 0.379
+    },
+    {
+      "id": "1qymfe3",
+      "primary": {
+        "id": "1qymfe3",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "Pentagon inks deals with Nvidia, Microsoft, and AWS to deploy AI on classified networks",
+        "url": "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks",
+        "original_url": "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks/",
+        "summary": "The deals come as the DOD has doubled down on diversifying its exposure to AI vendors in the wake of its controversial dispute with Anthropic over usage terms of its AI models.",
+        "published_at": "2026-05-01T16:02:36.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1qymfe3",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "Pentagon inks deals with Nvidia, Microsoft, and AWS to deploy AI on classified networks",
+          "url": "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks",
+          "original_url": "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks/",
+          "summary": "The deals come as the DOD has doubled down on diversifying its exposure to AI vendors in the wake of its controversial dispute with Anthropic over usage terms of its AI models.",
+          "published_at": "2026-05-01T16:02:36.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "Pentagon inks deals with Nvidia, Microsoft, and AWS to deploy AI on classified networks",
+          "url": "https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks",
+          "published_at": "2026-05-01T16:02:36.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -2457,10 +2953,10 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Big tech's AI spending reaches $725 billion in 2026",
+      "one_liner": "The deals come as the DOD has doubled down on diversifying its exposure to AI vendors in the wake of its controversial dispute with Anthropic over usage terms of its AI models.",
       "novelty": 0,
-      "trust": 0.74,
-      "score": 0.383
+      "trust": 0.72,
+      "score": 0.377
     },
     {
       "id": "npjb44",
@@ -2517,64 +3013,7 @@
       "one_liner": "For the past few months I've been working on Quadtrix.cpp — a complete GPT-style language model implemented in C++17. No PyTorch. No LibTorch. No BLAS. No auto-differentiation library of any kind. The",
       "novelty": 0,
       "trust": 0.5,
-      "score": 0.38
-    },
-    {
-      "id": "cx5ngs",
-      "primary": {
-        "id": "cx5ngs",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "Warpdrv - my open-source Llama.cpp launcher for daily-driving Qwen 35b + 27b on Strix Halo + RTX Pro.",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1w920/warpdrv_my_opensource_llamacpp_launcher_for",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1w920/warpdrv_my_opensource_llamacpp_launcher_for/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1w920/warpdrv_my_opensource_llamacpp_launcher_for",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "I wanted to share an open-source app that I built for running LLMs locally on my setup. My setup Hardware FEVM FAEX1 (128GB) RTX Pro 5000 Blackwell (48GB), connected over OCuLink Aoostar AG02 2x2TB internal m.2 drives on raid-0 using mdadm. Software: Ubuntu 25.10, llama.cpp built from source for cuda + vulkan, rocm. How I use this app I generally run two models in parallel using different Llama backends simultaneously - Qwen3.6 27b UD-Q6-KXL or NVFP4 on CUDA, and Qwen3.6 35b A3B UD-Q6-KXL on the Strix Halo unified memory. I mostly use them with opencode for coding. The built in model-router co",
-        "published_at": "2026-05-02T17:33:52.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "cx5ngs",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "Warpdrv - my open-source Llama.cpp launcher for daily-driving Qwen 35b + 27b on Strix Halo + RTX Pro.",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1w920/warpdrv_my_opensource_llamacpp_launcher_for",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1w920/warpdrv_my_opensource_llamacpp_launcher_for/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1w920/warpdrv_my_opensource_llamacpp_launcher_for",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "I wanted to share an open-source app that I built for running LLMs locally on my setup. My setup Hardware FEVM FAEX1 (128GB) RTX Pro 5000 Blackwell (48GB), connected over OCuLink Aoostar AG02 2x2TB internal m.2 drives on raid-0 using mdadm. Software: Ubuntu 25.10, llama.cpp built from source for cuda + vulkan, rocm. How I use this app I generally run two models in parallel using different Llama backends simultaneously - Qwen3.6 27b UD-Q6-KXL or NVFP4 on CUDA, and Qwen3.6 35b A3B UD-Q6-KXL on the Strix Halo unified memory. I mostly use them with opencode for coding. The built in model-router co",
-          "published_at": "2026-05-02T17:33:52.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "Warpdrv - my open-source Llama.cpp launcher for daily-driving Qwen 35b + 27b on Strix Halo + RTX Pro.",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1w920/warpdrv_my_opensource_llamacpp_launcher_for",
-          "published_at": "2026-05-02T17:33:52.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1w920/warpdrv_my_opensource_llamacpp_launcher_for",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "discussion",
-      "quality": "mixed",
-      "one_liner": "I wanted to share an open-source app that I built for running LLMs locally on my setup. My setup Hardware FEVM FAEX1 (128GB) RTX Pro 5000 Blackwell (48GB), connected over OCuLink Aoostar AG02 2x2TB in",
-      "novelty": 0,
-      "trust": 0.5,
-      "score": 0.379
+      "score": 0.377
     },
     {
       "id": "150wnvj",
@@ -2588,6 +3027,8 @@
         "url": "https://theverge.com/ai-artificial-intelligence/920775/evidence-exhibits-elon-musk-sam-altman-openai-trial",
         "original_url": "https://www.theverge.com/ai-artificial-intelligence/920775/evidence-exhibits-elon-musk-sam-altman-openai-trial",
         "summary": "The Musk v. Altman trial is underway, and that means exhibits, or the evidence to be presented in court, are being revealed piece by piece. So far, email exchanges, photos, and corporate documents are circulating from the earliest days of OpenAI - and from before the AI lab even had a name. Some high-level takeaways: Nvidia CEO Jensen Huang gave OpenAI an in-demand supercomputer, Musk largely drafted OpenAI's mission and heavily influenced its early structure, OpenAI CEO Sam Altman appeared to want to lean heavily on Y Combinator for early support for OpenAI, OpenAI president Greg Brockman and",
+        "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/04/268474_musk_vs_altman_CVirginia6.jpg?quality=90&",
+        "image_source": "rss_content",
         "published_at": "2026-05-01T19:14:51.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
@@ -2603,6 +3044,8 @@
           "url": "https://theverge.com/ai-artificial-intelligence/920775/evidence-exhibits-elon-musk-sam-altman-openai-trial",
           "original_url": "https://www.theverge.com/ai-artificial-intelligence/920775/evidence-exhibits-elon-musk-sam-altman-openai-trial",
           "summary": "The Musk v. Altman trial is underway, and that means exhibits, or the evidence to be presented in court, are being revealed piece by piece. So far, email exchanges, photos, and corporate documents are circulating from the earliest days of OpenAI - and from before the AI lab even had a name. Some high-level takeaways: Nvidia CEO Jensen Huang gave OpenAI an in-demand supercomputer, Musk largely drafted OpenAI's mission and heavily influenced its early structure, OpenAI CEO Sam Altman appeared to want to lean heavily on Y Combinator for early support for OpenAI, OpenAI president Greg Brockman and",
+          "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/04/268474_musk_vs_altman_CVirginia6.jpg?quality=90&",
+          "image_source": "rss_content",
           "published_at": "2026-05-01T19:14:51.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
@@ -2622,112 +3065,71 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Musk v. Altman trial reveals early OpenAI emails and corporate documents as evidence",
+      "one_liner": "Musk v. Altman trial reveals early OpenAI documents and emails",
       "novelty": 0,
       "trust": 0.68,
-      "score": 0.378
+      "score": 0.374
     },
     {
-      "id": "swru4d",
+      "id": "1ogrgor",
       "primary": {
-        "id": "swru4d",
-        "source_id": "techcrunch_ai",
-        "source_name": "TechCrunch AI",
-        "trust": 0.72,
-        "kind_hint": "news",
-        "title": "Musk v. Altman is just getting started",
-        "url": "https://techcrunch.com/video/musk-v-altman-is-just-getting-started",
-        "original_url": "https://techcrunch.com/video/musk-v-altman-is-just-getting-started/",
-        "summary": "Elon Musk spent the better part of three days on the witness stand this week in his lawsuit against OpenAI, and it’s already getting messy. Emails, texts, and his own tweets are surfacing in court, and there are plenty more witnesses to come. Musk’s argument against OpenAI? By converting the company to a for-profit model, Sam Altman betrayed the “nonprofit for the […]",
-        "published_at": "2026-05-01T14:00:00.000Z",
+        "id": "1ogrgor",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Bruh",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1u6e7/bruh",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1u6e7/bruh/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1u6e7/bruh",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "Do reporting bots even do anything? submitted by /u/Icy_Butterscotch6661 [link] [comments]",
+        "image_url": "https://preview.redd.it/9qld8gx11ryg1.jpeg?width=640&crop=smart&auto=webp&s=7856ad7f86bfb45396f6b9d9f296d4f329ae30ad",
+        "image_source": "rss_media",
+        "published_at": "2026-05-02T16:14:50.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "swru4d",
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "trust": 0.72,
-          "kind_hint": "news",
-          "title": "Musk v. Altman is just getting started",
-          "url": "https://techcrunch.com/video/musk-v-altman-is-just-getting-started",
-          "original_url": "https://techcrunch.com/video/musk-v-altman-is-just-getting-started/",
-          "summary": "Elon Musk spent the better part of three days on the witness stand this week in his lawsuit against OpenAI, and it’s already getting messy. Emails, texts, and his own tweets are surfacing in court, and there are plenty more witnesses to come. Musk’s argument against OpenAI? By converting the company to a for-profit model, Sam Altman betrayed the “nonprofit for the […]",
-          "published_at": "2026-05-01T14:00:00.000Z",
+          "id": "1ogrgor",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Bruh",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1u6e7/bruh",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1u6e7/bruh/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1u6e7/bruh",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "Do reporting bots even do anything? submitted by /u/Icy_Butterscotch6661 [link] [comments]",
+          "image_url": "https://preview.redd.it/9qld8gx11ryg1.jpeg?width=640&crop=smart&auto=webp&s=7856ad7f86bfb45396f6b9d9f296d4f329ae30ad",
+          "image_source": "rss_media",
+          "published_at": "2026-05-02T16:14:50.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "title": "Musk v. Altman is just getting started",
-          "url": "https://techcrunch.com/video/musk-v-altman-is-just-getting-started",
-          "published_at": "2026-05-01T14:00:00.000Z",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Bruh",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1u6e7/bruh",
+          "published_at": "2026-05-02T16:14:50.000Z",
           "published_at_source": "feed",
-          "date_confidence": "high"
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1u6e7/bruh",
+          "discussion_source": "r/LocalLLaMA"
         }
       ],
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Musk vs. Altman legal battle escalates in court.",
+      "one_liner": "Reddit discussion questions effectiveness of reporting bots",
       "novelty": 0,
-      "trust": 0.72,
-      "score": 0.377
-    },
-    {
-      "id": "1vy886m",
-      "primary": {
-        "id": "1vy886m",
-        "source_id": "stackoverflow_blog",
-        "source_name": "Stack Overflow Blog",
-        "trust": 0.72,
-        "kind_hint": "opinion",
-        "title": "Dispatches from O'Reilly: Fast Paths and Slow Paths",
-        "url": "https://stackoverflow.blog/2026/05/01/dispatches-from-o-reilly-fast-paths-and-slow-paths",
-        "original_url": "https://stackoverflow.blog/2026/05/01/dispatches-from-o-reilly-fast-paths-and-slow-paths/",
-        "summary": "Selective control in autonomous AI systems: Why governing every decision breaks autonomy—and how runtime control actually works at scale",
-        "published_at": "2026-05-01T14:00:00.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1vy886m",
-          "source_id": "stackoverflow_blog",
-          "source_name": "Stack Overflow Blog",
-          "trust": 0.72,
-          "kind_hint": "opinion",
-          "title": "Dispatches from O'Reilly: Fast Paths and Slow Paths",
-          "url": "https://stackoverflow.blog/2026/05/01/dispatches-from-o-reilly-fast-paths-and-slow-paths",
-          "original_url": "https://stackoverflow.blog/2026/05/01/dispatches-from-o-reilly-fast-paths-and-slow-paths/",
-          "summary": "Selective control in autonomous AI systems: Why governing every decision breaks autonomy—and how runtime control actually works at scale",
-          "published_at": "2026-05-01T14:00:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "stackoverflow_blog",
-          "source_name": "Stack Overflow Blog",
-          "title": "Dispatches from O'Reilly: Fast Paths and Slow Paths",
-          "url": "https://stackoverflow.blog/2026/05/01/dispatches-from-o-reilly-fast-paths-and-slow-paths",
-          "published_at": "2026-05-01T14:00:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "discussion",
-      "quality": "mixed",
-      "one_liner": "O'Reilly discusses runtime control mechanisms for autonomous AI systems in production",
-      "novelty": 0,
-      "trust": 0.72,
-      "score": 0.377
+      "trust": 0.5,
+      "score": 0.373
     },
     {
       "id": "kmrdbn",
@@ -2781,10 +3183,10 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Discussion on real-world physics-informed AI applications beyond academia",
+      "one_liner": "",
       "novelty": 0,
       "trust": 0.55,
-      "score": 0.376
+      "score": 0.372
     },
     {
       "id": "s5rajc",
@@ -2800,6 +3202,8 @@
         "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1te8y/qwen_36_wins_the_benchmarks_but_gemma_4_wins",
         "discussion_source": "r/LocalLLaMA",
         "summary": "Hey guys, A couple of weeks ago, I asked this sub for the hardest Vision use cases you were dealing with to test the newly dropped Qwen 3.6 against Gemma 4. I finally finished running the gauntlet side-by-side locally on vLLM (FP8 quants) using my custom GUI. If you look at the Benchmarks then Qwen should win but from testing it seems really opposite. Looks like Benchmaxing. I attached comparison of scores below Since official benchmarks are pretty much gamed at this point, I threw real-world, unoptimized junk at them: weird memes, complex GeoGuessr spots, ugly handwritten notes, shopping list",
+        "image_url": "https://external-preview.redd.it/8OQk6xmHfnloaxXhcGN3Gif7S0jkDM9uwxv0g3JmzUI.png?width=140&height=70&auto=webp&s=5db3a64285e240acef18dd1e17112bc2ac1244d6",
+        "image_source": "rss_media",
         "published_at": "2026-05-02T15:44:53.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
@@ -2817,6 +3221,8 @@
           "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1te8y/qwen_36_wins_the_benchmarks_but_gemma_4_wins",
           "discussion_source": "r/LocalLLaMA",
           "summary": "Hey guys, A couple of weeks ago, I asked this sub for the hardest Vision use cases you were dealing with to test the newly dropped Qwen 3.6 against Gemma 4. I finally finished running the gauntlet side-by-side locally on vLLM (FP8 quants) using my custom GUI. If you look at the Benchmarks then Qwen should win but from testing it seems really opposite. Looks like Benchmaxing. I attached comparison of scores below Since official benchmarks are pretty much gamed at this point, I threw real-world, unoptimized junk at them: weird memes, complex GeoGuessr spots, ugly handwritten notes, shopping list",
+          "image_url": "https://external-preview.redd.it/8OQk6xmHfnloaxXhcGN3Gif7S0jkDM9uwxv0g3JmzUI.png?width=140&height=70&auto=webp&s=5db3a64285e240acef18dd1e17112bc2ac1244d6",
+          "image_source": "rss_media",
           "published_at": "2026-05-02T15:44:53.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
@@ -2838,10 +3244,10 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Hey guys, A couple of weeks ago, I asked this sub for the hardest Vision use cases you were dealing with to test the newly dropped Qwen 3.6 against Gemma 4. I finally finished running the gauntlet sid",
+      "one_liner": "Qwen 3.6 vs Gemma 4 benchmark vs real-world performance analysis",
       "novelty": 0,
       "trust": 0.5,
-      "score": 0.375
+      "score": 0.371
     },
     {
       "id": "1e7mkw9",
@@ -2895,10 +3301,10 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "FP8 quantization results for Qwen-3.6 27B on vllm with long-context workloads.",
+      "one_liner": "I run Qwen-3.6 27B with the FP8 safetensors on vllm for long-horizon agentic coding harness workloads with high context window and concurrent sub-agents. On two 3090s that aren’t used for anything els",
       "novelty": 0,
       "trust": 0.5,
-      "score": 0.375
+      "score": 0.371
     },
     {
       "id": "d7icty",
@@ -2952,67 +3358,10 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Request for Qwen 3.6 27B throughput benchmarks on 3090 GPUs for agent workloads.",
+      "one_liner": "Discussion on Qwen 3.6 27B performance on 3090",
       "novelty": 0,
       "trust": 0.5,
-      "score": 0.367
-    },
-    {
-      "id": "1d4nm4o",
-      "primary": {
-        "id": "1d4nm4o",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "[RELEASE] - Finally, my first TTS model is out! 🎙️ Flare-TTS 28M",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "Hey r/LocalLLaMA ! I am back with a new model, and it's something special today 😃 It's Flare-TTS 28M, my first text to speech (TTS) model trained completely from scratch on a single A6000 GPU for ~24 hours, ~300 epochs and the full LJSpeech dataset! Link to the HF model: https://huggingface.co/LH-Tech-AI/Flare-TTS-28M Example result: https://cdn-uploads.huggingface.co/production/uploads/697f2832c2c5e4daa93cece7/vluuHSnp9Ietk7Uk1-hvG.mpga It speaks english, but it still sounds a bit robotish 😂 You can use if you want - it's free and open-source 😃 Have fun ❤️ submitted by /u/LH-Tech_AI [link]",
-        "published_at": "2026-05-02T10:52:10.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1d4nm4o",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "[RELEASE] - Finally, my first TTS model is out! 🎙️ Flare-TTS 28M",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "Hey r/LocalLLaMA ! I am back with a new model, and it's something special today 😃 It's Flare-TTS 28M, my first text to speech (TTS) model trained completely from scratch on a single A6000 GPU for ~24 hours, ~300 epochs and the full LJSpeech dataset! Link to the HF model: https://huggingface.co/LH-Tech-AI/Flare-TTS-28M Example result: https://cdn-uploads.huggingface.co/production/uploads/697f2832c2c5e4daa93cece7/vluuHSnp9Ietk7Uk1-hvG.mpga It speaks english, but it still sounds a bit robotish 😂 You can use if you want - it's free and open-source 😃 Have fun ❤️ submitted by /u/LH-Tech_AI [link]",
-          "published_at": "2026-05-02T10:52:10.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "[RELEASE] - Finally, my first TTS model is out! 🎙️ Flare-TTS 28M",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out",
-          "published_at": "2026-05-02T10:52:10.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "discussion",
-      "quality": "mixed",
-      "one_liner": "",
-      "novelty": 0,
-      "trust": 0.5,
-      "score": 0.365
+      "score": 0.363
     },
     {
       "id": "1pd29iz",
@@ -3066,10 +3415,10 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Proposal for a shared model configuration repository for hardware-specific setups.",
+      "one_liner": "",
       "novelty": 0,
       "trust": 0.5,
-      "score": 0.364
+      "score": 0.36
     },
     {
       "id": "wdambi",
@@ -3085,6 +3434,8 @@
         "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1lfhj/minimax_m27_awq4bit_on_2x_spark_vs_2x_rtx_6000",
         "discussion_source": "r/LocalLLaMA",
         "summary": "Hello, This model/quant is my daily driver and I wanted to have some reference benchs for comparing my setup with a 3x more expensive and 4x time power hungry setup. Results first, methodology after, link at the end with all results Model: cyankiwi/MiniMax-M2.7-AWQ-4bit Results (c1) https://preview.redd.it/dzp6qzfc0pyg1.png?width=858&format=png&auto=webp&s=368debb16760ecaaf8d5bd4013bfeaa5ef940a69 https://preview.redd.it/2gziemld0pyg1.png?width=859&format=png&auto=webp&s=84e2f3c389013854734fecf89a25d1dd095f4d62 (tried to upload the table as text, didn't work as expected) So to my surprise, the",
+        "image_url": "https://external-preview.redd.it/_EQgAAqztVkV0OOAhLve0ynDlxEx_QXNvUUJ8IrRHFE.png?width=140&height=75&auto=webp&s=c9d24c29dfe1b4351ed248783069abd434421c9e",
+        "image_source": "rss_media",
         "published_at": "2026-05-02T09:44:12.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
@@ -3102,6 +3453,8 @@
           "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1lfhj/minimax_m27_awq4bit_on_2x_spark_vs_2x_rtx_6000",
           "discussion_source": "r/LocalLLaMA",
           "summary": "Hello, This model/quant is my daily driver and I wanted to have some reference benchs for comparing my setup with a 3x more expensive and 4x time power hungry setup. Results first, methodology after, link at the end with all results Model: cyankiwi/MiniMax-M2.7-AWQ-4bit Results (c1) https://preview.redd.it/dzp6qzfc0pyg1.png?width=858&format=png&auto=webp&s=368debb16760ecaaf8d5bd4013bfeaa5ef940a69 https://preview.redd.it/2gziemld0pyg1.png?width=859&format=png&auto=webp&s=84e2f3c389013854734fecf89a25d1dd095f4d62 (tried to upload the table as text, didn't work as expected) So to my surprise, the",
+          "image_url": "https://external-preview.redd.it/_EQgAAqztVkV0OOAhLve0ynDlxEx_QXNvUUJ8IrRHFE.png?width=140&height=75&auto=webp&s=c9d24c29dfe1b4351ed248783069abd434421c9e",
+          "image_source": "rss_media",
           "published_at": "2026-05-02T09:44:12.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
@@ -3123,100 +3476,47 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Hello, This model/quant is my daily driver and I wanted to have some reference benchs for comparing my setup with a 3x more expensive and 4x time power hungry setup. Results first, methodology after, ",
+      "one_liner": "MiniMax M2.7 AWQ-4bit performance comparison on Spark vs RTX 6000",
       "novelty": 0,
       "trust": 0.5,
-      "score": 0.363
+      "score": 0.359
     },
     {
-      "id": "15kxyui",
+      "id": "oe8p75",
       "primary": {
-        "id": "15kxyui",
-        "source_id": "r_ml",
-        "source_name": "r/MachineLearning",
-        "trust": 0.55,
-        "kind_hint": "discussion",
-        "title": "Looking for feedback on OpenVidya: an open-source AI classroom layer for NCERT/CBSE [R]",
-        "url": "https://old.reddit.com/r/MachineLearning/comments/1t1dqwo/looking_for_feedback_on_openvidya_an_opensource",
-        "original_url": "https://old.reddit.com/r/MachineLearning/comments/1t1dqwo/looking_for_feedback_on_openvidya_an_opensource/",
-        "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t1dqwo/looking_for_feedback_on_openvidya_an_opensource",
-        "discussion_source": "r/MachineLearning",
-        "summary": "I’ve been experimenting with an open-source project called OpenVidya, built as a fork of OpenMAIC. The goal is to adapt multi-agent AI classroom generation for Indian education rather than treating learning as a generic slide/chat experience. Repo: https://github.com/dpaul0501/OpenVidya Current features: NCERT/CBSE-style knowledge grounding using structured JSON registries Concept dependency graphs for prerequisite-aware lessons Board-style questions with difficulty, traps, and explanations NCERT lab experiment registry with apparatus, objectives, and mistakes Five pedagogy modes: Teacher Narr",
-        "published_at": "2026-05-02T02:47:35.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "15kxyui",
-          "source_id": "r_ml",
-          "source_name": "r/MachineLearning",
-          "trust": 0.55,
-          "kind_hint": "discussion",
-          "title": "Looking for feedback on OpenVidya: an open-source AI classroom layer for NCERT/CBSE [R]",
-          "url": "https://old.reddit.com/r/MachineLearning/comments/1t1dqwo/looking_for_feedback_on_openvidya_an_opensource",
-          "original_url": "https://old.reddit.com/r/MachineLearning/comments/1t1dqwo/looking_for_feedback_on_openvidya_an_opensource/",
-          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t1dqwo/looking_for_feedback_on_openvidya_an_opensource",
-          "discussion_source": "r/MachineLearning",
-          "summary": "I’ve been experimenting with an open-source project called OpenVidya, built as a fork of OpenMAIC. The goal is to adapt multi-agent AI classroom generation for Indian education rather than treating learning as a generic slide/chat experience. Repo: https://github.com/dpaul0501/OpenVidya Current features: NCERT/CBSE-style knowledge grounding using structured JSON registries Concept dependency graphs for prerequisite-aware lessons Board-style questions with difficulty, traps, and explanations NCERT lab experiment registry with apparatus, objectives, and mistakes Five pedagogy modes: Teacher Narr",
-          "published_at": "2026-05-02T02:47:35.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_ml",
-          "source_name": "r/MachineLearning",
-          "title": "Looking for feedback on OpenVidya: an open-source AI classroom layer for NCERT/CBSE [R]",
-          "url": "https://old.reddit.com/r/MachineLearning/comments/1t1dqwo/looking_for_feedback_on_openvidya_an_opensource",
-          "published_at": "2026-05-02T02:47:35.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t1dqwo/looking_for_feedback_on_openvidya_an_opensource",
-          "discussion_source": "r/MachineLearning"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "discussion",
-      "quality": "mixed",
-      "one_liner": "Open-source AI classroom project for Indian education seeks feedback",
-      "novelty": 0,
-      "trust": 0.55,
-      "score": 0.361
-    },
-    {
-      "id": "fllyxt",
-      "primary": {
-        "id": "fllyxt",
+        "id": "oe8p75",
         "source_id": "r_localllama",
         "source_name": "r/LocalLLaMA",
         "trust": 0.5,
         "kind_hint": "discussion",
-        "title": "Qwen3.6-27B at 72 tok/s on RTX 3090 on Windows using native vLLM (no WSL, no Docker), portable launcher and installer",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1judm/qwen3627b_at_72_toks_on_rtx_3090_on_windows_using",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1judm/qwen3627b_at_72_toks_on_rtx_3090_on_windows_using/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1judm/qwen3627b_at_72_toks_on_rtx_3090_on_windows_using",
+        "title": "Hybrid on-device inference on Android: llama.cpp + LiteRT + NPU/GPU routing",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1l7xj/hybrid_ondevice_inference_on_android_llamacpp",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1l7xj/hybrid_ondevice_inference_on_android_llamacpp/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1l7xj/hybrid_ondevice_inference_on_android_llamacpp",
         "discussion_source": "r/LocalLLaMA",
-        "summary": "The angle here is native Windows, no WSL. Simple installation, open source, no telemetry. Not selling or promoting anything: https://github.com/devnen/qwen3.6-windows-server Numbers (RTX 3090, Windows 10): - 72 tok/s short prompt - 64.5 tok/s long prompt (~25k tokens) - 53.4 tok/s at 127k ctx (single GPU) - 160k ctx on PP=2 (2×3090 GPUs) Honestly, these aren't r/LocalLLaMA records. Community has hit 80–82 tok/s on a 3090 with TurboQuant 3-bit KV, and 160 tok/s on a 5090 on Linux. My launcher and patched vLLM closes that gap on Windows. Simple installation: 1. Download qwen3.6-windows-server-po",
-        "published_at": "2026-05-02T08:12:35.000Z",
+        "summary": "Hi everyone, I’m the maintainer of Box — a fork of Google’s AI Edge Gallery that I’ve been extending into a fully offline AI assistant for Android. Full disclosure: I built this project. It runs entirely on-device (no cloud, no accounts, no external inference), and combines multiple local inference backends in a single app. What I’ve been experimenting with The goal was to see how far a fully offline mobile AI stack could be pushed using: llama.cpp (GGUF LLM inference) whisper.cpp (on-device STT) stable-diffusion.cpp (image generation) LiteRT (Google’s on-device runtime) All running on Android",
+        "image_url": "https://preview.redd.it/ty4as6o41pyg1.png?width=640&crop=smart&auto=webp&s=9b178ddbe2328901a1128bf42ae9ddb13183af90",
+        "image_source": "rss_media",
+        "published_at": "2026-05-02T09:31:55.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "fllyxt",
+          "id": "oe8p75",
           "source_id": "r_localllama",
           "source_name": "r/LocalLLaMA",
           "trust": 0.5,
           "kind_hint": "discussion",
-          "title": "Qwen3.6-27B at 72 tok/s on RTX 3090 on Windows using native vLLM (no WSL, no Docker), portable launcher and installer",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1judm/qwen3627b_at_72_toks_on_rtx_3090_on_windows_using",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1judm/qwen3627b_at_72_toks_on_rtx_3090_on_windows_using/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1judm/qwen3627b_at_72_toks_on_rtx_3090_on_windows_using",
+          "title": "Hybrid on-device inference on Android: llama.cpp + LiteRT + NPU/GPU routing",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1l7xj/hybrid_ondevice_inference_on_android_llamacpp",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1l7xj/hybrid_ondevice_inference_on_android_llamacpp/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1l7xj/hybrid_ondevice_inference_on_android_llamacpp",
           "discussion_source": "r/LocalLLaMA",
-          "summary": "The angle here is native Windows, no WSL. Simple installation, open source, no telemetry. Not selling or promoting anything: https://github.com/devnen/qwen3.6-windows-server Numbers (RTX 3090, Windows 10): - 72 tok/s short prompt - 64.5 tok/s long prompt (~25k tokens) - 53.4 tok/s at 127k ctx (single GPU) - 160k ctx on PP=2 (2×3090 GPUs) Honestly, these aren't r/LocalLLaMA records. Community has hit 80–82 tok/s on a 3090 with TurboQuant 3-bit KV, and 160 tok/s on a 5090 on Linux. My launcher and patched vLLM closes that gap on Windows. Simple installation: 1. Download qwen3.6-windows-server-po",
-          "published_at": "2026-05-02T08:12:35.000Z",
+          "summary": "Hi everyone, I’m the maintainer of Box — a fork of Google’s AI Edge Gallery that I’ve been extending into a fully offline AI assistant for Android. Full disclosure: I built this project. It runs entirely on-device (no cloud, no accounts, no external inference), and combines multiple local inference backends in a single app. What I’ve been experimenting with The goal was to see how far a fully offline mobile AI stack could be pushed using: llama.cpp (GGUF LLM inference) whisper.cpp (on-device STT) stable-diffusion.cpp (image generation) LiteRT (Google’s on-device runtime) All running on Android",
+          "image_url": "https://preview.redd.it/ty4as6o41pyg1.png?width=640&crop=smart&auto=webp&s=9b178ddbe2328901a1128bf42ae9ddb13183af90",
+          "image_source": "rss_media",
+          "published_at": "2026-05-02T09:31:55.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -3225,79 +3525,22 @@
         {
           "source_id": "r_localllama",
           "source_name": "r/LocalLLaMA",
-          "title": "Qwen3.6-27B at 72 tok/s on RTX 3090 on Windows using native vLLM (no WSL, no Docker), portable launcher and installer",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1judm/qwen3627b_at_72_toks_on_rtx_3090_on_windows_using",
-          "published_at": "2026-05-02T08:12:35.000Z",
+          "title": "Hybrid on-device inference on Android: llama.cpp + LiteRT + NPU/GPU routing",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1l7xj/hybrid_ondevice_inference_on_android_llamacpp",
+          "published_at": "2026-05-02T09:31:55.000Z",
           "published_at_source": "feed",
           "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1judm/qwen3627b_at_72_toks_on_rtx_3090_on_windows_using",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1l7xj/hybrid_ondevice_inference_on_android_llamacpp",
           "discussion_source": "r/LocalLLaMA"
         }
       ],
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "The angle here is native Windows, no WSL. Simple installation, open source, no telemetry. Not selling or promoting anything: https://github.com/devnen/qwen3.6-windows-server Numbers (RTX 3090, Windows",
+      "one_liner": "Hi everyone, I’m the maintainer of Box — a fork of Google’s AI Edge Gallery that I’ve been extending into a fully offline AI assistant for Android. Full disclosure: I built this project. It runs entir",
       "novelty": 0,
       "trust": 0.5,
-      "score": 0.36
-    },
-    {
-      "id": "1x1k313",
-      "primary": {
-        "id": "1x1k313",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "Create Plan.md with Claude Code Opus, Execute Plan.md locally in Open Code using Qwen 3.6 27B Q8",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1jtc2/create_planmd_with_claude_code_opus_execute",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1jtc2/create_planmd_with_claude_code_opus_execute/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1jtc2/create_planmd_with_claude_code_opus_execute",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "Does anyone do this? Any tips? I've been experimenting with plan creation in Claude Code Opus and telling Claude it will be execute by a local model so be very specific. Then I write this to disk. Then I load up Claude again but setting the API url to local host and local model. Then execute using Qwen 3.6 27B Q8 in Claude Code in VS Code. But, I thought I could save setting the API base URL and reloading Claude again by just using Open Code purely local and execute the plan.md. So Claude is always Cloud, Open Code is always Local. I know this concept isn't new (Claude plan, then local claude",
-        "published_at": "2026-05-02T08:10:50.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1x1k313",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "Create Plan.md with Claude Code Opus, Execute Plan.md locally in Open Code using Qwen 3.6 27B Q8",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1jtc2/create_planmd_with_claude_code_opus_execute",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1jtc2/create_planmd_with_claude_code_opus_execute/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1jtc2/create_planmd_with_claude_code_opus_execute",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "Does anyone do this? Any tips? I've been experimenting with plan creation in Claude Code Opus and telling Claude it will be execute by a local model so be very specific. Then I write this to disk. Then I load up Claude again but setting the API url to local host and local model. Then execute using Qwen 3.6 27B Q8 in Claude Code in VS Code. But, I thought I could save setting the API base URL and reloading Claude again by just using Open Code purely local and execute the plan.md. So Claude is always Cloud, Open Code is always Local. I know this concept isn't new (Claude plan, then local claude",
-          "published_at": "2026-05-02T08:10:50.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "Create Plan.md with Claude Code Opus, Execute Plan.md locally in Open Code using Qwen 3.6 27B Q8",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1jtc2/create_planmd_with_claude_code_opus_execute",
-          "published_at": "2026-05-02T08:10:50.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1jtc2/create_planmd_with_claude_code_opus_execute",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "discussion",
-      "quality": "mixed",
-      "one_liner": "Does anyone do this? Any tips? I've been experimenting with plan creation in Claude Code Opus and telling Claude it will be execute by a local model so be very specific. Then I write this to disk. The",
-      "novelty": 0,
-      "trust": 0.5,
-      "score": 0.36
+      "score": 0.359
     },
     {
       "id": "1b2ubtd",
@@ -3351,181 +3594,10 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "",
+      "one_liner": "Community inquiry about Qwen 3.6 model expansion plans",
       "novelty": 0,
       "trust": 0.5,
-      "score": 0.359
-    },
-    {
-      "id": "17x3lp",
-      "primary": {
-        "id": "17x3lp",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "Unsloth solved bug in Mistral Medium 3.5 implementation",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1itn1/unsloth_solved_bug_in_mistral_medium_35",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1itn1/unsloth_solved_bug_in_mistral_medium_35/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1itn1/unsloth_solved_bug_in_mistral_medium_35",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "https://unsloth.ai/docs/models/mistral-3.5 \"May 1, 2026 Update: We worked with Mistral to fix Mistral Medium 3.5 inference affecting some implementations, and released updated GGUFs with the fix (NOT related to Unsloth or our quants). The issue was caused by a YaRN parsing quirk affecting several implementations, including transformers and llama.cpp. Changing mscale_all_dim from 1 to 0 resolved it. We also fixed mmproj files not being generated correctly.\" submitted by /u/Snail_Inference [link] [comments]",
-        "published_at": "2026-05-02T07:13:13.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "17x3lp",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "Unsloth solved bug in Mistral Medium 3.5 implementation",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1itn1/unsloth_solved_bug_in_mistral_medium_35",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1itn1/unsloth_solved_bug_in_mistral_medium_35/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1itn1/unsloth_solved_bug_in_mistral_medium_35",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "https://unsloth.ai/docs/models/mistral-3.5 \"May 1, 2026 Update: We worked with Mistral to fix Mistral Medium 3.5 inference affecting some implementations, and released updated GGUFs with the fix (NOT related to Unsloth or our quants). The issue was caused by a YaRN parsing quirk affecting several implementations, including transformers and llama.cpp. Changing mscale_all_dim from 1 to 0 resolved it. We also fixed mmproj files not being generated correctly.\" submitted by /u/Snail_Inference [link] [comments]",
-          "published_at": "2026-05-02T07:13:13.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "Unsloth solved bug in Mistral Medium 3.5 implementation",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1itn1/unsloth_solved_bug_in_mistral_medium_35",
-          "published_at": "2026-05-02T07:13:13.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1itn1/unsloth_solved_bug_in_mistral_medium_35",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "discussion",
-      "quality": "mixed",
-      "one_liner": "",
-      "novelty": 0,
-      "trust": 0.5,
-      "score": 0.358
-    },
-    {
-      "id": "1ab9iz5",
-      "primary": {
-        "id": "1ab9iz5",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "Mistral Medium 3.5 128b ggufs are fixed",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1ispj/mistral_medium_35_128b_ggufs_are_fixed",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1ispj/mistral_medium_35_128b_ggufs_are_fixed/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1ispj/mistral_medium_35_128b_ggufs_are_fixed",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "All ggufs were broken, resulting in bad outputs, especially at long context. Anyway, it is fixed now: https://huggingface.co/unsloth/Mistral-Medium-3.5-128B-GGUF/discussions/1 Edit: Unsloth Announcement: https://huggingface.co/unsloth/Mistral-Medium-3.5-128B-GGUF/discussions/5 Edit2: From my experience it is A LOT more stable, even at short context. I messed up the prompt format before and it quickly devolved into gibberish. The updated version doesn't really mind. submitted by /u/Sunija_Dev [link] [comments]",
-        "published_at": "2026-05-02T07:11:50.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1ab9iz5",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "Mistral Medium 3.5 128b ggufs are fixed",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1ispj/mistral_medium_35_128b_ggufs_are_fixed",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1ispj/mistral_medium_35_128b_ggufs_are_fixed/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1ispj/mistral_medium_35_128b_ggufs_are_fixed",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "All ggufs were broken, resulting in bad outputs, especially at long context. Anyway, it is fixed now: https://huggingface.co/unsloth/Mistral-Medium-3.5-128B-GGUF/discussions/1 Edit: Unsloth Announcement: https://huggingface.co/unsloth/Mistral-Medium-3.5-128B-GGUF/discussions/5 Edit2: From my experience it is A LOT more stable, even at short context. I messed up the prompt format before and it quickly devolved into gibberish. The updated version doesn't really mind. submitted by /u/Sunija_Dev [link] [comments]",
-          "published_at": "2026-05-02T07:11:50.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "Mistral Medium 3.5 128b ggufs are fixed",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1ispj/mistral_medium_35_128b_ggufs_are_fixed",
-          "published_at": "2026-05-02T07:11:50.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1ispj/mistral_medium_35_128b_ggufs_are_fixed",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "discussion",
-      "quality": "mixed",
-      "one_liner": "",
-      "novelty": 0,
-      "trust": 0.5,
-      "score": 0.358
-    },
-    {
-      "id": "1t2yphn",
-      "primary": {
-        "id": "1t2yphn",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "Are you quanting your memory?",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1dl9y/are_you_quanting_your_memory",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1dl9y/are_you_quanting_your_memory/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1dl9y/are_you_quanting_your_memory",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "Title. Curious about how people are generally dealing with the kv cache. BF16? Q8? Q4? Turboquant or some other secret sauce? I run bf16 everything hoping that I'd get less hallucinations and because that's what the g4 and q3.6 are natively trained on anyways. But very interested to hear if people are having good results running q8 or q4 or if anyone has good results using turbo3/4 or similar. submitted by /u/Plastic-Stress-6468 [link] [comments]",
-        "published_at": "2026-05-02T02:39:46.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1t2yphn",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "Are you quanting your memory?",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1dl9y/are_you_quanting_your_memory",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1dl9y/are_you_quanting_your_memory/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1dl9y/are_you_quanting_your_memory",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "Title. Curious about how people are generally dealing with the kv cache. BF16? Q8? Q4? Turboquant or some other secret sauce? I run bf16 everything hoping that I'd get less hallucinations and because that's what the g4 and q3.6 are natively trained on anyways. But very interested to hear if people are having good results running q8 or q4 or if anyone has good results using turbo3/4 or similar. submitted by /u/Plastic-Stress-6468 [link] [comments]",
-          "published_at": "2026-05-02T02:39:46.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "Are you quanting your memory?",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1dl9y/are_you_quanting_your_memory",
-          "published_at": "2026-05-02T02:39:46.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1dl9y/are_you_quanting_your_memory",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "discussion",
-      "quality": "mixed",
-      "one_liner": "",
-      "novelty": 0,
-      "trust": 0.5,
-      "score": 0.348
+      "score": 0.355
     },
     {
       "id": "dwlp7h",
@@ -3539,6 +3611,8 @@
         "url": "https://wired.com/story/super-pac-backed-by-openai-and-palantir-is-paying-tiktok-influencers-to-fear-monger-about-china",
         "original_url": "https://www.wired.com/story/super-pac-backed-by-openai-and-palantir-is-paying-tiktok-influencers-to-fear-monger-about-china/",
         "summary": "Build American AI, a nonprofit linked to a super PAC bankrolled by executives at OpenAI and Andreessen Horowitz, is funding a campaign to spread pro-AI messaging and stoke fears about China.",
+        "image_url": "https://media.wired.com/photos/69f14b40d98ff026bfabf317/master/pass/Made-In-China-Super-PAC-Backed-By-OpenAI-Palantir-Paying-TikTok-Influencers-Business.jpg",
+        "image_source": "rss_media",
         "published_at": "2026-05-01T20:25:28.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
@@ -3554,6 +3628,8 @@
           "url": "https://wired.com/story/super-pac-backed-by-openai-and-palantir-is-paying-tiktok-influencers-to-fear-monger-about-china",
           "original_url": "https://www.wired.com/story/super-pac-backed-by-openai-and-palantir-is-paying-tiktok-influencers-to-fear-monger-about-china/",
           "summary": "Build American AI, a nonprofit linked to a super PAC bankrolled by executives at OpenAI and Andreessen Horowitz, is funding a campaign to spread pro-AI messaging and stoke fears about China.",
+          "image_url": "https://media.wired.com/photos/69f14b40d98ff026bfabf317/master/pass/Made-In-China-Super-PAC-Backed-By-OpenAI-Palantir-Paying-TikTok-Influencers-Business.jpg",
+          "image_source": "rss_media",
           "published_at": "2026-05-01T20:25:28.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
@@ -3570,6 +3646,8 @@
           "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1i4yg/a_darkmoney_campaign_is_paying_influencers_to",
           "discussion_source": "r/LocalLLaMA",
           "summary": "Build American AI, a nonprofit linked to a super PAC bankrolled by executives at OpenAI and Andreessen Horowitz, is funding a campaign to spread pro-AI messaging and stoke fears about China. So Local LLM is important .... always! Need to support who giving us more Open source & weights. Last month, Half of the open models came from there only. submitted by /u/pmttyji [link] [comments]",
+          "image_url": "https://external-preview.redd.it/XmVFE6Y5RHGUbmRP3DttJb_U5RidPMqrOa6xgTcWXYg.jpeg?width=640&crop=smart&auto=webp&s=ce7e559a6f65d1849ae084800df0e061f268fe10",
+          "image_source": "rss_media",
           "published_at": "2026-05-02T06:35:02.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
@@ -3609,12 +3687,12 @@
           "discussion_source": "r/LocalLLaMA"
         }
       ],
-      "kind": "opinion",
+      "kind": "news",
       "quality": "hype",
-      "one_liner": "Dark-money campaign funds influencers to promote U.S. AI and China threat narratives",
+      "one_liner": "Pro-AI campaign funds influencers to promote U.S. AI and Chinese threats",
       "novelty": 0,
       "trust": 0.76,
-      "score": 0.314
+      "score": 0.31
     }
   ]
 }
