@@ -2,7 +2,8 @@ name: Refresh Chronicle
 
 on:
   schedule:
-    - cron: "0 9,12,18 * * *"
+    # Avoid the top-of-hour GitHub Actions queue, which can delay scheduled runs.
+    - cron: "17 5,12,18 * * *"
   workflow_dispatch:
 
 permissions:
@@ -49,6 +50,7 @@ jobs:
         timeout-minutes: 15
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
         run: npm run run:pipeline
 
       - name: Verify Chronicle feed
