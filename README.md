@@ -4,9 +4,9 @@ Chronicle is a daily AI signal filter for builders. It clusters duplicate
 AI/ML links, classifies each item, scores novelty against a 30-day rolling
 history, and ranks by a composite signal score.
 
-Static site, no backend. The Chronicle workflow runs the pipeline once a day,
-commits two JSON files, uploads `public/` as the GitHub Pages artifact, and
-deploys GitHub Pages.
+Static site, no backend. The Chronicle workflow runs the pipeline three times a
+day at 09:00, 12:00, and 18:00 UTC, commits two JSON files, uploads `public/`
+as the GitHub Pages artifact, and deploys GitHub Pages.
 
 `public/feed.json` and `data/history.json` are intentionally committed by the
 scheduled workflow. The feed gives GitHub Pages a static file to serve, and the
@@ -18,7 +18,7 @@ separate storage service.
 ```
 sources → fetch → canonicalize → window-filter → cluster
                                                      ↓
-                              novelty ← history ← classify (Haiku, one call)
+                         novelty ← history ← classify (Groq Qwen, chunked)
                                                      ↓
                                                    score
                                                      ↓
@@ -29,7 +29,7 @@ sources → fetch → canonicalize → window-filter → cluster
   `www.`, normalizes arXiv `pdf` ↔ `abs`.
 - **Cluster** is two-stage: exact canonical URL match, then trigram Jaccard on
   titles (≥ 0.55). No embeddings in v1.
-- **Classify** runs all clusters in a single Haiku call with forced tool-use
+- **Classify** runs clusters in chunked Groq `qwen/qwen3-32b` calls with JSON
   output. Returns `kind`, `quality`, `one_liner`.
 - **Novelty** is `1 − max trigram-Jaccard against 30 days of history`.
 - **Score** is a weighted sum of trust, novelty, quality, cluster-size, recency.
@@ -38,23 +38,24 @@ sources → fetch → canonicalize → window-filter → cluster
 
 ```bash
 npm install
-ANTHROPIC_API_KEY=sk-... npm run run:pipeline
+GROQ_API_KEY=gsk_... npm run run:pipeline
 npm run verify:feed
 npx --yes serve public
 ```
 
-Run without an API key to see the fallback path (uses `kind_hint`, marks
-everything `mixed`).
+Run without an API key to see the fallback path (uses `kind_hint` and heuristic
+quality labels).
 
 ## Deploy
 
 1. Settings → Pages → Source: **GitHub Actions**.
-2. Settings → Secrets and variables → Actions → add `ANTHROPIC_API_KEY`.
-3. Push the `pages` branch.
+2. Settings → Secrets and variables → Actions → add `GROQ_API_KEY`.
+3. Push the `pages` branch for app and feed code changes.
 4. Trigger `Refresh Chronicle` manually for the first run.
 
-Scheduled workflows run from the repository default branch. Set the default
-branch to `pages` if you want the daily cron to run from this branch.
+Scheduled workflows run from the repository default branch. Keep the workflow
+on `main`; it checks out `pages`, refreshes the feed there, commits the feed
+state back to `pages`, and deploys `public/` to GitHub Pages.
 
 ## Tuning
 
@@ -68,9 +69,9 @@ All knobs live in source. Eyeball output for a week, then adjust:
 
 ## Cost
 
-Chunked Haiku calls per run, ~150 clusters/day, JSON tool output.
-Roughly **$0.20–0.50/month** at current Haiku pricing. Free tier of GitHub
-Actions covers the compute.
+Chunked Groq calls per run, roughly proportional to the number of fresh
+clusters. The three daily refreshes triple LLM usage versus the old daily
+schedule. Free tier of GitHub Actions covers the compute.
 
 ## v2 backlog (deferred on purpose)
 

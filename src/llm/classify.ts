@@ -1,15 +1,15 @@
-import Anthropic from "@anthropic-ai/sdk";
 import type { ClassificationMode, Cluster, Kind, Quality } from "../types.ts";
 
-// We classify all clusters in a single Anthropic call by feeding a numbered
-// list and asking for a JSON array back. Tool use forces the schema. Cheap.
+// We classify clusters in chunked Groq calls by feeding a numbered list and
+// asking for a JSON object back. Missing or invalid items fall back per item.
 //
 // Why one shot instead of one-per-cluster:
 //   - lower latency
 //   - lower cost (no repeated system prompt)
 //   - the model gets cross-cluster context, which slightly improves quality
 
-const MODEL = "claude-haiku-4-5-20251001";
+const MODEL = "qwen/qwen3-32b";
+const GROQ_CHAT_COMPLETIONS_URL = "https://api.groq.com/openai/v1/chat/completions";
 const BATCH_SIZE = 35;
 
 const SYSTEM = `You triage AI/ML news for a daily digest aimed at experienced
@@ -26,35 +26,14 @@ ML/AI engineers. For each item, return:
 Be strict on quality. Most VC-flavored takes and "5 reasons why GPT will…"
 posts are hype. Restating someone else's release without analysis is mixed.`;
 
-const TOOL = {
-  name: "emit_classifications",
-  description: "Emit classifications for all items, in input order.",
-  input_schema: {
-    type: "object",
-    properties: {
-      items: {
-        type: "array",
-        items: {
-          type: "object",
-          properties: {
-            index: { type: "integer" },
-            kind: {
-              type: "string",
-              enum: [
-                "paper", "model_release", "company_announcement", "tutorial",
-                "opinion", "discussion", "tool", "news",
-              ],
-            },
-            quality: { type: "string", enum: ["signal", "mixed", "hype"] },
-            one_liner: { type: "string", maxLength: 200 },
-          },
-          required: ["index", "kind", "quality", "one_liner"],
-        },
-      },
-    },
-    required: ["items"],
-  },
-} as const;
+const JSON_INSTRUCTIONS = `Return only valid JSON with this exact shape:
+{"items":[{"index":0,"kind":"paper","quality":"signal","one_liner":"<= 140 chars"}]}
+
+Use only these kind values:
+paper, model_release, company_announcement, tutorial, opinion, discussion, tool, news
+
+Use only these quality values:
+signal, mixed, hype`;
 
 export interface Classification {
   kind: Kind;
@@ -70,7 +49,7 @@ export interface ClassificationResult {
 export async function classifyClusters(
   clusters: Cluster[],
   apiKey: string | undefined,
-  createMessage?: MessageRunner,
+  createChatCompletion?: ChatCompletionRunner,
 ): Promise<ClassificationResult> {
   if (clusters.length === 0) return { items: [], mode: "fallback" };
   if (!apiKey) {
@@ -78,11 +57,8 @@ export async function classifyClusters(
     return { items: clusters.map((c) => fallback(c)), mode: "fallback" };
   }
 
-  const client = new Anthropic({ apiKey });
-  const runner: MessageRunner = createMessage ?? (async (args) => {
-    const resp = await client.messages.create(args as Parameters<typeof client.messages.create>[0]);
-    return resp as unknown as { content: Array<{ type: string; input?: unknown }> };
-  });
+  const runner: ChatCompletionRunner = createChatCompletion
+    ?? ((args) => createGroqChatCompletion(apiKey, args));
   const out: Classification[] = [];
   let failed = 0;
 
@@ -101,13 +77,124 @@ export async function classifyClusters(
   return { items: out, mode };
 }
 
-type MessageRunner = (args: unknown) => Promise<{
-  content: Array<{ type: string; input?: unknown }>;
-}>;
+interface ChatCompletionRequest {
+  model: string;
+  temperature: number;
+  max_completion_tokens: number;
+  response_format: { type: "json_object" };
+  messages: Array<{
+    role: "system" | "user";
+    content: string;
+  }>;
+}
+
+interface ChatCompletionResponse {
+  choices?: Array<{
+    message?: {
+      content?: string | null;
+    };
+  }>;
+  error?: {
+    message?: string;
+  };
+}
+
+type ChatCompletionRunner = (args: ChatCompletionRequest) => Promise<ChatCompletionResponse>;
+
+async function createGroqChatCompletion(
+  apiKey: string,
+  body: ChatCompletionRequest,
+): Promise<ChatCompletionResponse> {
+  const resp = await fetch(GROQ_CHAT_COMPLETIONS_URL, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+  const text = await resp.text();
+  const data = parseResponseBody(text, resp.status);
+
+  if (!resp.ok) {
+    throw new Error(`Groq request failed (${resp.status}): ${groqErrorMessage(data)}`);
+  }
+
+  return data as ChatCompletionResponse;
+}
+
+function parseResponseBody(text: string, status: number): unknown {
+  if (!text) return {};
+  try {
+    return JSON.parse(text);
+  } catch {
+    throw new Error(`Groq returned non-JSON response (${status})`);
+  }
+}
+
+function groqErrorMessage(data: unknown): string {
+  if (isRecord(data) && isRecord(data.error) && typeof data.error.message === "string") {
+    return data.error.message;
+  }
+  return "unknown error";
+}
+
+interface RawClassifiedItem {
+  index: number;
+  kind: string;
+  quality: string;
+  one_liner: unknown;
+}
+
+interface ClassifiedItemsResponse {
+  items: RawClassifiedItem[];
+}
+
+function parseClassifications(content: string): ClassifiedItemsResponse {
+  const parsed = parseJsonFromContent(content);
+  if (!isRecord(parsed) || !Array.isArray(parsed.items)) {
+    throw new Error("invalid classification JSON");
+  }
+  return {
+    items: parsed.items.flatMap((item) => {
+      if (!isRecord(item) || typeof item.index !== "number") return [];
+      return [{
+        index: item.index,
+        kind: String(item.kind ?? ""),
+        quality: String(item.quality ?? ""),
+        one_liner: item.one_liner,
+      }];
+    }),
+  };
+}
+
+function parseJsonFromContent(content: string): unknown {
+  const trimmed = stripJsonFence(content.trim());
+  try {
+    return JSON.parse(trimmed);
+  } catch {
+    const start = trimmed.indexOf("{");
+    const end = trimmed.lastIndexOf("}");
+    if (start >= 0 && end > start) {
+      return JSON.parse(trimmed.slice(start, end + 1));
+    }
+    throw new Error("classification response was not JSON");
+  }
+}
+
+function stripJsonFence(value: string): string {
+  return value
+    .replace(/^```(?:json)?\s*/i, "")
+    .replace(/\s*```$/i, "");
+}
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null;
+}
 
 async function classifyBatch(
   clusters: Cluster[],
-  runner: MessageRunner,
+  runner: ChatCompletionRunner,
 ): Promise<Classification[]> {
   const payload = clusters.map((c, i) => ({
     index: i,
@@ -124,20 +211,22 @@ async function classifyBatch(
 
   const resp = await runner({
     model: MODEL,
-    max_tokens: 4096,
-    system: SYSTEM,
-    tools: [TOOL],
-    tool_choice: { type: "tool", name: TOOL.name },
-    messages: [{ role: "user", content: userMsg }],
+    temperature: 0,
+    max_completion_tokens: 4096,
+    response_format: { type: "json_object" },
+    messages: [
+      { role: "system", content: `${SYSTEM}\n\n${JSON_INSTRUCTIONS}` },
+      { role: "user", content: userMsg },
+    ],
   });
 
-  const block = resp.content.find((b) => b.type === "tool_use");
-  if (!block || block.type !== "tool_use") {
-    throw new Error("no tool_use in response");
+  const content = resp.choices?.[0]?.message?.content;
+  if (!content) {
+    throw new Error("no message content in response");
   }
-  const out = (block.input as { items: ClassifiedItem[] }).items ?? [];
+  const out = parseClassifications(content).items;
   // Reassemble in input order. Missing entries fall back.
-  const byIdx = new Map<number, ClassifiedItem>();
+  const byIdx = new Map<number, RawClassifiedItem>();
   for (const it of out) byIdx.set(it.index, it);
   return clusters.map((c, i) => {
     const got = byIdx.get(i);
@@ -149,13 +238,6 @@ async function classifyBatch(
       one_liner: String(got.one_liner || c.primary.title).slice(0, 200),
     };
   });
-}
-
-interface ClassifiedItem {
-  index: number;
-  kind: Kind;
-  quality: Quality;
-  one_liner: string;
 }
 
 function fallback(c: Cluster): Classification {

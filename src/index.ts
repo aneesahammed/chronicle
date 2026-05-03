@@ -69,7 +69,7 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
   console.log(`[cluster] ${fresh.length} → ${clusters.length} clusters`);
 
   // 4. Classify with chunked LLM calls, falling back if the API is unavailable.
-  const cls = await classifyClusters(clusters, env.ANTHROPIC_API_KEY);
+  const cls = await classifyClusters(clusters, env.GROQ_API_KEY);
 
   // 5. Novelty against history
   const history = pruneHistory(await loadHistory(historyOut), now);

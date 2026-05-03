@@ -20,6 +20,44 @@ test("classifyClusters falls back when the LLM runner throws", async () => {
   assert.equal(result.items[0].quality, "signal");
 });
 
+test("classifyClusters reads Groq chat completion JSON in item order", async () => {
+  const result = await classifyClusters([
+    cluster({ title: "A useful paper about inference" }),
+    cluster({ title: "A mixed company update", kind_hint: "news" }),
+  ], "test-key", async (request) => {
+    assert.equal(request.model, "qwen/qwen3-32b");
+    assert.equal(request.response_format.type, "json_object");
+    return {
+      choices: [{
+        message: {
+          content: JSON.stringify({
+            items: [
+              {
+                index: 1,
+                kind: "news",
+                quality: "mixed",
+                one_liner: "Company update with some useful context.",
+              },
+              {
+                index: 0,
+                kind: "paper",
+                quality: "signal",
+                one_liner: "Paper improves inference throughput.",
+              },
+            ],
+          }),
+        },
+      }],
+    };
+  });
+
+  assert.equal(result.mode, "llm");
+  assert.equal(result.items[0].kind, "paper");
+  assert.equal(result.items[0].one_liner, "Paper improves inference throughput.");
+  assert.equal(result.items[1].kind, "news");
+  assert.equal(result.items[1].quality, "mixed");
+});
+
 test("fallback classifier demotes low-effort single-source discussion prompts", async () => {
   const result = await classifyClusters([cluster({
     source_id: "r_localllama",
