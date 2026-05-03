@@ -737,7 +737,7 @@
 <a class="skip-link" href="#feed">Skip to feed</a>
 <div class="shell">
   <header class="masthead">
-    <span class="wordmark">Chronicle</span>
+    <a class="wordmark" id="homeLink" href="./">Chronicle</a>
     <span class="status-line" id="statusLine"><span class="dot" aria-hidden="true"></span><span id="statusText">loading…</span></span>
     <button class="theme-toggle" id="themeToggle" type="button">theme</button>
   </header>
@@ -841,6 +841,7 @@ initFiltersFromUrl();
 wireFilterControls();
 wireReadingControls();
 document.getElementById("archiveCtaButton").href = rootUrl("daily/");
+document.getElementById("homeLink").href = rootUrl("");
 loadFeed();
 
 function initTheme() {
@@ -1079,6 +1080,7 @@ function updateStatus() {
   if (stale) notices.push("This feed is older than 30 hours.");
   if (mode !== "llm") notices.push("Classification is degraded (LLM unavailable).");
   if (notices.length) showNotice(notices.join(" "));
+  else clearNotice();
 }
 
 function renderArchiveBanner() {
@@ -1325,13 +1327,14 @@ function initFiltersFromUrl() {
 
 function syncUrl() {
   const params = new URLSearchParams();
-  if (state.archiveDate) params.set("day", state.archiveDate);
   if (state.kinds.size) params.set("kind", [...state.kinds].join(","));
   if (state.highNovelty) params.set("novelty", "high");
   if (state.discussionOnly) params.set("discussion", "1");
   if (document.body.classList.contains("is-detail")) params.set("detail", "1");
-  const next = params.toString() ? `${location.pathname}?${params}` : location.pathname;
-  history.replaceState(null, "", next);
+  const base = state.archiveDate ? rootUrl(`daily/${state.archiveDate}/`) : rootUrl("");
+  const next = new URL(base);
+  next.search = params.toString();
+  history.replaceState(null, "", next.toString());
 }
 
 function feedUrl() {
@@ -1512,6 +1515,11 @@ function showNotice(message) {
   const notice = document.getElementById("notice");
   notice.textContent = message;
   notice.classList.add("is-visible");
+}
+function clearNotice() {
+  const notice = document.getElementById("notice");
+  notice.textContent = "";
+  notice.classList.remove("is-visible");
 }
 function parseDate(value) {
   if (!value) return null;

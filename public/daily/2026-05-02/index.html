@@ -351,35 +351,6 @@
     color: var(--paper);
   }
   .chip:active { transform: translateY(1px); }
-  .masthead-controls {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .archive-pick {
-    min-height: 32px;
-    border: 1px solid var(--rule);
-    border-radius: 0;
-    background-color: transparent;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' fill='none' stroke='%23767b83' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>");
-    background-position: right 10px center;
-    background-size: 9px 6px;
-    background-repeat: no-repeat;
-    color: var(--ink-2);
-    cursor: pointer;
-    padding: 0 26px 0 10px;
-    font: 11px/1 var(--font-mono);
-    letter-spacing: 0.04em;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    transition: border-color 0.15s ease, color 0.15s ease;
-  }
-  .archive-pick:hover { border-color: var(--accent); color: var(--accent-2); }
-  .archive-pick:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  :root[data-theme="dark"] .archive-pick {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' fill='none' stroke='%237e828a' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>");
-  }
   .archive-banner {
     display: flex;
     align-items: center;
@@ -394,7 +365,6 @@
     letter-spacing: 0.03em;
   }
   .archive-banner[hidden] { display: none; }
-  .archive-pick[hidden] { display: none; }
   .archive-banner strong { color: var(--ink); font-weight: 600; }
   .archive-banner button {
     border: 0;
@@ -653,6 +623,52 @@
     font: 13px/1.5 var(--font-body);
   }
 
+  /* Archive CTA — end-of-feed prompt to browse the public archive */
+  .archive-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+    margin-top: 36px;
+    padding: 32px 24px;
+    background: color-mix(in srgb, var(--ink) 4%, var(--paper));
+    border: 1px solid var(--rule);
+  }
+  .archive-cta-title {
+    color: var(--ink);
+    font: 600 16px/1.3 var(--font-display);
+    letter-spacing: -0.005em;
+  }
+  .archive-cta-text {
+    color: var(--ink-3);
+    font: 14px/1.55 var(--font-body);
+    margin-bottom: 14px;
+    max-width: 50ch;
+  }
+  .archive-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 0 18px;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    background: var(--panel);
+    color: var(--ink);
+    font: 500 14px/1 var(--font-body);
+    letter-spacing: 0.005em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
+  }
+  .archive-cta-button:hover {
+    border-color: var(--accent);
+    color: var(--accent-2);
+  }
+  .archive-cta-button:active { transform: translateY(1px); }
+  .archive-cta-icon { flex-shrink: 0; opacity: 0.85; }
+
   /* Footer */
   footer {
     display: flex;
@@ -691,9 +707,7 @@
       order: 3;
     }
     .wordmark::after {
-      display: inline-block;
-      margin-left: 10px;
-      padding-left: 10px;
+      display: none;
     }
     .filterbar { gap: 10px; padding: 12px 0; }
     .filter-row.filter-extra { margin-left: 0; }
@@ -701,7 +715,9 @@
     .top-story.has-image {
       grid-template-columns: 1fr;
     }
-    .top-story-title { font-size: 21px; }
+    /* Equalize Top News header sizes on mobile so the lead doesn't read as a section title */
+    .top-story-title { font-size: 18px; line-height: 1.3; }
+    .top-row-title { font-size: 17px; line-height: 1.32; }
     .top-list { border-top: 0; }
     .item-title { font-size: 18px; }
     .item-meta { gap: 6px; }
@@ -721,12 +737,9 @@
 <a class="skip-link" href="#feed">Skip to feed</a>
 <div class="shell">
   <header class="masthead">
-    <span class="wordmark">Chronicle</span>
+    <a class="wordmark" id="homeLink" href="./">Chronicle</a>
     <span class="status-line" id="statusLine"><span class="dot" aria-hidden="true"></span><span id="statusText">loading…</span></span>
-    <div class="masthead-controls">
-      <select class="archive-pick" id="archiveSelect" aria-label="View archive day" hidden></select>
-      <button class="theme-toggle" id="themeToggle" type="button">theme</button>
-    </div>
+    <button class="theme-toggle" id="themeToggle" type="button">theme</button>
   </header>
 
   <section class="lede" aria-labelledby="page-title">
@@ -766,6 +779,19 @@
     <div class="skeleton"><div class="skeleton-line long"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div></div>
   </main>
 
+  <section class="archive-cta" aria-labelledby="archiveCtaTitle">
+    <h2 class="archive-cta-title" id="archiveCtaTitle">Previous editions</h2>
+    <p class="archive-cta-text">Same signal-first ranking, earlier dates.</p>
+    <a class="archive-cta-button" id="archiveCtaButton" href="./daily/">
+      <svg class="archive-cta-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="3" y="4" width="18" height="4" rx="0.5"></rect>
+        <path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"></path>
+        <path d="M10 12h4"></path>
+      </svg>
+      Open archive
+    </a>
+  </section>
+
   <footer>
     <div class="health" id="healthStrip">checking sources…</div>
     <div>
@@ -801,7 +827,6 @@ const ROOT_PREFIX = DATE_PATH_MATCH
 
 const state = {
   data: null,
-  archiveIndex: null,
   archiveDate: null,
   kinds: new Set(),
   highNovelty: false,
@@ -815,7 +840,8 @@ initDetailMode();
 initFiltersFromUrl();
 wireFilterControls();
 wireReadingControls();
-loadArchiveIndex();
+document.getElementById("archiveCtaButton").href = rootUrl("daily/");
+document.getElementById("homeLink").href = rootUrl("");
 loadFeed();
 
 function initTheme() {
@@ -862,11 +888,6 @@ function wireFilterControls() {
     renderFilterShell();
     renderFeed();
   });
-  document.getElementById("archiveSelect").addEventListener("change", (event) => {
-    state.archiveDate = event.target.value || null;
-    syncUrl();
-    loadFeed();
-  });
   document.getElementById("exitArchive").addEventListener("click", () => {
     state.archiveDate = null;
     state.resumePromptDay = null;
@@ -905,7 +926,6 @@ async function loadFeed() {
     state.data = await response.json();
     updateStatus();
     renderTopNews();
-    renderArchiveSelect();
     renderArchiveBanner();
     renderFilterShell();
     renderFeed();
@@ -917,17 +937,6 @@ async function loadFeed() {
     document.getElementById("topNewsGrid").replaceChildren();
     document.getElementById("feed").replaceChildren(emptyState("Feed unavailable", "The static feed could not be loaded. Try refreshing in a minute."));
     document.getElementById("healthStrip").textContent = "feed unavailable";
-  }
-}
-
-async function loadArchiveIndex() {
-  try {
-    const response = await fetch(rootUrl("daily/index.json"), { cache: "no-cache" });
-    if (!response.ok) return;
-    state.archiveIndex = await response.json();
-    renderArchiveSelect();
-  } catch (_) {
-    state.archiveIndex = null;
   }
 }
 
@@ -1071,29 +1080,7 @@ function updateStatus() {
   if (stale) notices.push("This feed is older than 30 hours.");
   if (mode !== "llm") notices.push("Classification is degraded (LLM unavailable).");
   if (notices.length) showNotice(notices.join(" "));
-}
-
-function renderArchiveSelect() {
-  const select = document.getElementById("archiveSelect");
-  const days = state.archiveIndex?.days ?? [];
-  if (!days.length) {
-    select.hidden = true;
-    return;
-  }
-
-  const options = [new Option("today", "")];
-  for (const day of days) {
-    const label = formatRelativeDay(day.date);
-    if (label === "today") continue;
-    options.push(new Option(`${label} · ${day.count}`, day.date));
-  }
-  if (options.length === 1) {
-    select.hidden = true;
-    return;
-  }
-  select.replaceChildren(...options);
-  select.value = state.archiveDate || "";
-  select.hidden = false;
+  else clearNotice();
 }
 
 function renderArchiveBanner() {
@@ -1340,13 +1327,14 @@ function initFiltersFromUrl() {
 
 function syncUrl() {
   const params = new URLSearchParams();
-  if (state.archiveDate) params.set("day", state.archiveDate);
   if (state.kinds.size) params.set("kind", [...state.kinds].join(","));
   if (state.highNovelty) params.set("novelty", "high");
   if (state.discussionOnly) params.set("discussion", "1");
   if (document.body.classList.contains("is-detail")) params.set("detail", "1");
-  const next = params.toString() ? `${location.pathname}?${params}` : location.pathname;
-  history.replaceState(null, "", next);
+  const base = state.archiveDate ? rootUrl(`daily/${state.archiveDate}/`) : rootUrl("");
+  const next = new URL(base);
+  next.search = params.toString();
+  history.replaceState(null, "", next.toString());
 }
 
 function feedUrl() {
@@ -1527,6 +1515,11 @@ function showNotice(message) {
   const notice = document.getElementById("notice");
   notice.textContent = message;
   notice.classList.add("is-visible");
+}
+function clearNotice() {
+  const notice = document.getElementById("notice");
+  notice.textContent = "";
+  notice.classList.remove("is-visible");
 }
 function parseDate(value) {
   if (!value) return null;

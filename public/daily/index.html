@@ -89,7 +89,7 @@
 
   .masthead {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr auto auto;
     align-items: center;
     gap: 16px;
     padding-bottom: 14px;
@@ -120,6 +120,20 @@
     text-underline-offset: 4px;
   }
   .back-link:hover { color: var(--accent-2); text-decoration-color: var(--accent); }
+  .theme-toggle {
+    min-height: 32px;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink-2);
+    cursor: pointer;
+    padding: 0 12px;
+    font: 11px/1 var(--font-mono);
+    letter-spacing: 0.04em;
+    transition: border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  }
+  .theme-toggle:hover { border-color: var(--accent); color: var(--accent-2); }
+  .theme-toggle:active { transform: translateY(1px); }
 
   .lede { padding: 18px 0 14px; }
   .lede-text {
@@ -254,7 +268,12 @@
   }
   @media (max-width: 720px) {
     .shell { padding: 16px 18px 32px; }
+    .masthead {
+      grid-template-columns: 1fr auto;
+      row-gap: 8px;
+    }
     .wordmark::after { display: none; }
+    .back-link { justify-self: start; }
     .day-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 6px; }
     .month-section { padding: 20px 0 6px; }
     .search-input { max-width: none; }
@@ -264,9 +283,10 @@
 <body>
 <div class="shell">
   <header class="masthead">
-    <span class="wordmark">Chronicle</span>
+    <a class="wordmark" href="../">Chronicle</a>
     <span></span>
     <a class="back-link" href="../">← back to today</a>
+    <button class="theme-toggle" id="themeToggle" type="button">theme</button>
   </header>
 
   <section class="lede">
@@ -294,10 +314,29 @@
 <script type="module">
 const state = { days: [] };
 
+initTheme();
 loadIndex();
 document.getElementById("searchInput").addEventListener("input", (event) => {
   render(event.target.value);
 });
+
+function initTheme() {
+  const button = document.getElementById("themeToggle");
+  const setLabel = () => {
+    const theme = document.documentElement.getAttribute("data-theme") || "light";
+    button.textContent = theme === "dark" ? "light" : "dark";
+    button.setAttribute("aria-label", `Switch to ${button.textContent} theme`);
+  };
+  setLabel();
+  button.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme") || "light";
+    const next = current === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    document.getElementById("themeColor").setAttribute("content", next === "dark" ? "#0c0e12" : "#f7f8fa");
+    try { localStorage.setItem("chronicle-theme", next); } catch (_) {}
+    setLabel();
+  });
+}
 
 async function loadIndex() {
   try {
