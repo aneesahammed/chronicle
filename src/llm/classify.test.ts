@@ -26,6 +26,7 @@ test("classifyClusters reads Groq chat completion JSON in item order", async () 
     cluster({ title: "A mixed company update", kind_hint: "news" }),
   ], "test-key", async (request) => {
     assert.equal(request.model, "qwen/qwen3-32b");
+    assert.equal(request.max_completion_tokens, 1024);
     assert.equal(request.response_format.type, "json_object");
     return {
       choices: [{

@@ -10,7 +10,10 @@ import type { ClassificationMode, Cluster, Kind, Quality } from "../types.ts";
 
 const MODEL = "qwen/qwen3-32b";
 const GROQ_CHAT_COMPLETIONS_URL = "https://api.groq.com/openai/v1/chat/completions";
-const BATCH_SIZE = 35;
+const BATCH_SIZE = 12;
+const MAX_COMPLETION_TOKENS = 1024;
+const SUMMARY_CHARS = 280;
+const GROQ_BATCH_DELAY_MS = 30_000;
 
 const SYSTEM = `You triage AI/ML news for a daily digest aimed at experienced
 ML/AI engineers. For each item, return:
@@ -33,7 +36,9 @@ Use only these kind values:
 paper, model_release, company_announcement, tutorial, opinion, discussion, tool, news
 
 Use only these quality values:
-signal, mixed, hype`;
+signal, mixed, hype
+
+Do not include reasoning, prose, Markdown, or code fences.`;
 
 export interface Classification {
   kind: Kind;
@@ -59,11 +64,16 @@ export async function classifyClusters(
 
   const runner: ChatCompletionRunner = createChatCompletion
     ?? ((args) => createGroqChatCompletion(apiKey, args));
+  const shouldThrottle = createChatCompletion === undefined;
   const out: Classification[] = [];
   let failed = 0;
 
   for (let start = 0; start < clusters.length; start += BATCH_SIZE) {
     const batch = clusters.slice(start, start + BATCH_SIZE);
+    if (shouldThrottle && start > 0) {
+      console.log(`[llm] waiting ${GROQ_BATCH_DELAY_MS / 1000}s to stay under Groq TPM limits`);
+      await sleep(GROQ_BATCH_DELAY_MS);
+    }
     try {
       out.push(...await classifyBatch(batch, runner));
     } catch (e) {
@@ -75,6 +85,10 @@ export async function classifyClusters(
 
   const mode: ClassificationMode = failed === 0 ? "llm" : failed * BATCH_SIZE >= clusters.length ? "fallback" : "partial";
   return { items: out, mode };
+}
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 interface ChatCompletionRequest {
@@ -200,7 +214,7 @@ async function classifyBatch(
     index: i,
     title: c.primary.title,
     source: c.primary.source_name,
-    summary: (c.primary.summary ?? "").slice(0, 400),
+    summary: (c.primary.summary ?? "").slice(0, SUMMARY_CHARS),
     url: c.primary.url,
   }));
 
@@ -212,7 +226,7 @@ async function classifyBatch(
   const resp = await runner({
     model: MODEL,
     temperature: 0,
-    max_completion_tokens: 4096,
+    max_completion_tokens: MAX_COMPLETION_TOKENS,
     response_format: { type: "json_object" },
     messages: [
       { role: "system", content: `${SYSTEM}\n\n${JSON_INSTRUCTIONS}` },
