@@ -959,8 +959,9 @@ function isUsableTopNews(item) {
 
 function renderTopStory(item) {
   const article = node("article", "top-story");
-  const image = topNewsImage(item, "top-news-image");
-  if (image) article.classList.add("has-image");
+  // Top News image rendering is intentionally disabled while we evaluate
+  // whether images fit Chronicle's feed-first layout.
+  const image = null;
 
   const body = node("div", "top-story-body");
   const title = node("h2", "top-story-title");
@@ -978,8 +979,8 @@ function renderTopStory(item) {
 
 function renderTopRow(item) {
   const row = node("article", "top-row");
-  const image = topNewsImage(item, "top-news-image");
-  if (image) row.classList.add("has-image");
+  // Keep image data in the feed/cache, but do not render thumbnails yet.
+  const image = null;
   const body = node("div", "top-row-body");
   const title = node("h3", "top-row-title");
   title.appendChild(link(item.url, decodeText(item.title)));
