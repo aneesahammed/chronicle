@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-03T18:35:36.075Z",
-  "last_successful_generated_at": "2026-05-03T18:35:36.075Z",
+  "generated_at": "2026-05-03T20:27:11.963Z",
+  "last_successful_generated_at": "2026-05-03T20:27:11.963Z",
   "refresh_status": "ok",
-  "classification_mode": "llm",
+  "classification_mode": "partial",
   "window_hours": 36,
   "source_total": 34,
   "source_ok": 34,
@@ -60,8 +60,8 @@
       "name": "Latent Space",
       "status": "ok",
       "fetched_count": 10,
-      "fresh_count": 1,
-      "stale_count": 9,
+      "fresh_count": 0,
+      "stale_count": 10,
       "oldest_published_at": "2026-04-23T02:45:37.000Z",
       "newest_published_at": "2026-05-02T07:21:55.000Z"
     },
@@ -140,10 +140,10 @@
       "name": "TechCrunch AI",
       "status": "ok",
       "fetched_count": 12,
-      "fresh_count": 3,
-      "stale_count": 9,
-      "oldest_published_at": "2026-04-30T20:14:47.000Z",
-      "newest_published_at": "2026-05-03T18:00:09.000Z"
+      "fresh_count": 4,
+      "stale_count": 8,
+      "oldest_published_at": "2026-04-30T22:12:52.000Z",
+      "newest_published_at": "2026-05-03T20:16:51.000Z"
     },
     {
       "id": "the_decoder",
@@ -180,8 +180,8 @@
       "name": "InfoQ AI/ML/Data",
       "status": "ok",
       "fetched_count": 9,
-      "fresh_count": 2,
-      "stale_count": 7,
+      "fresh_count": 1,
+      "stale_count": 8,
       "oldest_published_at": "2026-04-29T14:15:00.000Z",
       "newest_published_at": "2026-05-03T10:58:00.000Z"
     },
@@ -237,11 +237,11 @@
       "id": "hn_ai",
       "name": "Hacker News (AI-filtered)",
       "status": "ok",
-      "fetched_count": 1,
-      "fresh_count": 0,
-      "stale_count": 1,
-      "oldest_published_at": "2026-04-30T22:35:36.000Z",
-      "newest_published_at": "2026-04-30T22:35:36.000Z"
+      "fetched_count": 2,
+      "fresh_count": 2,
+      "stale_count": 0,
+      "oldest_published_at": "2026-05-03T00:30:50.000Z",
+      "newest_published_at": "2026-05-03T18:03:14.000Z"
     },
     {
       "id": "lobsters_ai",
@@ -260,18 +260,18 @@
       "fetched_count": 25,
       "fresh_count": 25,
       "stale_count": 0,
-      "oldest_published_at": "2026-05-02T19:21:27.000Z",
-      "newest_published_at": "2026-05-03T17:46:33.000Z"
+      "oldest_published_at": "2026-05-02T21:22:08.000Z",
+      "newest_published_at": "2026-05-03T19:12:19.000Z"
     },
     {
       "id": "r_ml",
       "name": "r/MachineLearning",
       "status": "ok",
-      "fetched_count": 8,
-      "fresh_count": 8,
+      "fetched_count": 9,
+      "fresh_count": 9,
       "stale_count": 0,
       "oldest_published_at": "2026-05-02T22:32:58.000Z",
-      "newest_published_at": "2026-05-03T18:04:44.000Z"
+      "newest_published_at": "2026-05-03T19:58:11.000Z"
     },
     {
       "id": "openai",
@@ -346,64 +346,16 @@
   ],
   "top_news": [
     {
-      "cluster_id": "147068",
-      "title": "Same prompt, different morals: how frontier AI models diverge on ethical dilemmas",
-      "url": "https://the-decoder.com/same-prompt-different-morals-how-frontier-ai-models-diverge-on-ethical-dilemmas",
-      "source_name": "The Decoder",
-      "published_at": "2026-05-03T07:00:50.000Z",
-      "kind": "paper",
-      "score": 0.814,
-      "dek": "Benchmark reveals ethical divergence in frontier AI models on 100 scenarios",
-      "brief": "A new benchmark tests leading language models on 100 ethical dilemmas, exposing inconsistent responses to scenarios like data misuse and protocol violations. Results highlight unresolved questions about whose ethics AI should follow and who governs AI behavior.",
-      "image_url": "https://the-decoder.com/wp-content/uploads/2026/04/Philosophy-Bench.png",
-      "image_alt": "AI models facing ethical dilemmas",
-      "image_source": "rss_content",
-      "enrichment_status": "ok",
-      "enriched_at": "2026-05-03T09:32:37.325Z"
-    },
-    {
-      "cluster_id": "1mwb2ol",
-      "title": "Microsoft caught sneaking \"Co-Authored-by Copilot\" into VS Code commits - even with AI off",
-      "url": "https://the-decoder.com/co-pilot-becomes-a-co-author-in-vs-code-without-being-asked",
-      "source_name": "The Decoder",
-      "published_at": "2026-05-03T09:31:15.000Z",
-      "kind": "company_announcement",
-      "score": 0.811,
-      "dek": "VS Code adds Co-pilot co-author tag without user consent",
-      "brief": "Microsoft's VS Code automatically added \"Co-Authored-by Copilot\" to Git commits, even for users who disabled AI features. The change occurred without explicit opt-in or notification to developers.",
-      "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/microsoft_logo.png",
-      "image_alt": "VS Code commit with Co-Authored-by Copilot line",
-      "image_source": "rss_content",
-      "enrichment_status": "ok",
-      "enriched_at": "2026-05-03T09:36:24.508Z"
-    },
-    {
       "cluster_id": "1vr5qwt",
-      "title": "In Harvard study, AI offered more accurate diagnoses than emergency room doctors",
+      "title": "In Harvard study, AI offered more accurate emergency room diagnoses than two human doctors",
       "url": "https://techcrunch.com/2026/05/03/in-harvard-study-ai-offered-more-accurate-diagnoses-than-emergency-room-doctors",
       "source_name": "TechCrunch AI",
       "published_at": "2026-05-03T18:00:09.000Z",
       "kind": "news",
-      "score": 0.823,
+      "score": 0.819,
       "dek": "Harvard study finds AI outperforms ER doctors in diagnostic accuracy",
       "brief": "A Harvard study compared AI models to emergency room doctors in diagnosing patients. At least one large language model achieved higher accuracy than human doctors in real-world cases, suggesting potential for AI in clinical decision-making.",
       "image_alt": "AI diagnostic accuracy vs ER doctors",
-      "enrichment_status": "ok",
-      "enriched_at": "2026-05-03T18:35:36.075Z"
-    },
-    {
-      "cluster_id": "1i7y4hv",
-      "title": "Public interpretability dataset and benchmark library for a novel transformer architecture [R]",
-      "url": "https://old.reddit.com/r/MachineLearning/comments/1t2spfo/public_interpretability_dataset_and_benchmark",
-      "source_name": "r/MachineLearning",
-      "published_at": "2026-05-03T18:04:44.000Z",
-      "kind": "paper",
-      "score": 0.795,
-      "dek": "New T³ transformer boosts model interpretability with Clifford algebra",
-      "brief": "A novel transformer architecture called T³ integrates Clifford algebra into attention mechanisms to improve interpretability. The public dataset and benchmarks include 247 inference traces across 12 architectures, enabling analysis of model behavior and decision paths.",
-      "image_url": "https://preview.redd.it/a1pl2d6royyg1.jpg?width=140&height=140&crop=1:1,smart&auto=webp&s=5ea4b3387254aebdf5c271add89dc98e8f1293a1",
-      "image_alt": "T³ transformer architecture diagram",
-      "image_source": "rss_media",
       "enrichment_status": "ok",
       "enriched_at": "2026-05-03T18:35:36.075Z"
     },
@@ -414,16 +366,109 @@
       "source_name": "r/MachineLearning",
       "published_at": "2026-05-03T12:13:56.000Z",
       "kind": "paper",
-      "score": 0.786,
+      "score": 0.782,
       "dek": "Genetic algorithms evolve new deep learning optimizers",
       "brief": "Researchers used genetic algorithms to automatically design deep learning optimizers by combining gradient-based update rules. The framework evolved 50 generations of optimization strategies, producing novel combinations of momentum, RMS normalization, and adaptive learning techniques.",
       "image_alt": "Optimizer evolution workflow",
       "enrichment_status": "ok",
       "enriched_at": "2026-05-03T18:35:36.075Z"
+    },
+    {
+      "cluster_id": "1jq9zxi",
+      "title": "‘This is fine’ creator says AI startup stole his art",
+      "url": "https://techcrunch.com/2026/05/03/this-is-fine-creator-says-ai-startup-stole-his-art",
+      "source_name": "TechCrunch AI",
+      "published_at": "2026-05-03T20:16:51.000Z",
+      "kind": "news",
+      "score": 0.83,
+      "dek": "Artist accuses AI startup of stealing 'This is fine' art for billboards.",
+      "brief": "The creator of the 'This is fine' meme alleges Artisan, an AI startup, used his artwork in controversial billboards promoting AI over human hiring. Artisan's ads, which urge businesses to replace humans with AI, feature the iconic image without credit or compensation.",
+      "image_alt": "AI art theft billboard with 'This is fine' image",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-05-03T20:27:11.963Z"
+    },
+    {
+      "cluster_id": "bjxt73",
+      "title": "Gemma 4 E2B runs surprisingly well on my 8GB Android phone, so I built a private voice notes app around it.",
+      "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2t1w4/gemma_4_e2b_runs_surprisingly_well_on_my_8gb",
+      "source_name": "r/LocalLLaMA",
+      "published_at": "2026-05-03T18:17:28.000Z",
+      "kind": "model_release",
+      "score": 0.775,
+      "dek": "Gemma 4 E2B runs efficiently on 8GB Android phone, enabling private voice notes app.",
+      "brief": "A user successfully runs Google's Gemma 4 E2B model on an 8GB OnePlus phone, achieving clean JSON outputs for task automation. They built a voice notes app that converts spoken commands into structured data, demonstrating the model's practicality for low-end devices.",
+      "image_alt": "Android phone running local AI model for voice notes",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-05-03T20:27:11.963Z"
+    },
+    {
+      "cluster_id": "14biixn",
+      "title": "Built a efficient and fast MRI compression program called KMRI [P]",
+      "url": "https://old.reddit.com/r/MachineLearning/comments/1t2hd9b/built_a_efficient_and_fast_mri_compression",
+      "source_name": "r/MachineLearning",
+      "published_at": "2026-05-03T10:03:27.000Z",
+      "kind": "tool",
+      "score": 0.769,
+      "dek": "KMRI compresses MRI data up to 900x using Python/C++ and Zstd.",
+      "brief": "KMRI is a chunk-based compression tool for .nii MRI files that achieves extreme compression ratios (up to 900x) by skipping zero-blocks. Built with Python, Zstd, and C++, it optimizes storage for synthetic MRI data while preserving quality.",
+      "image_alt": "MRI scan data compressed into smaller file size",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-05-03T20:27:11.963Z"
     }
   ],
-  "count": 49,
+  "count": 54,
   "clusters": [
+    {
+      "id": "1jq9zxi",
+      "primary": {
+        "id": "1jq9zxi",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "‘This is fine’ creator says AI startup stole his art",
+        "url": "https://techcrunch.com/2026/05/03/this-is-fine-creator-says-ai-startup-stole-his-art",
+        "original_url": "https://techcrunch.com/2026/05/03/this-is-fine-creator-says-ai-startup-stole-his-art/",
+        "summary": "The ad comes from Artisan, the AI startup behind billboards urging businesses to \"stop hiring humans.\"",
+        "published_at": "2026-05-03T20:16:51.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1jq9zxi",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "‘This is fine’ creator says AI startup stole his art",
+          "url": "https://techcrunch.com/2026/05/03/this-is-fine-creator-says-ai-startup-stole-his-art",
+          "original_url": "https://techcrunch.com/2026/05/03/this-is-fine-creator-says-ai-startup-stole-his-art/",
+          "summary": "The ad comes from Artisan, the AI startup behind billboards urging businesses to \"stop hiring humans.\"",
+          "published_at": "2026-05-03T20:16:51.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "‘This is fine’ creator says AI startup stole his art",
+          "url": "https://techcrunch.com/2026/05/03/this-is-fine-creator-says-ai-startup-stole-his-art",
+          "published_at": "2026-05-03T20:16:51.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "AI startup accused of using artist's work without permission in billboards",
+      "novelty": 0.891,
+      "trust": 0.72,
+      "score": 0.83
+    },
     {
       "id": "1n2fpfb",
       "primary": {
@@ -477,7 +522,7 @@
       "one_liner": "Cloudflare has recently announced new infrastructure designed to run large AI language models across its global network. As these models rely on costly hardware and must handle large volumes of incomi",
       "novelty": 0.894,
       "trust": 0.78,
-      "score": 0.831
+      "score": 0.827
     },
     {
       "id": "1vr5qwt",
@@ -487,7 +532,7 @@
         "source_name": "TechCrunch AI",
         "trust": 0.72,
         "kind_hint": "news",
-        "title": "In Harvard study, AI offered more accurate diagnoses than emergency room doctors",
+        "title": "In Harvard study, AI offered more accurate emergency room diagnoses than two human doctors",
         "url": "https://techcrunch.com/2026/05/03/in-harvard-study-ai-offered-more-accurate-diagnoses-than-emergency-room-doctors",
         "original_url": "https://techcrunch.com/2026/05/03/in-harvard-study-ai-offered-more-accurate-diagnoses-than-emergency-room-doctors/",
         "summary": "A new study examines how large language models perform in a variety of medical contexts, including real emergency room cases — where at least one model seemed to be more accurate than human doctors.",
@@ -502,7 +547,7 @@
           "source_name": "TechCrunch AI",
           "trust": 0.72,
           "kind_hint": "news",
-          "title": "In Harvard study, AI offered more accurate diagnoses than emergency room doctors",
+          "title": "In Harvard study, AI offered more accurate emergency room diagnoses than two human doctors",
           "url": "https://techcrunch.com/2026/05/03/in-harvard-study-ai-offered-more-accurate-diagnoses-than-emergency-room-doctors",
           "original_url": "https://techcrunch.com/2026/05/03/in-harvard-study-ai-offered-more-accurate-diagnoses-than-emergency-room-doctors/",
           "summary": "A new study examines how large language models perform in a variety of medical contexts, including real emergency room cases — where at least one model seemed to be more accurate than human doctors.",
@@ -515,7 +560,7 @@
         {
           "source_id": "techcrunch_ai",
           "source_name": "TechCrunch AI",
-          "title": "In Harvard study, AI offered more accurate diagnoses than emergency room doctors",
+          "title": "In Harvard study, AI offered more accurate emergency room diagnoses than two human doctors",
           "url": "https://techcrunch.com/2026/05/03/in-harvard-study-ai-offered-more-accurate-diagnoses-than-emergency-room-doctors",
           "published_at": "2026-05-03T18:00:09.000Z",
           "published_at_source": "feed",
@@ -525,236 +570,10 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "signal",
-      "one_liner": "Harvard study finds AI outperforms ER doctors in diagnoses.",
+      "one_liner": "AI models show higher accuracy than human doctors in ER diagnoses per Harvard study",
       "novelty": 0.869,
       "trust": 0.72,
-      "score": 0.823
-    },
-    {
-      "id": "147068",
-      "primary": {
-        "id": "147068",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
-        "trust": 0.74,
-        "kind_hint": "news",
-        "title": "Same prompt, different morals: how frontier AI models diverge on ethical dilemmas",
-        "url": "https://the-decoder.com/same-prompt-different-morals-how-frontier-ai-models-diverge-on-ethical-dilemmas",
-        "original_url": "https://the-decoder.com/same-prompt-different-morals-how-frontier-ai-models-diverge-on-ethical-dilemmas/",
-        "summary": "A new benchmark puts leading language models through 100 everyday ethical scenarios, from data misuse in sales to protocol violations in oncology. Behind the results lies a bigger question: who decides what an AI is allowed to do, and whose ethics does it follow? The article Same prompt, different morals: how frontier AI models diverge on ethical dilemmas appeared first on The Decoder.",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/04/Philosophy-Bench.png",
-        "image_source": "rss_content",
-        "published_at": "2026-05-03T07:00:50.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "147068",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "trust": 0.74,
-          "kind_hint": "news",
-          "title": "Same prompt, different morals: how frontier AI models diverge on ethical dilemmas",
-          "url": "https://the-decoder.com/same-prompt-different-morals-how-frontier-ai-models-diverge-on-ethical-dilemmas",
-          "original_url": "https://the-decoder.com/same-prompt-different-morals-how-frontier-ai-models-diverge-on-ethical-dilemmas/",
-          "summary": "A new benchmark puts leading language models through 100 everyday ethical scenarios, from data misuse in sales to protocol violations in oncology. Behind the results lies a bigger question: who decides what an AI is allowed to do, and whose ethics does it follow? The article Same prompt, different morals: how frontier AI models diverge on ethical dilemmas appeared first on The Decoder.",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/04/Philosophy-Bench.png",
-          "image_source": "rss_content",
-          "published_at": "2026-05-03T07:00:50.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "Same prompt, different morals: how frontier AI models diverge on ethical dilemmas",
-          "url": "https://the-decoder.com/same-prompt-different-morals-how-frontier-ai-models-diverge-on-ethical-dilemmas",
-          "published_at": "2026-05-03T07:00:50.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "paper",
-      "quality": "signal",
-      "one_liner": "Benchmark reveals AI ethics alignment discrepancies.",
-      "novelty": 0.899,
-      "trust": 0.74,
-      "score": 0.814
-    },
-    {
-      "id": "1mwb2ol",
-      "primary": {
-        "id": "1mwb2ol",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
-        "trust": 0.74,
-        "kind_hint": "news",
-        "title": "Microsoft caught sneaking \"Co-Authored-by Copilot\" into VS Code commits - even with AI off",
-        "url": "https://the-decoder.com/co-pilot-becomes-a-co-author-in-vs-code-without-being-asked",
-        "original_url": "https://the-decoder.com/co-pilot-becomes-a-co-author-in-vs-code-without-being-asked/",
-        "summary": "Microsoft quietly slipped a \"Co-Authored-by Copilot\" line into Git commits in Visual Studio Code - even for developers who had turned off the AI features entirely. The article Microsoft caught sneaking \"Co-Authored-by Copilot\" into VS Code commits - even with AI off appeared first on The Decoder.",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/microsoft_logo.png",
-        "image_source": "rss_content",
-        "published_at": "2026-05-03T09:31:15.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1mwb2ol",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "trust": 0.74,
-          "kind_hint": "news",
-          "title": "Microsoft caught sneaking \"Co-Authored-by Copilot\" into VS Code commits - even with AI off",
-          "url": "https://the-decoder.com/co-pilot-becomes-a-co-author-in-vs-code-without-being-asked",
-          "original_url": "https://the-decoder.com/co-pilot-becomes-a-co-author-in-vs-code-without-being-asked/",
-          "summary": "Microsoft quietly slipped a \"Co-Authored-by Copilot\" line into Git commits in Visual Studio Code - even for developers who had turned off the AI features entirely. The article Microsoft caught sneaking \"Co-Authored-by Copilot\" into VS Code commits - even with AI off appeared first on The Decoder.",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/microsoft_logo.png",
-          "image_source": "rss_content",
-          "published_at": "2026-05-03T09:31:15.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "Microsoft caught sneaking \"Co-Authored-by Copilot\" into VS Code commits - even with AI off",
-          "url": "https://the-decoder.com/co-pilot-becomes-a-co-author-in-vs-code-without-being-asked",
-          "published_at": "2026-05-03T09:31:15.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "company_announcement",
-      "quality": "signal",
-      "one_liner": "Microsoft adds Copilot attribution to VS Code commits.",
-      "novelty": 0.873,
-      "trust": 0.74,
-      "score": 0.811
-    },
-    {
-      "id": "1i7y4hv",
-      "primary": {
-        "id": "1i7y4hv",
-        "source_id": "r_ml",
-        "source_name": "r/MachineLearning",
-        "trust": 0.55,
-        "kind_hint": "discussion",
-        "title": "Public interpretability dataset and benchmark library for a novel transformer architecture [R]",
-        "url": "https://old.reddit.com/r/MachineLearning/comments/1t2spfo/public_interpretability_dataset_and_benchmark",
-        "original_url": "https://old.reddit.com/r/MachineLearning/comments/1t2spfo/public_interpretability_dataset_and_benchmark/",
-        "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t2spfo/public_interpretability_dataset_and_benchmark",
-        "discussion_source": "r/MachineLearning",
-        "summary": "https://preview.redd.it/a1pl2d6royyg1.jpg?width=1856&format=pjpg&auto=webp&s=2eaf5fee279596882a3a6ba13157806a37497ea1 I've spent the last year independently developing T³, a transformer architecture that augments standard attention with a per-head ecology grounded in Clifford algebra. Wanted to get the emperical record out in public (been alot of fun work). t3atlas.dev hosts: 247 inference traces across 12 architectural lineages and 3 foundation-model substrates (GPT-2, Gemma3, Qwen2.5) Documented stable schema with versioning ~990 benchmark measurements with same-data baselines run through a",
-        "image_url": "https://preview.redd.it/a1pl2d6royyg1.jpg?width=140&height=140&crop=1:1,smart&auto=webp&s=5ea4b3387254aebdf5c271add89dc98e8f1293a1",
-        "image_source": "rss_media",
-        "published_at": "2026-05-03T18:04:44.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1i7y4hv",
-          "source_id": "r_ml",
-          "source_name": "r/MachineLearning",
-          "trust": 0.55,
-          "kind_hint": "discussion",
-          "title": "Public interpretability dataset and benchmark library for a novel transformer architecture [R]",
-          "url": "https://old.reddit.com/r/MachineLearning/comments/1t2spfo/public_interpretability_dataset_and_benchmark",
-          "original_url": "https://old.reddit.com/r/MachineLearning/comments/1t2spfo/public_interpretability_dataset_and_benchmark/",
-          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t2spfo/public_interpretability_dataset_and_benchmark",
-          "discussion_source": "r/MachineLearning",
-          "summary": "https://preview.redd.it/a1pl2d6royyg1.jpg?width=1856&format=pjpg&auto=webp&s=2eaf5fee279596882a3a6ba13157806a37497ea1 I've spent the last year independently developing T³, a transformer architecture that augments standard attention with a per-head ecology grounded in Clifford algebra. Wanted to get the emperical record out in public (been alot of fun work). t3atlas.dev hosts: 247 inference traces across 12 architectural lineages and 3 foundation-model substrates (GPT-2, Gemma3, Qwen2.5) Documented stable schema with versioning ~990 benchmark measurements with same-data baselines run through a",
-          "image_url": "https://preview.redd.it/a1pl2d6royyg1.jpg?width=140&height=140&crop=1:1,smart&auto=webp&s=5ea4b3387254aebdf5c271add89dc98e8f1293a1",
-          "image_source": "rss_media",
-          "published_at": "2026-05-03T18:04:44.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_ml",
-          "source_name": "r/MachineLearning",
-          "title": "Public interpretability dataset and benchmark library for a novel transformer architecture [R]",
-          "url": "https://old.reddit.com/r/MachineLearning/comments/1t2spfo/public_interpretability_dataset_and_benchmark",
-          "published_at": "2026-05-03T18:04:44.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t2spfo/public_interpretability_dataset_and_benchmark",
-          "discussion_source": "r/MachineLearning"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "paper",
-      "quality": "signal",
-      "one_liner": "T³ transformer architecture with Clifford algebra-based attention and interpretability benchmarks",
-      "novelty": 0.917,
-      "trust": 0.55,
-      "score": 0.795
-    },
-    {
-      "id": "1b74om4",
-      "primary": {
-        "id": "1b74om4",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
-        "trust": 0.74,
-        "kind_hint": "news",
-        "title": "Xiaomi's open-weight MiMo-V2.5-Pro takes aim at Claude Opus with hours-long autonomous coding",
-        "url": "https://the-decoder.com/xiaomis-open-weight-mimo-v2-5-pro-takes-aim-at-claude-opus-with-hours-long-autonomous-coding",
-        "original_url": "https://the-decoder.com/xiaomis-open-weight-mimo-v2-5-pro-takes-aim-at-claude-opus-with-hours-long-autonomous-coding/",
-        "summary": "Xiaomi's new MiMo-V2.5-Pro nearly matches Anthropic's Claude Opus 4.6 on coding benchmarks while burning 40 to 60 percent fewer tokens, according to the company. The release pushes Xiaomi deeper into the race among Chinese open-weight providers like Deepseek, where the fight is shifting from raw benchmark scores to how cheaply and how long a model can run autonomously on a single task. The article Xiaomi's open-weight MiMo-V2.5-Pro takes aim at Claude Opus with hours-long autonomous coding appeared first on The Decoder.",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/03/Xiaomi-MiMo-Explore-and-Love-e1774194951718.jpg",
-        "image_source": "rss_content",
-        "published_at": "2026-05-03T07:24:01.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1b74om4",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "trust": 0.74,
-          "kind_hint": "news",
-          "title": "Xiaomi's open-weight MiMo-V2.5-Pro takes aim at Claude Opus with hours-long autonomous coding",
-          "url": "https://the-decoder.com/xiaomis-open-weight-mimo-v2-5-pro-takes-aim-at-claude-opus-with-hours-long-autonomous-coding",
-          "original_url": "https://the-decoder.com/xiaomis-open-weight-mimo-v2-5-pro-takes-aim-at-claude-opus-with-hours-long-autonomous-coding/",
-          "summary": "Xiaomi's new MiMo-V2.5-Pro nearly matches Anthropic's Claude Opus 4.6 on coding benchmarks while burning 40 to 60 percent fewer tokens, according to the company. The release pushes Xiaomi deeper into the race among Chinese open-weight providers like Deepseek, where the fight is shifting from raw benchmark scores to how cheaply and how long a model can run autonomously on a single task. The article Xiaomi's open-weight MiMo-V2.5-Pro takes aim at Claude Opus with hours-long autonomous coding appeared first on The Decoder.",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/03/Xiaomi-MiMo-Explore-and-Love-e1774194951718.jpg",
-          "image_source": "rss_content",
-          "published_at": "2026-05-03T07:24:01.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "Xiaomi's open-weight MiMo-V2.5-Pro takes aim at Claude Opus with hours-long autonomous coding",
-          "url": "https://the-decoder.com/xiaomis-open-weight-mimo-v2-5-pro-takes-aim-at-claude-opus-with-hours-long-autonomous-coding",
-          "published_at": "2026-05-03T07:24:01.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "model_release",
-      "quality": "signal",
-      "one_liner": "Xiaomi releases MiMo-V2.5-Pro coding model.",
-      "novelty": 0.822,
-      "trust": 0.74,
-      "score": 0.792
+      "score": 0.819
     },
     {
       "id": "1xf4wc4",
@@ -808,10 +627,67 @@
       "also_seen_on": [],
       "kind": "paper",
       "quality": "signal",
-      "one_liner": "Genetic algorithm framework for evolving deep learning optimizers",
+      "one_liner": "Genetic algorithm framework for optimizer discovery",
       "novelty": 0.927,
       "trust": 0.55,
-      "score": 0.786
+      "score": 0.782
+    },
+    {
+      "id": "bjxt73",
+      "primary": {
+        "id": "bjxt73",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Gemma 4 E2B runs surprisingly well on my 8GB Android phone, so I built a private voice notes app around it.",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2t1w4/gemma_4_e2b_runs_surprisingly_well_on_my_8gb",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2t1w4/gemma_4_e2b_runs_surprisingly_well_on_my_8gb/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2t1w4/gemma_4_e2b_runs_surprisingly_well_on_my_8gb",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "Been running Gemma 4 E2B locally on my OnePlus CE 5 (8GB RAM) for a few months. Chat quality is fine for the size. What surprised me was JSON output. Short input, give it a structured prompt, you get clean parse able JSON back. Way better than I expected from a 2.4GB model on a phone. Got me thinking about voice notes. You ramble for a few seconds, \"call the dentist tomorrow at 3, also buy milk on the way home\", and Gemma can split that into separate items, tag each one (reminder, buy), resolve the time. Tried it for a few weeks. Categorization is actually decent on real notes, not just the to",
+        "published_at": "2026-05-03T18:17:28.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "bjxt73",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Gemma 4 E2B runs surprisingly well on my 8GB Android phone, so I built a private voice notes app around it.",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2t1w4/gemma_4_e2b_runs_surprisingly_well_on_my_8gb",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2t1w4/gemma_4_e2b_runs_surprisingly_well_on_my_8gb/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2t1w4/gemma_4_e2b_runs_surprisingly_well_on_my_8gb",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "Been running Gemma 4 E2B locally on my OnePlus CE 5 (8GB RAM) for a few months. Chat quality is fine for the size. What surprised me was JSON output. Short input, give it a structured prompt, you get clean parse able JSON back. Way better than I expected from a 2.4GB model on a phone. Got me thinking about voice notes. You ramble for a few seconds, \"call the dentist tomorrow at 3, also buy milk on the way home\", and Gemma can split that into separate items, tag each one (reminder, buy), resolve the time. Tried it for a few weeks. Categorization is actually decent on real notes, not just the to",
+          "published_at": "2026-05-03T18:17:28.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Gemma 4 E2B runs surprisingly well on my 8GB Android phone, so I built a private voice notes app around it.",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2t1w4/gemma_4_e2b_runs_surprisingly_well_on_my_8gb",
+          "published_at": "2026-05-03T18:17:28.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2t1w4/gemma_4_e2b_runs_surprisingly_well_on_my_8gb",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "Gemma 4 E2B runs on 8GB Android phone with JSON output",
+      "novelty": 0.905,
+      "trust": 0.5,
+      "score": 0.775
     },
     {
       "id": "14biixn",
@@ -865,128 +741,10 @@
       "also_seen_on": [],
       "kind": "tool",
       "quality": "signal",
-      "one_liner": "KMRI: Fast MRI compression tool with 900x compression for .nii files",
+      "one_liner": "KMRI: Efficient MRI compression tool using Zstd",
       "novelty": 0.899,
       "trust": 0.55,
-      "score": 0.773
-    },
-    {
-      "id": "byjq5u",
-      "primary": {
-        "id": "byjq5u",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "The Ultimate LLM Fine-Tuning Guide",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2jc34/the_ultimate_llm_finetuning_guide",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2jc34/the_ultimate_llm_finetuning_guide/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2jc34/the_ultimate_llm_finetuning_guide",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "I was looking for a \"spot-on\" fine-tuning guide since quite a while, but couldn't find one. So i thought: Let's write it myself. https://preview.redd.it/tqqpw8snuwyg1.jpg?width=1672&format=pjpg&auto=webp&s=6fc418aa3bbd809f982c688b3a343d206522d520 It covers Full-SFT as well as LoRA and QLoRA. This one is for NVIDIA and Single-GPU, but if you guys like i will later add Multi-GPU Training, AMD and Pre-training, too. I describe the process from installing the correct drivers and libs, preparing the dataset up to training and the final GGUF creation. Enjoy and let me know what you think or what i c",
-        "image_url": "https://external-preview.redd.it/wi8TRxWN82G_Gj0WnbyW82elAj_6FtY1X--V0ZfR99U.jpeg?width=140&height=78&auto=webp&s=244f4cf1401784ebd36684ae7a1f6a9920e1ebfa",
-        "image_source": "rss_media",
-        "published_at": "2026-05-03T11:50:41.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "byjq5u",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "The Ultimate LLM Fine-Tuning Guide",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2jc34/the_ultimate_llm_finetuning_guide",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2jc34/the_ultimate_llm_finetuning_guide/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2jc34/the_ultimate_llm_finetuning_guide",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "I was looking for a \"spot-on\" fine-tuning guide since quite a while, but couldn't find one. So i thought: Let's write it myself. https://preview.redd.it/tqqpw8snuwyg1.jpg?width=1672&format=pjpg&auto=webp&s=6fc418aa3bbd809f982c688b3a343d206522d520 It covers Full-SFT as well as LoRA and QLoRA. This one is for NVIDIA and Single-GPU, but if you guys like i will later add Multi-GPU Training, AMD and Pre-training, too. I describe the process from installing the correct drivers and libs, preparing the dataset up to training and the final GGUF creation. Enjoy and let me know what you think or what i c",
-          "image_url": "https://external-preview.redd.it/wi8TRxWN82G_Gj0WnbyW82elAj_6FtY1X--V0ZfR99U.jpeg?width=140&height=78&auto=webp&s=244f4cf1401784ebd36684ae7a1f6a9920e1ebfa",
-          "image_source": "rss_media",
-          "published_at": "2026-05-03T11:50:41.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "The Ultimate LLM Fine-Tuning Guide",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2jc34/the_ultimate_llm_finetuning_guide",
-          "published_at": "2026-05-03T11:50:41.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2jc34/the_ultimate_llm_finetuning_guide",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "tutorial",
-      "quality": "signal",
-      "one_liner": "Comprehensive guide to LLM fine-tuning (SFT + LoRA) techniques",
-      "novelty": 0.914,
-      "trust": 0.5,
-      "score": 0.768
-    },
-    {
-      "id": "19c5z3k",
-      "primary": {
-        "id": "19c5z3k",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "Built a Voice Agents from Scratch GitHub tutorial: mic > Whisper > local LLM (GGUF) > Kokoro > speaker, fully local, no API keys",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2pisc/built_a_voice_agents_from_scratch_github_tutorial",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2pisc/built_a_voice_agents_from_scratch_github_tutorial/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2pisc/built_a_voice_agents_from_scratch_github_tutorial",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "Been building this for a while and finally cleaned it up enough to share. voice-agents-from-scratch is a numbered, chapter-by-chapter repo that walks the full real-time pipeline: Microphone capture Whisper for STT Local GGUF LLM (via llama.cpp) Kokoro for TTS Speaker output Everything streams - you don't wait for the full LLM response before TTS starts speaking. That's the part that makes it feel like a real conversation instead of a chatbot with a voice skin. Chapters: Intro Audio IO Speech to Text (STT) Text to Speech (TTS) Full voice loop Real time systems Tools Personality Projects Each ch",
-        "published_at": "2026-05-03T16:06:28.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "19c5z3k",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "Built a Voice Agents from Scratch GitHub tutorial: mic > Whisper > local LLM (GGUF) > Kokoro > speaker, fully local, no API keys",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2pisc/built_a_voice_agents_from_scratch_github_tutorial",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2pisc/built_a_voice_agents_from_scratch_github_tutorial/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2pisc/built_a_voice_agents_from_scratch_github_tutorial",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "Been building this for a while and finally cleaned it up enough to share. voice-agents-from-scratch is a numbered, chapter-by-chapter repo that walks the full real-time pipeline: Microphone capture Whisper for STT Local GGUF LLM (via llama.cpp) Kokoro for TTS Speaker output Everything streams - you don't wait for the full LLM response before TTS starts speaking. That's the part that makes it feel like a real conversation instead of a chatbot with a voice skin. Chapters: Intro Audio IO Speech to Text (STT) Text to Speech (TTS) Full voice loop Real time systems Tools Personality Projects Each ch",
-          "published_at": "2026-05-03T16:06:28.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "Built a Voice Agents from Scratch GitHub tutorial: mic > Whisper > local LLM (GGUF) > Kokoro > speaker, fully local, no API keys",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2pisc/built_a_voice_agents_from_scratch_github_tutorial",
-          "published_at": "2026-05-03T16:06:28.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2pisc/built_a_voice_agents_from_scratch_github_tutorial",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "tool",
-      "quality": "signal",
-      "one_liner": "End-to-end local voice agent pipeline tutorial (Whisper + GGUF + TTS)",
-      "novelty": 0.855,
-      "trust": 0.5,
-      "score": 0.76
+      "score": 0.769
     },
     {
       "id": "fue6ej",
@@ -1044,10 +802,67 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "signal",
-      "one_liner": "Backend function calling benchmark: GLM vs Qwen vs DeepSeek",
+      "one_liner": "Backend generation benchmark: GLM vs Qwen vs DeepSeek",
       "novelty": 0.845,
       "trust": 0.5,
-      "score": 0.752
+      "score": 0.748
+    },
+    {
+      "id": "1as0hrk",
+      "primary": {
+        "id": "1as0hrk",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "GLaDOS TTS Build Kit: Train GLaDOS Voice if You Own Portal 1 and 2",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t29tf8/glados_tts_build_kit_train_glados_voice_if_you",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t29tf8/glados_tts_build_kit_train_glados_voice_if_you/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t29tf8/glados_tts_build_kit_train_glados_voice_if_you",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "I put together a repo for finetuning a local GLaDOS-style TTS voice from your own installed copies of Portal and Portal 2 using Omnivoice: https://github.com/JoeHelbing/glados-tts-build-kit Writeup: https://www.joehelbing.net/post/glados-tts The important bit: this does not include Valve audio, extracted clips, transcripts, samples, checkpoints, or trained weights. It's just the pipeline. You provide your own local game files, and everything generated stays under ignored local data/ paths. What it does: Extracts the GLaDOS voice lines from local Portal / Portal 2 VPKs Converts the Source MP3-i",
+        "published_at": "2026-05-03T03:05:51.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1as0hrk",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "GLaDOS TTS Build Kit: Train GLaDOS Voice if You Own Portal 1 and 2",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t29tf8/glados_tts_build_kit_train_glados_voice_if_you",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t29tf8/glados_tts_build_kit_train_glados_voice_if_you/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t29tf8/glados_tts_build_kit_train_glados_voice_if_you",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "I put together a repo for finetuning a local GLaDOS-style TTS voice from your own installed copies of Portal and Portal 2 using Omnivoice: https://github.com/JoeHelbing/glados-tts-build-kit Writeup: https://www.joehelbing.net/post/glados-tts The important bit: this does not include Valve audio, extracted clips, transcripts, samples, checkpoints, or trained weights. It's just the pipeline. You provide your own local game files, and everything generated stays under ignored local data/ paths. What it does: Extracts the GLaDOS voice lines from local Portal / Portal 2 VPKs Converts the Source MP3-i",
+          "published_at": "2026-05-03T03:05:51.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "GLaDOS TTS Build Kit: Train GLaDOS Voice if You Own Portal 1 and 2",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t29tf8/glados_tts_build_kit_train_glados_voice_if_you",
+          "published_at": "2026-05-03T03:05:51.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t29tf8/glados_tts_build_kit_train_glados_voice_if_you",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "GLaDOS TTS build kit for training voice from Portal games",
+      "novelty": 0.899,
+      "trust": 0.5,
+      "score": 0.742
     },
     {
       "id": "15knj19",
@@ -1105,10 +920,10 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "signal",
-      "one_liner": "Benchmark compares 10 image models on M1 Max for quality/speed",
+      "one_liner": "10 image models compared on M1 Max for quality and speed",
       "novelty": 0.888,
       "trust": 0.5,
-      "score": 0.738
+      "score": 0.735
     },
     {
       "id": "sgavkw",
@@ -1152,10 +967,181 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Simon Willison discusses Anthropic's statements.",
+      "one_liner": "Simon Willison discusses Anthropic's statements without detailed analysis",
       "novelty": 0.804,
       "trust": 0.9,
-      "score": 0.73
+      "score": 0.726
+    },
+    {
+      "id": "13nioof",
+      "primary": {
+        "id": "13nioof",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "trust": 0.65,
+        "title": "BYOMesh – New LoRa mesh radio offers 100x the bandwidth",
+        "url": "https://partyon.xyz/@nullagent/116499715071759135",
+        "original_url": "https://partyon.xyz/@nullagent/116499715071759135",
+        "discussion_url": "https://news.ycombinator.com/item?id=47999636",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-05-03T18:03:14Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 109,
+          "comments": 32
+        }
+      },
+      "members": [
+        {
+          "id": "13nioof",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "trust": 0.65,
+          "title": "BYOMesh – New LoRa mesh radio offers 100x the bandwidth",
+          "url": "https://partyon.xyz/@nullagent/116499715071759135",
+          "original_url": "https://partyon.xyz/@nullagent/116499715071759135",
+          "discussion_url": "https://news.ycombinator.com/item?id=47999636",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-05-03T18:03:14Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 109,
+            "comments": 32
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "BYOMesh – New LoRa mesh radio offers 100x the bandwidth",
+          "url": "https://partyon.xyz/@nullagent/116499715071759135",
+          "published_at": "2026-05-03T18:03:14Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=47999636",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "unknown",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.933,
+      "trust": 0.65,
+      "score": 0.708
+    },
+    {
+      "id": "147068",
+      "primary": {
+        "id": "147068",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Same prompt, different morals: how frontier AI models diverge on ethical dilemmas",
+        "url": "https://the-decoder.com/same-prompt-different-morals-how-frontier-ai-models-diverge-on-ethical-dilemmas",
+        "original_url": "https://the-decoder.com/same-prompt-different-morals-how-frontier-ai-models-diverge-on-ethical-dilemmas/",
+        "summary": "A new benchmark puts leading language models through 100 everyday ethical scenarios, from data misuse in sales to protocol violations in oncology. Behind the results lies a bigger question: who decides what an AI is allowed to do, and whose ethics does it follow? The article Same prompt, different morals: how frontier AI models diverge on ethical dilemmas appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/04/Philosophy-Bench.png",
+        "image_source": "rss_content",
+        "published_at": "2026-05-03T07:00:50.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "147068",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Same prompt, different morals: how frontier AI models diverge on ethical dilemmas",
+          "url": "https://the-decoder.com/same-prompt-different-morals-how-frontier-ai-models-diverge-on-ethical-dilemmas",
+          "original_url": "https://the-decoder.com/same-prompt-different-morals-how-frontier-ai-models-diverge-on-ethical-dilemmas/",
+          "summary": "A new benchmark puts leading language models through 100 everyday ethical scenarios, from data misuse in sales to protocol violations in oncology. Behind the results lies a bigger question: who decides what an AI is allowed to do, and whose ethics does it follow? The article Same prompt, different morals: how frontier AI models diverge on ethical dilemmas appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/04/Philosophy-Bench.png",
+          "image_source": "rss_content",
+          "published_at": "2026-05-03T07:00:50.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Same prompt, different morals: how frontier AI models diverge on ethical dilemmas",
+          "url": "https://the-decoder.com/same-prompt-different-morals-how-frontier-ai-models-diverge-on-ethical-dilemmas",
+          "published_at": "2026-05-03T07:00:50.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "A new benchmark puts leading language models through 100 everyday ethical scenarios, from data misuse in sales to protocol violations in oncology. Behind the results lies a bigger question: who decide",
+      "novelty": 0.899,
+      "trust": 0.74,
+      "score": 0.697
+    },
+    {
+      "id": "1mwb2ol",
+      "primary": {
+        "id": "1mwb2ol",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Microsoft caught sneaking \"Co-Authored-by Copilot\" into VS Code commits - even with AI off",
+        "url": "https://the-decoder.com/co-pilot-becomes-a-co-author-in-vs-code-without-being-asked",
+        "original_url": "https://the-decoder.com/co-pilot-becomes-a-co-author-in-vs-code-without-being-asked/",
+        "summary": "Microsoft quietly slipped a \"Co-Authored-by Copilot\" line into Git commits in Visual Studio Code - even for developers who had turned off the AI features entirely. The article Microsoft caught sneaking \"Co-Authored-by Copilot\" into VS Code commits - even with AI off appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/microsoft_logo.png",
+        "image_source": "rss_content",
+        "published_at": "2026-05-03T09:31:15.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1mwb2ol",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Microsoft caught sneaking \"Co-Authored-by Copilot\" into VS Code commits - even with AI off",
+          "url": "https://the-decoder.com/co-pilot-becomes-a-co-author-in-vs-code-without-being-asked",
+          "original_url": "https://the-decoder.com/co-pilot-becomes-a-co-author-in-vs-code-without-being-asked/",
+          "summary": "Microsoft quietly slipped a \"Co-Authored-by Copilot\" line into Git commits in Visual Studio Code - even for developers who had turned off the AI features entirely. The article Microsoft caught sneaking \"Co-Authored-by Copilot\" into VS Code commits - even with AI off appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/microsoft_logo.png",
+          "image_source": "rss_content",
+          "published_at": "2026-05-03T09:31:15.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Microsoft caught sneaking \"Co-Authored-by Copilot\" into VS Code commits - even with AI off",
+          "url": "https://the-decoder.com/co-pilot-becomes-a-co-author-in-vs-code-without-being-asked",
+          "published_at": "2026-05-03T09:31:15.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Microsoft quietly slipped a \"Co-Authored-by Copilot\" line into Git commits in Visual Studio Code - even for developers who had turned off the AI features entirely. The article Microsoft caught sneakin",
+      "novelty": 0.873,
+      "trust": 0.74,
+      "score": 0.695
     },
     {
       "id": "rtjj78",
@@ -1210,7 +1196,7 @@
       "one_liner": "This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more on how AI is changing music and the music industry, follow Terrence O'Brien. The Stepback arri",
       "novelty": 0.907,
       "trust": 0.68,
-      "score": 0.699
+      "score": 0.695
     },
     {
       "id": "1rye6wu",
@@ -1262,10 +1248,244 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "US report claims China lags in AI progress.",
+      "one_liner": "A US government agency says China is now eight months behind in the AI race, but independent data doesn't back that up. And while US labs keep chasing smarter models, the price edge from Deepseek and ",
       "novelty": 0.864,
       "trust": 0.74,
-      "score": 0.693
+      "score": 0.689
+    },
+    {
+      "id": "7921rw",
+      "primary": {
+        "id": "7921rw",
+        "source_id": "r_ml",
+        "source_name": "r/MachineLearning",
+        "trust": 0.55,
+        "kind_hint": "discussion",
+        "title": "Help with personal MLflow project [P]",
+        "url": "https://old.reddit.com/r/MachineLearning/comments/1t2vs1o/help_with_personal_mlflow_project_p",
+        "original_url": "https://old.reddit.com/r/MachineLearning/comments/1t2vs1o/help_with_personal_mlflow_project_p/",
+        "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t2vs1o/help_with_personal_mlflow_project_p",
+        "discussion_source": "r/MachineLearning",
+        "summary": "Hi everyone, I've been working on a personal project which I'd like some help with. Its an LLM based CLI tool to explore MLflow logs. One thing I really want for testing purposes is data. I've tried looking for MLflow db files online, but I guess people don't really push them to github. I'm currently working with some dummy data that I generated, but I would really like people to use it or share any databases with me which I can test it on. Here's the github : https://github.com/5aumit/floki submitted by /u/lauptimus [link] [comments]",
+        "published_at": "2026-05-03T19:58:11.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "7921rw",
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "trust": 0.55,
+          "kind_hint": "discussion",
+          "title": "Help with personal MLflow project [P]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1t2vs1o/help_with_personal_mlflow_project_p",
+          "original_url": "https://old.reddit.com/r/MachineLearning/comments/1t2vs1o/help_with_personal_mlflow_project_p/",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t2vs1o/help_with_personal_mlflow_project_p",
+          "discussion_source": "r/MachineLearning",
+          "summary": "Hi everyone, I've been working on a personal project which I'd like some help with. Its an LLM based CLI tool to explore MLflow logs. One thing I really want for testing purposes is data. I've tried looking for MLflow db files online, but I guess people don't really push them to github. I'm currently working with some dummy data that I generated, but I would really like people to use it or share any databases with me which I can test it on. Here's the github : https://github.com/5aumit/floki submitted by /u/lauptimus [link] [comments]",
+          "published_at": "2026-05-03T19:58:11.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "title": "Help with personal MLflow project [P]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1t2vs1o/help_with_personal_mlflow_project_p",
+          "published_at": "2026-05-03T19:58:11.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t2vs1o/help_with_personal_mlflow_project_p",
+          "discussion_source": "r/MachineLearning"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "Request for MLflow project data for CLI tool",
+      "novelty": 0.908,
+      "trust": 0.55,
+      "score": 0.68
+    },
+    {
+      "id": "1b74om4",
+      "primary": {
+        "id": "1b74om4",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Xiaomi's open-weight MiMo-V2.5-Pro takes aim at Claude Opus with hours-long autonomous coding",
+        "url": "https://the-decoder.com/xiaomis-open-weight-mimo-v2-5-pro-takes-aim-at-claude-opus-with-hours-long-autonomous-coding",
+        "original_url": "https://the-decoder.com/xiaomis-open-weight-mimo-v2-5-pro-takes-aim-at-claude-opus-with-hours-long-autonomous-coding/",
+        "summary": "Xiaomi's new MiMo-V2.5-Pro nearly matches Anthropic's Claude Opus 4.6 on coding benchmarks while burning 40 to 60 percent fewer tokens, according to the company. The release pushes Xiaomi deeper into the race among Chinese open-weight providers like Deepseek, where the fight is shifting from raw benchmark scores to how cheaply and how long a model can run autonomously on a single task. The article Xiaomi's open-weight MiMo-V2.5-Pro takes aim at Claude Opus with hours-long autonomous coding appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/03/Xiaomi-MiMo-Explore-and-Love-e1774194951718.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-05-03T07:24:01.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1b74om4",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Xiaomi's open-weight MiMo-V2.5-Pro takes aim at Claude Opus with hours-long autonomous coding",
+          "url": "https://the-decoder.com/xiaomis-open-weight-mimo-v2-5-pro-takes-aim-at-claude-opus-with-hours-long-autonomous-coding",
+          "original_url": "https://the-decoder.com/xiaomis-open-weight-mimo-v2-5-pro-takes-aim-at-claude-opus-with-hours-long-autonomous-coding/",
+          "summary": "Xiaomi's new MiMo-V2.5-Pro nearly matches Anthropic's Claude Opus 4.6 on coding benchmarks while burning 40 to 60 percent fewer tokens, according to the company. The release pushes Xiaomi deeper into the race among Chinese open-weight providers like Deepseek, where the fight is shifting from raw benchmark scores to how cheaply and how long a model can run autonomously on a single task. The article Xiaomi's open-weight MiMo-V2.5-Pro takes aim at Claude Opus with hours-long autonomous coding appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/03/Xiaomi-MiMo-Explore-and-Love-e1774194951718.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-05-03T07:24:01.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Xiaomi's open-weight MiMo-V2.5-Pro takes aim at Claude Opus with hours-long autonomous coding",
+          "url": "https://the-decoder.com/xiaomis-open-weight-mimo-v2-5-pro-takes-aim-at-claude-opus-with-hours-long-autonomous-coding",
+          "published_at": "2026-05-03T07:24:01.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Xiaomi's new MiMo-V2.5-Pro nearly matches Anthropic's Claude Opus 4.6 on coding benchmarks while burning 40 to 60 percent fewer tokens, according to the company. The release pushes Xiaomi deeper into ",
+      "novelty": 0.822,
+      "trust": 0.74,
+      "score": 0.675
+    },
+    {
+      "id": "hhrvc5",
+      "primary": {
+        "id": "hhrvc5",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "One bash permission slipped...",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2uk1m/one_bash_permission_slipped",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2uk1m/one_bash_permission_slipped/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2uk1m/one_bash_permission_slipped",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "How? It kept getting chained bash commands wrong, with wrong escapes. So it created many bad directories, and tried \"fixing\" its mistake. It offered to run a large bash command, with rm -rf inside, and stupid me missed it. I'm glad I push everything often. But the disruption is massive. FAQ: No, I don't run this on my personal computer. It's an isolated proxmox VM for coding with LLMs. submitted by /u/TheQuantumPhysicist [link] [comments]",
+        "image_url": "https://preview.redd.it/pi6uio5c1zyg1.jpeg?width=320&crop=smart&auto=webp&s=ed21ca1ca48045f5a07e5d0bd5944a94a1fa3226",
+        "image_source": "rss_media",
+        "published_at": "2026-05-03T19:12:19.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "hhrvc5",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "One bash permission slipped...",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2uk1m/one_bash_permission_slipped",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2uk1m/one_bash_permission_slipped/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2uk1m/one_bash_permission_slipped",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "How? It kept getting chained bash commands wrong, with wrong escapes. So it created many bad directories, and tried \"fixing\" its mistake. It offered to run a large bash command, with rm -rf inside, and stupid me missed it. I'm glad I push everything often. But the disruption is massive. FAQ: No, I don't run this on my personal computer. It's an isolated proxmox VM for coding with LLMs. submitted by /u/TheQuantumPhysicist [link] [comments]",
+          "image_url": "https://preview.redd.it/pi6uio5c1zyg1.jpeg?width=320&crop=smart&auto=webp&s=ed21ca1ca48045f5a07e5d0bd5944a94a1fa3226",
+          "image_source": "rss_media",
+          "published_at": "2026-05-03T19:12:19.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "One bash permission slipped...",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2uk1m/one_bash_permission_slipped",
+          "published_at": "2026-05-03T19:12:19.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2uk1m/one_bash_permission_slipped",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.926,
+      "trust": 0.5,
+      "score": 0.671
+    },
+    {
+      "id": "lskbw2",
+      "primary": {
+        "id": "lskbw2",
+        "source_id": "r_ml",
+        "source_name": "r/MachineLearning",
+        "trust": 0.55,
+        "kind_hint": "discussion",
+        "title": "I Trained an AI to Beat Final Fight… Here’s What Happened [p]",
+        "url": "https://old.reddit.com/r/MachineLearning/comments/1t2vfz7/i_trained_an_ai_to_beat_final_fight_heres_what",
+        "original_url": "https://old.reddit.com/r/MachineLearning/comments/1t2vfz7/i_trained_an_ai_to_beat_final_fight_heres_what/",
+        "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t2vfz7/i_trained_an_ai_to_beat_final_fight_heres_what",
+        "discussion_source": "r/MachineLearning",
+        "summary": "Hey everyone, I’ve been experimenting with Behavior Cloning on a classic arcade game (Final Fight), and I wanted to share the results and get some feedback from the community. The setup is fairly simple: I trained an agent purely from demonstrations (no reward shaping initially), then evaluated how far it could go in the first stage. I also plan to extend this with GAIL + PPO to see how much performance improves beyond imitation. A couple of interesting challenges came up: Action space remapping (MultiBinary → emulator input) Trajectory alignment issues (obs/action offset bugs 😅) LSTM policy",
+        "image_url": "https://external-preview.redd.it/dWZSKa_lMUvycB0q8xwsIkTgDpHLe-W2-Q_S7RwWucQ.jpeg?width=320&crop=smart&auto=webp&s=6a0cfa02507091d2949c8f6b2fcd59a254a23929",
+        "image_source": "rss_media",
+        "published_at": "2026-05-03T19:45:37.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "lskbw2",
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "trust": 0.55,
+          "kind_hint": "discussion",
+          "title": "I Trained an AI to Beat Final Fight… Here’s What Happened [p]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1t2vfz7/i_trained_an_ai_to_beat_final_fight_heres_what",
+          "original_url": "https://old.reddit.com/r/MachineLearning/comments/1t2vfz7/i_trained_an_ai_to_beat_final_fight_heres_what/",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t2vfz7/i_trained_an_ai_to_beat_final_fight_heres_what",
+          "discussion_source": "r/MachineLearning",
+          "summary": "Hey everyone, I’ve been experimenting with Behavior Cloning on a classic arcade game (Final Fight), and I wanted to share the results and get some feedback from the community. The setup is fairly simple: I trained an agent purely from demonstrations (no reward shaping initially), then evaluated how far it could go in the first stage. I also plan to extend this with GAIL + PPO to see how much performance improves beyond imitation. A couple of interesting challenges came up: Action space remapping (MultiBinary → emulator input) Trajectory alignment issues (obs/action offset bugs 😅) LSTM policy",
+          "image_url": "https://external-preview.redd.it/dWZSKa_lMUvycB0q8xwsIkTgDpHLe-W2-Q_S7RwWucQ.jpeg?width=320&crop=smart&auto=webp&s=6a0cfa02507091d2949c8f6b2fcd59a254a23929",
+          "image_source": "rss_media",
+          "published_at": "2026-05-03T19:45:37.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "title": "I Trained an AI to Beat Final Fight… Here’s What Happened [p]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1t2vfz7/i_trained_an_ai_to_beat_final_fight_heres_what",
+          "published_at": "2026-05-03T19:45:37.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t2vfz7/i_trained_an_ai_to_beat_final_fight_heres_what",
+          "discussion_source": "r/MachineLearning"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "AI trained to beat Final Fight via behavior cloning",
+      "novelty": 0.875,
+      "trust": 0.55,
+      "score": 0.669
     },
     {
       "id": "7k9v6y",
@@ -1319,10 +1539,128 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Users report missing reviews on UAI submissions in r/MachineLearning",
+      "one_liner": "Report of missing UAI reviews on submissions",
       "novelty": 0.896,
       "trust": 0.55,
-      "score": 0.671
+      "score": 0.667
+    },
+    {
+      "id": "z3esdv",
+      "primary": {
+        "id": "z3esdv",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "trust": 0.65,
+        "title": "OpenAI's o1 correctly diagnosed 67% of ER patients vs. 50-55% by triage doctors",
+        "url": "https://theguardian.com/technology/2026/apr/30/ai-outperforms-doctors-in-harvard-trial-of-emergency-triage-diagnoses",
+        "original_url": "https://www.theguardian.com/technology/2026/apr/30/ai-outperforms-doctors-in-harvard-trial-of-emergency-triage-diagnoses",
+        "discussion_url": "https://news.ycombinator.com/item?id=47991981",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-05-03T00:30:50Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 117,
+          "comments": 46
+        }
+      },
+      "members": [
+        {
+          "id": "z3esdv",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "trust": 0.65,
+          "title": "OpenAI's o1 correctly diagnosed 67% of ER patients vs. 50-55% by triage doctors",
+          "url": "https://theguardian.com/technology/2026/apr/30/ai-outperforms-doctors-in-harvard-trial-of-emergency-triage-diagnoses",
+          "original_url": "https://www.theguardian.com/technology/2026/apr/30/ai-outperforms-doctors-in-harvard-trial-of-emergency-triage-diagnoses",
+          "discussion_url": "https://news.ycombinator.com/item?id=47991981",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-05-03T00:30:50Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 117,
+            "comments": 46
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "OpenAI's o1 correctly diagnosed 67% of ER patients vs. 50-55% by triage doctors",
+          "url": "https://theguardian.com/technology/2026/apr/30/ai-outperforms-doctors-in-harvard-trial-of-emergency-triage-diagnoses",
+          "published_at": "2026-05-03T00:30:50Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=47991981",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "unknown",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.912,
+      "trust": 0.65,
+      "score": 0.666
+    },
+    {
+      "id": "qj9r7o",
+      "primary": {
+        "id": "qj9r7o",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "First time GPU buyer. Got a RTX 5000 Pro. Was it a bad decision compared to two 3090s?",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2slmw/first_time_gpu_buyer_got_a_rtx_5000_pro_was_it_a",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2slmw/first_time_gpu_buyer_got_a_rtx_5000_pro_was_it_a/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2slmw/first_time_gpu_buyer_got_a_rtx_5000_pro_was_it_a",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "I’ve run models exclusively on apple silicon up until now, but wanted to up my inference game. I bought a slightly used RTX 5000 Pro Blackwell for a bit more than twice as much as two 3090s. I’ve read of people saying that the 5000 doesn’t provide a big performance improvement over the 3090s. That is making me doubt my choice. But it is also true that electricity cost where I live is 0.40 euros per KWh. A 5000 Pro would probably burn a third of the electricity of a dual 3090 build. Right? Also, if you have a 5000 Pro, what type of speeds do you get in PP and TG with qwen3.6 models? submitted b",
+        "published_at": "2026-05-03T18:01:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "qj9r7o",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "First time GPU buyer. Got a RTX 5000 Pro. Was it a bad decision compared to two 3090s?",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2slmw/first_time_gpu_buyer_got_a_rtx_5000_pro_was_it_a",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2slmw/first_time_gpu_buyer_got_a_rtx_5000_pro_was_it_a/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2slmw/first_time_gpu_buyer_got_a_rtx_5000_pro_was_it_a",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "I’ve run models exclusively on apple silicon up until now, but wanted to up my inference game. I bought a slightly used RTX 5000 Pro Blackwell for a bit more than twice as much as two 3090s. I’ve read of people saying that the 5000 doesn’t provide a big performance improvement over the 3090s. That is making me doubt my choice. But it is also true that electricity cost where I live is 0.40 euros per KWh. A 5000 Pro would probably burn a third of the electricity of a dual 3090 build. Right? Also, if you have a 5000 Pro, what type of speeds do you get in PP and TG with qwen3.6 models? submitted b",
+          "published_at": "2026-05-03T18:01:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "First time GPU buyer. Got a RTX 5000 Pro. Was it a bad decision compared to two 3090s?",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2slmw/first_time_gpu_buyer_got_a_rtx_5000_pro_was_it_a",
+          "published_at": "2026-05-03T18:01:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2slmw/first_time_gpu_buyer_got_a_rtx_5000_pro_was_it_a",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "RTX 5000 Pro vs 3090s GPU performance comparison",
+      "novelty": 0.917,
+      "trust": 0.5,
+      "score": 0.666
     },
     {
       "id": "g5vj87",
@@ -1379,7 +1717,64 @@
       "one_liner": "Hello guys, So TL;DR, I was asked by multiple people to make an Assistant_Pepe_32B version, but the best base model contender was Qwen3-32B, a model that is very hard to tune on anything other than ST",
       "novelty": 0.913,
       "trust": 0.5,
-      "score": 0.667
+      "score": 0.663
+    },
+    {
+      "id": "1xztf3h",
+      "primary": {
+        "id": "1xztf3h",
+        "source_id": "r_ml",
+        "source_name": "r/MachineLearning",
+        "trust": 0.55,
+        "kind_hint": "discussion",
+        "title": "Should I follow-up with the editor for a TMLR paper awaiting final decision? [D]",
+        "url": "https://old.reddit.com/r/MachineLearning/comments/1t2i1pu/should_i_followup_with_the_editor_for_a_tmlr",
+        "original_url": "https://old.reddit.com/r/MachineLearning/comments/1t2i1pu/should_i_followup_with_the_editor_for_a_tmlr/",
+        "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t2i1pu/should_i_followup_with_the_editor_for_a_tmlr",
+        "discussion_source": "r/MachineLearning",
+        "summary": "Hi there, I have a (long) paper that's been under review at TMLR for a while (submitted in October). After the reviews came in (mostly positive), we addressed the reviewers concerns, wrote rebuttals, and had a notification from the system according to which the final recommendations from the reviewers would be given in late March at the latest. We are now in May and are still waiting to hear anything back from either reviewers or the editor. I get that two months is not such a huge amount of time in the peer-review world, but for TMLR which is supposed to have a fast-paced process, I'm startin",
+        "published_at": "2026-05-03T10:42:33.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1xztf3h",
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "trust": 0.55,
+          "kind_hint": "discussion",
+          "title": "Should I follow-up with the editor for a TMLR paper awaiting final decision? [D]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1t2i1pu/should_i_followup_with_the_editor_for_a_tmlr",
+          "original_url": "https://old.reddit.com/r/MachineLearning/comments/1t2i1pu/should_i_followup_with_the_editor_for_a_tmlr/",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t2i1pu/should_i_followup_with_the_editor_for_a_tmlr",
+          "discussion_source": "r/MachineLearning",
+          "summary": "Hi there, I have a (long) paper that's been under review at TMLR for a while (submitted in October). After the reviews came in (mostly positive), we addressed the reviewers concerns, wrote rebuttals, and had a notification from the system according to which the final recommendations from the reviewers would be given in late March at the latest. We are now in May and are still waiting to hear anything back from either reviewers or the editor. I get that two months is not such a huge amount of time in the peer-review world, but for TMLR which is supposed to have a fast-paced process, I'm startin",
+          "published_at": "2026-05-03T10:42:33.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "title": "Should I follow-up with the editor for a TMLR paper awaiting final decision? [D]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1t2i1pu/should_i_followup_with_the_editor_for_a_tmlr",
+          "published_at": "2026-05-03T10:42:33.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1t2i1pu/should_i_followup_with_the_editor_for_a_tmlr",
+          "discussion_source": "r/MachineLearning"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "Query about following up on TMLR paper's final decision",
+      "novelty": 0.91,
+      "trust": 0.55,
+      "score": 0.661
     },
     {
       "id": "hv51u5",
@@ -1436,7 +1831,7 @@
       "one_liner": "",
       "novelty": 0.91,
       "trust": 0.55,
-      "score": 0.663
+      "score": 0.659
     },
     {
       "id": "qe4cv0",
@@ -1493,7 +1888,7 @@
       "one_liner": "",
       "novelty": 0.906,
       "trust": 0.5,
-      "score": 0.656
+      "score": 0.652
     },
     {
       "id": "1me3tz2",
@@ -1547,10 +1942,10 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Discussion on RTX A5000 Pro GPU for LLM training/inference",
+      "one_liner": "RTX A5000 Pro 48GB for training and inference",
       "novelty": 0.899,
       "trust": 0.5,
-      "score": 0.655
+      "score": 0.651
     },
     {
       "id": "1g63x2m",
@@ -1607,7 +2002,7 @@
       "one_liner": "",
       "novelty": 0.934,
       "trust": 0.55,
-      "score": 0.655
+      "score": 0.651
     },
     {
       "id": "12r9v7y",
@@ -1664,7 +2059,7 @@
       "one_liner": "",
       "novelty": 0.923,
       "trust": 0.5,
-      "score": 0.654
+      "score": 0.65
     },
     {
       "id": "1wcpg5e",
@@ -1721,7 +2116,64 @@
       "one_liner": "I read a lot of \"whengguf\" type posts. I think we should sometimes stop and be grateful. I want to say big thanks to all of the people and companies who gave us so much fun and productivity, sacrifici",
       "novelty": 0.875,
       "trust": 0.5,
-      "score": 0.648
+      "score": 0.644
+    },
+    {
+      "id": "19c5z3k",
+      "primary": {
+        "id": "19c5z3k",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Built a Voice Agents from Scratch GitHub tutorial: mic > Whisper > local LLM (GGUF) > Kokoro > speaker, fully local, no API keys",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2pisc/built_a_voice_agents_from_scratch_github_tutorial",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2pisc/built_a_voice_agents_from_scratch_github_tutorial/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2pisc/built_a_voice_agents_from_scratch_github_tutorial",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "Been building this for a while and finally cleaned it up enough to share. voice-agents-from-scratch is a numbered, chapter-by-chapter repo that walks the full real-time pipeline: Microphone capture Whisper for STT Local GGUF LLM (via llama.cpp) Kokoro for TTS Speaker output Everything streams - you don't wait for the full LLM response before TTS starts speaking. That's the part that makes it feel like a real conversation instead of a chatbot with a voice skin. Chapters: Intro Audio IO Speech to Text (STT) Text to Speech (TTS) Full voice loop Real time systems Tools Personality Projects Each ch",
+        "published_at": "2026-05-03T16:06:28.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "19c5z3k",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Built a Voice Agents from Scratch GitHub tutorial: mic > Whisper > local LLM (GGUF) > Kokoro > speaker, fully local, no API keys",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2pisc/built_a_voice_agents_from_scratch_github_tutorial",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2pisc/built_a_voice_agents_from_scratch_github_tutorial/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2pisc/built_a_voice_agents_from_scratch_github_tutorial",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "Been building this for a while and finally cleaned it up enough to share. voice-agents-from-scratch is a numbered, chapter-by-chapter repo that walks the full real-time pipeline: Microphone capture Whisper for STT Local GGUF LLM (via llama.cpp) Kokoro for TTS Speaker output Everything streams - you don't wait for the full LLM response before TTS starts speaking. That's the part that makes it feel like a real conversation instead of a chatbot with a voice skin. Chapters: Intro Audio IO Speech to Text (STT) Text to Speech (TTS) Full voice loop Real time systems Tools Personality Projects Each ch",
+          "published_at": "2026-05-03T16:06:28.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Built a Voice Agents from Scratch GitHub tutorial: mic > Whisper > local LLM (GGUF) > Kokoro > speaker, fully local, no API keys",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2pisc/built_a_voice_agents_from_scratch_github_tutorial",
+          "published_at": "2026-05-03T16:06:28.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2pisc/built_a_voice_agents_from_scratch_github_tutorial",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "Been building this for a while and finally cleaned it up enough to share. voice-agents-from-scratch is a numbered, chapter-by-chapter repo that walks the full real-time pipeline: Microphone capture Wh",
+      "novelty": 0.855,
+      "trust": 0.5,
+      "score": 0.643
     },
     {
       "id": "bwdgl5",
@@ -1779,10 +2231,10 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Discussion of 3xR9700 setup for autonomous AI research",
+      "one_liner": "3xR9700 setup for semi-autonomous AI research",
       "novelty": 0.848,
       "trust": 0.5,
-      "score": 0.639
+      "score": 0.635
     },
     {
       "id": "1lr47wz",
@@ -1839,7 +2291,7 @@
       "one_liner": "https://www.reddit.com/r/LocalLLaMA/comments/1eb6to7/llama_405b_q4_k_m_quantization_running_locally/ https://www.reddit.com/r/LocalLLaMA/comments/1ebbgkr/llama_31_405b_q5_k_m_running_on_amd_epyc_9374f",
       "novelty": 0.813,
       "trust": 0.5,
-      "score": 0.638
+      "score": 0.634
     },
     {
       "id": "q7czhe",
@@ -1896,7 +2348,7 @@
       "one_liner": "",
       "novelty": 0.918,
       "trust": 0.5,
-      "score": 0.636
+      "score": 0.632
     },
     {
       "id": "90gabp",
@@ -1950,10 +2402,10 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "User reports GPT 5.5-medium outputs code fix with absolute path",
+      "one_liner": "",
       "novelty": 0.914,
       "trust": 0.5,
-      "score": 0.635
+      "score": 0.631
     },
     {
       "id": "165j2n4",
@@ -2005,69 +2457,12 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "opinion",
-      "quality": "mixed",
-      "one_liner": "User advocates for local AI development over cloud services due to constraints",
-      "novelty": 0.845,
-      "trust": 0.5,
-      "score": 0.634
-    },
-    {
-      "id": "1as0hrk",
-      "primary": {
-        "id": "1as0hrk",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "GLaDOS TTS Build Kit: Train GLaDOS Voice if You Own Portal 1 and 2",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t29tf8/glados_tts_build_kit_train_glados_voice_if_you",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t29tf8/glados_tts_build_kit_train_glados_voice_if_you/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t29tf8/glados_tts_build_kit_train_glados_voice_if_you",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "I put together a repo for finetuning a local GLaDOS-style TTS voice from your own installed copies of Portal and Portal 2 using Omnivoice: https://github.com/JoeHelbing/glados-tts-build-kit Writeup: https://www.joehelbing.net/post/glados-tts The important bit: this does not include Valve audio, extracted clips, transcripts, samples, checkpoints, or trained weights. It's just the pipeline. You provide your own local game files, and everything generated stays under ignored local data/ paths. What it does: Extracts the GLaDOS voice lines from local Portal / Portal 2 VPKs Converts the Source MP3-i",
-        "published_at": "2026-05-03T03:05:51.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1as0hrk",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "GLaDOS TTS Build Kit: Train GLaDOS Voice if You Own Portal 1 and 2",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t29tf8/glados_tts_build_kit_train_glados_voice_if_you",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t29tf8/glados_tts_build_kit_train_glados_voice_if_you/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t29tf8/glados_tts_build_kit_train_glados_voice_if_you",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "I put together a repo for finetuning a local GLaDOS-style TTS voice from your own installed copies of Portal and Portal 2 using Omnivoice: https://github.com/JoeHelbing/glados-tts-build-kit Writeup: https://www.joehelbing.net/post/glados-tts The important bit: this does not include Valve audio, extracted clips, transcripts, samples, checkpoints, or trained weights. It's just the pipeline. You provide your own local game files, and everything generated stays under ignored local data/ paths. What it does: Extracts the GLaDOS voice lines from local Portal / Portal 2 VPKs Converts the Source MP3-i",
-          "published_at": "2026-05-03T03:05:51.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "GLaDOS TTS Build Kit: Train GLaDOS Voice if You Own Portal 1 and 2",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t29tf8/glados_tts_build_kit_train_glados_voice_if_you",
-          "published_at": "2026-05-03T03:05:51.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t29tf8/glados_tts_build_kit_train_glados_voice_if_you",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "I put together a repo for finetuning a local GLaDOS-style TTS voice from your own installed copies of Portal and Portal 2 using Omnivoice: https://github.com/JoeHelbing/glados-tts-build-kit Writeup: h",
-      "novelty": 0.899,
+      "one_liner": "I have snobbishly long felt that the local models were not 'up to my standards' for local development, or otherwise able to compete with GHCP, Claude Code, Cursor etc. Boy was I wrong. With the rapid ",
+      "novelty": 0.845,
       "trust": 0.5,
-      "score": 0.633
+      "score": 0.63
     },
     {
       "id": "1vfk7ml",
@@ -2124,7 +2519,7 @@
       "one_liner": "I've had better results quality wise with 35B AND it's much faster than 27B. Just curious cause I see lots of people post about 27B. Am I doing something wrong with 27B? Use cases are multi-stage pipe",
       "novelty": 0.838,
       "trust": 0.5,
-      "score": 0.608
+      "score": 0.604
     },
     {
       "id": "1s86k6",
@@ -2185,7 +2580,7 @@
       "one_liner": "",
       "novelty": 0.844,
       "trust": 0.5,
-      "score": 0.606
+      "score": 0.602
     },
     {
       "id": "161keam",
@@ -2241,12 +2636,69 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "news",
+      "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Report: DeepSeek V4 leads China but lags US models by 8 months",
+      "one_liner": "",
       "novelty": 0.804,
       "trust": 0.5,
-      "score": 0.605
+      "score": 0.601
+    },
+    {
+      "id": "1f6g4a7",
+      "primary": {
+        "id": "1f6g4a7",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Mistral Medium 3.5 on AMD Strix Halo",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2twu1/mistral_medium_35_on_amd_strix_halo",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2twu1/mistral_medium_35_on_amd_strix_halo/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2twu1/mistral_medium_35_on_amd_strix_halo",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "TLDR; it's slow as heck. Run overnight. I asked it a question about codebase architecture. For an end-to-end prompt of 48k tokens + 4k thinking tokens, it took about 2 hours. llama-server -hf unsloth/Mistral-Medium-3. 5-128B-GGUF:UD-Q5_K_XL --temp 0.7 --host 0.0.0.0 --port 8080 -c 80000 -fa on -ngl 999 --no-context-shift -fit off --no-mmap -np 1 --mlock --cache-reuse 256 --chat-template-kwargs '{\"reasoning_effort\":\"high\"}' --no-mmproj May 03 13:27:09 llama-server[6051]: prompt eval time = 4955501.32 ms / 48349 tokens ( 102.49 ms per token, 9.76 tokens per second) May 03 13:27:09 llama-server[6",
+        "published_at": "2026-05-03T18:49:14.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1f6g4a7",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Mistral Medium 3.5 on AMD Strix Halo",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2twu1/mistral_medium_35_on_amd_strix_halo",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2twu1/mistral_medium_35_on_amd_strix_halo/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2twu1/mistral_medium_35_on_amd_strix_halo",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "TLDR; it's slow as heck. Run overnight. I asked it a question about codebase architecture. For an end-to-end prompt of 48k tokens + 4k thinking tokens, it took about 2 hours. llama-server -hf unsloth/Mistral-Medium-3. 5-128B-GGUF:UD-Q5_K_XL --temp 0.7 --host 0.0.0.0 --port 8080 -c 80000 -fa on -ngl 999 --no-context-shift -fit off --no-mmap -np 1 --mlock --cache-reuse 256 --chat-template-kwargs '{\"reasoning_effort\":\"high\"}' --no-mmproj May 03 13:27:09 llama-server[6051]: prompt eval time = 4955501.32 ms / 48349 tokens ( 102.49 ms per token, 9.76 tokens per second) May 03 13:27:09 llama-server[6",
+          "published_at": "2026-05-03T18:49:14.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Mistral Medium 3.5 on AMD Strix Halo",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2twu1/mistral_medium_35_on_amd_strix_halo",
+          "published_at": "2026-05-03T18:49:14.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2twu1/mistral_medium_35_on_amd_strix_halo",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "Mistral Medium 3.5 performance on AMD Strix Halo",
+      "novelty": 0.678,
+      "trust": 0.5,
+      "score": 0.596
     },
     {
       "id": "10kx02t",
@@ -2307,172 +2759,7 @@
       "one_liner": "Burned about 20 hours of side-by-side compute on my two RTX PRO 6000 Blackwells trying to get a definitive answer on which of these two models was clearly better. As with many things in life, after ma",
       "novelty": 0.707,
       "trust": 0.5,
-      "score": 0.577
-    },
-    {
-      "id": "akpdhl",
-      "primary": {
-        "id": "akpdhl",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
-        "trust": 0.74,
-        "kind_hint": "news",
-        "title": "Even the latest AI models make three systematic reasoning errors, ARC-AGI-3 analysis shows",
-        "url": "https://the-decoder.com/even-the-latest-ai-models-make-three-systematic-reasoning-errors-arc-agi-3-analysis-shows",
-        "original_url": "https://the-decoder.com/even-the-latest-ai-models-make-three-systematic-reasoning-errors-arc-agi-3-analysis-shows/",
-        "summary": "The ARC Prize Foundation analyzed 160 game runs of OpenAI's GPT-5.5 and Anthropic's Opus 4.7 on the ARC-AGI-3 benchmark. Three systematic error patterns explain why both models stay below 1 percent on tasks that humans can solve without much trouble. The article Even the latest AI models make three systematic reasoning errors, ARC-AGI-3 analysis shows appeared first on The Decoder.",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/arc-agi-benchmark.png",
-        "image_source": "rss_content",
-        "published_at": "2026-05-02T13:31:52.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "akpdhl",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "trust": 0.74,
-          "kind_hint": "news",
-          "title": "Even the latest AI models make three systematic reasoning errors, ARC-AGI-3 analysis shows",
-          "url": "https://the-decoder.com/even-the-latest-ai-models-make-three-systematic-reasoning-errors-arc-agi-3-analysis-shows",
-          "original_url": "https://the-decoder.com/even-the-latest-ai-models-make-three-systematic-reasoning-errors-arc-agi-3-analysis-shows/",
-          "summary": "The ARC Prize Foundation analyzed 160 game runs of OpenAI's GPT-5.5 and Anthropic's Opus 4.7 on the ARC-AGI-3 benchmark. Three systematic error patterns explain why both models stay below 1 percent on tasks that humans can solve without much trouble. The article Even the latest AI models make three systematic reasoning errors, ARC-AGI-3 analysis shows appeared first on The Decoder.",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/arc-agi-benchmark.png",
-          "image_source": "rss_content",
-          "published_at": "2026-05-02T13:31:52.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "Even the latest AI models make three systematic reasoning errors, ARC-AGI-3 analysis shows",
-          "url": "https://the-decoder.com/even-the-latest-ai-models-make-three-systematic-reasoning-errors-arc-agi-3-analysis-shows",
-          "published_at": "2026-05-02T13:31:52.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "paper",
-      "quality": "signal",
-      "one_liner": "ARC-AGI-3 identifies AI reasoning flaws.",
-      "novelty": 0,
-      "trust": 0.74,
-      "score": 0.508
-    },
-    {
-      "id": "1cqygp5",
-      "primary": {
-        "id": "1cqygp5",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
-        "trust": 0.74,
-        "kind_hint": "news",
-        "title": "xAI's new Custom Voices feature turns a minute of speech into a usable voice clone",
-        "url": "https://the-decoder.com/xais-new-custom-voices-feature-turns-a-minute-of-speech-into-a-usable-voice-clone",
-        "original_url": "https://the-decoder.com/xais-new-custom-voices-feature-turns-a-minute-of-speech-into-a-usable-voice-clone/",
-        "summary": "xAI now lets developers clone their own voices for AI applications. The new \"Custom Voices\" feature builds on the recently launched Grok Speech-to-Text and Text-to-Speech APIs. The article xAI's new Custom Voices feature turns a minute of speech into a usable voice clone appeared first on The Decoder.",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/xai_gro_clone_voice.png",
-        "image_source": "rss_content",
-        "published_at": "2026-05-02T12:14:46.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1cqygp5",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "trust": 0.74,
-          "kind_hint": "news",
-          "title": "xAI's new Custom Voices feature turns a minute of speech into a usable voice clone",
-          "url": "https://the-decoder.com/xais-new-custom-voices-feature-turns-a-minute-of-speech-into-a-usable-voice-clone",
-          "original_url": "https://the-decoder.com/xais-new-custom-voices-feature-turns-a-minute-of-speech-into-a-usable-voice-clone/",
-          "summary": "xAI now lets developers clone their own voices for AI applications. The new \"Custom Voices\" feature builds on the recently launched Grok Speech-to-Text and Text-to-Speech APIs. The article xAI's new Custom Voices feature turns a minute of speech into a usable voice clone appeared first on The Decoder.",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/xai_gro_clone_voice.png",
-          "image_source": "rss_content",
-          "published_at": "2026-05-02T12:14:46.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "xAI's new Custom Voices feature turns a minute of speech into a usable voice clone",
-          "url": "https://the-decoder.com/xais-new-custom-voices-feature-turns-a-minute-of-speech-into-a-usable-voice-clone",
-          "published_at": "2026-05-02T12:14:46.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "tool",
-      "quality": "signal",
-      "one_liner": "xAI launches voice cloning with 1-minute samples.",
-      "novelty": 0,
-      "trust": 0.74,
-      "score": 0.505
-    },
-    {
-      "id": "1bj3zod",
-      "primary": {
-        "id": "1bj3zod",
-        "source_id": "infoq_ai",
-        "source_name": "InfoQ AI/ML/Data",
-        "trust": 0.78,
-        "kind_hint": "tutorial",
-        "title": "DuckLake 1.0: Data Lake Format with SQL Catalog Metadata",
-        "url": "https://infoq.com/news/2026/05/ducklake-sql-catalog",
-        "original_url": "https://www.infoq.com/news/2026/05/ducklake-sql-catalog/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
-        "summary": "DuckDB Labs recently released DuckLake 1.0, a data lake format that stores table metadata in a SQL database rather than across many files in object storage. The first implementation is available as a DuckDB extension and includes catalog-stored small updates, improved sorting and partitioning options, and compatibility with Iceberg-style data features. By Renato Losio",
-        "image_url": "https://res.infoq.com/news/2026/05/ducklake-sql-catalog/en/headerimage/generatedHeaderImage-1776423164012.jpg",
-        "image_source": "rss_content",
-        "published_at": "2026-05-02T06:48:00.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1bj3zod",
-          "source_id": "infoq_ai",
-          "source_name": "InfoQ AI/ML/Data",
-          "trust": 0.78,
-          "kind_hint": "tutorial",
-          "title": "DuckLake 1.0: Data Lake Format with SQL Catalog Metadata",
-          "url": "https://infoq.com/news/2026/05/ducklake-sql-catalog",
-          "original_url": "https://www.infoq.com/news/2026/05/ducklake-sql-catalog/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
-          "summary": "DuckDB Labs recently released DuckLake 1.0, a data lake format that stores table metadata in a SQL database rather than across many files in object storage. The first implementation is available as a DuckDB extension and includes catalog-stored small updates, improved sorting and partitioning options, and compatibility with Iceberg-style data features. By Renato Losio",
-          "image_url": "https://res.infoq.com/news/2026/05/ducklake-sql-catalog/en/headerimage/generatedHeaderImage-1776423164012.jpg",
-          "image_source": "rss_content",
-          "published_at": "2026-05-02T06:48:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "infoq_ai",
-          "source_name": "InfoQ AI/ML/Data",
-          "title": "DuckLake 1.0: Data Lake Format with SQL Catalog Metadata",
-          "url": "https://infoq.com/news/2026/05/ducklake-sql-catalog",
-          "published_at": "2026-05-02T06:48:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "tutorial",
-      "quality": "signal",
-      "one_liner": "DuckDB Labs recently released DuckLake 1.0, a data lake format that stores table metadata in a SQL database rather than across many files in object storage. The first implementation is available as a ",
-      "novelty": 0,
-      "trust": 0.78,
-      "score": 0.504
+      "score": 0.573
     },
     {
       "id": "1ox37uf",
@@ -2518,52 +2805,50 @@
       "also_seen_on": [],
       "kind": "opinion",
       "quality": "mixed",
-      "one_liner": "Analysis of corporate AI readiness challenges.",
+      "one_liner": "Companies struggle to define AI needs, leading to implementation challenges",
       "novelty": 0,
       "trust": 0.78,
-      "score": 0.417
+      "score": 0.413
     },
     {
-      "id": "1wvgp8w",
+      "id": "1aph4si",
       "primary": {
-        "id": "1wvgp8w",
-        "source_id": "latent_space",
-        "source_name": "Latent Space",
-        "trust": 0.85,
-        "title": "[AINews] AI Engineer World's Fair — Autoresearch, Memory, World Models, Tokenmaxxing, Agentic Commerce, and Vertical AI Call for Speakers",
-        "url": "https://latent.space/p/ainews-ai-engineer-worlds-fair-autoresearch",
-        "original_url": "https://www.latent.space/p/ainews-ai-engineer-worlds-fair-autoresearch",
-        "summary": "a quiet day lets us make a call for speakers!",
-        "image_url": "https://substackcdn.com/image/fetch/$s_!admO!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6045585a-7095-4a04-bbef-7f29cbc35fe5_1938x1276.png",
-        "image_source": "rss_enclosure",
-        "published_at": "2026-05-02T07:21:55.000Z",
+        "id": "1aph4si",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "AI-generated actors and scripts are now ineligible for Oscars",
+        "url": "https://techcrunch.com/2026/05/02/ai-generated-actors-and-scripts-are-now-ineligible-for-oscars",
+        "original_url": "https://techcrunch.com/2026/05/02/ai-generated-actors-and-scripts-are-now-ineligible-for-oscars/",
+        "summary": "Bad news for Tilly Norwood.",
+        "published_at": "2026-05-02T21:54:58.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "1wvgp8w",
-          "source_id": "latent_space",
-          "source_name": "Latent Space",
-          "trust": 0.85,
-          "title": "[AINews] AI Engineer World's Fair — Autoresearch, Memory, World Models, Tokenmaxxing, Agentic Commerce, and Vertical AI Call for Speakers",
-          "url": "https://latent.space/p/ainews-ai-engineer-worlds-fair-autoresearch",
-          "original_url": "https://www.latent.space/p/ainews-ai-engineer-worlds-fair-autoresearch",
-          "summary": "a quiet day lets us make a call for speakers!",
-          "image_url": "https://substackcdn.com/image/fetch/$s_!admO!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6045585a-7095-4a04-bbef-7f29cbc35fe5_1938x1276.png",
-          "image_source": "rss_enclosure",
-          "published_at": "2026-05-02T07:21:55.000Z",
+          "id": "1aph4si",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "AI-generated actors and scripts are now ineligible for Oscars",
+          "url": "https://techcrunch.com/2026/05/02/ai-generated-actors-and-scripts-are-now-ineligible-for-oscars",
+          "original_url": "https://techcrunch.com/2026/05/02/ai-generated-actors-and-scripts-are-now-ineligible-for-oscars/",
+          "summary": "Bad news for Tilly Norwood.",
+          "published_at": "2026-05-02T21:54:58.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "latent_space",
-          "source_name": "Latent Space",
-          "title": "[AINews] AI Engineer World's Fair — Autoresearch, Memory, World Models, Tokenmaxxing, Agentic Commerce, and Vertical AI Call for Speakers",
-          "url": "https://latent.space/p/ainews-ai-engineer-worlds-fair-autoresearch",
-          "published_at": "2026-05-02T07:21:55.000Z",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "AI-generated actors and scripts are now ineligible for Oscars",
+          "url": "https://techcrunch.com/2026/05/02/ai-generated-actors-and-scripts-are-now-ineligible-for-oscars",
+          "published_at": "2026-05-02T21:54:58.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -2571,10 +2856,10 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Call for speakers at AI Engineer World's Fair.",
+      "one_liner": "Oscars ban AI-generated actors and scripts from eligibility",
       "novelty": 0,
-      "trust": 0.85,
-      "score": 0.41
+      "trust": 0.72,
+      "score": 0.404
     },
     {
       "id": "1mo2qol",
@@ -2629,7 +2914,7 @@
       "one_liner": "",
       "novelty": 0,
       "trust": 0.7,
-      "score": 0.398
+      "score": 0.395
     },
     {
       "id": "160rybq",
@@ -2677,10 +2962,65 @@
       "also_seen_on": [],
       "kind": "tutorial",
       "quality": "mixed",
-      "one_liner": "Review of top AI-powered dictation apps.",
+      "one_liner": "Review of top AI dictation apps for email, notes, and coding",
       "novelty": 0,
       "trust": 0.72,
-      "score": 0.395
+      "score": 0.392
+    },
+    {
+      "id": "akpdhl",
+      "primary": {
+        "id": "akpdhl",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Even the latest AI models make three systematic reasoning errors, ARC-AGI-3 analysis shows",
+        "url": "https://the-decoder.com/even-the-latest-ai-models-make-three-systematic-reasoning-errors-arc-agi-3-analysis-shows",
+        "original_url": "https://the-decoder.com/even-the-latest-ai-models-make-three-systematic-reasoning-errors-arc-agi-3-analysis-shows/",
+        "summary": "The ARC Prize Foundation analyzed 160 game runs of OpenAI's GPT-5.5 and Anthropic's Opus 4.7 on the ARC-AGI-3 benchmark. Three systematic error patterns explain why both models stay below 1 percent on tasks that humans can solve without much trouble. The article Even the latest AI models make three systematic reasoning errors, ARC-AGI-3 analysis shows appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/arc-agi-benchmark.png",
+        "image_source": "rss_content",
+        "published_at": "2026-05-02T13:31:52.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "akpdhl",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Even the latest AI models make three systematic reasoning errors, ARC-AGI-3 analysis shows",
+          "url": "https://the-decoder.com/even-the-latest-ai-models-make-three-systematic-reasoning-errors-arc-agi-3-analysis-shows",
+          "original_url": "https://the-decoder.com/even-the-latest-ai-models-make-three-systematic-reasoning-errors-arc-agi-3-analysis-shows/",
+          "summary": "The ARC Prize Foundation analyzed 160 game runs of OpenAI's GPT-5.5 and Anthropic's Opus 4.7 on the ARC-AGI-3 benchmark. Three systematic error patterns explain why both models stay below 1 percent on tasks that humans can solve without much trouble. The article Even the latest AI models make three systematic reasoning errors, ARC-AGI-3 analysis shows appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/arc-agi-benchmark.png",
+          "image_source": "rss_content",
+          "published_at": "2026-05-02T13:31:52.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Even the latest AI models make three systematic reasoning errors, ARC-AGI-3 analysis shows",
+          "url": "https://the-decoder.com/even-the-latest-ai-models-make-three-systematic-reasoning-errors-arc-agi-3-analysis-shows",
+          "published_at": "2026-05-02T13:31:52.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "The ARC Prize Foundation analyzed 160 game runs of OpenAI's GPT-5.5 and Anthropic's Opus 4.7 on the ARC-AGI-3 benchmark. Three systematic error patterns explain why both models stay below 1 percent on",
+      "novelty": 0,
+      "trust": 0.74,
+      "score": 0.391
     },
     {
       "id": "4mpubp",
@@ -2735,7 +3075,62 @@
       "one_liner": "Plus: The NSA tests Anthropic’s Mythos Preview to find vulnerabilities, a Finnish teen is charged over the Scattered Spider hacking spree, and more.",
       "novelty": 0,
       "trust": 0.76,
-      "score": 0.394
+      "score": 0.39
+    },
+    {
+      "id": "1cqygp5",
+      "primary": {
+        "id": "1cqygp5",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "xAI's new Custom Voices feature turns a minute of speech into a usable voice clone",
+        "url": "https://the-decoder.com/xais-new-custom-voices-feature-turns-a-minute-of-speech-into-a-usable-voice-clone",
+        "original_url": "https://the-decoder.com/xais-new-custom-voices-feature-turns-a-minute-of-speech-into-a-usable-voice-clone/",
+        "summary": "xAI now lets developers clone their own voices for AI applications. The new \"Custom Voices\" feature builds on the recently launched Grok Speech-to-Text and Text-to-Speech APIs. The article xAI's new Custom Voices feature turns a minute of speech into a usable voice clone appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/xai_gro_clone_voice.png",
+        "image_source": "rss_content",
+        "published_at": "2026-05-02T12:14:46.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1cqygp5",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "xAI's new Custom Voices feature turns a minute of speech into a usable voice clone",
+          "url": "https://the-decoder.com/xais-new-custom-voices-feature-turns-a-minute-of-speech-into-a-usable-voice-clone",
+          "original_url": "https://the-decoder.com/xais-new-custom-voices-feature-turns-a-minute-of-speech-into-a-usable-voice-clone/",
+          "summary": "xAI now lets developers clone their own voices for AI applications. The new \"Custom Voices\" feature builds on the recently launched Grok Speech-to-Text and Text-to-Speech APIs. The article xAI's new Custom Voices feature turns a minute of speech into a usable voice clone appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/xai_gro_clone_voice.png",
+          "image_source": "rss_content",
+          "published_at": "2026-05-02T12:14:46.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "xAI's new Custom Voices feature turns a minute of speech into a usable voice clone",
+          "url": "https://the-decoder.com/xais-new-custom-voices-feature-turns-a-minute-of-speech-into-a-usable-voice-clone",
+          "published_at": "2026-05-02T12:14:46.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "xAI now lets developers clone their own voices for AI applications. The new \"Custom Voices\" feature builds on the recently launched Grok Speech-to-Text and Text-to-Speech APIs. The article xAI's new C",
+      "novelty": 0,
+      "trust": 0.74,
+      "score": 0.389
     },
     {
       "id": "1pcpsqc",
@@ -2787,10 +3182,10 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Nvidia CEO criticizes AI job loss predictions as harmful",
+      "one_liner": "AI scaremongering costs jobs instead of protecting them, says Nvidia CEO Jensen Huang. Talking young people out of future careers, he argues, does real harm to society. The article Nvidia CEO Jensen H",
       "novelty": 0,
       "trust": 0.74,
-      "score": 0.389
+      "score": 0.385
     },
     {
       "id": "rnvydt",
@@ -2842,10 +3237,10 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Elon Musk admits funding OpenAI was a mistake in court",
+      "one_liner": "Elon Musk called himself a \"fool\" in court, warned of a \"Terminator\" future, and admitted that xAI taps OpenAI's models for its own AI training. Week one of Musk's trial against Sam Altman delivered p",
       "novelty": 0,
       "trust": 0.74,
-      "score": 0.387
+      "score": 0.383
     },
     {
       "id": "12qj9qg",
@@ -2895,12 +3290,12 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "company_announcement",
+      "kind": "news",
       "quality": "mixed",
-      "one_liner": "OpenAI enables ad tracking for free ChatGPT users by default",
+      "one_liner": "OpenAI has turned on marketing cookies by default for free ChatGPT users in countries where ads are running. Tracking is automatically active for free accounts but not for paying subscribers. You can ",
       "novelty": 0,
       "trust": 0.74,
-      "score": 0.385
+      "score": 0.381
     },
     {
       "id": "1uefvu5",
@@ -2954,10 +3349,10 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Toy experiment using Pythia-70M with forward-derived fast memory for one-shot recall",
+      "one_liner": "Toy experiment on Pythia-70M memory for recall",
       "novelty": 0,
       "trust": 0.55,
-      "score": 0.367
+      "score": 0.363
     },
     {
       "id": "17c2a2",
@@ -3015,10 +3410,10 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Tinygrad driver testing on Blackwell + M3 Ultra RDMA cluster for MoE speeds",
+      "one_liner": "",
       "novelty": 0,
       "trust": 0.5,
-      "score": 0.355
+      "score": 0.351
     },
     {
       "id": "15kv94z",
@@ -3079,121 +3474,7 @@
       "one_liner": "",
       "novelty": 0,
       "trust": 0.5,
-      "score": 0.352
-    },
-    {
-      "id": "ay4x4p",
-      "primary": {
-        "id": "ay4x4p",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "Implemented TurboQuant and results don’t fully match paper",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t208qv/implemented_turboquant_and_results_dont_fully",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t208qv/implemented_turboquant_and_results_dont_fully/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t208qv/implemented_turboquant_and_results_dont_fully",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "I attempted to implement TurboQuant (arXiv:2504.19874) from scratch over the last few days. Thought I would check something with folks here since my numbers do not match those in the paper. Observations: MSE version performs well (compression & distortion as expected) PROD version: claims in paper exceed 99% correlation my number sits around 95.8% at 4-bit But what’s more interesting: even at this ~95% correlation level, attention quality degrades significantly (only ~67% top-1 accuracy on a simple simulation) My hypothesis: correlation != ranking preservation attention is highly sensitive to",
-        "published_at": "2026-05-02T20:05:02.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "ay4x4p",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "Implemented TurboQuant and results don’t fully match paper",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t208qv/implemented_turboquant_and_results_dont_fully",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t208qv/implemented_turboquant_and_results_dont_fully/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t208qv/implemented_turboquant_and_results_dont_fully",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "I attempted to implement TurboQuant (arXiv:2504.19874) from scratch over the last few days. Thought I would check something with folks here since my numbers do not match those in the paper. Observations: MSE version performs well (compression & distortion as expected) PROD version: claims in paper exceed 99% correlation my number sits around 95.8% at 4-bit But what’s more interesting: even at this ~95% correlation level, attention quality degrades significantly (only ~67% top-1 accuracy on a simple simulation) My hypothesis: correlation != ranking preservation attention is highly sensitive to",
-          "published_at": "2026-05-02T20:05:02.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "Implemented TurboQuant and results don’t fully match paper",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t208qv/implemented_turboquant_and_results_dont_fully",
-          "published_at": "2026-05-02T20:05:02.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t208qv/implemented_turboquant_and_results_dont_fully",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "discussion",
-      "quality": "mixed",
-      "one_liner": "I attempted to implement TurboQuant (arXiv:2504.19874) from scratch over the last few days. Thought I would check something with folks here since my numbers do not match those in the paper. Observatio",
-      "novelty": 0,
-      "trust": 0.5,
-      "score": 0.349
-    },
-    {
-      "id": "bg5cas",
-      "primary": {
-        "id": "bg5cas",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "I BUILT MY FIRST MODEL FROM SCRATCH",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "Sup, I'm Crownelius, I made that popular opus distill dataset. TODAY YOU ARE INTRODUCED TO SHARD a 40m parameter mal-formed LLM. Right now I'm working on a series of tiny LLM's, with a goal to run a coherent model for IoT tasks. I've researched atomic models, and while doing that I came across a project called Compact AI. Since joining them, I've learned a lot and even made my own model from scratch. The model is available here: CompactAI-O[HF Organization] About my model named \"Shard\"-I call it Scamp. submitted by /u/volious-ka [link] [comments]",
-        "published_at": "2026-05-02T19:21:27.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "bg5cas",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "I BUILT MY FIRST MODEL FROM SCRATCH",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "Sup, I'm Crownelius, I made that popular opus distill dataset. TODAY YOU ARE INTRODUCED TO SHARD a 40m parameter mal-formed LLM. Right now I'm working on a series of tiny LLM's, with a goal to run a coherent model for IoT tasks. I've researched atomic models, and while doing that I came across a project called Compact AI. Since joining them, I've learned a lot and even made my own model from scratch. The model is available here: CompactAI-O[HF Organization] About my model named \"Shard\"-I call it Scamp. submitted by /u/volious-ka [link] [comments]",
-          "published_at": "2026-05-02T19:21:27.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "I BUILT MY FIRST MODEL FROM SCRATCH",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch",
-          "published_at": "2026-05-02T19:21:27.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1t1z4cp/i_built_my_first_model_from_scratch",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "model_release",
-      "quality": "mixed",
-      "one_liner": "User shares first 40M-parameter LLM for IoT tasks",
-      "novelty": 0,
-      "trust": 0.5,
-      "score": 0.347
+      "score": 0.348
     }
   ]
 }
