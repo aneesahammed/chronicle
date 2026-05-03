@@ -19,6 +19,7 @@ test("selectTopNewsCandidates filters hype, caps sources, and suppresses near du
     scored({ id: "b1", source_id: "other", kind: "news", quality: "hype", title: "AI changes everything again" }),
     scored({ id: "b2", source_id: "reddit", kind: "discussion", url: "https://old.reddit.com/r/LocalLLaMA/comments/x", title: "What GPU should I buy?" }),
     scored({ id: "b3", source_id: "reddit", kind: "discussion", url: "https://github.com/example/project", score: 0.58, title: "Useful open source inference project" }),
+    scored({ id: "b4", source_id: "other", kind: "news", url: "http://example.com/insecure", title: "Insecure source URL" }),
   ];
 
   const selected = selectTopNewsCandidates(items);
@@ -82,6 +83,34 @@ test("buildTopNews enriches with Jina and Groq without storing raw article text"
   const cacheText = await fs.readFile(cachePath, "utf8");
   assert.equal(cacheText.includes("raw article text"), false);
   assert.match(cacheText, /code security scanner/);
+});
+
+test("buildTopNews falls back to metadata_only when Groq returns malformed JSON", async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "chronicle-top-news-fallback-"));
+  const cachePath = path.join(root, "enrichments.json");
+
+  const topNews = await buildTopNews([scored({
+    id: "fallback",
+    title: "Useful AI launch",
+    summary: "A useful launch summary from the source feed.",
+  })], {
+    now: new Date("2026-05-03T12:00:00.000Z"),
+    cachePath,
+    env: { GROQ_API_KEY: "test-key" },
+    fetchImpl: async () => new Response("Reader text that should be ignored after summary failure."),
+    summarize: async () => {
+      throw new Error("malformed JSON");
+    },
+  });
+
+  assert.equal(topNews.length, 1);
+  assert.equal(topNews[0].enrichment_status, "metadata_only");
+  assert.equal(topNews[0].dek, "Useful one liner.");
+  assert.equal(topNews[0].brief, "A useful launch summary from the source feed.");
+
+  const cache = JSON.parse(await fs.readFile(cachePath, "utf8"));
+  assert.equal(cache.entries["https://example.com/fallback"].status, "failed");
+  assert.equal(cache.entries["https://example.com/fallback"].failure_count, 1);
 });
 
 test("buildTopNews retries stale failures and prunes cache deterministically", async () => {

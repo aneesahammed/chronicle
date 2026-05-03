@@ -176,10 +176,19 @@ export function selectTopNewsCandidates(scored: ScoredCluster[]): ScoredCluster[
 
 function isEligibleTopNews(item: ScoredCluster): boolean {
   if (item.quality === "hype") return false;
+  if (!isHttpsUrl(item.primary.url)) return false;
   if (PREFERRED_KINDS.has(item.kind)) return true;
   if (item.kind !== "discussion") return false;
   if (isDiscussionUrl(item.primary.url)) return false;
   return item.score >= 0.55 || item.novelty >= 0.7;
+}
+
+function isHttpsUrl(value: string): boolean {
+  try {
+    return new URL(value).protocol === "https:";
+  } catch {
+    return false;
+  }
 }
 
 function isDiscussionUrl(value: string): boolean {

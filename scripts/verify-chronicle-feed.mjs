@@ -122,7 +122,7 @@ function validateTopNewsItem(item, index, failures) {
   for (const key of ['cluster_id', 'title', 'url', 'source_name', 'published_at', 'kind', 'dek', 'brief', 'enrichment_status', 'enriched_at']) {
     if (!item[key] || typeof item[key] !== 'string') failures.push(`${label} missing string ${key}`);
   }
-  if (!isHttpUrl(item.url)) failures.push(`${label} url should be http(s): ${item.url}`);
+  if (!isHttpsUrl(item.url)) failures.push(`${label} url should be https: ${item.url}`);
   if (!isIsoDate(item.published_at)) failures.push(`${label} published_at should be an ISO date`);
   if (!isIsoDate(item.enriched_at)) failures.push(`${label} enriched_at should be an ISO date`);
   if (!kinds.has(item.kind)) failures.push(`${label} has invalid kind: ${item.kind}`);

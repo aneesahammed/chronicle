@@ -952,7 +952,7 @@ function isUsableTopNews(item) {
   return item
     && typeof item.title === "string"
     && typeof item.url === "string"
-    && /^https?:\/\//i.test(item.url)
+    && safeHttpsUrl(item.url)
     && typeof item.dek === "string"
     && typeof item.brief === "string";
 }
@@ -1018,6 +1018,10 @@ function topNewsImage(item, className) {
 }
 
 function safeImageUrl(value) {
+  return safeHttpsUrl(value);
+}
+
+function safeHttpsUrl(value) {
   try {
     const url = new URL(String(value || ""));
     return url.protocol === "https:" ? url.toString() : "";
