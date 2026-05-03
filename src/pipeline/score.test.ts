@@ -32,11 +32,22 @@ function makeCluster(): Cluster {
     url: "https://example.com/model",
     original_url: "https://example.com/model",
     published_at: "2026-05-02T00:00:00.000Z",
+    published_at_source: "feed",
+    date_confidence: "high",
   };
   return {
     id: "x",
     primary,
     members: [primary],
+    source_trail: [{
+      source_id: primary.source_id,
+      source_name: primary.source_name,
+      title: primary.title,
+      url: primary.url,
+      published_at: primary.published_at,
+      published_at_source: primary.published_at_source,
+      date_confidence: primary.date_confidence,
+    }],
     also_seen_on: [],
   };
 }

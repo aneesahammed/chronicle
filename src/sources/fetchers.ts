@@ -1,7 +1,16 @@
 import Parser from "rss-parser";
 import { XMLParser } from "fast-xml-parser";
 import { canonicalizeUrl, urlHash } from "../pipeline/canonicalize.ts";
-import type { FetchResult, RawItem, Registry, SourceConfig, SourceFetchFailure } from "../types.ts";
+import type {
+  DateConfidence,
+  FetchResult,
+  PublishedAtSource,
+  RawItem,
+  Registry,
+  SourceConfig,
+  SourceFetchFailure,
+  SourceHealth,
+} from "../types.ts";
 
 const TIMEOUT_MS = 20_000;
 const SITEMAP_PAGE_TIMEOUT_MS = 8_000;
@@ -9,6 +18,7 @@ const USER_AGENT = "Chronicle/0.1 by aneesahammed (+https://github.com/aneesaham
 const SITEMAP_CHILD_LIMIT = 25;
 const SITEMAP_CANDIDATE_MULTIPLIER = 8;
 const SITEMAP_MIN_CANDIDATES = 40;
+const UNKNOWN_PUBLISHED_AT = "1970-01-01T00:00:00.000Z";
 // rss-parser delegates to xml2js/sax-js, which does not dereference external
 // entities. We still strip HTML from summaries before they enter the feed.
 const rss = new Parser({ timeout: TIMEOUT_MS });
@@ -24,7 +34,9 @@ async function fetchRss(s: SourceConfig, kw: string[]): Promise<RawItem[]> {
       title: it.title ?? "",
       url: it.link ?? "",
       summary: stripHtml(it.contentSnippet ?? it.content ?? ""),
-      published_at: it.isoDate ?? it.pubDate ?? new Date().toISOString(),
+      published_at: it.isoDate ?? it.pubDate ?? UNKNOWN_PUBLISHED_AT,
+      published_at_source: it.isoDate || it.pubDate ? "feed" : "generated_fallback",
+      date_confidence: it.isoDate || it.pubDate ? "high" : "low",
       discussion_url: isDiscussionFeed ? it.link ?? "" : undefined,
       discussion_source: isDiscussionFeed ? s.name : undefined,
     }))
@@ -47,7 +59,9 @@ async function fetchHN(s: SourceConfig, kw: string[]): Promise<RawItem[]> {
       title: h.title ?? "",
       url,
       summary: "",
-      published_at: h.created_at ?? new Date().toISOString(),
+      published_at: h.created_at ?? UNKNOWN_PUBLISHED_AT,
+      published_at_source: h.created_at ? "api" : "generated_fallback",
+      date_confidence: h.created_at ? "high" : "low",
       discussion_url: discussion,
       discussion_source: "Hacker News",
       engagement: { score: h.points ?? 0, comments: h.num_comments ?? 0 },
@@ -82,6 +96,8 @@ async function fetchReddit(s: SourceConfig): Promise<RawItem[]> {
       url,
       summary: p.selftext ? p.selftext.slice(0, 400) : "",
       published_at: new Date((p.created_utc ?? 0) * 1000).toISOString(),
+      published_at_source: p.created_utc ? "api" : "generated_fallback",
+      date_confidence: p.created_utc ? "high" : "low",
       discussion_url: discussion,
       discussion_source: s.name,
       engagement: { score: p.score, comments: p.num_comments },
@@ -114,7 +130,9 @@ async function fetchHfPapers(s: SourceConfig): Promise<RawItem[]> {
       title: p.title ?? p.paper?.title ?? "",
       url,
       summary: p.paper?.summary ?? "",
-      published_at: p.publishedAt ?? new Date().toISOString(),
+      published_at: p.publishedAt ?? UNKNOWN_PUBLISHED_AT,
+      published_at_source: p.publishedAt ? "api" : "generated_fallback",
+      date_confidence: p.publishedAt ? "high" : "low",
       engagement: { score: p.paper?.upvotes ?? 0 },
     })!;
   });
@@ -128,19 +146,25 @@ interface HfPaper {
 // ---- HuggingFace trending models -----------------------------------------
 async function fetchHfModels(s: SourceConfig): Promise<RawItem[]> {
   const data = await fetchJson<HfModel[]>(s.url);
-  return data.slice(0, s.limit).map((m) => normalize(s, {
-    title: `${m.id} (${m.downloads ?? 0} downloads, ${m.likes ?? 0} likes)`,
-    url: `https://huggingface.co/${m.id}`,
-    summary: (m.tags ?? []).slice(0, 6).join(", "),
-    published_at: m.lastModified ?? new Date().toISOString(),
-    engagement: { score: m.likes ?? 0 },
-  })!);
+  return data.slice(0, s.limit).map((m) => {
+    const published = m.createdAt ?? m.lastModified;
+    return normalize(s, {
+      title: `${m.id} (${m.downloads ?? 0} downloads, ${m.likes ?? 0} likes)`,
+      url: `https://huggingface.co/${m.id}`,
+      summary: (m.tags ?? []).slice(0, 6).join(", "),
+      published_at: published ?? UNKNOWN_PUBLISHED_AT,
+      published_at_source: m.createdAt ? "api" : m.lastModified ? "api_last_modified" : "generated_fallback",
+      date_confidence: m.createdAt ? "high" : m.lastModified ? "medium" : "low",
+      engagement: { score: m.likes ?? 0 },
+    })!;
+  });
 }
 interface HfModel {
   id: string;
   downloads?: number;
   likes?: number;
   lastModified?: string;
+  createdAt?: string;
   tags?: string[];
 }
 
@@ -159,12 +183,22 @@ async function fetchSitemap(s: SourceConfig, kw: string[]): Promise<RawItem[]> {
   }));
 
   return pages
-    .map(({ entry, details }) => normalize(s, {
-      title: titleWithPrefix(details.title ?? titleFromUrl(entry.loc), s.title_prefix),
-      url: entry.loc,
-      summary: details.description ?? "",
-      published_at: validDateOrFallback(details.published_at ?? entry.lastmod),
-    }))
+    .map(({ entry, details }) => {
+      const hasPageDate = Boolean(details.published_at);
+      const hasSitemapDate = Boolean(entry.lastmod);
+      return normalize(s, {
+        title: titleWithPrefix(details.title ?? titleFromUrl(entry.loc), s.title_prefix),
+        url: entry.loc,
+        summary: details.description ?? "",
+        published_at: validDateOrFallback(details.published_at ?? entry.lastmod),
+        published_at_source: hasPageDate
+          ? "page_metadata"
+          : hasSitemapDate
+            ? "sitemap_lastmod"
+            : "generated_fallback",
+        date_confidence: hasPageDate ? "high" : hasSitemapDate ? "medium" : "low",
+      });
+    })
     .filter(Boolean)
     .sort((a, b) => timestamp((b as RawItem).published_at) - timestamp((a as RawItem).published_at))
     .slice(0, s.limit)
@@ -246,6 +280,8 @@ function normalize(
     url: string;
     summary?: string;
     published_at: string;
+    published_at_source: PublishedAtSource;
+    date_confidence: DateConfidence;
     discussion_url?: string;
     discussion_source?: string;
     engagement?: RawItem["engagement"];
@@ -268,6 +304,8 @@ function normalize(
     discussion_source: discussion ? raw.discussion_source : undefined,
     summary: raw.summary?.trim() || undefined,
     published_at: raw.published_at,
+    published_at_source: raw.published_at_source,
+    date_confidence: raw.date_confidence,
     engagement: raw.engagement,
   };
 }
@@ -463,9 +501,9 @@ function titleWord(word: string): string {
 }
 
 function validDateOrFallback(value?: string): string {
-  if (!value) return new Date().toISOString();
+  if (!value) return UNKNOWN_PUBLISHED_AT;
   const ms = Date.parse(value);
-  return Number.isFinite(ms) ? new Date(ms).toISOString() : new Date().toISOString();
+  return Number.isFinite(ms) ? new Date(ms).toISOString() : UNKNOWN_PUBLISHED_AT;
 }
 
 function timestamp(value?: string): number {
@@ -493,30 +531,57 @@ async function mapLimit<T, U>(
 
 // ---- Public API -----------------------------------------------------------
 export async function fetchAll(reg: Registry): Promise<FetchResult> {
-  const failed_sources: SourceFetchFailure[] = [];
   const tasks = reg.sources.map(async (s) => {
     try {
+      let items: RawItem[] = [];
       switch (s.type) {
-        case "rss":         return await fetchRss(s, reg.hn_ai_keywords);
-        case "hn_algolia":  return await fetchHN(s, reg.hn_ai_keywords);
-        case "reddit":      return await fetchReddit(s);
-        case "hf_papers":   return await fetchHfPapers(s);
-        case "hf_models":   return await fetchHfModels(s);
-        case "sitemap":     return await fetchSitemap(s, reg.hn_ai_keywords);
+        case "rss":         items = await fetchRss(s, reg.hn_ai_keywords); break;
+        case "hn_algolia":  items = await fetchHN(s, reg.hn_ai_keywords); break;
+        case "reddit":      items = await fetchReddit(s); break;
+        case "hf_papers":   items = await fetchHfPapers(s); break;
+        case "hf_models":   items = await fetchHfModels(s); break;
+        case "sitemap":     items = await fetchSitemap(s, reg.hn_ai_keywords); break;
       }
+      return {
+        items,
+        failed_source: null,
+        health: sourceHealth(s, "ok", items.length),
+      };
     } catch (e) {
       const message = (e as Error).message;
       console.warn(`[fetch] ${s.id} failed: ${message}`);
-      failed_sources.push({ id: s.id, name: s.name, message });
-      return [];
+      return {
+        items: [],
+        failed_source: { id: s.id, name: s.name, message },
+        health: sourceHealth(s, "failed", 0, message),
+      };
     }
   });
   const results = await Promise.all(tasks);
+  const failed_sources = results
+    .map((result) => result.failed_source)
+    .filter(Boolean) as SourceFetchFailure[];
   return {
-    items: results.flat(),
+    items: results.flatMap((result) => result.items),
     source_total: reg.sources.length,
     source_ok: reg.sources.length - failed_sources.length,
     source_failed: failed_sources.length,
     failed_sources,
+    source_health: results.map((result) => result.health),
+  };
+}
+
+function sourceHealth(
+  source: SourceConfig,
+  status: SourceHealth["status"],
+  fetchedCount: number,
+  message?: string,
+): SourceHealth {
+  return {
+    id: source.id,
+    name: source.name,
+    status,
+    fetched_count: fetchedCount,
+    ...(message ? { message } : {}),
   };
 }

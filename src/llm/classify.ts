@@ -159,11 +159,79 @@ interface ClassifiedItem {
 }
 
 function fallback(c: Cluster): Classification {
+  const kind = c.primary.kind_hint ?? "unknown";
   return {
-    kind: c.primary.kind_hint ?? "unknown",
-    quality: "mixed",
-    one_liner: c.primary.title.slice(0, 140),
+    kind,
+    quality: fallbackQuality(c, kind),
+    one_liner: fallbackOneLiner(c),
   };
+}
+
+function fallbackOneLiner(c: Cluster): string {
+  const summary = String(c.primary.summary ?? "").replace(/\s+/g, " ").trim();
+  if (!summary) return "";
+  const title = normalizeText(c.primary.title);
+  const line = normalizeText(summary);
+  if (line === title || line.startsWith(title)) return "";
+  if (isWeakSummary(line)) return "";
+  return decodeText(summary).slice(0, 200);
+}
+
+function fallbackQuality(c: Cluster, kind: Kind): Quality {
+  const title = normalizeText(c.primary.title);
+  const summary = normalizeText(c.primary.summary ?? "");
+  const text = `${title} ${summary}`;
+
+  if (kind === "discussion" && isLowSignalDiscussion(title, text)) return "hype";
+  if (kind === "paper" || kind === "tutorial" || kind === "tool") return "signal";
+  return "mixed";
+}
+
+function isLowSignalDiscussion(title: string, text: string): boolean {
+  if (title.length < 18) return true;
+  const lowSignalPatterns = [
+    /\bbruh\b/,
+    /\bhelp\b/,
+    /\bquestion\b/,
+    /\bwhat'?s your\b/,
+    /\bwhat is the best\b/,
+    /\bbest .* for\b/,
+    /\blooking for\b/,
+    /\bneed advice\b/,
+    /\brecommend(?:ation|ed|s)?\b/,
+    /\bshould i\b/,
+    /\bdo you think\b/,
+    /\bcan someone\b/,
+    /\banyone (?:know|tried|using)\b/,
+    /\bhow do i\b/,
+    /\bis there\b/,
+    /\bi wanted to hear\b/,
+    /\bfeedback on\b/,
+    /\bworth it\b/,
+  ];
+  return lowSignalPatterns.some((pattern) => pattern.test(text));
+}
+
+function normalizeText(value: string): string {
+  return value.toLowerCase().replace(/\s+/g, " ").trim();
+}
+
+function isWeakSummary(value: string): boolean {
+  return (
+    value === "comments" ||
+    value.includes("/images/") ||
+    value.includes("[link] [comments]") ||
+    value.includes("submitted by /u/")
+  );
+}
+
+function decodeText(value: string): string {
+  return value
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;|&#x27;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">");
 }
 
 function isKind(k: string): k is Kind {

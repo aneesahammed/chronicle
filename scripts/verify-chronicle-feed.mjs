@@ -17,6 +17,15 @@ const kinds = new Set([
 const qualities = new Set(['signal', 'mixed', 'hype']);
 const refreshStatuses = new Set(['ok', 'partial', 'failed']);
 const classificationModes = new Set(['llm', 'partial', 'fallback']);
+const publishedAtSources = new Set([
+  'feed',
+  'api',
+  'api_last_modified',
+  'page_metadata',
+  'sitemap_lastmod',
+  'generated_fallback',
+]);
+const dateConfidences = new Set(['high', 'medium', 'low']);
 
 export function validateChronicleFeedPath(feedPath) {
   const failures = [];
@@ -50,6 +59,7 @@ export function validateChronicleFeed(feed) {
     'source_ok',
     'source_failed',
     'failed_sources',
+    'source_health',
     'count',
     'clusters',
   ];
@@ -72,6 +82,11 @@ export function validateChronicleFeed(feed) {
     if (!Number.isFinite(feed[key])) failures.push(`Chronicle ${key} should be numeric`);
   }
   if (!Array.isArray(feed.failed_sources)) failures.push('Chronicle failed_sources should be an array');
+  if (!Array.isArray(feed.source_health)) {
+    failures.push('Chronicle source_health should be an array');
+  } else {
+    feed.source_health.forEach((source, index) => validateSourceHealth(source, index, failures));
+  }
   if (!Array.isArray(feed.clusters)) {
     failures.push('Chronicle feed clusters should be an array');
     return failures;
@@ -103,7 +118,9 @@ function validateCluster(cluster, index, failures) {
   }
   if (!Array.isArray(cluster.members)) failures.push(`${label} members should be an array`);
   if (!Array.isArray(cluster.also_seen_on)) failures.push(`${label} also_seen_on should be an array`);
+  if (!Array.isArray(cluster.source_trail)) failures.push(`${label} source_trail should be an array`);
   validateRawItem(cluster.primary, `${label} primary`, failures);
+  cluster.source_trail?.forEach((source, sourceIndex) => validateSourceTrailItem(source, `${label} source_trail ${sourceIndex}`, failures));
 }
 
 function validateRawItem(item, label, failures) {
@@ -117,7 +134,40 @@ function validateRawItem(item, label, failures) {
   }
   if (!isHttpUrl(item.url)) failures.push(`${label} url should be http(s): ${item.url}`);
   if (!isIsoDate(item.published_at)) failures.push(`${label} published_at should be an ISO date`);
+  if (!publishedAtSources.has(item.published_at_source)) failures.push(`${label} has invalid published_at_source: ${item.published_at_source}`);
+  if (!dateConfidences.has(item.date_confidence)) failures.push(`${label} has invalid date_confidence: ${item.date_confidence}`);
   if (!isUnitNumber(item.trust)) failures.push(`${label} trust should be a number from 0 to 1`);
+}
+
+function validateSourceTrailItem(source, label, failures) {
+  if (!source || typeof source !== 'object' || Array.isArray(source)) {
+    failures.push(`${label} should be an object`);
+    return;
+  }
+  for (const key of ['source_id', 'source_name', 'title', 'url', 'published_at']) {
+    if (!source[key] || typeof source[key] !== 'string') failures.push(`${label} missing string ${key}`);
+  }
+  if (!isHttpUrl(source.url)) failures.push(`${label} url should be http(s): ${source.url}`);
+  if (!isIsoDate(source.published_at)) failures.push(`${label} published_at should be an ISO date`);
+  if (!publishedAtSources.has(source.published_at_source)) failures.push(`${label} has invalid published_at_source: ${source.published_at_source}`);
+  if (!dateConfidences.has(source.date_confidence)) failures.push(`${label} has invalid date_confidence: ${source.date_confidence}`);
+}
+
+function validateSourceHealth(source, index, failures) {
+  const label = `Chronicle source_health ${index}`;
+  if (!source || typeof source !== 'object' || Array.isArray(source)) {
+    failures.push(`${label} should be an object`);
+    return;
+  }
+  for (const key of ['id', 'name', 'status']) {
+    if (!source[key] || typeof source[key] !== 'string') failures.push(`${label} missing string ${key}`);
+  }
+  if (!['ok', 'failed'].includes(source.status)) failures.push(`${label} has invalid status: ${source.status}`);
+  for (const key of ['fetched_count', 'fresh_count', 'stale_count']) {
+    if (source[key] !== undefined && (!Number.isFinite(source[key]) || source[key] < 0)) {
+      failures.push(`${label} ${key} should be a non-negative number`);
+    }
+  }
 }
 
 function isUnitNumber(value) {

@@ -106,6 +106,93 @@ sources:
     trust: 0.78
     limit: 10
 
+  # ── Reporting / broader tech signal ─────────────────────────────────────
+  - id: techcrunch_ai
+    name: TechCrunch AI
+    type: rss
+    url: https://techcrunch.com/category/artificial-intelligence/feed/
+    trust: 0.72
+    kind_hint: news
+    limit: 12
+
+  - id: the_decoder
+    name: The Decoder
+    type: rss
+    url: https://the-decoder.com/feed/
+    trust: 0.74
+    kind_hint: news
+    ai_filter: true
+    limit: 10
+
+  - id: mit_tech_review_ai
+    name: MIT Technology Review AI
+    type: rss
+    url: https://www.technologyreview.com/topic/artificial-intelligence/feed
+    trust: 0.82
+    kind_hint: news
+    limit: 10
+
+  - id: ars_ai
+    name: Ars Technica AI
+    type: rss
+    url: https://arstechnica.com/ai/feed/
+    trust: 0.78
+    kind_hint: news
+    limit: 10
+
+  - id: infoq_ai
+    name: InfoQ AI/ML/Data
+    type: rss
+    url: https://feed.infoq.com/ai-ml-data-eng/
+    trust: 0.78
+    kind_hint: tutorial
+    ai_filter: true
+    limit: 10
+
+  - id: stackoverflow_blog
+    name: Stack Overflow Blog
+    type: rss
+    url: https://stackoverflow.blog/feed/
+    trust: 0.72
+    kind_hint: opinion
+    ai_filter: true
+    limit: 10
+
+  - id: the_verge_ai
+    name: The Verge AI
+    type: rss
+    url: https://www.theverge.com/rss/ai-artificial-intelligence/index.xml
+    trust: 0.68
+    kind_hint: news
+    ai_filter: true
+    limit: 10
+
+  - id: wired_ai
+    name: WIRED AI
+    type: rss
+    url: https://www.wired.com/feed/tag/ai/latest/rss
+    trust: 0.76
+    kind_hint: news
+    limit: 10
+
+  - id: nine_to_five_google_ai
+    name: 9to5Google AI
+    type: rss
+    url: https://9to5google.com/guides/ai/feed/
+    trust: 0.62
+    kind_hint: news
+    ai_filter: true
+    limit: 10
+
+  - id: product_hunt
+    name: Product Hunt
+    type: rss
+    url: https://www.producthunt.com/feed
+    trust: 0.50
+    kind_hint: tool
+    ai_filter: true
+    limit: 20
+
   # ── Discussion / front pages ────────────────────────────────────────────
   - id: hn_ai
     name: Hacker News (AI-filtered)

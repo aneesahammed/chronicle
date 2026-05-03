@@ -18,6 +18,14 @@ export type Kind =
 export type Quality = "signal" | "mixed" | "hype";
 export type RefreshStatus = "ok" | "partial" | "failed";
 export type ClassificationMode = "llm" | "partial" | "fallback";
+export type PublishedAtSource =
+  | "feed"
+  | "api"
+  | "api_last_modified"
+  | "page_metadata"
+  | "sitemap_lastmod"
+  | "generated_fallback";
+export type DateConfidence = "high" | "medium" | "low";
 
 export interface SourceConfig {
   id: string;
@@ -51,6 +59,8 @@ export interface RawItem {
   discussion_source?: string;
   summary?: string;
   published_at: string;   // ISO
+  published_at_source: PublishedAtSource;
+  date_confidence: DateConfidence;
   // Source-native engagement signals, optional. Used as a weak prior.
   engagement?: {
     score?: number;       // upvotes / points
@@ -62,12 +72,29 @@ export interface Cluster {
   id: string;             // hash of primary item id
   primary: RawItem;       // highest-trust representative
   members: RawItem[];     // all items including primary
+  source_trail: SourceTrailItem[];
   also_seen_on: {
     source_name: string;
+    title: string;
     url: string;
+    published_at: string;
+    published_at_source: PublishedAtSource;
+    date_confidence: DateConfidence;
     discussion_url?: string;
     discussion_source?: string;
   }[];
+}
+
+export interface SourceTrailItem {
+  source_id: string;
+  source_name: string;
+  title: string;
+  url: string;
+  published_at: string;
+  published_at_source: PublishedAtSource;
+  date_confidence: DateConfidence;
+  discussion_url?: string;
+  discussion_source?: string;
 }
 
 export interface ScoredCluster extends Cluster {
@@ -89,6 +116,7 @@ export interface FeedFile {
   source_ok: number;
   source_failed: number;
   failed_sources: SourceFetchFailure[];
+  source_health: SourceHealth[];
   count: number;
   clusters: ScoredCluster[];
 }
@@ -105,6 +133,19 @@ export interface FetchResult {
   source_ok: number;
   source_failed: number;
   failed_sources: SourceFetchFailure[];
+  source_health: SourceHealth[];
+}
+
+export interface SourceHealth {
+  id: string;
+  name: string;
+  status: "ok" | "failed";
+  fetched_count: number;
+  fresh_count?: number;
+  stale_count?: number;
+  newest_published_at?: string;
+  oldest_published_at?: string;
+  message?: string;
 }
 
 export interface HistoryEntry {

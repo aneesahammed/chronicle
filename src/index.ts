@@ -9,7 +9,7 @@ import {
 } from "./pipeline/novelty.ts";
 import { classifyClusters } from "./llm/classify.ts";
 import { scoreCluster } from "./pipeline/score.ts";
-import type { FeedFile, Registry } from "./types.ts";
+import type { FeedFile, Registry, SourceHealth } from "./types.ts";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -18,6 +18,7 @@ const PUBLIC_DIR = path.join(ROOT, "public");
 const DATA_DIR = path.join(ROOT, "data");
 const FEED_OUT = path.join(PUBLIC_DIR, "feed.json");
 const HISTORY_OUT = path.join(DATA_DIR, "history.json");
+const SITE_URL = "https://chronicle.tinycrafts.ai/";
 
 const WINDOW_HOURS = Number(process.env.WINDOW_HOURS ?? "36");
 const MAX_OUTPUT = Number(process.env.MAX_OUTPUT ?? "60");
@@ -60,6 +61,7 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
   const fresh = items.filter(
     (it) => new Date(it.published_at).getTime() >= cutoff,
   );
+  const sourceHealth = enrichSourceHealth(fetched.source_health, items, cutoff);
   console.log(`[window] ${fresh.length} items within ${windowHours}h`);
 
   // 3. Cluster
@@ -76,7 +78,7 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
     await preservePreviousFeed(previous, feedOut, publicDir, {
       now,
       windowHours,
-      fetched,
+      fetched: { ...fetched, source_health: sourceHealth },
       classificationMode: previous.classification_mode ?? "fallback",
       reason: "refresh produced zero clusters",
     });
@@ -86,8 +88,9 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
   // 6. Score & rank
   const scored = clusters
     .map((c, i) => scoreCluster(c, cls.items[i], novelty(c.primary.title, history, now), now))
-    // Drop hard hype unless it's somehow novel + cluster-confirmed
-    .filter((s) => !(s.quality === "hype" && s.score < 0.4))
+    // A single source can be fresh and still be low-signal. Keep hype only when
+    // another source corroborates the cluster.
+    .filter((s) => !(s.quality === "hype" && s.members.length < 2))
     .sort((a, b) => b.score - a.score)
     .slice(0, maxOutput);
 
@@ -97,7 +100,7 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
     await preservePreviousFeed(previous, feedOut, publicDir, {
       now,
       windowHours,
-      fetched,
+      fetched: { ...fetched, source_health: sourceHealth },
       classificationMode: cls.mode,
       reason: "refresh produced zero scored items",
     });
@@ -120,12 +123,16 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
     source_ok: fetched.source_ok,
     source_failed: fetched.source_failed,
     failed_sources: fetched.failed_sources,
+    source_health: sourceHealth,
     count: scored.length,
     clusters: scored,
   };
   await fs.mkdir(publicDir, { recursive: true });
   await fs.writeFile(feedOut, JSON.stringify(feed, null, 2));
   console.log(`[write] ${feedOut}`);
+  if (feed.refresh_status !== "failed") {
+    await writeArchiveOutputs(publicDir, feed);
+  }
 
   // 8. Update history (using the *clustered, classified* items, not the
   //    final filtered output, so we don't re-surface a hype item tomorrow)
@@ -166,6 +173,7 @@ async function preservePreviousFeed(
       source_ok: number;
       source_failed: number;
       failed_sources: FeedFile["failed_sources"];
+      source_health?: SourceHealth[];
     };
     classificationMode: FeedFile["classification_mode"];
     reason: string;
@@ -182,10 +190,151 @@ async function preservePreviousFeed(
     source_ok: options.fetched.source_ok,
     source_failed: options.fetched.source_failed,
     failed_sources: options.fetched.failed_sources,
+    source_health: options.fetched.source_health ?? [],
     count: previousFeed.clusters.length,
     clusters: previousFeed.clusters,
   };
   await fs.mkdir(publicDir, { recursive: true });
   await fs.writeFile(feedOut, JSON.stringify(preserved, null, 2));
   console.warn(`[write] preserved previous feed because ${options.reason}`);
+}
+
+function enrichSourceHealth(
+  health: SourceHealth[],
+  items: { source_id: string; published_at: string }[],
+  cutoff: number,
+): SourceHealth[] {
+  const bySource = new Map<string, { fresh: number; stale: number; dates: string[] }>();
+  for (const item of items) {
+    const bucket = bySource.get(item.source_id) ?? { fresh: 0, stale: 0, dates: [] };
+    const published = Date.parse(item.published_at);
+    if (Number.isFinite(published)) {
+      bucket.dates.push(new Date(published).toISOString());
+      if (published >= cutoff) bucket.fresh++;
+      else bucket.stale++;
+    } else {
+      bucket.stale++;
+    }
+    bySource.set(item.source_id, bucket);
+  }
+
+  return health.map((source) => {
+    const stats = bySource.get(source.id) ?? { fresh: 0, stale: 0, dates: [] };
+    const sortedDates = [...stats.dates].sort();
+    return {
+      ...source,
+      fresh_count: stats.fresh,
+      stale_count: stats.stale,
+      oldest_published_at: sortedDates[0],
+      newest_published_at: sortedDates.at(-1),
+    };
+  });
+}
+
+interface ArchiveIndex {
+  generated_at: string;
+  days: ArchiveDay[];
+}
+
+interface ArchiveDay {
+  date: string;
+  generated_at: string;
+  count: number;
+  title: string;
+  path: string;
+  feed_path: string;
+}
+
+async function writeArchiveOutputs(publicDir: string, feed: FeedFile) {
+  const date = feed.generated_at.slice(0, 10);
+  const dailyDir = path.join(publicDir, "daily");
+  const dayDir = path.join(dailyDir, date);
+  const dayFeedPath = path.join(dayDir, "feed.json");
+  await fs.mkdir(dayDir, { recursive: true });
+  await fs.writeFile(dayFeedPath, JSON.stringify(feed, null, 2));
+  console.log(`[write] ${dayFeedPath}`);
+
+  await copyArchiveShell(publicDir, dailyDir);
+  await copyArchiveShell(publicDir, dayDir);
+
+  const indexPath = path.join(dailyDir, "index.json");
+  const previous = await readArchiveIndex(indexPath);
+  const day: ArchiveDay = {
+    date,
+    generated_at: feed.generated_at,
+    count: feed.count,
+    title: feed.clusters[0]?.primary.title ?? "Chronicle",
+    path: `daily/${date}/`,
+    feed_path: `daily/${date}/feed.json`,
+  };
+  const days = [day, ...previous.days.filter((entry) => entry.date !== date)]
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, 120);
+  const nextIndex: ArchiveIndex = { generated_at: feed.generated_at, days };
+  await fs.mkdir(dailyDir, { recursive: true });
+  await fs.writeFile(indexPath, JSON.stringify(nextIndex, null, 2));
+  console.log(`[write] ${indexPath}`);
+  await writeRobotsAndSitemap(publicDir, days, feed.generated_at);
+}
+
+async function readArchiveIndex(indexPath: string): Promise<ArchiveIndex> {
+  try {
+    const parsed = JSON.parse(await fs.readFile(indexPath, "utf8")) as ArchiveIndex;
+    return {
+      generated_at: parsed.generated_at,
+      days: Array.isArray(parsed.days) ? parsed.days : [],
+    };
+  } catch {
+    return { generated_at: "", days: [] };
+  }
+}
+
+async function copyArchiveShell(publicDir: string, targetDir: string) {
+  try {
+    const html = await fs.readFile(path.join(publicDir, "index.html"), "utf8");
+    await fs.mkdir(targetDir, { recursive: true });
+    await fs.writeFile(path.join(targetDir, "index.html"), html);
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
+  }
+}
+
+async function writeRobotsAndSitemap(publicDir: string, days: ArchiveDay[], generatedAt: string) {
+  const robots = [
+    "User-agent: *",
+    "Allow: /",
+    `Sitemap: ${SITE_URL}sitemap.xml`,
+    "",
+  ].join("\n");
+  await fs.writeFile(path.join(publicDir, "robots.txt"), robots);
+
+  const urls = [
+    { loc: SITE_URL, lastmod: generatedAt },
+    { loc: `${SITE_URL}daily/`, lastmod: generatedAt },
+    ...days.map((day) => ({
+      loc: `${SITE_URL}${day.path}`,
+      lastmod: day.generated_at,
+    })),
+  ];
+  const sitemap = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...urls.map((url) => [
+      "  <url>",
+      `    <loc>${escapeXml(url.loc)}</loc>`,
+      `    <lastmod>${escapeXml(url.lastmod)}</lastmod>`,
+      "  </url>",
+    ].join("\n")),
+    "</urlset>",
+    "",
+  ].join("\n");
+  await fs.writeFile(path.join(publicDir, "sitemap.xml"), sitemap);
+}
+
+function escapeXml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 }

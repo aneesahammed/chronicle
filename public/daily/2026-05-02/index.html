@@ -757,11 +757,8 @@ function renderItem(item) {
   h3.appendChild(link(item.primary?.url, item.primary?.title || "Untitled item"));
   article.appendChild(h3);
 
-  const title = item.primary?.title || "";
-  const oneLiner = readableLine(item, title);
-  if (oneLiner) {
-    article.appendChild(node("p", "item-line", oneLiner));
-  }
+  const oneLiner = item.one_liner || item.primary?.summary;
+  if (oneLiner) article.appendChild(node("p", "item-line", oneLiner));
 
   const meta = node("div", "item-meta");
   meta.append(node("span", "source", item.primary?.source_name || "Unknown source"));
@@ -894,33 +891,6 @@ function toggleSet(set, value) {
 }
 function csv(value) {
   return value ? value.split(",").map((v) => v.trim()).filter(Boolean) : [];
-}
-function normalizeText(value) {
-  return String(value || "").toLowerCase().replace(/\s+/g, " ").trim();
-}
-function readableLine(item, title) {
-  const line = item.one_liner || item.primary?.summary || "";
-  const titleText = normalizeText(title);
-  const lineText = normalizeText(line);
-  if (!lineText || lineText === titleText) return "";
-  if (titleText && lineText.startsWith(titleText)) return "";
-  if (titleText.length > 40 && lineText.length > 40 && titleText.startsWith(lineText.slice(0, 80))) return "";
-  if (isWeakLine(lineText)) return "";
-  return decodeText(line);
-}
-function isWeakLine(value) {
-  return value === "comments"
-    || value.includes("/images/")
-    || value.includes("[link] [comments]")
-    || value.includes("submitted by /u/");
-}
-function decodeText(value) {
-  return String(value || "")
-    .replace(/&amp;/g, "&")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;|&#x27;/g, "'")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">");
 }
 function node(tag, className, textContent) {
   const element = document.createElement(tag);

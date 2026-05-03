@@ -116,6 +116,53 @@ hn_ai_keywords:
   assert.deepEqual(feed.clusters, previous.clusters);
 });
 
+test("runPipeline writes source health and a successful daily archive", async () => {
+  globalThis.fetch = async () => Response.json([{
+    id: "org/model",
+    downloads: 100,
+    likes: 5,
+    lastModified: "2026-05-02T05:00:00.000Z",
+  }]);
+
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "chronicle-archive-"));
+  const publicDir = path.join(root, "public");
+  const dataDir = path.join(root, "data");
+  const registryPath = path.join(root, "registry.yaml");
+  await fs.mkdir(publicDir, { recursive: true });
+  await fs.writeFile(path.join(publicDir, "index.html"), "<!doctype html><title>Chronicle</title>");
+  await fs.writeFile(registryPath, `
+sources:
+  - id: models
+    name: Models
+    type: hf_models
+    url: https://source.example.test/models
+    trust: 0.5
+    limit: 5
+hn_ai_keywords:
+  - ai
+`);
+
+  await runPipeline({
+    registryPath,
+    publicDir,
+    dataDir,
+    now: new Date("2026-05-02T06:00:00.000Z"),
+    env: {},
+  });
+
+  const feed = JSON.parse(await fs.readFile(path.join(publicDir, "feed.json"), "utf8"));
+  assert.equal(feed.source_health[0].fresh_count, 1);
+  assert.equal(feed.clusters[0].primary.published_at_source, "api_last_modified");
+  assert.equal(feed.clusters[0].source_trail.length, 1);
+
+  const archived = JSON.parse(await fs.readFile(path.join(publicDir, "daily/2026-05-02/feed.json"), "utf8"));
+  assert.equal(archived.generated_at, feed.generated_at);
+  const archiveIndex = JSON.parse(await fs.readFile(path.join(publicDir, "daily/index.json"), "utf8"));
+  assert.equal(archiveIndex.days[0].date, "2026-05-02");
+  assert.match(await fs.readFile(path.join(publicDir, "sitemap.xml"), "utf8"), /chronicle\.tinycrafts\.ai\/daily\/2026-05-02\//);
+  assert.match(await fs.readFile(path.join(publicDir, "robots.txt"), "utf8"), /Sitemap:/);
+});
+
 test("runPipeline excludes old sitemap articles even when sitemap lastmod is fresh", async () => {
   globalThis.fetch = async (input) => {
     const url = String(input);

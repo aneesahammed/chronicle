@@ -59,11 +59,31 @@ function makeCluster(members: RawItem[]): Cluster {
     .slice(1)
     .map((m) => ({
       source_name: m.source_name,
+      title: m.title,
       url: m.url,
+      published_at: m.published_at,
+      published_at_source: m.published_at_source,
+      date_confidence: m.date_confidence,
       discussion_url: m.discussion_url,
       discussion_source: m.discussion_source,
     }));
-  return { id: primary.id, primary, members: sorted, also_seen_on };
+  return {
+    id: primary.id,
+    primary,
+    members: sorted,
+    source_trail: sorted.map((m) => ({
+      source_id: m.source_id,
+      source_name: m.source_name,
+      title: m.title,
+      url: m.url,
+      published_at: m.published_at,
+      published_at_source: m.published_at_source,
+      date_confidence: m.date_confidence,
+      discussion_url: m.discussion_url,
+      discussion_source: m.discussion_source,
+    })),
+    also_seen_on,
+  };
 }
 
 function mergeClusters(a: Cluster, b: Cluster): Cluster {

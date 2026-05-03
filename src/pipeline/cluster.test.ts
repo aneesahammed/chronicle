@@ -48,5 +48,7 @@ function item(
     url,
     original_url: url,
     published_at: "2026-05-02T00:00:00.000Z",
+    published_at_source: "feed",
+    date_confidence: "high",
   };
 }
