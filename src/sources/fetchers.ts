@@ -88,7 +88,7 @@ async function fetchYoutubeRss(s: SourceConfig, kw: string[]): Promise<RawItem[]
   const feed = await rss.parseString(await fetchText(s.url));
   const channelId = safeUrl(s.url)?.searchParams.get("channel_id") ?? undefined;
   return (feed.items ?? [])
-    .slice(0, s.limit)
+    .slice(0, youtubeCandidateLimit(s))
     .map((it) => {
       const link = it.link ?? "";
       const videoId = youtubeVideoId(link);
@@ -110,7 +110,9 @@ async function fetchYoutubeRss(s: SourceConfig, kw: string[]): Promise<RawItem[]
       });
     })
     .filter(Boolean)
-    .filter((it) => !s.ai_filter || isAiRelevant(it as RawItem, kw)) as RawItem[];
+    .filter((it) => !s.ai_filter || isAiRelevant(it as RawItem, kw))
+    .filter((it) => isLearningVideoCandidate(it as RawItem))
+    .slice(0, s.limit) as RawItem[];
 }
 
 // ---- Hacker News (Algolia) ------------------------------------------------
@@ -583,6 +585,50 @@ function stripHtml(s: string): string {
 function isAiRelevant(item: RawItem, kw: string[]): boolean {
   const text = ` ${item.title} ${item.summary ?? ""} `.toLowerCase();
   return kw.some((k) => text.includes(k.toLowerCase()));
+}
+
+function youtubeCandidateLimit(source: SourceConfig): number {
+  if (source.source_role !== "learning") return source.limit;
+  return Math.max(source.limit, Math.min(source.limit * 4, 40));
+}
+
+function isLearningVideoCandidate(item: RawItem): boolean {
+  if (item.source_role !== "learning" || item.kind_hint !== "video") return true;
+
+  const text = normalizeFilterText(`${item.title} ${item.summary ?? ""}`);
+  const hasCourseSignal = /\b(courses?|lessons?|curriculum|classroom)\b/.test(text);
+  const hasInstructionSignal = [
+    /\bhow\s+(?:to|the)\b/,
+    /\b(?:learn|tutorial|guide|workshop|lecture|training|webinar|walkthrough)\b/,
+    /\b(?:hands[- ]on|deep dive|explained|from scratch|quickstart)\b/,
+    /\b(?:build|building|deploy|code|coding|implement|debug|evaluate|benchmark)\b/,
+    /\b(?:foundations?|office hours|build hour|dev community live)\b/,
+  ].some((pattern) => pattern.test(text));
+  const hasTechnicalLearningTopic = [
+    /\b(?:llms?|agents?|rag|mcp|inference|fine[- ]?tun(?:e|ing)|evals?)\b/,
+    /\b(?:embeddings?|vector search|transformers?|tokenizers?|quantiz(?:e|ation))\b/,
+    /\b(?:multimodal|vlms?|cuda|pytorch|jax|open source models?)\b/,
+  ].some((pattern) => pattern.test(text));
+  const isPreReleaseMarketing = /\b(?:coming soon|almost here|trailer|teaser|save your spot|sign up)\b/.test(text);
+  const isLaunchOrBrandMarketing = [
+    /\b(?:ad|advert|advertisement|commercial|campaign|brand film)\b/,
+    /\|\s*with chatgpt\b/,
+    /\b(?:introducing|launch(?:ed)?|available now|is live|is here|sota for)\b/,
+  ].some((pattern) => pattern.test(text));
+
+  if (hasCourseSignal) return true;
+  if (isPreReleaseMarketing) return false;
+  if (hasInstructionSignal) return true;
+  if (isLaunchOrBrandMarketing) return false;
+  return hasTechnicalLearningTopic;
+}
+
+function normalizeFilterText(value: string): string {
+  return decodeHtml(value)
+    .toLowerCase()
+    .replace(/[^a-z0-9+.#|/-]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function githubHeaders(env: NodeJS.ProcessEnv | undefined): Record<string, string> {

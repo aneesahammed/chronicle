@@ -32,6 +32,9 @@ sources → fetch → canonicalize → window-filter → cluster
 - **Classify** runs main-feed clusters through Gemini structured output first,
   then Groq as fallback. Repo and learning feeds use deterministic
   classification so release/video sources do not burn LLM tokens.
+- **Learning videos** are filtered for instructional intent at ingestion.
+  Ads, brand campaigns, launches, and pre-release clips are dropped because
+  Chronicle does not have a separate non-learning video lane.
 - **Novelty** is `1 − max trigram-Jaccard against 30 days of history`.
 - **Score** is a weighted sum of trust, novelty, quality, cluster-size, recency.
 

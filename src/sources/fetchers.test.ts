@@ -425,6 +425,90 @@ test("fetchAll adds learning metadata for YouTube RSS", async () => {
   assert.equal(result.items[0].image_source, "youtube_thumbnail");
 });
 
+test("fetchAll filters non-learning YouTube clips from the learning feed", async () => {
+  globalThis.fetch = async () => new Response(`
+    <feed xmlns="http://www.w3.org/2005/Atom">
+      <entry>
+        <title>Pinky vs Home Loan | With ChatGPT</title>
+        <link href="https://www.youtube.com/watch?v=ad123" />
+        <published>2026-05-01T00:00:00Z</published>
+        <content>One step ahead with ChatGPT</content>
+      </entry>
+      <entry>
+        <title>Introducing GPT-5.5 with Databricks</title>
+        <link href="https://www.youtube.com/watch?v=launch123" />
+        <published>2026-05-01T00:00:00Z</published>
+      </entry>
+      <entry>
+        <title>Coming Soon: Build Interactive Agents with Generative UI</title>
+        <link href="https://www.youtube.com/watch?v=soon123" />
+        <published>2026-05-01T00:00:00Z</published>
+      </entry>
+      <entry>
+        <title>Boost LLM performance: New SGLang course is live</title>
+        <link href="https://www.youtube.com/watch?v=course123" />
+        <published>2026-05-01T00:00:00Z</published>
+      </entry>
+      <entry>
+        <title>Multi-Agent AutoResearch with Open Source Models</title>
+        <link href="https://www.youtube.com/watch?v=technical123" />
+        <published>2026-05-01T00:00:00Z</published>
+      </entry>
+    </feed>
+  `);
+
+  const result = await fetchAll({
+    sources: [{
+      id: "yt_openai",
+      name: "OpenAI YouTube",
+      type: "youtube_rss",
+      url: "https://www.youtube.com/feeds/videos.xml?channel_id=UC123",
+      trust: 0.82,
+      source_role: "learning",
+      kind_hint: "video",
+      ai_filter: true,
+      limit: 10,
+    }],
+    hn_ai_keywords: ["gpt", "chatgpt", "llm", "agent"],
+  });
+
+  assert.deepEqual(result.items.map((item) => item.learning?.video_id), ["course123", "technical123"]);
+});
+
+test("fetchAll backfills learning YouTube items after filtered promos", async () => {
+  globalThis.fetch = async () => new Response(`
+    <feed xmlns="http://www.w3.org/2005/Atom">
+      <entry>
+        <title>Pinky vs Home Loan | With ChatGPT</title>
+        <link href="https://www.youtube.com/watch?v=ad123" />
+        <published>2026-05-01T00:00:00Z</published>
+      </entry>
+      <entry>
+        <title>Hands-on RAG workshop with agents</title>
+        <link href="https://www.youtube.com/watch?v=workshop123" />
+        <published>2026-05-01T00:00:00Z</published>
+      </entry>
+    </feed>
+  `);
+
+  const result = await fetchAll({
+    sources: [{
+      id: "yt_test",
+      name: "YouTube Test",
+      type: "youtube_rss",
+      url: "https://www.youtube.com/feeds/videos.xml?channel_id=UC123",
+      trust: 0.78,
+      source_role: "learning",
+      kind_hint: "video",
+      ai_filter: true,
+      limit: 1,
+    }],
+    hn_ai_keywords: ["chatgpt", "rag", "agent"],
+  });
+
+  assert.deepEqual(result.items.map((item) => item.learning?.video_id), ["workshop123"]);
+});
+
 test("fetchAll parses selector-backed page lists", async () => {
   globalThis.fetch = async () => new Response(`
     <article>
