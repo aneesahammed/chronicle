@@ -2,6 +2,7 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import { sanitizeImageUrl } from "./images.ts";
 import { writeFileAtomic } from "../pipeline/atomic-write.ts";
+import { sourceFamily } from "../pipeline/diversity.ts";
 import type { EnrichmentStatus, Kind, ScoredCluster, TopNewsItem } from "../types.ts";
 import {
   completeJsonWithProviders,
@@ -186,16 +187,20 @@ export async function buildTopNews(
 export function selectTopNewsCandidates(scored: ScoredCluster[]): ScoredCluster[] {
   const selected: ScoredCluster[] = [];
   const perSource = new Map<string, number>();
+  const usedFamilies = new Set<string>();
   const titleFingerprints: Set<string>[] = [];
 
   for (const item of scored) {
     if (!isEligibleTopNews(item)) continue;
     const sourceId = item.primary.source_id;
+    const family = sourceFamily(sourceId);
     if ((perSource.get(sourceId) ?? 0) >= 2) continue;
+    if (usedFamilies.has(family)) continue;
     const fingerprint = titleWords(item.primary.title);
     if (titleFingerprints.some((existing) => jaccard(existing, fingerprint) >= 0.55)) continue;
     selected.push(item);
     perSource.set(sourceId, (perSource.get(sourceId) ?? 0) + 1);
+    usedFamilies.add(family);
     titleFingerprints.push(fingerprint);
     if (selected.length >= TOP_NEWS_LIMIT) break;
   }
@@ -400,13 +405,15 @@ function cacheEntryFromItem(
 function fallbackFor(item: ScoredCluster): MetadataFallback {
   const line = cleanLine(item.one_liner) || cleanLine(item.primary.summary) || item.primary.title;
   const summary = cleanLine(item.primary.summary);
+  const dek = clampText(line, 180) || item.primary.title;
   const brief = summary && normalizeText(summary) !== normalizeText(item.primary.title)
     ? summary
     : line;
+  const distinctBrief = isDistinctExpansion(brief, dek) ? brief : dek;
   const image = firstClusterImage(item);
   return {
-    dek: clampText(line, 180) || item.primary.title,
-    brief: clampText(brief, 420) || clampText(line, 420) || item.primary.title,
+    dek,
+    brief: clampText(distinctBrief, 420) || dek,
     ...(image?.url ? { image_url: image.url } : {}),
     ...(image?.source ? { image_source: image.source } : {}),
   };
@@ -445,12 +452,14 @@ function sanitizeCacheEntries(entries: Record<string, unknown>): Record<string, 
     const status = value.status === "ok" || value.status === "metadata_only" || value.status === "failed"
       ? value.status
       : "failed";
+    const dek = clampText(value.dek, 180);
+    const brief = clampText(value.brief, 420);
     out[key] = {
       url,
       title: String(value.title ?? ""),
       source_name: String(value.source_name ?? ""),
-      dek: clampText(value.dek, 180),
-      brief: clampText(value.brief, 420),
+      dek,
+      brief: isDistinctExpansion(brief, dek) ? brief : dek,
       ...(sanitizeImageUrl(typeof value.image_url === "string" ? value.image_url : undefined) ? { image_url: sanitizeImageUrl(String(value.image_url)) } : {}),
       ...(typeof value.image_alt === "string" ? { image_alt: clampText(value.image_alt, 120) } : {}),
       ...(typeof value.image_source === "string" ? { image_source: clampText(value.image_source, 80) } : {}),
@@ -502,7 +511,16 @@ function jaccard(a: Set<string>, b: Set<string>): number {
 }
 
 function cleanLine(value: unknown): string {
-  return String(value ?? "")
+  let out = String(value ?? "");
+  out = out.replace(
+    /^\s*arxiv:\s*\d{4}\.\d{4,5}(?:v\d+)?\s+announce\s+type:\s*[^:]+?\s+abstract:\s*/i,
+    "",
+  );
+  for (let i = 0; i < 3; i++) {
+    out = out.replace(/\\(?:textit|emph|textbf|texttt|textsc|mathrm|mathbf|mathit)\{([^{}]*)\}/g, "$1");
+  }
+  return out
+    .replace(/\\([{}_#$%&])/g, "$1")
     .replace(/\s+/g, " ")
     .replace(/\[link\]\s*\[comments\]/gi, "")
     .replace(/submitted by \/u\/\S+/gi, "")
@@ -517,6 +535,18 @@ function clampText(value: unknown, max: number): string {
 
 function normalizeText(value: string): string {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+}
+
+function isDistinctExpansion(candidate: string, lead: string): boolean {
+  const candidateText = comparableText(candidate);
+  const leadText = comparableText(lead);
+  if (!candidateText || !leadText || candidateText === leadText) return false;
+  const prefix = leadText.slice(0, Math.min(80, leadText.length));
+  return prefix.length < 40 || !candidateText.startsWith(prefix);
+}
+
+function comparableText(value: string): string {
+  return normalizeText(value.replace(/[.…]+$/g, ""));
 }
 
 function isIsoDate(value: unknown): boolean {

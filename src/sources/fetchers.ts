@@ -545,7 +545,7 @@ function normalize(
     original_url: raw.url,
     discussion_url: discussion || undefined,
     discussion_source: discussion ? raw.discussion_source : undefined,
-    summary: raw.summary?.trim() || undefined,
+    summary: cleanSummary(raw.summary),
     image_url: raw.image_url,
     image_source: raw.image_url ? raw.image_source : undefined,
     published_at: raw.published_at,
@@ -579,7 +579,24 @@ function extractRssImage(item: Parser.Item & RssCustomItem): { url: string; sour
 }
 
 function stripHtml(s: string): string {
-  return s.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim().slice(0, 600);
+  return cleanSummary(s.replace(/<[^>]+>/g, " "))?.slice(0, 600) ?? "";
+}
+
+function cleanSummary(value: string | undefined): string | undefined {
+  if (!value) return undefined;
+  let out = decodeHtml(value);
+  out = out.replace(
+    /^\s*arxiv:\s*\d{4}\.\d{4,5}(?:v\d+)?\s+announce\s+type:\s*[^:]+?\s+abstract:\s*/i,
+    "",
+  );
+  for (let i = 0; i < 3; i++) {
+    out = out.replace(/\\(?:textit|emph|textbf|texttt|textsc|mathrm|mathbf|mathit)\{([^{}]*)\}/g, "$1");
+  }
+  out = out
+    .replace(/\\([{}_#$%&])/g, "$1")
+    .replace(/\s+/g, " ")
+    .trim();
+  return out || undefined;
 }
 
 function isAiRelevant(item: RawItem, kw: string[]): boolean {

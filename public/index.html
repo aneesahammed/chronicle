@@ -1394,7 +1394,7 @@ function renderTopStory(item) {
   title.appendChild(link(item.url, decodeText(item.title)));
   body.append(title);
   body.append(node("p", "top-story-dek", decodeText(item.dek)));
-  if (item.brief && normalizeText(item.brief) !== normalizeText(item.dek)) {
+  if (item.brief && isDistinctExpansion(item.brief, item.dek)) {
     body.append(node("p", "top-story-brief", decodeText(item.brief)));
   }
   body.append(renderTopNewsMeta(item));
@@ -1902,6 +1902,16 @@ function csv(value) {
 }
 function normalizeText(value) {
   return String(value || "").toLowerCase().replace(/\s+/g, " ").trim();
+}
+function comparableText(value) {
+  return String(value || "").toLowerCase().replace(/[.…]+$/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+}
+function isDistinctExpansion(candidate, lead) {
+  const candidateText = comparableText(candidate);
+  const leadText = comparableText(lead);
+  if (!candidateText || !leadText || candidateText === leadText) return false;
+  const prefix = leadText.slice(0, Math.min(80, leadText.length));
+  return prefix.length < 40 || !candidateText.startsWith(prefix);
 }
 function readableLine(item, title) {
   const line = item.one_liner || item.primary?.summary || "";

@@ -13,18 +13,31 @@ import type { Kind, Quality, RawItem, ScoredCluster } from "../types.ts";
 
 test("selectTopNewsCandidates filters hype, caps sources, and suppresses near duplicates", () => {
   const items = [
-    scored({ id: "a1", source_id: "lab", kind: "news", title: "Anthropic launches Claude Security scanner" }),
-    scored({ id: "a2", source_id: "lab", kind: "company_announcement", title: "Claude Security scanner launches for codebases" }),
-    scored({ id: "a3", source_id: "lab", kind: "tool", title: "A different AI developer tool ships" }),
-    scored({ id: "b1", source_id: "other", kind: "news", quality: "hype", title: "AI changes everything again" }),
-    scored({ id: "b2", source_id: "reddit", kind: "discussion", url: "https://old.reddit.com/r/LocalLLaMA/comments/x", title: "What GPU should I buy?" }),
-    scored({ id: "b3", source_id: "reddit", kind: "discussion", url: "https://github.com/example/project", score: 0.58, title: "Useful open source inference project" }),
-    scored({ id: "b4", source_id: "other", kind: "news", url: "http://example.com/insecure", title: "Insecure source URL" }),
+    scored({ id: "a1", source_id: "openai", kind: "news", title: "Anthropic launches Claude Security scanner" }),
+    scored({ id: "a2", source_id: "openai", kind: "company_announcement", title: "Claude Security scanner launches for codebases" }),
+    scored({ id: "a3", source_id: "cursor", kind: "tool", title: "A different AI developer tool ships" }),
+    scored({ id: "b1", source_id: "the_decoder", kind: "news", quality: "hype", title: "AI changes everything again" }),
+    scored({ id: "b2", source_id: "r_localllama", kind: "discussion", url: "https://old.reddit.com/r/LocalLLaMA/comments/x", title: "What GPU should I buy?" }),
+    scored({ id: "b3", source_id: "hn_ai", kind: "discussion", url: "https://github.com/example/project", score: 0.58, title: "Useful open source inference project" }),
+    scored({ id: "b4", source_id: "the_decoder", kind: "news", url: "http://example.com/insecure", title: "Insecure source URL" }),
   ];
 
   const selected = selectTopNewsCandidates(items);
 
   assert.deepEqual(selected.map((item) => item.id), ["a1", "a3", "b3"]);
+});
+
+test("selectTopNewsCandidates keeps Top News to one item per source family", () => {
+  const items = [
+    scored({ id: "paper1", source_id: "arxiv_lg", source_name: "arXiv cs.LG", kind: "paper", title: "Profit-aware crop advisory systems" }),
+    scored({ id: "paper2", source_id: "arxiv_cl", source_name: "arXiv cs.CL", kind: "paper", title: "Prompt-induced score variance in VLM safety" }),
+    scored({ id: "cloud", source_id: "cloudflare_ai_changelog", kind: "tool", title: "Cloudflare pipelines now support Terraform" }),
+    scored({ id: "lab", source_id: "openai", kind: "company_announcement", title: "OpenAI deployment venture expands" }),
+  ];
+
+  const selected = selectTopNewsCandidates(items);
+
+  assert.deepEqual(selected.map((item) => item.id), ["paper1", "cloud", "lab"]);
 });
 
 test("readerUrlFor wraps public URLs and rejects non-http URLs", () => {
@@ -113,6 +126,30 @@ test("buildTopNews falls back to metadata_only when Groq returns malformed JSON"
   assert.equal(cache.entries["https://example.com/fallback"].failure_count, 1);
 });
 
+test("buildTopNews fallback strips arXiv preambles and avoids duplicate brief text", async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "chronicle-top-news-clean-"));
+  const cachePath = path.join(root, "enrichments.json");
+  const summary = "arXiv:2605.00133v1 Announce Type: new Abstract: Modern crop advisory systems exhibit a critical limitation termed \\textit{economic blindness}. These systems primarily optimize for biological yield.";
+
+  const topNews = await buildTopNews([scored({
+    id: "arxiv",
+    kind: "paper",
+    source_name: "arXiv cs.LG",
+    title: "Smart Profit-Aware Crop Advisory System: Kisan AI",
+    summary,
+    one_liner: summary.slice(0, 200),
+  })], {
+    now: new Date("2026-05-03T12:00:00.000Z"),
+    cachePath,
+    env: {},
+  });
+
+  assert.equal(topNews[0].dek.includes("arXiv:"), false);
+  assert.equal(topNews[0].dek.includes("\\textit"), false);
+  assert.match(topNews[0].dek, /economic blindness/);
+  assert.equal(topNews[0].brief, topNews[0].dek);
+});
+
 test("buildTopNews retries stale failures and prunes cache deterministically", async () => {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), "chronicle-top-news-cache-"));
   const cachePath = path.join(root, "enrichments.json");
@@ -171,6 +208,7 @@ function scored(overrides: Partial<RawItem> & {
   quality?: Quality;
   score?: number;
   novelty?: number;
+  one_liner?: string;
 } = {}): ScoredCluster {
   const primary: RawItem = {
     id: overrides.id ?? "item",
@@ -207,7 +245,7 @@ function scored(overrides: Partial<RawItem> & {
     also_seen_on: [],
     kind: overrides.kind ?? "news",
     quality: overrides.quality ?? "signal",
-    one_liner: "Useful one liner.",
+    one_liner: overrides.one_liner ?? "Useful one liner.",
     novelty: overrides.novelty ?? 0.8,
     trust: primary.trust,
     score: overrides.score ?? 0.72,

@@ -214,6 +214,44 @@ test("fetchAll extracts safe RSS and page metadata images", async () => {
   assert.equal(sitemapResult.items[0].image_url, "https://example.com/og.png");
 });
 
+test("fetchAll strips arXiv RSS preambles and LaTeX text wrappers from summaries", async () => {
+  globalThis.fetch = async () => new Response(`
+    <?xml version="1.0" encoding="UTF-8"?>
+    <rss version="2.0">
+      <channel>
+        <item>
+          <title>Smart Profit-Aware Crop Advisory System: Kisan AI</title>
+          <link>https://arxiv.org/abs/2605.00133</link>
+          <pubDate>Sat, 02 May 2026 00:00:00 GMT</pubDate>
+          <description>
+            arXiv:2605.00133v1 Announce Type: new Abstract:
+            Modern crop advisory systems exhibit a critical limitation termed \\textit{economic blindness}.
+            We \\emph{evaluate} profit-aware advice.
+          </description>
+        </item>
+      </channel>
+    </rss>
+  `);
+
+  const result = await fetchAll({
+    sources: [{
+      id: "arxiv_lg",
+      name: "arXiv cs.LG",
+      type: "rss",
+      url: "https://rss.arxiv.org/rss/cs.LG",
+      trust: 0.9,
+      kind_hint: "paper",
+      limit: 5,
+    }],
+    hn_ai_keywords: [],
+  });
+
+  assert.equal(
+    result.items[0].summary,
+    "Modern crop advisory systems exhibit a critical limitation termed economic blindness. We evaluate profit-aware advice.",
+  );
+});
+
 test("fetchAll follows more than five child sitemaps", async () => {
   globalThis.fetch = async (input) => {
     const url = String(input);
