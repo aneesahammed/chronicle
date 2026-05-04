@@ -376,6 +376,7 @@
     border-bottom: 1px solid var(--rule);
   }
   .section-nav {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     border-top: 1px solid var(--rule);
@@ -420,15 +421,27 @@
   .section-nav-cell[aria-selected="true"] .section-nav-name {
     color: var(--ink);
   }
-  .section-nav-cell[aria-selected="true"]::after {
-    content: "";
+  /* Sliding tab indicator — single shared element animated between
+     tabs instead of a per-cell underline. JS positions it via
+     translateX + width on every syncFeedTabs() call so it follows
+     the active tab continuously. */
+  .section-nav-indicator {
     position: absolute;
-    left: 50%;
     bottom: -1px;
-    transform: translateX(-50%);
+    left: 0;
     width: 56px;
     height: 2px;
     background: var(--ink);
+    transform: translateX(0);
+    transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
+                width 280ms cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+  /* Pristine state: no transition on the first measurement so the
+     indicator doesn't slide in from x=0 on page load. JS removes
+     this class after the first positioning. */
+  .section-nav-indicator.is-pristine {
+    transition: none;
   }
   .section-nav-cell:focus-visible {
     outline: 2px solid var(--accent);
@@ -438,8 +451,20 @@
     cursor: default;
     opacity: 0.45;
   }
+  /* Feed swap crossfade — fade-out before content mutation, fade-in
+     after the new feed renders. Gated in JS for reduced-motion. */
+  #feed {
+    transition: opacity 200ms ease, transform 200ms ease;
+  }
+  #feed.is-switching {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
   @media (prefers-reduced-motion: reduce) {
     .section-nav-cell, .section-nav-name { transition: none; }
+    .section-nav-indicator { transition: none; }
+    #feed { transition: none; }
+    #feed.is-switching { opacity: 1; transform: none; }
   }
   .filter-row {
     display: flex;
@@ -971,6 +996,7 @@
       <span class="section-nav-name">Learning</span>
       <span class="section-nav-count" data-section-count="learning"></span>
     </button>
+    <span class="section-nav-indicator is-pristine" aria-hidden="true"></span>
   </nav>
 
   <section class="lede" aria-labelledby="page-title">
@@ -1196,9 +1222,15 @@ function wireFeedTabs() {
     button.addEventListener("click", () => switchFeedTab(button.dataset.feedTab));
   });
   syncFeedTabs();
+  window.addEventListener("resize", positionTabIndicator);
+  // Re-measure after webfonts load — cell widths can shift slightly,
+  // moving the indicator off-center if we only measured pre-font-load.
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(positionTabIndicator).catch(() => {});
+  }
 }
 
-function switchFeedTab(next) {
+async function switchFeedTab(next) {
   if (!FEEDS[next] || state.activeFeed === next || state.archiveDate) return;
   state.activeFeed = next;
   state.kinds.clear();
@@ -1209,7 +1241,22 @@ function switchFeedTab(next) {
   syncUrl();
   syncFeedTabs();
   updateLedeText();
-  loadFeed();
+
+  const feed = document.getElementById("feed");
+  const reduceMotion =
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Fade-out → swap content → fade-in. The 160ms wait lets the
+  // container reach opacity 0 before the DOM mutation, so the eye
+  // perceives a handoff rather than a content snap.
+  if (!reduceMotion && feed) {
+    feed.classList.add("is-switching");
+    await new Promise((resolve) => setTimeout(resolve, 160));
+  }
+
+  await loadFeed();
+  if (feed) feed.classList.remove("is-switching");
   scrollToTop();
 }
 
@@ -1219,6 +1266,25 @@ function syncFeedTabs() {
     button.setAttribute("aria-selected", String(selected));
     button.tabIndex = selected ? 0 : -1;
   });
+  positionTabIndicator();
+}
+
+function positionTabIndicator() {
+  const indicator = document.querySelector(".section-nav-indicator");
+  if (!indicator) return;
+  const active = document.querySelector('[data-feed-tab][aria-selected="true"]');
+  if (!active || !active.parentElement) return;
+  const navRect = active.parentElement.getBoundingClientRect();
+  const cellRect = active.getBoundingClientRect();
+  const width = 56;
+  const x = cellRect.left - navRect.left + (cellRect.width - width) / 2;
+  indicator.style.transform = `translateX(${x}px)`;
+  indicator.style.width = `${width}px`;
+  if (indicator.classList.contains("is-pristine")) {
+    // Drop pristine on the next frame so the just-applied transform
+    // doesn't animate from translateX(0) on first paint.
+    requestAnimationFrame(() => indicator.classList.remove("is-pristine"));
+  }
 }
 
 function updateLedeText() {
