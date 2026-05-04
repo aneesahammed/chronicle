@@ -28,6 +28,7 @@ test("classifyClusters reads Groq chat completion JSON in item order", async () 
     assert.equal(request.model, "qwen/qwen3-32b");
     assert.equal(request.max_completion_tokens, 1024);
     assert.equal(request.response_format?.type, "json_object");
+    assert.match(request.messages[0].content, /For papers, do not mark every fresh paper as signal/);
     return {
       choices: [{
         message: {

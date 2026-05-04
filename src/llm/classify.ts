@@ -27,7 +27,13 @@ ML/AI engineers. For each item, return:
   - one_liner: <= 140 chars, factual, no marketing language. Plain English.
 
 Be strict on quality. Most VC-flavored takes and "5 reasons why GPT will…"
-posts are hype. Restating someone else's release without analysis is mixed.`;
+posts are hype. Restating someone else's release without analysis is mixed.
+
+For papers, do not mark every fresh paper as signal. A paper is signal only
+when the title or summary shows a clear builder/research takeaway: a new method,
+benchmark, dataset, model, safety result, evaluation finding, or measurable
+systems result. Narrow applications, routine surveys, minor variants, and
+unclear abstracts should usually be mixed unless the contribution is obvious.`;
 
 const JSON_INSTRUCTIONS = `Return only valid JSON with this exact shape:
 {"items":[{"index":0,"kind":"paper","quality":"signal","one_liner":"<= 140 chars"}]}

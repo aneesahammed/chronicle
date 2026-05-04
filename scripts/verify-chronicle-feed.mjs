@@ -27,6 +27,7 @@ const publishedAtSources = new Set([
   'generated_fallback',
 ]);
 const dateConfidences = new Set(['high', 'medium', 'low']);
+const SOURCE_FAMILY_WARNING_RATIO = 0.40;
 
 export function validateChronicleFeedPath(feedPath) {
   const failures = [];
@@ -102,6 +103,31 @@ export function validateChronicleFeed(feed) {
   });
 
   return failures;
+}
+
+export function collectChronicleFeedWarnings(feed) {
+  if (!feed || typeof feed !== 'object' || !Array.isArray(feed.clusters) || feed.clusters.length === 0) {
+    return [];
+  }
+
+  const counts = new Map();
+  for (const cluster of feed.clusters) {
+    const sourceId = cluster?.primary?.source_id;
+    if (typeof sourceId !== 'string') continue;
+    const family = sourceFamily(sourceId);
+    counts.set(family, (counts.get(family) ?? 0) + 1);
+  }
+
+  const warnings = [];
+  for (const [family, count] of counts) {
+    const ratio = count / feed.clusters.length;
+    if (ratio > SOURCE_FAMILY_WARNING_RATIO) {
+      warnings.push(
+        `Chronicle source family "${family}" is ${Math.round(ratio * 100)}% of the feed (${count}/${feed.clusters.length})`,
+      );
+    }
+  }
+  return warnings;
 }
 
 function validateTopNews(topNews, failures) {
@@ -240,6 +266,22 @@ function validateBoundedString(value, label, max, failures) {
   }
 }
 
+function sourceFamily(sourceId) {
+  if (sourceId.startsWith('arxiv_')) return 'arxiv';
+  if (sourceId.startsWith('r_') || sourceId === 'lobsters_ai') return 'discussion';
+  if (sourceId.startsWith('hf_')) return 'huggingface';
+  if (sourceId === 'hn_ai') return 'hacker_news';
+  if (['openai', 'deepmind', 'anthropic', 'mistral'].includes(sourceId)) return 'labs';
+  if (['techcrunch_ai', 'the_decoder', 'mit_tech_review_ai', 'ars_ai', 'infoq_ai', 'the_verge_ai', 'wired_ai', 'nine_to_five_google_ai'].includes(sourceId)) {
+    return 'reporting';
+  }
+  if (['simonw', 'latent_space', 'interconnects', 'import_ai', 'eugene_yan', 'hamel', 'lilian_weng', 'chip_huyen', 'daniel_miessler'].includes(sourceId)) {
+    return 'builders';
+  }
+  if (['together', 'modal', 'cursor', 'product_hunt', 'stackoverflow_blog'].includes(sourceId)) return 'tools';
+  return sourceId;
+}
+
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const feedPath = resolve(process.argv[2] ?? 'public/feed.json');
   const failures = validateChronicleFeedPath(feedPath);
@@ -247,6 +289,10 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     console.error('Chronicle feed verification failed:');
     for (const failure of failures) console.error(`- ${failure}`);
     process.exit(1);
+  }
+  const feed = JSON.parse(readFileSync(feedPath, 'utf8'));
+  for (const warning of collectChronicleFeedWarnings(feed)) {
+    console.warn(`Chronicle feed warning: ${warning}`);
   }
   console.log('Chronicle feed verification passed.');
 }

@@ -9,6 +9,7 @@ import {
 } from "./pipeline/novelty.ts";
 import { classifyClusters } from "./llm/classify.ts";
 import { scoreCluster } from "./pipeline/score.ts";
+import { selectDiverseClusters, sourceFamilyMix } from "./pipeline/diversity.ts";
 import { buildTopNews } from "./enrichment/top-news.ts";
 import type { FeedFile, Registry, SourceHealth, TopNewsItem } from "./types.ts";
 
@@ -93,12 +94,13 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
     // A single source can be fresh and still be low-signal. Keep hype only when
     // another source corroborates the cluster.
     .filter((s) => !(s.quality === "hype" && s.members.length < 2))
-    .sort((a, b) => b.score - a.score)
-    .slice(0, maxOutput);
+    .sort((a, b) => b.score - a.score);
+  const selected = selectDiverseClusters(scored, { maxOutput });
 
-  console.log(`[score] kept ${scored.length} after filtering`);
+  console.log(`[score] kept ${selected.length} after filtering`);
+  console.log(`[diversity] ${JSON.stringify(sourceFamilyMix(selected))}`);
 
-  if (scored.length === 0 && previous && previous.clusters.length > 0) {
+  if (selected.length === 0 && previous && previous.clusters.length > 0) {
     await preservePreviousFeed(previous, feedOut, publicDir, {
       now,
       windowHours,
@@ -112,7 +114,7 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
     return;
   }
 
-  const topNews = await buildTopNewsSafely(scored, {
+  const topNews = await buildTopNewsSafely(selected, {
     now,
     cachePath: enrichmentsOut,
     env,
@@ -121,10 +123,10 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
   // 7. Emit feed
   const feed: FeedFile = {
     generated_at: now.toISOString(),
-    last_successful_generated_at: scored.length
+    last_successful_generated_at: selected.length
       ? now.toISOString()
       : previous?.last_successful_generated_at ?? previous?.generated_at ?? null,
-    refresh_status: scored.length === 0 ? "failed" : fetched.source_failed > 0 ? "partial" : "ok",
+    refresh_status: selected.length === 0 ? "failed" : fetched.source_failed > 0 ? "partial" : "ok",
     classification_mode: cls.mode,
     window_hours: windowHours,
     source_total: fetched.source_total,
@@ -133,8 +135,8 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
     failed_sources: fetched.failed_sources,
     source_health: sourceHealth,
     ...(topNews.length ? { top_news: topNews } : {}),
-    count: scored.length,
-    clusters: scored,
+    count: selected.length,
+    clusters: selected,
   };
   await fs.mkdir(publicDir, { recursive: true });
   await fs.writeFile(feedOut, JSON.stringify(feed, null, 2));
