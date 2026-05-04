@@ -17,6 +17,7 @@ export interface LlmProvider {
   name: "gemini" | "groq";
   model: string;
   batchDelayMs: number;
+  cooldownUntilMs?: number;
   completeJson(request: LlmJsonRequest): Promise<LlmJsonResponse>;
 }
 
@@ -219,6 +220,10 @@ export async function completeJsonWithProviders(
   if (providers.length === 0) throw new Error("no LLM providers configured");
   let lastError: unknown;
   for (const provider of providers) {
+    if (isCoolingDown(provider)) {
+      console.warn(`[llm] skipping ${provider.name}:${provider.model}; rate-limit cooldown is active`);
+      continue;
+    }
     try {
       if (provider.batchDelayMs > 0) {
         console.log(`[llm] waiting ${provider.batchDelayMs / 1000}s before ${provider.name}:${provider.model}`);
@@ -227,10 +232,24 @@ export async function completeJsonWithProviders(
       return await withProviderRetry(provider, () => provider.completeJson(request));
     } catch (error) {
       lastError = error;
+      if (error instanceof ProviderRateLimitError) {
+        provider.cooldownUntilMs = Date.now() + providerCooldownMs(provider, error);
+      }
       console.warn(`[llm] ${provider.name}:${provider.model} failed: ${(error as Error).message}`);
     }
   }
   throw lastError instanceof Error ? lastError : new Error("all LLM providers failed");
+}
+
+function isCoolingDown(provider: LlmProvider): boolean {
+  return typeof provider.cooldownUntilMs === "number" && provider.cooldownUntilMs > Date.now();
+}
+
+function providerCooldownMs(provider: LlmProvider, error: ProviderRateLimitError): number {
+  if (typeof error.retryAfterMs === "number" && error.retryAfterMs > 30_000) {
+    return Math.min(error.retryAfterMs, 10 * 60_000);
+  }
+  return provider.name === "gemini" ? 10 * 60_000 : 60_000;
 }
 
 async function withProviderRetry<T>(

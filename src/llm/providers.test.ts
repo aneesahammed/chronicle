@@ -6,6 +6,7 @@ import {
   GeminiProvider,
   GroqProvider,
   ProviderBlockedError,
+  ProviderRateLimitError,
 } from "./providers.ts";
 
 const request = {
@@ -111,6 +112,35 @@ test("createLlmProviders honors provider model and delay overrides", () => {
   assert.equal(providers.length, 1);
   assert.equal(providers[0].model, "gemini-test");
   assert.equal(providers[0].batchDelayMs, 0);
+});
+
+test("completeJsonWithProviders cools down a repeatedly rate-limited provider", async () => {
+  let geminiCalls = 0;
+  let groqCalls = 0;
+  const gemini = {
+    name: "gemini" as const,
+    model: "gemini-test",
+    batchDelayMs: 0,
+    completeJson: async () => {
+      geminiCalls++;
+      throw new ProviderRateLimitError("gemini", 60_000);
+    },
+  };
+  const groq = {
+    name: "groq" as const,
+    model: "groq-test",
+    batchDelayMs: 0,
+    completeJson: async () => {
+      groqCalls++;
+      return { content: '{"ok":"yes"}', provider: "groq" as const, model: "groq-test" };
+    },
+  };
+
+  await completeJsonWithProviders([gemini, groq], request);
+  await completeJsonWithProviders([gemini, groq], request);
+
+  assert.equal(geminiCalls, 1);
+  assert.equal(groqCalls, 2);
 });
 
 test("GroqProvider retries without JSON mode when Groq rejects structured output", async () => {
