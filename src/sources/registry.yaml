@@ -484,7 +484,7 @@ sources:
     limit: 5
 
   - id: github_ai_recent_stars
-    name: GitHub AI recent stars
+    name: GitHub
     type: github_repo_search
     url: https://api.github.com/search/repositories?q=topic:llm%20stars:500..*%20pushed:>=${date_minus_30d}&sort=stars&order=desc&per_page=30
     trust: 0.62
@@ -493,7 +493,7 @@ sources:
     limit: 20
 
   - id: github_ai_new_repos
-    name: GitHub AI new repos
+    name: GitHub
     type: github_repo_search
     url: https://api.github.com/search/repositories?q=topic:ai-agent%20created:>=${date_minus_30d}%20stars:100..*&sort=stars&order=desc&per_page=30
     trust: 0.60
