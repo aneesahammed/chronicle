@@ -237,6 +237,7 @@
   }
   .top-story {
     display: grid;
+    min-width: 0;
     gap: 10px;
     padding-bottom: 12px;
     border-bottom: 1px solid var(--rule);
@@ -246,38 +247,47 @@
     align-items: start;
   }
   .top-story-title {
+    min-width: 0;
     color: var(--ink);
     font: 700 24px/1.18 var(--font-display);
     letter-spacing: -0.006em;
     text-wrap: pretty;
+    overflow-wrap: anywhere;
   }
   .top-story-title a,
   .top-row-title a {
     border-bottom: 1px solid transparent;
     transition: border-color 0.15s ease;
+    overflow-wrap: anywhere;
   }
   .top-story-title a:hover,
   .top-row-title a:hover { border-color: var(--accent); }
   .top-story-dek {
+    min-width: 0;
     margin-top: 8px;
     color: var(--ink-2);
     font: 15px/1.5 var(--font-body);
     text-wrap: pretty;
+    overflow-wrap: anywhere;
   }
   .top-story-brief {
+    min-width: 0;
     margin-top: 8px;
     color: var(--ink-2);
     font: 13px/1.6 var(--font-body);
     max-width: 72ch;
+    overflow-wrap: anywhere;
   }
   .top-news-meta {
     display: flex;
     flex-wrap: wrap;
+    min-width: 0;
     gap: 8px;
     margin-top: 10px;
     color: var(--ink-3);
     font: 11px/1.4 var(--font-mono);
     letter-spacing: 0.03em;
+    overflow-wrap: anywhere;
   }
   .top-news-image {
     display: block;
@@ -296,6 +306,7 @@
   .top-row {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 86px;
+    min-width: 0;
     gap: 12px;
     padding: 12px 0;
     border-bottom: 1px solid var(--rule);
@@ -304,14 +315,18 @@
     grid-template-columns: minmax(0, 1fr);
   }
   .top-row-title {
+    min-width: 0;
     color: var(--ink);
     font: 600 15px/1.35 var(--font-display);
     text-wrap: pretty;
+    overflow-wrap: anywhere;
   }
   .top-row-dek {
+    min-width: 0;
     margin-top: 5px;
     color: var(--ink-2);
     font: 13px/1.45 var(--font-body);
+    overflow-wrap: anywhere;
   }
   .top-row .top-news-image {
     aspect-ratio: 1 / 1;
@@ -445,6 +460,7 @@
   /* Item — title, line, micro-row, optional details */
   .item {
     display: block;
+    min-width: 0;
     padding: 16px 0;
     border-bottom: 1px solid var(--rule);
   }
@@ -453,32 +469,39 @@
     border-left: 2px solid var(--accent);
   }
   .item-title {
+    min-width: 0;
     color: var(--ink);
     font: 600 19px/1.32 var(--font-display);
     text-wrap: pretty;
     letter-spacing: -0.005em;
+    overflow-wrap: anywhere;
   }
   .item-title a {
     border-bottom: 1px solid transparent;
     transition: border-color 0.15s ease;
+    overflow-wrap: anywhere;
   }
   .item-title a:hover { border-color: var(--accent); }
   .item-line {
+    min-width: 0;
     margin-top: 6px;
     max-width: 70ch;
     color: var(--ink-2);
     font: 14px/1.6 var(--font-body);
     text-wrap: pretty;
+    overflow-wrap: anywhere;
   }
   .item-meta {
     display: flex;
     flex-wrap: wrap;
+    min-width: 0;
     align-items: baseline;
     gap: 8px;
     margin-top: 10px;
     color: var(--ink-3);
     font: 11px/1.4 var(--font-mono);
     letter-spacing: 0.03em;
+    overflow-wrap: anywhere;
   }
   .item-meta .sep { color: var(--ink-3); opacity: 0.4; }
   .item-meta .source { color: var(--ink-2); }
@@ -703,7 +726,10 @@
     }
   }
   @media (max-width: 720px) {
-    .shell { padding: 16px 18px 32px; }
+    .shell {
+      overflow-x: clip;
+      padding: 16px 18px 32px;
+    }
     .masthead {
       grid-template-columns: 1fr auto;
       grid-auto-rows: auto;
