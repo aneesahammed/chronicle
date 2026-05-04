@@ -35,6 +35,27 @@ test("selectDiverseClusters caps arXiv at 25 percent when alternatives exist", (
   assert.equal(mix.arxiv, 5);
 });
 
+test("selectDiverseClusters caps other families at 40 percent", () => {
+  const reporting = Array.from({ length: 20 }, (_, index) => scored({
+    id: `reporting-${index}`,
+    source_id: index % 2 === 0 ? "techcrunch_ai" : "the_decoder",
+    source_name: index % 2 === 0 ? "TechCrunch AI" : "The Decoder",
+    score: 0.84 - index * 0.001,
+  }));
+  const alternatives = Array.from({ length: 20 }, (_, index) => scored({
+    id: `alt-${index}`,
+    source_id: `source_${index}`,
+    source_name: `Source ${index}`,
+    score: 0.70 - index * 0.001,
+  }));
+
+  const selected = selectDiverseClusters([...reporting, ...alternatives], { maxOutput: 20 });
+  const mix = sourceFamilyMix(selected);
+
+  assert.equal(selected.length, 20);
+  assert.equal(mix.reporting, 8);
+});
+
 test("selectDiverseClusters allows a small exceptional overflow", () => {
   const arxiv = Array.from({ length: 20 }, (_, index) => scored({
     id: `arxiv-${index}`,

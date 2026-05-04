@@ -1,9 +1,21 @@
 import type { ScoredCluster } from "../types.ts";
+import sourceFamilyConfig from "./source-family-config.json" with { type: "json" };
 
+// Calibrated from the 2026-05-04 arXiv takeover: the adjacent arXiv scores were
+// tightly packed, so the penalty needs to be small enough to preserve relevance
+// while still letting close non-arXiv items interleave.
 const FAMILY_PENALTY = 0.015;
 const EXCEPTIONAL_SCORE = 0.90;
 const ARXIV_CAP_RATIO = 0.25;
+const DEFAULT_FAMILY_CAP_RATIO = 0.40;
 const EXCEPTION_CAP_RATIO = 0.05;
+
+interface SourceFamilyConfig {
+  prefixFamilies: Array<{ prefix: string; family: string }>;
+  sourceFamilies: Record<string, string>;
+}
+
+const FAMILY_CONFIG = sourceFamilyConfig as SourceFamilyConfig;
 
 export interface DiversitySelectionOptions {
   maxOutput: number;
@@ -33,19 +45,10 @@ export function selectDiverseClusters(
 }
 
 export function sourceFamily(sourceId: string): string {
-  if (sourceId.startsWith("arxiv_")) return "arxiv";
-  if (sourceId.startsWith("r_") || sourceId === "lobsters_ai") return "discussion";
-  if (sourceId.startsWith("hf_")) return "huggingface";
-  if (sourceId === "hn_ai") return "hacker_news";
-  if (["openai", "deepmind", "anthropic", "mistral"].includes(sourceId)) return "labs";
-  if (["techcrunch_ai", "the_decoder", "mit_tech_review_ai", "ars_ai", "infoq_ai", "the_verge_ai", "wired_ai", "nine_to_five_google_ai"].includes(sourceId)) {
-    return "reporting";
+  for (const { prefix, family } of FAMILY_CONFIG.prefixFamilies) {
+    if (sourceId.startsWith(prefix)) return family;
   }
-  if (["simonw", "latent_space", "interconnects", "import_ai", "eugene_yan", "hamel", "lilian_weng", "chip_huyen", "daniel_miessler"].includes(sourceId)) {
-    return "builders";
-  }
-  if (["together", "modal", "cursor", "product_hunt", "stackoverflow_blog"].includes(sourceId)) return "tools";
-  return sourceId;
+  return FAMILY_CONFIG.sourceFamilies[sourceId] ?? sourceId;
 }
 
 export function sourceFamilyMix(clusters: ScoredCluster[]): Record<string, number> {
@@ -92,7 +95,7 @@ function withinFamilyCap(candidate: ScoredCluster, familyCount: number, maxOutpu
 
 function familyCap(family: string, maxOutput: number): number {
   if (family === "arxiv") return ratioCap(maxOutput, ARXIV_CAP_RATIO);
-  return maxOutput;
+  return ratioCap(maxOutput, DEFAULT_FAMILY_CAP_RATIO);
 }
 
 function ratioCap(maxOutput: number, ratio: number): number {

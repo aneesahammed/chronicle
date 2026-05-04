@@ -4,7 +4,10 @@ import { classifyClusters } from "./classify.ts";
 import type { Cluster, RawItem } from "../types.ts";
 
 test("classifyClusters falls back when no API key is configured", async () => {
-  const result = await classifyClusters([cluster()], undefined);
+  const result = await classifyClusters([cluster({
+    title: "A benchmark for inference throughput",
+    summary: "Introduces a benchmark for measuring LLM serving latency.",
+  })], undefined);
 
   assert.equal(result.mode, "fallback");
   assert.equal(result.items[0].kind, "paper");
@@ -12,12 +15,25 @@ test("classifyClusters falls back when no API key is configured", async () => {
 });
 
 test("classifyClusters falls back when the LLM runner throws", async () => {
-  const result = await classifyClusters([cluster()], "test-key", async () => {
+  const result = await classifyClusters([cluster({
+    title: "A benchmark for inference throughput",
+    summary: "Introduces a benchmark for measuring LLM serving latency.",
+  })], "test-key", async () => {
     throw new Error("rate limited");
   });
 
   assert.equal(result.mode, "fallback");
   assert.equal(result.items[0].quality, "signal");
+});
+
+test("fallback classifier does not mark every paper as signal", async () => {
+  const result = await classifyClusters([cluster({
+    title: "A narrow survey of chatbot preferences",
+    summary: "A small collection of observations about chatbot user preferences.",
+  })], undefined);
+
+  assert.equal(result.items[0].kind, "paper");
+  assert.equal(result.items[0].quality, "mixed");
 });
 
 test("classifyClusters reads Groq chat completion JSON in item order", async () => {
@@ -58,6 +74,30 @@ test("classifyClusters reads Groq chat completion JSON in item order", async () 
   assert.equal(result.items[0].one_liner, "Paper improves inference throughput.");
   assert.equal(result.items[1].kind, "news");
   assert.equal(result.items[1].quality, "mixed");
+});
+
+test("classifyClusters preserves mixed paper classifications from the LLM", async () => {
+  const result = await classifyClusters([cluster({
+    title: "A narrow survey of chatbot preferences",
+    summary: "A small collection of observations about chatbot user preferences.",
+  })], "test-key", async () => ({
+    choices: [{
+      message: {
+        content: JSON.stringify({
+          items: [{
+            index: 0,
+            kind: "paper",
+            quality: "mixed",
+            one_liner: "Survey has limited direct builder signal.",
+          }],
+        }),
+      },
+    }],
+  }));
+
+  assert.equal(result.mode, "llm");
+  assert.equal(result.items[0].kind, "paper");
+  assert.equal(result.items[0].quality, "mixed");
 });
 
 test("classifyClusters retries without JSON mode when Groq rejects structured output", async () => {

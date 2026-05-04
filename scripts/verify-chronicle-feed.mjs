@@ -1,6 +1,7 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
+import sourceFamilyConfig from '../src/pipeline/source-family-config.json' with { type: 'json' };
 
 const kinds = new Set([
   'paper',
@@ -27,6 +28,8 @@ const publishedAtSources = new Set([
   'generated_fallback',
 ]);
 const dateConfidences = new Set(['high', 'medium', 'low']);
+// This is an operational alert threshold, not the arXiv selection cap. It warns
+// when any family is still large enough to make the feed feel one-note.
 const SOURCE_FAMILY_WARNING_RATIO = 0.40;
 
 export function validateChronicleFeedPath(feedPath) {
@@ -267,19 +270,10 @@ function validateBoundedString(value, label, max, failures) {
 }
 
 function sourceFamily(sourceId) {
-  if (sourceId.startsWith('arxiv_')) return 'arxiv';
-  if (sourceId.startsWith('r_') || sourceId === 'lobsters_ai') return 'discussion';
-  if (sourceId.startsWith('hf_')) return 'huggingface';
-  if (sourceId === 'hn_ai') return 'hacker_news';
-  if (['openai', 'deepmind', 'anthropic', 'mistral'].includes(sourceId)) return 'labs';
-  if (['techcrunch_ai', 'the_decoder', 'mit_tech_review_ai', 'ars_ai', 'infoq_ai', 'the_verge_ai', 'wired_ai', 'nine_to_five_google_ai'].includes(sourceId)) {
-    return 'reporting';
+  for (const { prefix, family } of sourceFamilyConfig.prefixFamilies) {
+    if (sourceId.startsWith(prefix)) return family;
   }
-  if (['simonw', 'latent_space', 'interconnects', 'import_ai', 'eugene_yan', 'hamel', 'lilian_weng', 'chip_huyen', 'daniel_miessler'].includes(sourceId)) {
-    return 'builders';
-  }
-  if (['together', 'modal', 'cursor', 'product_hunt', 'stackoverflow_blog'].includes(sourceId)) return 'tools';
-  return sourceId;
+  return sourceFamilyConfig.sourceFamilies[sourceId] ?? sourceId;
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

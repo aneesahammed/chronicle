@@ -22,8 +22,8 @@ const FEED_OUT = path.join(PUBLIC_DIR, "feed.json");
 const HISTORY_OUT = path.join(DATA_DIR, "history.json");
 const SITE_URL = "https://chronicle.tinycrafts.ai/";
 
-const WINDOW_HOURS = Number(process.env.WINDOW_HOURS ?? "36");
-const MAX_OUTPUT = Number(process.env.MAX_OUTPUT ?? "60");
+const DEFAULT_WINDOW_HOURS = 36;
+const DEFAULT_MAX_OUTPUT = 60;
 
 async function main() {
   await runPipeline();
@@ -46,8 +46,8 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
   const feedOut = path.join(publicDir, "feed.json");
   const historyOut = path.join(dataDir, "history.json");
   const enrichmentsOut = path.join(dataDir, "enrichments.json");
-  const windowHours = Number(env.WINDOW_HOURS ?? WINDOW_HOURS);
-  const maxOutput = Number(env.MAX_OUTPUT ?? MAX_OUTPUT);
+  const windowHours = readPositiveNumber(env, "WINDOW_HOURS", DEFAULT_WINDOW_HOURS);
+  const maxOutput = readNonNegativeInteger(env, "MAX_OUTPUT", DEFAULT_MAX_OUTPUT);
 
   console.log(`[run] ${now.toISOString()}  window=${windowHours}h`);
 
@@ -93,8 +93,7 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
     .map((c, i) => scoreCluster(c, cls.items[i], novelty(c.primary.title, history, now), now))
     // A single source can be fresh and still be low-signal. Keep hype only when
     // another source corroborates the cluster.
-    .filter((s) => !(s.quality === "hype" && s.members.length < 2))
-    .sort((a, b) => b.score - a.score);
+    .filter((s) => !(s.quality === "hype" && s.members.length < 2));
   const selected = selectDiverseClusters(scored, { maxOutput });
 
   console.log(`[score] kept ${selected.length} after filtering`);
@@ -227,6 +226,26 @@ async function buildTopNewsSafely(
     console.warn(`[top-news] enrichment skipped: ${(error as Error).message}`);
     return [];
   }
+}
+
+function readPositiveNumber(env: NodeJS.ProcessEnv, key: string, fallback: number): number {
+  const value = env[key];
+  if (value === undefined || value === "") return fallback;
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed) || parsed <= 0) {
+    throw new Error(`${key} must be a positive number; received ${JSON.stringify(value)}`);
+  }
+  return parsed;
+}
+
+function readNonNegativeInteger(env: NodeJS.ProcessEnv, key: string, fallback: number): number {
+  const value = env[key];
+  if (value === undefined || value === "") return fallback;
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed) || parsed < 0 || !Number.isInteger(parsed)) {
+    throw new Error(`${key} must be a non-negative integer; received ${JSON.stringify(value)}`);
+  }
+  return parsed;
 }
 
 function enrichSourceHealth(

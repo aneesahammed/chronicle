@@ -304,8 +304,34 @@ function fallbackQuality(c: Cluster, kind: Kind): Quality {
   const text = `${title} ${summary}`;
 
   if (kind === "discussion" && isLowSignalDiscussion(title, text)) return "hype";
-  if (kind === "paper" || kind === "tutorial" || kind === "tool") return "signal";
+  if (kind === "paper") return isLikelySignalPaper(text) ? "signal" : "mixed";
+  if (kind === "tutorial" || kind === "tool") return "signal";
   return "mixed";
+}
+
+function isLikelySignalPaper(text: string): boolean {
+  const directSignalPatterns = [
+    /\bbenchmark(?:s|ing)?\b/,
+    /\bdataset(?:s)?\b/,
+    /\bevaluat(?:e|es|ed|ion|ing)\b/,
+    /\bmeasurement\b/,
+    /\bsafety\b/,
+    /\balignment\b/,
+    /\bjailbreak(?:ing|s)?\b/,
+    /\battack(?:s)?\b/,
+    /\brobustness\b/,
+    /\bthroughput\b/,
+    /\blatency\b/,
+    /\bspeed(?:up)?\b/,
+    /\baccuracy\b/,
+    /\bstate of the art\b/,
+    /\bsota\b/,
+  ];
+  if (directSignalPatterns.some((pattern) => pattern.test(text))) return true;
+
+  const contributionVerb = /\b(?:introduc(?:e|es|ing)|propos(?:e|es|ing)|present(?:s|ing)|develop(?:s|ed|ing)?|release(?:s|d)?|improv(?:e|es|ed|ing)|reduc(?:e|es|ed|ing)|accelerat(?:e|es|ed|ing)|outperform(?:s|ed|ing)?)\b/;
+  const technicalObject = /\b(?:method|model|algorithm|architecture|framework|system|inference|training|retrieval|routing|verification|reasoning)\b/;
+  return contributionVerb.test(text) && technicalObject.test(text);
 }
 
 function isLowSignalDiscussion(title: string, text: string): boolean {

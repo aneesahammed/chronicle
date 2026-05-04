@@ -11,6 +11,28 @@ test.afterEach(() => {
   globalThis.fetch = originalFetch;
 });
 
+test("runPipeline rejects malformed numeric environment settings", async () => {
+  await assert.rejects(
+    runPipeline({
+      registryPath: "/tmp/chronicle-missing-registry.yaml",
+      publicDir: "/tmp/chronicle-public",
+      dataDir: "/tmp/chronicle-data",
+      env: { MAX_OUTPUT: "not-a-number" },
+    }),
+    /MAX_OUTPUT must be a non-negative integer/,
+  );
+
+  await assert.rejects(
+    runPipeline({
+      registryPath: "/tmp/chronicle-missing-registry.yaml",
+      publicDir: "/tmp/chronicle-public",
+      dataDir: "/tmp/chronicle-data",
+      env: { WINDOW_HOURS: "0" },
+    }),
+    /WINDOW_HOURS must be a positive number/,
+  );
+});
+
 test("runPipeline preserves the previous feed when every source fails", async () => {
   globalThis.fetch = async () => new Response("nope", { status: 500, statusText: "Server Error" });
 
