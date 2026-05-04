@@ -375,13 +375,33 @@
     border-top: 1px solid var(--rule);
     border-bottom: 1px solid var(--rule);
   }
+  /* Sticky on scroll: docks at viewport top so tab navigation stays
+     reachable without scrolling back up. top: -1px clips a single
+     pixel when stuck — IntersectionObserver watches that 1px loss
+     to toggle .is-stuck. Imperceptible visually because the nav's
+     own border-bottom is the docked-edge separator. Sticky also
+     creates a containing block for absolute children, so the
+     sliding indicator continues to position relative to the nav. */
   .section-nav {
-    position: relative;
+    position: sticky;
+    top: -1px;
+    z-index: 5;
+    background: var(--paper);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     border-top: 1px solid var(--rule);
     border-bottom: 1px solid var(--rule);
     margin-top: 24px;
+    transition: box-shadow 200ms ease;
+  }
+  /* Depth cue applied only when docked — soft shadow below the nav
+     signals "floating above scrolling content" without adding chrome
+     at rest. JS toggles .is-stuck via IntersectionObserver. */
+  .section-nav.is-stuck {
+    box-shadow: 0 6px 12px -8px rgba(15, 23, 42, 0.18);
+  }
+  :root[data-theme="dark"] .section-nav.is-stuck {
+    box-shadow: 0 6px 12px -8px rgba(0, 0, 0, 0.45);
   }
   .section-nav-cell {
     appearance: none;
@@ -463,6 +483,7 @@
   @media (prefers-reduced-motion: reduce) {
     .section-nav-cell, .section-nav-name { transition: none; }
     .section-nav-indicator { transition: none; }
+    .section-nav { transition: none; }
     #feed { transition: none; }
     #feed.is-switching { opacity: 1; transform: none; }
   }
@@ -1125,6 +1146,7 @@ initTheme();
 initDetailMode();
 initFiltersFromUrl();
 wireFeedTabs();
+wireStickyNav();
 wireFilterControls();
 wireReadingControls();
 wirePullToRefresh();
@@ -1228,6 +1250,22 @@ function wireFeedTabs() {
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(positionTabIndicator).catch(() => {});
   }
+}
+
+function wireStickyNav() {
+  const nav = document.querySelector(".section-nav");
+  if (!nav || typeof IntersectionObserver !== "function") return;
+  // Watch when the nav clips its top pixel against the viewport — that
+  // is the moment sticky has docked the element. threshold:[1] fires
+  // whenever intersectionRatio crosses fully-visible vs. partially-
+  // clipped, which is exactly the docked / undocked transition.
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      nav.classList.toggle("is-stuck", entry.intersectionRatio < 1);
+    },
+    { threshold: [1] },
+  );
+  observer.observe(nav);
 }
 
 async function switchFeedTab(next) {
