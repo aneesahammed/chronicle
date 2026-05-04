@@ -1,6 +1,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { jaccard, trigrams } from "./cluster.ts";
+import { writeJsonAtomic } from "./atomic-write.ts";
 import type { Cluster, HistoryFile } from "../types.ts";
 
 const HISTORY_DAYS = 30;
@@ -61,5 +62,5 @@ export function appendToHistory(
 
 export async function saveHistory(historyPath: string, h: HistoryFile) {
   await fs.mkdir(path.dirname(historyPath), { recursive: true });
-  await fs.writeFile(historyPath, JSON.stringify(h, null, 2));
+  await writeJsonAtomic(historyPath, h);
 }

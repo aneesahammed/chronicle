@@ -117,6 +117,7 @@ export function collectChronicleFeedWarnings(feed) {
   if (!feed || typeof feed !== 'object' || !Array.isArray(feed.clusters) || feed.clusters.length === 0) {
     return [];
   }
+  if (feedRole(feed) !== 'main') return [];
 
   const counts = new Map();
   for (const cluster of feed.clusters) {
@@ -192,7 +193,25 @@ function validateCluster(cluster, index, failures) {
   if (!Array.isArray(cluster.also_seen_on)) failures.push(`${label} also_seen_on should be an array`);
   if (!Array.isArray(cluster.source_trail)) failures.push(`${label} source_trail should be an array`);
   validateRawItem(cluster.primary, `${label} primary`, failures);
+  validateRoleSpecificPrimary(cluster.primary, label, failures);
   cluster.source_trail?.forEach((source, sourceIndex) => validateSourceTrailItem(source, `${label} source_trail ${sourceIndex}`, failures));
+}
+
+function validateRoleSpecificPrimary(item, label, failures) {
+  if (!item || typeof item !== 'object' || Array.isArray(item)) return;
+  const role = item.source_role ?? 'main';
+  if (role === 'repo') {
+    if (!item.repo) failures.push(`${label} primary for repo feed should include repo metadata`);
+    if (item.kind_hint !== undefined && !['repo_release', 'repo_trending'].includes(item.kind_hint)) {
+      failures.push(`${label} primary repo kind_hint should be repo_release or repo_trending`);
+    }
+  }
+  if (role === 'learning') {
+    if (!item.learning) failures.push(`${label} primary for learning feed should include learning metadata`);
+    if (item.kind_hint !== undefined && !['video', 'course'].includes(item.kind_hint)) {
+      failures.push(`${label} primary learning kind_hint should be video or course`);
+    }
+  }
 }
 
 function validateRawItem(item, label, failures) {
@@ -316,6 +335,16 @@ function sourceFamily(sourceId) {
     if (sourceId.startsWith(prefix)) return family;
   }
   return sourceFamilyConfig.sourceFamilies[sourceId] ?? sourceId;
+}
+
+function feedRole(feed) {
+  const roles = new Set(
+    feed.clusters
+      .map((cluster) => cluster?.primary?.source_role ?? 'main')
+      .filter((role) => sourceRoles.has(role)),
+  );
+  if (roles.size === 1) return [...roles][0];
+  return 'main';
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

@@ -11,6 +11,7 @@ import { classifyClusters } from "./llm/classify.ts";
 import { createLlmProviders, type LlmProvider } from "./llm/providers.ts";
 import { scoreCluster } from "./pipeline/score.ts";
 import { selectDiverseClusters, sourceFamilyMix } from "./pipeline/diversity.ts";
+import { writeFileAtomic, writeJsonAtomic } from "./pipeline/atomic-write.ts";
 import { buildTopNews } from "./enrichment/top-news.ts";
 import {
   sourceRoleOf,
@@ -31,9 +32,6 @@ const ROOT = path.resolve(__dirname, "..");
 const REGISTRY = path.join(__dirname, "sources/registry.yaml");
 const PUBLIC_DIR = path.join(ROOT, "public");
 const DATA_DIR = path.join(ROOT, "data");
-const FEED_OUT = path.join(PUBLIC_DIR, "feed.json");
-const HISTORY_OUT = path.join(DATA_DIR, "history.json");
-const REPO_HISTORY_OUT = path.join(DATA_DIR, "repo-history.json");
 const SITE_URL = "https://chronicle.tinycrafts.ai/";
 
 const DEFAULT_WINDOW_HOURS = 36;
@@ -103,6 +101,8 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
   const roleFetch = splitFetchResultByRole(fetched, reg);
   const repoHistory = await loadRepoHistory(repoHistoryOut);
   const repoItems = applyRepoHistory(byRole.repo, repoHistory, now, repoCutoff);
+  const previousRepoFeed = await loadExistingFeed(repoFeedOut);
+  const previousLearningFeed = await loadExistingFeed(learningFeedOut);
 
   const mainFeed = await buildRoleFeed({
     role: "main",
@@ -117,25 +117,25 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
     providers,
     topNews: { cachePath: enrichmentsOut, env },
   });
-  await writeFeed(feedOut, mainFeed);
-  if (mainFeed.refresh_status !== "failed") {
-    await writeArchiveOutputs(publicDir, mainFeed);
-  }
   const mainClusters = clusterItems(byRole.main);
   const updated = appendToHistory(history, mainClusters, now);
   await saveHistory(historyOut, updated);
   console.log(`[write] ${historyOut}  entries=${updated.entries.length}`);
+  await writeFeed(feedOut, mainFeed);
+  if (mainFeed.refresh_status !== "failed") {
+    await writeArchiveOutputs(publicDir, mainFeed);
+  }
 
   const repoFeed = await buildRoleFeed({
     role: "repo",
     items: repoItems,
     healthItems: allByRole.repo,
     fetched: roleFetch.repo,
-    previous: await loadExistingFeed(repoFeedOut),
+    previous: previousRepoFeed,
     now,
     windowHours: repoWindowHours,
     maxOutput: repoMaxOutput,
-    history: { entries: [] },
+    history: roleHistory("repo", previousRepoFeed, history),
     providers,
   });
   await writeFeed(repoFeedOut, repoFeed);
@@ -146,11 +146,11 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
     items: byRole.learning,
     healthItems: allByRole.learning,
     fetched: roleFetch.learning,
-    previous: await loadExistingFeed(learningFeedOut),
+    previous: previousLearningFeed,
     now,
     windowHours: learningWindowHours,
     maxOutput: learningMaxOutput,
-    history: { entries: [] },
+    history: roleHistory("learning", previousLearningFeed, history),
     providers,
   });
   await writeFeed(learningFeedOut, learningFeed);
@@ -183,7 +183,7 @@ async function buildRoleFeed(options: {
 
   const cls = await classifyClusters(clusters, options.providers);
 
-  if (options.role === "main" && clusters.length === 0 && options.previous && options.previous.clusters.length > 0) {
+  if (clusters.length === 0 && options.previous && options.previous.clusters.length > 0) {
     return previousFeed(options.previous, {
       now: options.now,
       windowHours: options.windowHours,
@@ -201,7 +201,7 @@ async function buildRoleFeed(options: {
   console.log(`[score:${options.role}] kept ${selected.length} after filtering`);
   console.log(`[diversity:${options.role}] ${JSON.stringify(sourceFamilyMix(selected))}`);
 
-  if (options.role === "main" && selected.length === 0 && options.previous && options.previous.clusters.length > 0) {
+  if (selected.length === 0 && options.previous && options.previous.clusters.length > 0) {
     return previousFeed(options.previous, {
       now: options.now,
       windowHours: options.windowHours,
@@ -300,9 +300,29 @@ async function loadRepoHistory(repoHistoryOut: string): Promise<RepoHistoryFile>
   try {
     const parsed = JSON.parse(await fs.readFile(repoHistoryOut, "utf8")) as RepoHistoryFile;
     return { repos: parsed.repos && typeof parsed.repos === "object" ? parsed.repos : {} };
-  } catch {
-    return { repos: {} };
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      return { repos: {} };
+    }
+    throw new Error(`could not read repo history ${repoHistoryOut}: ${(error as Error).message}`);
   }
+}
+
+function previousFeedHistory(feed: FeedFile | null): HistoryFile {
+  if (!feed) return { entries: [] };
+  return {
+    entries: feed.clusters.map((cluster) => ({
+      id: cluster.primary.id,
+      title: cluster.primary.title,
+      url: cluster.primary.url,
+      date: cluster.primary.published_at.slice(0, 10),
+    })),
+  };
+}
+
+function roleHistory(role: SourceRole, previous: FeedFile | null, mainHistory: HistoryFile): HistoryFile {
+  if (role === "main") return mainHistory;
+  return previousFeedHistory(previous);
 }
 
 function applyRepoHistory(
@@ -375,7 +395,7 @@ function pruneRepoHistory(history: RepoHistoryFile, now: Date): RepoHistoryFile 
 
 async function saveRepoHistory(repoHistoryOut: string, history: RepoHistoryFile) {
   await fs.mkdir(path.dirname(repoHistoryOut), { recursive: true });
-  await fs.writeFile(repoHistoryOut, JSON.stringify(history, null, 2));
+  await writeJsonAtomic(repoHistoryOut, history);
   console.log(`[write] ${repoHistoryOut}  repos=${Object.keys(history.repos).length}`);
 }
 
@@ -437,7 +457,7 @@ function previousFeed(
 
 async function writeFeed(feedOut: string, feed: FeedFile) {
   await fs.mkdir(path.dirname(feedOut), { recursive: true });
-  await fs.writeFile(feedOut, JSON.stringify(feed, null, 2));
+  await writeJsonAtomic(feedOut, feed);
   console.log(`[write] ${feedOut}`);
 }
 
@@ -532,7 +552,7 @@ async function writeArchiveOutputs(publicDir: string, feed: FeedFile) {
   const dayDir = path.join(dailyDir, date);
   const dayFeedPath = path.join(dayDir, "feed.json");
   await fs.mkdir(dayDir, { recursive: true });
-  await fs.writeFile(dayFeedPath, JSON.stringify(feed, null, 2));
+  await writeJsonAtomic(dayFeedPath, feed);
   console.log(`[write] ${dayFeedPath}`);
 
   // Per-day snapshots reuse the main feed template; the daily index page is a
@@ -554,7 +574,7 @@ async function writeArchiveOutputs(publicDir: string, feed: FeedFile) {
     .slice(0, 120);
   const nextIndex: ArchiveIndex = { generated_at: feed.generated_at, days };
   await fs.mkdir(dailyDir, { recursive: true });
-  await fs.writeFile(indexPath, JSON.stringify(nextIndex, null, 2));
+  await writeJsonAtomic(indexPath, nextIndex);
   console.log(`[write] ${indexPath}`);
   await writeRobotsAndSitemap(publicDir, days, feed.generated_at);
 }
@@ -575,7 +595,7 @@ async function copyArchiveShell(publicDir: string, targetDir: string) {
   try {
     const html = await fs.readFile(path.join(publicDir, "index.html"), "utf8");
     await fs.mkdir(targetDir, { recursive: true });
-    await fs.writeFile(path.join(targetDir, "index.html"), html);
+    await writeFileAtomic(path.join(targetDir, "index.html"), html);
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
   }
@@ -588,7 +608,7 @@ async function writeRobotsAndSitemap(publicDir: string, days: ArchiveDay[], gene
     `Sitemap: ${SITE_URL}sitemap.xml`,
     "",
   ].join("\n");
-  await fs.writeFile(path.join(publicDir, "robots.txt"), robots);
+  await writeFileAtomic(path.join(publicDir, "robots.txt"), robots);
 
   const urls = [
     { loc: SITE_URL, lastmod: generatedAt },
@@ -610,7 +630,7 @@ async function writeRobotsAndSitemap(publicDir: string, days: ArchiveDay[], gene
     "</urlset>",
     "",
   ].join("\n");
-  await fs.writeFile(path.join(publicDir, "sitemap.xml"), sitemap);
+  await writeFileAtomic(path.join(publicDir, "sitemap.xml"), sitemap);
 }
 
 function escapeXml(value: string): string {

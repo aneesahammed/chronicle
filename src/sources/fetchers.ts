@@ -24,6 +24,18 @@ const SITEMAP_CHILD_LIMIT = 25;
 const SITEMAP_CANDIDATE_MULTIPLIER = 8;
 const SITEMAP_MIN_CANDIDATES = 40;
 const UNKNOWN_PUBLISHED_AT = "1970-01-01T00:00:00.000Z";
+
+class FetchHttpError extends Error {
+  readonly status: number;
+  readonly retryable: boolean;
+
+  constructor(message: string, options: { status: number; retryable: boolean }) {
+    super(message);
+    this.status = options.status;
+    this.retryable = options.retryable;
+  }
+}
+
 // rss-parser delegates to xml2js/sax-js, which does not dereference external
 // entities. We still strip HTML from summaries before they enter the feed.
 interface RssMediaNode {
@@ -78,8 +90,9 @@ async function fetchYoutubeRss(s: SourceConfig, kw: string[]): Promise<RawItem[]
   return (feed.items ?? [])
     .slice(0, s.limit)
     .map((it) => {
-      const image = extractRssImage(it);
       const link = it.link ?? "";
+      const videoId = youtubeVideoId(link);
+      const image = extractRssImage(it) ?? youtubeThumbnail(videoId);
       return normalize(s, {
         title: it.title ?? "",
         url: link,
@@ -92,7 +105,7 @@ async function fetchYoutubeRss(s: SourceConfig, kw: string[]): Promise<RawItem[]
         learning: {
           provider: "YouTube",
           channel_id: channelId,
-          video_id: youtubeVideoId(link),
+          video_id: videoId,
         },
       });
     })
@@ -226,8 +239,8 @@ interface HfModel {
 
 // ---- GitHub releases and repo discovery ----------------------------------
 async function fetchGithubReleases(s: SourceConfig, options: FetchAllOptions): Promise<RawItem[]> {
-  const data = await fetchJson<GithubRelease[]>(s.url, githubHeaders(options.env));
   const repo = repoFromGitHubApiUrl(s.url);
+  const data = await fetchJson<GithubRelease[]>(s.url, githubHeaders(options.env));
   return data
     .filter((release) => !release.draft)
     .slice(0, s.limit)
@@ -335,7 +348,9 @@ async function fetchPageList(s: SourceConfig, kw: string[]): Promise<RawItem[]> 
     const link = row.is(s.link_selector!) ? row : row.find(s.link_selector!).first();
     const href = link.attr("href");
     if (!href) continue;
-    const url = new URL(href, base).toString();
+    const parsed = new URL(href, base);
+    if (!isHttpUrl(parsed)) continue;
+    const url = parsed.toString();
     if (!sourceUrlMatches(url, s)) continue;
     const title = row.find(s.title_selector!).first().text().trim() || link.text().trim();
     if (!title) continue;
@@ -582,7 +597,8 @@ function githubHeaders(env: NodeJS.ProcessEnv | undefined): Record<string, strin
 function repoFromGitHubApiUrl(value: string): string {
   const url = new URL(value);
   const match = url.pathname.match(/\/repos\/([^/]+\/[^/]+)\/releases/);
-  return match?.[1] ?? "unknown/repo";
+  if (!match) throw new Error(`invalid GitHub releases API URL: ${value}`);
+  return match[1];
 }
 
 function resolveGitHubSearchUrl(value: string, now: Date): string {
@@ -632,6 +648,11 @@ function youtubeVideoId(value: string): string | undefined {
   return url.searchParams.get("v") ?? undefined;
 }
 
+function youtubeThumbnail(videoId: string | undefined): { url: string; source: string } | undefined {
+  if (!videoId) return undefined;
+  return { url: `https://i.ytimg.com/vi/${encodeURIComponent(videoId)}/hqdefault.jpg`, source: "youtube_thumbnail" };
+}
+
 function safeUrl(value: string): URL | null {
   try {
     return new URL(value);
@@ -650,7 +671,7 @@ async function fetchJson<T>(url: string, headers: Record<string, string> = {}): 
       signal: AbortSignal.timeout(TIMEOUT_MS),
       headers,
     });
-    if (!r.ok) throw new Error(`HTTP ${r.status} ${r.statusText}`.trim());
+    if (!r.ok) throw await fetchHttpError(url, r);
     return (await r.json()) as T;
   });
 }
@@ -661,7 +682,7 @@ async function fetchText(url: string): Promise<string> {
       signal: AbortSignal.timeout(TIMEOUT_MS),
       headers: { "user-agent": USER_AGENT },
     });
-    if (!r.ok) throw new Error(`HTTP ${r.status} ${r.statusText}`.trim());
+    if (!r.ok) throw await fetchHttpError(url, r);
     return await r.text();
   });
 }
@@ -673,10 +694,40 @@ async function withRetry<T>(fn: () => Promise<T>): Promise<T> {
       return await fn();
     } catch (e) {
       last = e;
+      if (e instanceof FetchHttpError && !e.retryable) throw e;
       if (attempt === 0) await sleep(500);
     }
   }
   throw last;
+}
+
+async function fetchHttpError(url: string, response: Response): Promise<FetchHttpError> {
+  const body = await response.text().catch(() => "");
+  const rateLimit = githubRateLimitMessage(response.headers);
+  const bodyMessage = body.trim().replace(/\s+/g, " ").slice(0, 240);
+  const message = [
+    `HTTP ${response.status} ${response.statusText}`.trim(),
+    rateLimit,
+    bodyMessage,
+    `url=${url}`,
+  ].filter(Boolean).join(" - ");
+  return new FetchHttpError(message, {
+    status: response.status,
+    retryable: isRetryableStatus(response.status, response.headers),
+  });
+}
+
+function isRetryableStatus(status: number, headers: Headers): boolean {
+  if (status === 403 && headers.get("x-ratelimit-remaining") === "0") return false;
+  if (status === 403 || status === 422) return false;
+  return status === 408 || status === 429 || status >= 500;
+}
+
+function githubRateLimitMessage(headers: Headers): string {
+  if (headers.get("x-ratelimit-remaining") !== "0") return "";
+  const reset = Number(headers.get("x-ratelimit-reset"));
+  if (!Number.isFinite(reset)) return "GitHub rate limit exhausted";
+  return `GitHub rate limit exhausted until ${new Date(reset * 1000).toISOString()}`;
 }
 
 function sleep(ms: number): Promise<void> {
@@ -693,6 +744,10 @@ function sourceUrlMatches(url: string, s: SourceConfig): boolean {
     return false;
   }
   return true;
+}
+
+function isHttpUrl(url: URL): boolean {
+  return url.protocol === "http:" || url.protocol === "https:";
 }
 
 function titleFromUrl(url: string, prefix?: string): string {
@@ -802,7 +857,7 @@ function decodeHtml(value: string): string {
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
     .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, " ");
+    .replace(/&gt;/g, ">");
 }
 
 function titleWord(word: string): string {
@@ -836,26 +891,42 @@ function validDateOrFallback(value?: string): string {
 function parseMonthDateUtc(value: string): string | undefined {
   const match = value.trim().match(/^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?\s+(\d{1,2}),\s+(\d{4})$/i);
   if (!match) return undefined;
-  const months: Record<string, number> = {
-    jan: 0,
-    feb: 1,
-    mar: 2,
-    apr: 3,
-    may: 4,
-    jun: 5,
-    jul: 6,
-    aug: 7,
-    sep: 8,
-    sept: 8,
-    oct: 9,
-    nov: 10,
-    dec: 11,
-  };
-  const month = months[match[1].toLowerCase().slice(0, 4)] ?? months[match[1].toLowerCase().slice(0, 3)];
+  const month = monthNumber(match[1]);
   const day = Number(match[2]);
   const year = Number(match[3]);
   if (month === undefined || !Number.isInteger(day) || !Number.isInteger(year)) return undefined;
   return new Date(Date.UTC(year, month, day)).toISOString();
+}
+
+function monthNumber(value: string): number | undefined {
+  const normalized = value.toLowerCase().replace(/\.$/, "");
+  const aliases: Record<string, number> = {
+    jan: 0,
+    january: 0,
+    feb: 1,
+    february: 1,
+    mar: 2,
+    march: 2,
+    apr: 3,
+    april: 3,
+    may: 4,
+    jun: 5,
+    june: 5,
+    jul: 6,
+    july: 6,
+    aug: 7,
+    august: 7,
+    sep: 8,
+    sept: 8,
+    september: 8,
+    oct: 9,
+    october: 9,
+    nov: 10,
+    november: 10,
+    dec: 11,
+    december: 11,
+  };
+  return aliases[normalized];
 }
 
 function timestamp(value?: string): number {

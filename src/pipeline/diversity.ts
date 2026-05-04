@@ -9,6 +9,7 @@ const EXCEPTIONAL_SCORE = 0.90;
 const ARXIV_CAP_RATIO = 0.25;
 const DEFAULT_FAMILY_CAP_RATIO = 0.40;
 const EXCEPTION_CAP_RATIO = 0.05;
+const warnedUnmappedSources = new Set<string>();
 
 interface SourceFamilyConfig {
   prefixFamilies: Array<{ prefix: string; family: string }>;
@@ -48,7 +49,13 @@ export function sourceFamily(sourceId: string): string {
   for (const { prefix, family } of FAMILY_CONFIG.prefixFamilies) {
     if (sourceId.startsWith(prefix)) return family;
   }
-  return FAMILY_CONFIG.sourceFamilies[sourceId] ?? sourceId;
+  const configured = FAMILY_CONFIG.sourceFamilies[sourceId];
+  if (configured) return configured;
+  if (!warnedUnmappedSources.has(sourceId)) {
+    warnedUnmappedSources.add(sourceId);
+    console.warn(`[diversity] source "${sourceId}" is not mapped in source-family-config.json; using source id as family`);
+  }
+  return sourceId;
 }
 
 export function sourceFamilyMix(clusters: ScoredCluster[]): Record<string, number> {

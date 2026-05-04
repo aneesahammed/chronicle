@@ -179,6 +179,10 @@ export interface FeedFile {
   clusters: ScoredCluster[];
 }
 
+export type MainFeedFile = FeedFile;
+export type RepoFeedFile = FeedFile;
+export type LearningFeedFile = FeedFile;
+
 export interface TopNewsItem {
   cluster_id: string;
   title: string;

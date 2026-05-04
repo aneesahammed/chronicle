@@ -40,9 +40,7 @@ sources → fetch → canonicalize → window-filter → cluster
 ```bash
 npm install
 GEMINI_API_KEY=... npm run run:pipeline
-npm run verify:feed
-node scripts/verify-chronicle-feed.mjs public/repos.json
-node scripts/verify-chronicle-feed.mjs public/learning.json
+npm run verify:all
 npx --yes serve public
 ```
 

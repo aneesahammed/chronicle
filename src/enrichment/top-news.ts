@@ -1,6 +1,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { sanitizeImageUrl } from "./images.ts";
+import { writeFileAtomic } from "../pipeline/atomic-write.ts";
 import type { EnrichmentStatus, Kind, ScoredCluster, TopNewsItem } from "../types.ts";
 import {
   completeJsonWithProviders,
@@ -433,7 +434,7 @@ async function loadEnrichmentCache(cachePath: string): Promise<EnrichmentCacheFi
 
 async function saveEnrichmentCache(cachePath: string, cache: EnrichmentCacheFile) {
   await fs.mkdir(path.dirname(cachePath), { recursive: true });
-  await fs.writeFile(cachePath, `${JSON.stringify(cache, null, 2)}\n`);
+  await writeFileAtomic(cachePath, `${JSON.stringify(cache, null, 2)}\n`);
 }
 
 function sanitizeCacheEntries(entries: Record<string, unknown>): Record<string, CachedEnrichment> {

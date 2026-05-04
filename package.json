@@ -14,7 +14,10 @@
     "typecheck": "tsc --noEmit",
     "test": "node --experimental-strip-types --test \"src/**/*.test.ts\"",
     "check": "npm run typecheck && npm test",
-    "verify:feed": "node scripts/verify-chronicle-feed.mjs public/feed.json"
+    "verify:feed": "node scripts/verify-chronicle-feed.mjs public/feed.json",
+    "verify:repos": "node scripts/verify-chronicle-feed.mjs public/repos.json",
+    "verify:learning": "node scripts/verify-chronicle-feed.mjs public/learning.json",
+    "verify:all": "npm run verify:feed && npm run verify:repos && npm run verify:learning"
   },
   "dependencies": {
     "cheerio": "^1.2.0",

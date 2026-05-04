@@ -218,6 +218,8 @@ async function withProviderRetry<T>(
   try {
     return await run();
   } catch (error) {
+    // Retry only short provider-declared throttles in-place. Other failures
+    // fall through to the next provider so one bad backend cannot stall a run.
     const wait = error instanceof ProviderRateLimitError
       ? error.retryAfterMs ?? shortRetryMs(provider.name)
       : undefined;

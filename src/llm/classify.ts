@@ -108,7 +108,7 @@ export async function classifyClusters(
 
   if (llmWork.length === 0) return { items, mode: "deterministic" };
   if (providers.length === 0 && !completeJson) {
-    console.warn("[llm] no API key; using kind_hint fallback");
+    console.warn("[llm] no LLM providers configured; using kind_hint fallback");
     for (const work of llmWork) items[work.index] = fallback(work.cluster);
     return { items, mode: "fallback" };
   }
@@ -378,25 +378,11 @@ function decodeText(value: string): string {
     .replace(/&quot;/g, '"')
     .replace(/&#39;|&#x27;/g, "'")
     .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, " ");
+    .replace(/&gt;/g, ">");
 }
 
 function isKind(value: string): value is Kind {
-  return [
-    "paper",
-    "model_release",
-    "company_announcement",
-    "tutorial",
-    "opinion",
-    "discussion",
-    "tool",
-    "repo_release",
-    "repo_trending",
-    "video",
-    "course",
-    "news",
-    "unknown",
-  ].includes(value);
+  return (LLM_KIND_VALUES as readonly string[]).includes(value);
 }
 
 function isQuality(value: string): value is Quality {

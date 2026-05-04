@@ -96,6 +96,36 @@ test("classifyClusters preserves mixed paper classifications from the LLM", asyn
   assert.equal(result.items[0].quality, "mixed");
 });
 
+test("classifyClusters rejects non-LLM kind values from LLM output", async () => {
+  const result = await classifyClusters([cluster({
+    title: "OpenAI ships a model update",
+    kind_hint: "company_announcement",
+    summary: "New API behavior is available.",
+  })], [], async () => ({
+    content: JSON.stringify({
+      items: [{
+        index: 0,
+        kind: "video",
+        quality: "signal",
+        one_liner: "Model update is available.",
+      }],
+    }),
+  }));
+
+  assert.equal(result.mode, "llm");
+  assert.equal(result.items[0].kind, "company_announcement");
+  assert.equal(result.items[0].quality, "mixed");
+});
+
+test("fallback one-liners decode greater-than entities", async () => {
+  const result = await classifyClusters([cluster({
+    title: "Qwen comparison",
+    summary: "Qwen &gt; Llama for this synthetic benchmark.",
+  })]);
+
+  assert.equal(result.items[0].one_liner, "Qwen > Llama for this synthetic benchmark.");
+});
+
 test("fallback classifier demotes low-effort single-source discussion prompts", async () => {
   const result = await classifyClusters([cluster({
     source_id: "r_localllama",

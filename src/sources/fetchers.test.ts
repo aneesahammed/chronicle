@@ -108,7 +108,7 @@ test("fetchAll uses page published date instead of sitemap lastmod", async () =>
     return new Response(`
       <html>
         <head>
-          <meta property="og:title" content="Run cloud agents in your own infrastructure · Cursor">
+          <meta property="og:title" content="Qwen &gt; Llama · Cursor">
           <meta name="description" content="Self-hosted cloud agents.">
           <script type="application/ld+json">
             {"@type":"BlogPosting","datePublished":"2026-03-25T12:00:00.000Z"}
@@ -134,7 +134,7 @@ test("fetchAll uses page published date instead of sitemap lastmod", async () =>
   });
 
   assert.equal(result.items.length, 1);
-  assert.equal(result.items[0].title, "Cursor: Run cloud agents in your own infrastructure");
+  assert.equal(result.items[0].title, "Cursor: Qwen > Llama");
   assert.equal(result.items[0].summary, "Self-hosted cloud agents.");
   assert.equal(result.items[0].published_at, "2026-03-25T12:00:00.000Z");
 });
@@ -297,6 +297,68 @@ test("fetchAll normalizes GitHub releases into repo role items", async () => {
   assert.equal(result.items[0].repo?.release_tag, "v1.2.0");
 });
 
+test("fetchAll fails malformed GitHub release API URLs before fetching", async () => {
+  let calls = 0;
+  globalThis.fetch = async () => {
+    calls++;
+    return Response.json([]);
+  };
+
+  const result = await fetchAll({
+    sources: [{
+      id: "repo_bad",
+      name: "Bad Repo",
+      type: "github_releases",
+      url: "https://api.github.com/search/repositories?q=llm",
+      trust: 0.82,
+      source_role: "repo",
+      kind_hint: "repo_release",
+      limit: 10,
+    }],
+    hn_ai_keywords: [],
+  });
+
+  assert.equal(calls, 0);
+  assert.equal(result.source_failed, 1);
+  assert.match(result.failed_sources[0].message, /invalid GitHub releases API URL/);
+});
+
+test("fetchAll does not retry exhausted GitHub rate limits", async () => {
+  let calls = 0;
+  globalThis.fetch = async () => {
+    calls++;
+    return Response.json(
+      { message: "API rate limit exceeded" },
+      {
+        status: 403,
+        statusText: "Forbidden",
+        headers: {
+          "x-ratelimit-remaining": "0",
+          "x-ratelimit-reset": "1770000000",
+        },
+      },
+    );
+  };
+
+  const result = await fetchAll({
+    sources: [{
+      id: "repo_limited",
+      name: "Limited Repo",
+      type: "github_releases",
+      url: "https://api.github.com/repos/ggml-org/llama.cpp/releases?per_page=10",
+      trust: 0.82,
+      source_role: "repo",
+      kind_hint: "repo_release",
+      limit: 10,
+    }],
+    hn_ai_keywords: [],
+  });
+
+  assert.equal(calls, 1);
+  assert.equal(result.source_failed, 1);
+  assert.match(result.failed_sources[0].message, /GitHub rate limit exhausted/);
+});
+
 test("fetchAll filters and de-duplicates GitHub repo search results", async () => {
   globalThis.fetch = async (input) => {
     assert.match(String(input), /pushed:%3E=2026-04-02|pushed:>=2026-04-02/);
@@ -359,6 +421,8 @@ test("fetchAll adds learning metadata for YouTube RSS", async () => {
   assert.equal(result.items[0].source_role, "learning");
   assert.equal(result.items[0].learning?.provider, "YouTube");
   assert.equal(result.items[0].learning?.video_id, "abc123");
+  assert.equal(result.items[0].image_url, "https://i.ytimg.com/vi/abc123/hqdefault.jpg");
+  assert.equal(result.items[0].image_source, "youtube_thumbnail");
 });
 
 test("fetchAll parses selector-backed page lists", async () => {
@@ -394,6 +458,37 @@ test("fetchAll parses selector-backed page lists", async () => {
   assert.equal(result.items[0].source_role, "learning");
   assert.equal(result.items[0].kind_hint, "course");
   assert.equal(result.items[0].learning?.course_url, "https://example.com/courses/build-ai-agents");
+});
+
+test("fetchAll skips non-http links from selector-backed page lists", async () => {
+  globalThis.fetch = async () => new Response(`
+    <article>
+      <a href="javascript:alert(1)"><h2>Build AI Agents</h2></a>
+      <p>Learn practical agent patterns.</p>
+      <time datetime="2026-04-01T00:00:00Z"></time>
+    </article>
+  `);
+
+  const result = await fetchAll({
+    sources: [{
+      id: "courses",
+      name: "Courses",
+      type: "page_list",
+      url: "https://example.com/courses/",
+      trust: 0.78,
+      source_role: "learning",
+      kind_hint: "course",
+      item_selector: "article",
+      link_selector: "a[href]",
+      title_selector: "h2",
+      summary_selector: "p",
+      date_selector: "time[datetime]",
+      limit: 5,
+    }],
+    hn_ai_keywords: ["agent"],
+  });
+
+  assert.equal(result.items.length, 0);
 });
 
 test("fetchAll parses anchor-backed page lists with parent dates", async () => {

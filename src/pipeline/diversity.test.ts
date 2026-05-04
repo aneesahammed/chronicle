@@ -28,7 +28,7 @@ test("selectDiverseClusters caps arXiv at 25 percent when alternatives exist", (
     score: 0.70 - index * 0.001,
   }));
 
-  const selected = selectDiverseClusters([...arxiv, ...alternatives], { maxOutput: 20 });
+  const selected = withSilencedWarnings(() => selectDiverseClusters([...arxiv, ...alternatives], { maxOutput: 20 }));
   const mix = sourceFamilyMix(selected);
 
   assert.equal(selected.length, 20);
@@ -49,7 +49,7 @@ test("selectDiverseClusters caps other families at 40 percent", () => {
     score: 0.70 - index * 0.001,
   }));
 
-  const selected = selectDiverseClusters([...reporting, ...alternatives], { maxOutput: 20 });
+  const selected = withSilencedWarnings(() => selectDiverseClusters([...reporting, ...alternatives], { maxOutput: 20 }));
   const mix = sourceFamilyMix(selected);
 
   assert.equal(selected.length, 20);
@@ -70,7 +70,7 @@ test("selectDiverseClusters allows a small exceptional overflow", () => {
     score: 0.70 - index * 0.001,
   }));
 
-  const selected = selectDiverseClusters([...arxiv, ...alternatives], { maxOutput: 20 });
+  const selected = withSilencedWarnings(() => selectDiverseClusters([...arxiv, ...alternatives], { maxOutput: 20 }));
   const mix = sourceFamilyMix(selected);
 
   assert.equal(selected.length, 20);
@@ -102,6 +102,23 @@ test("selectDiverseClusters applies a light same-family score penalty", () => {
     "hn",
     "reporting-2",
   ]);
+});
+
+test("sourceFamily warns once for unmapped sources", () => {
+  const warnings: string[] = [];
+  const originalWarn = console.warn;
+  console.warn = (message?: unknown) => {
+    warnings.push(String(message));
+  };
+  try {
+    assert.equal(sourceFamily("unmapped_source_for_test"), "unmapped_source_for_test");
+    assert.equal(sourceFamily("unmapped_source_for_test"), "unmapped_source_for_test");
+  } finally {
+    console.warn = originalWarn;
+  }
+
+  assert.equal(warnings.length, 1);
+  assert.match(warnings[0], /not mapped in source-family-config/);
 });
 
 function scored(overrides: Partial<RawItem> & { score?: number } = {}): ScoredCluster {
@@ -145,4 +162,14 @@ function scored(overrides: Partial<RawItem> & { score?: number } = {}): ScoredCl
     trust: primary.trust,
     score: overrides.score ?? 0.72,
   };
+}
+
+function withSilencedWarnings<T>(fn: () => T): T {
+  const originalWarn = console.warn;
+  console.warn = () => {};
+  try {
+    return fn();
+  } finally {
+    console.warn = originalWarn;
+  }
 }
