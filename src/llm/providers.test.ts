@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import {
   completeJsonWithProviders,
+  createLlmProviders,
   GeminiProvider,
   GroqProvider,
   ProviderBlockedError,
@@ -58,6 +59,7 @@ test("GeminiProvider turns blocked and empty responses into provider errors", as
 test("completeJsonWithProviders retries a short Gemini rate limit then succeeds", async () => {
   let calls = 0;
   const provider = new GeminiProvider("key", "gemini-test", {
+    batchDelayMs: 0,
     fetchImpl: async () => {
       calls++;
       if (calls === 1) {
@@ -83,6 +85,32 @@ test("completeJsonWithProviders retries a short Gemini rate limit then succeeds"
   const result = await completeJsonWithProviders([provider], request);
   assert.equal(calls, 2);
   assert.equal(result.content, '{"ok":"yes"}');
+});
+
+test("createLlmProviders defaults to Gemini 2.0 Flash with a free-tier-friendly delay", () => {
+  const providers = createLlmProviders({
+    GEMINI_API_KEY: "gemini-key",
+    GROQ_API_KEY: "groq-key",
+  });
+
+  assert.equal(providers[0].name, "gemini");
+  assert.equal(providers[0].model, "gemini-2.0-flash");
+  assert.equal(providers[0].batchDelayMs, 4_500);
+  assert.equal(providers[1].name, "groq");
+  assert.equal(providers[1].batchDelayMs, 30_000);
+});
+
+test("createLlmProviders honors provider model and delay overrides", () => {
+  const providers = createLlmProviders({
+    LLM_PROVIDER_ORDER: "gemini",
+    GEMINI_API_KEY: "gemini-key",
+    GEMINI_MODEL: "gemini-test",
+    GEMINI_BATCH_DELAY_MS: "0",
+  });
+
+  assert.equal(providers.length, 1);
+  assert.equal(providers[0].model, "gemini-test");
+  assert.equal(providers[0].batchDelayMs, 0);
 });
 
 test("GroqProvider retries without JSON mode when Groq rejects structured output", async () => {

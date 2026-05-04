@@ -41,7 +41,7 @@ test("classifyClusters reads LLM JSON in item order", async () => {
     cluster({ title: "A useful paper about inference" }),
     cluster({ title: "A mixed company update", kind_hint: "news" }),
   ], [], async (request) => {
-    assert.equal(request.maxOutputTokens, 1024);
+    assert.equal(request.maxOutputTokens, 1536);
     assert.equal(request.schemaName, "classification");
     assert.match(request.system, /For papers, do not mark every fresh paper as signal/);
     const schema = request.schema as {

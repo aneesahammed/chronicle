@@ -10,8 +10,8 @@ import { completeJsonWithProviders, type LlmJsonRequest, type LlmProvider } from
 //   - lower cost (no repeated system prompt)
 //   - the model gets cross-cluster context, which slightly improves quality
 
-const BATCH_SIZE = 12;
-const MAX_COMPLETION_TOKENS = 1024;
+const BATCH_SIZE = 10;
+const MAX_COMPLETION_TOKENS = 1536;
 const SUMMARY_CHARS = 280;
 const NO_LLM_KINDS = new Set<Kind>(["repo_release", "repo_trending", "video", "course"]);
 

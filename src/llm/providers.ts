@@ -50,6 +50,10 @@ export class ProviderRateLimitError extends Error {
 
 const GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models";
 const GROQ_CHAT_COMPLETIONS_URL = "https://api.groq.com/openai/v1/chat/completions";
+const DEFAULT_GEMINI_MODEL = "gemini-2.0-flash";
+const DEFAULT_GEMINI_BATCH_DELAY_MS = 4_500;
+const DEFAULT_GROQ_MODEL = "qwen/qwen3-32b";
+const DEFAULT_GROQ_BATCH_DELAY_MS = 30_000;
 
 type FetchLike = typeof fetch;
 
@@ -62,7 +66,7 @@ export class GeminiProvider implements LlmProvider {
 
   constructor(
     apiKey: string,
-    model = "gemini-2.5-flash",
+    model = DEFAULT_GEMINI_MODEL,
     options: { batchDelayMs?: number; fetchImpl?: FetchLike } = {},
   ) {
     this.apiKey = apiKey;
@@ -115,12 +119,12 @@ export class GroqProvider implements LlmProvider {
 
   constructor(
     apiKey: string,
-    model = "qwen/qwen3-32b",
+    model = DEFAULT_GROQ_MODEL,
     options: { batchDelayMs?: number; fetchImpl?: FetchLike } = {},
   ) {
     this.apiKey = apiKey;
     this.model = model;
-    this.batchDelayMs = options.batchDelayMs ?? 30_000;
+    this.batchDelayMs = options.batchDelayMs ?? DEFAULT_GROQ_BATCH_DELAY_MS;
     this.fetchImpl = options.fetchImpl ?? fetch;
   }
 
@@ -181,13 +185,31 @@ export function createLlmProviders(env: NodeJS.ProcessEnv): LlmProvider[] {
   const providers: LlmProvider[] = [];
   for (const name of order) {
     if (name === "gemini" && env.GEMINI_API_KEY) {
-      providers.push(new GeminiProvider(env.GEMINI_API_KEY, env.GEMINI_MODEL ?? "gemini-2.5-flash"));
+      providers.push(new GeminiProvider(
+        env.GEMINI_API_KEY,
+        env.GEMINI_MODEL ?? DEFAULT_GEMINI_MODEL,
+        { batchDelayMs: envMs(env, "GEMINI_BATCH_DELAY_MS", DEFAULT_GEMINI_BATCH_DELAY_MS) },
+      ));
     }
     if (name === "groq" && env.GROQ_API_KEY) {
-      providers.push(new GroqProvider(env.GROQ_API_KEY, env.GROQ_MODEL ?? "qwen/qwen3-32b"));
+      providers.push(new GroqProvider(
+        env.GROQ_API_KEY,
+        env.GROQ_MODEL ?? DEFAULT_GROQ_MODEL,
+        { batchDelayMs: envMs(env, "GROQ_BATCH_DELAY_MS", DEFAULT_GROQ_BATCH_DELAY_MS) },
+      ));
     }
   }
   return providers;
+}
+
+function envMs(env: NodeJS.ProcessEnv, key: string, fallback: number): number {
+  const value = env[key];
+  if (value === undefined || value === "") return fallback;
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed) || parsed < 0) {
+    throw new Error(`${key} must be a non-negative number of milliseconds; received ${JSON.stringify(value)}`);
+  }
+  return Math.floor(parsed);
 }
 
 export async function completeJsonWithProviders(

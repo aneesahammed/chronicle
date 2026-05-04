@@ -73,8 +73,10 @@ All knobs live in source. Eyeball output for a week, then adjust:
 - **Repo output cap**: `REPO_MAX_OUTPUT` env (default 40)
 - **Learning output cap**: `LEARNING_MAX_OUTPUT` env (default 40)
 - **LLM provider order**: `LLM_PROVIDER_ORDER` env (default `gemini,groq`)
-- **Gemini model**: `GEMINI_MODEL` env (default `gemini-2.5-flash`)
+- **Gemini model**: `GEMINI_MODEL` env (default `gemini-2.0-flash`)
+- **Gemini batch delay**: `GEMINI_BATCH_DELAY_MS` env (default 4500)
 - **Groq fallback model**: `GROQ_MODEL` env (default `qwen/qwen3-32b`)
+- **Groq batch delay**: `GROQ_BATCH_DELAY_MS` env (default 30000)
 
 ## Cost
 
