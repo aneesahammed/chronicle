@@ -117,10 +117,12 @@ test("createLlmProviders honors provider model and delay overrides", () => {
 test("completeJsonWithProviders cools down a repeatedly rate-limited provider", async () => {
   let geminiCalls = 0;
   let groqCalls = 0;
+  const before = Date.now();
   const gemini = {
     name: "gemini" as const,
     model: "gemini-test",
     batchDelayMs: 0,
+    cooldownUntilMs: undefined as number | undefined,
     completeJson: async () => {
       geminiCalls++;
       throw new ProviderRateLimitError("gemini", 60_000);
@@ -141,6 +143,8 @@ test("completeJsonWithProviders cools down a repeatedly rate-limited provider", 
 
   assert.equal(geminiCalls, 1);
   assert.equal(groqCalls, 2);
+  assert.ok(typeof gemini.cooldownUntilMs === "number");
+  assert.ok(gemini.cooldownUntilMs >= before + 9 * 60_000);
 });
 
 test("GroqProvider retries without JSON mode when Groq rejects structured output", async () => {

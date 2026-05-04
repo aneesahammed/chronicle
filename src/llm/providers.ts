@@ -246,10 +246,9 @@ function isCoolingDown(provider: LlmProvider): boolean {
 }
 
 function providerCooldownMs(provider: LlmProvider, error: ProviderRateLimitError): number {
-  if (typeof error.retryAfterMs === "number" && error.retryAfterMs > 30_000) {
-    return Math.min(error.retryAfterMs, 10 * 60_000);
-  }
-  return provider.name === "gemini" ? 10 * 60_000 : 60_000;
+  const providerFloor = provider.name === "gemini" ? 10 * 60_000 : 60_000;
+  const retryAfter = typeof error.retryAfterMs === "number" ? error.retryAfterMs : 0;
+  return Math.min(Math.max(providerFloor, retryAfter), 10 * 60_000);
 }
 
 async function withProviderRetry<T>(
