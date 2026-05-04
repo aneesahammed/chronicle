@@ -49,12 +49,14 @@ jobs:
       - name: Refresh Chronicle feed
         timeout-minutes: 15
         env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
         run: npm run run:pipeline
 
-      - name: Verify Chronicle feed
-        run: npm run verify:feed
+      - name: Verify Chronicle feeds
+        run: npm run verify:all
 
       - name: Commit Chronicle feed
         run: |
@@ -63,7 +65,10 @@ jobs:
           git add \
             data/enrichments.json \
             data/history.json \
+            data/repo-history.json \
             public/feed.json \
+            public/repos.json \
+            public/learning.json \
             public/daily \
             public/robots.txt \
             public/sitemap.xml
@@ -71,7 +76,7 @@ jobs:
             echo "No Chronicle feed changes."
             exit 0
           fi
-          unexpected="$(git diff --cached --name-only | grep -Ev '^(data/enrichments\.json|data/history\.json|public/feed\.json|public/daily/index\.json|public/daily/index\.html|public/daily/[0-9]{4}-[0-9]{2}-[0-9]{2}/feed\.json|public/daily/[0-9]{4}-[0-9]{2}-[0-9]{2}/index\.html|public/robots\.txt|public/sitemap\.xml)$' || true)"
+          unexpected="$(git diff --cached --name-only | grep -Ev '^(data/enrichments\.json|data/history\.json|data/repo-history\.json|public/feed\.json|public/repos\.json|public/learning\.json|public/daily/index\.json|public/daily/index\.html|public/daily/[0-9]{4}-[0-9]{2}-[0-9]{2}/feed\.json|public/daily/[0-9]{4}-[0-9]{2}-[0-9]{2}/index\.html|public/robots\.txt|public/sitemap\.xml)$' || true)"
           if [ -n "$unexpected" ]; then
             echo "::error::Unexpected files staged for Chronicle feed commit:"
             printf '%s\n' "$unexpected"
