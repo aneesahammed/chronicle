@@ -342,32 +342,72 @@
     border-top: 1px solid var(--rule);
     border-bottom: 1px solid var(--rule);
   }
-  .feed-tabs {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-    padding: 12px 0 0;
+  .section-nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-top: 24px;
   }
-  .feed-tab {
-    min-height: 32px;
-    border: 1px solid var(--rule);
-    border-radius: 999px;
-    background: var(--panel);
-    color: var(--ink-2);
+  .section-nav-cell {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    padding: 16px 8px 14px;
     cursor: pointer;
-    padding: 0 12px;
+    text-align: center;
+    position: relative;
+    transition: background 0.15s ease;
+    font-family: inherit;
+  }
+  .section-nav-cell + .section-nav-cell {
+    border-left: 1px solid var(--rule);
+  }
+  .section-nav-cell:hover {
+    background: rgba(15, 23, 42, 0.025);
+  }
+  :root[data-theme="dark"] .section-nav-cell:hover {
+    background: rgba(255, 255, 255, 0.03);
+  }
+  .section-nav-name {
+    display: block;
+    font: 600 12px/1 var(--font-mono);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    transition: color 0.15s ease;
+  }
+  .section-nav-count {
+    display: block;
+    margin-top: 6px;
     font: 11px/1 var(--font-mono);
-    letter-spacing: 0.04em;
-    transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
+    color: var(--ink-3);
+    min-height: 11px;
   }
-  .feed-tab:hover { border-color: var(--accent); color: var(--accent-2); }
-  .feed-tab[aria-selected="true"] {
+  .section-nav-cell[aria-selected="true"] .section-nav-name {
+    color: var(--ink);
+  }
+  .section-nav-cell[aria-selected="true"]::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -1px;
+    transform: translateX(-50%);
+    width: 56px;
+    height: 2px;
     background: var(--ink);
-    border-color: var(--ink);
-    color: var(--paper);
   }
-  .feed-tab:active { transform: translateY(1px); }
+  .section-nav-cell:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+  }
+  .section-nav-cell[aria-disabled="true"] {
+    cursor: default;
+    opacity: 0.45;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .section-nav-cell, .section-nav-name { transition: none; }
+  }
   .filter-row {
     display: flex;
     flex-wrap: wrap;
@@ -880,9 +920,24 @@
     <button class="theme-toggle" id="themeToggle" type="button">theme</button>
   </header>
 
+  <nav class="section-nav" aria-label="Feed sections" role="tablist">
+    <button class="section-nav-cell" type="button" data-feed-tab="main" role="tab" aria-selected="true">
+      <span class="section-nav-name">Signal</span>
+      <span class="section-nav-count" data-section-count="main"></span>
+    </button>
+    <button class="section-nav-cell" type="button" data-feed-tab="repo" role="tab" aria-selected="false">
+      <span class="section-nav-name">Repos</span>
+      <span class="section-nav-count" data-section-count="repo"></span>
+    </button>
+    <button class="section-nav-cell" type="button" data-feed-tab="learning" role="tab" aria-selected="false">
+      <span class="section-nav-name">Learning</span>
+      <span class="section-nav-count" data-section-count="learning"></span>
+    </button>
+  </nav>
+
   <section class="lede" aria-labelledby="page-title">
     <h1 id="page-title" class="vh">Chronicle</h1>
-    <p class="lede-text">The latest in AI, clustered and ranked. Repeated hype gets pushed down so the actual signal stays up top.</p>
+    <p class="lede-text" id="ledeText">The latest in AI, clustered and ranked. Repeated hype gets pushed down so the actual signal stays up top.</p>
     <div class="notice" id="notice" role="status"></div>
   </section>
 
@@ -890,12 +945,6 @@
     <div class="top-news-head" id="top-news-title">Top News</div>
     <div class="top-news-grid" id="topNewsGrid"></div>
   </section>
-
-  <nav class="feed-tabs" aria-label="Feed sections" role="tablist">
-    <button class="feed-tab" type="button" data-feed-tab="main" role="tab" aria-selected="true">Signal</button>
-    <button class="feed-tab" type="button" data-feed-tab="repo" role="tab" aria-selected="false">Repos</button>
-    <button class="feed-tab" type="button" data-feed-tab="learning" role="tab" aria-selected="false">Learning</button>
-  </nav>
 
   <nav class="filterbar" aria-label="Feed filters">
     <div class="filter-row" id="kindFilters" aria-label="Filter by type">
@@ -966,9 +1015,24 @@ const KIND_LABELS = {
   unknown: "other",
 };
 const FEEDS = {
-  main: { label: "Signal", path: "feed.json" },
-  repo: { label: "Repos", path: "repos.json" },
-  learning: { label: "Learning", path: "learning.json" },
+  main: {
+    label: "Signal",
+    path: "feed.json",
+    countLabel: "items",
+    lede: "The latest in AI, clustered and ranked. Repeated hype gets pushed down so the actual signal stays up top.",
+  },
+  repo: {
+    label: "Repos",
+    path: "repos.json",
+    countLabel: "items",
+    lede: "Releases and trending repos from the projects builders ship. Stars, deltas, and what's new.",
+  },
+  learning: {
+    label: "Learning",
+    path: "learning.json",
+    countLabel: "videos",
+    lede: "Talks, tutorials, and explainers from labs and researchers worth watching.",
+  },
 };
 const NOVELTY_TOP = 0.7;
 const MS_PER_HOUR = 36e5;
@@ -1000,10 +1064,11 @@ wireFeedTabs();
 wireFilterControls();
 wireReadingControls();
 wirePullToRefresh();
+updateLedeText();
 document.getElementById("archiveCtaButton").href = rootUrl("daily/");
 document.getElementById("homeLink").href = rootUrl("");
 pruneReadingProgress();
-loadFeed();
+loadFeed().finally(() => prefetchSectionCounts());
 
 function initTheme() {
   const button = document.getElementById("themeToggle");
@@ -1077,6 +1142,7 @@ function switchFeedTab(next) {
   clearReadingProgress();
   syncUrl();
   syncFeedTabs();
+  updateLedeText();
   loadFeed();
   scrollToTop();
 }
@@ -1087,6 +1153,40 @@ function syncFeedTabs() {
     button.setAttribute("aria-selected", String(selected));
     button.tabIndex = selected ? 0 : -1;
   });
+}
+
+function updateLedeText() {
+  const node = document.getElementById("ledeText");
+  if (!node) return;
+  const feed = FEEDS[state.activeFeed] ?? FEEDS.main;
+  node.textContent = feed.lede;
+}
+
+function updateSectionCount(role, count) {
+  const node = document.querySelector(`[data-section-count="${role}"]`);
+  if (!node) return;
+  if (count == null || !Number.isFinite(count)) {
+    node.textContent = "";
+    return;
+  }
+  const label = FEEDS[role]?.countLabel ?? "items";
+  node.textContent = `${count} ${label}`;
+}
+
+async function prefetchSectionCounts() {
+  const tasks = Object.keys(FEEDS).map(async (role) => {
+    if (role === state.activeFeed) return;
+    try {
+      const url = rootUrl(FEEDS[role].path);
+      const response = await fetch(url, { cache: "no-cache" });
+      if (!response.ok) return;
+      const data = await response.json();
+      if (typeof data?.count === "number") updateSectionCount(role, data.count);
+    } catch (_) {
+      // count stays blank on failure — non-critical
+    }
+  });
+  await Promise.all(tasks);
 }
 
 function wireReadingControls() {
@@ -1235,6 +1335,7 @@ async function loadFeed() {
     const response = await fetch(feedUrl(), { cache: "no-cache" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     state.data = await response.json();
+    updateSectionCount(state.activeFeed, state.data?.count);
     updateStatus();
     renderTopNews();
     renderArchiveBanner();
