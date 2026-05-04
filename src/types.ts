@@ -12,12 +12,17 @@ export type Kind =
   | "opinion"
   | "discussion"
   | "tool"
+  | "repo_release"
+  | "repo_trending"
+  | "video"
+  | "course"
   | "news"
   | "unknown";
 
 export type Quality = "signal" | "mixed" | "hype";
+export type SourceRole = "main" | "repo" | "learning";
 export type RefreshStatus = "ok" | "partial" | "failed";
-export type ClassificationMode = "llm" | "partial" | "fallback";
+export type ClassificationMode = "llm" | "partial" | "fallback" | "deterministic";
 export type EnrichmentStatus = "ok" | "metadata_only" | "failed";
 export type PublishedAtSource =
   | "feed"
@@ -31,14 +36,30 @@ export type DateConfidence = "high" | "medium" | "low";
 export interface SourceConfig {
   id: string;
   name: string;
-  type: "rss" | "hn_algolia" | "reddit" | "hf_papers" | "hf_models" | "sitemap";
+  type:
+    | "rss"
+    | "hn_algolia"
+    | "reddit"
+    | "hf_papers"
+    | "hf_models"
+    | "sitemap"
+    | "github_releases"
+    | "github_repo_search"
+    | "page_list"
+    | "youtube_rss";
   url: string;
   trust: number;
+  source_role?: SourceRole;
   kind_hint?: Kind;
   ai_filter?: boolean;
   url_include?: string[];
   url_exclude?: string[];
   title_prefix?: string;
+  item_selector?: string;
+  link_selector?: string;
+  title_selector?: string;
+  summary_selector?: string;
+  date_selector?: string;
   limit: number;
 }
 
@@ -51,6 +72,7 @@ export interface RawItem {
   id: string;             // stable hash of canonical url
   source_id: string;
   source_name: string;
+  source_role?: SourceRole;
   trust: number;
   kind_hint?: Kind;
   title: string;
@@ -69,6 +91,38 @@ export interface RawItem {
     score?: number;       // upvotes / points
     comments?: number;
   };
+  repo?: RepoMetadata;
+  learning?: LearningMetadata;
+}
+
+export interface RepoMetadata {
+  full_name: string;
+  html_url: string;
+  description?: string;
+  language?: string;
+  license?: string;
+  topics?: string[];
+  stargazers_count?: number;
+  forks_count?: number;
+  open_issues_count?: number;
+  pushed_at?: string;
+  created_at?: string;
+  release_tag?: string;
+  release_name?: string;
+  stars_delta_30d?: number;
+}
+
+export interface LearningMetadata {
+  provider?: string;
+  channel_id?: string;
+  video_id?: string;
+  playlist_url?: string;
+  course_url?: string;
+  level?: "beginner" | "intermediate" | "advanced" | "unknown";
+}
+
+export function sourceRoleOf(item: Pick<RawItem, "source_role"> | undefined): SourceRole {
+  return item?.source_role ?? "main";
 }
 
 export interface Cluster {

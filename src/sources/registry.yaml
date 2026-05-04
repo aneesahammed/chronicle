@@ -265,6 +265,120 @@ sources:
       - mistral.ai/news/
     limit: 10
 
+  - id: google_research
+    name: Google Research
+    type: rss
+    url: https://research.google/blog/rss/
+    trust: 0.88
+    source_role: main
+    kind_hint: company_announcement
+    ai_filter: true
+    limit: 12
+
+  - id: google_ai_keyword
+    name: Google AI on Keyword
+    type: sitemap
+    url: https://blog.google/sitemap.xml
+    trust: 0.82
+    source_role: main
+    kind_hint: company_announcement
+    title_prefix: Google
+    ai_filter: true
+    url_include:
+      - blog.google/technology/ai/
+      - blog.google/innovation-and-ai/
+    limit: 10
+
+  - id: meta_ai
+    name: Meta AI Blog
+    type: page_list
+    url: https://ai.meta.com/blog/
+    trust: 0.86
+    source_role: main
+    kind_hint: company_announcement
+    title_prefix: Meta AI
+    item_selector: 'a[href*="ai.meta.com/blog/"]'
+    link_selector: 'a[href*="ai.meta.com/blog/"]'
+    title_selector: 'a[href*="ai.meta.com/blog/"]'
+    url_include:
+      - ai.meta.com/blog/
+    limit: 12
+
+  - id: microsoft_research
+    name: Microsoft Research
+    type: rss
+    url: https://www.microsoft.com/en-us/research/feed/
+    trust: 0.86
+    source_role: main
+    kind_hint: paper
+    ai_filter: true
+    limit: 12
+
+  - id: azure_ai_blog
+    name: Azure AI Blog
+    type: rss
+    url: https://azure.microsoft.com/en-us/blog/feed/
+    trust: 0.80
+    source_role: main
+    kind_hint: company_announcement
+    ai_filter: true
+    limit: 12
+
+  - id: aws_ml_blog
+    name: AWS Machine Learning Blog
+    type: rss
+    url: https://aws.amazon.com/blogs/machine-learning/feed/
+    trust: 0.80
+    source_role: main
+    kind_hint: tutorial
+    ai_filter: true
+    limit: 12
+
+  - id: nvidia_developer_blog
+    name: NVIDIA Developer Blog
+    type: rss
+    url: https://developer.nvidia.com/blog/feed
+    trust: 0.82
+    source_role: main
+    kind_hint: tool
+    ai_filter: true
+    limit: 12
+
+  - id: cloudflare_ai_changelog
+    name: Cloudflare AI Changelog
+    type: rss
+    url: https://developers.cloudflare.com/changelog/rss/index.xml
+    trust: 0.78
+    source_role: main
+    kind_hint: tool
+    ai_filter: true
+    url_include:
+      - developers.cloudflare.com/changelog/post/
+    limit: 30
+
+  - id: cohere_blog
+    name: Cohere Blog
+    type: sitemap
+    url: https://cohere.com/sitemap.xml
+    trust: 0.84
+    source_role: main
+    kind_hint: company_announcement
+    title_prefix: Cohere
+    ai_filter: true
+    url_include:
+      - cohere.com/blog/
+    limit: 10
+
+  - id: ai2_blog
+    name: Ai2 Blog
+    type: rss
+    url: https://allenai.org/rss.xml
+    trust: 0.86
+    source_role: main
+    kind_hint: paper
+    ai_filter: true
+    limit: 10
+
   # ── Inference / serving layer ───────────────────────────────────────────
   - id: together
     name: Together AI
@@ -295,6 +409,168 @@ sources:
     url_exclude:
       - /blog/topic/
     limit: 12
+
+  # ── GitHub repo radar ───────────────────────────────────────────────────
+  - id: repo_llamacpp
+    name: llama.cpp releases
+    type: github_releases
+    url: https://api.github.com/repos/ggml-org/llama.cpp/releases?per_page=10
+    trust: 0.82
+    source_role: repo
+    kind_hint: repo_release
+    limit: 5
+
+  - id: repo_ollama
+    name: Ollama releases
+    type: github_releases
+    url: https://api.github.com/repos/ollama/ollama/releases?per_page=10
+    trust: 0.82
+    source_role: repo
+    kind_hint: repo_release
+    limit: 5
+
+  - id: repo_vllm
+    name: vLLM releases
+    type: github_releases
+    url: https://api.github.com/repos/vllm-project/vllm/releases?per_page=10
+    trust: 0.82
+    source_role: repo
+    kind_hint: repo_release
+    limit: 5
+
+  - id: repo_sglang
+    name: SGLang releases
+    type: github_releases
+    url: https://api.github.com/repos/sgl-project/sglang/releases?per_page=10
+    trust: 0.80
+    source_role: repo
+    kind_hint: repo_release
+    limit: 5
+
+  - id: repo_litellm
+    name: LiteLLM releases
+    type: github_releases
+    url: https://api.github.com/repos/BerriAI/litellm/releases?per_page=10
+    trust: 0.78
+    source_role: repo
+    kind_hint: repo_release
+    limit: 5
+
+  - id: repo_openhands
+    name: OpenHands releases
+    type: github_releases
+    url: https://api.github.com/repos/All-Hands-AI/OpenHands/releases?per_page=10
+    trust: 0.78
+    source_role: repo
+    kind_hint: repo_release
+    limit: 5
+
+  - id: repo_open_webui
+    name: Open WebUI releases
+    type: github_releases
+    url: https://api.github.com/repos/open-webui/open-webui/releases?per_page=10
+    trust: 0.76
+    source_role: repo
+    kind_hint: repo_release
+    limit: 5
+
+  - id: repo_continue
+    name: Continue releases
+    type: github_releases
+    url: https://api.github.com/repos/continuedev/continue/releases?per_page=10
+    trust: 0.76
+    source_role: repo
+    kind_hint: repo_release
+    limit: 5
+
+  - id: github_ai_recent_stars
+    name: GitHub AI recent stars
+    type: github_repo_search
+    url: https://api.github.com/search/repositories?q=topic:llm%20stars:500..*%20pushed:>=${date_minus_30d}&sort=stars&order=desc&per_page=30
+    trust: 0.62
+    source_role: repo
+    kind_hint: repo_trending
+    limit: 20
+
+  - id: github_ai_new_repos
+    name: GitHub AI new repos
+    type: github_repo_search
+    url: https://api.github.com/search/repositories?q=topic:ai-agent%20created:>=${date_minus_30d}%20stars:100..*&sort=stars&order=desc&per_page=30
+    trust: 0.60
+    source_role: repo
+    kind_hint: repo_trending
+    limit: 20
+
+  # ── Learning / videos ───────────────────────────────────────────────────
+  - id: yt_deeplearning_ai
+    name: DeepLearning.AI YouTube
+    type: youtube_rss
+    url: https://www.youtube.com/feeds/videos.xml?channel_id=UCcIXc5mJsHVYTZR1maL5l9w
+    trust: 0.78
+    source_role: learning
+    kind_hint: video
+    ai_filter: true
+    limit: 8
+
+  - id: yt_google_deepmind
+    name: Google DeepMind YouTube
+    type: youtube_rss
+    url: https://www.youtube.com/feeds/videos.xml?channel_id=UCP7jMXSY2xbc3KCAE0MHQ-A
+    trust: 0.82
+    source_role: learning
+    kind_hint: video
+    ai_filter: true
+    limit: 8
+
+  - id: yt_openai
+    name: OpenAI YouTube
+    type: youtube_rss
+    url: https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A
+    trust: 0.82
+    source_role: learning
+    kind_hint: video
+    ai_filter: true
+    limit: 8
+
+  - id: yt_nvidia_developer
+    name: NVIDIA Developer YouTube
+    type: youtube_rss
+    url: https://www.youtube.com/feeds/videos.xml?channel_id=UCBHcMCGaiJhv-ESTcWGJPcw
+    trust: 0.78
+    source_role: learning
+    kind_hint: video
+    ai_filter: true
+    limit: 8
+
+  - id: yt_huggingface
+    name: Hugging Face YouTube
+    type: youtube_rss
+    url: https://www.youtube.com/feeds/videos.xml?channel_id=UCHlNU7kIZhRgSbhHvFoy72w
+    trust: 0.78
+    source_role: learning
+    kind_hint: video
+    ai_filter: true
+    limit: 8
+
+  - id: yt_google_developers
+    name: Google for Developers YouTube
+    type: youtube_rss
+    url: https://www.youtube.com/feeds/videos.xml?channel_id=UC_x5XG1OV2P6uZZ5FSM9Ttw
+    trust: 0.72
+    source_role: learning
+    kind_hint: video
+    ai_filter: true
+    limit: 8
+
+  - id: yt_microsoft_365_developer
+    name: Microsoft 365 Developer YouTube
+    type: youtube_rss
+    url: https://www.youtube.com/feeds/videos.xml?channel_id=UCV_6HOhwxYLXAGd-JOqKPoQ
+    trust: 0.72
+    source_role: learning
+    kind_hint: video
+    ai_filter: true
+    limit: 8
 
 # Keywords used to filter HN front page down to AI-relevant items.
 # Lowercase match against title.

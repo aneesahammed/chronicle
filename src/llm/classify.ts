@@ -1,6 +1,8 @@
 import type { ClassificationMode, Cluster, Kind, Quality } from "../types.ts";
+import { sourceRoleOf } from "../types.ts";
+import { completeJsonWithProviders, type LlmJsonRequest, type LlmProvider } from "./providers.ts";
 
-// We classify clusters in chunked Groq calls by feeding a numbered list and
+// We classify clusters in chunked LLM calls by feeding a numbered list and
 // asking for a JSON object back. Missing or invalid items fall back per item.
 //
 // Why one shot instead of one-per-cluster:
@@ -8,12 +10,22 @@ import type { ClassificationMode, Cluster, Kind, Quality } from "../types.ts";
 //   - lower cost (no repeated system prompt)
 //   - the model gets cross-cluster context, which slightly improves quality
 
-const MODEL = "qwen/qwen3-32b";
-const GROQ_CHAT_COMPLETIONS_URL = "https://api.groq.com/openai/v1/chat/completions";
 const BATCH_SIZE = 12;
 const MAX_COMPLETION_TOKENS = 1024;
 const SUMMARY_CHARS = 280;
-const GROQ_BATCH_DELAY_MS = 30_000;
+const NO_LLM_KINDS = new Set<Kind>(["repo_release", "repo_trending", "video", "course"]);
+
+const LLM_KIND_VALUES = [
+  "paper",
+  "model_release",
+  "company_announcement",
+  "tutorial",
+  "opinion",
+  "discussion",
+  "tool",
+  "news",
+  "unknown",
+] as const;
 
 const SYSTEM = `You triage AI/ML news for a daily digest aimed at experienced
 ML/AI engineers. For each item, return:
@@ -39,12 +51,35 @@ const JSON_INSTRUCTIONS = `Return only valid JSON with this exact shape:
 {"items":[{"index":0,"kind":"paper","quality":"signal","one_liner":"<= 140 chars"}]}
 
 Use only these kind values:
-paper, model_release, company_announcement, tutorial, opinion, discussion, tool, news
+paper, model_release, company_announcement, tutorial, opinion, discussion, tool, news, unknown
 
 Use only these quality values:
 signal, mixed, hype
 
 Do not include reasoning, prose, Markdown, or code fences.`;
+
+const CLASSIFICATION_SCHEMA = {
+  type: "object",
+  properties: {
+    items: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          index: { type: "integer", minimum: 0 },
+          kind: { type: "string", enum: [...LLM_KIND_VALUES] },
+          quality: { type: "string", enum: ["signal", "mixed", "hype"] },
+          one_liner: { type: "string", maxLength: 200 },
+        },
+        required: ["index", "kind", "quality", "one_liner"],
+        additionalProperties: false,
+      },
+    },
+  },
+  required: ["items"],
+  additionalProperties: false,
+  propertyOrdering: ["items"],
+};
 
 export interface Classification {
   kind: Kind;
@@ -59,104 +94,101 @@ export interface ClassificationResult {
 
 export async function classifyClusters(
   clusters: Cluster[],
-  apiKey: string | undefined,
-  createChatCompletion?: ChatCompletionRunner,
+  providers: LlmProvider[] = [],
+  completeJson?: (request: LlmJsonRequest) => Promise<{ content: string }>,
 ): Promise<ClassificationResult> {
   if (clusters.length === 0) return { items: [], mode: "fallback" };
-  if (!apiKey) {
+
+  const items = new Array<Classification>(clusters.length);
+  const llmWork: Array<{ cluster: Cluster; index: number }> = [];
+  for (const [index, cluster] of clusters.entries()) {
+    if (shouldClassifyWithLlm(cluster)) llmWork.push({ cluster, index });
+    else items[index] = deterministicClassification(cluster);
+  }
+
+  if (llmWork.length === 0) return { items, mode: "deterministic" };
+  if (providers.length === 0 && !completeJson) {
     console.warn("[llm] no API key; using kind_hint fallback");
-    return { items: clusters.map((c) => fallback(c)), mode: "fallback" };
+    for (const work of llmWork) items[work.index] = fallback(work.cluster);
+    return { items, mode: "fallback" };
   }
 
-  const runner: ChatCompletionRunner = createChatCompletion
-    ?? ((args) => createGroqChatCompletion(apiKey, args));
-  const shouldThrottle = createChatCompletion === undefined;
-  const out: Classification[] = [];
-  let failed = 0;
-
-  for (let start = 0; start < clusters.length; start += BATCH_SIZE) {
-    const batch = clusters.slice(start, start + BATCH_SIZE);
-    if (shouldThrottle && start > 0) {
-      console.log(`[llm] waiting ${GROQ_BATCH_DELAY_MS / 1000}s to stay under Groq TPM limits`);
-      await sleep(GROQ_BATCH_DELAY_MS);
-    }
+  let failedClusters = 0;
+  for (let start = 0; start < llmWork.length; start += BATCH_SIZE) {
+    const batch = llmWork.slice(start, start + BATCH_SIZE);
     try {
-      out.push(...await classifyBatch(batch, runner));
-    } catch (e) {
-      failed++;
-      console.warn(`[llm] batch ${start / BATCH_SIZE + 1} failed: ${(e as Error).message}`);
-      out.push(...batch.map((c) => fallback(c)));
+      const classified = await classifyBatch(
+        batch.map((work) => work.cluster),
+        completeJson ?? ((request) => completeJsonWithProviders(providers, request)),
+      );
+      classified.forEach((classification, offset) => {
+        items[batch[offset].index] = classification;
+      });
+    } catch (error) {
+      failedClusters += batch.length;
+      console.warn(`[llm] batch ${start / BATCH_SIZE + 1} failed: ${(error as Error).message}`);
+      for (const work of batch) items[work.index] = fallback(work.cluster);
     }
   }
 
-  const mode: ClassificationMode = failed === 0 ? "llm" : failed * BATCH_SIZE >= clusters.length ? "fallback" : "partial";
-  return { items: out, mode };
-}
-
-function sleep(ms: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-interface ChatCompletionRequest {
-  model: string;
-  temperature: number;
-  max_completion_tokens: number;
-  response_format?: { type: "json_object" };
-  messages: Array<{
-    role: "system" | "user";
-    content: string;
-  }>;
-}
-
-interface ChatCompletionResponse {
-  choices?: Array<{
-    message?: {
-      content?: string | null;
-    };
-  }>;
-  error?: {
-    message?: string;
+  return {
+    items,
+    mode: classificationMode({
+      total: clusters.length,
+      llmTotal: llmWork.length,
+      failedClusters,
+    }),
   };
 }
 
-type ChatCompletionRunner = (args: ChatCompletionRequest) => Promise<ChatCompletionResponse>;
-
-async function createGroqChatCompletion(
-  apiKey: string,
-  body: ChatCompletionRequest,
-): Promise<ChatCompletionResponse> {
-  const resp = await fetch(GROQ_CHAT_COMPLETIONS_URL, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(body),
-  });
-  const text = await resp.text();
-  const data = parseResponseBody(text, resp.status);
-
-  if (!resp.ok) {
-    throw new Error(`Groq request failed (${resp.status}): ${groqErrorMessage(data)}`);
-  }
-
-  return data as ChatCompletionResponse;
+function shouldClassifyWithLlm(cluster: Cluster): boolean {
+  const role = sourceRoleOf(cluster.primary);
+  if (role === "repo" || role === "learning") return false;
+  const kind = cluster.primary.kind_hint;
+  return !kind || !NO_LLM_KINDS.has(kind);
 }
 
-function parseResponseBody(text: string, status: number): unknown {
-  if (!text) return {};
-  try {
-    return JSON.parse(text);
-  } catch {
-    throw new Error(`Groq returned non-JSON response (${status})`);
-  }
+function deterministicClassification(cluster: Cluster): Classification {
+  const kind = cluster.primary.kind_hint ?? "unknown";
+  return {
+    kind,
+    quality: deterministicQuality(cluster, kind),
+    one_liner: deterministicOneLiner(cluster),
+  };
 }
 
-function groqErrorMessage(data: unknown): string {
-  if (isRecord(data) && isRecord(data.error) && typeof data.error.message === "string") {
-    return data.error.message;
+function deterministicQuality(cluster: Cluster, kind: Kind): Quality {
+  if (kind === "repo_release") return cluster.primary.trust >= 0.75 ? "signal" : "mixed";
+  if (kind === "repo_trending") {
+    const stars = cluster.primary.repo?.stargazers_count ?? 0;
+    const delta = cluster.primary.repo?.stars_delta_30d ?? 0;
+    return stars >= 1000 || delta >= 100 ? "signal" : "mixed";
   }
-  return "unknown error";
+  if (kind === "video" || kind === "course") return cluster.primary.trust >= 0.75 ? "signal" : "mixed";
+  return fallbackQuality(cluster, kind);
+}
+
+function deterministicOneLiner(cluster: Cluster): string {
+  const summary = String(cluster.primary.summary ?? "").replace(/\s+/g, " ").trim();
+  if (!summary) return "";
+  const title = normalizeText(cluster.primary.title);
+  const line = normalizeText(summary);
+  if (line === title || line.startsWith(title)) return "";
+  if (isWeakSummary(line)) return "";
+  return decodeText(summary).slice(0, 200);
+}
+
+function classificationMode(args: {
+  total: number;
+  llmTotal: number;
+  failedClusters: number;
+}): ClassificationMode {
+  if (args.llmTotal === 0) return "deterministic";
+  if (args.failedClusters === 0) return "llm";
+  if (args.failedClusters >= args.llmTotal) {
+    return args.llmTotal === args.total ? "fallback" : "partial";
+  }
+  return "partial";
 }
 
 interface RawClassifiedItem {
@@ -214,7 +246,7 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 
 async function classifyBatch(
   clusters: Cluster[],
-  runner: ChatCompletionRunner,
+  completeJson: (request: LlmJsonRequest) => Promise<{ content: string }>,
 ): Promise<Classification[]> {
   const payload = clusters.map((c, i) => ({
     index: i,
@@ -229,31 +261,16 @@ async function classifyBatch(
     `Return one entry per item, same index.\n\n` +
     JSON.stringify(payload, null, 2);
 
-  const request: ChatCompletionRequest = {
-    model: MODEL,
+  const resp = await completeJson({
+    system: `${SYSTEM}\n\n${JSON_INSTRUCTIONS}`,
+    user: userMsg,
+    schemaName: "classification",
+    schema: CLASSIFICATION_SCHEMA,
     temperature: 0,
-    max_completion_tokens: MAX_COMPLETION_TOKENS,
-    response_format: { type: "json_object" },
-    messages: [
-      { role: "system", content: `${SYSTEM}\n\n${JSON_INSTRUCTIONS}` },
-      { role: "user", content: userMsg },
-    ],
-  };
+    maxOutputTokens: MAX_COMPLETION_TOKENS,
+  });
 
-  let resp: ChatCompletionResponse;
-  try {
-    resp = await runner(request);
-  } catch (error) {
-    if (!isGroqJsonValidationError(error)) throw error;
-    console.warn("[llm] Groq JSON mode validation failed; retrying without response_format");
-    resp = await runner(withoutResponseFormat(request));
-  }
-
-  const content = resp.choices?.[0]?.message?.content;
-  if (!content) {
-    throw new Error("no message content in response");
-  }
-  const out = parseClassifications(content).items;
+  const out = parseClassifications(resp.content).items;
   // Reassemble in input order. Missing entries fall back.
   const byIdx = new Map<number, RawClassifiedItem>();
   for (const it of out) byIdx.set(it.index, it);
@@ -269,33 +286,13 @@ async function classifyBatch(
   });
 }
 
-function isGroqJsonValidationError(error: unknown): boolean {
-  const message = (error as Error).message?.toLowerCase?.() ?? "";
-  return message.includes("validate json") || message.includes("failed_generation");
-}
-
-function withoutResponseFormat(request: ChatCompletionRequest): ChatCompletionRequest {
-  const { response_format: _responseFormat, ...rest } = request;
-  return rest;
-}
-
 function fallback(c: Cluster): Classification {
   const kind = c.primary.kind_hint ?? "unknown";
   return {
     kind,
     quality: fallbackQuality(c, kind),
-    one_liner: fallbackOneLiner(c),
+    one_liner: deterministicOneLiner(c),
   };
-}
-
-function fallbackOneLiner(c: Cluster): string {
-  const summary = String(c.primary.summary ?? "").replace(/\s+/g, " ").trim();
-  if (!summary) return "";
-  const title = normalizeText(c.primary.title);
-  const line = normalizeText(summary);
-  if (line === title || line.startsWith(title)) return "";
-  if (isWeakSummary(line)) return "";
-  return decodeText(summary).slice(0, 200);
 }
 
 function fallbackQuality(c: Cluster, kind: Kind): Quality {
@@ -305,7 +302,10 @@ function fallbackQuality(c: Cluster, kind: Kind): Quality {
 
   if (kind === "discussion" && isLowSignalDiscussion(title, text)) return "hype";
   if (kind === "paper") return isLikelySignalPaper(text) ? "signal" : "mixed";
-  if (kind === "tutorial" || kind === "tool") return "signal";
+  if (kind === "tutorial" || kind === "tool" || kind === "repo_release" || kind === "video" || kind === "course") {
+    return "signal";
+  }
+  if (kind === "repo_trending") return deterministicQuality(c, kind);
   return "mixed";
 }
 
@@ -378,16 +378,27 @@ function decodeText(value: string): string {
     .replace(/&quot;/g, '"')
     .replace(/&#39;|&#x27;/g, "'")
     .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">");
+    .replace(/&gt;/g, " ");
 }
 
-function isKind(k: string): k is Kind {
+function isKind(value: string): value is Kind {
   return [
-    "paper", "model_release", "company_announcement", "tutorial",
-    "opinion", "discussion", "tool", "news", "unknown",
-  ].includes(k);
+    "paper",
+    "model_release",
+    "company_announcement",
+    "tutorial",
+    "opinion",
+    "discussion",
+    "tool",
+    "repo_release",
+    "repo_trending",
+    "video",
+    "course",
+    "news",
+    "unknown",
+  ].includes(value);
 }
 
-function isQuality(q: string): q is Quality {
-  return q === "signal" || q === "mixed" || q === "hype";
+function isQuality(value: string): value is Quality {
+  return value === "signal" || value === "mixed" || value === "hype";
 }

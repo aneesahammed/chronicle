@@ -342,6 +342,32 @@
     border-top: 1px solid var(--rule);
     border-bottom: 1px solid var(--rule);
   }
+  .feed-tabs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 12px 0 0;
+  }
+  .feed-tab {
+    min-height: 32px;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    background: var(--panel);
+    color: var(--ink-2);
+    cursor: pointer;
+    padding: 0 12px;
+    font: 11px/1 var(--font-mono);
+    letter-spacing: 0.04em;
+    transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
+  }
+  .feed-tab:hover { border-color: var(--accent); color: var(--accent-2); }
+  .feed-tab[aria-selected="true"] {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--paper);
+  }
+  .feed-tab:active { transform: translateY(1px); }
   .filter-row {
     display: flex;
     flex-wrap: wrap;
@@ -804,14 +830,14 @@
   }
   .ptr.is-active .ptr-pill { opacity: 1; transform: scale(1); }
   .ptr-arrow {
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     color: var(--ink-2);
     transform: rotate(var(--ptr-rot, 0deg));
     transition: transform 0.15s ease;
   }
   .ptr.is-refreshing .ptr-arrow {
-    animation: ptr-spin 0.85s linear infinite;
+    animation: ptr-spin 1s steps(12, end) infinite;
     transform: none;
     transition: none;
   }
@@ -828,9 +854,21 @@
 <a class="skip-link" href="#feed">Skip to feed</a>
 <div class="ptr" id="ptr" aria-hidden="true">
   <div class="ptr-pill">
-    <svg class="ptr-arrow" id="ptrArrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-      <path d="M21 12a9 9 0 1 1-3.51-7.13"></path>
-      <polyline points="21 4 21 12 13 12"></polyline>
+    <svg class="ptr-arrow" id="ptrArrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+      <g stroke="currentColor" stroke-linecap="round" stroke-width="2.6">
+        <line x1="12" y1="2.4" x2="12" y2="6.6" opacity="1.00"></line>
+        <line x1="12" y1="2.4" x2="12" y2="6.6" opacity="0.92" transform="rotate(30 12 12)"></line>
+        <line x1="12" y1="2.4" x2="12" y2="6.6" opacity="0.84" transform="rotate(60 12 12)"></line>
+        <line x1="12" y1="2.4" x2="12" y2="6.6" opacity="0.76" transform="rotate(90 12 12)"></line>
+        <line x1="12" y1="2.4" x2="12" y2="6.6" opacity="0.68" transform="rotate(120 12 12)"></line>
+        <line x1="12" y1="2.4" x2="12" y2="6.6" opacity="0.60" transform="rotate(150 12 12)"></line>
+        <line x1="12" y1="2.4" x2="12" y2="6.6" opacity="0.52" transform="rotate(180 12 12)"></line>
+        <line x1="12" y1="2.4" x2="12" y2="6.6" opacity="0.44" transform="rotate(210 12 12)"></line>
+        <line x1="12" y1="2.4" x2="12" y2="6.6" opacity="0.36" transform="rotate(240 12 12)"></line>
+        <line x1="12" y1="2.4" x2="12" y2="6.6" opacity="0.28" transform="rotate(270 12 12)"></line>
+        <line x1="12" y1="2.4" x2="12" y2="6.6" opacity="0.22" transform="rotate(300 12 12)"></line>
+        <line x1="12" y1="2.4" x2="12" y2="6.6" opacity="0.16" transform="rotate(330 12 12)"></line>
+      </g>
     </svg>
     <span class="ptr-label" id="ptrLabel">pull to refresh</span>
   </div>
@@ -852,6 +890,12 @@
     <div class="top-news-head" id="top-news-title">Top News</div>
     <div class="top-news-grid" id="topNewsGrid"></div>
   </section>
+
+  <nav class="feed-tabs" aria-label="Feed sections" role="tablist">
+    <button class="feed-tab" type="button" data-feed-tab="main" role="tab" aria-selected="true">Signal</button>
+    <button class="feed-tab" type="button" data-feed-tab="repo" role="tab" aria-selected="false">Repos</button>
+    <button class="feed-tab" type="button" data-feed-tab="learning" role="tab" aria-selected="false">Learning</button>
+  </nav>
 
   <nav class="filterbar" aria-label="Feed filters">
     <div class="filter-row" id="kindFilters" aria-label="Filter by type">
@@ -914,8 +958,17 @@ const KIND_LABELS = {
   opinion: "opinion",
   discussion: "discussion",
   tool: "tools",
+  repo_release: "repo releases",
+  repo_trending: "trending repos",
+  video: "videos",
+  course: "courses",
   news: "news",
   unknown: "other",
+};
+const FEEDS = {
+  main: { label: "Signal", path: "feed.json" },
+  repo: { label: "Repos", path: "repos.json" },
+  learning: { label: "Learning", path: "learning.json" },
 };
 const NOVELTY_TOP = 0.7;
 const MS_PER_HOUR = 36e5;
@@ -935,6 +988,7 @@ const state = {
   kinds: new Set(),
   highNovelty: false,
   discussionOnly: false,
+  activeFeed: "main",
   resumePromptDay: null,
   scrollTicking: false,
 };
@@ -942,6 +996,7 @@ const state = {
 initTheme();
 initDetailMode();
 initFiltersFromUrl();
+wireFeedTabs();
 wireFilterControls();
 wireReadingControls();
 wirePullToRefresh();
@@ -996,10 +1051,41 @@ function wireFilterControls() {
   });
   document.getElementById("exitArchive").addEventListener("click", () => {
     state.archiveDate = null;
+    state.activeFeed = "main";
     state.resumePromptDay = null;
     hideResumePrompt();
     syncUrl();
+    syncFeedTabs();
     loadFeed();
+  });
+}
+
+function wireFeedTabs() {
+  document.querySelectorAll("[data-feed-tab]").forEach((button) => {
+    button.addEventListener("click", () => switchFeedTab(button.dataset.feedTab));
+  });
+  syncFeedTabs();
+}
+
+function switchFeedTab(next) {
+  if (!FEEDS[next] || state.activeFeed === next || state.archiveDate) return;
+  state.activeFeed = next;
+  state.kinds.clear();
+  state.highNovelty = false;
+  state.discussionOnly = false;
+  hideResumePrompt();
+  clearReadingProgress();
+  syncUrl();
+  syncFeedTabs();
+  loadFeed();
+  scrollToTop();
+}
+
+function syncFeedTabs() {
+  document.querySelectorAll("[data-feed-tab]").forEach((button) => {
+    const selected = button.dataset.feedTab === state.activeFeed;
+    button.setAttribute("aria-selected", String(selected));
+    button.tabIndex = selected ? 0 : -1;
   });
 }
 
@@ -1168,6 +1254,11 @@ async function loadFeed() {
 function renderTopNews() {
   const section = document.getElementById("topNews");
   const grid = document.getElementById("topNewsGrid");
+  if (state.activeFeed !== "main") {
+    section.hidden = true;
+    grid.replaceChildren();
+    return;
+  }
   const items = Array.isArray(state.data?.top_news) ? state.data.top_news.filter(isUsableTopNews) : [];
   if (!items.length) {
     section.hidden = true;
@@ -1291,7 +1382,7 @@ function updateStatus() {
   const sourceFrag = sourceTotal ? `${sourceOk}/${sourceTotal} sources` : "sources unknown";
   const tail = [];
   if (sourceFailed) tail.push(`${sourceFailed} failed`);
-  if (mode !== "llm") tail.push(`classify ${mode}`);
+  if (mode !== "llm" && state.activeFeed === "main") tail.push(`classify ${mode}`);
   tail.push(`window ${data.window_hours ?? 36}h`);
   health.replaceChildren(
     Object.assign(document.createElement("strong"), { textContent: sourceFrag }),
@@ -1303,7 +1394,7 @@ function updateStatus() {
   if (status === "failed") notices.push("Latest refresh failed — showing the last successful feed.");
   else if (status === "partial") notices.push("Some sources failed during the latest refresh.");
   if (stale) notices.push("This feed is older than 30 hours.");
-  if (mode !== "llm") notices.push("Classification is degraded (LLM unavailable).");
+  if (mode !== "llm" && state.activeFeed === "main") notices.push("Classification is degraded (LLM unavailable).");
   if (notices.length) showNotice(notices.join(" "));
   else clearNotice();
 }
@@ -1423,6 +1514,15 @@ function renderItem(item, displayIndex) {
   meta.append(node("span", "source", item.primary?.source_name || "Unknown source"));
   meta.append(sep(), document.createTextNode(relTime(parseDate(item.primary?.published_at)) || "unknown"));
   if (item.kind && item.kind !== "unknown") meta.append(sep(), document.createTextNode(KIND_LABELS[item.kind] || item.kind));
+  if (item.primary?.repo?.stargazers_count) {
+    meta.append(sep(), document.createTextNode(`${formatNumber(item.primary.repo.stargazers_count)} stars`));
+  }
+  if (item.primary?.repo?.stars_delta_30d) {
+    meta.append(sep(), document.createTextNode(`+${formatNumber(item.primary.repo.stars_delta_30d)} stars`));
+  }
+  if (item.primary?.learning?.provider) {
+    meta.append(sep(), document.createTextNode(item.primary.learning.provider));
+  }
   const discussions = discussionLinks(item);
   if (discussions.length) {
     meta.append(sep());
@@ -1546,6 +1646,8 @@ function initFiltersFromUrl() {
   const kinds = csv(params.get("kind"));
   if (kinds.length) state.kinds = new Set(kinds);
   state.archiveDate = DATE_PATH_MATCH?.[1] || params.get("day") || null;
+  const requestedTab = params.get("tab");
+  state.activeFeed = state.archiveDate ? "main" : FEEDS[requestedTab] ? requestedTab : "main";
   state.highNovelty = params.get("novelty") === "high";
   state.discussionOnly = params.get("discussion") === "1";
 }
@@ -1555,6 +1657,7 @@ function syncUrl() {
   if (state.kinds.size) params.set("kind", [...state.kinds].join(","));
   if (state.highNovelty) params.set("novelty", "high");
   if (state.discussionOnly) params.set("discussion", "1");
+  if (!state.archiveDate && state.activeFeed !== "main") params.set("tab", state.activeFeed);
   if (document.body.classList.contains("is-detail")) params.set("detail", "1");
   const base = state.archiveDate ? rootUrl(`daily/${state.archiveDate}/`) : rootUrl("");
   const next = new URL(base);
@@ -1563,9 +1666,8 @@ function syncUrl() {
 }
 
 function feedUrl() {
-  return state.archiveDate
-    ? rootUrl(`daily/${state.archiveDate}/feed.json`)
-    : rootUrl("feed.json");
+  if (state.archiveDate) return rootUrl(`daily/${state.archiveDate}/feed.json`);
+  return rootUrl((FEEDS[state.activeFeed] || FEEDS.main).path);
 }
 
 function rootUrl(path) {
@@ -1787,6 +1889,10 @@ function relTime(date, includeNow = false) {
 function shortDate(date) {
   if (!date) return "unknown";
   return date.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+}
+function formatNumber(value) {
+  const number = Number(value);
+  return Number.isFinite(number) ? new Intl.NumberFormat().format(number) : "0";
 }
 function formatDay(value) {
   const date = parseDate(`${value}T00:00:00.000Z`);

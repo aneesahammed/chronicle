@@ -8,10 +8,23 @@ import {
   appendToHistory, loadHistory, novelty, pruneHistory, saveHistory,
 } from "./pipeline/novelty.ts";
 import { classifyClusters } from "./llm/classify.ts";
+import { createLlmProviders, type LlmProvider } from "./llm/providers.ts";
 import { scoreCluster } from "./pipeline/score.ts";
 import { selectDiverseClusters, sourceFamilyMix } from "./pipeline/diversity.ts";
 import { buildTopNews } from "./enrichment/top-news.ts";
-import type { FeedFile, Registry, SourceHealth, TopNewsItem } from "./types.ts";
+import {
+  sourceRoleOf,
+  type Cluster,
+  type FeedFile,
+  type FetchResult,
+  type HistoryFile,
+  type RawItem,
+  type Registry,
+  type SourceFetchFailure,
+  type SourceHealth,
+  type SourceRole,
+  type TopNewsItem,
+} from "./types.ts";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -20,9 +33,12 @@ const PUBLIC_DIR = path.join(ROOT, "public");
 const DATA_DIR = path.join(ROOT, "data");
 const FEED_OUT = path.join(PUBLIC_DIR, "feed.json");
 const HISTORY_OUT = path.join(DATA_DIR, "history.json");
+const REPO_HISTORY_OUT = path.join(DATA_DIR, "repo-history.json");
 const SITE_URL = "https://chronicle.tinycrafts.ai/";
 
 const DEFAULT_WINDOW_HOURS = 36;
+const DEFAULT_REPO_WINDOW_HOURS = 168;
+const DEFAULT_LEARNING_WINDOW_HOURS = 720;
 const DEFAULT_MAX_OUTPUT = 60;
 
 async function main() {
@@ -35,6 +51,7 @@ interface RunPipelineOptions {
   publicDir?: string;
   dataDir?: string;
   env?: NodeJS.ProcessEnv;
+  providers?: LlmProvider[];
 }
 
 export async function runPipeline(options: RunPipelineOptions = {}) {
@@ -44,111 +61,322 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
   const publicDir = options.publicDir ?? PUBLIC_DIR;
   const dataDir = options.dataDir ?? DATA_DIR;
   const feedOut = path.join(publicDir, "feed.json");
+  const repoFeedOut = path.join(publicDir, "repos.json");
+  const learningFeedOut = path.join(publicDir, "learning.json");
   const historyOut = path.join(dataDir, "history.json");
+  const repoHistoryOut = path.join(dataDir, "repo-history.json");
   const enrichmentsOut = path.join(dataDir, "enrichments.json");
   const windowHours = readPositiveNumber(env, "WINDOW_HOURS", DEFAULT_WINDOW_HOURS);
-  const maxOutput = readNonNegativeInteger(env, "MAX_OUTPUT", DEFAULT_MAX_OUTPUT);
+  const repoWindowHours = readPositiveNumber(env, "REPO_WINDOW_HOURS", DEFAULT_REPO_WINDOW_HOURS);
+  const learningWindowHours = readPositiveNumber(env, "LEARNING_WINDOW_HOURS", DEFAULT_LEARNING_WINDOW_HOURS);
+  const mainMaxOutput = readNonNegativeInteger(env, "MAX_OUTPUT", DEFAULT_MAX_OUTPUT);
+  const repoMaxOutput = readNonNegativeInteger(env, "REPO_MAX_OUTPUT", 40);
+  const learningMaxOutput = readNonNegativeInteger(env, "LEARNING_MAX_OUTPUT", 40);
 
-  console.log(`[run] ${now.toISOString()}  window=${windowHours}h`);
+  console.log(`[run] ${now.toISOString()}  window=${windowHours}h repo_window=${repoWindowHours}h learning_window=${learningWindowHours}h`);
 
   const reg = YAML.parse(await fs.readFile(registryPath, "utf8")) as Registry;
   const previous = await loadExistingFeed(feedOut);
+  const providers = options.providers ?? createLlmProviders(env);
+  console.log(`[llm] providers=${providers.map((provider) => `${provider.name}:${provider.model}`).join(",") || "fallback"}`);
 
   // 1. Fetch
-  const fetched = await fetchAll(reg);
+  const fetched = await fetchAll(reg, { env, now });
   const items = fetched.items;
   console.log(`[fetch] ${items.length} items from ${fetched.source_ok}/${fetched.source_total} sources`);
 
-  // 2. Window filter
+  // 2. Role-specific window filters
   const cutoff = now.getTime() - windowHours * 3.6e6;
-  const fresh = items.filter(
-    (it) => new Date(it.published_at).getTime() >= cutoff,
-  );
-  const sourceHealth = enrichSourceHealth(fetched.source_health, items, cutoff);
-  console.log(`[window] ${fresh.length} items within ${windowHours}h`);
+  const repoCutoff = now.getTime() - repoWindowHours * 3.6e6;
+  const learningCutoff = now.getTime() - learningWindowHours * 3.6e6;
+  const allByRole = splitItemsByRole(items);
+  const byRole = {
+    main: freshItems(allByRole.main, cutoff),
+    repo: freshItems(allByRole.repo, repoCutoff),
+    learning: freshItems(allByRole.learning, learningCutoff),
+  };
+  console.log(`[window:main] ${byRole.main.length} items within ${windowHours}h`);
+  console.log(`[window:repo] ${byRole.repo.length} items within ${repoWindowHours}h`);
+  console.log(`[window:learning] ${byRole.learning.length} items within ${learningWindowHours}h`);
 
-  // 3. Cluster
-  const clusters = clusterItems(fresh);
-  console.log(`[cluster] ${fresh.length} → ${clusters.length} clusters`);
-
-  // 4. Classify with chunked LLM calls, falling back if the API is unavailable.
-  const cls = await classifyClusters(clusters, env.GROQ_API_KEY);
-
-  // 5. Novelty against history
   const history = pruneHistory(await loadHistory(historyOut), now);
+  const roleFetch = splitFetchResultByRole(fetched, reg);
+  const repoHistory = await loadRepoHistory(repoHistoryOut);
+  const repoItems = applyRepoHistory(byRole.repo, repoHistory, now, repoCutoff);
 
-  if (clusters.length === 0 && previous && previous.clusters.length > 0) {
-    await preservePreviousFeed(previous, feedOut, publicDir, {
-      now,
-      windowHours,
-      fetched: { ...fetched, source_health: sourceHealth },
-      classificationMode: previous.classification_mode ?? "fallback",
+  const mainFeed = await buildRoleFeed({
+    role: "main",
+    items: byRole.main,
+    healthItems: allByRole.main,
+    fetched: roleFetch.main,
+    previous,
+    now,
+    windowHours,
+    maxOutput: mainMaxOutput,
+    history,
+    providers,
+    topNews: { cachePath: enrichmentsOut, env },
+  });
+  await writeFeed(feedOut, mainFeed);
+  if (mainFeed.refresh_status !== "failed") {
+    await writeArchiveOutputs(publicDir, mainFeed);
+  }
+  const mainClusters = clusterItems(byRole.main);
+  const updated = appendToHistory(history, mainClusters, now);
+  await saveHistory(historyOut, updated);
+  console.log(`[write] ${historyOut}  entries=${updated.entries.length}`);
+
+  const repoFeed = await buildRoleFeed({
+    role: "repo",
+    items: repoItems,
+    healthItems: allByRole.repo,
+    fetched: roleFetch.repo,
+    previous: await loadExistingFeed(repoFeedOut),
+    now,
+    windowHours: repoWindowHours,
+    maxOutput: repoMaxOutput,
+    history: { entries: [] },
+    providers,
+  });
+  await writeFeed(repoFeedOut, repoFeed);
+  await saveRepoHistory(repoHistoryOut, pruneRepoHistory(repoHistory, now));
+
+  const learningFeed = await buildRoleFeed({
+    role: "learning",
+    items: byRole.learning,
+    healthItems: allByRole.learning,
+    fetched: roleFetch.learning,
+    previous: await loadExistingFeed(learningFeedOut),
+    now,
+    windowHours: learningWindowHours,
+    maxOutput: learningMaxOutput,
+    history: { entries: [] },
+    providers,
+  });
+  await writeFeed(learningFeedOut, learningFeed);
+}
+
+function freshItems(items: RawItem[], cutoff: number): RawItem[] {
+  return items.filter((it) => new Date(it.published_at).getTime() >= cutoff);
+}
+
+async function buildRoleFeed(options: {
+  role: SourceRole;
+  items: RawItem[];
+  healthItems?: RawItem[];
+  fetched: FetchResult;
+  previous: FeedFile | null;
+  now: Date;
+  windowHours: number;
+  maxOutput: number;
+  history: HistoryFile;
+  providers: LlmProvider[];
+  topNews?: { cachePath: string; env: NodeJS.ProcessEnv };
+}): Promise<FeedFile> {
+  const sourceHealth = enrichSourceHealth(
+    options.fetched.source_health,
+    options.healthItems ?? options.items,
+    options.now.getTime() - options.windowHours * 3.6e6,
+  );
+  const clusters = clusterItems(options.items);
+  console.log(`[cluster:${options.role}] ${options.items.length} → ${clusters.length} clusters`);
+
+  const cls = await classifyClusters(clusters, options.providers);
+
+  if (options.role === "main" && clusters.length === 0 && options.previous && options.previous.clusters.length > 0) {
+    return previousFeed(options.previous, {
+      now: options.now,
+      windowHours: options.windowHours,
+      fetched: { ...options.fetched, source_health: sourceHealth },
+      classificationMode: options.previous.classification_mode ?? "fallback",
       reason: "refresh produced zero clusters",
     });
-    return;
   }
 
-  // 6. Score & rank
   const scored = clusters
-    .map((c, i) => scoreCluster(c, cls.items[i], novelty(c.primary.title, history, now), now))
-    // A single source can be fresh and still be low-signal. Keep hype only when
-    // another source corroborates the cluster.
+    .map((c, i) => scoreCluster(c, cls.items[i], novelty(c.primary.title, options.history, options.now), options.now))
     .filter((s) => !(s.quality === "hype" && s.members.length < 2));
-  const selected = selectDiverseClusters(scored, { maxOutput });
+  const selected = selectDiverseClusters(scored, { maxOutput: options.maxOutput });
 
-  console.log(`[score] kept ${selected.length} after filtering`);
-  console.log(`[diversity] ${JSON.stringify(sourceFamilyMix(selected))}`);
+  console.log(`[score:${options.role}] kept ${selected.length} after filtering`);
+  console.log(`[diversity:${options.role}] ${JSON.stringify(sourceFamilyMix(selected))}`);
 
-  if (selected.length === 0 && previous && previous.clusters.length > 0) {
-    await preservePreviousFeed(previous, feedOut, publicDir, {
-      now,
-      windowHours,
-      fetched: { ...fetched, source_health: sourceHealth },
+  if (options.role === "main" && selected.length === 0 && options.previous && options.previous.clusters.length > 0) {
+    return previousFeed(options.previous, {
+      now: options.now,
+      windowHours: options.windowHours,
+      fetched: { ...options.fetched, source_health: sourceHealth },
       classificationMode: cls.mode,
       reason: "refresh produced zero scored items",
     });
-    const updated = appendToHistory(history, clusters, now);
-    await saveHistory(historyOut, updated);
-    console.log(`[write] ${historyOut}  entries=${updated.entries.length}`);
-    return;
   }
 
-  const topNews = await buildTopNewsSafely(selected, {
-    now,
-    cachePath: enrichmentsOut,
-    env,
-  });
+  const topNews = options.topNews
+    ? await buildTopNewsSafely(selected, {
+      now: options.now,
+      cachePath: options.topNews.cachePath,
+      env: options.topNews.env,
+      providers: options.providers,
+    })
+    : [];
 
-  // 7. Emit feed
-  const feed: FeedFile = {
-    generated_at: now.toISOString(),
+  return {
+    generated_at: options.now.toISOString(),
     last_successful_generated_at: selected.length
-      ? now.toISOString()
-      : previous?.last_successful_generated_at ?? previous?.generated_at ?? null,
-    refresh_status: selected.length === 0 ? "failed" : fetched.source_failed > 0 ? "partial" : "ok",
+      ? options.now.toISOString()
+      : options.previous?.last_successful_generated_at ?? options.previous?.generated_at ?? null,
+    refresh_status: refreshStatus(selected.length, options.fetched),
     classification_mode: cls.mode,
-    window_hours: windowHours,
-    source_total: fetched.source_total,
-    source_ok: fetched.source_ok,
-    source_failed: fetched.source_failed,
-    failed_sources: fetched.failed_sources,
+    window_hours: options.windowHours,
+    source_total: options.fetched.source_total,
+    source_ok: options.fetched.source_ok,
+    source_failed: options.fetched.source_failed,
+    failed_sources: options.fetched.failed_sources,
     source_health: sourceHealth,
     ...(topNews.length ? { top_news: topNews } : {}),
     count: selected.length,
     clusters: selected,
   };
-  await fs.mkdir(publicDir, { recursive: true });
-  await fs.writeFile(feedOut, JSON.stringify(feed, null, 2));
-  console.log(`[write] ${feedOut}`);
-  if (feed.refresh_status !== "failed") {
-    await writeArchiveOutputs(publicDir, feed);
+}
+
+function splitItemsByRole(items: RawItem[]): Record<SourceRole, RawItem[]> {
+  return {
+    main: items.filter((item) => sourceRoleOf(item) === "main"),
+    repo: items.filter((item) => sourceRoleOf(item) === "repo"),
+    learning: items.filter((item) => sourceRoleOf(item) === "learning"),
+  };
+}
+
+function splitFetchResultByRole(fetched: FetchResult, reg: Registry): Record<SourceRole, FetchResult> {
+  const sourceRoles = new Map(reg.sources.map((source) => [source.id, (source.source_role ?? "main") as SourceRole]));
+  return {
+    main: fetchResultForRole("main", fetched, sourceRoles),
+    repo: fetchResultForRole("repo", fetched, sourceRoles),
+    learning: fetchResultForRole("learning", fetched, sourceRoles),
+  };
+}
+
+function fetchResultForRole(
+  role: SourceRole,
+  fetched: FetchResult,
+  sourceRoles: Map<string, SourceRole>,
+): FetchResult {
+  const sourceIds = new Set(
+    [...sourceRoles.entries()]
+      .filter(([, sourceRole]) => sourceRole === role)
+      .map(([id]) => id),
+  );
+  const items = fetched.items.filter((item) => sourceRoleOf(item) === role);
+  const failed_sources = fetched.failed_sources.filter((source) => sourceIds.has(source.id));
+  const source_health = fetched.source_health.filter((source) => sourceIds.has(source.id));
+  return {
+    items,
+    source_total: sourceIds.size,
+    source_ok: sourceIds.size - failed_sources.length,
+    source_failed: failed_sources.length,
+    failed_sources,
+    source_health,
+  };
+}
+
+function refreshStatus(selectedCount: number, fetched: FetchResult): FeedFile["refresh_status"] {
+  if (selectedCount === 0 && fetched.source_total > 0 && fetched.source_ok === 0) return "failed";
+  if (fetched.source_failed > 0) return "partial";
+  return "ok";
+}
+
+interface RepoHistoryEntry {
+  full_name: string;
+  first_seen_at: string;
+  last_seen_at: string;
+  stargazers_count: number;
+}
+
+interface RepoHistoryFile {
+  repos: Record<string, RepoHistoryEntry>;
+}
+
+async function loadRepoHistory(repoHistoryOut: string): Promise<RepoHistoryFile> {
+  try {
+    const parsed = JSON.parse(await fs.readFile(repoHistoryOut, "utf8")) as RepoHistoryFile;
+    return { repos: parsed.repos && typeof parsed.repos === "object" ? parsed.repos : {} };
+  } catch {
+    return { repos: {} };
+  }
+}
+
+function applyRepoHistory(
+  items: RawItem[],
+  history: RepoHistoryFile,
+  now: Date,
+  cutoff: number,
+): RawItem[] {
+  const nowIso = now.toISOString();
+  const seenThisRun = new Set<string>();
+  const out: RawItem[] = [];
+
+  for (const item of items) {
+    const repo = item.repo;
+    const fullName = repo?.full_name;
+    if (!fullName) {
+      out.push(item);
+      continue;
+    }
+    const previous = history.repos[fullName];
+    const firstSeenAt = previous?.first_seen_at ?? nowIso;
+    const currentStars = item.repo?.stargazers_count ?? previous?.stargazers_count ?? 0;
+    const starsDelta = previous ? Math.max(0, currentStars - previous.stargazers_count) : 0;
+
+    history.repos[fullName] = {
+      full_name: fullName,
+      first_seen_at: firstSeenAt,
+      last_seen_at: nowIso,
+      stargazers_count: currentStars,
+    };
+
+    if (item.kind_hint === "repo_trending") {
+      if (seenThisRun.has(fullName)) continue;
+      seenThisRun.add(fullName);
+      if (Date.parse(firstSeenAt) < cutoff) continue;
+    }
+
+    out.push({
+      ...item,
+      repo: {
+        full_name: repo.full_name,
+        html_url: repo.html_url,
+        description: repo.description,
+        language: repo.language,
+        license: repo.license,
+        topics: repo.topics,
+        stargazers_count: repo.stargazers_count,
+        forks_count: repo.forks_count,
+        open_issues_count: repo.open_issues_count,
+        pushed_at: repo.pushed_at,
+        created_at: repo.created_at,
+        release_tag: repo.release_tag,
+        release_name: repo.release_name,
+        stars_delta_30d: starsDelta,
+      },
+    });
   }
 
-  // 8. Update history (using the *clustered, classified* items, not the
-  //    final filtered output, so we don't re-surface a hype item tomorrow)
-  const updated = appendToHistory(history, clusters, now);
-  await saveHistory(historyOut, updated);
-  console.log(`[write] ${historyOut}  entries=${updated.entries.length}`);
+  return out;
+}
+
+function pruneRepoHistory(history: RepoHistoryFile, now: Date): RepoHistoryFile {
+  const cutoff = now.getTime() - 90 * 864e5;
+  const repos: RepoHistoryFile["repos"] = {};
+  for (const [fullName, entry] of Object.entries(history.repos)) {
+    if (Date.parse(entry.last_seen_at) >= cutoff) repos[fullName] = entry;
+  }
+  return { repos };
+}
+
+async function saveRepoHistory(repoHistoryOut: string, history: RepoHistoryFile) {
+  await fs.mkdir(path.dirname(repoHistoryOut), { recursive: true });
+  await fs.writeFile(repoHistoryOut, JSON.stringify(history, null, 2));
+  console.log(`[write] ${repoHistoryOut}  repos=${Object.keys(history.repos).length}`);
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
@@ -171,10 +399,8 @@ async function loadExistingFeed(feedPath: string): Promise<FeedFile | null> {
   }
 }
 
-async function preservePreviousFeed(
+function previousFeed(
   previousFeed: FeedFile,
-  feedOut: string,
-  publicDir: string,
   options: {
     now: Date;
     windowHours: number;
@@ -188,7 +414,7 @@ async function preservePreviousFeed(
     classificationMode: FeedFile["classification_mode"];
     reason: string;
   },
-) {
+): FeedFile {
   const preserved: FeedFile = {
     generated_at: options.now.toISOString(),
     last_successful_generated_at:
@@ -205,9 +431,14 @@ async function preservePreviousFeed(
     count: previousFeed.clusters.length,
     clusters: previousFeed.clusters,
   };
-  await fs.mkdir(publicDir, { recursive: true });
-  await fs.writeFile(feedOut, JSON.stringify(preserved, null, 2));
   console.warn(`[write] preserved previous feed because ${options.reason}`);
+  return preserved;
+}
+
+async function writeFeed(feedOut: string, feed: FeedFile) {
+  await fs.mkdir(path.dirname(feedOut), { recursive: true });
+  await fs.writeFile(feedOut, JSON.stringify(feed, null, 2));
+  console.log(`[write] ${feedOut}`);
 }
 
 async function buildTopNewsSafely(
@@ -216,6 +447,7 @@ async function buildTopNewsSafely(
     now: Date;
     cachePath: string;
     env: NodeJS.ProcessEnv;
+    providers?: LlmProvider[];
   },
 ): Promise<TopNewsItem[]> {
   try {

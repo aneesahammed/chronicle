@@ -18,19 +18,20 @@ separate storage service.
 ```
 sources → fetch → canonicalize → window-filter → cluster
                                                      ↓
-                         novelty ← history ← classify (Groq Qwen, chunked)
+                 novelty ← history ← classify (Gemini, Groq fallback)
                                                      ↓
                                                    score
                                                      ↓
-                                                feed.json
+                                feed.json / repos.json / learning.json
 ```
 
 - **Canonicalize** strips `utm_*`, `fbclid`, `/amp`, fragments, default ports,
   `www.`, normalizes arXiv `pdf` ↔ `abs`.
 - **Cluster** is two-stage: exact canonical URL match, then trigram Jaccard on
   titles (≥ 0.55). No embeddings in v1.
-- **Classify** runs clusters in chunked Groq `qwen/qwen3-32b` calls with JSON
-  output. Returns `kind`, `quality`, `one_liner`.
+- **Classify** runs main-feed clusters through Gemini structured output first,
+  then Groq as fallback. Repo and learning feeds use deterministic
+  classification so release/video sources do not burn LLM tokens.
 - **Novelty** is `1 − max trigram-Jaccard against 30 days of history`.
 - **Score** is a weighted sum of trust, novelty, quality, cluster-size, recency.
 
@@ -38,18 +39,21 @@ sources → fetch → canonicalize → window-filter → cluster
 
 ```bash
 npm install
-GROQ_API_KEY=gsk_... npm run run:pipeline
+GEMINI_API_KEY=... npm run run:pipeline
 npm run verify:feed
+node scripts/verify-chronicle-feed.mjs public/repos.json
+node scripts/verify-chronicle-feed.mjs public/learning.json
 npx --yes serve public
 ```
 
-Run without an API key to see the fallback path (uses `kind_hint` and heuristic
-quality labels).
+Run without an API key to see the fallback path for the main feed. Repo and
+learning feeds are deterministic by design.
 
 ## Deploy
 
 1. Settings → Pages → Source: **GitHub Actions**.
-2. Settings → Secrets and variables → Actions → add `GROQ_API_KEY`.
+2. Settings → Secrets and variables → Actions → add `GEMINI_API_KEY`.
+   `GROQ_API_KEY` is optional fallback.
 3. Push the `pages` branch for app and feed code changes.
 4. Trigger `Refresh Chronicle` manually for the first run.
 
@@ -64,14 +68,25 @@ All knobs live in source. Eyeball output for a week, then adjust:
 - **Trust weights**: `src/sources/registry.yaml`
 - **Cluster threshold**: `TITLE_THRESHOLD` in `src/pipeline/cluster.ts`
 - **Score weights**: `W` in `src/pipeline/score.ts`
-- **Window**: `WINDOW_HOURS` env (default 36)
+- **Main window**: `WINDOW_HOURS` env (default 36)
+- **Repo window**: `REPO_WINDOW_HOURS` env (default 168)
+- **Learning window**: `LEARNING_WINDOW_HOURS` env (default 720)
 - **Output cap**: `MAX_OUTPUT` env (default 60)
+- **Repo output cap**: `REPO_MAX_OUTPUT` env (default 40)
+- **Learning output cap**: `LEARNING_MAX_OUTPUT` env (default 40)
+- **LLM provider order**: `LLM_PROVIDER_ORDER` env (default `gemini,groq`)
+- **Gemini model**: `GEMINI_MODEL` env (default `gemini-2.5-flash`)
+- **Groq fallback model**: `GROQ_MODEL` env (default `qwen/qwen3-32b`)
 
 ## Cost
 
-Chunked Groq calls per run, roughly proportional to the number of fresh
-clusters. The three daily refreshes triple LLM usage versus the old daily
-schedule. Free tier of GitHub Actions covers the compute.
+Gemini calls are roughly proportional to fresh main-feed clusters. Repo releases,
+trending repos, videos, and courses skip LLM classification. GitHub Actions
+provides `GITHUB_TOKEN` for repo radar API calls.
+
+DataCamp AI and Karpathy's YouTube are intentionally not enabled as scheduled
+sources yet. DataCamp returned 403 to direct Node fetches, and Karpathy's
+verified YouTube feed had no new 2026 video when checked on 2026-05-04.
 
 ## v2 backlog (deferred on purpose)
 

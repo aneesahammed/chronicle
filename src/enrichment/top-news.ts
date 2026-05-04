@@ -2,6 +2,11 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import { sanitizeImageUrl } from "./images.ts";
 import type { EnrichmentStatus, Kind, ScoredCluster, TopNewsItem } from "../types.ts";
+import {
+  completeJsonWithProviders,
+  createLlmProviders,
+  type LlmProvider,
+} from "../llm/providers.ts";
 
 export const TOP_NEWS_LIMIT = 5;
 export const TOP_NEWS_INPUT_CHARS = 900;
@@ -11,9 +16,29 @@ const CACHE_VERSION = 1;
 const MAX_CACHE_ENTRIES = 500;
 const OK_CACHE_TTL_MS = 30 * 864e5;
 const RETRY_AFTER_MS = 24 * 36e5;
-const GROQ_CHAT_COMPLETIONS_URL = "https://api.groq.com/openai/v1/chat/completions";
-const GROQ_MODEL = "qwen/qwen3-32b";
 const PREFERRED_KINDS = new Set<Kind>(["news", "company_announcement", "model_release", "tool", "paper"]);
+const SUMMARY_SCHEMA = {
+  type: "object",
+  properties: {
+    items: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          index: { type: "integer", minimum: 0 },
+          dek: { type: "string", maxLength: 180 },
+          brief: { type: "string", maxLength: 420 },
+          image_alt: { type: "string", maxLength: 120 },
+        },
+        required: ["index", "dek", "brief"],
+        additionalProperties: false,
+      },
+    },
+  },
+  required: ["items"],
+  additionalProperties: false,
+  propertyOrdering: ["items"],
+};
 
 interface EnrichmentCacheFile {
   version: 1;
@@ -66,7 +91,7 @@ interface SummaryOutput {
 }
 
 type FetchLike = typeof fetch;
-type SummaryRunner = (items: SummaryInput[], apiKey: string) => Promise<SummaryOutput[]>;
+type SummaryRunner = (items: SummaryInput[], providers: LlmProvider[]) => Promise<SummaryOutput[]>;
 
 export interface BuildTopNewsOptions {
   now: Date;
@@ -74,6 +99,7 @@ export interface BuildTopNewsOptions {
   env: NodeJS.ProcessEnv;
   fetchImpl?: FetchLike;
   summarize?: SummaryRunner;
+  providers?: LlmProvider[];
 }
 
 export async function buildTopNews(
@@ -88,6 +114,8 @@ export async function buildTopNews(
   const topNews: TopNewsItem[] = [];
   const drafts: EnrichmentDraft[] = [];
   const fetchImpl = options.fetchImpl ?? fetch;
+  const providers = options.providers ?? createLlmProviders(options.env);
+  const hasLlm = providers.length > 0 || Boolean(options.summarize);
 
   for (const candidate of candidates) {
     const cached = cache.entries[candidate.primary.url];
@@ -102,7 +130,7 @@ export async function buildTopNews(
 
     const metadata = fallbackFor(candidate);
     const draft: EnrichmentDraft = { candidate, metadata, failed: false };
-    if (options.env.GROQ_API_KEY || options.summarize) {
+    if (hasLlm) {
       try {
         draft.reader_text = await fetchJinaReaderText(candidate.primary.url, {
           apiKey: options.env.JINA_API_KEY,
@@ -120,14 +148,14 @@ export async function buildTopNews(
     .map((draft, index) => draft.reader_text ? summaryInput(draft, index) : null)
     .filter(Boolean) as SummaryInput[];
   const summaries = new Map<number, SummaryOutput>();
-  if (summaryInputs.length > 0 && (options.env.GROQ_API_KEY || options.summarize)) {
+  if (summaryInputs.length > 0 && hasLlm) {
     try {
-      const runner = options.summarize ?? summarizeWithGroq;
-      for (const item of await runner(summaryInputs, options.env.GROQ_API_KEY ?? "")) {
+      const runner = options.summarize ?? summarizeWithProviders;
+      for (const item of await runner(summaryInputs, providers)) {
         summaries.set(item.index, item);
       }
     } catch (error) {
-      console.warn(`[top-news] Groq summary failed: ${(error as Error).message}`);
+      console.warn(`[top-news] summary failed: ${(error as Error).message}`);
       drafts.forEach((draft) => {
         if (draft.reader_text) draft.failed = true;
       });
@@ -239,88 +267,31 @@ function summaryInput(draft: EnrichmentDraft, index: number): SummaryInput {
   };
 }
 
-async function summarizeWithGroq(items: SummaryInput[], apiKey: string): Promise<SummaryOutput[]> {
-  const body = {
-    model: GROQ_MODEL,
+async function summarizeWithProviders(items: SummaryInput[], providers: LlmProvider[]): Promise<SummaryOutput[]> {
+  if (providers.length === 0) throw new Error("no LLM providers configured");
+  const response = await completeJsonWithProviders(providers, {
+    system: [
+      "You write compact AI news briefs for experienced builders.",
+      "Return only JSON. Do not quote long source text.",
+      "Summaries must be factual, plain English, and non-marketing.",
+    ].join(" "),
+    user: [
+      "For each item, write:",
+      "- dek: one sentence, <= 180 chars",
+      "- brief: one or two short paragraphs, <= 420 chars total",
+      "- image_alt: <= 120 chars, if an image is likely useful",
+      "",
+      "Return shape:",
+      '{"items":[{"index":0,"dek":"...","brief":"...","image_alt":"..."}]}',
+      "",
+      JSON.stringify(items, null, 2),
+    ].join("\n"),
+    schemaName: "top_news_summary",
+    schema: SUMMARY_SCHEMA,
+    maxOutputTokens: 1200,
     temperature: 0,
-    max_completion_tokens: 1200,
-    response_format: { type: "json_object" },
-    messages: [
-      {
-        role: "system",
-        content: [
-          "You write compact AI news briefs for experienced builders.",
-          "Return only JSON. Do not quote long source text.",
-          "Summaries must be factual, plain English, and non-marketing.",
-        ].join(" "),
-      },
-      {
-        role: "user",
-        content: [
-          "For each item, write:",
-          "- dek: one sentence, <= 180 chars",
-          "- brief: one or two short paragraphs, <= 420 chars total",
-          "- image_alt: <= 120 chars, if an image is likely useful",
-          "",
-          "Return shape:",
-          '{"items":[{"index":0,"dek":"...","brief":"...","image_alt":"..."}]}',
-          "",
-          JSON.stringify(items, null, 2),
-        ].join("\n"),
-      },
-    ],
-  };
-  try {
-    return parseSummaryContent(await fetchGroqSummary(apiKey, body));
-  } catch (error) {
-    if (!isGroqJsonValidationError(error)) throw error;
-    console.warn("[top-news] Groq JSON mode validation failed; retrying without response_format");
-    return parseSummaryContent(await fetchGroqSummary(apiKey, withoutResponseFormat(body)));
-  }
-}
-
-async function fetchGroqSummary(
-  apiKey: string,
-  body: Record<string, unknown>,
-): Promise<string> {
-  const response = await fetch(GROQ_CHAT_COMPLETIONS_URL, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(body),
   });
-  const text = await response.text();
-  let data: unknown;
-  try {
-    data = text ? JSON.parse(text) : {};
-  } catch {
-    throw new Error(`Groq returned non-JSON response (${response.status})`);
-  }
-  if (!response.ok) {
-    const message = isRecord(data) && isRecord(data.error) && typeof data.error.message === "string"
-      ? data.error.message
-      : "unknown error";
-    throw new Error(`Groq request failed (${response.status}): ${message}`);
-  }
-  return isRecord(data)
-    && Array.isArray(data.choices)
-    && isRecord(data.choices[0])
-    && isRecord(data.choices[0].message)
-    && typeof data.choices[0].message.content === "string"
-    ? data.choices[0].message.content
-    : "";
-}
-
-function isGroqJsonValidationError(error: unknown): boolean {
-  const message = (error as Error).message?.toLowerCase?.() ?? "";
-  return message.includes("validate json") || message.includes("failed_generation");
-}
-
-function withoutResponseFormat<T extends Record<string, unknown>>(body: T): T {
-  const { response_format: _responseFormat, ...rest } = body;
-  return rest as T;
+  return parseSummaryContent(response.content);
 }
 
 function parseSummaryContent(content: string): SummaryOutput[] {

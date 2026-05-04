@@ -11,14 +11,19 @@ const kinds = new Set([
   'opinion',
   'discussion',
   'tool',
+  'repo_release',
+  'repo_trending',
+  'video',
+  'course',
   'news',
   'unknown',
 ]);
 
 const qualities = new Set(['signal', 'mixed', 'hype']);
 const refreshStatuses = new Set(['ok', 'partial', 'failed']);
-const classificationModes = new Set(['llm', 'partial', 'fallback']);
+const classificationModes = new Set(['llm', 'partial', 'fallback', 'deterministic']);
 const enrichmentStatuses = new Set(['ok', 'metadata_only', 'failed']);
+const sourceRoles = new Set(['main', 'repo', 'learning']);
 const publishedAtSources = new Set([
   'feed',
   'api',
@@ -204,6 +209,43 @@ function validateRawItem(item, label, failures) {
   if (!publishedAtSources.has(item.published_at_source)) failures.push(`${label} has invalid published_at_source: ${item.published_at_source}`);
   if (!dateConfidences.has(item.date_confidence)) failures.push(`${label} has invalid date_confidence: ${item.date_confidence}`);
   if (!isUnitNumber(item.trust)) failures.push(`${label} trust should be a number from 0 to 1`);
+  if (item.source_role !== undefined && !sourceRoles.has(item.source_role)) {
+    failures.push(`${label} has invalid source_role: ${item.source_role}`);
+  }
+  validateRepoMetadata(item.repo, `${label} repo`, failures);
+  validateLearningMetadata(item.learning, `${label} learning`, failures);
+}
+
+function validateRepoMetadata(repo, label, failures) {
+  if (repo === undefined) return;
+  if (!repo || typeof repo !== 'object' || Array.isArray(repo)) {
+    failures.push(`${label} should be an object`);
+    return;
+  }
+  if (typeof repo.full_name !== 'string' || !repo.full_name.includes('/')) {
+    failures.push(`${label}.full_name should be owner/name`);
+  }
+  if (repo.html_url !== undefined && !isHttpsUrl(repo.html_url)) {
+    failures.push(`${label}.html_url should be https: ${repo.html_url}`);
+  }
+  for (const key of ['stargazers_count', 'forks_count', 'open_issues_count', 'stars_delta_30d']) {
+    if (repo[key] !== undefined && (!Number.isFinite(repo[key]) || repo[key] < 0)) {
+      failures.push(`${label}.${key} should be a non-negative number`);
+    }
+  }
+}
+
+function validateLearningMetadata(learning, label, failures) {
+  if (learning === undefined) return;
+  if (!learning || typeof learning !== 'object' || Array.isArray(learning)) {
+    failures.push(`${label} should be an object`);
+    return;
+  }
+  for (const key of ['provider', 'channel_id', 'video_id', 'playlist_url', 'course_url', 'level']) {
+    if (learning[key] !== undefined && typeof learning[key] !== 'string') {
+      failures.push(`${label}.${key} should be a string`);
+    }
+  }
 }
 
 function validateSourceTrailItem(source, label, failures) {

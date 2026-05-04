@@ -1,13 +1,17 @@
 import Parser from "rss-parser";
 import { XMLParser } from "fast-xml-parser";
+import * as cheerio from "cheerio";
+import type { AnyNode } from "domhandler";
 import { extractFirstImageFromHtml, sanitizeImageUrl } from "../enrichment/images.ts";
 import { canonicalizeUrl, urlHash } from "../pipeline/canonicalize.ts";
 import type {
   DateConfidence,
   FetchResult,
+  LearningMetadata,
   PublishedAtSource,
   RawItem,
   Registry,
+  RepoMetadata,
   SourceConfig,
   SourceFetchFailure,
   SourceHealth,
@@ -62,6 +66,34 @@ async function fetchRss(s: SourceConfig, kw: string[]): Promise<RawItem[]> {
         date_confidence: it.isoDate || it.pubDate ? "high" : "low",
         discussion_url: isDiscussionFeed ? it.link ?? "" : undefined,
         discussion_source: isDiscussionFeed ? s.name : undefined,
+      });
+    })
+    .filter(Boolean)
+    .filter((it) => !s.ai_filter || isAiRelevant(it as RawItem, kw)) as RawItem[];
+}
+
+async function fetchYoutubeRss(s: SourceConfig, kw: string[]): Promise<RawItem[]> {
+  const feed = await rss.parseString(await fetchText(s.url));
+  const channelId = safeUrl(s.url)?.searchParams.get("channel_id") ?? undefined;
+  return (feed.items ?? [])
+    .slice(0, s.limit)
+    .map((it) => {
+      const image = extractRssImage(it);
+      const link = it.link ?? "";
+      return normalize(s, {
+        title: it.title ?? "",
+        url: link,
+        summary: stripHtml(it.contentSnippet ?? it.content ?? ""),
+        image_url: image?.url,
+        image_source: image?.source,
+        published_at: it.isoDate ?? it.pubDate ?? UNKNOWN_PUBLISHED_AT,
+        published_at_source: it.isoDate || it.pubDate ? "feed" : "generated_fallback",
+        date_confidence: it.isoDate || it.pubDate ? "high" : "low",
+        learning: {
+          provider: "YouTube",
+          channel_id: channelId,
+          video_id: youtubeVideoId(link),
+        },
       });
     })
     .filter(Boolean)
@@ -192,6 +224,158 @@ interface HfModel {
   tags?: string[];
 }
 
+// ---- GitHub releases and repo discovery ----------------------------------
+async function fetchGithubReleases(s: SourceConfig, options: FetchAllOptions): Promise<RawItem[]> {
+  const data = await fetchJson<GithubRelease[]>(s.url, githubHeaders(options.env));
+  const repo = repoFromGitHubApiUrl(s.url);
+  return data
+    .filter((release) => !release.draft)
+    .slice(0, s.limit)
+    .map((release) => normalize(s, {
+      title: `${repo}: ${release.name || release.tag_name}`,
+      url: release.html_url,
+      summary: stripHtml(release.body ?? ""),
+      published_at: release.published_at ?? release.created_at ?? UNKNOWN_PUBLISHED_AT,
+      published_at_source: release.published_at || release.created_at ? "api" : "generated_fallback",
+      date_confidence: release.published_at || release.created_at ? "high" : "low",
+      repo: {
+        full_name: repo,
+        html_url: `https://github.com/${repo}`,
+        release_tag: release.tag_name,
+        release_name: release.name ?? undefined,
+      },
+    }))
+    .filter(Boolean) as RawItem[];
+}
+
+async function fetchGithubRepoSearch(s: SourceConfig, options: FetchAllOptions): Promise<RawItem[]> {
+  const url = resolveGitHubSearchUrl(s.url, options.now ?? new Date());
+  const data = await fetchJson<GithubSearchResponse>(url, githubHeaders(options.env));
+  const seen = new Set<string>();
+  return (data.items ?? [])
+    .filter((repo) => isRepoRadarCandidate(repo))
+    .filter((repo) => {
+      if (seen.has(repo.full_name)) return false;
+      seen.add(repo.full_name);
+      return true;
+    })
+    .slice(0, s.limit)
+    .map((repo) => normalize(s, {
+      title: `${repo.full_name} (${formatNumber(repo.stargazers_count ?? 0)} stars)`,
+      url: repo.html_url,
+      summary: [
+        repo.description,
+        repo.language,
+        repo.license?.spdx_id,
+        ...(repo.topics ?? []),
+      ].filter(Boolean).join(" · "),
+      published_at: repo.pushed_at ?? repo.updated_at ?? repo.created_at ?? UNKNOWN_PUBLISHED_AT,
+      published_at_source: repo.pushed_at || repo.updated_at || repo.created_at ? "api" : "generated_fallback",
+      date_confidence: repo.pushed_at || repo.updated_at || repo.created_at ? "medium" : "low",
+      engagement: { score: repo.stargazers_count ?? 0 },
+      repo: {
+        full_name: repo.full_name,
+        html_url: repo.html_url,
+        description: repo.description ?? undefined,
+        language: repo.language ?? undefined,
+        license: repo.license?.spdx_id ?? undefined,
+        topics: repo.topics,
+        stargazers_count: repo.stargazers_count,
+        forks_count: repo.forks_count,
+        open_issues_count: repo.open_issues_count,
+        pushed_at: repo.pushed_at,
+        created_at: repo.created_at,
+      },
+    }))
+    .filter(Boolean) as RawItem[];
+}
+
+interface GithubRelease {
+  tag_name: string;
+  name?: string | null;
+  html_url: string;
+  body?: string | null;
+  published_at?: string | null;
+  created_at?: string | null;
+  draft?: boolean;
+}
+
+interface GithubSearchResponse {
+  items?: GithubRepo[];
+}
+
+interface GithubRepo {
+  full_name: string;
+  name: string;
+  html_url: string;
+  description?: string | null;
+  language?: string | null;
+  license?: { spdx_id?: string | null } | null;
+  topics?: string[];
+  stargazers_count?: number;
+  forks_count?: number;
+  open_issues_count?: number;
+  pushed_at?: string;
+  updated_at?: string;
+  created_at?: string;
+  archived?: boolean;
+  disabled?: boolean;
+  fork?: boolean;
+}
+
+// ---- Selector-backed page list -------------------------------------------
+async function fetchPageList(s: SourceConfig, kw: string[]): Promise<RawItem[]> {
+  assertPageListSelectors(s);
+  const html = await fetchText(s.url);
+  const $ = cheerio.load(html);
+  const base = new URL(s.url);
+  const items: RawItem[] = [];
+  for (const element of $(s.item_selector!).toArray()) {
+    const row = $(element);
+    const link = row.is(s.link_selector!) ? row : row.find(s.link_selector!).first();
+    const href = link.attr("href");
+    if (!href) continue;
+    const url = new URL(href, base).toString();
+    if (!sourceUrlMatches(url, s)) continue;
+    const title = row.find(s.title_selector!).first().text().trim() || link.text().trim();
+    if (!title) continue;
+    if (/^(?:featured|blog|learn more)$/i.test(title)) continue;
+    const summary = s.summary_selector ? row.find(s.summary_selector).first().text().trim() : "";
+    let dateValue = "";
+    if (s.date_selector) {
+      const dateNode = row.find(s.date_selector).first();
+      dateValue = dateNode.attr("datetime") ?? dateNode.attr("content") ?? dateNode.text().trim();
+    }
+    if (!dateValue) dateValue = nearestVisibleDate(row);
+    const publishedAt = validDateOrFallback(dateValue);
+    const normalized = normalize(s, {
+      title: titleWithPrefix(title, s.title_prefix),
+      url,
+      summary,
+      published_at: publishedAt,
+      published_at_source: publishedAt === UNKNOWN_PUBLISHED_AT ? "generated_fallback" : "page_metadata",
+      date_confidence: publishedAt === UNKNOWN_PUBLISHED_AT ? "low" : "medium",
+      learning: s.source_role === "learning"
+        ? { provider: s.name, course_url: url }
+        : undefined,
+    });
+    if (normalized && (!s.ai_filter || isAiRelevant(normalized, kw))) items.push(normalized);
+    if (items.length >= s.limit) break;
+  }
+  return items;
+}
+
+function nearestVisibleDate(row: cheerio.Cheerio<AnyNode>): string {
+  let cursor = row;
+  for (let depth = 0; depth < 4; depth++) {
+    const date = matchVisibleDate(cursor.text().replace(/\s+/g, " "));
+    if (date) return date;
+    cursor = cursor.parent();
+    if (cursor.length === 0) break;
+  }
+  return "";
+}
+
 // ---- Sitemap --------------------------------------------------------------
 async function fetchSitemap(s: SourceConfig, kw: string[]): Promise<RawItem[]> {
   const data = await fetchSitemapEntries(s.url);
@@ -265,6 +449,11 @@ interface SitemapEntry {
   lastmod?: string;
 }
 
+interface FetchAllOptions {
+  env?: NodeJS.ProcessEnv;
+  now?: Date;
+}
+
 interface PageDetails {
   title?: string;
   description?: string;
@@ -319,6 +508,8 @@ function normalize(
     discussion_url?: string;
     discussion_source?: string;
     engagement?: RawItem["engagement"];
+    repo?: RepoMetadata;
+    learning?: LearningMetadata;
   },
 ): RawItem | null {
   if (!raw.title || !raw.url) return null;
@@ -329,6 +520,7 @@ function normalize(
     id: urlHash(canonical),
     source_id: s.id,
     source_name: s.name,
+    source_role: s.source_role ?? "main",
     trust: s.trust,
     kind_hint: s.kind_hint,
     title: raw.title.trim().replace(/\s+/g, " "),
@@ -343,6 +535,8 @@ function normalize(
     published_at_source: raw.published_at_source,
     date_confidence: raw.date_confidence,
     engagement: raw.engagement,
+    repo: raw.repo,
+    learning: raw.learning,
   };
 }
 
@@ -374,6 +568,80 @@ function stripHtml(s: string): string {
 function isAiRelevant(item: RawItem, kw: string[]): boolean {
   const text = ` ${item.title} ${item.summary ?? ""} `.toLowerCase();
   return kw.some((k) => text.includes(k.toLowerCase()));
+}
+
+function githubHeaders(env: NodeJS.ProcessEnv | undefined): Record<string, string> {
+  return {
+    "Accept": "application/vnd.github+json",
+    "X-GitHub-Api-Version": "2022-11-28",
+    "User-Agent": USER_AGENT,
+    ...(env?.GITHUB_TOKEN ? { Authorization: `Bearer ${env.GITHUB_TOKEN}` } : {}),
+  };
+}
+
+function repoFromGitHubApiUrl(value: string): string {
+  const url = new URL(value);
+  const match = url.pathname.match(/\/repos\/([^/]+\/[^/]+)\/releases/);
+  return match?.[1] ?? "unknown/repo";
+}
+
+function resolveGitHubSearchUrl(value: string, now: Date): string {
+  return value
+    .replaceAll("${date_minus_14d}", daysAgo(now, 14))
+    .replaceAll("${date_minus_30d}", daysAgo(now, 30));
+}
+
+function daysAgo(now: Date, days: number): string {
+  return new Date(now.getTime() - days * 864e5).toISOString().slice(0, 10);
+}
+
+function isRepoRadarCandidate(repo: GithubRepo): boolean {
+  if (repo.archived || repo.disabled || repo.fork) return false;
+  if ((repo.stargazers_count ?? 0) < 100) return false;
+  if (/(?:^|[-_])(awesome|list|papers|prompts)(?:$|[-_])/i.test(repo.name)) return false;
+  const text = `${repo.full_name} ${repo.description ?? ""} ${(repo.topics ?? []).join(" ")}`.toLowerCase();
+  return [
+    /(?:^|[^a-z0-9])ai(?:$|[^a-z0-9])/,
+    /(?:^|[^a-z0-9])llms?(?:$|[^a-z0-9])/,
+    /(?:^|[^a-z0-9])agents?(?:$|[^a-z0-9])/,
+    /(?:^|[^a-z0-9])inference(?:$|[^a-z0-9])/,
+    /(?:^|[^a-z0-9])mcp(?:$|[^a-z0-9])/,
+    /(?:^|[^a-z0-9])transformers?(?:$|[^a-z0-9])/,
+    /(?:^|[^a-z0-9])rag(?:$|[^a-z0-9])/,
+    /(?:^|[^a-z0-9])diffusion(?:$|[^a-z0-9])/,
+    /(?:^|[^a-z0-9])machine[- ]learning(?:$|[^a-z0-9])/,
+    /(?:^|[^a-z0-9])generative(?:$|[^a-z0-9])/,
+  ].some((pattern) => pattern.test(text));
+}
+
+function assertPageListSelectors(s: SourceConfig): void {
+  const missing = [
+    "item_selector",
+    "link_selector",
+    "title_selector",
+  ].filter((key) => !s[key as keyof SourceConfig]);
+  if (missing.length) {
+    throw new Error(`page_list source ${s.id} missing selectors: ${missing.join(", ")}`);
+  }
+}
+
+function youtubeVideoId(value: string): string | undefined {
+  const url = safeUrl(value);
+  if (!url) return undefined;
+  if (url.hostname.endsWith("youtu.be")) return url.pathname.split("/").filter(Boolean)[0];
+  return url.searchParams.get("v") ?? undefined;
+}
+
+function safeUrl(value: string): URL | null {
+  try {
+    return new URL(value);
+  } catch {
+    return null;
+  }
+}
+
+function formatNumber(value: number): string {
+  return new Intl.NumberFormat("en-US").format(value);
 }
 
 async function fetchJson<T>(url: string, headers: Record<string, string> = {}): Promise<T> {
@@ -506,10 +774,7 @@ function matchTimeDatetime(html: string): string | undefined {
 }
 
 function matchVisibleDate(html: string): string | undefined {
-  return matchFirst(
-    html,
-    /\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?\s+\d{1,2},\s+\d{4}\b/i,
-  );
+  return html.match(/\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?\s+\d{1,2},\s+\d{4}\b/i)?.[0];
 }
 
 function attr(tag: string, name: string): string | undefined {
@@ -524,7 +789,10 @@ function matchFirst(value: string, pattern: RegExp): string | undefined {
 
 function isoDate(value?: string): string | undefined {
   if (!value) return undefined;
-  const ms = Date.parse(decodeHtml(value).trim());
+  const decoded = decodeHtml(value).trim();
+  const monthDate = parseMonthDateUtc(decoded);
+  if (monthDate) return monthDate;
+  const ms = Date.parse(decoded);
   return Number.isFinite(ms) ? new Date(ms).toISOString() : undefined;
 }
 
@@ -559,8 +827,35 @@ function titleWord(word: string): string {
 
 function validDateOrFallback(value?: string): string {
   if (!value) return UNKNOWN_PUBLISHED_AT;
+  const monthDate = parseMonthDateUtc(value);
+  if (monthDate) return monthDate;
   const ms = Date.parse(value);
   return Number.isFinite(ms) ? new Date(ms).toISOString() : UNKNOWN_PUBLISHED_AT;
+}
+
+function parseMonthDateUtc(value: string): string | undefined {
+  const match = value.trim().match(/^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?\s+(\d{1,2}),\s+(\d{4})$/i);
+  if (!match) return undefined;
+  const months: Record<string, number> = {
+    jan: 0,
+    feb: 1,
+    mar: 2,
+    apr: 3,
+    may: 4,
+    jun: 5,
+    jul: 6,
+    aug: 7,
+    sep: 8,
+    sept: 8,
+    oct: 9,
+    nov: 10,
+    dec: 11,
+  };
+  const month = months[match[1].toLowerCase().slice(0, 4)] ?? months[match[1].toLowerCase().slice(0, 3)];
+  const day = Number(match[2]);
+  const year = Number(match[3]);
+  if (month === undefined || !Number.isInteger(day) || !Number.isInteger(year)) return undefined;
+  return new Date(Date.UTC(year, month, day)).toISOString();
 }
 
 function timestamp(value?: string): number {
@@ -587,17 +882,21 @@ async function mapLimit<T, U>(
 }
 
 // ---- Public API -----------------------------------------------------------
-export async function fetchAll(reg: Registry): Promise<FetchResult> {
+export async function fetchAll(reg: Registry, options: FetchAllOptions = {}): Promise<FetchResult> {
   const tasks = reg.sources.map(async (s) => {
     try {
       let items: RawItem[] = [];
       switch (s.type) {
         case "rss":         items = await fetchRss(s, reg.hn_ai_keywords); break;
+        case "youtube_rss": items = await fetchYoutubeRss(s, reg.hn_ai_keywords); break;
         case "hn_algolia":  items = await fetchHN(s, reg.hn_ai_keywords); break;
         case "reddit":      items = await fetchReddit(s); break;
         case "hf_papers":   items = await fetchHfPapers(s); break;
         case "hf_models":   items = await fetchHfModels(s); break;
         case "sitemap":     items = await fetchSitemap(s, reg.hn_ai_keywords); break;
+        case "github_releases": items = await fetchGithubReleases(s, options); break;
+        case "github_repo_search": items = await fetchGithubRepoSearch(s, options); break;
+        case "page_list":   items = await fetchPageList(s, reg.hn_ai_keywords); break;
       }
       return {
         items,

@@ -7,7 +7,7 @@ test("classifyClusters falls back when no API key is configured", async () => {
   const result = await classifyClusters([cluster({
     title: "A benchmark for inference throughput",
     summary: "Introduces a benchmark for measuring LLM serving latency.",
-  })], undefined);
+  })]);
 
   assert.equal(result.mode, "fallback");
   assert.equal(result.items[0].kind, "paper");
@@ -18,7 +18,7 @@ test("classifyClusters falls back when the LLM runner throws", async () => {
   const result = await classifyClusters([cluster({
     title: "A benchmark for inference throughput",
     summary: "Introduces a benchmark for measuring LLM serving latency.",
-  })], "test-key", async () => {
+  })], [], async () => {
     throw new Error("rate limited");
   });
 
@@ -30,42 +30,42 @@ test("fallback classifier does not mark every paper as signal", async () => {
   const result = await classifyClusters([cluster({
     title: "A narrow survey of chatbot preferences",
     summary: "A small collection of observations about chatbot user preferences.",
-  })], undefined);
+  })]);
 
   assert.equal(result.items[0].kind, "paper");
   assert.equal(result.items[0].quality, "mixed");
 });
 
-test("classifyClusters reads Groq chat completion JSON in item order", async () => {
+test("classifyClusters reads LLM JSON in item order", async () => {
   const result = await classifyClusters([
     cluster({ title: "A useful paper about inference" }),
     cluster({ title: "A mixed company update", kind_hint: "news" }),
-  ], "test-key", async (request) => {
-    assert.equal(request.model, "qwen/qwen3-32b");
-    assert.equal(request.max_completion_tokens, 1024);
-    assert.equal(request.response_format?.type, "json_object");
-    assert.match(request.messages[0].content, /For papers, do not mark every fresh paper as signal/);
+  ], [], async (request) => {
+    assert.equal(request.maxOutputTokens, 1024);
+    assert.equal(request.schemaName, "classification");
+    assert.match(request.system, /For papers, do not mark every fresh paper as signal/);
+    const schema = request.schema as {
+      properties: { items: { items: { properties: { kind: { enum: string[] } } } } };
+    };
+    assert.ok(schema.properties.items.items.properties.kind.enum.includes("paper"));
+    assert.ok(!schema.properties.items.items.properties.kind.enum.includes("video"));
     return {
-      choices: [{
-        message: {
-          content: JSON.stringify({
-            items: [
-              {
-                index: 1,
-                kind: "news",
-                quality: "mixed",
-                one_liner: "Company update with some useful context.",
-              },
-              {
-                index: 0,
-                kind: "paper",
-                quality: "signal",
-                one_liner: "Paper improves inference throughput.",
-              },
-            ],
-          }),
-        },
-      }],
+      content: JSON.stringify({
+        items: [
+          {
+            index: 1,
+            kind: "news",
+            quality: "mixed",
+            one_liner: "Company update with some useful context.",
+          },
+          {
+            index: 0,
+            kind: "paper",
+            quality: "signal",
+            one_liner: "Paper improves inference throughput.",
+          },
+        ],
+      }),
     };
   });
 
@@ -80,54 +80,20 @@ test("classifyClusters preserves mixed paper classifications from the LLM", asyn
   const result = await classifyClusters([cluster({
     title: "A narrow survey of chatbot preferences",
     summary: "A small collection of observations about chatbot user preferences.",
-  })], "test-key", async () => ({
-    choices: [{
-      message: {
-        content: JSON.stringify({
-          items: [{
-            index: 0,
-            kind: "paper",
-            quality: "mixed",
-            one_liner: "Survey has limited direct builder signal.",
-          }],
-        }),
-      },
-    }],
+  })], [], async () => ({
+    content: JSON.stringify({
+      items: [{
+        index: 0,
+        kind: "paper",
+        quality: "mixed",
+        one_liner: "Survey has limited direct builder signal.",
+      }],
+    }),
   }));
 
   assert.equal(result.mode, "llm");
   assert.equal(result.items[0].kind, "paper");
   assert.equal(result.items[0].quality, "mixed");
-});
-
-test("classifyClusters retries without JSON mode when Groq rejects structured output", async () => {
-  let calls = 0;
-  const result = await classifyClusters([cluster()], "test-key", async (request) => {
-    calls++;
-    if (calls === 1) {
-      assert.equal(request.response_format?.type, "json_object");
-      throw new Error("Groq request failed (400): Failed to validate JSON. See failed_generation for more details.");
-    }
-    assert.equal(request.response_format, undefined);
-    return {
-      choices: [{
-        message: {
-          content: JSON.stringify({
-            items: [{
-              index: 0,
-              kind: "paper",
-              quality: "signal",
-              one_liner: "Retry returned valid JSON.",
-            }],
-          }),
-        },
-      }],
-    };
-  });
-
-  assert.equal(calls, 2);
-  assert.equal(result.mode, "llm");
-  assert.equal(result.items[0].one_liner, "Retry returned valid JSON.");
 });
 
 test("fallback classifier demotes low-effort single-source discussion prompts", async () => {
@@ -138,9 +104,36 @@ test("fallback classifier demotes low-effort single-source discussion prompts", 
     kind_hint: "discussion",
     title: "24gb vram to 48gb vram",
     summary: "I wanted to hear your experiences. Do you think there is a significant capability gain?",
-  })], undefined);
+  })]);
 
   assert.equal(result.items[0].quality, "hype");
+});
+
+test("classifyClusters skips LLM work for repo and learning kinds", async () => {
+  let calls = 0;
+  const result = await classifyClusters([
+    cluster({
+      source_role: "repo",
+      kind_hint: "repo_release",
+      title: "owner/repo v1.0.0",
+      summary: "Adds faster inference.",
+    }),
+    cluster({
+      source_role: "learning",
+      kind_hint: "video",
+      title: "Build agents",
+      summary: "A practical agent tutorial.",
+    }),
+  ], [], async () => {
+    calls++;
+    throw new Error("should not be called");
+  });
+
+  assert.equal(calls, 0);
+  assert.equal(result.mode, "deterministic");
+  assert.equal(result.items[0].kind, "repo_release");
+  assert.equal(result.items[0].quality, "signal");
+  assert.equal(result.items[1].kind, "video");
 });
 
 function cluster(overrides: Partial<RawItem> = {}): Cluster {

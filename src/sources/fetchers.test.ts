@@ -265,6 +265,196 @@ test("fetchAll follows more than five child sitemaps", async () => {
   assert.ok(result.items.some((item) => item.url === "https://example.com/news/item-6"));
 });
 
+test("fetchAll normalizes GitHub releases into repo role items", async () => {
+  globalThis.fetch = async (_input, init) => {
+    assert.equal((init?.headers as Record<string, string>).Authorization, "Bearer test-token");
+    return Response.json([{
+      tag_name: "v1.2.0",
+      name: "v1.2.0",
+      html_url: "https://github.com/ggml-org/llama.cpp/releases/tag/v1.2.0",
+      body: "Improves CUDA inference throughput.",
+      published_at: "2026-05-02T00:00:00Z",
+    }]);
+  };
+
+  const result = await fetchAll({
+    sources: [{
+      id: "repo_llamacpp",
+      name: "llama.cpp releases",
+      type: "github_releases",
+      url: "https://api.github.com/repos/ggml-org/llama.cpp/releases?per_page=10",
+      trust: 0.82,
+      source_role: "repo",
+      kind_hint: "repo_release",
+      limit: 10,
+    }],
+    hn_ai_keywords: [],
+  }, { env: { GITHUB_TOKEN: "test-token" } });
+
+  assert.equal(result.items[0].source_role, "repo");
+  assert.equal(result.items[0].kind_hint, "repo_release");
+  assert.equal(result.items[0].repo?.full_name, "ggml-org/llama.cpp");
+  assert.equal(result.items[0].repo?.release_tag, "v1.2.0");
+});
+
+test("fetchAll filters and de-duplicates GitHub repo search results", async () => {
+  globalThis.fetch = async (input) => {
+    assert.match(String(input), /pushed:%3E=2026-04-02|pushed:>=2026-04-02/);
+    return Response.json({
+      items: [
+        githubRepo({ full_name: "owner/agent-runtime", name: "agent-runtime", stars: 5000 }),
+        githubRepo({ full_name: "owner/agent-runtime", name: "agent-runtime", stars: 5000 }),
+        githubRepo({ full_name: "owner/awesome-ai", name: "awesome-ai", stars: 10000 }),
+        githubRepo({ full_name: "owner/web-app", name: "web-app", description: "A plain app", stars: 2000, topics: [] }),
+      ],
+    });
+  };
+
+  const result = await fetchAll({
+    sources: [{
+      id: "github_ai_recent",
+      name: "GitHub AI recent",
+      type: "github_repo_search",
+      url: "https://api.github.com/search/repositories?q=llm%20pushed:>=${date_minus_30d}&sort=stars&order=desc",
+      trust: 0.62,
+      source_role: "repo",
+      kind_hint: "repo_trending",
+      limit: 10,
+    }],
+    hn_ai_keywords: [],
+  }, { now: new Date("2026-05-02T00:00:00.000Z") });
+
+  assert.equal(result.items.length, 1);
+  assert.equal(result.items[0].repo?.full_name, "owner/agent-runtime");
+  assert.equal(result.items[0].kind_hint, "repo_trending");
+});
+
+test("fetchAll adds learning metadata for YouTube RSS", async () => {
+  globalThis.fetch = async () => new Response(`
+    <feed xmlns="http://www.w3.org/2005/Atom">
+      <entry>
+        <title>Build AI agents</title>
+        <link href="https://www.youtube.com/watch?v=abc123" />
+        <published>2026-05-01T00:00:00Z</published>
+      </entry>
+    </feed>
+  `);
+
+  const result = await fetchAll({
+    sources: [{
+      id: "yt_test",
+      name: "YouTube Test",
+      type: "youtube_rss",
+      url: "https://www.youtube.com/feeds/videos.xml?channel_id=UC123",
+      trust: 0.78,
+      source_role: "learning",
+      kind_hint: "video",
+      ai_filter: true,
+      limit: 5,
+    }],
+    hn_ai_keywords: ["agent"],
+  });
+
+  assert.equal(result.items.length, 1);
+  assert.equal(result.items[0].source_role, "learning");
+  assert.equal(result.items[0].learning?.provider, "YouTube");
+  assert.equal(result.items[0].learning?.video_id, "abc123");
+});
+
+test("fetchAll parses selector-backed page lists", async () => {
+  globalThis.fetch = async () => new Response(`
+    <article>
+      <a href="/courses/build-ai-agents"><h2>Build AI Agents</h2></a>
+      <p>Learn practical agent patterns.</p>
+      <time datetime="2026-04-01T00:00:00Z"></time>
+    </article>
+  `);
+
+  const result = await fetchAll({
+    sources: [{
+      id: "courses",
+      name: "Courses",
+      type: "page_list",
+      url: "https://example.com/courses/",
+      trust: 0.78,
+      source_role: "learning",
+      kind_hint: "course",
+      url_include: ["/courses/"],
+      item_selector: "article",
+      link_selector: "a[href]",
+      title_selector: "h2",
+      summary_selector: "p",
+      date_selector: "time[datetime]",
+      limit: 5,
+    }],
+    hn_ai_keywords: ["agent"],
+  });
+
+  assert.equal(result.items.length, 1);
+  assert.equal(result.items[0].source_role, "learning");
+  assert.equal(result.items[0].kind_hint, "course");
+  assert.equal(result.items[0].learning?.course_url, "https://example.com/courses/build-ai-agents");
+});
+
+test("fetchAll parses anchor-backed page lists with parent dates", async () => {
+  globalThis.fetch = async () => new Response(`
+    <section>
+      <div>
+        <a href="https://ai.meta.com/blog/scaling-how-we-build-test-advanced-ai/">Scaling How We Build and Test Our Most Advanced AI</a>
+        <span>Apr 8, 2026</span>
+      </div>
+      <div>
+        <a href="https://ai.meta.com/blog/empty-card/">FEATURED</a>
+        <span>Apr 8, 2026</span>
+      </div>
+    </section>
+  `);
+
+  const result = await fetchAll({
+    sources: [{
+      id: "meta_ai",
+      name: "Meta AI Blog",
+      type: "page_list",
+      url: "https://ai.meta.com/blog/",
+      trust: 0.86,
+      kind_hint: "company_announcement",
+      url_include: ["ai.meta.com/blog/"],
+      item_selector: 'a[href*="ai.meta.com/blog/"]',
+      link_selector: 'a[href*="ai.meta.com/blog/"]',
+      title_selector: 'a[href*="ai.meta.com/blog/"]',
+      limit: 5,
+    }],
+    hn_ai_keywords: [],
+  });
+
+  assert.equal(result.items.length, 1);
+  assert.equal(result.items[0].title, "Scaling How We Build and Test Our Most Advanced AI");
+  assert.equal(result.items[0].published_at, "2026-04-08T00:00:00.000Z");
+});
+
+function githubRepo(overrides: {
+  full_name: string;
+  name: string;
+  description?: string;
+  stars: number;
+  topics?: string[];
+}) {
+  return {
+    full_name: overrides.full_name,
+    name: overrides.name,
+    html_url: `https://github.com/${overrides.full_name}`,
+    description: overrides.description ?? "LLM agent inference runtime",
+    language: "TypeScript",
+    license: { spdx_id: "MIT" },
+    topics: overrides.topics ?? ["llm", "agents"],
+    stargazers_count: overrides.stars,
+    forks_count: 10,
+    open_issues_count: 4,
+    pushed_at: "2026-05-01T00:00:00Z",
+    created_at: "2026-04-01T00:00:00Z",
+  };
+}
+
 function registry(type: Registry["sources"][number]["type"]): Registry {
   return {
     sources: [{
