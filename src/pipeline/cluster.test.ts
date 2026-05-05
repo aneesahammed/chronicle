@@ -23,10 +23,43 @@ test("clusterItems merges similar release titles", () => {
   assert.equal(clusters.length, 1);
 });
 
+test("clusterItems merges paraphrased claims with shared anchors", () => {
+  const clusters = clusterItems([
+    item(
+      "a",
+      "OpenAI adds streaming tool calls to the Realtime API",
+      "https://a.example.com/realtime",
+      "OpenAI",
+      0.9,
+      "Realtime API update adds streaming tool calls for voice agent workflows.",
+    ),
+    item(
+      "b",
+      "Realtime API now streams tool-use events for OpenAI voice agents",
+      "https://b.example.com/openai-realtime",
+      "Builder News",
+      0.7,
+      "OpenAI voice agents can receive streamed tool-use events through the Realtime API.",
+    ),
+  ]);
+
+  assert.equal(clusters.length, 1);
+  assert.equal(clusters[0].members.length, 2);
+});
+
 test("clusterItems keeps unrelated titles separate", () => {
   const clusters = clusterItems([
     item("a", "A new attention kernel speeds up inference", "https://example.com/kernel"),
     item("b", "A robotics dataset ships with tactile sensors", "https://example.com/robotics"),
+  ]);
+
+  assert.equal(clusters.length, 2);
+});
+
+test("clusterItems does not merge generic claims without a shared anchor", () => {
+  const clusters = clusterItems([
+    item("a", "Benchmark improves agent planning with memory traces", "https://example.com/agent-memory"),
+    item("b", "Vector index evaluation compares retrieval latency", "https://example.com/retrieval-traces"),
   ]);
 
   assert.equal(clusters.length, 2);
@@ -38,6 +71,7 @@ function item(
   url: string,
   source = "Source",
   trust = 0.5,
+  summary?: string,
 ): RawItem {
   return {
     id,
@@ -47,6 +81,7 @@ function item(
     title,
     url,
     original_url: url,
+    summary,
     published_at: "2026-05-02T00:00:00.000Z",
     published_at_source: "feed",
     date_confidence: "high",

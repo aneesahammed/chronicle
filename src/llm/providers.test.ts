@@ -147,6 +147,52 @@ test("completeJsonWithProviders cools down a repeatedly rate-limited provider", 
   assert.ok(gemini.cooldownUntilMs >= before + 9 * 60_000);
 });
 
+test("completeJsonWithProviders waits for a short all-provider cooldown", async () => {
+  let calls = 0;
+  const provider = {
+    name: "groq" as const,
+    model: "groq-test",
+    batchDelayMs: 0,
+    cooldownUntilMs: Date.now() + 5,
+    completeJson: async () => {
+      calls++;
+      return { content: '{"ok":"yes"}', provider: "groq" as const, model: "groq-test" };
+    },
+  };
+
+  const result = await completeJsonWithProviders([provider], request, { maxCooldownWaitMs: 100 });
+
+  assert.equal(calls, 1);
+  assert.equal(result.content, '{"ok":"yes"}');
+});
+
+test("GroqProvider reads retry timing from rate-limit headers", async () => {
+  const provider = new GroqProvider("key", "qwen-test", {
+    batchDelayMs: 0,
+    fetchImpl: async () => Response.json({
+      error: { message: "rate limited" },
+    }, {
+      status: 429,
+      headers: {
+        "x-ratelimit-remaining-tokens": "0",
+        "x-ratelimit-reset-tokens": "1.5s",
+        "x-ratelimit-remaining-requests": "999",
+      },
+    }),
+  });
+
+  await assert.rejects(
+    provider.completeJson(request),
+    (error: unknown) => {
+      assert.ok(error instanceof ProviderRateLimitError);
+      assert.equal(error.retryAfterMs, 1500);
+      assert.match(error.message, /remaining_tokens=0/);
+      assert.match(error.message, /reset_tokens=1\.5s/);
+      return true;
+    },
+  );
+});
+
 test("GroqProvider retries without JSON mode when Groq rejects structured output", async () => {
   const bodies: any[] = [];
   const provider = new GroqProvider("key", "qwen-test", {

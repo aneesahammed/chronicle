@@ -9,20 +9,31 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' https: data:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <title>Chronicle archive — daily AI signal</title>
 <meta name="description" content="Browse past daily snapshots of the Chronicle AI signal feed.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="canonical" href="https://chronicle.tinycrafts.ai/daily/">
 <meta property="og:title" content="Chronicle archive">
 <meta property="og:description" content="Past daily snapshots of the Chronicle feed.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://chronicle.tinycrafts.ai/daily/">
+<meta property="og:image" content="https://chronicle.tinycrafts.ai/icon-512.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chronicle archive">
+<meta name="twitter:description" content="Past daily snapshots of the Chronicle feed.">
+<meta name="twitter:image" content="https://chronicle.tinycrafts.ai/icon-512.png">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Chronicle">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="manifest" href="/manifest.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="Chronicle RSS" href="/rss.xml">
+<link rel="alternate" type="application/atom+xml" title="Chronicle Atom" href="/atom.xml">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/icon-192.png">
 <link rel="stylesheet" href="/fonts/fonts.css">
 <script src="/sw-register.js" defer></script>
+<!-- CHRONICLE_JSONLD_START -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Chronicle archive","url":"https://chronicle.tinycrafts.ai/daily/","dateModified":"2026-05-05T10:24:47.510Z","hasPart":[{"@type":"WebPage","url":"https://chronicle.tinycrafts.ai/daily/2026-05-05/","name":"Chronicle AI Brief, May 5, 2026"},{"@type":"WebPage","url":"https://chronicle.tinycrafts.ai/daily/2026-05-04/","name":"Chronicle AI Brief, May 4, 2026"},{"@type":"WebPage","url":"https://chronicle.tinycrafts.ai/daily/2026-05-03/","name":"Chronicle AI Brief, May 3, 2026"},{"@type":"WebPage","url":"https://chronicle.tinycrafts.ai/daily/2026-05-02/","name":"Chronicle AI Brief, May 2, 2026"}]}</script>
+<!-- CHRONICLE_JSONLD_END -->
 <script>
   (function () {
     try {
@@ -299,7 +310,7 @@
 
   <section class="lede">
     <p class="lede-text">Past daily snapshots of the Chronicle feed. Each tile is a frozen view of that day's clustered AI signal.</p>
-    <p class="lede-meta" id="ledeMeta">loading…</p>
+    <p class="lede-meta" id="ledeMeta">4 days · 2026-05-02 -&gt; 2026-05-05 · 234 items</p>
   </section>
 
   <div class="search-row">
@@ -307,7 +318,22 @@
     <input class="search-input" id="searchInput" type="search" placeholder="month or YYYY-MM-DD" aria-label="Filter days">
   </div>
 
-  <main id="archiveMain"></main>
+  <main id="archiveMain">
+    <!-- CHRONICLE_ARCHIVE_START -->
+<section class="month-section">
+<div class="month-head">
+<h2 class="month-name">May 2026</h2>
+<span class="month-stats">4 days · 234 items</span>
+</div>
+<div class="day-grid">
+<a class="day-cell" data-weight="high" href="./2026-05-05/" title="Polynomial-Time Optimal Group Selection via the Double-Commutator Eigenvalue Problem"><span class="day-date">5 Tue</span><span class="day-count">60 items</span></a>
+<a class="day-cell" data-weight="high" href="./2026-05-04/" title="Prompt-Induced Score Variance in Zero-Shot Binary Vision-Language Safety Classification"><span class="day-date">4 Mon</span><span class="day-count">60 items</span></a>
+<a class="day-cell" data-weight="medium" href="./2026-05-03/" title="‘This is fine’ creator says AI startup stole his art"><span class="day-date">3 Sun</span><span class="day-count">54 items</span></a>
+<a class="day-cell" data-weight="high" href="./2026-05-02/" title="Most Companies Aren't Anywhere Near Ready for AI"><span class="day-date">2 Sat</span><span class="day-count">60 items</span></a>
+</div>
+</section>
+<!-- CHRONICLE_ARCHIVE_END -->
+  </main>
 
   <footer>
     <span>Chronicle archive · <a href="../">return to today</a></span>

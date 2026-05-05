@@ -38,14 +38,17 @@ export class ProviderBlockedError extends Error {
 export class ProviderRateLimitError extends Error {
   readonly provider: string;
   readonly retryAfterMs?: number;
+  readonly context?: string;
 
   constructor(
     provider: string,
     retryAfterMs?: number,
+    context?: string,
   ) {
-    super(`${provider} rate limited`);
+    super(`${provider} rate limited${context ? ` (${context})` : ""}`);
     this.provider = provider;
     this.retryAfterMs = retryAfterMs;
+    this.context = context;
   }
 }
 
@@ -55,6 +58,7 @@ const DEFAULT_GEMINI_MODEL = "gemini-2.0-flash";
 const DEFAULT_GEMINI_BATCH_DELAY_MS = 4_500;
 const DEFAULT_GROQ_MODEL = "qwen/qwen3-32b";
 const DEFAULT_GROQ_BATCH_DELAY_MS = 30_000;
+const DEFAULT_ALL_PROVIDER_COOLDOWN_WAIT_MS = 120_000;
 
 type FetchLike = typeof fetch;
 
@@ -101,7 +105,8 @@ export class GeminiProvider implements LlmProvider {
     const data = parseProviderJson(text, response.status, "Gemini");
     if (!response.ok) {
       if (response.status === 429 || response.status === 503) {
-        throw new ProviderRateLimitError("gemini", retryDelayMs(data, response.headers));
+        const rateLimit = rateLimitInfo(data, response.headers);
+        throw new ProviderRateLimitError("gemini", rateLimit.retryAfterMs, rateLimit.context);
       }
       throw new Error(`Gemini request failed (${response.status}): ${providerErrorMessage(data)}`);
     }
@@ -161,7 +166,8 @@ export class GroqProvider implements LlmProvider {
     const data = parseProviderJson(text, response.status, "Groq");
     if (!response.ok) {
       if (response.status === 429 || response.status === 503) {
-        throw new ProviderRateLimitError("groq", retryDelayMs(data, response.headers));
+        const rateLimit = rateLimitInfo(data, response.headers);
+        throw new ProviderRateLimitError("groq", rateLimit.retryAfterMs, rateLimit.context);
       }
       throw new Error(`Groq request failed (${response.status}): ${providerErrorMessage(data)}`);
     }
@@ -216,33 +222,70 @@ function envMs(env: NodeJS.ProcessEnv, key: string, fallback: number): number {
 export async function completeJsonWithProviders(
   providers: LlmProvider[],
   request: LlmJsonRequest,
+  options: { maxCooldownWaitMs?: number } = {},
 ): Promise<LlmJsonResponse> {
   if (providers.length === 0) throw new Error("no LLM providers configured");
+  const maxCooldownWaitMs = options.maxCooldownWaitMs ?? DEFAULT_ALL_PROVIDER_COOLDOWN_WAIT_MS;
+  let waitedCooldownMs = 0;
   let lastError: unknown;
-  for (const provider of providers) {
-    if (isCoolingDown(provider)) {
-      console.warn(`[llm] skipping ${provider.name}:${provider.model}; rate-limit cooldown is active`);
+
+  while (true) {
+    let attempted = false;
+    for (const provider of providers) {
+      if (isCoolingDown(provider)) {
+        console.warn(`[llm] skipping ${provider.name}:${provider.model}; rate-limit cooldown is active`);
+        continue;
+      }
+      attempted = true;
+      try {
+        if (provider.batchDelayMs > 0) {
+          console.log(`[llm] waiting ${provider.batchDelayMs / 1000}s before ${provider.name}:${provider.model}`);
+          await sleep(provider.batchDelayMs);
+        }
+        return await withProviderRetry(provider, () => provider.completeJson(request));
+      } catch (error) {
+        lastError = error;
+        if (error instanceof ProviderRateLimitError) {
+          provider.cooldownUntilMs = Date.now() + providerCooldownMs(provider, error);
+        }
+        console.warn(`[llm] ${provider.name}:${provider.model} failed: ${(error as Error).message}`);
+      }
+    }
+
+    const cooldownWaitMs = nextCooldownWaitMs(providers);
+    if (cooldownWaitMs !== undefined && cooldownWaitMs <= 0) continue;
+    if (
+      cooldownWaitMs !== undefined
+      && waitedCooldownMs + cooldownWaitMs <= maxCooldownWaitMs
+    ) {
+      console.log(`[llm] all providers cooling down; waiting ${formatSeconds(cooldownWaitMs)} before retry`);
+      await sleep(cooldownWaitMs + Math.floor(Math.random() * 250));
+      waitedCooldownMs += cooldownWaitMs;
       continue;
     }
-    try {
-      if (provider.batchDelayMs > 0) {
-        console.log(`[llm] waiting ${provider.batchDelayMs / 1000}s before ${provider.name}:${provider.model}`);
-        await sleep(provider.batchDelayMs);
+
+    if (!attempted && cooldownWaitMs !== undefined) {
+      const reason = `all LLM providers are cooling down for at least ${formatSeconds(cooldownWaitMs)}`;
+      if (lastError instanceof Error) {
+        throw new Error(`${reason}; last error: ${lastError.message}`);
       }
-      return await withProviderRetry(provider, () => provider.completeJson(request));
-    } catch (error) {
-      lastError = error;
-      if (error instanceof ProviderRateLimitError) {
-        provider.cooldownUntilMs = Date.now() + providerCooldownMs(provider, error);
-      }
-      console.warn(`[llm] ${provider.name}:${provider.model} failed: ${(error as Error).message}`);
+      throw new Error(reason);
     }
+
+    throw lastError instanceof Error ? lastError : new Error("all LLM providers failed");
   }
-  throw lastError instanceof Error ? lastError : new Error("all LLM providers failed");
 }
 
 function isCoolingDown(provider: LlmProvider): boolean {
   return typeof provider.cooldownUntilMs === "number" && provider.cooldownUntilMs > Date.now();
+}
+
+function nextCooldownWaitMs(providers: LlmProvider[]): number | undefined {
+  const waits = providers
+    .map((provider) => typeof provider.cooldownUntilMs === "number" ? provider.cooldownUntilMs - Date.now() : undefined)
+    .filter((value): value is number => typeof value === "number");
+  if (waits.length !== providers.length || waits.length === 0) return undefined;
+  return Math.min(...waits);
 }
 
 function providerCooldownMs(provider: LlmProvider, error: ProviderRateLimitError): number {
@@ -307,6 +350,12 @@ function geminiContent(data: unknown): string {
   return text;
 }
 
+function rateLimitInfo(data: unknown, headers?: Headers): { retryAfterMs?: number; context?: string } {
+  const retryAfterMs = retryDelayMs(data, headers);
+  const context = rateLimitContext(headers, retryAfterMs);
+  return { retryAfterMs, context };
+}
+
 function retryDelayMs(data: unknown, headers?: Headers): number | undefined {
   const retryAfter = headers?.get("retry-after");
   if (retryAfter) {
@@ -328,7 +377,64 @@ function retryDelayMs(data: unknown, headers?: Headers): number | undefined {
       if (match) return Number(match[1]) * 1000;
     }
   }
+  const groqReset = groqResetDelayMs(headers);
+  if (groqReset !== undefined) return groqReset;
   return undefined;
+}
+
+function groqResetDelayMs(headers?: Headers): number | undefined {
+  const waits: number[] = [];
+  const remainingTokens = Number(headers?.get("x-ratelimit-remaining-tokens"));
+  const remainingRequests = Number(headers?.get("x-ratelimit-remaining-requests"));
+  if (Number.isFinite(remainingTokens) && remainingTokens <= 0) {
+    const resetTokens = parseDurationMs(headers?.get("x-ratelimit-reset-tokens"));
+    if (resetTokens !== undefined) waits.push(resetTokens);
+  }
+  if (Number.isFinite(remainingRequests) && remainingRequests <= 0) {
+    const resetRequests = parseDurationMs(headers?.get("x-ratelimit-reset-requests"));
+    if (resetRequests !== undefined) waits.push(resetRequests);
+  }
+  return waits.length ? Math.max(...waits) : undefined;
+}
+
+function rateLimitContext(headers: Headers | undefined, retryAfterMs: number | undefined): string | undefined {
+  const parts = [
+    retryAfterMs !== undefined ? `retry_after=${formatSeconds(retryAfterMs)}` : "",
+    headerPart(headers, "x-ratelimit-remaining-tokens", "remaining_tokens"),
+    headerPart(headers, "x-ratelimit-reset-tokens", "reset_tokens"),
+    headerPart(headers, "x-ratelimit-remaining-requests", "remaining_requests"),
+    headerPart(headers, "x-ratelimit-reset-requests", "reset_requests"),
+  ].filter(Boolean);
+  return parts.length ? parts.join(", ") : undefined;
+}
+
+function headerPart(headers: Headers | undefined, key: string, label: string): string {
+  const value = headers?.get(key);
+  return value ? `${label}=${value}` : "";
+}
+
+function parseDurationMs(value: string | null | undefined): number | undefined {
+  if (!value) return undefined;
+  const trimmed = value.trim();
+  const numeric = Number(trimmed);
+  if (Number.isFinite(numeric)) return Math.max(0, numeric * 1000);
+  let total = 0;
+  let matched = false;
+  for (const match of trimmed.matchAll(/(\d+(?:\.\d+)?)(ms|s|m|h)/g)) {
+    matched = true;
+    const amount = Number(match[1]);
+    const unit = match[2];
+    if (unit === "ms") total += amount;
+    if (unit === "s") total += amount * 1000;
+    if (unit === "m") total += amount * 60_000;
+    if (unit === "h") total += amount * 3_600_000;
+  }
+  return matched ? Math.max(0, total) : undefined;
+}
+
+function formatSeconds(ms: number): string {
+  if (ms <= 0) return "0s";
+  return `${Math.max(0.1, Math.round(ms / 100) / 10)}s`;
 }
 
 function shortRetryMs(provider: LlmProvider["name"]): number {

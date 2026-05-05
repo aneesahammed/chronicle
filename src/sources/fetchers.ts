@@ -20,6 +20,10 @@ import type {
 const TIMEOUT_MS = 20_000;
 const SITEMAP_PAGE_TIMEOUT_MS = 8_000;
 const USER_AGENT = "Chronicle/0.1 by aneesahammed (+https://github.com/aneesahammed/chronicle)";
+const YOUTUBE_RSS_ATTEMPTS = 4;
+const YOUTUBE_RSS_RETRY_DELAY_MS = 500;
+const YOUTUBE_RSS_SPACING_MS = 750;
+const YOUTUBE_RSS_TIMEOUT_MS = 8_000;
 const SITEMAP_CHILD_LIMIT = 25;
 const SITEMAP_CANDIDATE_MULTIPLIER = 8;
 const SITEMAP_MIN_CANDIDATES = 40;
@@ -85,7 +89,12 @@ async function fetchRss(s: SourceConfig, kw: string[]): Promise<RawItem[]> {
 }
 
 async function fetchYoutubeRss(s: SourceConfig, kw: string[]): Promise<RawItem[]> {
-  const feed = await rss.parseString(await fetchText(s.url));
+  const feed = await rss.parseString(await fetchText(s.url, {
+    attempts: YOUTUBE_RSS_ATTEMPTS,
+    initialDelayMs: YOUTUBE_RSS_RETRY_DELAY_MS,
+    retryStatuses: new Set([404]),
+    timeoutMs: YOUTUBE_RSS_TIMEOUT_MS,
+  }));
   const channelId = safeUrl(s.url)?.searchParams.get("channel_id") ?? undefined;
   return (feed.items ?? [])
     .slice(0, youtubeCandidateLimit(s))
@@ -739,32 +748,45 @@ async function fetchJson<T>(url: string, headers: Record<string, string> = {}): 
   });
 }
 
-async function fetchText(url: string): Promise<string> {
+async function fetchText(url: string, options: RetryOptions = {}): Promise<string> {
   return await withRetry(async () => {
     const r = await fetch(url, {
-      signal: AbortSignal.timeout(TIMEOUT_MS),
+      signal: AbortSignal.timeout(options.timeoutMs ?? TIMEOUT_MS),
       headers: { "user-agent": USER_AGENT },
     });
-    if (!r.ok) throw await fetchHttpError(url, r);
+    if (!r.ok) throw await fetchHttpError(url, r, options.retryStatuses);
     return await r.text();
-  });
+  }, options);
 }
 
-async function withRetry<T>(fn: () => Promise<T>): Promise<T> {
+interface RetryOptions {
+  attempts?: number;
+  initialDelayMs?: number;
+  retryStatuses?: Set<number>;
+  timeoutMs?: number;
+}
+
+async function withRetry<T>(fn: () => Promise<T>, options: RetryOptions = {}): Promise<T> {
   let last: unknown;
-  for (let attempt = 0; attempt < 2; attempt++) {
+  const attempts = options.attempts ?? 2;
+  const initialDelayMs = options.initialDelayMs ?? 500;
+  for (let attempt = 0; attempt < attempts; attempt++) {
     try {
       return await fn();
     } catch (e) {
       last = e;
       if (e instanceof FetchHttpError && !e.retryable) throw e;
-      if (attempt === 0) await sleep(500);
+      if (attempt < attempts - 1) await sleep(initialDelayMs * (attempt + 1));
     }
   }
   throw last;
 }
 
-async function fetchHttpError(url: string, response: Response): Promise<FetchHttpError> {
+async function fetchHttpError(
+  url: string,
+  response: Response,
+  retryStatuses: Set<number> = new Set(),
+): Promise<FetchHttpError> {
   const body = await response.text().catch(() => "");
   const rateLimit = githubRateLimitMessage(response.headers);
   const bodyMessage = body.trim().replace(/\s+/g, " ").slice(0, 240);
@@ -776,7 +798,7 @@ async function fetchHttpError(url: string, response: Response): Promise<FetchHtt
   ].filter(Boolean).join(" - ");
   return new FetchHttpError(message, {
     status: response.status,
-    retryable: isRetryableStatus(response.status, response.headers),
+    retryable: retryStatuses.has(response.status) || isRetryableStatus(response.status, response.headers),
   });
 }
 
@@ -1017,12 +1039,13 @@ async function mapLimit<T, U>(
 
 // ---- Public API -----------------------------------------------------------
 export async function fetchAll(reg: Registry, options: FetchAllOptions = {}): Promise<FetchResult> {
+  const youtubeGate = createSerialGate(YOUTUBE_RSS_SPACING_MS);
   const tasks = reg.sources.map(async (s) => {
     try {
       let items: RawItem[] = [];
       switch (s.type) {
         case "rss":         items = await fetchRss(s, reg.hn_ai_keywords); break;
-        case "youtube_rss": items = await fetchYoutubeRss(s, reg.hn_ai_keywords); break;
+        case "youtube_rss": items = await youtubeGate(() => fetchYoutubeRss(s, reg.hn_ai_keywords)); break;
         case "hn_algolia":  items = await fetchHN(s, reg.hn_ai_keywords); break;
         case "reddit":      items = await fetchReddit(s); break;
         case "hf_papers":   items = await fetchHfPapers(s); break;
@@ -1058,6 +1081,24 @@ export async function fetchAll(reg: Registry, options: FetchAllOptions = {}): Pr
     source_failed: failed_sources.length,
     failed_sources,
     source_health: results.map((result) => result.health),
+  };
+}
+
+function createSerialGate(spacingMs: number): <T>(run: () => Promise<T>) => Promise<T> {
+  let tail = Promise.resolve();
+  return async (run) => {
+    const previous = tail;
+    let release!: () => void;
+    tail = new Promise<void>((resolve) => {
+      release = resolve;
+    });
+    await previous;
+    try {
+      return await run();
+    } finally {
+      if (spacingMs > 0) await sleep(spacingMs);
+      release();
+    }
   };
 }
 

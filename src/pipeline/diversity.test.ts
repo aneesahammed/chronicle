@@ -159,8 +159,11 @@ function scored(overrides: Partial<RawItem> & { score?: number } = {}): ScoredCl
     quality: "signal",
     one_liner: "Useful one liner.",
     novelty: 0.8,
+    novelty_label: "high",
     trust: primary.trust,
     score: overrides.score ?? 0.72,
+    why_this_surfaced: ["high novelty against the 30-day history"],
+    builder_action: "Read the primary source.",
   };
 }
 

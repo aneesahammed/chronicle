@@ -20,6 +20,7 @@ const kinds = new Set([
 ]);
 
 const qualities = new Set(['signal', 'mixed', 'hype']);
+const noveltyLabels = new Set(['high', 'medium', 'familiar']);
 const refreshStatuses = new Set(['ok', 'partial', 'failed']);
 const classificationModes = new Set(['llm', 'partial', 'fallback', 'deterministic']);
 const enrichmentStatuses = new Set(['ok', 'metadata_only', 'failed']);
@@ -186,6 +187,11 @@ function validateCluster(cluster, index, failures) {
   if (!kinds.has(cluster.kind)) failures.push(`${label} has invalid kind: ${cluster.kind}`);
   if (!qualities.has(cluster.quality)) failures.push(`${label} has invalid quality: ${cluster.quality}`);
   if (typeof cluster.one_liner !== 'string') failures.push(`${label} missing one_liner`);
+  if (!noveltyLabels.has(cluster.novelty_label)) failures.push(`${label} has invalid novelty_label: ${cluster.novelty_label}`);
+  if (!Array.isArray(cluster.why_this_surfaced) || !cluster.why_this_surfaced.every((reason) => typeof reason === 'string')) {
+    failures.push(`${label} why_this_surfaced should be an array of strings`);
+  }
+  if (typeof cluster.builder_action !== 'string') failures.push(`${label} missing builder_action`);
   for (const key of ['score', 'novelty', 'trust']) {
     if (!isUnitNumber(cluster[key])) failures.push(`${label} ${key} should be a number from 0 to 1`);
   }

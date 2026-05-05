@@ -92,6 +92,24 @@ export interface ClassificationResult {
   mode: ClassificationMode;
 }
 
+export function classifyClustersDeterministically(clusters: Cluster[]): ClassificationResult {
+  if (clusters.length === 0) return { items: [], mode: "fallback" };
+
+  let llmEligible = 0;
+  const items = clusters.map((cluster) => {
+    if (shouldClassifyWithLlm(cluster)) {
+      llmEligible++;
+      return fallback(cluster);
+    }
+    return deterministicClassification(cluster);
+  });
+
+  return {
+    items,
+    mode: llmEligible > 0 ? "fallback" : "deterministic",
+  };
+}
+
 export async function classifyClusters(
   clusters: Cluster[],
   providers: LlmProvider[] = [],

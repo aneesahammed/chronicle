@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { classifyClusters } from "./classify.ts";
+import { classifyClusters, classifyClustersDeterministically } from "./classify.ts";
 import type { Cluster, RawItem } from "../types.ts";
 
 test("classifyClusters falls back when no API key is configured", async () => {
@@ -34,6 +34,17 @@ test("fallback classifier does not mark every paper as signal", async () => {
 
   assert.equal(result.items[0].kind, "paper");
   assert.equal(result.items[0].quality, "mixed");
+});
+
+test("classifyClustersDeterministically scores LLM-eligible items without provider calls", () => {
+  const result = classifyClustersDeterministically([cluster({
+    title: "A benchmark for inference throughput",
+    summary: "Introduces a benchmark for measuring LLM serving latency.",
+  })]);
+
+  assert.equal(result.mode, "fallback");
+  assert.equal(result.items[0].kind, "paper");
+  assert.equal(result.items[0].quality, "signal");
 });
 
 test("classifyClusters reads LLM JSON in item order", async () => {

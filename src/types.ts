@@ -20,6 +20,7 @@ export type Kind =
   | "unknown";
 
 export type Quality = "signal" | "mixed" | "hype";
+export type NoveltyLabel = "high" | "medium" | "familiar";
 export type SourceRole = "main" | "repo" | "learning";
 export type RefreshStatus = "ok" | "partial" | "failed";
 export type ClassificationMode = "llm" | "partial" | "fallback" | "deterministic";
@@ -159,8 +160,11 @@ export interface ScoredCluster extends Cluster {
   quality: Quality;
   one_liner: string;      // <= 140 chars, factual, no hype
   novelty: number;        // 0..1
+  novelty_label: NoveltyLabel;
   trust: number;          // 0..1, primary's trust
   score: number;          // composite final score
+  why_this_surfaced: string[];
+  builder_action: string;
 }
 
 export interface FeedFile {

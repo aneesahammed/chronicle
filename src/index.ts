@@ -7,12 +7,23 @@ import { clusterItems } from "./pipeline/cluster.ts";
 import {
   appendToHistory, loadHistory, novelty, pruneHistory, saveHistory,
 } from "./pipeline/novelty.ts";
-import { classifyClusters } from "./llm/classify.ts";
+import {
+  classifyClusters,
+  classifyClustersDeterministically,
+  type ClassificationResult,
+} from "./llm/classify.ts";
 import { createLlmProviders, type LlmProvider } from "./llm/providers.ts";
 import { scoreCluster } from "./pipeline/score.ts";
 import { selectDiverseClusters, sourceFamilyMix } from "./pipeline/diversity.ts";
 import { writeFileAtomic, writeJsonAtomic } from "./pipeline/atomic-write.ts";
 import { buildTopNews } from "./enrichment/top-news.ts";
+import {
+  writeArchiveIndexPage,
+  writeFeedSchema,
+  writeRenderedDailyPage,
+  writeRenderedHomePage,
+  writeSyndicationFeeds,
+} from "./render/static-site.ts";
 import {
   sourceRoleOf,
   type Cluster,
@@ -122,6 +133,9 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
   await saveHistory(historyOut, updated);
   console.log(`[write] ${historyOut}  entries=${updated.entries.length}`);
   await writeFeed(feedOut, mainFeed);
+  await writeRenderedHomePage(publicDir, mainFeed);
+  await writeSyndicationFeeds(publicDir, mainFeed);
+  await writeFeedSchema(publicDir);
   if (mainFeed.refresh_status !== "failed") {
     await writeArchiveOutputs(publicDir, mainFeed);
   }
@@ -181,7 +195,7 @@ async function buildRoleFeed(options: {
   const clusters = clusterItems(options.items);
   console.log(`[cluster:${options.role}] ${options.items.length} → ${clusters.length} clusters`);
 
-  const cls = await classifyClusters(clusters, options.providers);
+  const preclassified = classifyClustersDeterministically(clusters);
 
   if (clusters.length === 0 && options.previous && options.previous.clusters.length > 0) {
     return previousFeed(options.previous, {
@@ -193,9 +207,22 @@ async function buildRoleFeed(options: {
     });
   }
 
-  const scored = clusters
-    .map((c, i) => scoreCluster(c, cls.items[i], novelty(c.primary.title, options.history, options.now), options.now))
+  const preliminaryScored = clusters
+    .map((c, i) => scoreCluster(c, preclassified.items[i], novelty(c.primary.title, options.history, options.now), options.now))
     .filter((s) => !(s.quality === "hype" && s.members.length < 2));
+  const candidates = selectDiverseClusters(preliminaryScored, { maxOutput: options.maxOutput });
+  let classificationMode: ClassificationResult["mode"] = preclassified.mode;
+  let scored = candidates;
+
+  if (options.role === "main" && candidates.length > 0 && options.providers.length > 0) {
+    console.log(`[classify:${options.role}] ${candidates.length}/${clusters.length} candidate clusters selected for LLM`);
+    const cls = await classifyClusters(candidates, options.providers);
+    classificationMode = cls.mode;
+    scored = candidates
+      .map((c, i) => scoreCluster(c, cls.items[i], c.novelty, options.now))
+      .filter((s) => !(s.quality === "hype" && s.members.length < 2));
+  }
+
   const selected = selectDiverseClusters(scored, { maxOutput: options.maxOutput });
 
   console.log(`[score:${options.role}] kept ${selected.length} after filtering`);
@@ -206,7 +233,7 @@ async function buildRoleFeed(options: {
       now: options.now,
       windowHours: options.windowHours,
       fetched: { ...options.fetched, source_health: sourceHealth },
-      classificationMode: cls.mode,
+      classificationMode,
       reason: "refresh produced zero scored items",
     });
   }
@@ -226,7 +253,7 @@ async function buildRoleFeed(options: {
       ? options.now.toISOString()
       : options.previous?.last_successful_generated_at ?? options.previous?.generated_at ?? null,
     refresh_status: refreshStatus(selected.length, options.fetched),
-    classification_mode: cls.mode,
+    classification_mode: classificationMode,
     window_hours: options.windowHours,
     source_total: options.fetched.source_total,
     source_ok: options.fetched.source_ok,
@@ -555,12 +582,11 @@ async function writeArchiveOutputs(publicDir: string, feed: FeedFile) {
   await writeJsonAtomic(dayFeedPath, feed);
   console.log(`[write] ${dayFeedPath}`);
 
-  // Per-day snapshots reuse the main feed template; the daily index page is a
-  // bespoke archive grid (public/daily/index.html) that we never overwrite here.
-  await copyArchiveShell(publicDir, dayDir);
+  await writeRenderedDailyPage(publicDir, feed);
 
   const indexPath = path.join(dailyDir, "index.json");
   const previous = await readArchiveIndex(indexPath);
+  const existingDays = await readArchiveDirs(dailyDir);
   const day: ArchiveDay = {
     date,
     generated_at: feed.generated_at,
@@ -569,13 +595,16 @@ async function writeArchiveOutputs(publicDir: string, feed: FeedFile) {
     path: `daily/${date}/`,
     feed_path: `daily/${date}/feed.json`,
   };
-  const days = [day, ...previous.days.filter((entry) => entry.date !== date)]
+  const previousDays = mergeArchiveDays([...previous.days, ...existingDays]);
+  const days = [day, ...previousDays.filter((entry) => entry.date !== date)]
     .sort((a, b) => b.date.localeCompare(a.date))
     .slice(0, 120);
   const nextIndex: ArchiveIndex = { generated_at: feed.generated_at, days };
   await fs.mkdir(dailyDir, { recursive: true });
   await writeJsonAtomic(indexPath, nextIndex);
   console.log(`[write] ${indexPath}`);
+  await writeArchiveIndexPage(publicDir, days, feed.generated_at);
+  await pruneArchiveDirs(dailyDir, days);
   await writeRobotsAndSitemap(publicDir, days, feed.generated_at);
 }
 
@@ -591,14 +620,58 @@ async function readArchiveIndex(indexPath: string): Promise<ArchiveIndex> {
   }
 }
 
-async function copyArchiveShell(publicDir: string, targetDir: string) {
+async function readArchiveDirs(dailyDir: string): Promise<ArchiveDay[]> {
+  let entries: import("node:fs").Dirent[];
   try {
-    const html = await fs.readFile(path.join(publicDir, "index.html"), "utf8");
-    await fs.mkdir(targetDir, { recursive: true });
-    await writeFileAtomic(path.join(targetDir, "index.html"), html);
-  } catch (error) {
-    if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
+    entries = await fs.readdir(dailyDir, { withFileTypes: true });
+  } catch {
+    return [];
   }
+  const days = await Promise.all(entries.map(async (entry) => {
+    if (!entry.isDirectory() || !/^\d{4}-\d{2}-\d{2}$/.test(entry.name)) return null;
+    const feedPath = path.join(dailyDir, entry.name, "feed.json");
+    try {
+      const feed = JSON.parse(await fs.readFile(feedPath, "utf8")) as FeedFile;
+      return {
+        date: entry.name,
+        generated_at: feed.generated_at,
+        count: feed.count,
+        title: feed.clusters[0]?.primary.title ?? "Chronicle",
+        path: `daily/${entry.name}/`,
+        feed_path: `daily/${entry.name}/feed.json`,
+      };
+    } catch {
+      return null;
+    }
+  }));
+  return days.filter((day): day is ArchiveDay => Boolean(day));
+}
+
+function mergeArchiveDays(days: ArchiveDay[]): ArchiveDay[] {
+  const byDate = new Map<string, ArchiveDay>();
+  for (const day of days) {
+    const existing = byDate.get(day.date);
+    if (!existing || day.generated_at > existing.generated_at) {
+      byDate.set(day.date, day);
+    }
+  }
+  return [...byDate.values()];
+}
+
+async function pruneArchiveDirs(dailyDir: string, days: ArchiveDay[]) {
+  const keep = new Set(days.map((day) => day.date));
+  let entries: import("node:fs").Dirent[];
+  try {
+    entries = await fs.readdir(dailyDir, { withFileTypes: true });
+  } catch {
+    return;
+  }
+  await Promise.all(entries.map(async (entry) => {
+    if (!entry.isDirectory() || !/^\d{4}-\d{2}-\d{2}$/.test(entry.name)) return;
+    if (keep.has(entry.name)) return;
+    await fs.rm(path.join(dailyDir, entry.name), { recursive: true, force: true });
+    console.log(`[archive] pruned ${path.join(dailyDir, entry.name)}`);
+  }));
 }
 
 async function writeRobotsAndSitemap(publicDir: string, days: ArchiveDay[], generatedAt: string) {

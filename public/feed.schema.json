@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chronicle.tinycrafts.ai/feed.schema.json",
+  "title": "Chronicle Feed",
+  "type": "object",
+  "required": [
+    "generated_at",
+    "last_successful_generated_at",
+    "refresh_status",
+    "classification_mode",
+    "window_hours",
+    "source_total",
+    "source_ok",
+    "source_failed",
+    "failed_sources",
+    "source_health",
+    "count",
+    "clusters"
+  ],
+  "properties": {
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "last_successful_generated_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "refresh_status": {
+      "enum": [
+        "ok",
+        "partial",
+        "failed"
+      ]
+    },
+    "classification_mode": {
+      "enum": [
+        "llm",
+        "partial",
+        "fallback",
+        "deterministic"
+      ]
+    },
+    "window_hours": {
+      "type": "number"
+    },
+    "source_total": {
+      "type": "number"
+    },
+    "source_ok": {
+      "type": "number"
+    },
+    "source_failed": {
+      "type": "number"
+    },
+    "failed_sources": {
+      "type": "array"
+    },
+    "source_health": {
+      "type": "array"
+    },
+    "count": {
+      "type": "number"
+    },
+    "top_news": {
+      "type": "array"
+    },
+    "clusters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "primary",
+          "members",
+          "source_trail",
+          "kind",
+          "quality",
+          "one_liner",
+          "novelty",
+          "novelty_label",
+          "trust",
+          "score",
+          "why_this_surfaced",
+          "builder_action"
+        ]
+      }
+    }
+  }
+}

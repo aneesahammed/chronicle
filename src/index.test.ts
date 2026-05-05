@@ -4,6 +4,7 @@ import os from "node:os";
 import path from "node:path";
 import test from "node:test";
 import { runPipeline } from "./index.ts";
+import type { LlmProvider } from "./llm/providers.ts";
 
 const originalFetch = globalThis.fetch;
 
@@ -230,6 +231,12 @@ test("runPipeline writes source health and a successful daily archive", async ()
   const registryPath = path.join(root, "registry.yaml");
   await fs.mkdir(publicDir, { recursive: true });
   await fs.writeFile(path.join(publicDir, "index.html"), "<!doctype html><title>Chronicle</title>");
+  await fs.mkdir(path.join(publicDir, "daily/2026-05-01"), { recursive: true });
+  await fs.writeFile(path.join(publicDir, "daily/2026-05-01/feed.json"), JSON.stringify({
+    generated_at: "2026-05-01T06:00:00.000Z",
+    count: 1,
+    clusters: [{ primary: { title: "Previous archive item" } }],
+  }));
   await fs.writeFile(registryPath, `
 sources:
   - id: hf_models_test
@@ -263,8 +270,98 @@ hn_ai_keywords:
   assert.deepEqual(archived.top_news, feed.top_news);
   const archiveIndex = JSON.parse(await fs.readFile(path.join(publicDir, "daily/index.json"), "utf8"));
   assert.equal(archiveIndex.days[0].date, "2026-05-02");
+  assert.equal(archiveIndex.days[1].date, "2026-05-01");
   assert.match(await fs.readFile(path.join(publicDir, "sitemap.xml"), "utf8"), /chronicle\.tinycrafts\.ai\/daily\/2026-05-02\//);
+  assert.match(await fs.readFile(path.join(publicDir, "sitemap.xml"), "utf8"), /chronicle\.tinycrafts\.ai\/daily\/2026-05-01\//);
   assert.match(await fs.readFile(path.join(publicDir, "robots.txt"), "utf8"), /Sitemap:/);
+});
+
+test("runPipeline classifies only preselected main feed candidates", async () => {
+  const titles = [
+    "Alpha routing benchmark improves agent planning",
+    "Beacon dataset evaluates retrieval quality",
+    "Cobalt inference system reduces serving latency",
+    "Delta safety benchmark probes jailbreaks",
+    "Ember model release improves token efficiency",
+    "Falcon tool debugs RAG pipelines",
+    "Granite tutorial explains vector search",
+    "Harbor framework measures batch throughput",
+    "Ion architecture accelerates multimodal training",
+    "Jade evaluation suite checks agent memory",
+    "Kepler method improves reasoning verification",
+    "Lumen report compares open model inference",
+  ];
+  globalThis.fetch = async () => new Response(`
+    <rss version="2.0"><channel>
+      ${titles.map((title, index) => `
+        <item>
+          <title>${title}</title>
+          <link>https://example.com/${index}</link>
+          <pubDate>Sat, 02 May 2026 05:${String(index).padStart(2, "0")}:00 GMT</pubDate>
+          <description>${title} with concrete AI engineering details.</description>
+        </item>
+      `).join("")}
+    </channel></rss>
+  `);
+
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "chronicle-preselect-"));
+  const publicDir = path.join(root, "public");
+  const dataDir = path.join(root, "data");
+  const registryPath = path.join(root, "registry.yaml");
+  await fs.mkdir(publicDir, { recursive: true });
+  await fs.writeFile(registryPath, `
+sources:
+  - id: papers
+    name: Papers
+    type: rss
+    url: https://source.example.test/feed
+    trust: 0.9
+    kind_hint: paper
+    limit: 20
+hn_ai_keywords:
+  - ai
+`);
+
+  const classifiedBatchSizes: number[] = [];
+  const provider: LlmProvider = {
+    name: "groq",
+    model: "test",
+    batchDelayMs: 0,
+    completeJson: async (request) => {
+      if (request.schemaName !== "classification") {
+        return { content: '{"items":[]}', provider: "groq", model: "test" };
+      }
+      const payload = JSON.parse(request.user.slice(request.user.indexOf("["))) as Array<{ index: number }>;
+      classifiedBatchSizes.push(payload.length);
+      return {
+        content: JSON.stringify({
+          items: payload.map((item) => ({
+            index: item.index,
+            kind: "paper",
+            quality: "signal",
+            one_liner: "Useful AI engineering result.",
+          })),
+        }),
+        provider: "groq",
+        model: "test",
+      };
+    },
+  };
+
+  await runPipeline({
+    registryPath,
+    publicDir,
+    dataDir,
+    now: new Date("2026-05-02T06:00:00.000Z"),
+    env: { MAX_OUTPUT: "5" },
+    providers: [provider],
+  });
+
+  const feed = JSON.parse(await fs.readFile(path.join(publicDir, "feed.json"), "utf8"));
+  assert.equal(classifiedBatchSizes.length, 1);
+  assert.ok(classifiedBatchSizes[0] < titles.length);
+  assert.equal(classifiedBatchSizes[0], feed.count);
+  assert.equal(feed.classification_mode, "llm");
 });
 
 test("runPipeline excludes old sitemap articles even when sitemap lastmod is fresh", async () => {
