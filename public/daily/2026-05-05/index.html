@@ -183,6 +183,13 @@
   }
   .status-line.is-stale .dot { background: var(--mixed); }
   .status-line.is-failed .dot { background: var(--bad); }
+  .masthead-actions {
+    justify-self: end;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
   .theme-toggle {
     width: 32px;
     height: 32px;
@@ -1059,13 +1066,15 @@
 	  <header class="masthead">
 	    <a class="wordmark" id="homeLink" href="./">Chronicle</a>
 	    <span class="status-line" id="statusLine"><span class="dot" aria-hidden="true"></span><span id="statusText">57 items · updated 2026-05-05 11:04 UTC</span></span>
-	    <button class="refresh-button" id="refreshButton" type="button" title="Refresh feed" aria-label="Refresh feed">↻</button>
-	    <button class="theme-toggle" id="themeToggle" type="button" title="Toggle theme" aria-label="Switch to dark theme">
+	    <div class="masthead-actions">
+	      <button class="refresh-button" id="refreshButton" type="button" title="Refresh feed" aria-label="Refresh feed">↻</button>
+	      <button class="theme-toggle" id="themeToggle" type="button" title="Toggle theme" aria-label="Switch to dark theme">
       <svg id="themeIconContrast" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
         <circle cx="12" cy="12" r="9" fill="none" stroke="var(--ink-2)" stroke-width="1.75" />
         <path d="M12 3 A9 9 0 0 1 12 21 Z" fill="var(--ink)" />
       </svg>
-    </button>
+      </button>
+    </div>
   </header>
 
 	  <nav class="section-nav" aria-label="Feed sections" role="tablist">
