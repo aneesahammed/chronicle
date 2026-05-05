@@ -5,6 +5,15 @@ on:
     # Avoid the top-of-hour GitHub Actions queue, which can delay scheduled runs.
     - cron: "17 5,12,18 * * *"
   workflow_dispatch:
+    inputs:
+      refresh_mode:
+        description: "Use full_refresh for scheduled feed work, deploy_only to publish the current pages branch without fetching sources or calling LLMs."
+        type: choice
+        required: true
+        default: full_refresh
+        options:
+          - full_refresh
+          - deploy_only
   push:
     branches:
       - pages
@@ -65,7 +74,7 @@ jobs:
         run: npm run check
 
       - name: Refresh Chronicle feed
-        if: github.event_name != 'push'
+        if: github.event_name != 'push' && inputs.refresh_mode != 'deploy_only'
         timeout-minutes: 15
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -78,7 +87,7 @@ jobs:
         run: npm run verify:all
 
       - name: Commit Chronicle feed
-        if: github.event_name != 'push'
+        if: github.event_name != 'push' && inputs.refresh_mode != 'deploy_only'
         run: |
           git config user.name "chronicle-bot"
           git config user.email "actions@users.noreply.github.com"
