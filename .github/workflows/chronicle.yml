@@ -5,6 +5,23 @@ on:
     # Avoid the top-of-hour GitHub Actions queue, which can delay scheduled runs.
     - cron: "17 5,12,18 * * *"
   workflow_dispatch:
+  push:
+    branches:
+      - pages
+    paths:
+      - "public/**"
+      - "src/**"
+      - "scripts/**"
+      - "package.json"
+      - "package-lock.json"
+      - "tsconfig.json"
+      - "!data/**"
+      - "!public/feed.json"
+      - "!public/repos.json"
+      - "!public/learning.json"
+      - "!public/daily/**"
+      - "!public/robots.txt"
+      - "!public/sitemap.xml"
 
 permissions:
   contents: write
@@ -20,6 +37,7 @@ concurrency:
 
 jobs:
   refresh-build-deploy:
+    if: github.event_name != 'push' || github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     environment:
@@ -47,6 +65,7 @@ jobs:
         run: npm run check
 
       - name: Refresh Chronicle feed
+        if: github.event_name != 'push'
         timeout-minutes: 15
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -59,6 +78,7 @@ jobs:
         run: npm run verify:all
 
       - name: Commit Chronicle feed
+        if: github.event_name != 'push'
         run: |
           git config user.name "chronicle-bot"
           git config user.email "actions@users.noreply.github.com"
