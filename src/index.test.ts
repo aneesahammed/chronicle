@@ -230,13 +230,14 @@ test("runPipeline writes source health and a successful daily archive", async ()
   const dataDir = path.join(root, "data");
   const registryPath = path.join(root, "registry.yaml");
   await fs.mkdir(publicDir, { recursive: true });
-  await fs.writeFile(path.join(publicDir, "index.html"), "<!doctype html><title>Chronicle</title>");
   await fs.mkdir(path.join(publicDir, "daily/2026-05-01"), { recursive: true });
   await fs.writeFile(path.join(publicDir, "daily/2026-05-01/feed.json"), JSON.stringify({
     generated_at: "2026-05-01T06:00:00.000Z",
     count: 1,
     clusters: [{ primary: { title: "Previous archive item" } }],
   }));
+  await fs.mkdir(path.join(publicDir, "daily/2026-04-30"), { recursive: true });
+  await fs.writeFile(path.join(publicDir, "daily/2026-04-30/orphan.txt"), "keep until archive history is established");
   await fs.writeFile(registryPath, `
 sources:
   - id: hf_models_test
@@ -274,6 +275,7 @@ hn_ai_keywords:
   assert.match(await fs.readFile(path.join(publicDir, "sitemap.xml"), "utf8"), /chronicle\.tinycrafts\.ai\/daily\/2026-05-02\//);
   assert.match(await fs.readFile(path.join(publicDir, "sitemap.xml"), "utf8"), /chronicle\.tinycrafts\.ai\/daily\/2026-05-01\//);
   assert.match(await fs.readFile(path.join(publicDir, "robots.txt"), "utf8"), /Sitemap:/);
+  assert.equal(await fileExists(path.join(publicDir, "daily/2026-04-30/orphan.txt")), true);
 });
 
 test("runPipeline classifies only preselected main feed candidates", async () => {
@@ -470,4 +472,13 @@ function previousRoleFeed(role: "repo" | "learning", kindHint: "repo_release" | 
       score: 0.8,
     }],
   };
+}
+
+async function fileExists(filePath: string): Promise<boolean> {
+  try {
+    await fs.access(filePath);
+    return true;
+  } catch {
+    return false;
+  }
 }

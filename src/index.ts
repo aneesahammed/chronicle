@@ -49,6 +49,8 @@ const DEFAULT_WINDOW_HOURS = 36;
 const DEFAULT_REPO_WINDOW_HOURS = 168;
 const DEFAULT_LEARNING_WINDOW_HOURS = 720;
 const DEFAULT_MAX_OUTPUT = 60;
+const MIN_ARCHIVE_PRUNE_KEEP_DAYS = 7;
+const MAX_ARCHIVE_PRUNE_FRACTION = 0.25;
 
 async function main() {
   await runPipeline();
@@ -207,8 +209,13 @@ async function buildRoleFeed(options: {
     });
   }
 
+  const noveltyByClusterId = new Map<string, number>();
   const preliminaryScored = clusters
-    .map((c, i) => scoreCluster(c, preclassified.items[i], novelty(c.primary.title, options.history, options.now), options.now))
+    .map((c, i) => {
+      const noveltyScore = novelty(c.primary.title, options.history, options.now);
+      noveltyByClusterId.set(c.id, noveltyScore);
+      return scoreCluster(c, preclassified.items[i], noveltyScore, options.now);
+    })
     .filter((s) => !(s.quality === "hype" && s.members.length < 2));
   const candidates = selectDiverseClusters(preliminaryScored, { maxOutput: options.maxOutput });
   let classificationMode: ClassificationResult["mode"] = preclassified.mode;
@@ -219,7 +226,7 @@ async function buildRoleFeed(options: {
     const cls = await classifyClusters(candidates, options.providers);
     classificationMode = cls.mode;
     scored = candidates
-      .map((c, i) => scoreCluster(c, cls.items[i], c.novelty, options.now))
+      .map((c, i) => scoreCluster(c, cls.items[i], noveltyByClusterId.get(c.id) ?? c.novelty, options.now))
       .filter((s) => !(s.quality === "hype" && s.members.length < 2));
   }
 
@@ -666,9 +673,19 @@ async function pruneArchiveDirs(dailyDir: string, days: ArchiveDay[]) {
   } catch {
     return;
   }
-  await Promise.all(entries.map(async (entry) => {
-    if (!entry.isDirectory() || !/^\d{4}-\d{2}-\d{2}$/.test(entry.name)) return;
-    if (keep.has(entry.name)) return;
+  const archiveDirs = entries.filter((entry) => entry.isDirectory() && /^\d{4}-\d{2}-\d{2}$/.test(entry.name));
+  const deletions = archiveDirs.filter((entry) => !keep.has(entry.name));
+  if (!deletions.length) return;
+  if (keep.size < MIN_ARCHIVE_PRUNE_KEEP_DAYS) {
+    console.warn(`[archive] skipped pruning ${deletions.length} stale archive dirs; only ${keep.size} retained days are known`);
+    return;
+  }
+  const maxDeletes = Math.max(3, Math.floor(archiveDirs.length * MAX_ARCHIVE_PRUNE_FRACTION));
+  if (deletions.length > maxDeletes) {
+    console.warn(`[archive] skipped pruning ${deletions.length} stale archive dirs; safety limit is ${maxDeletes}`);
+    return;
+  }
+  await Promise.all(deletions.map(async (entry) => {
     await fs.rm(path.join(dailyDir, entry.name), { recursive: true, force: true });
     console.log(`[archive] pruned ${path.join(dailyDir, entry.name)}`);
   }));

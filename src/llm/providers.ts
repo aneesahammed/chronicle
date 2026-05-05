@@ -384,17 +384,24 @@ function retryDelayMs(data: unknown, headers?: Headers): number | undefined {
 
 function groqResetDelayMs(headers?: Headers): number | undefined {
   const waits: number[] = [];
-  const remainingTokens = Number(headers?.get("x-ratelimit-remaining-tokens"));
-  const remainingRequests = Number(headers?.get("x-ratelimit-remaining-requests"));
-  if (Number.isFinite(remainingTokens) && remainingTokens <= 0) {
+  const remainingTokens = numericHeader(headers, "x-ratelimit-remaining-tokens");
+  const remainingRequests = numericHeader(headers, "x-ratelimit-remaining-requests");
+  if (remainingTokens !== undefined && remainingTokens <= 0) {
     const resetTokens = parseDurationMs(headers?.get("x-ratelimit-reset-tokens"));
     if (resetTokens !== undefined) waits.push(resetTokens);
   }
-  if (Number.isFinite(remainingRequests) && remainingRequests <= 0) {
+  if (remainingRequests !== undefined && remainingRequests <= 0) {
     const resetRequests = parseDurationMs(headers?.get("x-ratelimit-reset-requests"));
     if (resetRequests !== undefined) waits.push(resetRequests);
   }
   return waits.length ? Math.max(...waits) : undefined;
+}
+
+function numericHeader(headers: Headers | undefined, key: string): number | undefined {
+  const value = headers?.get(key);
+  if (value === undefined || value === null || value.trim() === "") return undefined;
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : undefined;
 }
 
 function rateLimitContext(headers: Headers | undefined, retryAfterMs: number | undefined): string | undefined {

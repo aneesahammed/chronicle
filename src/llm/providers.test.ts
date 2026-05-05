@@ -193,6 +193,31 @@ test("GroqProvider reads retry timing from rate-limit headers", async () => {
   );
 });
 
+test("GroqProvider ignores reset headers when remaining headers are absent", async () => {
+  const provider = new GroqProvider("key", "qwen-test", {
+    batchDelayMs: 0,
+    fetchImpl: async () => Response.json({
+      error: { message: "rate limited" },
+    }, {
+      status: 429,
+      headers: {
+        "x-ratelimit-reset-tokens": "1.5s",
+        "x-ratelimit-reset-requests": "2s",
+      },
+    }),
+  });
+
+  await assert.rejects(
+    provider.completeJson(request),
+    (error: unknown) => {
+      assert.ok(error instanceof ProviderRateLimitError);
+      assert.equal(error.retryAfterMs, undefined);
+      assert.doesNotMatch(error.message, /retry_after=/);
+      return true;
+    },
+  );
+});
+
 test("GroqProvider retries without JSON mode when Groq rejects structured output", async () => {
   const bodies: any[] = [];
   const provider = new GroqProvider("key", "qwen-test", {

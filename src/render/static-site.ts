@@ -54,20 +54,26 @@ export async function writeArchiveIndexPage(
   const template = await readOptionalText(archivePath);
   if (!template) return;
   const meta = archiveMeta(days);
-  const html = replaceBetween(template, ARCHIVE_START, ARCHIVE_END, renderArchiveDays(days))
-    .replace(
-      /<p class="lede-meta" id="ledeMeta">[\s\S]*?<\/p>/,
-      `<p class="lede-meta" id="ledeMeta">${escapeHtml(meta)}</p>`,
-    )
-    .replace(
-      /<meta property="og:url" content="[^"]*">/,
-      `<meta property="og:url" content="${SITE_URL}daily/">`,
-    )
-    .replace(
-      /<link rel="canonical" href="[^"]*">/,
-      `<link rel="canonical" href="${SITE_URL}daily/">`,
-    );
-  const next = replaceBetween(html, JSONLD_START, JSONLD_END, archiveJsonLd(days, generatedAt));
+  let html = replaceBetween(template, ARCHIVE_START, ARCHIVE_END, renderArchiveDays(days), "archive markers");
+  html = replaceRequired(
+    html,
+    /<p class="lede-meta" id="ledeMeta">[\s\S]*?<\/p>/,
+    `<p class="lede-meta" id="ledeMeta">${escapeHtml(meta)}</p>`,
+    "archive metadata",
+  );
+  html = replaceRequired(
+    html,
+    /<meta property="og:url" content="[^"]*">/,
+    `<meta property="og:url" content="${SITE_URL}daily/">`,
+    "archive Open Graph URL",
+  );
+  html = replaceRequired(
+    html,
+    /<link rel="canonical" href="[^"]*">/,
+    `<link rel="canonical" href="${SITE_URL}daily/">`,
+    "archive canonical link",
+  );
+  const next = replaceBetween(html, JSONLD_START, JSONLD_END, archiveJsonLd(days, generatedAt), "archive JSON-LD markers");
   await writeFileAtomic(archivePath, next);
 }
 
@@ -98,35 +104,64 @@ function renderFeedPage(
   options: { canonicalUrl: string; title: string; archiveDate?: string },
 ): string {
   const hasTopNews = Boolean(feed.top_news?.length);
-  let html = template
-    .replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(options.title)}</title>`)
-    .replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${escapeAttr(options.canonicalUrl)}">`)
-    .replace(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${escapeAttr(options.canonicalUrl)}">`)
-    .replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${escapeAttr(options.archiveDate ? options.title : "Chronicle")}">`)
-    .replace(
-      /<span id="statusText">[\s\S]*?<\/span>/,
-      `<span id="statusText">${escapeHtml(statusText(feed))}</span>`,
-    )
-    .replace(
-      /<div class="health" id="healthStrip">[\s\S]*?<\/div>/,
-      `<div class="health" id="healthStrip">${healthHtml(feed)}</div>`,
-    )
-    .replace(
-      /<section class="top-news" id="topNews" aria-labelledby="top-news-title"(?: hidden)?>/,
-      `<section class="top-news" id="topNews" aria-labelledby="top-news-title"${hasTopNews ? "" : " hidden"}>`,
-    )
-    .replace(
-      /<div class="archive-banner" id="archiveBanner"(?: hidden)?>/,
-      `<div class="archive-banner" id="archiveBanner"${options.archiveDate ? "" : " hidden"}>`,
-    )
-    .replace(
-      /<strong id="archiveDateLabel">[\s\S]*?<\/strong>/,
-      `<strong id="archiveDateLabel">${escapeHtml(options.archiveDate ?? "")}</strong>`,
-    );
+  let html = replaceRequired(
+    template,
+    /<title>[\s\S]*?<\/title>/,
+    `<title>${escapeHtml(options.title)}</title>`,
+    "document title",
+  );
+  html = replaceRequired(
+    html,
+    /<link rel="canonical" href="[^"]*">/,
+    `<link rel="canonical" href="${escapeAttr(options.canonicalUrl)}">`,
+    "canonical link",
+  );
+  html = replaceRequired(
+    html,
+    /<meta property="og:url" content="[^"]*">/,
+    `<meta property="og:url" content="${escapeAttr(options.canonicalUrl)}">`,
+    "Open Graph URL",
+  );
+  html = replaceRequired(
+    html,
+    /<meta property="og:title" content="[^"]*">/,
+    `<meta property="og:title" content="${escapeAttr(options.archiveDate ? options.title : "Chronicle")}">`,
+    "Open Graph title",
+  );
+  html = replaceRequired(
+    html,
+    /<span id="statusText">[\s\S]*?<\/span>/,
+    `<span id="statusText">${escapeHtml(statusText(feed))}</span>`,
+    "status text",
+  );
+  html = replaceRequired(
+    html,
+    /<div class="health" id="healthStrip">[\s\S]*?<\/div>/,
+    `<div class="health" id="healthStrip">${healthHtml(feed)}</div>`,
+    "health strip",
+  );
+  html = replaceRequired(
+    html,
+    /<section class="top-news" id="topNews" aria-labelledby="top-news-title"(?: hidden)?>/,
+    `<section class="top-news" id="topNews" aria-labelledby="top-news-title"${hasTopNews ? "" : " hidden"}>`,
+    "top news section",
+  );
+  html = replaceRequired(
+    html,
+    /<div class="archive-banner" id="archiveBanner"(?: hidden)?>/,
+    `<div class="archive-banner" id="archiveBanner"${options.archiveDate ? "" : " hidden"}>`,
+    "archive banner",
+  );
+  html = replaceRequired(
+    html,
+    /<strong id="archiveDateLabel">[\s\S]*?<\/strong>/,
+    `<strong id="archiveDateLabel">${escapeHtml(options.archiveDate ?? "")}</strong>`,
+    "archive date label",
+  );
 
-  html = replaceBetween(html, TOP_NEWS_START, TOP_NEWS_END, renderTopNews(feed.top_news ?? []));
-  html = replaceBetween(html, FEED_START, FEED_END, renderFeed(feed));
-  html = replaceBetween(html, JSONLD_START, JSONLD_END, itemListJsonLd(feed, options.canonicalUrl));
+  html = replaceBetween(html, TOP_NEWS_START, TOP_NEWS_END, renderTopNews(feed.top_news ?? []), "top news markers");
+  html = replaceBetween(html, FEED_START, FEED_END, renderFeed(feed), "feed markers");
+  html = replaceBetween(html, JSONLD_START, JSONLD_END, itemListJsonLd(feed, options.canonicalUrl), "JSON-LD markers");
   return html;
 }
 
@@ -411,9 +446,18 @@ function feedSchema(): Record<string, unknown> {
   };
 }
 
-function replaceBetween(html: string, start: string, end: string, content: string): string {
+function replaceRequired(html: string, pattern: RegExp, replacement: string, label: string): string {
+  if (!pattern.test(html)) {
+    throw new Error(`static template is missing ${label}`);
+  }
+  return html.replace(pattern, replacement);
+}
+
+function replaceBetween(html: string, start: string, end: string, content: string, label: string): string {
   const pattern = new RegExp(`${escapeRegExp(start)}[\\s\\S]*?${escapeRegExp(end)}`);
-  if (!pattern.test(html)) return html;
+  if (!pattern.test(html)) {
+    throw new Error(`static template is missing ${label}`);
+  }
   return html.replace(pattern, `${start}\n${content}\n${end}`);
 }
 
@@ -515,15 +559,44 @@ function escapeHtml(value: string): string {
   return String(value ?? "")
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
 
 function escapeAttr(value: string): string {
-  return escapeHtml(value).replace(/"/g, "&quot;");
+  return escapeHtml(value);
 }
 
 function escapeXml(value: string): string {
-  return escapeAttr(value).replace(/'/g, "&apos;");
+  return stripInvalidXmlChars(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
+
+function stripInvalidXmlChars(value: string): string {
+  const input = String(value ?? "");
+  let output = "";
+  for (let i = 0; i < input.length; i++) {
+    const code = input.charCodeAt(i);
+    if ((code >= 0x00 && code <= 0x08) || code === 0x0B || code === 0x0C || (code >= 0x0E && code <= 0x1F)) {
+      continue;
+    }
+    if (code >= 0xD800 && code <= 0xDBFF) {
+      const next = input.charCodeAt(i + 1);
+      if (next >= 0xDC00 && next <= 0xDFFF) {
+        output += input[i] + input[i + 1];
+        i++;
+      }
+      continue;
+    }
+    if (code >= 0xDC00 && code <= 0xDFFF) continue;
+    output += input[i];
+  }
+  return output;
 }
 
 function escapeScriptJson(value: unknown): string {
