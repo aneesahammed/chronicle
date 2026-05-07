@@ -620,6 +620,8 @@ function youtubeCandidateLimit(source: SourceConfig): number {
 
 function isLearningVideoCandidate(item: RawItem): boolean {
   if (item.source_role !== "learning" || item.kind_hint !== "video") return true;
+  if (isYoutubeShortsItem(item)) return false;
+  if (item.learning?.provider === "YouTube" && !item.learning.video_id) return false;
 
   const text = normalizeFilterText(`${item.title} ${item.summary ?? ""}`);
   const hasCourseSignal = /\b(courses?|lessons?|curriculum|classroom)\b/.test(text);
@@ -647,6 +649,18 @@ function isLearningVideoCandidate(item: RawItem): boolean {
   if (hasInstructionSignal) return true;
   if (isLaunchOrBrandMarketing) return false;
   return hasTechnicalLearningTopic;
+}
+
+function isYoutubeShortsItem(item: RawItem): boolean {
+  if (isYoutubeShortsUrl(item.url) || isYoutubeShortsUrl(item.original_url)) return true;
+  const text = ` ${item.title} ${item.summary ?? ""} `;
+  return /(?:^|\s)#shorts?\b/i.test(text) || /\byoutube shorts?\b/i.test(text);
+}
+
+function isYoutubeShortsUrl(value: string): boolean {
+  const url = safeUrl(value);
+  if (!url) return false;
+  return url.hostname.endsWith("youtube.com") && url.pathname.split("/").filter(Boolean)[0]?.toLowerCase() === "shorts";
 }
 
 function normalizeFilterText(value: string): string {

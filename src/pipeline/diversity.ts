@@ -6,7 +6,7 @@ import sourceFamilyConfig from "./source-family-config.json" with { type: "json"
 // while still letting close non-arXiv items interleave.
 const FAMILY_PENALTY = 0.015;
 const EXCEPTIONAL_SCORE = 0.90;
-const ARXIV_CAP_RATIO = 0.25;
+const ARXIV_HARD_CAP = 3;
 const DEFAULT_FAMILY_CAP_RATIO = 0.40;
 const EXCEPTION_CAP_RATIO = 0.05;
 const warnedUnmappedSources = new Set<string>();
@@ -95,13 +95,14 @@ function withinFamilyCap(candidate: ScoredCluster, familyCount: number, maxOutpu
   const family = sourceFamily(candidate.primary.source_id);
   const cap = familyCap(family, maxOutput);
   if (familyCount < cap) return true;
+  if (family === "arxiv") return false;
 
   const exceptionCap = cap + Math.max(1, Math.ceil(maxOutput * EXCEPTION_CAP_RATIO));
   return candidate.score >= EXCEPTIONAL_SCORE && familyCount < exceptionCap;
 }
 
 function familyCap(family: string, maxOutput: number): number {
-  if (family === "arxiv") return ratioCap(maxOutput, ARXIV_CAP_RATIO);
+  if (family === "arxiv") return Math.min(ARXIV_HARD_CAP, maxOutput);
   return ratioCap(maxOutput, DEFAULT_FAMILY_CAP_RATIO);
 }
 

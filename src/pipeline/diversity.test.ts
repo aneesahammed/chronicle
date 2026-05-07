@@ -14,7 +14,7 @@ test("sourceFamily groups arXiv categories together", () => {
   assert.equal(sourceFamily("hn_ai"), "hacker_news");
 });
 
-test("selectDiverseClusters caps arXiv at 25 percent when alternatives exist", () => {
+test("selectDiverseClusters caps arXiv at 3 items when alternatives exist", () => {
   const arxiv = Array.from({ length: 20 }, (_, index) => scored({
     id: `arxiv-${index}`,
     source_id: index % 2 === 0 ? "arxiv_cl" : "arxiv_lg",
@@ -32,7 +32,7 @@ test("selectDiverseClusters caps arXiv at 25 percent when alternatives exist", (
   const mix = sourceFamilyMix(selected);
 
   assert.equal(selected.length, 20);
-  assert.equal(mix.arxiv, 5);
+  assert.equal(mix.arxiv, 3);
 });
 
 test("selectDiverseClusters caps other families at 40 percent", () => {
@@ -56,7 +56,7 @@ test("selectDiverseClusters caps other families at 40 percent", () => {
   assert.equal(mix.reporting, 8);
 });
 
-test("selectDiverseClusters allows a small exceptional overflow", () => {
+test("selectDiverseClusters does not allow arXiv exceptional overflow", () => {
   const arxiv = Array.from({ length: 20 }, (_, index) => scored({
     id: `arxiv-${index}`,
     source_id: "arxiv_cl",
@@ -74,7 +74,28 @@ test("selectDiverseClusters allows a small exceptional overflow", () => {
   const mix = sourceFamilyMix(selected);
 
   assert.equal(selected.length, 20);
-  assert.equal(mix.arxiv, 6);
+  assert.equal(mix.arxiv, 3);
+});
+
+test("selectDiverseClusters allows a small exceptional overflow for non-arXiv families", () => {
+  const reporting = Array.from({ length: 20 }, (_, index) => scored({
+    id: `reporting-${index}`,
+    source_id: index % 2 === 0 ? "techcrunch_ai" : "the_decoder",
+    source_name: index % 2 === 0 ? "TechCrunch AI" : "The Decoder",
+    score: 0.92 - index * 0.001,
+  }));
+  const alternatives = Array.from({ length: 20 }, (_, index) => scored({
+    id: `alt-${index}`,
+    source_id: `source_${index}`,
+    source_name: `Source ${index}`,
+    score: 0.70 - index * 0.001,
+  }));
+
+  const selected = withSilencedWarnings(() => selectDiverseClusters([...reporting, ...alternatives], { maxOutput: 20 }));
+  const mix = sourceFamilyMix(selected);
+
+  assert.equal(selected.length, 20);
+  assert.equal(mix.reporting, 9);
 });
 
 test("selectDiverseClusters treats maxOutput as a maximum when only arXiv is available", () => {
@@ -87,7 +108,7 @@ test("selectDiverseClusters treats maxOutput as a maximum when only arXiv is ava
 
   const selected = selectDiverseClusters(arxiv, { maxOutput: 20 });
 
-  assert.equal(selected.length, 5);
+  assert.equal(selected.length, 3);
 });
 
 test("selectDiverseClusters applies a light same-family score penalty", () => {

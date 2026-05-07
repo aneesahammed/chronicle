@@ -467,6 +467,11 @@ test("fetchAll filters non-learning YouTube clips from the learning feed", async
   globalThis.fetch = async () => new Response(`
     <feed xmlns="http://www.w3.org/2005/Atom">
       <entry>
+        <title>Build AI agents in 30 seconds #shorts</title>
+        <link href="https://www.youtube.com/shorts/short123" />
+        <published>2026-05-01T00:00:00Z</published>
+      </entry>
+      <entry>
         <title>Pinky vs Home Loan | With ChatGPT</title>
         <link href="https://www.youtube.com/watch?v=ad123" />
         <published>2026-05-01T00:00:00Z</published>
@@ -511,6 +516,7 @@ test("fetchAll filters non-learning YouTube clips from the learning feed", async
   });
 
   assert.deepEqual(result.items.map((item) => item.learning?.video_id), ["course123", "technical123"]);
+  assert.ok(result.items.every((item) => !item.url.includes("/shorts/")));
 });
 
 test("fetchAll backfills learning YouTube items after filtered promos", async () => {
