@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-09T12:38:03.911Z",
-  "last_successful_generated_at": "2026-05-09T12:38:03.911Z",
+  "generated_at": "2026-05-09T18:36:56.579Z",
+  "last_successful_generated_at": "2026-05-09T18:36:56.579Z",
   "refresh_status": "ok",
   "classification_mode": "deterministic",
   "window_hours": 168,
@@ -16,8 +16,8 @@
       "fetched_count": 5,
       "fresh_count": 5,
       "stale_count": 0,
-      "oldest_published_at": "2026-05-09T03:27:11.000Z",
-      "newest_published_at": "2026-05-09T11:03:51.000Z"
+      "oldest_published_at": "2026-05-09T05:18:04.000Z",
+      "newest_published_at": "2026-05-09T12:45:23.000Z"
     },
     {
       "id": "repo_ollama",
@@ -97,7 +97,7 @@
       "fresh_count": 18,
       "stale_count": 2,
       "oldest_published_at": "2026-04-14T16:58:21.000Z",
-      "newest_published_at": "2026-05-09T12:25:08.000Z"
+      "newest_published_at": "2026-05-09T18:23:00.000Z"
     },
     {
       "id": "github_ai_new_repos",
@@ -107,11 +107,242 @@
       "fresh_count": 15,
       "stale_count": 5,
       "oldest_published_at": "2026-04-15T12:32:29.000Z",
-      "newest_published_at": "2026-05-09T12:34:37.000Z"
+      "newest_published_at": "2026-05-09T17:35:14.000Z"
     }
   ],
   "count": 22,
   "clusters": [
+    {
+      "id": "pcsxx5",
+      "primary": {
+        "id": "pcsxx5",
+        "source_id": "repo_llamacpp",
+        "source_name": "llama.cpp releases",
+        "source_role": "repo",
+        "trust": 0.82,
+        "kind_hint": "repo_release",
+        "title": "ggml-org/llama.cpp: b9085",
+        "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9085",
+        "original_url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9085",
+        "summary": "Add flash attention MMA / Tiles to support MiMo-V2.5 (#22812) * mimo-v2.5: add flash attention mma/tiles for for d_kq=192 d_v=128 * mimo-v2.5: follow (256, 256) fattn templates * mimo-v2.5: cleanup comments * mimo-v2.5: further comment cleanup * mimo-v2.5: address PR feedback fix GQA handling check for other dangling 320/576 carveouts and mirror them for 192 Add to backend ops test so new paths are covered **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9085/llama-b9085-bin-macos-arm64.tar.gz) - [macOS Apple Silicon (arm64, KleidiAI enabl",
+        "published_at": "2026-05-09T05:18:04Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "repo": {
+          "full_name": "ggml-org/llama.cpp",
+          "html_url": "https://github.com/ggml-org/llama.cpp",
+          "release_tag": "b9085",
+          "release_name": "b9085",
+          "stars_delta_30d": 0
+        }
+      },
+      "members": [
+        {
+          "id": "pcsxx5",
+          "source_id": "repo_llamacpp",
+          "source_name": "llama.cpp releases",
+          "source_role": "repo",
+          "trust": 0.82,
+          "kind_hint": "repo_release",
+          "title": "ggml-org/llama.cpp: b9085",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9085",
+          "original_url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9085",
+          "summary": "Add flash attention MMA / Tiles to support MiMo-V2.5 (#22812) * mimo-v2.5: add flash attention mma/tiles for for d_kq=192 d_v=128 * mimo-v2.5: follow (256, 256) fattn templates * mimo-v2.5: cleanup comments * mimo-v2.5: further comment cleanup * mimo-v2.5: address PR feedback fix GQA handling check for other dangling 320/576 carveouts and mirror them for 192 Add to backend ops test so new paths are covered **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9085/llama-b9085-bin-macos-arm64.tar.gz) - [macOS Apple Silicon (arm64, KleidiAI enabl",
+          "published_at": "2026-05-09T05:18:04Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "repo": {
+            "full_name": "ggml-org/llama.cpp",
+            "html_url": "https://github.com/ggml-org/llama.cpp",
+            "release_tag": "b9085",
+            "release_name": "b9085",
+            "stars_delta_30d": 0
+          }
+        },
+        {
+          "id": "ostqj7",
+          "source_id": "repo_llamacpp",
+          "source_name": "llama.cpp releases",
+          "source_role": "repo",
+          "trust": 0.82,
+          "kind_hint": "repo_release",
+          "title": "ggml-org/llama.cpp: b9087",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9087",
+          "original_url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9087",
+          "summary": "sycl: Q5_K reorder MMVQ/dequant + Q8_0 reorder MMVQ path (#22152) * sycl: Q5_K reorder MMVQ/dequant + Q8_0 reorder MMVQ path Signed-off-by: Chun Tao * Remove duplicate definitions --------- Signed-off-by: Chun Tao Co-authored-by: Chun Tao Co-authored-by: Todd Malsbary **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9087/llama-b9087-bin-macos-arm64.tar.gz) - [macOS Apple Silicon (arm64, KleidiAI enabled)](https://github.com/ggml-org/llama.cpp/releases/download/b9087/llama-b9087-bin-macos-arm64-kleidiai.tar.gz) - [macOS Intel (x64)](https:/",
+          "published_at": "2026-05-09T10:18:13Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "repo": {
+            "full_name": "ggml-org/llama.cpp",
+            "html_url": "https://github.com/ggml-org/llama.cpp",
+            "release_tag": "b9087",
+            "release_name": "b9087",
+            "stars_delta_30d": 0
+          }
+        },
+        {
+          "id": "seokju",
+          "source_id": "repo_llamacpp",
+          "source_name": "llama.cpp releases",
+          "source_role": "repo",
+          "trust": 0.82,
+          "kind_hint": "repo_release",
+          "title": "ggml-org/llama.cpp: b9088",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9088",
+          "original_url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9088",
+          "summary": "[SYCL] Add BF16 support to GET_ROWS operation (#21391) Add GGML_TYPE_BF16 to the SYCL backend's GET_ROWS operation, both in supports_op and in the kernel dispatch. This fixes a performance regression where models using BF16 embedding tensors (e.g., Gemma4's per_layer_token_embd.weight) fall back to CPU for the GET_ROWS op, causing a full GPU-to-CPU tensor transfer every token. The fix reuses the existing get_rows_sycl_float template with sycl::ext::oneapi::bfloat16, matching the pattern already used for sycl::half (F16) and float (F32). **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://gi",
+          "published_at": "2026-05-09T10:42:53Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "repo": {
+            "full_name": "ggml-org/llama.cpp",
+            "html_url": "https://github.com/ggml-org/llama.cpp",
+            "release_tag": "b9088",
+            "release_name": "b9088",
+            "stars_delta_30d": 0
+          }
+        },
+        {
+          "id": "soo68t",
+          "source_id": "repo_llamacpp",
+          "source_name": "llama.cpp releases",
+          "source_role": "repo",
+          "trust": 0.82,
+          "kind_hint": "repo_release",
+          "title": "ggml-org/llama.cpp: b9089",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9089",
+          "original_url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9089",
+          "summary": "SYCL: reduce allocation overhead during flash attention (#22732) * SYCL: reduce allocation overhead during flash attention * tidy up whitespace * add a note about the flag * move ggml_sycl_fattn_* into fattn-buffers.hpp * refactor implementation into fattn-buffers.cpp * move new_fattn_kv_buffers back into ggml-sycl.cpp **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9089/llama-b9089-bin-macos-arm64.tar.gz) - [macOS Apple Silicon (arm64, KleidiAI enabled)](https://github.com/ggml-org/llama.cpp/releases/download/b9089/llama-b9089-bin-macos-",
+          "published_at": "2026-05-09T11:03:51Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "repo": {
+            "full_name": "ggml-org/llama.cpp",
+            "html_url": "https://github.com/ggml-org/llama.cpp",
+            "release_tag": "b9089",
+            "release_name": "b9089",
+            "stars_delta_30d": 0
+          }
+        },
+        {
+          "id": "1rddngb",
+          "source_id": "repo_llamacpp",
+          "source_name": "llama.cpp releases",
+          "source_role": "repo",
+          "trust": 0.82,
+          "kind_hint": "repo_release",
+          "title": "ggml-org/llama.cpp: b9090",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9090",
+          "original_url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9090",
+          "summary": "cmake : update BoringSSL to 0.20260508.0 (#22839) **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9090/llama-b9090-bin-macos-arm64.tar.gz) - [macOS Apple Silicon (arm64, KleidiAI enabled)](https://github.com/ggml-org/llama.cpp/releases/download/b9090/llama-b9090-bin-macos-arm64-kleidiai.tar.gz) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9090/llama-b9090-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9090/llama-b9090-xcframework.zip) **Linux:** - [Ubunt",
+          "published_at": "2026-05-09T12:45:23Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "repo": {
+            "full_name": "ggml-org/llama.cpp",
+            "html_url": "https://github.com/ggml-org/llama.cpp",
+            "release_tag": "b9090",
+            "release_name": "b9090",
+            "stars_delta_30d": 0
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "repo_llamacpp",
+          "source_name": "llama.cpp releases",
+          "title": "ggml-org/llama.cpp: b9085",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9085",
+          "published_at": "2026-05-09T05:18:04Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        },
+        {
+          "source_id": "repo_llamacpp",
+          "source_name": "llama.cpp releases",
+          "title": "ggml-org/llama.cpp: b9087",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9087",
+          "published_at": "2026-05-09T10:18:13Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        },
+        {
+          "source_id": "repo_llamacpp",
+          "source_name": "llama.cpp releases",
+          "title": "ggml-org/llama.cpp: b9088",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9088",
+          "published_at": "2026-05-09T10:42:53Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        },
+        {
+          "source_id": "repo_llamacpp",
+          "source_name": "llama.cpp releases",
+          "title": "ggml-org/llama.cpp: b9089",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9089",
+          "published_at": "2026-05-09T11:03:51Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        },
+        {
+          "source_id": "repo_llamacpp",
+          "source_name": "llama.cpp releases",
+          "title": "ggml-org/llama.cpp: b9090",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9090",
+          "published_at": "2026-05-09T12:45:23Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [
+        {
+          "source_name": "llama.cpp releases",
+          "title": "ggml-org/llama.cpp: b9087",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9087",
+          "published_at": "2026-05-09T10:18:13Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        },
+        {
+          "source_name": "llama.cpp releases",
+          "title": "ggml-org/llama.cpp: b9088",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9088",
+          "published_at": "2026-05-09T10:42:53Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        },
+        {
+          "source_name": "llama.cpp releases",
+          "title": "ggml-org/llama.cpp: b9089",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9089",
+          "published_at": "2026-05-09T11:03:51Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        },
+        {
+          "source_name": "llama.cpp releases",
+          "title": "ggml-org/llama.cpp: b9090",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9090",
+          "published_at": "2026-05-09T12:45:23Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        }
+      ],
+      "kind": "repo_release",
+      "quality": "signal",
+      "one_liner": "Add flash attention MMA / Tiles to support MiMo-V2.5 (#22812) * mimo-v2.5: add flash attention mma/tiles for for d_kq=192 d_v=128 * mimo-v2.5: follow (256, 256) fattn templates * mimo-v2.5: cleanup co",
+      "novelty": 0.897,
+      "novelty_label": "high",
+      "trust": 0.82,
+      "score": 0.84,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "corroborated by 5 sources"
+      ],
+      "builder_action": "Review the changelog and test the release against your integration points."
+    },
     {
       "id": "7cqap",
       "primary": {
@@ -121,15 +352,15 @@
         "source_role": "repo",
         "trust": 0.62,
         "kind_hint": "repo_trending",
-        "title": "Significant-Gravitas/AutoGPT (184,116 stars)",
+        "title": "Significant-Gravitas/AutoGPT (184,118 stars)",
         "url": "https://github.com/Significant-Gravitas/AutoGPT",
         "original_url": "https://github.com/Significant-Gravitas/AutoGPT",
         "summary": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters. · Python · NOASSERTION · agentic-ai · agents · ai · artificial-intelligence · autonomous-agents · claude · gpt · llama-api · llm · openai · python",
-        "published_at": "2026-05-09T12:02:39Z",
+        "published_at": "2026-05-09T17:15:11Z",
         "published_at_source": "api",
         "date_confidence": "medium",
         "engagement": {
-          "score": 184116
+          "score": 184118
         },
         "repo": {
           "full_name": "Significant-Gravitas/AutoGPT",
@@ -150,12 +381,12 @@
             "openai",
             "python"
           ],
-          "stargazers_count": 184116,
-          "forks_count": 46242,
-          "open_issues_count": 389,
-          "pushed_at": "2026-05-09T12:02:39Z",
+          "stargazers_count": 184118,
+          "forks_count": 46243,
+          "open_issues_count": 390,
+          "pushed_at": "2026-05-09T17:15:11Z",
           "created_at": "2023-03-16T09:21:07Z",
-          "stars_delta_30d": 14
+          "stars_delta_30d": 2
         }
       },
       "members": [
@@ -166,15 +397,15 @@
           "source_role": "repo",
           "trust": 0.62,
           "kind_hint": "repo_trending",
-          "title": "Significant-Gravitas/AutoGPT (184,116 stars)",
+          "title": "Significant-Gravitas/AutoGPT (184,118 stars)",
           "url": "https://github.com/Significant-Gravitas/AutoGPT",
           "original_url": "https://github.com/Significant-Gravitas/AutoGPT",
           "summary": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters. · Python · NOASSERTION · agentic-ai · agents · ai · artificial-intelligence · autonomous-agents · claude · gpt · llama-api · llm · openai · python",
-          "published_at": "2026-05-09T12:02:39Z",
+          "published_at": "2026-05-09T17:15:11Z",
           "published_at_source": "api",
           "date_confidence": "medium",
           "engagement": {
-            "score": 184116
+            "score": 184118
           },
           "repo": {
             "full_name": "Significant-Gravitas/AutoGPT",
@@ -195,12 +426,12 @@
               "openai",
               "python"
             ],
-            "stargazers_count": 184116,
-            "forks_count": 46242,
-            "open_issues_count": 389,
-            "pushed_at": "2026-05-09T12:02:39Z",
+            "stargazers_count": 184118,
+            "forks_count": 46243,
+            "open_issues_count": 390,
+            "pushed_at": "2026-05-09T17:15:11Z",
             "created_at": "2023-03-16T09:21:07Z",
-            "stars_delta_30d": 14
+            "stars_delta_30d": 2
           }
         },
         {
@@ -210,7 +441,7 @@
           "source_role": "repo",
           "trust": 0.62,
           "kind_hint": "repo_trending",
-          "title": "OpenHands/OpenHands (72,973 stars)",
+          "title": "OpenHands/OpenHands (72,989 stars)",
           "url": "https://github.com/OpenHands/OpenHands",
           "original_url": "https://github.com/OpenHands/OpenHands",
           "summary": "🙌 OpenHands: AI-Driven Development · Python · NOASSERTION · agent · artificial-intelligence · chatgpt · claude-ai · cli · developer-tools · gpt · llm · openai",
@@ -218,7 +449,7 @@
           "published_at_source": "api",
           "date_confidence": "medium",
           "engagement": {
-            "score": 72973
+            "score": 72989
           },
           "repo": {
             "full_name": "OpenHands/OpenHands",
@@ -237,12 +468,12 @@
               "llm",
               "openai"
             ],
-            "stargazers_count": 72973,
-            "forks_count": 9241,
+            "stargazers_count": 72989,
+            "forks_count": 9243,
             "open_issues_count": 422,
             "pushed_at": "2026-05-09T05:15:52Z",
             "created_at": "2024-03-13T03:33:31Z",
-            "stars_delta_30d": 23
+            "stars_delta_30d": 16
           }
         }
       ],
@@ -250,16 +481,16 @@
         {
           "source_id": "github_ai_recent_stars",
           "source_name": "GitHub",
-          "title": "Significant-Gravitas/AutoGPT (184,116 stars)",
+          "title": "Significant-Gravitas/AutoGPT (184,118 stars)",
           "url": "https://github.com/Significant-Gravitas/AutoGPT",
-          "published_at": "2026-05-09T12:02:39Z",
+          "published_at": "2026-05-09T17:15:11Z",
           "published_at_source": "api",
           "date_confidence": "medium"
         },
         {
           "source_id": "github_ai_recent_stars",
           "source_name": "GitHub",
-          "title": "OpenHands/OpenHands (72,973 stars)",
+          "title": "OpenHands/OpenHands (72,989 stars)",
           "url": "https://github.com/OpenHands/OpenHands",
           "published_at": "2026-05-09T05:15:52Z",
           "published_at_source": "api",
@@ -269,7 +500,7 @@
       "also_seen_on": [
         {
           "source_name": "GitHub",
-          "title": "OpenHands/OpenHands (72,973 stars)",
+          "title": "OpenHands/OpenHands (72,989 stars)",
           "url": "https://github.com/OpenHands/OpenHands",
           "published_at": "2026-05-09T05:15:52Z",
           "published_at_source": "api",
@@ -279,15 +510,144 @@
       "kind": "repo_trending",
       "quality": "signal",
       "one_liner": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters. · Python · NOASSERTION · agentic-ai · agents · ",
-      "novelty": 0.877,
+      "novelty": 0.902,
       "novelty_label": "high",
       "trust": 0.62,
-      "score": 0.822,
+      "score": 0.828,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal",
         "corroborated by 2 sources",
         "fresh within the current refresh window"
+      ],
+      "builder_action": "Inspect docs, issue activity, and recent commits before depending on it."
+    },
+    {
+      "id": "6oief4",
+      "primary": {
+        "id": "6oief4",
+        "source_id": "github_ai_recent_stars",
+        "source_name": "GitHub",
+        "source_role": "repo",
+        "trust": 0.62,
+        "kind_hint": "repo_trending",
+        "title": "NousResearch/hermes-agent (140,703 stars)",
+        "url": "https://github.com/NousResearch/hermes-agent",
+        "original_url": "https://github.com/NousResearch/hermes-agent",
+        "summary": "The agent that grows with you · Python · MIT · ai · ai-agent · ai-agents · anthropic · chatgpt · claude · claude-code · clawdbot · codex · hermes · hermes-agent · llm · moltbot · nous-research · openai · openclaw",
+        "published_at": "2026-05-09T18:12:06Z",
+        "published_at_source": "api",
+        "date_confidence": "medium",
+        "engagement": {
+          "score": 140703
+        },
+        "repo": {
+          "full_name": "NousResearch/hermes-agent",
+          "html_url": "https://github.com/NousResearch/hermes-agent",
+          "description": "The agent that grows with you",
+          "language": "Python",
+          "license": "MIT",
+          "topics": [
+            "ai",
+            "ai-agent",
+            "ai-agents",
+            "anthropic",
+            "chatgpt",
+            "claude",
+            "claude-code",
+            "clawdbot",
+            "codex",
+            "hermes",
+            "hermes-agent",
+            "llm",
+            "moltbot",
+            "nous-research",
+            "openai",
+            "openclaw"
+          ],
+          "stargazers_count": 140703,
+          "forks_count": 21821,
+          "open_issues_count": 9555,
+          "pushed_at": "2026-05-09T18:12:06Z",
+          "created_at": "2025-07-22T22:22:28Z",
+          "stars_delta_30d": 440
+        }
+      },
+      "members": [
+        {
+          "id": "6oief4",
+          "source_id": "github_ai_recent_stars",
+          "source_name": "GitHub",
+          "source_role": "repo",
+          "trust": 0.62,
+          "kind_hint": "repo_trending",
+          "title": "NousResearch/hermes-agent (140,703 stars)",
+          "url": "https://github.com/NousResearch/hermes-agent",
+          "original_url": "https://github.com/NousResearch/hermes-agent",
+          "summary": "The agent that grows with you · Python · MIT · ai · ai-agent · ai-agents · anthropic · chatgpt · claude · claude-code · clawdbot · codex · hermes · hermes-agent · llm · moltbot · nous-research · openai · openclaw",
+          "published_at": "2026-05-09T18:12:06Z",
+          "published_at_source": "api",
+          "date_confidence": "medium",
+          "engagement": {
+            "score": 140703
+          },
+          "repo": {
+            "full_name": "NousResearch/hermes-agent",
+            "html_url": "https://github.com/NousResearch/hermes-agent",
+            "description": "The agent that grows with you",
+            "language": "Python",
+            "license": "MIT",
+            "topics": [
+              "ai",
+              "ai-agent",
+              "ai-agents",
+              "anthropic",
+              "chatgpt",
+              "claude",
+              "claude-code",
+              "clawdbot",
+              "codex",
+              "hermes",
+              "hermes-agent",
+              "llm",
+              "moltbot",
+              "nous-research",
+              "openai",
+              "openclaw"
+            ],
+            "stargazers_count": 140703,
+            "forks_count": 21821,
+            "open_issues_count": 9555,
+            "pushed_at": "2026-05-09T18:12:06Z",
+            "created_at": "2025-07-22T22:22:28Z",
+            "stars_delta_30d": 440
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "github_ai_recent_stars",
+          "source_name": "GitHub",
+          "title": "NousResearch/hermes-agent (140,703 stars)",
+          "url": "https://github.com/NousResearch/hermes-agent",
+          "published_at": "2026-05-09T18:12:06Z",
+          "published_at_source": "api",
+          "date_confidence": "medium"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "repo_trending",
+      "quality": "signal",
+      "one_liner": "The agent that grows with you · Python · MIT · ai · ai-agent · ai-agents · anthropic · chatgpt · claude · claude-code · clawdbot · codex · hermes · hermes-agent · llm · moltbot · nous-research · opena",
+      "novelty": 0.897,
+      "novelty_label": "high",
+      "trust": 0.62,
+      "score": 0.814,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window",
+        "source-native discussion or engagement is unusually high"
       ],
       "builder_action": "Inspect docs, issue activity, and recent commits before depending on it."
     },
@@ -397,278 +757,13 @@
       "novelty": 0.912,
       "novelty_label": "high",
       "trust": 0.76,
-      "score": 0.817,
+      "score": 0.807,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal",
-        "corroborated by 2 sources",
-        "fresh within the current refresh window"
+        "corroborated by 2 sources"
       ],
       "builder_action": "Review the changelog and test the release against your integration points."
-    },
-    {
-      "id": "1p9a0dp",
-      "primary": {
-        "id": "1p9a0dp",
-        "source_id": "github_ai_recent_stars",
-        "source_name": "GitHub",
-        "source_role": "repo",
-        "trust": 0.62,
-        "kind_hint": "repo_trending",
-        "title": "langgenius/dify (140,696 stars)",
-        "url": "https://github.com/langgenius/dify",
-        "original_url": "https://github.com/langgenius/dify",
-        "summary": "Production-ready platform for agentic workflow development. · TypeScript · NOASSERTION · agent · agentic-ai · agentic-framework · agentic-workflow · ai · automation · gemini · genai · gpt · gpt-4 · llm · low-code · mcp · nextjs · no-code · openai · orchestration · python · rag · workflow",
-        "published_at": "2026-05-09T12:25:08Z",
-        "published_at_source": "api",
-        "date_confidence": "medium",
-        "engagement": {
-          "score": 140696
-        },
-        "repo": {
-          "full_name": "langgenius/dify",
-          "html_url": "https://github.com/langgenius/dify",
-          "description": "Production-ready platform for agentic workflow development.",
-          "language": "TypeScript",
-          "license": "NOASSERTION",
-          "topics": [
-            "agent",
-            "agentic-ai",
-            "agentic-framework",
-            "agentic-workflow",
-            "ai",
-            "automation",
-            "gemini",
-            "genai",
-            "gpt",
-            "gpt-4",
-            "llm",
-            "low-code",
-            "mcp",
-            "nextjs",
-            "no-code",
-            "openai",
-            "orchestration",
-            "python",
-            "rag",
-            "workflow"
-          ],
-          "stargazers_count": 140696,
-          "forks_count": 22082,
-          "open_issues_count": 759,
-          "pushed_at": "2026-05-09T12:25:08Z",
-          "created_at": "2023-04-12T07:40:24Z",
-          "stars_delta_30d": 38
-        }
-      },
-      "members": [
-        {
-          "id": "1p9a0dp",
-          "source_id": "github_ai_recent_stars",
-          "source_name": "GitHub",
-          "source_role": "repo",
-          "trust": 0.62,
-          "kind_hint": "repo_trending",
-          "title": "langgenius/dify (140,696 stars)",
-          "url": "https://github.com/langgenius/dify",
-          "original_url": "https://github.com/langgenius/dify",
-          "summary": "Production-ready platform for agentic workflow development. · TypeScript · NOASSERTION · agent · agentic-ai · agentic-framework · agentic-workflow · ai · automation · gemini · genai · gpt · gpt-4 · llm · low-code · mcp · nextjs · no-code · openai · orchestration · python · rag · workflow",
-          "published_at": "2026-05-09T12:25:08Z",
-          "published_at_source": "api",
-          "date_confidence": "medium",
-          "engagement": {
-            "score": 140696
-          },
-          "repo": {
-            "full_name": "langgenius/dify",
-            "html_url": "https://github.com/langgenius/dify",
-            "description": "Production-ready platform for agentic workflow development.",
-            "language": "TypeScript",
-            "license": "NOASSERTION",
-            "topics": [
-              "agent",
-              "agentic-ai",
-              "agentic-framework",
-              "agentic-workflow",
-              "ai",
-              "automation",
-              "gemini",
-              "genai",
-              "gpt",
-              "gpt-4",
-              "llm",
-              "low-code",
-              "mcp",
-              "nextjs",
-              "no-code",
-              "openai",
-              "orchestration",
-              "python",
-              "rag",
-              "workflow"
-            ],
-            "stargazers_count": 140696,
-            "forks_count": 22082,
-            "open_issues_count": 759,
-            "pushed_at": "2026-05-09T12:25:08Z",
-            "created_at": "2023-04-12T07:40:24Z",
-            "stars_delta_30d": 38
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "github_ai_recent_stars",
-          "source_name": "GitHub",
-          "title": "langgenius/dify (140,696 stars)",
-          "url": "https://github.com/langgenius/dify",
-          "published_at": "2026-05-09T12:25:08Z",
-          "published_at_source": "api",
-          "date_confidence": "medium"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "repo_trending",
-      "quality": "signal",
-      "one_liner": "Production-ready platform for agentic workflow development. · TypeScript · NOASSERTION · agent · agentic-ai · agentic-framework · agentic-workflow · ai · automation · gemini · genai · gpt · gpt-4 · ll",
-      "novelty": 0.867,
-      "novelty_label": "high",
-      "trust": 0.62,
-      "score": 0.806,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as concrete builder or research signal",
-        "fresh within the current refresh window",
-        "source-native discussion or engagement is unusually high"
-      ],
-      "builder_action": "Inspect docs, issue activity, and recent commits before depending on it."
-    },
-    {
-      "id": "jtthne",
-      "primary": {
-        "id": "jtthne",
-        "source_id": "github_ai_recent_stars",
-        "source_name": "GitHub",
-        "source_role": "repo",
-        "trust": 0.62,
-        "kind_hint": "repo_trending",
-        "title": "open-webui/open-webui (136,267 stars)",
-        "url": "https://github.com/open-webui/open-webui",
-        "original_url": "https://github.com/open-webui/open-webui",
-        "summary": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...) · Python · NOASSERTION · ai · llm · llm-ui · llm-webui · llms · mcp · ollama · ollama-webui · open-webui · openai · openapi · rag · self-hosted · ui · webui",
-        "published_at": "2026-05-09T12:08:09Z",
-        "published_at_source": "api",
-        "date_confidence": "medium",
-        "engagement": {
-          "score": 136267
-        },
-        "repo": {
-          "full_name": "open-webui/open-webui",
-          "html_url": "https://github.com/open-webui/open-webui",
-          "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
-          "language": "Python",
-          "license": "NOASSERTION",
-          "topics": [
-            "ai",
-            "llm",
-            "llm-ui",
-            "llm-webui",
-            "llms",
-            "mcp",
-            "ollama",
-            "ollama-webui",
-            "open-webui",
-            "openai",
-            "openapi",
-            "rag",
-            "self-hosted",
-            "ui",
-            "webui"
-          ],
-          "stargazers_count": 136267,
-          "forks_count": 19400,
-          "open_issues_count": 211,
-          "pushed_at": "2026-05-09T12:08:09Z",
-          "created_at": "2023-10-06T22:08:27Z",
-          "stars_delta_30d": 65
-        }
-      },
-      "members": [
-        {
-          "id": "jtthne",
-          "source_id": "github_ai_recent_stars",
-          "source_name": "GitHub",
-          "source_role": "repo",
-          "trust": 0.62,
-          "kind_hint": "repo_trending",
-          "title": "open-webui/open-webui (136,267 stars)",
-          "url": "https://github.com/open-webui/open-webui",
-          "original_url": "https://github.com/open-webui/open-webui",
-          "summary": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...) · Python · NOASSERTION · ai · llm · llm-ui · llm-webui · llms · mcp · ollama · ollama-webui · open-webui · openai · openapi · rag · self-hosted · ui · webui",
-          "published_at": "2026-05-09T12:08:09Z",
-          "published_at_source": "api",
-          "date_confidence": "medium",
-          "engagement": {
-            "score": 136267
-          },
-          "repo": {
-            "full_name": "open-webui/open-webui",
-            "html_url": "https://github.com/open-webui/open-webui",
-            "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
-            "language": "Python",
-            "license": "NOASSERTION",
-            "topics": [
-              "ai",
-              "llm",
-              "llm-ui",
-              "llm-webui",
-              "llms",
-              "mcp",
-              "ollama",
-              "ollama-webui",
-              "open-webui",
-              "openai",
-              "openapi",
-              "rag",
-              "self-hosted",
-              "ui",
-              "webui"
-            ],
-            "stargazers_count": 136267,
-            "forks_count": 19400,
-            "open_issues_count": 211,
-            "pushed_at": "2026-05-09T12:08:09Z",
-            "created_at": "2023-10-06T22:08:27Z",
-            "stars_delta_30d": 65
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "github_ai_recent_stars",
-          "source_name": "GitHub",
-          "title": "open-webui/open-webui (136,267 stars)",
-          "url": "https://github.com/open-webui/open-webui",
-          "published_at": "2026-05-09T12:08:09Z",
-          "published_at_source": "api",
-          "date_confidence": "medium"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "repo_trending",
-      "quality": "signal",
-      "one_liner": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...) · Python · NOASSERTION · ai · llm · llm-ui · llm-webui · llms · mcp · ollama · ollama-webui · open-webui · openai · openapi · rag · self-h",
-      "novelty": 0.863,
-      "novelty_label": "high",
-      "trust": 0.62,
-      "score": 0.804,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as concrete builder or research signal",
-        "fresh within the current refresh window",
-        "source-native discussion or engagement is unusually high"
-      ],
-      "builder_action": "Inspect docs, issue activity, and recent commits before depending on it."
     },
     {
       "id": "1r3t3pw",
@@ -679,15 +774,15 @@
         "source_role": "repo",
         "trust": 0.62,
         "kind_hint": "repo_trending",
-        "title": "bytedance/deer-flow (66,219 stars)",
+        "title": "bytedance/deer-flow (66,242 stars)",
         "url": "https://github.com/bytedance/deer-flow",
         "original_url": "https://github.com/bytedance/deer-flow",
         "summary": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours. · Python · MIT · agent · agentic · agentic-framework · agentic-workflow · ai · ai-agents · deep-research · harness · langchain · langgraph · langmanus · llm · multi-agent · nodejs · podcast · python · superagent · typescript",
-        "published_at": "2026-05-09T11:43:50Z",
+        "published_at": "2026-05-09T15:40:47Z",
         "published_at_source": "api",
         "date_confidence": "medium",
         "engagement": {
-          "score": 66219
+          "score": 66242
         },
         "repo": {
           "full_name": "bytedance/deer-flow",
@@ -715,12 +810,12 @@
             "superagent",
             "typescript"
           ],
-          "stargazers_count": 66219,
-          "forks_count": 8772,
-          "open_issues_count": 730,
-          "pushed_at": "2026-05-09T11:43:50Z",
+          "stargazers_count": 66242,
+          "forks_count": 8774,
+          "open_issues_count": 733,
+          "pushed_at": "2026-05-09T15:40:47Z",
           "created_at": "2025-05-07T02:50:19Z",
-          "stars_delta_30d": 70
+          "stars_delta_30d": 23
         }
       },
       "members": [
@@ -731,15 +826,15 @@
           "source_role": "repo",
           "trust": 0.62,
           "kind_hint": "repo_trending",
-          "title": "bytedance/deer-flow (66,219 stars)",
+          "title": "bytedance/deer-flow (66,242 stars)",
           "url": "https://github.com/bytedance/deer-flow",
           "original_url": "https://github.com/bytedance/deer-flow",
           "summary": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours. · Python · MIT · agent · agentic · agentic-framework · agentic-workflow · ai · ai-agents · deep-research · harness · langchain · langgraph · langmanus · llm · multi-agent · nodejs · podcast · python · superagent · typescript",
-          "published_at": "2026-05-09T11:43:50Z",
+          "published_at": "2026-05-09T15:40:47Z",
           "published_at_source": "api",
           "date_confidence": "medium",
           "engagement": {
-            "score": 66219
+            "score": 66242
           },
           "repo": {
             "full_name": "bytedance/deer-flow",
@@ -767,12 +862,12 @@
               "superagent",
               "typescript"
             ],
-            "stargazers_count": 66219,
-            "forks_count": 8772,
-            "open_issues_count": 730,
-            "pushed_at": "2026-05-09T11:43:50Z",
+            "stargazers_count": 66242,
+            "forks_count": 8774,
+            "open_issues_count": 733,
+            "pushed_at": "2026-05-09T15:40:47Z",
             "created_at": "2025-05-07T02:50:19Z",
-            "stars_delta_30d": 70
+            "stars_delta_30d": 23
           }
         }
       ],
@@ -780,9 +875,9 @@
         {
           "source_id": "github_ai_recent_stars",
           "source_name": "GitHub",
-          "title": "bytedance/deer-flow (66,219 stars)",
+          "title": "bytedance/deer-flow (66,242 stars)",
           "url": "https://github.com/bytedance/deer-flow",
-          "published_at": "2026-05-09T11:43:50Z",
+          "published_at": "2026-05-09T15:40:47Z",
           "published_at_source": "api",
           "date_confidence": "medium"
         }
@@ -791,10 +886,10 @@
       "kind": "repo_trending",
       "quality": "signal",
       "one_liner": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of ta",
-      "novelty": 0.849,
+      "novelty": 0.875,
       "novelty_label": "high",
       "trust": 0.62,
-      "score": 0.799,
+      "score": 0.804,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal",
@@ -804,110 +899,110 @@
       "builder_action": "Inspect docs, issue activity, and recent commits before depending on it."
     },
     {
-      "id": "19k7acc",
+      "id": "1utf6mi",
       "primary": {
-        "id": "19k7acc",
+        "id": "1utf6mi",
         "source_id": "github_ai_recent_stars",
         "source_name": "GitHub",
         "source_role": "repo",
         "trust": 0.62,
         "kind_hint": "repo_trending",
-        "title": "huggingface/transformers (160,411 stars)",
-        "url": "https://github.com/huggingface/transformers",
-        "original_url": "https://github.com/huggingface/transformers",
-        "summary": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. · Python · Apache-2.0 · audio · deep-learning · deepseek · gemma · glm · hacktoberfest · llm · machine-learning · model-hub · natural-language-processing · nlp · pretrained-models · python · pytorch · pytorch-transformers · qwen · speech-recognition · transformer · vlm",
-        "published_at": "2026-05-09T04:14:52Z",
+        "title": "firecrawl/firecrawl (117,403 stars)",
+        "url": "https://github.com/firecrawl/firecrawl",
+        "original_url": "https://github.com/firecrawl/firecrawl",
+        "summary": "🔥 The API to search, scrape, and interact with the web for AI · TypeScript · AGPL-3.0 · ai · ai-agents · ai-crawler · ai-scraping · ai-search · crawler · data-extraction · html-to-markdown · llm · markdown · scraper · scraping · web-crawler · web-data · web-data-extraction · web-scraper · web-scraping · web-search · webscraping",
+        "published_at": "2026-05-09T13:20:38Z",
         "published_at_source": "api",
         "date_confidence": "medium",
         "engagement": {
-          "score": 160411
+          "score": 117403
         },
         "repo": {
-          "full_name": "huggingface/transformers",
-          "html_url": "https://github.com/huggingface/transformers",
-          "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
-          "language": "Python",
-          "license": "Apache-2.0",
+          "full_name": "firecrawl/firecrawl",
+          "html_url": "https://github.com/firecrawl/firecrawl",
+          "description": "🔥 The API to search, scrape, and interact with the web for AI",
+          "language": "TypeScript",
+          "license": "AGPL-3.0",
           "topics": [
-            "audio",
-            "deep-learning",
-            "deepseek",
-            "gemma",
-            "glm",
-            "hacktoberfest",
+            "ai",
+            "ai-agents",
+            "ai-crawler",
+            "ai-scraping",
+            "ai-search",
+            "crawler",
+            "data-extraction",
+            "html-to-markdown",
             "llm",
-            "machine-learning",
-            "model-hub",
-            "natural-language-processing",
-            "nlp",
-            "pretrained-models",
-            "python",
-            "pytorch",
-            "pytorch-transformers",
-            "qwen",
-            "speech-recognition",
-            "transformer",
-            "vlm"
+            "markdown",
+            "scraper",
+            "scraping",
+            "web-crawler",
+            "web-data",
+            "web-data-extraction",
+            "web-scraper",
+            "web-scraping",
+            "web-search",
+            "webscraping"
           ],
-          "stargazers_count": 160411,
-          "forks_count": 33147,
-          "open_issues_count": 2356,
-          "pushed_at": "2026-05-09T04:14:52Z",
-          "created_at": "2018-10-29T13:56:00Z",
-          "stars_delta_30d": 2
+          "stargazers_count": 117403,
+          "forks_count": 7322,
+          "open_issues_count": 312,
+          "pushed_at": "2026-05-09T13:20:38Z",
+          "created_at": "2024-04-15T21:02:29Z",
+          "stars_delta_30d": 147
         }
       },
       "members": [
         {
-          "id": "19k7acc",
+          "id": "1utf6mi",
           "source_id": "github_ai_recent_stars",
           "source_name": "GitHub",
           "source_role": "repo",
           "trust": 0.62,
           "kind_hint": "repo_trending",
-          "title": "huggingface/transformers (160,411 stars)",
-          "url": "https://github.com/huggingface/transformers",
-          "original_url": "https://github.com/huggingface/transformers",
-          "summary": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. · Python · Apache-2.0 · audio · deep-learning · deepseek · gemma · glm · hacktoberfest · llm · machine-learning · model-hub · natural-language-processing · nlp · pretrained-models · python · pytorch · pytorch-transformers · qwen · speech-recognition · transformer · vlm",
-          "published_at": "2026-05-09T04:14:52Z",
+          "title": "firecrawl/firecrawl (117,403 stars)",
+          "url": "https://github.com/firecrawl/firecrawl",
+          "original_url": "https://github.com/firecrawl/firecrawl",
+          "summary": "🔥 The API to search, scrape, and interact with the web for AI · TypeScript · AGPL-3.0 · ai · ai-agents · ai-crawler · ai-scraping · ai-search · crawler · data-extraction · html-to-markdown · llm · markdown · scraper · scraping · web-crawler · web-data · web-data-extraction · web-scraper · web-scraping · web-search · webscraping",
+          "published_at": "2026-05-09T13:20:38Z",
           "published_at_source": "api",
           "date_confidence": "medium",
           "engagement": {
-            "score": 160411
+            "score": 117403
           },
           "repo": {
-            "full_name": "huggingface/transformers",
-            "html_url": "https://github.com/huggingface/transformers",
-            "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
-            "language": "Python",
-            "license": "Apache-2.0",
+            "full_name": "firecrawl/firecrawl",
+            "html_url": "https://github.com/firecrawl/firecrawl",
+            "description": "🔥 The API to search, scrape, and interact with the web for AI",
+            "language": "TypeScript",
+            "license": "AGPL-3.0",
             "topics": [
-              "audio",
-              "deep-learning",
-              "deepseek",
-              "gemma",
-              "glm",
-              "hacktoberfest",
+              "ai",
+              "ai-agents",
+              "ai-crawler",
+              "ai-scraping",
+              "ai-search",
+              "crawler",
+              "data-extraction",
+              "html-to-markdown",
               "llm",
-              "machine-learning",
-              "model-hub",
-              "natural-language-processing",
-              "nlp",
-              "pretrained-models",
-              "python",
-              "pytorch",
-              "pytorch-transformers",
-              "qwen",
-              "speech-recognition",
-              "transformer",
-              "vlm"
+              "markdown",
+              "scraper",
+              "scraping",
+              "web-crawler",
+              "web-data",
+              "web-data-extraction",
+              "web-scraper",
+              "web-scraping",
+              "web-search",
+              "webscraping"
             ],
-            "stargazers_count": 160411,
-            "forks_count": 33147,
-            "open_issues_count": 2356,
-            "pushed_at": "2026-05-09T04:14:52Z",
-            "created_at": "2018-10-29T13:56:00Z",
-            "stars_delta_30d": 2
+            "stargazers_count": 117403,
+            "forks_count": 7322,
+            "open_issues_count": 312,
+            "pushed_at": "2026-05-09T13:20:38Z",
+            "created_at": "2024-04-15T21:02:29Z",
+            "stars_delta_30d": 147
           }
         }
       ],
@@ -915,9 +1010,9 @@
         {
           "source_id": "github_ai_recent_stars",
           "source_name": "GitHub",
-          "title": "huggingface/transformers (160,411 stars)",
-          "url": "https://github.com/huggingface/transformers",
-          "published_at": "2026-05-09T04:14:52Z",
+          "title": "firecrawl/firecrawl (117,403 stars)",
+          "url": "https://github.com/firecrawl/firecrawl",
+          "published_at": "2026-05-09T13:20:38Z",
           "published_at_source": "api",
           "date_confidence": "medium"
         }
@@ -925,14 +1020,15 @@
       "also_seen_on": [],
       "kind": "repo_trending",
       "quality": "signal",
-      "one_liner": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. · Python · Apache-2.0 · aud",
-      "novelty": 0.871,
+      "one_liner": "🔥 The API to search, scrape, and interact with the web for AI · TypeScript · AGPL-3.0 · ai · ai-agents · ai-crawler · ai-scraping · ai-search · crawler · data-extraction · html-to-markdown · llm · ma",
+      "novelty": 0.86,
       "novelty_label": "high",
       "trust": 0.62,
-      "score": 0.793,
+      "score": 0.795,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal",
+        "fresh within the current refresh window",
         "source-native discussion or engagement is unusually high"
       ],
       "builder_action": "Inspect docs, issue activity, and recent commits before depending on it."
@@ -946,7 +1042,7 @@
         "source_role": "repo",
         "trust": 0.6,
         "kind_hint": "repo_trending",
-        "title": "EKKOLearnAI/hermes-web-ui (4,117 stars)",
+        "title": "EKKOLearnAI/hermes-web-ui (4,162 stars)",
         "url": "https://github.com/EKKOLearnAI/hermes-web-ui",
         "original_url": "https://github.com/EKKOLearnAI/hermes-web-ui",
         "summary": "Web dashboard for Hermes Agent — multi-platform AI chat, session management, scheduled jobs, usage analytics & channel configuration (Telegram, Discord, Slack, WhatsApp) · TypeScript · MIT · agent · ai-agent · chat-ui · chatbot · claude · dashboard · discord-bot · hermes · hermes-agent · hermes-webui · llm · multi-model · multi-platform · self-hosted · slack-bot · telegram-bot · typescript · vue3 · web-ui · whatsapp",
@@ -954,7 +1050,7 @@
         "published_at_source": "api",
         "date_confidence": "medium",
         "engagement": {
-          "score": 4117
+          "score": 4162
         },
         "repo": {
           "full_name": "EKKOLearnAI/hermes-web-ui",
@@ -984,12 +1080,12 @@
             "web-ui",
             "whatsapp"
           ],
-          "stargazers_count": 4117,
-          "forks_count": 504,
-          "open_issues_count": 102,
+          "stargazers_count": 4162,
+          "forks_count": 506,
+          "open_issues_count": 112,
           "pushed_at": "2026-05-09T11:45:12Z",
           "created_at": "2026-04-11T07:38:18Z",
-          "stars_delta_30d": 53
+          "stars_delta_30d": 45
         }
       },
       "members": [
@@ -1000,7 +1096,7 @@
           "source_role": "repo",
           "trust": 0.6,
           "kind_hint": "repo_trending",
-          "title": "EKKOLearnAI/hermes-web-ui (4,117 stars)",
+          "title": "EKKOLearnAI/hermes-web-ui (4,162 stars)",
           "url": "https://github.com/EKKOLearnAI/hermes-web-ui",
           "original_url": "https://github.com/EKKOLearnAI/hermes-web-ui",
           "summary": "Web dashboard for Hermes Agent — multi-platform AI chat, session management, scheduled jobs, usage analytics & channel configuration (Telegram, Discord, Slack, WhatsApp) · TypeScript · MIT · agent · ai-agent · chat-ui · chatbot · claude · dashboard · discord-bot · hermes · hermes-agent · hermes-webui · llm · multi-model · multi-platform · self-hosted · slack-bot · telegram-bot · typescript · vue3 · web-ui · whatsapp",
@@ -1008,7 +1104,7 @@
           "published_at_source": "api",
           "date_confidence": "medium",
           "engagement": {
-            "score": 4117
+            "score": 4162
           },
           "repo": {
             "full_name": "EKKOLearnAI/hermes-web-ui",
@@ -1038,12 +1134,12 @@
               "web-ui",
               "whatsapp"
             ],
-            "stargazers_count": 4117,
-            "forks_count": 504,
-            "open_issues_count": 102,
+            "stargazers_count": 4162,
+            "forks_count": 506,
+            "open_issues_count": 112,
             "pushed_at": "2026-05-09T11:45:12Z",
             "created_at": "2026-04-11T07:38:18Z",
-            "stars_delta_30d": 53
+            "stars_delta_30d": 45
           }
         }
       ],
@@ -1051,7 +1147,7 @@
         {
           "source_id": "github_ai_new_repos",
           "source_name": "GitHub",
-          "title": "EKKOLearnAI/hermes-web-ui (4,117 stars)",
+          "title": "EKKOLearnAI/hermes-web-ui (4,162 stars)",
           "url": "https://github.com/EKKOLearnAI/hermes-web-ui",
           "published_at": "2026-05-09T11:45:12Z",
           "published_at_source": "api",
@@ -1062,10 +1158,10 @@
       "kind": "repo_trending",
       "quality": "signal",
       "one_liner": "Web dashboard for Hermes Agent — multi-platform AI chat, session management, scheduled jobs, usage analytics & channel configuration (Telegram, Discord, Slack, WhatsApp) · TypeScript · MIT · agent · a",
-      "novelty": 0.839,
+      "novelty": 0.885,
       "novelty_label": "high",
       "trust": 0.6,
-      "score": 0.792,
+      "score": 0.795,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal",
@@ -1075,239 +1171,110 @@
       "builder_action": "Inspect docs, issue activity, and recent commits before depending on it."
     },
     {
-      "id": "6oief4",
+      "id": "19k7acc",
       "primary": {
-        "id": "6oief4",
+        "id": "19k7acc",
         "source_id": "github_ai_recent_stars",
         "source_name": "GitHub",
         "source_role": "repo",
         "trust": 0.62,
         "kind_hint": "repo_trending",
-        "title": "NousResearch/hermes-agent (140,263 stars)",
-        "url": "https://github.com/NousResearch/hermes-agent",
-        "original_url": "https://github.com/NousResearch/hermes-agent",
-        "summary": "The agent that grows with you · Python · MIT · ai · ai-agent · ai-agents · anthropic · chatgpt · claude · claude-code · clawdbot · codex · hermes · hermes-agent · llm · moltbot · nous-research · openai · openclaw",
-        "published_at": "2026-05-09T11:34:57Z",
+        "title": "huggingface/transformers (160,419 stars)",
+        "url": "https://github.com/huggingface/transformers",
+        "original_url": "https://github.com/huggingface/transformers",
+        "summary": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. · Python · Apache-2.0 · audio · deep-learning · deepseek · gemma · glm · hacktoberfest · llm · machine-learning · model-hub · natural-language-processing · nlp · pretrained-models · python · pytorch · pytorch-transformers · qwen · speech-recognition · transformer · vlm",
+        "published_at": "2026-05-09T04:14:52Z",
         "published_at_source": "api",
         "date_confidence": "medium",
         "engagement": {
-          "score": 140263
+          "score": 160419
         },
         "repo": {
-          "full_name": "NousResearch/hermes-agent",
-          "html_url": "https://github.com/NousResearch/hermes-agent",
-          "description": "The agent that grows with you",
-          "language": "Python",
-          "license": "MIT",
-          "topics": [
-            "ai",
-            "ai-agent",
-            "ai-agents",
-            "anthropic",
-            "chatgpt",
-            "claude",
-            "claude-code",
-            "clawdbot",
-            "codex",
-            "hermes",
-            "hermes-agent",
-            "llm",
-            "moltbot",
-            "nous-research",
-            "openai",
-            "openclaw"
-          ],
-          "stargazers_count": 140263,
-          "forks_count": 21727,
-          "open_issues_count": 9430,
-          "pushed_at": "2026-05-09T11:34:57Z",
-          "created_at": "2025-07-22T22:22:28Z",
-          "stars_delta_30d": 604
-        }
-      },
-      "members": [
-        {
-          "id": "6oief4",
-          "source_id": "github_ai_recent_stars",
-          "source_name": "GitHub",
-          "source_role": "repo",
-          "trust": 0.62,
-          "kind_hint": "repo_trending",
-          "title": "NousResearch/hermes-agent (140,263 stars)",
-          "url": "https://github.com/NousResearch/hermes-agent",
-          "original_url": "https://github.com/NousResearch/hermes-agent",
-          "summary": "The agent that grows with you · Python · MIT · ai · ai-agent · ai-agents · anthropic · chatgpt · claude · claude-code · clawdbot · codex · hermes · hermes-agent · llm · moltbot · nous-research · openai · openclaw",
-          "published_at": "2026-05-09T11:34:57Z",
-          "published_at_source": "api",
-          "date_confidence": "medium",
-          "engagement": {
-            "score": 140263
-          },
-          "repo": {
-            "full_name": "NousResearch/hermes-agent",
-            "html_url": "https://github.com/NousResearch/hermes-agent",
-            "description": "The agent that grows with you",
-            "language": "Python",
-            "license": "MIT",
-            "topics": [
-              "ai",
-              "ai-agent",
-              "ai-agents",
-              "anthropic",
-              "chatgpt",
-              "claude",
-              "claude-code",
-              "clawdbot",
-              "codex",
-              "hermes",
-              "hermes-agent",
-              "llm",
-              "moltbot",
-              "nous-research",
-              "openai",
-              "openclaw"
-            ],
-            "stargazers_count": 140263,
-            "forks_count": 21727,
-            "open_issues_count": 9430,
-            "pushed_at": "2026-05-09T11:34:57Z",
-            "created_at": "2025-07-22T22:22:28Z",
-            "stars_delta_30d": 604
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "github_ai_recent_stars",
-          "source_name": "GitHub",
-          "title": "NousResearch/hermes-agent (140,263 stars)",
-          "url": "https://github.com/NousResearch/hermes-agent",
-          "published_at": "2026-05-09T11:34:57Z",
-          "published_at_source": "api",
-          "date_confidence": "medium"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "repo_trending",
-      "quality": "signal",
-      "one_liner": "The agent that grows with you · Python · MIT · ai · ai-agent · ai-agents · anthropic · chatgpt · claude · claude-code · clawdbot · codex · hermes · hermes-agent · llm · moltbot · nous-research · opena",
-      "novelty": 0.824,
-      "novelty_label": "high",
-      "trust": 0.62,
-      "score": 0.791,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as concrete builder or research signal",
-        "fresh within the current refresh window",
-        "source-native discussion or engagement is unusually high"
-      ],
-      "builder_action": "Inspect docs, issue activity, and recent commits before depending on it."
-    },
-    {
-      "id": "1l373r0",
-      "primary": {
-        "id": "1l373r0",
-        "source_id": "github_ai_recent_stars",
-        "source_name": "GitHub",
-        "source_role": "repo",
-        "trust": 0.62,
-        "kind_hint": "repo_trending",
-        "title": "unslothai/unsloth (63,858 stars)",
-        "url": "https://github.com/unslothai/unsloth",
-        "original_url": "https://github.com/unslothai/unsloth",
-        "summary": "Unsloth Studio is a web UI for training and running open models like Gemma 4, Qwen3.6, DeepSeek, gpt-oss locally. · Python · Apache-2.0 · agent · deepseek · fine-tuning · gemma · gemma3 · gpt-oss · llama · llama3 · llm · llms · mistral · openai · qwen · reinforcement-learning · self-hosted · text-to-speech · tts · ui · unsloth",
-        "published_at": "2026-05-09T04:55:20Z",
-        "published_at_source": "api",
-        "date_confidence": "medium",
-        "engagement": {
-          "score": 63858
-        },
-        "repo": {
-          "full_name": "unslothai/unsloth",
-          "html_url": "https://github.com/unslothai/unsloth",
-          "description": "Unsloth Studio is a web UI for training and running open models like Gemma 4, Qwen3.6, DeepSeek, gpt-oss locally.",
+          "full_name": "huggingface/transformers",
+          "html_url": "https://github.com/huggingface/transformers",
+          "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
           "language": "Python",
           "license": "Apache-2.0",
           "topics": [
-            "agent",
+            "audio",
+            "deep-learning",
             "deepseek",
-            "fine-tuning",
             "gemma",
-            "gemma3",
-            "gpt-oss",
-            "llama",
-            "llama3",
+            "glm",
+            "hacktoberfest",
             "llm",
-            "llms",
-            "mistral",
-            "openai",
+            "machine-learning",
+            "model-hub",
+            "natural-language-processing",
+            "nlp",
+            "pretrained-models",
+            "python",
+            "pytorch",
+            "pytorch-transformers",
             "qwen",
-            "reinforcement-learning",
-            "self-hosted",
-            "text-to-speech",
-            "tts",
-            "ui",
-            "unsloth"
+            "speech-recognition",
+            "transformer",
+            "vlm"
           ],
-          "stargazers_count": 63858,
-          "forks_count": 5628,
-          "open_issues_count": 1201,
-          "pushed_at": "2026-05-09T04:55:20Z",
-          "created_at": "2023-11-29T16:50:09Z",
-          "stars_delta_30d": 16
+          "stargazers_count": 160419,
+          "forks_count": 33148,
+          "open_issues_count": 2358,
+          "pushed_at": "2026-05-09T04:14:52Z",
+          "created_at": "2018-10-29T13:56:00Z",
+          "stars_delta_30d": 8
         }
       },
       "members": [
         {
-          "id": "1l373r0",
+          "id": "19k7acc",
           "source_id": "github_ai_recent_stars",
           "source_name": "GitHub",
           "source_role": "repo",
           "trust": 0.62,
           "kind_hint": "repo_trending",
-          "title": "unslothai/unsloth (63,858 stars)",
-          "url": "https://github.com/unslothai/unsloth",
-          "original_url": "https://github.com/unslothai/unsloth",
-          "summary": "Unsloth Studio is a web UI for training and running open models like Gemma 4, Qwen3.6, DeepSeek, gpt-oss locally. · Python · Apache-2.0 · agent · deepseek · fine-tuning · gemma · gemma3 · gpt-oss · llama · llama3 · llm · llms · mistral · openai · qwen · reinforcement-learning · self-hosted · text-to-speech · tts · ui · unsloth",
-          "published_at": "2026-05-09T04:55:20Z",
+          "title": "huggingface/transformers (160,419 stars)",
+          "url": "https://github.com/huggingface/transformers",
+          "original_url": "https://github.com/huggingface/transformers",
+          "summary": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. · Python · Apache-2.0 · audio · deep-learning · deepseek · gemma · glm · hacktoberfest · llm · machine-learning · model-hub · natural-language-processing · nlp · pretrained-models · python · pytorch · pytorch-transformers · qwen · speech-recognition · transformer · vlm",
+          "published_at": "2026-05-09T04:14:52Z",
           "published_at_source": "api",
           "date_confidence": "medium",
           "engagement": {
-            "score": 63858
+            "score": 160419
           },
           "repo": {
-            "full_name": "unslothai/unsloth",
-            "html_url": "https://github.com/unslothai/unsloth",
-            "description": "Unsloth Studio is a web UI for training and running open models like Gemma 4, Qwen3.6, DeepSeek, gpt-oss locally.",
+            "full_name": "huggingface/transformers",
+            "html_url": "https://github.com/huggingface/transformers",
+            "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
             "language": "Python",
             "license": "Apache-2.0",
             "topics": [
-              "agent",
+              "audio",
+              "deep-learning",
               "deepseek",
-              "fine-tuning",
               "gemma",
-              "gemma3",
-              "gpt-oss",
-              "llama",
-              "llama3",
+              "glm",
+              "hacktoberfest",
               "llm",
-              "llms",
-              "mistral",
-              "openai",
+              "machine-learning",
+              "model-hub",
+              "natural-language-processing",
+              "nlp",
+              "pretrained-models",
+              "python",
+              "pytorch",
+              "pytorch-transformers",
               "qwen",
-              "reinforcement-learning",
-              "self-hosted",
-              "text-to-speech",
-              "tts",
-              "ui",
-              "unsloth"
+              "speech-recognition",
+              "transformer",
+              "vlm"
             ],
-            "stargazers_count": 63858,
-            "forks_count": 5628,
-            "open_issues_count": 1201,
-            "pushed_at": "2026-05-09T04:55:20Z",
-            "created_at": "2023-11-29T16:50:09Z",
-            "stars_delta_30d": 16
+            "stargazers_count": 160419,
+            "forks_count": 33148,
+            "open_issues_count": 2358,
+            "pushed_at": "2026-05-09T04:14:52Z",
+            "created_at": "2018-10-29T13:56:00Z",
+            "stars_delta_30d": 8
           }
         }
       ],
@@ -1315,9 +1282,9 @@
         {
           "source_id": "github_ai_recent_stars",
           "source_name": "GitHub",
-          "title": "unslothai/unsloth (63,858 stars)",
-          "url": "https://github.com/unslothai/unsloth",
-          "published_at": "2026-05-09T04:55:20Z",
+          "title": "huggingface/transformers (160,419 stars)",
+          "url": "https://github.com/huggingface/transformers",
+          "published_at": "2026-05-09T04:14:52Z",
           "published_at_source": "api",
           "date_confidence": "medium"
         }
@@ -1325,14 +1292,263 @@
       "also_seen_on": [],
       "kind": "repo_trending",
       "quality": "signal",
-      "one_liner": "Unsloth Studio is a web UI for training and running open models like Gemma 4, Qwen3.6, DeepSeek, gpt-oss locally. · Python · Apache-2.0 · agent · deepseek · fine-tuning · gemma · gemma3 · gpt-oss · ll",
-      "novelty": 0.848,
+      "one_liner": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. · Python · Apache-2.0 · aud",
+      "novelty": 0.879,
       "novelty_label": "high",
       "trust": 0.62,
-      "score": 0.787,
+      "score": 0.786,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Inspect docs, issue activity, and recent commits before depending on it."
+    },
+    {
+      "id": "159r13l",
+      "primary": {
+        "id": "159r13l",
+        "source_id": "github_ai_recent_stars",
+        "source_name": "GitHub",
+        "source_role": "repo",
+        "trust": 0.62,
+        "kind_hint": "repo_trending",
+        "title": "affaan-m/everything-claude-code (176,563 stars)",
+        "url": "https://github.com/affaan-m/everything-claude-code",
+        "original_url": "https://github.com/affaan-m/everything-claude-code",
+        "summary": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond. · JavaScript · MIT · ai-agents · anthropic · claude · claude-code · developer-tools · llm · mcp · productivity",
+        "published_at": "2026-05-09T02:14:27Z",
+        "published_at_source": "api",
+        "date_confidence": "medium",
+        "engagement": {
+          "score": 176563
+        },
+        "repo": {
+          "full_name": "affaan-m/everything-claude-code",
+          "html_url": "https://github.com/affaan-m/everything-claude-code",
+          "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+          "language": "JavaScript",
+          "license": "MIT",
+          "topics": [
+            "ai-agents",
+            "anthropic",
+            "claude",
+            "claude-code",
+            "developer-tools",
+            "llm",
+            "mcp",
+            "productivity"
+          ],
+          "stargazers_count": 176563,
+          "forks_count": 27302,
+          "open_issues_count": 174,
+          "pushed_at": "2026-05-09T02:14:27Z",
+          "created_at": "2026-01-18T00:51:51Z",
+          "stars_delta_30d": 245
+        }
+      },
+      "members": [
+        {
+          "id": "159r13l",
+          "source_id": "github_ai_recent_stars",
+          "source_name": "GitHub",
+          "source_role": "repo",
+          "trust": 0.62,
+          "kind_hint": "repo_trending",
+          "title": "affaan-m/everything-claude-code (176,563 stars)",
+          "url": "https://github.com/affaan-m/everything-claude-code",
+          "original_url": "https://github.com/affaan-m/everything-claude-code",
+          "summary": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond. · JavaScript · MIT · ai-agents · anthropic · claude · claude-code · developer-tools · llm · mcp · productivity",
+          "published_at": "2026-05-09T02:14:27Z",
+          "published_at_source": "api",
+          "date_confidence": "medium",
+          "engagement": {
+            "score": 176563
+          },
+          "repo": {
+            "full_name": "affaan-m/everything-claude-code",
+            "html_url": "https://github.com/affaan-m/everything-claude-code",
+            "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+            "language": "JavaScript",
+            "license": "MIT",
+            "topics": [
+              "ai-agents",
+              "anthropic",
+              "claude",
+              "claude-code",
+              "developer-tools",
+              "llm",
+              "mcp",
+              "productivity"
+            ],
+            "stargazers_count": 176563,
+            "forks_count": 27302,
+            "open_issues_count": 174,
+            "pushed_at": "2026-05-09T02:14:27Z",
+            "created_at": "2026-01-18T00:51:51Z",
+            "stars_delta_30d": 245
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "github_ai_recent_stars",
+          "source_name": "GitHub",
+          "title": "affaan-m/everything-claude-code (176,563 stars)",
+          "url": "https://github.com/affaan-m/everything-claude-code",
+          "published_at": "2026-05-09T02:14:27Z",
+          "published_at_source": "api",
+          "date_confidence": "medium"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "repo_trending",
+      "quality": "signal",
+      "one_liner": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond. · JavaScript · MIT · ai-agen",
+      "novelty": 0.887,
+      "novelty_label": "high",
+      "trust": 0.62,
+      "score": 0.785,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Inspect docs, issue activity, and recent commits before depending on it."
+    },
+    {
+      "id": "1p9a0dp",
+      "primary": {
+        "id": "1p9a0dp",
+        "source_id": "github_ai_recent_stars",
+        "source_name": "GitHub",
+        "source_role": "repo",
+        "trust": 0.62,
+        "kind_hint": "repo_trending",
+        "title": "langgenius/dify (140,729 stars)",
+        "url": "https://github.com/langgenius/dify",
+        "original_url": "https://github.com/langgenius/dify",
+        "summary": "Production-ready platform for agentic workflow development. · TypeScript · NOASSERTION · agent · agentic-ai · agentic-framework · agentic-workflow · ai · automation · gemini · genai · gpt · gpt-4 · llm · low-code · mcp · nextjs · no-code · openai · orchestration · python · rag · workflow",
+        "published_at": "2026-05-09T16:31:12Z",
+        "published_at_source": "api",
+        "date_confidence": "medium",
+        "engagement": {
+          "score": 140729
+        },
+        "repo": {
+          "full_name": "langgenius/dify",
+          "html_url": "https://github.com/langgenius/dify",
+          "description": "Production-ready platform for agentic workflow development.",
+          "language": "TypeScript",
+          "license": "NOASSERTION",
+          "topics": [
+            "agent",
+            "agentic-ai",
+            "agentic-framework",
+            "agentic-workflow",
+            "ai",
+            "automation",
+            "gemini",
+            "genai",
+            "gpt",
+            "gpt-4",
+            "llm",
+            "low-code",
+            "mcp",
+            "nextjs",
+            "no-code",
+            "openai",
+            "orchestration",
+            "python",
+            "rag",
+            "workflow"
+          ],
+          "stargazers_count": 140729,
+          "forks_count": 22088,
+          "open_issues_count": 761,
+          "pushed_at": "2026-05-09T16:31:12Z",
+          "created_at": "2023-04-12T07:40:24Z",
+          "stars_delta_30d": 33
+        }
+      },
+      "members": [
+        {
+          "id": "1p9a0dp",
+          "source_id": "github_ai_recent_stars",
+          "source_name": "GitHub",
+          "source_role": "repo",
+          "trust": 0.62,
+          "kind_hint": "repo_trending",
+          "title": "langgenius/dify (140,729 stars)",
+          "url": "https://github.com/langgenius/dify",
+          "original_url": "https://github.com/langgenius/dify",
+          "summary": "Production-ready platform for agentic workflow development. · TypeScript · NOASSERTION · agent · agentic-ai · agentic-framework · agentic-workflow · ai · automation · gemini · genai · gpt · gpt-4 · llm · low-code · mcp · nextjs · no-code · openai · orchestration · python · rag · workflow",
+          "published_at": "2026-05-09T16:31:12Z",
+          "published_at_source": "api",
+          "date_confidence": "medium",
+          "engagement": {
+            "score": 140729
+          },
+          "repo": {
+            "full_name": "langgenius/dify",
+            "html_url": "https://github.com/langgenius/dify",
+            "description": "Production-ready platform for agentic workflow development.",
+            "language": "TypeScript",
+            "license": "NOASSERTION",
+            "topics": [
+              "agent",
+              "agentic-ai",
+              "agentic-framework",
+              "agentic-workflow",
+              "ai",
+              "automation",
+              "gemini",
+              "genai",
+              "gpt",
+              "gpt-4",
+              "llm",
+              "low-code",
+              "mcp",
+              "nextjs",
+              "no-code",
+              "openai",
+              "orchestration",
+              "python",
+              "rag",
+              "workflow"
+            ],
+            "stargazers_count": 140729,
+            "forks_count": 22088,
+            "open_issues_count": 761,
+            "pushed_at": "2026-05-09T16:31:12Z",
+            "created_at": "2023-04-12T07:40:24Z",
+            "stars_delta_30d": 33
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "github_ai_recent_stars",
+          "source_name": "GitHub",
+          "title": "langgenius/dify (140,729 stars)",
+          "url": "https://github.com/langgenius/dify",
+          "published_at": "2026-05-09T16:31:12Z",
+          "published_at_source": "api",
+          "date_confidence": "medium"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "repo_trending",
+      "quality": "signal",
+      "one_liner": "Production-ready platform for agentic workflow development. · TypeScript · NOASSERTION · agent · agentic-ai · agentic-framework · agentic-workflow · ai · automation · gemini · genai · gpt · gpt-4 · ll",
+      "novelty": 0.8,
+      "novelty_label": "high",
+      "trust": 0.62,
+      "score": 0.782,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window",
         "source-native discussion or engagement is unusually high"
       ],
       "builder_action": "Inspect docs, issue activity, and recent commits before depending on it."
@@ -1346,7 +1562,7 @@
         "source_role": "repo",
         "trust": 0.62,
         "kind_hint": "repo_trending",
-        "title": "Mintplex-Labs/anything-llm (59,770 stars)",
+        "title": "Mintplex-Labs/anything-llm (59,776 stars)",
         "url": "https://github.com/Mintplex-Labs/anything-llm",
         "original_url": "https://github.com/Mintplex-Labs/anything-llm",
         "summary": "The all-in-one AI productivity accelerator. On device and privacy first with no annoying setup or configuration. · JavaScript · MIT · ai-agents · custom-ai-agents · deepseek · kimi · llama3 · llm · lmstudio · local-llm · localai · mcp · mcp-servers · moonshot · multimodal · no-code · ollama · qwen3 · rag · vector-database · web-scraping",
@@ -1354,7 +1570,7 @@
         "published_at_source": "api",
         "date_confidence": "medium",
         "engagement": {
-          "score": 59770
+          "score": 59776
         },
         "repo": {
           "full_name": "Mintplex-Labs/anything-llm",
@@ -1383,12 +1599,12 @@
             "vector-database",
             "web-scraping"
           ],
-          "stargazers_count": 59770,
-          "forks_count": 6461,
-          "open_issues_count": 364,
+          "stargazers_count": 59776,
+          "forks_count": 6460,
+          "open_issues_count": 366,
           "pushed_at": "2026-05-09T00:14:45Z",
           "created_at": "2023-06-04T02:29:14Z",
-          "stars_delta_30d": 10
+          "stars_delta_30d": 6
         }
       },
       "members": [
@@ -1399,7 +1615,7 @@
           "source_role": "repo",
           "trust": 0.62,
           "kind_hint": "repo_trending",
-          "title": "Mintplex-Labs/anything-llm (59,770 stars)",
+          "title": "Mintplex-Labs/anything-llm (59,776 stars)",
           "url": "https://github.com/Mintplex-Labs/anything-llm",
           "original_url": "https://github.com/Mintplex-Labs/anything-llm",
           "summary": "The all-in-one AI productivity accelerator. On device and privacy first with no annoying setup or configuration. · JavaScript · MIT · ai-agents · custom-ai-agents · deepseek · kimi · llama3 · llm · lmstudio · local-llm · localai · mcp · mcp-servers · moonshot · multimodal · no-code · ollama · qwen3 · rag · vector-database · web-scraping",
@@ -1407,7 +1623,7 @@
           "published_at_source": "api",
           "date_confidence": "medium",
           "engagement": {
-            "score": 59770
+            "score": 59776
           },
           "repo": {
             "full_name": "Mintplex-Labs/anything-llm",
@@ -1436,12 +1652,12 @@
               "vector-database",
               "web-scraping"
             ],
-            "stargazers_count": 59770,
-            "forks_count": 6461,
-            "open_issues_count": 364,
+            "stargazers_count": 59776,
+            "forks_count": 6460,
+            "open_issues_count": 366,
             "pushed_at": "2026-05-09T00:14:45Z",
             "created_at": "2023-06-04T02:29:14Z",
-            "stars_delta_30d": 10
+            "stars_delta_30d": 6
           }
         }
       ],
@@ -1449,7 +1665,7 @@
         {
           "source_id": "github_ai_recent_stars",
           "source_name": "GitHub",
-          "title": "Mintplex-Labs/anything-llm (59,770 stars)",
+          "title": "Mintplex-Labs/anything-llm (59,776 stars)",
           "url": "https://github.com/Mintplex-Labs/anything-llm",
           "published_at": "2026-05-09T00:14:45Z",
           "published_at_source": "api",
@@ -1460,10 +1676,10 @@
       "kind": "repo_trending",
       "quality": "signal",
       "one_liner": "The all-in-one AI productivity accelerator. On device and privacy first with no annoying setup or configuration. · JavaScript · MIT · ai-agents · custom-ai-agents · deepseek · kimi · llama3 · llm · lm",
-      "novelty": 0.865,
+      "novelty": 0.889,
       "novelty_label": "high",
       "trust": 0.62,
-      "score": 0.785,
+      "score": 0.782,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal",
@@ -1480,7 +1696,7 @@
         "source_role": "repo",
         "trust": 0.62,
         "kind_hint": "repo_trending",
-        "title": "f/prompts.chat (161,882 stars)",
+        "title": "f/prompts.chat (161,907 stars)",
         "url": "https://github.com/f/prompts.chat",
         "original_url": "https://github.com/f/prompts.chat",
         "summary": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy. · HTML · NOASSERTION · ai · artificial-intelligence · awesome-list · chatgpt · chatgpt-prompts · claude · gemini · gpt · gpt-4 · llm · machine-learning · nextjs · open-source · openai · prompt-engineering · prompts · prompts-chat · typescript",
@@ -1488,7 +1704,7 @@
         "published_at_source": "api",
         "date_confidence": "medium",
         "engagement": {
-          "score": 161882
+          "score": 161907
         },
         "repo": {
           "full_name": "f/prompts.chat",
@@ -1516,12 +1732,12 @@
             "prompts-chat",
             "typescript"
           ],
-          "stargazers_count": 161882,
-          "forks_count": 21097,
-          "open_issues_count": 46,
+          "stargazers_count": 161907,
+          "forks_count": 21100,
+          "open_issues_count": 47,
           "pushed_at": "2026-05-09T04:12:59Z",
           "created_at": "2022-12-05T13:54:13Z",
-          "stars_delta_30d": 20
+          "stars_delta_30d": 25
         }
       },
       "members": [
@@ -1532,7 +1748,7 @@
           "source_role": "repo",
           "trust": 0.62,
           "kind_hint": "repo_trending",
-          "title": "f/prompts.chat (161,882 stars)",
+          "title": "f/prompts.chat (161,907 stars)",
           "url": "https://github.com/f/prompts.chat",
           "original_url": "https://github.com/f/prompts.chat",
           "summary": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy. · HTML · NOASSERTION · ai · artificial-intelligence · awesome-list · chatgpt · chatgpt-prompts · claude · gemini · gpt · gpt-4 · llm · machine-learning · nextjs · open-source · openai · prompt-engineering · prompts · prompts-chat · typescript",
@@ -1540,7 +1756,7 @@
           "published_at_source": "api",
           "date_confidence": "medium",
           "engagement": {
-            "score": 161882
+            "score": 161907
           },
           "repo": {
             "full_name": "f/prompts.chat",
@@ -1568,12 +1784,12 @@
               "prompts-chat",
               "typescript"
             ],
-            "stargazers_count": 161882,
-            "forks_count": 21097,
-            "open_issues_count": 46,
+            "stargazers_count": 161907,
+            "forks_count": 21100,
+            "open_issues_count": 47,
             "pushed_at": "2026-05-09T04:12:59Z",
             "created_at": "2022-12-05T13:54:13Z",
-            "stars_delta_30d": 20
+            "stars_delta_30d": 25
           }
         }
       ],
@@ -1581,7 +1797,7 @@
         {
           "source_id": "github_ai_recent_stars",
           "source_name": "GitHub",
-          "title": "f/prompts.chat (161,882 stars)",
+          "title": "f/prompts.chat (161,907 stars)",
           "url": "https://github.com/f/prompts.chat",
           "published_at": "2026-05-09T04:12:59Z",
           "published_at_source": "api",
@@ -1592,10 +1808,10 @@
       "kind": "repo_trending",
       "quality": "signal",
       "one_liner": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy. · HTML · NOASSERTION · ai · artif",
-      "novelty": 0.833,
+      "novelty": 0.843,
       "novelty_label": "high",
       "trust": 0.62,
-      "score": 0.782,
+      "score": 0.775,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal",
@@ -1604,319 +1820,102 @@
       "builder_action": "Inspect docs, issue activity, and recent commits before depending on it."
     },
     {
-      "id": "p2tc86",
+      "id": "jtthne",
       "primary": {
-        "id": "p2tc86",
-        "source_id": "repo_llamacpp",
-        "source_name": "llama.cpp releases",
-        "source_role": "repo",
-        "trust": 0.82,
-        "kind_hint": "repo_release",
-        "title": "ggml-org/llama.cpp: b9084",
-        "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9084",
-        "original_url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9084",
-        "summary": "hexagon: add HTP kernel for GGML_OP_GATED_DELTA_NET (#22837) Implement the Gated Delta Net recurrence on HVX with: - 4-row fused kernels for PP (prompt processing) path - 8-row fused kernels for TG (token generation) path, reducing K/Q/gate vector reload overhead by 2x - Separate PP/TG thread functions for I-cache isolation - VTCM state scratchpad with DMA in/out for TG single-cycle access - Vectorized gate exp via hvx_exp_f32 **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9084/llama-b9084-bin-macos-arm64.tar.gz) - [macOS Apple Silicon (",
-        "published_at": "2026-05-09T03:27:11Z",
-        "published_at_source": "api",
-        "date_confidence": "high",
-        "repo": {
-          "full_name": "ggml-org/llama.cpp",
-          "html_url": "https://github.com/ggml-org/llama.cpp",
-          "release_tag": "b9084",
-          "release_name": "b9084",
-          "stars_delta_30d": 0
-        }
-      },
-      "members": [
-        {
-          "id": "p2tc86",
-          "source_id": "repo_llamacpp",
-          "source_name": "llama.cpp releases",
-          "source_role": "repo",
-          "trust": 0.82,
-          "kind_hint": "repo_release",
-          "title": "ggml-org/llama.cpp: b9084",
-          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9084",
-          "original_url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9084",
-          "summary": "hexagon: add HTP kernel for GGML_OP_GATED_DELTA_NET (#22837) Implement the Gated Delta Net recurrence on HVX with: - 4-row fused kernels for PP (prompt processing) path - 8-row fused kernels for TG (token generation) path, reducing K/Q/gate vector reload overhead by 2x - Separate PP/TG thread functions for I-cache isolation - VTCM state scratchpad with DMA in/out for TG single-cycle access - Vectorized gate exp via hvx_exp_f32 **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9084/llama-b9084-bin-macos-arm64.tar.gz) - [macOS Apple Silicon (",
-          "published_at": "2026-05-09T03:27:11Z",
-          "published_at_source": "api",
-          "date_confidence": "high",
-          "repo": {
-            "full_name": "ggml-org/llama.cpp",
-            "html_url": "https://github.com/ggml-org/llama.cpp",
-            "release_tag": "b9084",
-            "release_name": "b9084",
-            "stars_delta_30d": 0
-          }
-        },
-        {
-          "id": "pcsxx5",
-          "source_id": "repo_llamacpp",
-          "source_name": "llama.cpp releases",
-          "source_role": "repo",
-          "trust": 0.82,
-          "kind_hint": "repo_release",
-          "title": "ggml-org/llama.cpp: b9085",
-          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9085",
-          "original_url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9085",
-          "summary": "Add flash attention MMA / Tiles to support MiMo-V2.5 (#22812) * mimo-v2.5: add flash attention mma/tiles for for d_kq=192 d_v=128 * mimo-v2.5: follow (256, 256) fattn templates * mimo-v2.5: cleanup comments * mimo-v2.5: further comment cleanup * mimo-v2.5: address PR feedback fix GQA handling check for other dangling 320/576 carveouts and mirror them for 192 Add to backend ops test so new paths are covered **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9085/llama-b9085-bin-macos-arm64.tar.gz) - [macOS Apple Silicon (arm64, KleidiAI enabl",
-          "published_at": "2026-05-09T05:18:04Z",
-          "published_at_source": "api",
-          "date_confidence": "high",
-          "repo": {
-            "full_name": "ggml-org/llama.cpp",
-            "html_url": "https://github.com/ggml-org/llama.cpp",
-            "release_tag": "b9085",
-            "release_name": "b9085",
-            "stars_delta_30d": 0
-          }
-        },
-        {
-          "id": "ostqj7",
-          "source_id": "repo_llamacpp",
-          "source_name": "llama.cpp releases",
-          "source_role": "repo",
-          "trust": 0.82,
-          "kind_hint": "repo_release",
-          "title": "ggml-org/llama.cpp: b9087",
-          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9087",
-          "original_url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9087",
-          "summary": "sycl: Q5_K reorder MMVQ/dequant + Q8_0 reorder MMVQ path (#22152) * sycl: Q5_K reorder MMVQ/dequant + Q8_0 reorder MMVQ path Signed-off-by: Chun Tao * Remove duplicate definitions --------- Signed-off-by: Chun Tao Co-authored-by: Chun Tao Co-authored-by: Todd Malsbary **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9087/llama-b9087-bin-macos-arm64.tar.gz) - [macOS Apple Silicon (arm64, KleidiAI enabled)](https://github.com/ggml-org/llama.cpp/releases/download/b9087/llama-b9087-bin-macos-arm64-kleidiai.tar.gz) - [macOS Intel (x64)](https:/",
-          "published_at": "2026-05-09T10:18:13Z",
-          "published_at_source": "api",
-          "date_confidence": "high",
-          "repo": {
-            "full_name": "ggml-org/llama.cpp",
-            "html_url": "https://github.com/ggml-org/llama.cpp",
-            "release_tag": "b9087",
-            "release_name": "b9087",
-            "stars_delta_30d": 0
-          }
-        },
-        {
-          "id": "seokju",
-          "source_id": "repo_llamacpp",
-          "source_name": "llama.cpp releases",
-          "source_role": "repo",
-          "trust": 0.82,
-          "kind_hint": "repo_release",
-          "title": "ggml-org/llama.cpp: b9088",
-          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9088",
-          "original_url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9088",
-          "summary": "[SYCL] Add BF16 support to GET_ROWS operation (#21391) Add GGML_TYPE_BF16 to the SYCL backend's GET_ROWS operation, both in supports_op and in the kernel dispatch. This fixes a performance regression where models using BF16 embedding tensors (e.g., Gemma4's per_layer_token_embd.weight) fall back to CPU for the GET_ROWS op, causing a full GPU-to-CPU tensor transfer every token. The fix reuses the existing get_rows_sycl_float template with sycl::ext::oneapi::bfloat16, matching the pattern already used for sycl::half (F16) and float (F32). **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://gi",
-          "published_at": "2026-05-09T10:42:53Z",
-          "published_at_source": "api",
-          "date_confidence": "high",
-          "repo": {
-            "full_name": "ggml-org/llama.cpp",
-            "html_url": "https://github.com/ggml-org/llama.cpp",
-            "release_tag": "b9088",
-            "release_name": "b9088",
-            "stars_delta_30d": 0
-          }
-        },
-        {
-          "id": "soo68t",
-          "source_id": "repo_llamacpp",
-          "source_name": "llama.cpp releases",
-          "source_role": "repo",
-          "trust": 0.82,
-          "kind_hint": "repo_release",
-          "title": "ggml-org/llama.cpp: b9089",
-          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9089",
-          "original_url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9089",
-          "summary": "SYCL: reduce allocation overhead during flash attention (#22732) * SYCL: reduce allocation overhead during flash attention * tidy up whitespace * add a note about the flag * move ggml_sycl_fattn_* into fattn-buffers.hpp * refactor implementation into fattn-buffers.cpp * move new_fattn_kv_buffers back into ggml-sycl.cpp **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9089/llama-b9089-bin-macos-arm64.tar.gz) - [macOS Apple Silicon (arm64, KleidiAI enabled)](https://github.com/ggml-org/llama.cpp/releases/download/b9089/llama-b9089-bin-macos-",
-          "published_at": "2026-05-09T11:03:51Z",
-          "published_at_source": "api",
-          "date_confidence": "high",
-          "repo": {
-            "full_name": "ggml-org/llama.cpp",
-            "html_url": "https://github.com/ggml-org/llama.cpp",
-            "release_tag": "b9089",
-            "release_name": "b9089",
-            "stars_delta_30d": 0
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "repo_llamacpp",
-          "source_name": "llama.cpp releases",
-          "title": "ggml-org/llama.cpp: b9084",
-          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9084",
-          "published_at": "2026-05-09T03:27:11Z",
-          "published_at_source": "api",
-          "date_confidence": "high"
-        },
-        {
-          "source_id": "repo_llamacpp",
-          "source_name": "llama.cpp releases",
-          "title": "ggml-org/llama.cpp: b9085",
-          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9085",
-          "published_at": "2026-05-09T05:18:04Z",
-          "published_at_source": "api",
-          "date_confidence": "high"
-        },
-        {
-          "source_id": "repo_llamacpp",
-          "source_name": "llama.cpp releases",
-          "title": "ggml-org/llama.cpp: b9087",
-          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9087",
-          "published_at": "2026-05-09T10:18:13Z",
-          "published_at_source": "api",
-          "date_confidence": "high"
-        },
-        {
-          "source_id": "repo_llamacpp",
-          "source_name": "llama.cpp releases",
-          "title": "ggml-org/llama.cpp: b9088",
-          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9088",
-          "published_at": "2026-05-09T10:42:53Z",
-          "published_at_source": "api",
-          "date_confidence": "high"
-        },
-        {
-          "source_id": "repo_llamacpp",
-          "source_name": "llama.cpp releases",
-          "title": "ggml-org/llama.cpp: b9089",
-          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9089",
-          "published_at": "2026-05-09T11:03:51Z",
-          "published_at_source": "api",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [
-        {
-          "source_name": "llama.cpp releases",
-          "title": "ggml-org/llama.cpp: b9085",
-          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9085",
-          "published_at": "2026-05-09T05:18:04Z",
-          "published_at_source": "api",
-          "date_confidence": "high"
-        },
-        {
-          "source_name": "llama.cpp releases",
-          "title": "ggml-org/llama.cpp: b9087",
-          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9087",
-          "published_at": "2026-05-09T10:18:13Z",
-          "published_at_source": "api",
-          "date_confidence": "high"
-        },
-        {
-          "source_name": "llama.cpp releases",
-          "title": "ggml-org/llama.cpp: b9088",
-          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9088",
-          "published_at": "2026-05-09T10:42:53Z",
-          "published_at_source": "api",
-          "date_confidence": "high"
-        },
-        {
-          "source_name": "llama.cpp releases",
-          "title": "ggml-org/llama.cpp: b9089",
-          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9089",
-          "published_at": "2026-05-09T11:03:51Z",
-          "published_at_source": "api",
-          "date_confidence": "high"
-        }
-      ],
-      "kind": "repo_release",
-      "quality": "signal",
-      "one_liner": "hexagon: add HTP kernel for GGML_OP_GATED_DELTA_NET (#22837) Implement the Gated Delta Net recurrence on HVX with: - 4-row fused kernels for PP (prompt processing) path - 8-row fused kernels for TG (t",
-      "novelty": 0.207,
-      "novelty_label": "familiar",
-      "trust": 0.82,
-      "score": 0.64,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal",
-        "corroborated by 5 sources"
-      ],
-      "builder_action": "Review the changelog and test the release against your integration points."
-    },
-    {
-      "id": "159r13l",
-      "primary": {
-        "id": "159r13l",
+        "id": "jtthne",
         "source_id": "github_ai_recent_stars",
         "source_name": "GitHub",
         "source_role": "repo",
         "trust": 0.62,
         "kind_hint": "repo_trending",
-        "title": "affaan-m/everything-claude-code (176,318 stars)",
-        "url": "https://github.com/affaan-m/everything-claude-code",
-        "original_url": "https://github.com/affaan-m/everything-claude-code",
-        "summary": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond. · JavaScript · MIT · ai-agents · anthropic · claude · claude-code · developer-tools · llm · mcp · productivity",
-        "published_at": "2026-05-09T02:14:27Z",
+        "title": "open-webui/open-webui (136,307 stars)",
+        "url": "https://github.com/open-webui/open-webui",
+        "original_url": "https://github.com/open-webui/open-webui",
+        "summary": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...) · Python · NOASSERTION · ai · llm · llm-ui · llm-webui · llms · mcp · ollama · ollama-webui · open-webui · openai · openapi · rag · self-hosted · ui · webui",
+        "published_at": "2026-05-09T14:38:36Z",
         "published_at_source": "api",
         "date_confidence": "medium",
         "engagement": {
-          "score": 176318
+          "score": 136307
         },
         "repo": {
-          "full_name": "affaan-m/everything-claude-code",
-          "html_url": "https://github.com/affaan-m/everything-claude-code",
-          "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
-          "language": "JavaScript",
-          "license": "MIT",
+          "full_name": "open-webui/open-webui",
+          "html_url": "https://github.com/open-webui/open-webui",
+          "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
+          "language": "Python",
+          "license": "NOASSERTION",
           "topics": [
-            "ai-agents",
-            "anthropic",
-            "claude",
-            "claude-code",
-            "developer-tools",
+            "ai",
             "llm",
+            "llm-ui",
+            "llm-webui",
+            "llms",
             "mcp",
-            "productivity"
+            "ollama",
+            "ollama-webui",
+            "open-webui",
+            "openai",
+            "openapi",
+            "rag",
+            "self-hosted",
+            "ui",
+            "webui"
           ],
-          "stargazers_count": 176318,
-          "forks_count": 27278,
-          "open_issues_count": 173,
-          "pushed_at": "2026-05-09T02:14:27Z",
-          "created_at": "2026-01-18T00:51:51Z",
-          "stars_delta_30d": 242
+          "stargazers_count": 136307,
+          "forks_count": 19408,
+          "open_issues_count": 218,
+          "pushed_at": "2026-05-09T14:38:36Z",
+          "created_at": "2023-10-06T22:08:27Z",
+          "stars_delta_30d": 40
         }
       },
       "members": [
         {
-          "id": "159r13l",
+          "id": "jtthne",
           "source_id": "github_ai_recent_stars",
           "source_name": "GitHub",
           "source_role": "repo",
           "trust": 0.62,
           "kind_hint": "repo_trending",
-          "title": "affaan-m/everything-claude-code (176,318 stars)",
-          "url": "https://github.com/affaan-m/everything-claude-code",
-          "original_url": "https://github.com/affaan-m/everything-claude-code",
-          "summary": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond. · JavaScript · MIT · ai-agents · anthropic · claude · claude-code · developer-tools · llm · mcp · productivity",
-          "published_at": "2026-05-09T02:14:27Z",
+          "title": "open-webui/open-webui (136,307 stars)",
+          "url": "https://github.com/open-webui/open-webui",
+          "original_url": "https://github.com/open-webui/open-webui",
+          "summary": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...) · Python · NOASSERTION · ai · llm · llm-ui · llm-webui · llms · mcp · ollama · ollama-webui · open-webui · openai · openapi · rag · self-hosted · ui · webui",
+          "published_at": "2026-05-09T14:38:36Z",
           "published_at_source": "api",
           "date_confidence": "medium",
           "engagement": {
-            "score": 176318
+            "score": 136307
           },
           "repo": {
-            "full_name": "affaan-m/everything-claude-code",
-            "html_url": "https://github.com/affaan-m/everything-claude-code",
-            "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
-            "language": "JavaScript",
-            "license": "MIT",
+            "full_name": "open-webui/open-webui",
+            "html_url": "https://github.com/open-webui/open-webui",
+            "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
+            "language": "Python",
+            "license": "NOASSERTION",
             "topics": [
-              "ai-agents",
-              "anthropic",
-              "claude",
-              "claude-code",
-              "developer-tools",
+              "ai",
               "llm",
+              "llm-ui",
+              "llm-webui",
+              "llms",
               "mcp",
-              "productivity"
+              "ollama",
+              "ollama-webui",
+              "open-webui",
+              "openai",
+              "openapi",
+              "rag",
+              "self-hosted",
+              "ui",
+              "webui"
             ],
-            "stargazers_count": 176318,
-            "forks_count": 27278,
-            "open_issues_count": 173,
-            "pushed_at": "2026-05-09T02:14:27Z",
-            "created_at": "2026-01-18T00:51:51Z",
-            "stars_delta_30d": 242
+            "stargazers_count": 136307,
+            "forks_count": 19408,
+            "open_issues_count": 218,
+            "pushed_at": "2026-05-09T14:38:36Z",
+            "created_at": "2023-10-06T22:08:27Z",
+            "stars_delta_30d": 40
           }
         }
       ],
@@ -1924,9 +1923,9 @@
         {
           "source_id": "github_ai_recent_stars",
           "source_name": "GitHub",
-          "title": "affaan-m/everything-claude-code (176,318 stars)",
-          "url": "https://github.com/affaan-m/everything-claude-code",
-          "published_at": "2026-05-09T02:14:27Z",
+          "title": "open-webui/open-webui (136,307 stars)",
+          "url": "https://github.com/open-webui/open-webui",
+          "published_at": "2026-05-09T14:38:36Z",
           "published_at_source": "api",
           "date_confidence": "medium"
         }
@@ -1934,125 +1933,100 @@
       "also_seen_on": [],
       "kind": "repo_trending",
       "quality": "signal",
-      "one_liner": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond. · JavaScript · MIT · ai-agen",
-      "novelty": 0.816,
+      "one_liner": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...) · Python · NOASSERTION · ai · llm · llm-ui · llm-webui · llms · mcp · ollama · ollama-webui · open-webui · openai · openapi · rag · self-h",
+      "novelty": 0.783,
       "novelty_label": "high",
       "trust": 0.62,
-      "score": 0.773,
+      "score": 0.774,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal",
+        "fresh within the current refresh window",
         "source-native discussion or engagement is unusually high"
       ],
       "builder_action": "Inspect docs, issue activity, and recent commits before depending on it."
     },
     {
-      "id": "q7denj",
+      "id": "4v7knu",
       "primary": {
-        "id": "q7denj",
+        "id": "4v7knu",
         "source_id": "github_ai_recent_stars",
         "source_name": "GitHub",
         "source_role": "repo",
         "trust": 0.62,
         "kind_hint": "repo_trending",
-        "title": "langchain-ai/langchain (136,227 stars)",
-        "url": "https://github.com/langchain-ai/langchain",
-        "original_url": "https://github.com/langchain-ai/langchain",
-        "summary": "The agent engineering platform. Available in TypeScript! · Python · MIT · agents · ai · ai-agents · anthropic · chatgpt · deepagents · enterprise · framework · gemini · generative-ai · langchain · langgraph · llm · multiagent · open-source · openai · pydantic · python · rag · typescript",
-        "published_at": "2026-05-08T23:44:34Z",
+        "title": "browser-use/browser-use (93,100 stars)",
+        "url": "https://github.com/browser-use/browser-use",
+        "original_url": "https://github.com/browser-use/browser-use",
+        "summary": "🌐 Make websites accessible for AI agents. Automate tasks online with ease. · Python · MIT · ai-agents · ai-tools · browser-automation · browser-use · llm · playwright · python",
+        "published_at": "2026-05-08T23:19:38Z",
         "published_at_source": "api",
         "date_confidence": "medium",
         "engagement": {
-          "score": 136227
+          "score": 93100
         },
         "repo": {
-          "full_name": "langchain-ai/langchain",
-          "html_url": "https://github.com/langchain-ai/langchain",
-          "description": "The agent engineering platform. Available in TypeScript!",
+          "full_name": "browser-use/browser-use",
+          "html_url": "https://github.com/browser-use/browser-use",
+          "description": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
           "language": "Python",
           "license": "MIT",
           "topics": [
-            "agents",
-            "ai",
             "ai-agents",
-            "anthropic",
-            "chatgpt",
-            "deepagents",
-            "enterprise",
-            "framework",
-            "gemini",
-            "generative-ai",
-            "langchain",
-            "langgraph",
+            "ai-tools",
+            "browser-automation",
+            "browser-use",
             "llm",
-            "multiagent",
-            "open-source",
-            "openai",
-            "pydantic",
-            "python",
-            "rag",
-            "typescript"
+            "playwright",
+            "python"
           ],
-          "stargazers_count": 136227,
-          "forks_count": 22514,
-          "open_issues_count": 604,
-          "pushed_at": "2026-05-08T23:44:34Z",
-          "created_at": "2022-10-17T02:58:36Z",
-          "stars_delta_30d": 36
+          "stargazers_count": 93100,
+          "forks_count": 10540,
+          "open_issues_count": 236,
+          "pushed_at": "2026-05-08T23:19:38Z",
+          "created_at": "2024-10-31T16:00:56Z",
+          "stars_delta_30d": 43
         }
       },
       "members": [
         {
-          "id": "q7denj",
+          "id": "4v7knu",
           "source_id": "github_ai_recent_stars",
           "source_name": "GitHub",
           "source_role": "repo",
           "trust": 0.62,
           "kind_hint": "repo_trending",
-          "title": "langchain-ai/langchain (136,227 stars)",
-          "url": "https://github.com/langchain-ai/langchain",
-          "original_url": "https://github.com/langchain-ai/langchain",
-          "summary": "The agent engineering platform. Available in TypeScript! · Python · MIT · agents · ai · ai-agents · anthropic · chatgpt · deepagents · enterprise · framework · gemini · generative-ai · langchain · langgraph · llm · multiagent · open-source · openai · pydantic · python · rag · typescript",
-          "published_at": "2026-05-08T23:44:34Z",
+          "title": "browser-use/browser-use (93,100 stars)",
+          "url": "https://github.com/browser-use/browser-use",
+          "original_url": "https://github.com/browser-use/browser-use",
+          "summary": "🌐 Make websites accessible for AI agents. Automate tasks online with ease. · Python · MIT · ai-agents · ai-tools · browser-automation · browser-use · llm · playwright · python",
+          "published_at": "2026-05-08T23:19:38Z",
           "published_at_source": "api",
           "date_confidence": "medium",
           "engagement": {
-            "score": 136227
+            "score": 93100
           },
           "repo": {
-            "full_name": "langchain-ai/langchain",
-            "html_url": "https://github.com/langchain-ai/langchain",
-            "description": "The agent engineering platform. Available in TypeScript!",
+            "full_name": "browser-use/browser-use",
+            "html_url": "https://github.com/browser-use/browser-use",
+            "description": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
             "language": "Python",
             "license": "MIT",
             "topics": [
-              "agents",
-              "ai",
               "ai-agents",
-              "anthropic",
-              "chatgpt",
-              "deepagents",
-              "enterprise",
-              "framework",
-              "gemini",
-              "generative-ai",
-              "langchain",
-              "langgraph",
+              "ai-tools",
+              "browser-automation",
+              "browser-use",
               "llm",
-              "multiagent",
-              "open-source",
-              "openai",
-              "pydantic",
-              "python",
-              "rag",
-              "typescript"
+              "playwright",
+              "python"
             ],
-            "stargazers_count": 136227,
-            "forks_count": 22514,
-            "open_issues_count": 604,
-            "pushed_at": "2026-05-08T23:44:34Z",
-            "created_at": "2022-10-17T02:58:36Z",
-            "stars_delta_30d": 36
+            "stargazers_count": 93100,
+            "forks_count": 10540,
+            "open_issues_count": 236,
+            "pushed_at": "2026-05-08T23:19:38Z",
+            "created_at": "2024-10-31T16:00:56Z",
+            "stars_delta_30d": 43
           }
         }
       ],
@@ -2060,9 +2034,9 @@
         {
           "source_id": "github_ai_recent_stars",
           "source_name": "GitHub",
-          "title": "langchain-ai/langchain (136,227 stars)",
-          "url": "https://github.com/langchain-ai/langchain",
-          "published_at": "2026-05-08T23:44:34Z",
+          "title": "browser-use/browser-use (93,100 stars)",
+          "url": "https://github.com/browser-use/browser-use",
+          "published_at": "2026-05-08T23:19:38Z",
           "published_at_source": "api",
           "date_confidence": "medium"
         }
@@ -2070,8 +2044,8 @@
       "also_seen_on": [],
       "kind": "repo_trending",
       "quality": "signal",
-      "one_liner": "The agent engineering platform. Available in TypeScript! · Python · MIT · agents · ai · ai-agents · anthropic · chatgpt · deepagents · enterprise · framework · gemini · generative-ai · langchain · lan",
-      "novelty": 0.828,
+      "one_liner": "🌐 Make websites accessible for AI agents. Automate tasks online with ease. · Python · MIT · ai-agents · ai-tools · browser-automation · browser-use · llm · playwright · python",
+      "novelty": 0.864,
       "novelty_label": "high",
       "trust": 0.62,
       "score": 0.773,
@@ -2083,238 +2057,110 @@
       "builder_action": "Inspect docs, issue activity, and recent commits before depending on it."
     },
     {
-      "id": "1dulic5",
+      "id": "1l373r0",
       "primary": {
-        "id": "1dulic5",
+        "id": "1l373r0",
         "source_id": "github_ai_recent_stars",
         "source_name": "GitHub",
         "source_role": "repo",
         "trust": 0.62,
         "kind_hint": "repo_trending",
-        "title": "hiyouga/LlamaFactory (71,087 stars)",
-        "url": "https://github.com/hiyouga/LlamaFactory",
-        "original_url": "https://github.com/hiyouga/LlamaFactory",
-        "summary": "Unified Efficient Fine-Tuning of 100+ LLMs & VLMs (ACL 2024) · Python · Apache-2.0 · agent · ai · deepseek · fine-tuning · gemma · gpt · instruction-tuning · large-language-models · llama · llama3 · llm · lora · moe · nlp · peft · qlora · quantization · qwen · rlhf · transformers",
-        "published_at": "2026-05-08T10:14:35Z",
+        "title": "unslothai/unsloth (63,872 stars)",
+        "url": "https://github.com/unslothai/unsloth",
+        "original_url": "https://github.com/unslothai/unsloth",
+        "summary": "Unsloth Studio is a web UI for training and running open models like Gemma 4, Qwen3.6, DeepSeek, gpt-oss locally. · Python · Apache-2.0 · agent · deepseek · fine-tuning · gemma · gemma3 · gpt-oss · llama · llama3 · llm · llms · mistral · openai · qwen · reinforcement-learning · self-hosted · text-to-speech · tts · ui · unsloth",
+        "published_at": "2026-05-09T04:55:20Z",
         "published_at_source": "api",
         "date_confidence": "medium",
         "engagement": {
-          "score": 71087
+          "score": 63872
         },
         "repo": {
-          "full_name": "hiyouga/LlamaFactory",
-          "html_url": "https://github.com/hiyouga/LlamaFactory",
-          "description": "Unified Efficient Fine-Tuning of 100+ LLMs & VLMs (ACL 2024)",
+          "full_name": "unslothai/unsloth",
+          "html_url": "https://github.com/unslothai/unsloth",
+          "description": "Unsloth Studio is a web UI for training and running open models like Gemma 4, Qwen3.6, DeepSeek, gpt-oss locally.",
           "language": "Python",
           "license": "Apache-2.0",
           "topics": [
             "agent",
-            "ai",
             "deepseek",
             "fine-tuning",
             "gemma",
-            "gpt",
-            "instruction-tuning",
-            "large-language-models",
-            "llama",
-            "llama3",
-            "llm",
-            "lora",
-            "moe",
-            "nlp",
-            "peft",
-            "qlora",
-            "quantization",
-            "qwen",
-            "rlhf",
-            "transformers"
-          ],
-          "stargazers_count": 71087,
-          "forks_count": 8687,
-          "open_issues_count": 1001,
-          "pushed_at": "2026-05-08T10:14:35Z",
-          "created_at": "2023-05-28T10:09:12Z",
-          "stars_delta_30d": 22
-        }
-      },
-      "members": [
-        {
-          "id": "1dulic5",
-          "source_id": "github_ai_recent_stars",
-          "source_name": "GitHub",
-          "source_role": "repo",
-          "trust": 0.62,
-          "kind_hint": "repo_trending",
-          "title": "hiyouga/LlamaFactory (71,087 stars)",
-          "url": "https://github.com/hiyouga/LlamaFactory",
-          "original_url": "https://github.com/hiyouga/LlamaFactory",
-          "summary": "Unified Efficient Fine-Tuning of 100+ LLMs & VLMs (ACL 2024) · Python · Apache-2.0 · agent · ai · deepseek · fine-tuning · gemma · gpt · instruction-tuning · large-language-models · llama · llama3 · llm · lora · moe · nlp · peft · qlora · quantization · qwen · rlhf · transformers",
-          "published_at": "2026-05-08T10:14:35Z",
-          "published_at_source": "api",
-          "date_confidence": "medium",
-          "engagement": {
-            "score": 71087
-          },
-          "repo": {
-            "full_name": "hiyouga/LlamaFactory",
-            "html_url": "https://github.com/hiyouga/LlamaFactory",
-            "description": "Unified Efficient Fine-Tuning of 100+ LLMs & VLMs (ACL 2024)",
-            "language": "Python",
-            "license": "Apache-2.0",
-            "topics": [
-              "agent",
-              "ai",
-              "deepseek",
-              "fine-tuning",
-              "gemma",
-              "gpt",
-              "instruction-tuning",
-              "large-language-models",
-              "llama",
-              "llama3",
-              "llm",
-              "lora",
-              "moe",
-              "nlp",
-              "peft",
-              "qlora",
-              "quantization",
-              "qwen",
-              "rlhf",
-              "transformers"
-            ],
-            "stargazers_count": 71087,
-            "forks_count": 8687,
-            "open_issues_count": 1001,
-            "pushed_at": "2026-05-08T10:14:35Z",
-            "created_at": "2023-05-28T10:09:12Z",
-            "stars_delta_30d": 22
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "github_ai_recent_stars",
-          "source_name": "GitHub",
-          "title": "hiyouga/LlamaFactory (71,087 stars)",
-          "url": "https://github.com/hiyouga/LlamaFactory",
-          "published_at": "2026-05-08T10:14:35Z",
-          "published_at_source": "api",
-          "date_confidence": "medium"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "repo_trending",
-      "quality": "signal",
-      "one_liner": "Unified Efficient Fine-Tuning of 100+ LLMs & VLMs (ACL 2024) · Python · Apache-2.0 · agent · ai · deepseek · fine-tuning · gemma · gpt · instruction-tuning · large-language-models · llama · llama3 · l",
-      "novelty": 0.862,
-      "novelty_label": "high",
-      "trust": 0.62,
-      "score": 0.761,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as concrete builder or research signal",
-        "source-native discussion or engagement is unusually high"
-      ],
-      "builder_action": "Inspect docs, issue activity, and recent commits before depending on it."
-    },
-    {
-      "id": "m3el9g",
-      "primary": {
-        "id": "m3el9g",
-        "source_id": "github_ai_recent_stars",
-        "source_name": "GitHub",
-        "source_role": "repo",
-        "trust": 0.62,
-        "kind_hint": "repo_trending",
-        "title": "ollama/ollama (171,051 stars)",
-        "url": "https://github.com/ollama/ollama",
-        "original_url": "https://github.com/ollama/ollama",
-        "summary": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models. · Go · MIT · deepseek · gemma · gemma3 · glm · go · golang · gpt-oss · llama · llama3 · llm · llms · minimax · mistral · ollama · qwen",
-        "published_at": "2026-05-08T22:54:17Z",
-        "published_at_source": "api",
-        "date_confidence": "medium",
-        "engagement": {
-          "score": 171051
-        },
-        "repo": {
-          "full_name": "ollama/ollama",
-          "html_url": "https://github.com/ollama/ollama",
-          "description": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
-          "language": "Go",
-          "license": "MIT",
-          "topics": [
-            "deepseek",
-            "gemma",
             "gemma3",
-            "glm",
-            "go",
-            "golang",
             "gpt-oss",
             "llama",
             "llama3",
             "llm",
             "llms",
-            "minimax",
             "mistral",
-            "ollama",
-            "qwen"
+            "openai",
+            "qwen",
+            "reinforcement-learning",
+            "self-hosted",
+            "text-to-speech",
+            "tts",
+            "ui",
+            "unsloth"
           ],
-          "stargazers_count": 171051,
-          "forks_count": 16043,
-          "open_issues_count": 3208,
-          "pushed_at": "2026-05-08T22:54:17Z",
-          "created_at": "2023-06-26T19:39:32Z",
-          "stars_delta_30d": 24
+          "stargazers_count": 63872,
+          "forks_count": 5627,
+          "open_issues_count": 1203,
+          "pushed_at": "2026-05-09T04:55:20Z",
+          "created_at": "2023-11-29T16:50:09Z",
+          "stars_delta_30d": 14
         }
       },
       "members": [
         {
-          "id": "m3el9g",
+          "id": "1l373r0",
           "source_id": "github_ai_recent_stars",
           "source_name": "GitHub",
           "source_role": "repo",
           "trust": 0.62,
           "kind_hint": "repo_trending",
-          "title": "ollama/ollama (171,051 stars)",
-          "url": "https://github.com/ollama/ollama",
-          "original_url": "https://github.com/ollama/ollama",
-          "summary": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models. · Go · MIT · deepseek · gemma · gemma3 · glm · go · golang · gpt-oss · llama · llama3 · llm · llms · minimax · mistral · ollama · qwen",
-          "published_at": "2026-05-08T22:54:17Z",
+          "title": "unslothai/unsloth (63,872 stars)",
+          "url": "https://github.com/unslothai/unsloth",
+          "original_url": "https://github.com/unslothai/unsloth",
+          "summary": "Unsloth Studio is a web UI for training and running open models like Gemma 4, Qwen3.6, DeepSeek, gpt-oss locally. · Python · Apache-2.0 · agent · deepseek · fine-tuning · gemma · gemma3 · gpt-oss · llama · llama3 · llm · llms · mistral · openai · qwen · reinforcement-learning · self-hosted · text-to-speech · tts · ui · unsloth",
+          "published_at": "2026-05-09T04:55:20Z",
           "published_at_source": "api",
           "date_confidence": "medium",
           "engagement": {
-            "score": 171051
+            "score": 63872
           },
           "repo": {
-            "full_name": "ollama/ollama",
-            "html_url": "https://github.com/ollama/ollama",
-            "description": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
-            "language": "Go",
-            "license": "MIT",
+            "full_name": "unslothai/unsloth",
+            "html_url": "https://github.com/unslothai/unsloth",
+            "description": "Unsloth Studio is a web UI for training and running open models like Gemma 4, Qwen3.6, DeepSeek, gpt-oss locally.",
+            "language": "Python",
+            "license": "Apache-2.0",
             "topics": [
+              "agent",
               "deepseek",
+              "fine-tuning",
               "gemma",
               "gemma3",
-              "glm",
-              "go",
-              "golang",
               "gpt-oss",
               "llama",
               "llama3",
               "llm",
               "llms",
-              "minimax",
               "mistral",
-              "ollama",
-              "qwen"
+              "openai",
+              "qwen",
+              "reinforcement-learning",
+              "self-hosted",
+              "text-to-speech",
+              "tts",
+              "ui",
+              "unsloth"
             ],
-            "stargazers_count": 171051,
-            "forks_count": 16043,
-            "open_issues_count": 3208,
-            "pushed_at": "2026-05-08T22:54:17Z",
-            "created_at": "2023-06-26T19:39:32Z",
-            "stars_delta_30d": 24
+            "stargazers_count": 63872,
+            "forks_count": 5627,
+            "open_issues_count": 1203,
+            "pushed_at": "2026-05-09T04:55:20Z",
+            "created_at": "2023-11-29T16:50:09Z",
+            "stars_delta_30d": 14
           }
         }
       ],
@@ -2322,9 +2168,9 @@
         {
           "source_id": "github_ai_recent_stars",
           "source_name": "GitHub",
-          "title": "ollama/ollama (171,051 stars)",
-          "url": "https://github.com/ollama/ollama",
-          "published_at": "2026-05-08T22:54:17Z",
+          "title": "unslothai/unsloth (63,872 stars)",
+          "url": "https://github.com/unslothai/unsloth",
+          "published_at": "2026-05-09T04:55:20Z",
           "published_at_source": "api",
           "date_confidence": "medium"
         }
@@ -2332,11 +2178,139 @@
       "also_seen_on": [],
       "kind": "repo_trending",
       "quality": "signal",
-      "one_liner": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models. · Go · MIT · deepseek · gemma · gemma3 · glm · go · golang · gpt-oss · llama · llama3 · llm · llms ·",
-      "novelty": 0.75,
+      "one_liner": "Unsloth Studio is a web UI for training and running open models like Gemma 4, Qwen3.6, DeepSeek, gpt-oss locally. · Python · Apache-2.0 · agent · deepseek · fine-tuning · gemma · gemma3 · gpt-oss · ll",
+      "novelty": 0.83,
       "novelty_label": "high",
       "trust": 0.62,
-      "score": 0.748,
+      "score": 0.772,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Inspect docs, issue activity, and recent commits before depending on it."
+    },
+    {
+      "id": "4whltq",
+      "primary": {
+        "id": "4whltq",
+        "source_id": "github_ai_recent_stars",
+        "source_name": "GitHub",
+        "source_role": "repo",
+        "trust": 0.62,
+        "kind_hint": "repo_trending",
+        "title": "rasbt/LLMs-from-scratch (92,252 stars)",
+        "url": "https://github.com/rasbt/LLMs-from-scratch",
+        "original_url": "https://github.com/rasbt/LLMs-from-scratch",
+        "summary": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step · Jupyter Notebook · NOASSERTION · ai · artificial-intelligence · chatbot · chatgpt · deep-learning · from-scratch · generative-ai · gpt · language-model · large-language-models · llm · machine-learning · neural-networks · python · pytorch · transformers",
+        "published_at": "2026-05-06T17:25:14Z",
+        "published_at_source": "api",
+        "date_confidence": "medium",
+        "engagement": {
+          "score": 92252
+        },
+        "repo": {
+          "full_name": "rasbt/LLMs-from-scratch",
+          "html_url": "https://github.com/rasbt/LLMs-from-scratch",
+          "description": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step",
+          "language": "Jupyter Notebook",
+          "license": "NOASSERTION",
+          "topics": [
+            "ai",
+            "artificial-intelligence",
+            "chatbot",
+            "chatgpt",
+            "deep-learning",
+            "from-scratch",
+            "generative-ai",
+            "gpt",
+            "language-model",
+            "large-language-models",
+            "llm",
+            "machine-learning",
+            "neural-networks",
+            "python",
+            "pytorch",
+            "transformers"
+          ],
+          "stargazers_count": 92252,
+          "forks_count": 14254,
+          "open_issues_count": 6,
+          "pushed_at": "2026-05-06T17:25:14Z",
+          "created_at": "2023-07-23T18:15:57Z",
+          "stars_delta_30d": 21
+        }
+      },
+      "members": [
+        {
+          "id": "4whltq",
+          "source_id": "github_ai_recent_stars",
+          "source_name": "GitHub",
+          "source_role": "repo",
+          "trust": 0.62,
+          "kind_hint": "repo_trending",
+          "title": "rasbt/LLMs-from-scratch (92,252 stars)",
+          "url": "https://github.com/rasbt/LLMs-from-scratch",
+          "original_url": "https://github.com/rasbt/LLMs-from-scratch",
+          "summary": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step · Jupyter Notebook · NOASSERTION · ai · artificial-intelligence · chatbot · chatgpt · deep-learning · from-scratch · generative-ai · gpt · language-model · large-language-models · llm · machine-learning · neural-networks · python · pytorch · transformers",
+          "published_at": "2026-05-06T17:25:14Z",
+          "published_at_source": "api",
+          "date_confidence": "medium",
+          "engagement": {
+            "score": 92252
+          },
+          "repo": {
+            "full_name": "rasbt/LLMs-from-scratch",
+            "html_url": "https://github.com/rasbt/LLMs-from-scratch",
+            "description": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step",
+            "language": "Jupyter Notebook",
+            "license": "NOASSERTION",
+            "topics": [
+              "ai",
+              "artificial-intelligence",
+              "chatbot",
+              "chatgpt",
+              "deep-learning",
+              "from-scratch",
+              "generative-ai",
+              "gpt",
+              "language-model",
+              "large-language-models",
+              "llm",
+              "machine-learning",
+              "neural-networks",
+              "python",
+              "pytorch",
+              "transformers"
+            ],
+            "stargazers_count": 92252,
+            "forks_count": 14254,
+            "open_issues_count": 6,
+            "pushed_at": "2026-05-06T17:25:14Z",
+            "created_at": "2023-07-23T18:15:57Z",
+            "stars_delta_30d": 21
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "github_ai_recent_stars",
+          "source_name": "GitHub",
+          "title": "rasbt/LLMs-from-scratch (92,252 stars)",
+          "url": "https://github.com/rasbt/LLMs-from-scratch",
+          "published_at": "2026-05-06T17:25:14Z",
+          "published_at_source": "api",
+          "date_confidence": "medium"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "repo_trending",
+      "quality": "signal",
+      "one_liner": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step · Jupyter Notebook · NOASSERTION · ai · artificial-intelligence · chatbot · chatgpt · deep-learning · from-scratch · generative-ai · ",
+      "novelty": 0.891,
+      "novelty_label": "high",
+      "trust": 0.62,
+      "score": 0.733,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal",
@@ -2353,15 +2327,15 @@
         "source_role": "repo",
         "trust": 0.62,
         "kind_hint": "repo_trending",
-        "title": "vllm-project/vllm (79,475 stars)",
+        "title": "vllm-project/vllm (79,499 stars)",
         "url": "https://github.com/vllm-project/vllm",
         "original_url": "https://github.com/vllm-project/vllm",
         "summary": "A high-throughput and memory-efficient inference and serving engine for LLMs · Python · Apache-2.0 · amd · blackwell · cuda · deepseek · deepseek-v3 · gpt · gpt-oss · inference · kimi · llama · llm · llm-serving · model-serving · moe · openai · pytorch · qwen · qwen3 · tpu · transformer",
-        "published_at": "2026-05-09T08:20:33Z",
+        "published_at": "2026-05-09T18:23:00Z",
         "published_at_source": "api",
         "date_confidence": "medium",
         "engagement": {
-          "score": 79475
+          "score": 79499
         },
         "repo": {
           "full_name": "vllm-project/vllm",
@@ -2391,12 +2365,12 @@
             "tpu",
             "transformer"
           ],
-          "stargazers_count": 79475,
-          "forks_count": 16584,
-          "open_issues_count": 4871,
-          "pushed_at": "2026-05-09T08:20:33Z",
+          "stargazers_count": 79499,
+          "forks_count": 16593,
+          "open_issues_count": 4874,
+          "pushed_at": "2026-05-09T18:23:00Z",
           "created_at": "2023-02-09T11:23:20Z",
-          "stars_delta_30d": 28
+          "stars_delta_30d": 24
         }
       },
       "members": [
@@ -2407,15 +2381,15 @@
           "source_role": "repo",
           "trust": 0.62,
           "kind_hint": "repo_trending",
-          "title": "vllm-project/vllm (79,475 stars)",
+          "title": "vllm-project/vllm (79,499 stars)",
           "url": "https://github.com/vllm-project/vllm",
           "original_url": "https://github.com/vllm-project/vllm",
           "summary": "A high-throughput and memory-efficient inference and serving engine for LLMs · Python · Apache-2.0 · amd · blackwell · cuda · deepseek · deepseek-v3 · gpt · gpt-oss · inference · kimi · llama · llm · llm-serving · model-serving · moe · openai · pytorch · qwen · qwen3 · tpu · transformer",
-          "published_at": "2026-05-09T08:20:33Z",
+          "published_at": "2026-05-09T18:23:00Z",
           "published_at_source": "api",
           "date_confidence": "medium",
           "engagement": {
-            "score": 79475
+            "score": 79499
           },
           "repo": {
             "full_name": "vllm-project/vllm",
@@ -2445,12 +2419,12 @@
               "tpu",
               "transformer"
             ],
-            "stargazers_count": 79475,
-            "forks_count": 16584,
-            "open_issues_count": 4871,
-            "pushed_at": "2026-05-09T08:20:33Z",
+            "stargazers_count": 79499,
+            "forks_count": 16593,
+            "open_issues_count": 4874,
+            "pushed_at": "2026-05-09T18:23:00Z",
             "created_at": "2023-02-09T11:23:20Z",
-            "stars_delta_30d": 28
+            "stars_delta_30d": 24
           }
         }
       ],
@@ -2458,9 +2432,9 @@
         {
           "source_id": "github_ai_recent_stars",
           "source_name": "GitHub",
-          "title": "vllm-project/vllm (79,475 stars)",
+          "title": "vllm-project/vllm (79,499 stars)",
           "url": "https://github.com/vllm-project/vllm",
-          "published_at": "2026-05-09T08:20:33Z",
+          "published_at": "2026-05-09T18:23:00Z",
           "published_at_source": "api",
           "date_confidence": "medium"
         }
@@ -2472,11 +2446,113 @@
       "novelty": 0.622,
       "novelty_label": "medium",
       "trust": 0.62,
-      "score": 0.725,
+      "score": 0.732,
       "why_this_surfaced": [
         "meaningfully different from recent coverage",
         "classified as concrete builder or research signal",
         "fresh within the current refresh window",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Inspect docs, issue activity, and recent commits before depending on it."
+    },
+    {
+      "id": "1yeo49c",
+      "primary": {
+        "id": "1yeo49c",
+        "source_id": "github_ai_new_repos",
+        "source_name": "GitHub",
+        "source_role": "repo",
+        "trust": 0.6,
+        "kind_hint": "repo_trending",
+        "title": "cosmicstack-labs/mercury-agent (2,048 stars)",
+        "url": "https://github.com/cosmicstack-labs/mercury-agent",
+        "original_url": "https://github.com/cosmicstack-labs/mercury-agent",
+        "summary": "Soul-driven AI agent with permission-hardened tools, token budgets, and multi-channel access. Runs 24/7 from CLI or Telegram. · TypeScript · MIT · ai-agent · ai-assistant · llm",
+        "published_at": "2026-05-06T13:14:02Z",
+        "published_at_source": "api",
+        "date_confidence": "medium",
+        "engagement": {
+          "score": 2048
+        },
+        "repo": {
+          "full_name": "cosmicstack-labs/mercury-agent",
+          "html_url": "https://github.com/cosmicstack-labs/mercury-agent",
+          "description": "Soul-driven AI agent with permission-hardened tools, token budgets, and multi-channel access. Runs 24/7 from CLI or Telegram.",
+          "language": "TypeScript",
+          "license": "MIT",
+          "topics": [
+            "ai-agent",
+            "ai-assistant",
+            "llm"
+          ],
+          "stargazers_count": 2048,
+          "forks_count": 216,
+          "open_issues_count": 29,
+          "pushed_at": "2026-05-06T13:14:02Z",
+          "created_at": "2026-04-20T12:46:31Z",
+          "stars_delta_30d": 3
+        }
+      },
+      "members": [
+        {
+          "id": "1yeo49c",
+          "source_id": "github_ai_new_repos",
+          "source_name": "GitHub",
+          "source_role": "repo",
+          "trust": 0.6,
+          "kind_hint": "repo_trending",
+          "title": "cosmicstack-labs/mercury-agent (2,048 stars)",
+          "url": "https://github.com/cosmicstack-labs/mercury-agent",
+          "original_url": "https://github.com/cosmicstack-labs/mercury-agent",
+          "summary": "Soul-driven AI agent with permission-hardened tools, token budgets, and multi-channel access. Runs 24/7 from CLI or Telegram. · TypeScript · MIT · ai-agent · ai-assistant · llm",
+          "published_at": "2026-05-06T13:14:02Z",
+          "published_at_source": "api",
+          "date_confidence": "medium",
+          "engagement": {
+            "score": 2048
+          },
+          "repo": {
+            "full_name": "cosmicstack-labs/mercury-agent",
+            "html_url": "https://github.com/cosmicstack-labs/mercury-agent",
+            "description": "Soul-driven AI agent with permission-hardened tools, token budgets, and multi-channel access. Runs 24/7 from CLI or Telegram.",
+            "language": "TypeScript",
+            "license": "MIT",
+            "topics": [
+              "ai-agent",
+              "ai-assistant",
+              "llm"
+            ],
+            "stargazers_count": 2048,
+            "forks_count": 216,
+            "open_issues_count": 29,
+            "pushed_at": "2026-05-06T13:14:02Z",
+            "created_at": "2026-04-20T12:46:31Z",
+            "stars_delta_30d": 3
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "github_ai_new_repos",
+          "source_name": "GitHub",
+          "title": "cosmicstack-labs/mercury-agent (2,048 stars)",
+          "url": "https://github.com/cosmicstack-labs/mercury-agent",
+          "published_at": "2026-05-06T13:14:02Z",
+          "published_at_source": "api",
+          "date_confidence": "medium"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "repo_trending",
+      "quality": "signal",
+      "one_liner": "Soul-driven AI agent with permission-hardened tools, token budgets, and multi-channel access. Runs 24/7 from CLI or Telegram. · TypeScript · MIT · ai-agent · ai-assistant · llm",
+      "novelty": 0.892,
+      "novelty_label": "high",
+      "trust": 0.6,
+      "score": 0.729,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
         "source-native discussion or engagement is unusually high"
       ],
       "builder_action": "Inspect docs, issue activity, and recent commits before depending on it."
@@ -2711,131 +2787,6 @@
         "corroborated by 5 sources"
       ],
       "builder_action": "Review the changelog and test the release against your integration points."
-    },
-    {
-      "id": "14vd383",
-      "primary": {
-        "id": "14vd383",
-        "source_id": "github_ai_new_repos",
-        "source_name": "GitHub",
-        "source_role": "repo",
-        "trust": 0.6,
-        "kind_hint": "repo_trending",
-        "title": "oritera/Cairn (798 stars)",
-        "url": "https://github.com/oritera/Cairn",
-        "original_url": "https://github.com/oritera/Cairn",
-        "summary": "A AI general-purpose state-space search engine, validated first on autonomous penetration testing. · Python · AGPL-3.0 · ai · ai-agent · ai-cybersecurity · ai-hacker · ai-hacking · blackbox-testing · ctf · ctf-tools · llm · penetration-testing · pentesting · red-teaming · security-automation · security-tools",
-        "published_at": "2026-05-09T11:51:02Z",
-        "published_at_source": "api",
-        "date_confidence": "medium",
-        "engagement": {
-          "score": 798
-        },
-        "repo": {
-          "full_name": "oritera/Cairn",
-          "html_url": "https://github.com/oritera/Cairn",
-          "description": "A AI general-purpose state-space search engine, validated first on autonomous penetration testing.",
-          "language": "Python",
-          "license": "AGPL-3.0",
-          "topics": [
-            "ai",
-            "ai-agent",
-            "ai-cybersecurity",
-            "ai-hacker",
-            "ai-hacking",
-            "blackbox-testing",
-            "ctf",
-            "ctf-tools",
-            "llm",
-            "penetration-testing",
-            "pentesting",
-            "red-teaming",
-            "security-automation",
-            "security-tools"
-          ],
-          "stargazers_count": 798,
-          "forks_count": 68,
-          "open_issues_count": 1,
-          "pushed_at": "2026-05-09T11:51:02Z",
-          "created_at": "2026-04-19T03:28:41Z",
-          "stars_delta_30d": 13
-        }
-      },
-      "members": [
-        {
-          "id": "14vd383",
-          "source_id": "github_ai_new_repos",
-          "source_name": "GitHub",
-          "source_role": "repo",
-          "trust": 0.6,
-          "kind_hint": "repo_trending",
-          "title": "oritera/Cairn (798 stars)",
-          "url": "https://github.com/oritera/Cairn",
-          "original_url": "https://github.com/oritera/Cairn",
-          "summary": "A AI general-purpose state-space search engine, validated first on autonomous penetration testing. · Python · AGPL-3.0 · ai · ai-agent · ai-cybersecurity · ai-hacker · ai-hacking · blackbox-testing · ctf · ctf-tools · llm · penetration-testing · pentesting · red-teaming · security-automation · security-tools",
-          "published_at": "2026-05-09T11:51:02Z",
-          "published_at_source": "api",
-          "date_confidence": "medium",
-          "engagement": {
-            "score": 798
-          },
-          "repo": {
-            "full_name": "oritera/Cairn",
-            "html_url": "https://github.com/oritera/Cairn",
-            "description": "A AI general-purpose state-space search engine, validated first on autonomous penetration testing.",
-            "language": "Python",
-            "license": "AGPL-3.0",
-            "topics": [
-              "ai",
-              "ai-agent",
-              "ai-cybersecurity",
-              "ai-hacker",
-              "ai-hacking",
-              "blackbox-testing",
-              "ctf",
-              "ctf-tools",
-              "llm",
-              "penetration-testing",
-              "pentesting",
-              "red-teaming",
-              "security-automation",
-              "security-tools"
-            ],
-            "stargazers_count": 798,
-            "forks_count": 68,
-            "open_issues_count": 1,
-            "pushed_at": "2026-05-09T11:51:02Z",
-            "created_at": "2026-04-19T03:28:41Z",
-            "stars_delta_30d": 13
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "github_ai_new_repos",
-          "source_name": "GitHub",
-          "title": "oritera/Cairn (798 stars)",
-          "url": "https://github.com/oritera/Cairn",
-          "published_at": "2026-05-09T11:51:02Z",
-          "published_at_source": "api",
-          "date_confidence": "medium"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "repo_trending",
-      "quality": "mixed",
-      "one_liner": "A AI general-purpose state-space search engine, validated first on autonomous penetration testing. · Python · AGPL-3.0 · ai · ai-agent · ai-cybersecurity · ai-hacker · ai-hacking · blackbox-testing · ",
-      "novelty": 0.844,
-      "novelty_label": "high",
-      "trust": 0.6,
-      "score": 0.68,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal",
-        "fresh within the current refresh window",
-        "source-native discussion or engagement is unusually high"
-      ],
-      "builder_action": "Inspect docs, issue activity, and recent commits before depending on it."
     },
     {
       "id": "1f7o1x2",
