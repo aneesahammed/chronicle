@@ -1,24 +1,13 @@
 {
-  "generated_at": "2026-05-09T06:05:41.693Z",
-  "last_successful_generated_at": "2026-05-09T06:05:41.693Z",
-  "refresh_status": "partial",
+  "generated_at": "2026-05-09T12:38:03.911Z",
+  "last_successful_generated_at": "2026-05-09T12:38:03.911Z",
+  "refresh_status": "ok",
   "classification_mode": "deterministic",
   "window_hours": 720,
   "source_total": 7,
-  "source_ok": 5,
-  "source_failed": 2,
-  "failed_sources": [
-    {
-      "id": "yt_openai",
-      "name": "OpenAI YouTube",
-      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A"
-    },
-    {
-      "id": "yt_nvidia_developer",
-      "name": "NVIDIA Developer YouTube",
-      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCBHcMCGaiJhv-ESTcWGJPcw"
-    }
-  ],
+  "source_ok": 7,
+  "source_failed": 0,
+  "failed_sources": [],
   "source_health": [
     {
       "id": "yt_deeplearning_ai",
@@ -43,20 +32,22 @@
     {
       "id": "yt_openai",
       "name": "OpenAI YouTube",
-      "status": "failed",
-      "fetched_count": 0,
-      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A",
-      "fresh_count": 0,
-      "stale_count": 0
+      "status": "ok",
+      "fetched_count": 1,
+      "fresh_count": 1,
+      "stale_count": 0,
+      "oldest_published_at": "2026-04-29T20:59:11.000Z",
+      "newest_published_at": "2026-04-29T20:59:11.000Z"
     },
     {
       "id": "yt_nvidia_developer",
       "name": "NVIDIA Developer YouTube",
-      "status": "failed",
-      "fetched_count": 0,
-      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCBHcMCGaiJhv-ESTcWGJPcw",
-      "fresh_count": 0,
-      "stale_count": 0
+      "status": "ok",
+      "fetched_count": 7,
+      "fresh_count": 7,
+      "stale_count": 0,
+      "oldest_published_at": "2026-04-29T01:28:26.000Z",
+      "newest_published_at": "2026-05-08T13:06:04.000Z"
     },
     {
       "id": "yt_huggingface",
@@ -89,147 +80,509 @@
       "newest_published_at": "2026-04-23T06:14:22.000Z"
     }
   ],
-  "count": 12,
+  "count": 16,
   "clusters": [
     {
-      "id": "1yzkk6u",
+      "id": "5wkofk",
       "primary": {
-        "id": "1yzkk6u",
-        "source_id": "yt_microsoft_365_developer",
-        "source_name": "Microsoft 365 Developer YouTube",
+        "id": "5wkofk",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
         "source_role": "learning",
-        "trust": 0.72,
+        "trust": 0.78,
         "kind_hint": "video",
-        "title": "Build an MCP App with Interactive Widgets | Copilot Developer Camp Lab",
-        "url": "https://youtube.com/watch?v=BDa2Iv9NrZk",
-        "original_url": "https://www.youtube.com/watch?v=BDa2Iv9NrZk",
-        "image_url": "https://i.ytimg.com/vi/BDa2Iv9NrZk/hqdefault.jpg",
+        "title": "CUDA Live: CUDA-Q Academic Demo Day",
+        "url": "https://youtube.com/watch?v=xCm5VJyo1Z0",
+        "original_url": "https://www.youtube.com/watch?v=xCm5VJyo1Z0",
+        "image_url": "https://i.ytimg.com/vi/xCm5VJyo1Z0/hqdefault.jpg",
         "image_source": "youtube_thumbnail",
-        "published_at": "2026-04-23T06:14:22.000Z",
+        "published_at": "2026-05-05T22:31:20.000Z",
         "published_at_source": "feed",
         "date_confidence": "high",
         "learning": {
           "provider": "YouTube",
-          "channel_id": "UCV_6HOhwxYLXAGd-JOqKPoQ",
-          "video_id": "BDa2Iv9NrZk"
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "xCm5VJyo1Z0"
         }
       },
       "members": [
         {
-          "id": "1yzkk6u",
-          "source_id": "yt_microsoft_365_developer",
-          "source_name": "Microsoft 365 Developer YouTube",
+          "id": "5wkofk",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
           "source_role": "learning",
-          "trust": 0.72,
+          "trust": 0.78,
           "kind_hint": "video",
-          "title": "Build an MCP App with Interactive Widgets | Copilot Developer Camp Lab",
-          "url": "https://youtube.com/watch?v=BDa2Iv9NrZk",
-          "original_url": "https://www.youtube.com/watch?v=BDa2Iv9NrZk",
-          "image_url": "https://i.ytimg.com/vi/BDa2Iv9NrZk/hqdefault.jpg",
+          "title": "CUDA Live: CUDA-Q Academic Demo Day",
+          "url": "https://youtube.com/watch?v=xCm5VJyo1Z0",
+          "original_url": "https://www.youtube.com/watch?v=xCm5VJyo1Z0",
+          "image_url": "https://i.ytimg.com/vi/xCm5VJyo1Z0/hqdefault.jpg",
           "image_source": "youtube_thumbnail",
-          "published_at": "2026-04-23T06:14:22.000Z",
+          "published_at": "2026-05-05T22:31:20.000Z",
           "published_at_source": "feed",
           "date_confidence": "high",
           "learning": {
             "provider": "YouTube",
-            "channel_id": "UCV_6HOhwxYLXAGd-JOqKPoQ",
-            "video_id": "BDa2Iv9NrZk"
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "xCm5VJyo1Z0"
           }
         }
       ],
       "source_trail": [
         {
-          "source_id": "yt_microsoft_365_developer",
-          "source_name": "Microsoft 365 Developer YouTube",
-          "title": "Build an MCP App with Interactive Widgets | Copilot Developer Camp Lab",
-          "url": "https://youtube.com/watch?v=BDa2Iv9NrZk",
-          "published_at": "2026-04-23T06:14:22.000Z",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "CUDA Live: CUDA-Q Academic Demo Day",
+          "url": "https://youtube.com/watch?v=xCm5VJyo1Z0",
+          "published_at": "2026-05-05T22:31:20.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "also_seen_on": [],
       "kind": "video",
-      "quality": "mixed",
+      "quality": "signal",
       "one_liner": "",
-      "novelty": 0.747,
-      "novelty_label": "medium",
-      "trust": 0.72,
-      "score": 0.561,
+      "novelty": 0.949,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.747,
       "why_this_surfaced": [
-        "meaningfully different from recent coverage",
-        "classified as useful but lower-confidence signal"
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
       ],
       "builder_action": "Queue it for focused learning if the topic matches your current work."
     },
     {
-      "id": "bq816r",
+      "id": "i0g9lj",
       "primary": {
-        "id": "bq816r",
-        "source_id": "yt_google_developers",
-        "source_name": "Google for Developers YouTube",
+        "id": "i0g9lj",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
         "source_role": "learning",
-        "trust": 0.72,
+        "trust": 0.78,
         "kind_hint": "video",
-        "title": "Building Voice Agents with Gemini Live API and Agora’s Conversational AI",
-        "url": "https://youtube.com/watch?v=2ltcbA2CCTo",
-        "original_url": "https://www.youtube.com/watch?v=2ltcbA2CCTo",
-        "image_url": "https://i.ytimg.com/vi/2ltcbA2CCTo/hqdefault.jpg",
+        "title": "Dev Community Live: SJSU Hackathon Winners – Building Impactful Agents",
+        "url": "https://youtube.com/watch?v=aXb0aZJhdHg",
+        "original_url": "https://www.youtube.com/watch?v=aXb0aZJhdHg",
+        "image_url": "https://i.ytimg.com/vi/aXb0aZJhdHg/hqdefault.jpg",
         "image_source": "youtube_thumbnail",
-        "published_at": "2026-04-29T19:00:02.000Z",
+        "published_at": "2026-04-30T13:19:01.000Z",
         "published_at_source": "feed",
         "date_confidence": "high",
         "learning": {
           "provider": "YouTube",
-          "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-          "video_id": "2ltcbA2CCTo"
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "aXb0aZJhdHg"
         }
       },
       "members": [
         {
-          "id": "bq816r",
-          "source_id": "yt_google_developers",
-          "source_name": "Google for Developers YouTube",
+          "id": "i0g9lj",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
           "source_role": "learning",
-          "trust": 0.72,
+          "trust": 0.78,
           "kind_hint": "video",
-          "title": "Building Voice Agents with Gemini Live API and Agora’s Conversational AI",
-          "url": "https://youtube.com/watch?v=2ltcbA2CCTo",
-          "original_url": "https://www.youtube.com/watch?v=2ltcbA2CCTo",
-          "image_url": "https://i.ytimg.com/vi/2ltcbA2CCTo/hqdefault.jpg",
+          "title": "Dev Community Live: SJSU Hackathon Winners – Building Impactful Agents",
+          "url": "https://youtube.com/watch?v=aXb0aZJhdHg",
+          "original_url": "https://www.youtube.com/watch?v=aXb0aZJhdHg",
+          "image_url": "https://i.ytimg.com/vi/aXb0aZJhdHg/hqdefault.jpg",
           "image_source": "youtube_thumbnail",
-          "published_at": "2026-04-29T19:00:02.000Z",
+          "published_at": "2026-04-30T13:19:01.000Z",
           "published_at_source": "feed",
           "date_confidence": "high",
           "learning": {
             "provider": "YouTube",
-            "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-            "video_id": "2ltcbA2CCTo"
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "aXb0aZJhdHg"
+          }
+        },
+        {
+          "id": "fc3geq",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "Dev Community Live: GTC Vibe Hack Winners – Building Impactful Agents",
+          "url": "https://youtube.com/watch?v=ffb1mQQbj9s",
+          "original_url": "https://www.youtube.com/watch?v=ffb1mQQbj9s",
+          "image_url": "https://i.ytimg.com/vi/ffb1mQQbj9s/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-05-01T22:30:22.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "ffb1mQQbj9s"
+          }
+        },
+        {
+          "id": "18gon5f",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "Dev Community Live: GTC Vibe Hack Winners – Building Impactful Agents",
+          "url": "https://youtube.com/watch?v=TcL-7NFbnwE",
+          "original_url": "https://www.youtube.com/watch?v=TcL-7NFbnwE",
+          "image_url": "https://i.ytimg.com/vi/TcL-7NFbnwE/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-05-08T13:06:04.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "TcL-7NFbnwE"
           }
         }
       ],
       "source_trail": [
         {
-          "source_id": "yt_google_developers",
-          "source_name": "Google for Developers YouTube",
-          "title": "Building Voice Agents with Gemini Live API and Agora’s Conversational AI",
-          "url": "https://youtube.com/watch?v=2ltcbA2CCTo",
-          "published_at": "2026-04-29T19:00:02.000Z",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "Dev Community Live: SJSU Hackathon Winners – Building Impactful Agents",
+          "url": "https://youtube.com/watch?v=aXb0aZJhdHg",
+          "published_at": "2026-04-30T13:19:01.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        },
+        {
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "Dev Community Live: GTC Vibe Hack Winners – Building Impactful Agents",
+          "url": "https://youtube.com/watch?v=ffb1mQQbj9s",
+          "published_at": "2026-05-01T22:30:22.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        },
+        {
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "Dev Community Live: GTC Vibe Hack Winners – Building Impactful Agents",
+          "url": "https://youtube.com/watch?v=TcL-7NFbnwE",
+          "published_at": "2026-05-08T13:06:04.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [
+        {
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "Dev Community Live: GTC Vibe Hack Winners – Building Impactful Agents",
+          "url": "https://youtube.com/watch?v=ffb1mQQbj9s",
+          "published_at": "2026-05-01T22:30:22.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        },
+        {
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "Dev Community Live: GTC Vibe Hack Winners – Building Impactful Agents",
+          "url": "https://youtube.com/watch?v=TcL-7NFbnwE",
+          "published_at": "2026-05-08T13:06:04.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.815,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.732,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "corroborated by 3 sources"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "10sride",
+      "primary": {
+        "id": "10sride",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "How the Developer Community Builds Sub-Agents with NVIDIA Nemotron 3 Nano Omni | Nemotron Labs",
+        "url": "https://youtube.com/watch?v=OymqGF1TxYc",
+        "original_url": "https://www.youtube.com/watch?v=OymqGF1TxYc",
+        "image_url": "https://i.ytimg.com/vi/OymqGF1TxYc/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-05-06T07:20:07.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "OymqGF1TxYc"
+        }
+      },
+      "members": [
+        {
+          "id": "10sride",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "How the Developer Community Builds Sub-Agents with NVIDIA Nemotron 3 Nano Omni | Nemotron Labs",
+          "url": "https://youtube.com/watch?v=OymqGF1TxYc",
+          "original_url": "https://www.youtube.com/watch?v=OymqGF1TxYc",
+          "image_url": "https://i.ytimg.com/vi/OymqGF1TxYc/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-05-06T07:20:07.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "OymqGF1TxYc"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "How the Developer Community Builds Sub-Agents with NVIDIA Nemotron 3 Nano Omni | Nemotron Labs",
+          "url": "https://youtube.com/watch?v=OymqGF1TxYc",
+          "published_at": "2026-05-06T07:20:07.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "also_seen_on": [],
       "kind": "video",
-      "quality": "mixed",
+      "quality": "signal",
       "one_liner": "",
-      "novelty": 0.742,
-      "novelty_label": "medium",
-      "trust": 0.72,
-      "score": 0.559,
+      "novelty": 0.835,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.713,
       "why_this_surfaced": [
-        "meaningfully different from recent coverage",
-        "classified as useful but lower-confidence signal"
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1mehkc5",
+      "primary": {
+        "id": "1mehkc5",
+        "source_id": "yt_openai",
+        "source_name": "OpenAI YouTube",
+        "source_role": "learning",
+        "trust": 0.82,
+        "kind_hint": "video",
+        "title": "Build Hour: Workspace agents in ChatGPT",
+        "url": "https://youtube.com/watch?v=kktBVmjA19A",
+        "original_url": "https://www.youtube.com/watch?v=kktBVmjA19A",
+        "image_url": "https://i.ytimg.com/vi/kktBVmjA19A/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-04-29T20:59:11.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
+          "video_id": "kktBVmjA19A"
+        }
+      },
+      "members": [
+        {
+          "id": "1mehkc5",
+          "source_id": "yt_openai",
+          "source_name": "OpenAI YouTube",
+          "source_role": "learning",
+          "trust": 0.82,
+          "kind_hint": "video",
+          "title": "Build Hour: Workspace agents in ChatGPT",
+          "url": "https://youtube.com/watch?v=kktBVmjA19A",
+          "original_url": "https://www.youtube.com/watch?v=kktBVmjA19A",
+          "image_url": "https://i.ytimg.com/vi/kktBVmjA19A/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-04-29T20:59:11.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
+            "video_id": "kktBVmjA19A"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_openai",
+          "source_name": "OpenAI YouTube",
+          "title": "Build Hour: Workspace agents in ChatGPT",
+          "url": "https://youtube.com/watch?v=kktBVmjA19A",
+          "published_at": "2026-04-29T20:59:11.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.788,
+      "novelty_label": "high",
+      "trust": 0.82,
+      "score": 0.708,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "2qzomr",
+      "primary": {
+        "id": "2qzomr",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "Build Optimized Supply Chains with NVIDIA cuOpt Agents and Skills",
+        "url": "https://youtube.com/watch?v=8mYqKGuAsFQ",
+        "original_url": "https://www.youtube.com/watch?v=8mYqKGuAsFQ",
+        "image_url": "https://i.ytimg.com/vi/8mYqKGuAsFQ/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-05-04T21:59:42.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "8mYqKGuAsFQ"
+        }
+      },
+      "members": [
+        {
+          "id": "2qzomr",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "Build Optimized Supply Chains with NVIDIA cuOpt Agents and Skills",
+          "url": "https://youtube.com/watch?v=8mYqKGuAsFQ",
+          "original_url": "https://www.youtube.com/watch?v=8mYqKGuAsFQ",
+          "image_url": "https://i.ytimg.com/vi/8mYqKGuAsFQ/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-05-04T21:59:42.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "8mYqKGuAsFQ"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "Build Optimized Supply Chains with NVIDIA cuOpt Agents and Skills",
+          "url": "https://youtube.com/watch?v=8mYqKGuAsFQ",
+          "published_at": "2026-05-04T21:59:42.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.807,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.705,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "u0rs7e",
+      "primary": {
+        "id": "u0rs7e",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "Build Video Analytics AI Agents with Skills",
+        "url": "https://youtube.com/watch?v=-kiU62KourY",
+        "original_url": "https://www.youtube.com/watch?v=-kiU62KourY",
+        "image_url": "https://i.ytimg.com/vi/-kiU62KourY/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-04-29T01:28:26.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "-kiU62KourY"
+        }
+      },
+      "members": [
+        {
+          "id": "u0rs7e",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "Build Video Analytics AI Agents with Skills",
+          "url": "https://youtube.com/watch?v=-kiU62KourY",
+          "original_url": "https://www.youtube.com/watch?v=-kiU62KourY",
+          "image_url": "https://i.ytimg.com/vi/-kiU62KourY/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-04-29T01:28:26.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "-kiU62KourY"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "Build Video Analytics AI Agents with Skills",
+          "url": "https://youtube.com/watch?v=-kiU62KourY",
+          "published_at": "2026-04-29T01:28:26.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.75,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.688,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
       ],
       "builder_action": "Queue it for focused learning if the topic matches your current work."
     },
