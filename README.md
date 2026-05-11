@@ -16,6 +16,9 @@ state without adding a database or separate storage service.
 
 ## Pipeline
 
+For a beginner-friendly deep dive with Mermaid diagrams, see
+[Chronicle Pipeline Guide](docs/chronicle-pipeline-guide.md).
+
 ```
 sources → fetch → canonicalize → window-filter → cluster
                                                      ↓
