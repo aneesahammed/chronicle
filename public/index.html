@@ -1140,7 +1140,7 @@
       display: grid;
       gap: 14px;
       min-height: 100%;
-      perspective: 1200px;
+      perspective: 900px;
       perspective-origin: 50% 50%;
     }
     .reader-card {
@@ -1167,8 +1167,12 @@
       transform:
         translate3d(0, var(--reader-lift, 0px), 0)
         rotateX(var(--reader-tilt, 0deg))
+        scaleX(var(--reader-scaleX, 1))
         scale(var(--reader-scale, 1));
       transform-origin: var(--reader-fold-origin, 50% 50%);
+      transition:
+        opacity 240ms cubic-bezier(0.16, 1, 0.3, 1),
+        transform 240ms cubic-bezier(0.16, 1, 0.3, 1);
       will-change: transform, opacity;
       backface-visibility: hidden;
     }
@@ -1415,7 +1419,9 @@
       .reader-card-frame {
         opacity: 1 !important;
         transform: none !important;
+        transition: none !important;
         animation: none !important;
+        --reader-scaleX: 1 !important;
       }
       .reader-card-frame::after {
         display: none;
@@ -3997,32 +4003,58 @@ function updateReaderScrollMotion() {
     const raw = (card.offsetTop - deck.scrollTop) / height;
     const progress = Math.max(-1, Math.min(1, raw));
     const distance = Math.abs(progress);
-    if (distance < 0.015) {
-      clearReaderScrollMotion(frame);
+    if (distance < 0.012) {
+      restReaderScrollMotion(frame);
       return;
     }
-    const eased = Math.sign(progress) * Math.sin(Math.min(1, distance) * Math.PI / 2);
-    const fallbackVisibility = Math.max(0, 1 - distance);
+    // cylinder curve: sin maps linear scroll distance onto a drum arc
+    const arc = Math.sin(Math.min(1, distance) * Math.PI / 2);
+    const eased = Math.sign(progress) * arc;
+    // arrival: 0 = fully off-screen, 1 = snapped
+    const fallbackArrival = Math.max(0, 1 - distance);
     const observedVisibility = Number.isFinite(index) ? state.reader.visibility.get(index) : undefined;
-    const visibility = Math.max(fallbackVisibility, Number.isFinite(observedVisibility) ? observedVisibility : 0);
-    const arrival = Math.max(0, Math.min(1, visibility));
-    const opacity = 0.62 + Math.pow(arrival, 0.72) * 0.38;
-    frame.style.setProperty("--reader-tilt", `${(-eased * 6.2).toFixed(3)}deg`);
-    frame.style.setProperty("--reader-lift", `${(eased * 9.5).toFixed(2)}px`);
-    frame.style.setProperty("--reader-scale", String(Math.max(0.98, 1 - distance * 0.02).toFixed(4)));
-    frame.style.setProperty("--reader-opacity", String(Math.min(0.995, opacity).toFixed(4)));
-    frame.style.setProperty("--reader-shade", String(Math.min(0.14, distance * 0.14).toFixed(4)));
+    const arrival = Math.max(fallbackArrival, Number.isFinite(observedVisibility) ? observedVisibility : 0);
+    // opacity: 0.4 off-screen → 1.0 snapped (pow < 1 keeps mid-scroll visible)
+    const opacity = 0.4 + Math.pow(arrival, 0.45) * 0.6;
+    // tilt: stronger angle gives the cylindrical drum feel
+    const tilt = -eased * 14;
+    // lift: cards roll up/down as if on a drum surface
+    const lift = eased * 18;
+    // scaleX narrows card width as it rolls to the far edge of the cylinder
+    const scaleX = 1 - arc * 0.15;
+    // uniform scale: slight shrink adds depth without fighting scaleX
+    const scale = Math.max(0.96, 1 - distance * 0.04);
+    // shade darkens cards rolling away
+    const shade = Math.min(0.32, arc * 0.32);
+    frame.style.setProperty("--reader-tilt", `${tilt.toFixed(3)}deg`);
+    frame.style.setProperty("--reader-lift", `${lift.toFixed(2)}px`);
+    frame.style.setProperty("--reader-scaleX", scaleX.toFixed(4));
+    frame.style.setProperty("--reader-scale", scale.toFixed(4));
+    frame.style.setProperty("--reader-opacity", Math.min(0.999, opacity).toFixed(4));
+    frame.style.setProperty("--reader-shade", shade.toFixed(4));
     frame.style.setProperty("--reader-fold-origin", progress < 0 ? "50% 0%" : "50% 100%");
   });
 }
 
-function clearReaderScrollMotion(card) {
-  card.style.removeProperty("--reader-tilt");
-  card.style.removeProperty("--reader-lift");
-  card.style.removeProperty("--reader-scale");
-  card.style.removeProperty("--reader-opacity");
-  card.style.removeProperty("--reader-shade");
-  card.style.removeProperty("--reader-fold-origin");
+// Set vars to their CSS-default resting values so the CSS transition eases them in.
+function restReaderScrollMotion(frame) {
+  frame.style.setProperty("--reader-tilt", "0deg");
+  frame.style.setProperty("--reader-lift", "0px");
+  frame.style.setProperty("--reader-scaleX", "1");
+  frame.style.setProperty("--reader-scale", "1");
+  frame.style.setProperty("--reader-opacity", "1");
+  frame.style.setProperty("--reader-shade", "0");
+}
+
+// Hard-remove all vars (no transition) — only used for prefers-reduced-motion.
+function clearReaderScrollMotion(frame) {
+  frame.style.removeProperty("--reader-tilt");
+  frame.style.removeProperty("--reader-lift");
+  frame.style.removeProperty("--reader-scaleX");
+  frame.style.removeProperty("--reader-scale");
+  frame.style.removeProperty("--reader-opacity");
+  frame.style.removeProperty("--reader-shade");
+  frame.style.removeProperty("--reader-fold-origin");
 }
 
 function nearestReaderIndex() {
