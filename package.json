@@ -17,7 +17,8 @@
     "verify:feed": "node scripts/verify-chronicle-feed.mjs public/feed.json",
     "verify:repos": "node scripts/verify-chronicle-feed.mjs public/repos.json",
     "verify:learning": "node scripts/verify-chronicle-feed.mjs public/learning.json",
-    "verify:all": "npm run verify:feed && npm run verify:repos && npm run verify:learning"
+    "verify:all": "npm run verify:feed && npm run verify:repos && npm run verify:learning",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
@@ -26,6 +27,7 @@
     "yaml": "^2.6.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.59.1",
     "@types/node": "^22.0.0",
     "typescript": "^5.6.0"
   }

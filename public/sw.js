@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v2";
+const CACHE_VERSION = "v3";
 const CACHE_PREFIX = "chronicle-";
 const SHELL_CACHE = `${CACHE_PREFIX}shell-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `${CACHE_PREFIX}runtime-${CACHE_VERSION}`;
@@ -14,6 +14,7 @@ const APP_SHELL = [
   "/atom.xml",
   "/feed.schema.json",
   "/manifest.webmanifest",
+  "/mobile-reader-state.js",
   "/sw-register.js",
   "/favicon.svg",
   "/icon-192.png",

@@ -1319,7 +1319,44 @@ The same ToolGraph cluster can become HTML like this:
 
 A crawler, feed preview tool, or no-JS browser can read that directly from `public/index.html`. JavaScript can still enhance filtering and interactions later.
 
-## 18. Failure Handling
+## 18. Frontend Enhancement
+
+The browser starts from the static HTML and progressively enhances it.
+
+```mermaid
+flowchart TD
+  A["Static HTML already contains feed content"] --> B["Client fetches fresh JSON"]
+  B --> C["Render normal list into #feed"]
+  C --> D{"Mobile reader available?"}
+  D -- "yes" --> E["Add mobile flip reader over the list"]
+  D -- "no" --> F["Keep normal list visible"]
+  E --> G["Swipe, keyboard, Index sheet, local resume"]
+```
+
+The order matters. Chronicle always renders the normal list before adding the mobile reader. If the reader code fails, if Pointer Events are unavailable, if JavaScript is disabled, or if JSON cannot be fetched, the user still has the regular list or the original static HTML.
+
+The list and the mobile reader use separate localStorage records:
+
+| Key | Used by | Shape |
+| --- | --- | --- |
+| `chronicle-progress:{day}` | Desktop and list reading progress. | `{ "y": 1200, "index": 7, "ts": 1778500000000 }` |
+| `chronicle-reader:v1:{day}:{tab}:{filterSignature}` | Mobile flip reader progress. | `{ "itemKey": "url:https://example.com/a", "index": 7, "ts": 1778500000000 }` |
+
+The mobile key includes the day, tab, and filter signature so Signal, Repos, Learning, archives, and filtered views do not fight over one saved position. The reader stores a stable item key first and index second; after filters change, Chronicle tries to keep the same item, then falls back to the nearest valid index.
+
+Gesture handling is shared with pull-to-refresh. The first small movement decides ownership:
+
+| Movement | Owner |
+| --- | --- |
+| Downward swipe on the first reader card | Pull-to-refresh. |
+| Upward or downward reader navigation | Mobile reader. |
+| Mostly horizontal movement | Cancel so links and browser gestures stay predictable. |
+
+The reader respects `prefers-reduced-motion`. In that mode the same navigation works, but the page-fold animation collapses to near-instant opacity and transform changes.
+
+When changing inline shell behavior in `public/index.html` or adding a shell script such as `public/mobile-reader-state.js`, bump `CACHE_VERSION` in `public/sw.js`. The service worker serves navigations network-first, but the shell cache is still versioned, so this bump prevents old app shells from lingering across PWA sessions.
+
+## 19. Failure Handling
 
 Chronicle is built to degrade instead of collapsing when one dependency fails.
 
@@ -1373,7 +1410,7 @@ That is better than failing the entire daily brief because one source was slow.
 
 Now assume the renderer cannot find the required static marker in `public/index.html`. That is different. The generated HTML might be broken, so Chronicle should fail the workflow loudly instead of quietly deploying stale content.
 
-## 19. GitHub Actions Workflow
+## 20. GitHub Actions Workflow
 
 The workflow is the production scheduler.
 
@@ -1424,7 +1461,7 @@ For a successful manual run on 2026-05-07, the workflow might do this:
 
 The user only sees the finished static site. The heavy work happened before deployment.
 
-## 20. How To Debug The Pipeline
+## 21. How To Debug The Pipeline
 
 Start with these commands:
 
@@ -1483,7 +1520,7 @@ Example output:
 
 If the arXiv total is higher than expected, inspect both `src/sources/registry.yaml` fetch limits and `src/pipeline/diversity.ts` source-family caps.
 
-## 21. Where To Change Things
+## 22. Where To Change Things
 
 | Goal | File |
 | --- | --- |
@@ -1497,6 +1534,8 @@ If the arXiv total is higher than expected, inspect both `src/sources/registry.y
 | Change source caps or diversity | `src/pipeline/diversity.ts` and `src/pipeline/source-family-config.json` |
 | Change Top News | `src/enrichment/top-news.ts` |
 | Change generated HTML/RSS/Atom | `src/render/static-site.ts` |
+| Change mobile reader UI | `public/index.html` and `public/mobile-reader-state.js` |
+| Change service worker shell caching | `public/sw.js` |
 | Change pipeline orchestration | `src/index.ts` |
 | Change workflow schedule/deploy | `.github/workflows/update-feed.yml` |
 
@@ -1511,7 +1550,7 @@ If the feed shows too many arXiv papers, do not start in the renderer. Start whe
 
 If YouTube Shorts appear in learning, start in `src/sources/fetchers.ts` because that is where YouTube RSS entries are filtered before they become learning feed candidates.
 
-## 22. Common Product Questions
+## 23. Common Product Questions
 
 ### Why Not Just Sort By Date?
 
@@ -1533,7 +1572,7 @@ Some source families are high volume. arXiv is the clearest example. Without cap
 
 Static rendering makes the site useful to crawlers, feed previews, and no-JS users. JSON is still useful for client-side enhancement, but the core content should be visible in HTML.
 
-## 23. Glossary
+## 24. Glossary
 
 | Term | Meaning |
 | --- | --- |
@@ -1550,7 +1589,7 @@ Static rendering makes the site useful to crawlers, feed previews, and no-JS use
 | Source health | Per-source fetch status included in output metadata. |
 | Daily archive | Permanent dated snapshot of the main feed. |
 
-## 24. One-Page Summary
+## 25. One-Page Summary
 
 ```mermaid
 flowchart TD

@@ -34,6 +34,7 @@
 <!-- CHRONICLE_JSONLD_START -->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Chronicle AI signal brief","url":"https://chronicle.tinycrafts.ai/","datePublished":"2026-05-11T13:20:10.202Z","numberOfItems":48,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://arxiv.org/abs/2605.06673","name":"Domain-level metacognitive monitoring in frontier LLMs: A 33-model atlas","description":"Analyzes metacognitive quality variation across 33 LLMs in MMLU domains"},{"@type":"ListItem","position":2,"url":"https://the-decoder.com/nvidia-pumps-over-40-billion-dollars-into-ai-partners-so-far-in-2026","name":"Nvidia pumps over 40 billion dollars into AI partners so far in 2026","description":"Nvidia invests over $40B in AI partners in 2025"},{"@type":"ListItem","position":3,"url":"https://arxiv.org/abs/2605.06676","name":"LKV: End-to-End Learning of Head-wise Budgets and Token Selection for LLM KV Cache Eviction","description":"End-to-end learning optimizes LLM KV cache eviction budgets"},{"@type":"ListItem","position":4,"url":"https://infoq.com/articles/local-first-ai-inference-cloud","name":"Article: Local-First AI Inference: A Cloud Architecture Pattern for Cost-Effective Document Processing","description":"Local-first AI pattern reduces document processing API costs by 75%"},{"@type":"ListItem","position":5,"url":"https://the-decoder.com/generative-ai-turns-identity-theft-into-an-industrial-scale-operation","name":"Generative AI turns identity theft into an industrial-scale operation","description":"Generative AI fuels industrial-scale identity theft"},{"@type":"ListItem","position":6,"url":"https://old.reddit.com/r/LocalLLaMA/comments/1t9zmbb/new_gguf_uploads_on_hf_nearly_doubled_in_2_months","name":"New GGUF uploads on HF nearly doubled in 2 months","description":"GGUF model uploads on Hugging Face double in 2 months"},{"@type":"ListItem","position":7,"url":"https://infoq.com/news/2026/05/netflix-ml-graph","name":"Netflix Introduces ‘Model Lifecycle Graph’ to Scale Enterprise Machine Learning","description":"Netflix introduces Model Lifecycle Graph for ML system scaling"},{"@type":"ListItem","position":8,"url":"https://old.reddit.com/r/LocalLLaMA/comments/1t9tsro/markdown_browser_for_llms","name":"Markdown browser for LLMs","description":"Markdown web renderer for LLMs enables native web interaction"},{"@type":"ListItem","position":9,"url":"https://openai.com/index/openai-campus-network-student-club-interest-form","name":"OpenAI Campus Network: Student club interest form","description":"OpenAI launches campus network for student AI clubs"},{"@type":"ListItem","position":10,"url":"https://old.reddit.com/r/LocalLLaMA/comments/1ta1og5/psa_watch_out_for_extra_spaces_in","name":"PSA: Watch out for extra spaces in chat-template-kwargs when using Qwen3.6 with llama-server","description":"Extra spaces in Qwen3.6 config cause issues with llama-server"},{"@type":"ListItem","position":11,"url":"https://old.reddit.com/r/LocalLLaMA/comments/1t9voxs/exllamav3_major_updates","name":"ExLlamaV3 Major Updates!","description":"ExLlamaV3 introduces performance enhancements and DFlash support"},{"@type":"ListItem","position":12,"url":"https://arxiv.org/abs/2605.06678","name":"A Wasserstein GAN-based climate scenario generator for risk management and insurance: the case of soil subsidence","description":"Wasserstein GAN generates climate scenarios for soil subsidence risk"},{"@type":"ListItem","position":13,"url":"https://old.reddit.com/r/LocalLLaMA/comments/1t9yxjx/how_to_finetune_llms_on_amd_strix_halo_and_other","name":"How to Fine-Tune LLMs on AMD Strix Halo and Other Exotic AMD Hardware","description":"Tutorial on fine-tuning LLMs using AMD hardware and RoCM"},{"@type":"ListItem","position":14,"url":"https://unix.foo/posts/local-ai-needs-to-be-norm","name":"Local AI needs to be the norm","description":"Opinion piece advocates for local AI adoption"},{"@type":"ListItem","position":15,"url":"https://openai.com/index/openai-launches-the-deployment-company","name":"OpenAI launches DeployCo to help businesses build around intelligence","description":"OpenAI launches DeployCo for enterprise AI deployment"},{"@type":"ListItem","position":16,"url":"https://dunkels.com/adam/claude-user-space-ip-stack-ping","name":"How Fast Does Claude, Acting as a User Space IP Stack, Respond to Pings?","description":"Claude's performance as a user-space IP stack tested with pings"},{"@type":"ListItem","position":17,"url":"https://old.reddit.com/r/LocalLLaMA/comments/1t9jub0/sharing_cull_my_opensource_dataset_tool_for_image","name":"Sharing \"cull\" : my open-source dataset tool for image scraping \u0026 classification \u0026 captioning pipeline","description":"Open-source tool 'cull' for AI image dataset curation"},{"@type":"ListItem","position":18,"url":"https://wired.com/story/cuda-proves-nvidia-is-a-software-company","name":"CUDA Proves Nvidia Is a Software Company","description":"WIRED argues CUDA positions Nvidia as a software company"},{"@type":"ListItem","position":19,"url":"https://jamesshore.com/v2/blog/2026/you-need-ai-that-reduces-your-maintenance-costs","name":"An AI coding agent, used to write code, needs to reduce your maintenance costs","description":"AI coding agents aim to reduce code maintenance costs"},{"@type":"ListItem","position":20,"url":"https://old.reddit.com/r/LocalLLaMA/comments/1t9k8gy/i_built_an_open_source_hyperparameter_search_tool","name":"I built an open source hyperparameter search tool for diffusion fine-tunes- pick the winner based on scoring","description":"Open-source hyperparameter search tool for diffusion fine-tunes"}]}</script>
 <!-- CHRONICLE_JSONLD_END -->
+<script src="/mobile-reader-state.js"></script>
 <script>
   (function () {
     try {
@@ -867,6 +868,9 @@
   }
   .top-jump:active { transform: translateY(1px); }
 
+  /* Mobile reader - hidden until the client enhances the static list */
+  .mobile-reader { display: none; }
+
   /* Skeleton */
   .skeleton {
     padding: 16px 0;
@@ -974,6 +978,11 @@
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
     }
+    .reader-deck.is-animating .reader-card,
+    .reader-deck.is-jumpcut .reader-card,
+    .reader-rail > span {
+      transition-duration: 0.01ms !important;
+    }
   }
   @media (max-width: 720px) {
     .shell {
@@ -1015,6 +1024,269 @@
     .item-meta { gap: 6px; }
     .item-meta .spacer { display: none; }
     .completion-row { padding-bottom: 8px; }
+    body.has-mobile-reader #feed > :not(.mobile-reader) {
+      display: none !important;
+    }
+    body.has-mobile-reader .top-jump {
+      display: none;
+    }
+    body.has-mobile-reader .top-news {
+      display: none;
+    }
+    body.has-mobile-reader .feed {
+      padding-top: 10px;
+    }
+    body.has-mobile-reader .mobile-reader {
+      display: block;
+    }
+    .mobile-reader {
+      position: relative;
+      margin: 2px 0 18px;
+      touch-action: pan-y;
+    }
+    .reader-status {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 10px;
+      min-height: 36px;
+      color: var(--ink-3);
+      font: 11px/1.4 var(--font-mono);
+      letter-spacing: 0.04em;
+    }
+    .reader-counter {
+      color: var(--ink-2);
+      font-variant-numeric: tabular-nums;
+    }
+    .reader-rail {
+      height: 1px;
+      background: var(--rule);
+      overflow: hidden;
+    }
+    .reader-rail > span {
+      display: block;
+      width: calc(var(--reader-progress, 0) * 100%);
+      height: 100%;
+      background: var(--accent);
+      transition: width 0.22s ease;
+    }
+    .reader-index-button,
+    .reader-close {
+      min-height: 34px;
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--ink-2);
+      cursor: pointer;
+      padding: 0 12px;
+      font: 11px/1 var(--font-mono);
+      letter-spacing: 0.04em;
+    }
+    .reader-index-button:hover,
+    .reader-index-button:focus-visible,
+    .reader-close:hover,
+    .reader-close:focus-visible {
+      border-color: var(--accent);
+      color: var(--accent-2);
+    }
+    .reader-deck {
+      position: relative;
+      min-height: max(520px, calc(var(--reader-vh, 100svh) - 178px));
+      perspective: 1100px;
+      outline: none;
+      touch-action: none;
+    }
+    .reader-card {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      overflow: hidden;
+      min-width: 0;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      background: var(--paper);
+      box-shadow: 0 16px 42px rgba(0, 0, 0, 0.12);
+      transform-origin: 50% 50%;
+      will-change: transform, opacity;
+      backface-visibility: hidden;
+    }
+    .reader-card:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+    .reader-card.is-prev {
+      opacity: 0;
+      transform: translate3d(0, -84%, 0) rotateX(7deg) scale(0.985);
+      pointer-events: none;
+    }
+    .reader-card.is-current {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) rotateX(0deg) scale(1);
+      z-index: 2;
+    }
+    .reader-card.is-next {
+      opacity: 0;
+      transform: translate3d(0, 84%, 0) rotateX(-7deg) scale(0.985);
+      pointer-events: none;
+    }
+    .reader-deck.is-animating .reader-card,
+    .reader-deck.is-jumpcut .reader-card {
+      transition:
+        transform 420ms cubic-bezier(0.2, 0.75, 0.18, 1),
+        opacity 320ms ease,
+        box-shadow 320ms ease;
+    }
+    .reader-deck.is-jumpcut .reader-card {
+      transition-duration: 170ms;
+    }
+    .reader-media {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      background: var(--paper-2);
+      border-bottom: 1px solid var(--rule);
+    }
+    .reader-card.is-text-first {
+      grid-template-rows: 1fr;
+      background:
+        linear-gradient(180deg, color-mix(in srgb, var(--ink) 3%, transparent), transparent 34%),
+        var(--paper);
+    }
+    .reader-card.is-text-first .reader-body {
+      align-self: center;
+    }
+    .reader-body {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      padding: 18px 18px calc(18px + env(safe-area-inset-bottom, 0px));
+    }
+    .reader-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 7px;
+      color: var(--ink-3);
+      font: 11px/1.4 var(--font-mono);
+      letter-spacing: 0.03em;
+    }
+    .reader-meta .source {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--ink-2);
+    }
+    .reader-title {
+      color: var(--ink);
+      font: 650 clamp(24px, 8vw, 34px)/1.12 var(--font-display);
+      letter-spacing: 0;
+      text-wrap: pretty;
+      overflow-wrap: anywhere;
+    }
+    .reader-title a {
+      border-bottom: 1px solid transparent;
+    }
+    .reader-title a:hover,
+    .reader-title a:focus-visible {
+      border-color: var(--accent);
+    }
+    .reader-line {
+      color: var(--ink-2);
+      font: 16px/1.55 var(--font-body);
+      text-wrap: pretty;
+      overflow-wrap: anywhere;
+    }
+    .reader-reason {
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px solid var(--rule);
+      color: var(--ink-3);
+      font: 13px/1.5 var(--font-body);
+    }
+    .reader-explain {
+      color: var(--ink-3);
+      font: 12px/1.5 var(--font-body);
+    }
+    .reader-explain summary {
+      cursor: pointer;
+      color: var(--ink-2);
+      font: 11px/1.4 var(--font-mono);
+      letter-spacing: 0.04em;
+      list-style: none;
+    }
+    .reader-explain summary::-webkit-details-marker { display: none; }
+    .reader-explain ul {
+      margin: 8px 0 0;
+      padding-left: 17px;
+    }
+    .reader-index-sheet[hidden] {
+      display: none;
+    }
+    .reader-index-sheet {
+      position: fixed;
+      inset: auto 0 0 0;
+      z-index: 50;
+      max-height: min(78svh, 620px);
+      padding: 14px 18px calc(18px + env(safe-area-inset-bottom, 0px));
+      border-top: 1px solid var(--rule);
+      background: color-mix(in srgb, var(--panel) 96%, transparent);
+      box-shadow: 0 -18px 48px rgba(0, 0, 0, 0.18);
+      overflow: auto;
+    }
+    .reader-index-head {
+      position: sticky;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 12px;
+      background: inherit;
+      color: var(--ink);
+      font: 600 15px/1.2 var(--font-display);
+    }
+    .reader-index-list {
+      display: grid;
+      gap: 0;
+    }
+    .reader-index-row {
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      min-height: 58px;
+      padding: 10px 0;
+      border: 0;
+      border-bottom: 1px solid var(--rule);
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      text-align: left;
+    }
+    .reader-index-row[aria-current="true"] .reader-index-number {
+      color: var(--accent-2);
+    }
+    .reader-index-number {
+      color: var(--ink-3);
+      font: 11px/1 var(--font-mono);
+      font-variant-numeric: tabular-nums;
+    }
+    .reader-index-title {
+      color: var(--ink);
+      font: 14px/1.3 var(--font-body);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .reader-index-meta {
+      color: var(--ink-3);
+      font: 10px/1 var(--font-mono);
+      letter-spacing: 0.03em;
+    }
     .top-jump {
       right: 50%;
       bottom: max(16px, env(safe-area-inset-bottom));
@@ -2055,6 +2327,10 @@ const ROOT_PREFIX = DATE_PATH_MATCH
   : /\/daily\/?$/.test(location.pathname)
     ? "../"
     : "./";
+const MOBILE_READER_QUERY = "(max-width: 720px)";
+const READER_ANIM_MS = 420;
+const READER_JUMPCUT_MS = 170;
+const READER_HELPERS = window.ChronicleReaderState || null;
 
 const state = {
   data: null,
@@ -2065,6 +2341,17 @@ const state = {
   activeFeed: "main",
   resumePromptDay: null,
   scrollTicking: false,
+  gestureLock: null,
+  reader: {
+    media: null,
+    active: false,
+    index: 0,
+    items: [],
+    itemKey: "",
+    animating: false,
+    sheetOpen: false,
+    gesture: null,
+  },
 };
 
 initTheme();
@@ -2076,6 +2363,7 @@ wireFilterControls();
 wireRefreshControl();
 wireReadingControls();
 wirePullToRefresh();
+wireMobileReader();
 updateLedeText();
 document.getElementById("archiveCtaButton").href = rootUrl("daily/");
 document.getElementById("homeLink").href = rootUrl("");
@@ -2241,7 +2529,11 @@ async function switchFeedTab(next) {
 
   await loadFeed();
   if (feed) feed.classList.remove("is-switching");
-  scrollToTop();
+  if (state.reader.active) {
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
+  } else {
+    scrollToTop();
+  }
 }
 
 function syncFeedTabs() {
@@ -2312,11 +2604,40 @@ function wireReadingControls() {
   document.getElementById("topJump").addEventListener("click", () => scrollToTop());
   document.getElementById("resumeReading").addEventListener("click", () => {
     const prompt = document.getElementById("resumePrompt");
+    if (state.reader.active && prompt.dataset.readerIndex) {
+      const index = Number(prompt.dataset.readerIndex);
+      hideResumePrompt();
+      setReaderIndex(index, { focus: true, jumpcut: true });
+      return;
+    }
     const y = Number(prompt.dataset.resumeY || 0);
     hideResumePrompt();
     window.scrollTo({ top: y, behavior: prefersReducedMotion() ? "auto" : "smooth" });
   });
   window.addEventListener("scroll", onReadingScroll, { passive: true });
+}
+
+function wireMobileReader() {
+  if (typeof matchMedia === "function") {
+    state.reader.media = matchMedia(MOBILE_READER_QUERY);
+    const rerender = () => {
+      updateReaderViewportHeight();
+      if (state.data) renderFeed();
+    };
+    if (typeof state.reader.media.addEventListener === "function") {
+      state.reader.media.addEventListener("change", rerender);
+    } else if (typeof state.reader.media.addListener === "function") {
+      state.reader.media.addListener(rerender);
+    }
+  }
+
+  updateReaderViewportHeight();
+  window.addEventListener("resize", updateReaderViewportHeight, { passive: true });
+  window.addEventListener("orientationchange", updateReaderViewportHeight, { passive: true });
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener("resize", updateReaderViewportHeight, { passive: true });
+  }
+  window.addEventListener("beforeunload", saveReaderProgress);
 }
 
 function onReadingScroll() {
@@ -2349,6 +2670,7 @@ function wirePullToRefresh() {
   let pulling = false;
   let pullDistance = 0;
   let refreshing = false;
+  let startedInReader = false;
 
   function applyVisual(distance) {
     const eased = Math.min(distance, MAX_PULL_PX);
@@ -2394,6 +2716,8 @@ function wirePullToRefresh() {
     if (refreshing) return;
     if (window.scrollY > 0) return;
     if (event.touches.length !== 1) return;
+    startedInReader = Boolean(event.target?.closest?.("#mobileReader"));
+    if (startedInReader && (!state.reader.active || state.reader.index > 0)) return;
     const touch = event.touches[0];
     activeId = touch.identifier;
     startX = touch.clientX;
@@ -2417,6 +2741,8 @@ function wirePullToRefresh() {
       if (dy <= 0 || window.scrollY > 0) { activeId = null; return; }
       if (Math.abs(dx) > Math.abs(dy)) { activeId = null; return; }
       if (dy < COMMIT_PX) return;
+      if (startedInReader && state.gestureLock?.owner === "reader") { activeId = null; return; }
+      if (startedInReader) lockGesture("ptr");
       pulling = true;
       indicator.classList.add("is-active");
     }
@@ -2441,8 +2767,10 @@ function wirePullToRefresh() {
       resetIndicator(true);
     }
     activeId = null;
+    startedInReader = false;
     pulling = false;
     pullDistance = 0;
+    releaseGesture("ptr");
   }
 
   document.addEventListener("touchend", endTouch, { passive: true });
@@ -2461,6 +2789,7 @@ async function loadFeed() {
     renderFilterShell();
     renderFeed();
   } catch (error) {
+    disableMobileReader();
     showNotice(`Chronicle could not load the feed: ${error.message}`);
     document.getElementById("statusText").textContent = "feed unavailable";
     document.getElementById("statusLine").classList.add("is-failed");
@@ -2675,11 +3004,36 @@ function renderFeed() {
   const main = document.getElementById("feed");
   const items = visibleItems();
   if (!items.length) {
+    disableMobileReader();
     main.replaceChildren(emptyState("No matching items", "Relax the filters or hit reset."));
     hideResumePrompt();
     return;
   }
 
+  const buckets = groupFeedItems(items);
+  const orderedItems = buckets.flatMap((bucket) => bucket.items);
+
+  const fragments = [];
+  let displayIndex = 0;
+  for (const bucket of buckets) {
+    if (!bucket.items.length) continue;
+    const head = node("div", "bucket-head");
+    head.append(
+      document.createTextNode(bucket.label),
+      Object.assign(document.createElement("span"), { className: "count", textContent: `(${bucket.items.length})` }),
+    );
+    fragments.push(head);
+    for (const item of bucket.items) fragments.push(renderItem(item, ++displayIndex));
+  }
+  fragments.push(renderCompletionRow());
+  main.replaceChildren(...fragments);
+  const readerReady = enhanceMobileReader(orderedItems);
+  if (readerReady) prepareReaderResumePrompt(orderedItems.length);
+  else prepareResumePrompt(displayIndex);
+  updateTopJump();
+}
+
+function groupFeedItems(items) {
   const now = Date.now();
   const buckets = [
     { label: "Last 3 hours", items: [] },
@@ -2696,23 +3050,571 @@ function renderFeed() {
   for (const bucket of buckets) {
     bucket.items.sort((a, b) => (Number(b.score) || 0) - (Number(a.score) || 0));
   }
+  return buckets;
+}
 
-  const fragments = [];
-  let displayIndex = 0;
-  for (const bucket of buckets) {
-    if (!bucket.items.length) continue;
-    const head = node("div", "bucket-head");
-    head.append(
-      document.createTextNode(bucket.label),
-      Object.assign(document.createElement("span"), { className: "count", textContent: `(${bucket.items.length})` }),
-    );
-    fragments.push(head);
-    for (const item of bucket.items) fragments.push(renderItem(item, ++displayIndex));
+function shouldUseMobileReader() {
+  return Boolean(
+    READER_HELPERS &&
+    state.reader.media?.matches &&
+    "PointerEvent" in window &&
+    !document.body.classList.contains("reader-disabled"),
+  );
+}
+
+function enhanceMobileReader(items) {
+  if (!shouldUseMobileReader()) {
+    disableMobileReader();
+    return false;
   }
-  fragments.push(renderCompletionRow());
-  main.replaceChildren(...fragments);
-  prepareResumePrompt(displayIndex);
-  updateTopJump();
+  try {
+    const reader = ensureMobileReader();
+    const previousKey = state.reader.itemKey;
+    const previousIndex = state.reader.index;
+    const day = currentFeedDay();
+    const signature = readerFilterSignature();
+    const sameScope =
+      state.reader.active &&
+      state.reader.feedRole === state.activeFeed &&
+      state.reader.day === day &&
+      state.reader.signature === signature;
+    const nextIndex = sameScope
+      ? READER_HELPERS.indexAfterFilterChange(previousKey, items, previousIndex)
+      : 0;
+
+    state.reader.active = true;
+    state.reader.items = items;
+    state.reader.index = nextIndex;
+    state.reader.itemKey = readerItemKey(items[nextIndex]);
+    state.reader.feedRole = state.activeFeed;
+    state.reader.day = day;
+    state.reader.signature = signature;
+    document.body.classList.add("has-mobile-reader");
+    reader.hidden = false;
+    renderReaderSlots();
+    renderReaderIndexSheet();
+    updateReaderProgress();
+    return true;
+  } catch (error) {
+    console.warn("[chronicle-reader] mobile reader disabled", error);
+    disableMobileReader();
+    return false;
+  }
+}
+
+function ensureMobileReader() {
+  let reader = document.getElementById("mobileReader");
+  if (reader) return reader;
+
+  reader = node("section", "mobile-reader");
+  reader.id = "mobileReader";
+  reader.hidden = true;
+  reader.setAttribute("role", "region");
+  reader.setAttribute("aria-label", "Mobile feed reader");
+
+  const status = node("div", "reader-status");
+  const counter = node("span", "reader-counter", "0 / 0");
+  counter.id = "readerCounter";
+  counter.setAttribute("aria-live", "polite");
+  const rail = node("div", "reader-rail");
+  rail.setAttribute("aria-hidden", "true");
+  rail.appendChild(document.createElement("span"));
+  const indexButton = document.createElement("button");
+  indexButton.type = "button";
+  indexButton.className = "reader-index-button";
+  indexButton.id = "readerIndexButton";
+  indexButton.textContent = "Index";
+  indexButton.setAttribute("aria-expanded", "false");
+  indexButton.setAttribute("aria-controls", "readerIndexSheet");
+  indexButton.dataset.noSwipe = "true";
+  status.append(counter, rail, indexButton);
+
+  const deck = node("div", "reader-deck");
+  deck.id = "readerDeck";
+  deck.tabIndex = 0;
+  deck.setAttribute("aria-label", "Swipe up for next item, swipe down for previous item");
+  const slots = node("div", "reader-slots");
+  slots.id = "readerSlots";
+  deck.appendChild(slots);
+
+  const sheet = node("div", "reader-index-sheet");
+  sheet.id = "readerIndexSheet";
+  sheet.hidden = true;
+  sheet.dataset.noSwipe = "true";
+  sheet.setAttribute("role", "dialog");
+  sheet.setAttribute("aria-label", "Feed index");
+  sheet.setAttribute("aria-modal", "false");
+  sheet.appendChild(readerIndexHead());
+  sheet.appendChild(node("div", "reader-index-list"));
+
+  reader.append(status, deck, sheet);
+  document.getElementById("feed").appendChild(reader);
+
+  indexButton.addEventListener("click", () => toggleReaderIndexSheet());
+  deck.addEventListener("pointerdown", onReaderPointerDown);
+  deck.addEventListener("pointermove", onReaderPointerMove);
+  deck.addEventListener("pointerup", onReaderPointerEnd);
+  deck.addEventListener("pointercancel", onReaderPointerEnd);
+  deck.addEventListener("keydown", onReaderKeyDown);
+  return reader;
+}
+
+function readerIndexHead() {
+  const head = node("div", "reader-index-head");
+  head.appendChild(document.createTextNode("Index"));
+  const close = document.createElement("button");
+  close.type = "button";
+  close.className = "reader-close";
+  close.textContent = "Close";
+  close.dataset.noSwipe = "true";
+  close.addEventListener("click", () => closeReaderIndexSheet());
+  head.appendChild(close);
+  return head;
+}
+
+function disableMobileReader() {
+  document.body.classList.remove("has-mobile-reader");
+  state.reader.active = false;
+  state.reader.items = [];
+  state.reader.itemKey = "";
+  state.reader.gesture = null;
+  state.reader.animating = false;
+  state.reader.sheetOpen = false;
+  state.gestureLock = null;
+  const reader = document.getElementById("mobileReader");
+  if (reader) reader.remove();
+}
+
+function renderReaderSlots() {
+  const slots = document.getElementById("readerSlots");
+  if (!slots) return;
+  const items = state.reader.items;
+  const index = READER_HELPERS.clampIndex(state.reader.index, items.length);
+  const entries = [
+    { offset: -1, className: "is-prev" },
+    { offset: 0, className: "is-current" },
+    { offset: 1, className: "is-next" },
+  ];
+  const cards = [];
+  for (const entry of entries) {
+    const item = items[index + entry.offset];
+    if (!item) continue;
+    const card = renderReaderCard(item, index + entry.offset, entry.className, entry.offset >= 0);
+    card.dataset.readerSlot = String(entry.offset);
+    if (entry.offset !== 0) {
+      card.setAttribute("aria-hidden", "true");
+      card.inert = true;
+      disableFocusableChildren(card);
+    }
+    cards.push(card);
+  }
+  slots.replaceChildren(...cards);
+}
+
+function renderReaderCard(item, index, positionClass, eagerImage) {
+  const article = node("article", `reader-card ${positionClass}`);
+  article.tabIndex = positionClass === "is-current" ? 0 : -1;
+  article.dataset.readerItemKey = readerItemKey(item);
+  article.setAttribute("aria-label", `Item ${index + 1} of ${state.reader.items.length}`);
+
+  const image = readerImage(item, eagerImage);
+  if (image) article.appendChild(image);
+  else article.classList.add("is-text-first");
+
+  const body = node("div", "reader-body");
+  const meta = node("div", "reader-meta");
+  meta.append(sourceLabel(item));
+  meta.append(sep(), document.createTextNode(relTime(parseDate(item.primary?.published_at)) || "unknown"));
+  if (item.kind && item.kind !== "unknown") meta.append(sep(), document.createTextNode(KIND_LABELS[item.kind] || item.kind));
+  const score = Number(item.score);
+  if (Number.isFinite(score)) meta.append(sep(), document.createTextNode(score.toFixed(2)));
+  body.appendChild(meta);
+
+  const title = item.primary?.title || "Untitled item";
+  const heading = node("h2", "reader-title");
+  heading.appendChild(link(item.primary?.url, title));
+  body.appendChild(heading);
+
+  const line = readableLine(item, title);
+  if (line) body.appendChild(node("p", "reader-line", line));
+
+  const reasons = Array.isArray(item.why_this_surfaced) ? item.why_this_surfaced.filter(Boolean) : [];
+  const firstReason = reasons[0] || item.builder_action || "";
+  if (firstReason) body.appendChild(node("p", "reader-reason", firstReason));
+  const explain = renderReaderExplain(item, reasons);
+  if (explain) body.appendChild(explain);
+
+  article.appendChild(body);
+  return article;
+}
+
+function readerImage(item, eager) {
+  const src = itemImageUrl(item);
+  if (!src) return null;
+  const img = document.createElement("img");
+  img.className = "reader-media";
+  img.src = src;
+  img.alt = "";
+  img.loading = eager ? "eager" : "lazy";
+  img.decoding = "async";
+  img.referrerPolicy = "no-referrer";
+  try { img.fetchPriority = eager ? "high" : "low"; } catch (_) {}
+  img.addEventListener("error", () => {
+    const card = img.closest(".reader-card");
+    img.remove();
+    card?.classList.add("is-text-first");
+  }, { once: true });
+  return img;
+}
+
+function renderReaderExplain(item, reasons) {
+  if (!reasons.length && !item.builder_action) return null;
+  const details = node("details", "reader-explain");
+  const summary = document.createElement("summary");
+  summary.textContent = "why surfaced";
+  const list = document.createElement("ul");
+  reasons.forEach((reason) => {
+    const row = document.createElement("li");
+    row.textContent = reason;
+    list.appendChild(row);
+  });
+  if (item.builder_action) {
+    const row = document.createElement("li");
+    row.textContent = item.builder_action;
+    list.appendChild(row);
+  }
+  details.append(summary, list);
+  return details;
+}
+
+function updateReaderProgress() {
+  const count = state.reader.items.length;
+  const index = READER_HELPERS.clampIndex(state.reader.index, count);
+  const counter = document.getElementById("readerCounter");
+  if (counter) counter.textContent = count ? `${index + 1} / ${count}` : "0 / 0";
+  const reader = document.getElementById("mobileReader");
+  if (reader) reader.style.setProperty("--reader-progress", count ? String((index + 1) / count) : "0");
+  state.reader.itemKey = readerItemKey(state.reader.items[index]);
+}
+
+function renderReaderIndexSheet() {
+  const sheet = document.getElementById("readerIndexSheet");
+  if (!sheet) return;
+  const list = sheet.querySelector(".reader-index-list");
+  if (!list) return;
+  const rows = state.reader.items.map((item, index) => {
+    const row = document.createElement("button");
+    row.type = "button";
+    row.className = "reader-index-row";
+    row.dataset.noSwipe = "true";
+    row.dataset.readerIndex = String(index);
+    row.setAttribute("aria-current", String(index === state.reader.index));
+    row.append(
+      node("span", "reader-index-number", String(index + 1).padStart(2, "0")),
+      node("span", "reader-index-title", item.primary?.title || "Untitled item"),
+      node("span", "reader-index-meta", Number.isFinite(Number(item.score)) ? Number(item.score).toFixed(2) : ""),
+    );
+    row.addEventListener("click", () => {
+      closeReaderIndexSheet();
+      setReaderIndex(index, { focus: true, jumpcut: true });
+    });
+    return row;
+  });
+  list.replaceChildren(...rows);
+}
+
+function toggleReaderIndexSheet() {
+  state.reader.sheetOpen ? closeReaderIndexSheet() : openReaderIndexSheet();
+}
+
+function openReaderIndexSheet() {
+  const sheet = document.getElementById("readerIndexSheet");
+  const button = document.getElementById("readerIndexButton");
+  if (!sheet || !button) return;
+  renderReaderIndexSheet();
+  sheet.hidden = false;
+  state.reader.sheetOpen = true;
+  button.setAttribute("aria-expanded", "true");
+  sheet.querySelector(".reader-index-row[aria-current='true']")?.scrollIntoView({ block: "nearest" });
+}
+
+function closeReaderIndexSheet() {
+  const sheet = document.getElementById("readerIndexSheet");
+  const button = document.getElementById("readerIndexButton");
+  if (!sheet || !button) return;
+  sheet.hidden = true;
+  state.reader.sheetOpen = false;
+  button.setAttribute("aria-expanded", "false");
+}
+
+function setReaderIndex(index, options = {}) {
+  if (!state.reader.active) return;
+  const deck = document.getElementById("readerDeck");
+  const next = READER_HELPERS.clampIndex(index, state.reader.items.length);
+  state.reader.index = next;
+  state.reader.itemKey = readerItemKey(state.reader.items[next]);
+  if (options.jumpcut && deck && !prefersReducedMotion()) deck.classList.add("is-jumpcut");
+  renderReaderSlots();
+  renderReaderIndexSheet();
+  updateReaderProgress();
+  saveReaderProgress();
+  if (options.focus) requestAnimationFrame(() => focusActiveReaderCard());
+  if (options.jumpcut && deck) {
+    window.setTimeout(() => deck.classList.remove("is-jumpcut"), prefersReducedMotion() ? 0 : READER_JUMPCUT_MS);
+  }
+}
+
+function focusActiveReaderCard() {
+  document.querySelector(".reader-card.is-current")?.focus({ preventScroll: true });
+}
+
+function navigateReader(direction, options = {}) {
+  if (!state.reader.active || state.reader.animating) return;
+  const delta = direction === "next" ? 1 : -1;
+  const next = READER_HELPERS.clampIndex(state.reader.index + delta, state.reader.items.length);
+  if (next === state.reader.index) {
+    resetReaderDrag(true);
+    return;
+  }
+  if (options.jumpcut || prefersReducedMotion()) {
+    setReaderIndex(next, { focus: options.focus, jumpcut: options.jumpcut });
+    return;
+  }
+  animateReaderNavigation(next, direction, options.focus);
+}
+
+function animateReaderNavigation(nextIndex, direction, focus) {
+  const deck = document.getElementById("readerDeck");
+  const current = document.querySelector(".reader-card.is-current");
+  const incoming = document.querySelector(direction === "next" ? ".reader-card.is-next" : ".reader-card.is-prev");
+  if (!deck || !current || !incoming) {
+    setReaderIndex(nextIndex, { focus, jumpcut: true });
+    return;
+  }
+  state.reader.animating = true;
+  deck.classList.add("is-animating");
+  const sign = direction === "next" ? -1 : 1;
+  requestAnimationFrame(() => {
+    current.style.transform = `translate3d(0, ${sign * 34}%, 0) rotateX(${sign * -8}deg) scale(0.97)`;
+    current.style.opacity = "0";
+    incoming.style.transform = "translate3d(0, 0, 0) rotateX(0deg) scale(1)";
+    incoming.style.opacity = "1";
+  });
+  window.setTimeout(() => {
+    deck.classList.remove("is-animating");
+    state.reader.animating = false;
+    setReaderIndex(nextIndex, { focus });
+  }, READER_ANIM_MS);
+}
+
+function onReaderPointerDown(event) {
+  if (!state.reader.active || state.reader.animating || state.reader.sheetOpen) return;
+  if (event.pointerType === "mouse" && event.button !== 0) return;
+  if (isReaderInteractiveTarget(event.target)) return;
+  state.reader.gesture = {
+    pointerId: event.pointerId,
+    startX: event.clientX,
+    startY: event.clientY,
+    startTs: performance.now(),
+    claimed: false,
+  };
+  event.currentTarget.setPointerCapture?.(event.pointerId);
+}
+
+function onReaderPointerMove(event) {
+  const gesture = state.reader.gesture;
+  if (!gesture || gesture.pointerId !== event.pointerId || state.reader.animating) return;
+  const dx = event.clientX - gesture.startX;
+  const dy = event.clientY - gesture.startY;
+  const result = READER_HELPERS.classifyGesture({
+    dx,
+    dy,
+    elapsedMs: performance.now() - gesture.startTs,
+    index: state.reader.index,
+    total: state.reader.items.length,
+  });
+  if (result.intent === "pending") return;
+  if (result.intent === "cancel") {
+    cancelReaderGesture();
+    return;
+  }
+  if (result.intent === "pull-to-refresh") {
+    lockGesture("ptr");
+    cancelReaderGesture({ release: false });
+    return;
+  }
+  if (state.gestureLock && state.gestureLock.owner !== "reader") return;
+  lockGesture("reader");
+  gesture.claimed = true;
+  if (event.cancelable) event.preventDefault();
+  applyReaderDrag(dy);
+}
+
+function onReaderPointerEnd(event) {
+  const gesture = state.reader.gesture;
+  if (!gesture || gesture.pointerId !== event.pointerId) return;
+  const dx = event.clientX - gesture.startX;
+  const dy = event.clientY - gesture.startY;
+  const result = READER_HELPERS.classifyGesture({
+    dx,
+    dy,
+    elapsedMs: performance.now() - gesture.startTs,
+    index: state.reader.index,
+    total: state.reader.items.length,
+  });
+  state.reader.gesture = null;
+  releaseGesture("reader");
+  if (result.intent === "next" || result.intent === "previous") navigateReader(result.intent);
+  else resetReaderDrag(true);
+}
+
+function onReaderKeyDown(event) {
+  if (!state.reader.active || isReaderInteractiveTarget(event.target)) return;
+  if (event.key === "ArrowDown" || event.key === "PageDown" || (event.key === " " && !event.shiftKey)) {
+    event.preventDefault();
+    navigateReader("next", { focus: true });
+  } else if (event.key === "ArrowUp" || event.key === "PageUp" || (event.key === " " && event.shiftKey)) {
+    event.preventDefault();
+    navigateReader("previous", { focus: true });
+  } else if (event.key === "Home") {
+    event.preventDefault();
+    setReaderIndex(0, { focus: true, jumpcut: true });
+  } else if (event.key === "End") {
+    event.preventDefault();
+    setReaderIndex(state.reader.items.length - 1, { focus: true, jumpcut: true });
+  } else if (event.key === "Escape" && state.reader.sheetOpen) {
+    closeReaderIndexSheet();
+  }
+}
+
+function applyReaderDrag(dy) {
+  const deck = document.getElementById("readerDeck");
+  const current = document.querySelector(".reader-card.is-current");
+  if (!deck || !current) return;
+  const height = Math.max(1, deck.getBoundingClientRect().height);
+  const progress = Math.min(1, Math.abs(dy) / Math.max(160, height * 0.5));
+  const direction = dy < 0 ? "next" : "previous";
+  const incoming = document.querySelector(direction === "next" ? ".reader-card.is-next" : ".reader-card.is-prev");
+  const limited = Math.max(-height * 0.35, Math.min(height * 0.35, dy));
+  current.style.transform = `translate3d(0, ${limited * 0.22}px, 0) rotateX(${(-limited / height) * 10}deg) scale(${1 - progress * 0.018})`;
+  current.style.opacity = String(1 - progress * 0.18);
+  if (incoming) {
+    const start = direction === "next" ? height * 0.84 : -height * 0.84;
+    const travel = direction === "next" ? -Math.abs(dy) * 0.92 : Math.abs(dy) * 0.92;
+    const offset = start + travel;
+    incoming.style.opacity = String(Math.min(1, 0.12 + progress * 1.1));
+    incoming.style.transform = `translate3d(0, ${offset}px, 0) rotateX(${direction === "next" ? -7 + progress * 7 : 7 - progress * 7}deg) scale(${0.985 + progress * 0.015})`;
+  }
+}
+
+function resetReaderDrag(animate) {
+  const deck = document.getElementById("readerDeck");
+  const cards = document.querySelectorAll(".reader-card");
+  if (animate && deck && !prefersReducedMotion()) deck.classList.add("is-animating");
+  cards.forEach((card) => {
+    card.style.transform = "";
+    card.style.opacity = "";
+  });
+  if (animate && deck) {
+    window.setTimeout(() => deck.classList.remove("is-animating"), prefersReducedMotion() ? 0 : 180);
+  }
+}
+
+function cancelReaderGesture(options = {}) {
+  state.reader.gesture = null;
+  if (options.release !== false) releaseGesture("reader");
+  resetReaderDrag(true);
+}
+
+function isReaderInteractiveTarget(target) {
+  return Boolean(target?.closest?.("a, button, summary, details, input, select, textarea, [data-no-swipe]"));
+}
+
+function disableFocusableChildren(root) {
+  root.querySelectorAll("a, button, summary, input, select, textarea, [tabindex]").forEach((element) => {
+    element.dataset.readerTabIndex = element.getAttribute("tabindex") || "";
+    element.setAttribute("tabindex", "-1");
+  });
+}
+
+function lockGesture(owner) {
+  if (state.gestureLock && state.gestureLock.owner !== owner) return false;
+  state.gestureLock = { owner, ts: Date.now() };
+  return true;
+}
+
+function releaseGesture(owner) {
+  if (!state.gestureLock || state.gestureLock.owner === owner) state.gestureLock = null;
+}
+
+function readerFilterSignature() {
+  return READER_HELPERS.filterSignature({
+    kinds: [...state.kinds],
+    highNovelty: state.highNovelty,
+    discussionOnly: state.discussionOnly,
+  });
+}
+
+function readerProgressKey() {
+  return READER_HELPERS.progressKey(currentFeedDay(), state.activeFeed, readerFilterSignature());
+}
+
+function readerItemKey(item) {
+  return item ? READER_HELPERS.itemKey(item) : "";
+}
+
+function readReaderProgress() {
+  if (!READER_HELPERS) return null;
+  try {
+    const value = JSON.parse(localStorage.getItem(readerProgressKey()) || "null");
+    if (!value || Date.now() - Number(value.ts || 0) > PROGRESS_TTL_MS) return null;
+    return value;
+  } catch (_) {
+    return null;
+  }
+}
+
+function prepareReaderResumePrompt(total) {
+  const saved = readReaderProgress();
+  if (!saved || Number(saved.index) < 3 || saved.itemKey === state.reader.itemKey) {
+    hideResumePrompt();
+    return;
+  }
+  const index = READER_HELPERS.restoreIndex(state.reader.items, saved, 0);
+  if (index <= state.reader.index || index >= total) {
+    hideResumePrompt();
+    return;
+  }
+  const prompt = document.getElementById("resumePrompt");
+  const button = document.getElementById("resumeReading");
+  prompt.dataset.readerIndex = String(index);
+  button.textContent = `Resume at item ${index + 1}`;
+  prompt.hidden = false;
+}
+
+function saveReaderProgress() {
+  if (!state.reader.active || !state.reader.items.length || !READER_HELPERS) return;
+  try {
+    if (state.reader.index <= 0) {
+      localStorage.removeItem(readerProgressKey());
+      return;
+    }
+    localStorage.setItem(readerProgressKey(), JSON.stringify({
+      itemKey: state.reader.itemKey,
+      index: state.reader.index,
+      ts: Date.now(),
+    }));
+  } catch (_) {}
+}
+
+function clearReaderProgress() {
+  if (!READER_HELPERS) return;
+  try { localStorage.removeItem(readerProgressKey()); } catch (_) {}
+}
+
+function updateReaderViewportHeight() {
+  const height = Math.round(window.visualViewport?.height || window.innerHeight || 0);
+  if (height > 0) document.documentElement.style.setProperty("--reader-vh", `${height}px`);
 }
 
 function renderItem(item, displayIndex) {
@@ -3044,12 +3946,22 @@ function rootUrl(path) {
 
 function scrollToTop() {
   hideResumePrompt();
+  if (state.reader.active) {
+    setReaderIndex(0, { focus: true, jumpcut: true });
+    clearReaderProgress();
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
+    return;
+  }
   clearReadingProgress();
   window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
 }
 
 function updateTopJump() {
   const button = document.getElementById("topJump");
+  if (state.reader.active) {
+    button.classList.remove("is-visible");
+    return;
+  }
   const feed = document.getElementById("feed");
   const feedTop = feed.getBoundingClientRect().top + window.scrollY;
   const nearTop = window.scrollY < Math.max(520, feedTop + 240);
@@ -3077,9 +3989,11 @@ function hideResumePrompt() {
   const prompt = document.getElementById("resumePrompt");
   prompt.hidden = true;
   delete prompt.dataset.resumeY;
+  delete prompt.dataset.readerIndex;
 }
 
 function saveReadingProgress() {
+  if (state.reader.active) return;
   if (!state.data) return;
   const day = currentFeedDay();
   if (!day) return;
@@ -3119,7 +4033,7 @@ function pruneReadingProgress() {
     const entries = [];
     for (let i = 0; i < localStorage.length; i += 1) {
       const key = localStorage.key(i);
-      if (!key || !key.startsWith("chronicle-progress:")) continue;
+      if (!key || (!key.startsWith("chronicle-progress:") && !key.startsWith("chronicle-reader:v1:"))) continue;
       let ts = 0;
       try {
         ts = Number(JSON.parse(localStorage.getItem(key) || "null")?.ts || 0);

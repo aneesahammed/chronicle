@@ -51,7 +51,9 @@ sources → fetch → canonicalize → window-filter → cluster
 ```bash
 npm install
 GEMINI_API_KEY=... npm run run:pipeline
+npm run check
 npm run verify:all
+npm run test:e2e
 npx --yes serve public
 ```
 

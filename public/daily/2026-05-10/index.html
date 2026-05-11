@@ -34,6 +34,7 @@
 <!-- CHRONICLE_JSONLD_START -->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Chronicle AI signal brief","url":"https://chronicle.tinycrafts.ai/daily/2026-05-10/","datePublished":"2026-05-10T18:37:00.649Z","numberOfItems":43,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://the-decoder.com/metr-says-it-can-barely-measure-claude-mythos-palo-alto-networks-warns-of-autonomous-ai-attackers","name":"METR says it can barely measure Claude Mythos, Palo Alto Networks warns of autonomous AI attackers","description":"METR struggles to evaluate Claude Mythos; AI attackers chain vulnerabilities autonomously"},{"@type":"ListItem","position":2,"url":"https://cocoawithlove.com/blog/matrix-multiplications-swift.html","name":"Training an LLM in Swift, Part 1: Taking matrix multiplication from Gflop/s to Tflop/s","description":"Swift tutorial optimizes matrix multiplication for LLM training"},{"@type":"ListItem","position":3,"url":"https://the-decoder.com/ai-agents-can-now-hack-computers-and-copy-themselves-and-theyre-getting-better-fast","name":"AI agents can now hack computers and copy themselves, and they're getting better fast","description":"AI agents' hacking success rate jumps from 6% to 81% in one year"},{"@type":"ListItem","position":4,"url":"https://blog.tilderesearch.com/blog/aurora","name":"Aurora: A Leverage-Aware Optimizer for Rectangular Matrices","description":"Aurora optimizer improves rectangular matrix training efficiency"},{"@type":"ListItem","position":5,"url":"https://the-decoder.com/researchers-may-have-found-a-way-to-stop-ai-models-from-intentionally-playing-dumb-during-safety-evaluations","name":"Researchers may have found a way to stop AI models from intentionally playing dumb during safety evaluations","description":"Study addresses AI models hiding capabilities during safety evaluations"},{"@type":"ListItem","position":6,"url":"https://old.reddit.com/r/LocalLLaMA/comments/1t96l6r/ncclfree_tensor_parallelism_on_dual_blackwell","name":"NCCL-Free Tensor Parallelism on Dual Blackwell PCIe llama.cpp b9095 released!","description":"llama.cpp enables NCCL-free tensor parallelism on Blackwell GPUs"},{"@type":"ListItem","position":7,"url":"https://old.reddit.com/r/MachineLearning/comments/1t8zja2/colss_a_mathstyle_expression_evaluator_for_numpy","name":"\"colss\" a math-style expression evaluator for NumPy arrays [P]","description":"colss simplifies NumPy array expressions with math syntax"},{"@type":"ListItem","position":8,"url":"https://old.reddit.com/r/MachineLearning/comments/1t9d3et/signals_finding_the_most_informative_agent_traces","name":"Signals: finding the most informative agent traces without LLM judges [R]","description":"New method for selecting informative agent traces without LLM judges"},{"@type":"ListItem","position":9,"url":"https://github.com/Imbad0202/academic-research-skills","name":"Academic Research Skills for Claude Code","description":"GitHub guide for using Claude Code in academic research"},{"@type":"ListItem","position":10,"url":"https://blog.google/innovation-and-ai/technology/developers-tools/expanded-gemini-api-file-search-multimodal-rag","name":"Gemini API File Search is now multimodal","description":"Gemini API adds multimodal file search"},{"@type":"ListItem","position":11,"url":"https://old.reddit.com/r/LocalLLaMA/comments/1t8s83r/nvidia_ai_releases_star_elastic_one_checkpoint","name":"NVIDIA AI Releases Star Elastic: One Checkpoint that Contains 30B, 23B, and 12B Reasoning Models with Zero-Shot Slicing","description":"NVIDIA releases Star Elastic checkpoint with multiple model sizes"},{"@type":"ListItem","position":12,"url":"https://the-decoder.com/gpt-5-5-costs-49-to-92-percent-more-than-its-predecessor-depending-on-the-input-length","name":"GPT-5.5 costs 49 to 92 percent more than its predecessor, depending on the input length","description":"GPT-5.5 costs 49-92% higher than GPT-5.4 depending on input length"},{"@type":"ListItem","position":13,"url":"https://techcrunch.com/2026/05/10/were-feeling-cynical-about-xais-big-deal-with-anthropic","name":"We’re feeling cynical about xAI’s big deal with Anthropic","description":"Equity podcast critiques xAI-Anthropic partnership motives"},{"@type":"ListItem","position":14,"url":"https://the-decoder.com/bytedance-plans-over-30-billion-for-ai-expansion-bets-big-on-chinese-chips","name":"ByteDance plans over $30 billion for AI expansion, bets big on Chinese chips","description":"ByteDance raises 2026 AI budget to $30B with Chinese chip focus"},{"@type":"ListItem","position":15,"url":"https://the-decoder.com/anthropic-and-openai-sit-down-with-religious-leaders-to-seek-ethical-advice","name":"Anthropic and OpenAI sit down with religious leaders to seek ethical advice","description":"Anthropic and OpenAI consult religious leaders on AI ethics"},{"@type":"ListItem","position":16,"url":"https://producthunt.com/products/agentpeek","name":"AgentPeek","description":"AgentPeek: AI agent analysis tool on Product Hunt"},{"@type":"ListItem","position":17,"url":"https://techcrunch.com/2026/05/09/voice-ai-in-india-is-hard-wispr-flow-is-betting-on-it-anyway","name":"Voice AI in India is hard. Wispr Flow is betting on it anyway.","description":"Wispr Flow expands voice AI in India despite challenges"},{"@type":"ListItem","position":18,"url":"https://old.reddit.com/r/LocalLLaMA/comments/1t8db1j/model_add_sarvam_moe_architecture_support_by","name":"model: add sarvam_moe architecture support by sumitchatterjee13 · Pull Request #20275 · ggml-org/llama.cpp","description":"llama.cpp adds Sarvam-30B MoE model support"},{"@type":"ListItem","position":19,"url":"https://techcrunch.com/2026/05/09/artificial-intelligence-definition-glossary-hallucinations-guide-to-common-ai-terms","name":"So you’ve heard these AI terms and nodded along; let’s fix that","description":"Glossary explains common AI terminology"},{"@type":"ListItem","position":20,"url":"https://old.reddit.com/r/LocalLLaMA/comments/1t8wne7/the_gap_between_knowing_something_and_actually","name":"The gap between knowing something and actually understanding it — AI accelerated my learning curve","description":"User reflects on AI's role in accelerating their learning curve"}]}</script>
 <!-- CHRONICLE_JSONLD_END -->
+<script src="/mobile-reader-state.js"></script>
 <script>
   (function () {
     try {
@@ -640,14 +641,33 @@
 
   /* Item — title, line, micro-row, optional details */
   .item {
-    display: block;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
     min-width: 0;
     padding: 16px 0;
     border-bottom: 1px solid var(--rule);
   }
+  .item.has-image {
+    grid-template-columns: minmax(0, 1fr) clamp(112px, 18vw, 176px);
+    align-items: start;
+    gap: 18px;
+  }
   .item[data-tier="top"] {
     padding-left: 14px;
     border-left: 2px solid var(--accent);
+  }
+  .item-body {
+    min-width: 0;
+  }
+  .item-thumb {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    background: var(--paper-2);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
   }
   .item-title {
     min-width: 0;
@@ -684,8 +704,24 @@
     letter-spacing: 0.03em;
     overflow-wrap: anywhere;
   }
-  .item-meta .sep { color: var(--ink-3); opacity: 0.4; }
-  .item-meta .source { color: var(--ink-2); }
+  .item-meta .sep,
+  .top-news-meta .sep { color: var(--ink-3); opacity: 0.4; }
+  .item-meta .source,
+  .top-news-meta .source {
+    color: var(--ink-2);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .source-glyph {
+    width: 12px;
+    height: 12px;
+    flex: 0 0 auto;
+    color: var(--ink-3);
+    opacity: 0.72;
+    overflow: visible;
+    transform: translateY(-0.5px);
+  }
   .item-meta a { border-bottom: 1px solid transparent; }
   .item-meta a:hover { border-bottom-color: var(--accent); color: var(--accent-2); }
   .item-meta .spacer { flex: 1; min-width: 12px; }
@@ -832,6 +868,9 @@
   }
   .top-jump:active { transform: translateY(1px); }
 
+  /* Mobile reader - hidden until the client enhances the static list */
+  .mobile-reader { display: none; }
+
   /* Skeleton */
   .skeleton {
     padding: 16px 0;
@@ -939,6 +978,11 @@
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
     }
+    .reader-deck.is-animating .reader-card,
+    .reader-deck.is-jumpcut .reader-card,
+    .reader-rail > span {
+      transition-duration: 0.01ms !important;
+    }
   }
   @media (max-width: 720px) {
     .shell {
@@ -968,10 +1012,281 @@
     .top-story-title { font-size: 18px; line-height: 1.3; }
     .top-row-title { font-size: 17px; line-height: 1.32; }
     .top-list { border-top: 0; }
+    .item.has-image {
+      grid-template-columns: minmax(0, 1fr) 92px;
+      gap: 12px;
+    }
+    .item-thumb {
+      aspect-ratio: 1 / 1;
+      border-radius: 5px;
+    }
     .item-title { font-size: 18px; }
     .item-meta { gap: 6px; }
     .item-meta .spacer { display: none; }
     .completion-row { padding-bottom: 8px; }
+    body.has-mobile-reader #feed > :not(.mobile-reader) {
+      display: none !important;
+    }
+    body.has-mobile-reader .top-jump {
+      display: none;
+    }
+    body.has-mobile-reader .top-news {
+      display: none;
+    }
+    body.has-mobile-reader .feed {
+      padding-top: 10px;
+    }
+    body.has-mobile-reader .mobile-reader {
+      display: block;
+    }
+    .mobile-reader {
+      position: relative;
+      margin: 2px 0 18px;
+      touch-action: pan-y;
+    }
+    .reader-status {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 10px;
+      min-height: 36px;
+      color: var(--ink-3);
+      font: 11px/1.4 var(--font-mono);
+      letter-spacing: 0.04em;
+    }
+    .reader-counter {
+      color: var(--ink-2);
+      font-variant-numeric: tabular-nums;
+    }
+    .reader-rail {
+      height: 1px;
+      background: var(--rule);
+      overflow: hidden;
+    }
+    .reader-rail > span {
+      display: block;
+      width: calc(var(--reader-progress, 0) * 100%);
+      height: 100%;
+      background: var(--accent);
+      transition: width 0.22s ease;
+    }
+    .reader-index-button,
+    .reader-close {
+      min-height: 34px;
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--ink-2);
+      cursor: pointer;
+      padding: 0 12px;
+      font: 11px/1 var(--font-mono);
+      letter-spacing: 0.04em;
+    }
+    .reader-index-button:hover,
+    .reader-index-button:focus-visible,
+    .reader-close:hover,
+    .reader-close:focus-visible {
+      border-color: var(--accent);
+      color: var(--accent-2);
+    }
+    .reader-deck {
+      position: relative;
+      min-height: max(520px, calc(var(--reader-vh, 100svh) - 178px));
+      perspective: 1100px;
+      outline: none;
+      touch-action: none;
+    }
+    .reader-card {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      overflow: hidden;
+      min-width: 0;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      background: var(--paper);
+      box-shadow: 0 16px 42px rgba(0, 0, 0, 0.12);
+      transform-origin: 50% 50%;
+      will-change: transform, opacity;
+      backface-visibility: hidden;
+    }
+    .reader-card:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+    .reader-card.is-prev {
+      opacity: 0;
+      transform: translate3d(0, -84%, 0) rotateX(7deg) scale(0.985);
+      pointer-events: none;
+    }
+    .reader-card.is-current {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) rotateX(0deg) scale(1);
+      z-index: 2;
+    }
+    .reader-card.is-next {
+      opacity: 0;
+      transform: translate3d(0, 84%, 0) rotateX(-7deg) scale(0.985);
+      pointer-events: none;
+    }
+    .reader-deck.is-animating .reader-card,
+    .reader-deck.is-jumpcut .reader-card {
+      transition:
+        transform 420ms cubic-bezier(0.2, 0.75, 0.18, 1),
+        opacity 320ms ease,
+        box-shadow 320ms ease;
+    }
+    .reader-deck.is-jumpcut .reader-card {
+      transition-duration: 170ms;
+    }
+    .reader-media {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      background: var(--paper-2);
+      border-bottom: 1px solid var(--rule);
+    }
+    .reader-card.is-text-first {
+      grid-template-rows: 1fr;
+      background:
+        linear-gradient(180deg, color-mix(in srgb, var(--ink) 3%, transparent), transparent 34%),
+        var(--paper);
+    }
+    .reader-card.is-text-first .reader-body {
+      align-self: center;
+    }
+    .reader-body {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      padding: 18px 18px calc(18px + env(safe-area-inset-bottom, 0px));
+    }
+    .reader-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 7px;
+      color: var(--ink-3);
+      font: 11px/1.4 var(--font-mono);
+      letter-spacing: 0.03em;
+    }
+    .reader-meta .source {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--ink-2);
+    }
+    .reader-title {
+      color: var(--ink);
+      font: 650 clamp(24px, 8vw, 34px)/1.12 var(--font-display);
+      letter-spacing: 0;
+      text-wrap: pretty;
+      overflow-wrap: anywhere;
+    }
+    .reader-title a {
+      border-bottom: 1px solid transparent;
+    }
+    .reader-title a:hover,
+    .reader-title a:focus-visible {
+      border-color: var(--accent);
+    }
+    .reader-line {
+      color: var(--ink-2);
+      font: 16px/1.55 var(--font-body);
+      text-wrap: pretty;
+      overflow-wrap: anywhere;
+    }
+    .reader-reason {
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px solid var(--rule);
+      color: var(--ink-3);
+      font: 13px/1.5 var(--font-body);
+    }
+    .reader-explain {
+      color: var(--ink-3);
+      font: 12px/1.5 var(--font-body);
+    }
+    .reader-explain summary {
+      cursor: pointer;
+      color: var(--ink-2);
+      font: 11px/1.4 var(--font-mono);
+      letter-spacing: 0.04em;
+      list-style: none;
+    }
+    .reader-explain summary::-webkit-details-marker { display: none; }
+    .reader-explain ul {
+      margin: 8px 0 0;
+      padding-left: 17px;
+    }
+    .reader-index-sheet[hidden] {
+      display: none;
+    }
+    .reader-index-sheet {
+      position: fixed;
+      inset: auto 0 0 0;
+      z-index: 50;
+      max-height: min(78svh, 620px);
+      padding: 14px 18px calc(18px + env(safe-area-inset-bottom, 0px));
+      border-top: 1px solid var(--rule);
+      background: color-mix(in srgb, var(--panel) 96%, transparent);
+      box-shadow: 0 -18px 48px rgba(0, 0, 0, 0.18);
+      overflow: auto;
+    }
+    .reader-index-head {
+      position: sticky;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 12px;
+      background: inherit;
+      color: var(--ink);
+      font: 600 15px/1.2 var(--font-display);
+    }
+    .reader-index-list {
+      display: grid;
+      gap: 0;
+    }
+    .reader-index-row {
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      min-height: 58px;
+      padding: 10px 0;
+      border: 0;
+      border-bottom: 1px solid var(--rule);
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      text-align: left;
+    }
+    .reader-index-row[aria-current="true"] .reader-index-number {
+      color: var(--accent-2);
+    }
+    .reader-index-number {
+      color: var(--ink-3);
+      font: 11px/1 var(--font-mono);
+      font-variant-numeric: tabular-nums;
+    }
+    .reader-index-title {
+      color: var(--ink);
+      font: 14px/1.3 var(--font-body);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .reader-index-meta {
+      color: var(--ink-3);
+      font: 10px/1 var(--font-mono);
+      letter-spacing: 0.03em;
+    }
     .top-jump {
       right: 50%;
       bottom: max(16px, env(safe-area-inset-bottom));
@@ -1108,28 +1423,28 @@
 <h2 class="top-story-title"><a href="https://blog.tilderesearch.com/blog/aurora" target="_blank" rel="noopener noreferrer">Aurora: A Leverage-Aware Optimizer for Rectangular Matrices</a></h2>
 <p class="top-story-dek">Aurora introduces leverage-aware optimizer for rectangular matrices</p>
 <p class="top-story-brief">Tilde Research proposes Aurora, an optimizer addressing training inefficiencies in rectangular matrices. It adapts gradient updates based on row/column leverage scores, improving convergence for vision transformers and other models with non-square weight matrices. The method generalizes existing optimizers while reducing computation overhead.</p>
-<div class="top-news-meta"><span class="source">Lobsters (AI tag)</span><span class="sep">·</span>2026-05-10 01:24 UTC<span class="sep">·</span>tool<span class="sep">·</span>0.76</div>
+<div class="top-news-meta"><span class="source"><svg class="source-glyph" data-source-glyph="feed" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" d="M5 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM4 10a10 10 0 0 1 10 10M4 5a15 15 0 0 1 15 15"/></svg><span>Lobsters (AI tag)</span></span><span class="sep">·</span>2026-05-10 01:24 UTC<span class="sep">·</span>tool<span class="sep">·</span>0.76</div>
 </div>
 </article>
 <div class="top-list"><article class="top-row">
 <div class="top-row-body">
 <h3 class="top-row-title"><a href="https://producthunt.com/products/agentpeek" target="_blank" rel="noopener noreferrer">AgentPeek</a></h3>
 <p class="top-row-dek">AgentPeek integrates Claude Code and Codex into Mac menu bar</p>
-<div class="top-news-meta"><span class="source">Product Hunt</span><span class="sep">·</span>2026-05-09 22:27 UTC<span class="sep">·</span>tool<span class="sep">·</span>0.56</div>
+<div class="top-news-meta"><span class="source"><svg class="source-glyph" data-source-glyph="feed" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" d="M5 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM4 10a10 10 0 0 1 10 10M4 5a15 15 0 0 1 15 15"/></svg><span>Product Hunt</span></span><span class="sep">·</span>2026-05-09 22:27 UTC<span class="sep">·</span>tool<span class="sep">·</span>0.56</div>
 </div>
 </article>
 <article class="top-row">
 <div class="top-row-body">
 <h3 class="top-row-title"><a href="https://the-decoder.com/metr-says-it-can-barely-measure-claude-mythos-palo-alto-networks-warns-of-autonomous-ai-attackers" target="_blank" rel="noopener noreferrer">METR says it can barely measure Claude Mythos, Palo Alto Networks warns of autonomous AI attackers</a></h3>
 <p class="top-row-dek">METR struggles to evaluate Claude Mythos; Palo Alto warns of AI-driven cyberattacks.</p>
-<div class="top-news-meta"><span class="source">The Decoder</span><span class="sep">·</span>2026-05-10 09:25 UTC<span class="sep">·</span>news<span class="sep">·</span>0.78</div>
+<div class="top-news-meta"><span class="source"><svg class="source-glyph" data-source-glyph="news" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.5 6.5h15v10.8a1.7 1.7 0 0 1-1.7 1.7H6.2a1.7 1.7 0 0 1-1.7-1.7V6.5ZM7.5 10h4.5M7.5 13h9M7.5 16h7M14.5 9.5H17v2.5h-2.5z"/></svg><span>The Decoder</span></span><span class="sep">·</span>2026-05-10 09:25 UTC<span class="sep">·</span>news<span class="sep">·</span>0.78</div>
 </div>
 </article>
 <article class="top-row">
 <div class="top-row-body">
 <h3 class="top-row-title"><a href="https://github.com/Imbad0202/academic-research-skills" target="_blank" rel="noopener noreferrer">Academic Research Skills for Claude Code</a></h3>
 <p class="top-row-dek">GitHub guide teaches academic research workflow using Claude Code.</p>
-<div class="top-news-meta"><span class="source">Hacker News (AI-filtered)</span><span class="sep">·</span>2026-05-10 13:42 UTC<span class="sep">·</span>tool<span class="sep">·</span>0.66</div>
+<div class="top-news-meta"><span class="source"><svg class="source-glyph" data-source-glyph="github" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M7 4.5h9.5a2 2 0 0 1 2 2v13H8a2.5 2.5 0 0 1 0-5h10.5M7 4.5a2 2 0 0 0-2 2v10.5M9 8h6"/></svg><span>Hacker News (AI-filtered)</span></span><span class="sep">·</span>2026-05-10 13:42 UTC<span class="sep">·</span>tool<span class="sep">·</span>0.66</div>
 </div>
 </article></div>
 <!-- CHRONICLE_TOP_NEWS_END -->
@@ -1160,9 +1475,10 @@
 	    <!-- CHRONICLE_FEED_START -->
 <div class="bucket-head">Last 3 hours<span class="count">(4)</span></div>
 <ol class="feed-list"><li><article class="item" data-tier="top" data-read-index="1">
+<div class="item-body">
 <h3 class="item-title"><a href="https://cocoawithlove.com/blog/matrix-multiplications-swift.html" target="_blank" rel="noopener noreferrer">Training an LLM in Swift, Part 1: Taking matrix multiplication from Gflop/s to Tflop/s</a></h3>
 <p class="item-line">Swift tutorial optimizes matrix multiplication for LLM training</p>
-<div class="item-meta"><span class="source">Lobsters (AI tag)</span><span class="sep">·</span>2026-05-10 15:49 UTC<span class="sep">·</span>tutorial<span class="spacer"></span><span class="score">0.78</span><span class="score-detail">(n 0.85 · t 0.70)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="discussion" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 6.5h10a2.5 2.5 0 0 1 2.5 2.5v3.5A2.5 2.5 0 0 1 15 15H8l-3 3v-3.2A2.5 2.5 0 0 1 2.5 12.3V9A2.5 2.5 0 0 1 5 6.5ZM8 10h5M8 12.8h3.5"/></svg><span>Lobsters (AI tag)</span></span><span class="sep">·</span>2026-05-10 15:49 UTC<span class="sep">·</span>tutorial<span class="spacer"></span><span class="score">0.78</span><span class="score-detail">(n 0.85 · t 0.70)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1172,11 +1488,13 @@
 <li>Use this as implementation reference if it matches your stack.</li>
 </ul>
 </details>
+</div>
 </article></li>
-<li><article class="item" data-tier="top" data-read-index="2">
+<li><article class="item has-image" data-tier="top" data-read-index="2">
+<div class="item-body">
 <h3 class="item-title"><a href="https://old.reddit.com/r/MachineLearning/comments/1t9d3et/signals_finding_the_most_informative_agent_traces" target="_blank" rel="noopener noreferrer">Signals: finding the most informative agent traces without LLM judges [R]</a></h3>
 <p class="item-line">New method for selecting informative agent traces without LLM judges</p>
-<div class="item-meta"><span class="source">r/MachineLearning</span><span class="sep">·</span>2026-05-10 17:26 UTC<span class="sep">·</span>paper<span class="spacer"></span><span class="score">0.73</span><span class="score-detail">(n 0.80 · t 0.55)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="reddit" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg><span>r/MachineLearning</span></span><span class="sep">·</span>2026-05-10 17:26 UTC<span class="sep">·</span>paper<span class="spacer"></span><span class="score">0.73</span><span class="score-detail">(n 0.80 · t 0.55)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1186,11 +1504,14 @@
 <li>Save this for technical review if the method maps to your roadmap.</li>
 </ul>
 </details>
+</div>
+<img class="item-thumb" src="https://preview.redd.it/nauai52sgc0h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=b9a1d06b2ba6b8e05d6ef0c125f39510f7e0806b" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
 </article></li>
 <li><article class="item" data-tier="top" data-read-index="3">
+<div class="item-body">
 <h3 class="item-title"><a href="https://old.reddit.com/r/LocalLLaMA/comments/1t9dqon/its_the_little_thingsand_im_an_idiot" target="_blank" rel="noopener noreferrer">It&#39;s the little things....and I&#39;m an idiot</a></h3>
 <p class="item-line">User shares local LLM setup struggles</p>
-<div class="item-meta"><span class="source">r/LocalLLaMA</span><span class="sep">·</span>2026-05-10 17:49 UTC<span class="sep">·</span>discussion<span class="spacer"></span><span class="score">0.55</span><span class="score-detail">(n 0.87 · t 0.50)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="reddit" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg><span>r/LocalLLaMA</span></span><span class="sep">·</span>2026-05-10 17:49 UTC<span class="sep">·</span>discussion<span class="spacer"></span><span class="score">0.55</span><span class="score-detail">(n 0.87 · t 0.50)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1200,11 +1521,13 @@
 <li>Use this as weak signal and verify against primary sources.</li>
 </ul>
 </details>
+</div>
 </article></li>
 <li><article class="item" data-tier="top" data-read-index="4">
+<div class="item-body">
 <h3 class="item-title"><a href="https://old.reddit.com/r/LocalLLaMA/comments/1t9cle9/anybody_else_noticing_how_good_gemma426ba4b_is" target="_blank" rel="noopener noreferrer">Anybody else noticing how good gemma-4-26b-a4b is with one-shotting three.js?</a></h3>
 <p class="item-line">Discussion on Gemma-4-26b-a4b&#39;s performance with three.js one-shotting</p>
-<div class="item-meta"><span class="source">r/LocalLLaMA</span><span class="sep">·</span>2026-05-10 17:07 UTC<span class="sep">·</span>discussion<span class="spacer"></span><span class="score">0.52</span><span class="score-detail">(n 0.79 · t 0.50)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="reddit" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg><span>r/LocalLLaMA</span></span><span class="sep">·</span>2026-05-10 17:07 UTC<span class="sep">·</span>discussion<span class="spacer"></span><span class="score">0.52</span><span class="score-detail">(n 0.79 · t 0.50)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1214,12 +1537,14 @@
 <li>Use this as weak signal and verify against primary sources.</li>
 </ul>
 </details>
+</div>
 </article></li></ol>
 <div class="bucket-head">Earlier today<span class="count">(32)</span></div>
-<ol class="feed-list"><li><article class="item" data-tier="top" data-read-index="1">
+<ol class="feed-list"><li><article class="item has-image" data-tier="top" data-read-index="1">
+<div class="item-body">
 <h3 class="item-title"><a href="https://the-decoder.com/metr-says-it-can-barely-measure-claude-mythos-palo-alto-networks-warns-of-autonomous-ai-attackers" target="_blank" rel="noopener noreferrer">METR says it can barely measure Claude Mythos, Palo Alto Networks warns of autonomous AI attackers</a></h3>
 <p class="item-line">METR struggles to evaluate Claude Mythos; AI attackers chain vulnerabilities autonomously</p>
-<div class="item-meta"><span class="source">The Decoder</span><span class="sep">·</span>2026-05-10 09:25 UTC<span class="sep">·</span>news<span class="spacer"></span><span class="score">0.78</span><span class="score-detail">(n 0.86 · t 0.74)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="news" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.5 6.5h15v10.8a1.7 1.7 0 0 1-1.7 1.7H6.2a1.7 1.7 0 0 1-1.7-1.7V6.5ZM7.5 10h4.5M7.5 13h9M7.5 16h7M14.5 9.5H17v2.5h-2.5z"/></svg><span>The Decoder</span></span><span class="sep">·</span>2026-05-10 09:25 UTC<span class="sep">·</span>news<span class="spacer"></span><span class="score">0.78</span><span class="score-detail">(n 0.86 · t 0.74)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1228,11 +1553,14 @@
 <li>Read the primary source and decide whether it changes your next action.</li>
 </ul>
 </details>
+</div>
+<img class="item-thumb" src="https://the-decoder.com/wp-content/uploads/2026/05/cybersecurity_llm_kraken.png" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
 </article></li>
-<li><article class="item" data-tier="top" data-read-index="2">
+<li><article class="item has-image" data-tier="top" data-read-index="2">
+<div class="item-body">
 <h3 class="item-title"><a href="https://the-decoder.com/ai-agents-can-now-hack-computers-and-copy-themselves-and-theyre-getting-better-fast" target="_blank" rel="noopener noreferrer">AI agents can now hack computers and copy themselves, and they&#39;re getting better fast</a></h3>
 <p class="item-line">AI agents&#39; hacking success rate jumps from 6% to 81% in one year</p>
-<div class="item-meta"><span class="source">The Decoder</span><span class="sep">·</span>2026-05-10 11:45 UTC<span class="sep">·</span>news<span class="spacer"></span><span class="score">0.77</span><span class="score-detail">(n 0.83 · t 0.74)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="news" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.5 6.5h15v10.8a1.7 1.7 0 0 1-1.7 1.7H6.2a1.7 1.7 0 0 1-1.7-1.7V6.5ZM7.5 10h4.5M7.5 13h9M7.5 16h7M14.5 9.5H17v2.5h-2.5z"/></svg><span>The Decoder</span></span><span class="sep">·</span>2026-05-10 11:45 UTC<span class="sep">·</span>news<span class="spacer"></span><span class="score">0.77</span><span class="score-detail">(n 0.83 · t 0.74)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1242,11 +1570,14 @@
 <li>Read the primary source and decide whether it changes your next action.</li>
 </ul>
 </details>
+</div>
+<img class="item-thumb" src="https://the-decoder.com/wp-content/uploads/2026/05/hacking_agents_self_replicating-2.png" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
 </article></li>
-<li><article class="item" data-tier="top" data-read-index="3">
+<li><article class="item has-image" data-tier="top" data-read-index="3">
+<div class="item-body">
 <h3 class="item-title"><a href="https://the-decoder.com/researchers-may-have-found-a-way-to-stop-ai-models-from-intentionally-playing-dumb-during-safety-evaluations" target="_blank" rel="noopener noreferrer">Researchers may have found a way to stop AI models from intentionally playing dumb during safety evaluations</a></h3>
 <p class="item-line">Study addresses AI models hiding capabilities during safety evaluations</p>
-<div class="item-meta"><span class="source">The Decoder</span><span class="sep">·</span>2026-05-10 07:38 UTC<span class="sep">·</span>paper<span class="spacer"></span><span class="score">0.76</span><span class="score-detail">(n 0.82 · t 0.74)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="news" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.5 6.5h15v10.8a1.7 1.7 0 0 1-1.7 1.7H6.2a1.7 1.7 0 0 1-1.7-1.7V6.5ZM7.5 10h4.5M7.5 13h9M7.5 16h7M14.5 9.5H17v2.5h-2.5z"/></svg><span>The Decoder</span></span><span class="sep">·</span>2026-05-10 07:38 UTC<span class="sep">·</span>paper<span class="spacer"></span><span class="score">0.76</span><span class="score-detail">(n 0.82 · t 0.74)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1255,11 +1586,14 @@
 <li>Save this for technical review if the method maps to your roadmap.</li>
 </ul>
 </details>
+</div>
+<img class="item-thumb" src="https://the-decoder.com/wp-content/uploads/2026/05/sandbagging_ai.png" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
 </article></li>
 <li><article class="item" data-tier="top" data-read-index="4">
+<div class="item-body">
 <h3 class="item-title"><a href="https://blog.tilderesearch.com/blog/aurora" target="_blank" rel="noopener noreferrer">Aurora: A Leverage-Aware Optimizer for Rectangular Matrices</a></h3>
 <p class="item-line">Aurora optimizer improves rectangular matrix training efficiency</p>
-<div class="item-meta"><span class="source">Lobsters (AI tag)</span><span class="sep">·</span>2026-05-10 01:24 UTC<span class="sep">·</span>tool<span class="spacer"></span><span class="score">0.76</span><span class="score-detail">(n 0.87 · t 0.70)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="discussion" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 6.5h10a2.5 2.5 0 0 1 2.5 2.5v3.5A2.5 2.5 0 0 1 15 15H8l-3 3v-3.2A2.5 2.5 0 0 1 2.5 12.3V9A2.5 2.5 0 0 1 5 6.5ZM8 10h5M8 12.8h3.5"/></svg><span>Lobsters (AI tag)</span></span><span class="sep">·</span>2026-05-10 01:24 UTC<span class="sep">·</span>tool<span class="spacer"></span><span class="score">0.76</span><span class="score-detail">(n 0.87 · t 0.70)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1268,11 +1602,13 @@
 <li>Try it in a small sandbox before adding it to production workflow.</li>
 </ul>
 </details>
+</div>
 </article></li>
 <li><article class="item" data-tier="top" data-read-index="5">
+<div class="item-body">
 <h3 class="item-title"><a href="https://old.reddit.com/r/LocalLLaMA/comments/1t96l6r/ncclfree_tensor_parallelism_on_dual_blackwell" target="_blank" rel="noopener noreferrer">NCCL-Free Tensor Parallelism on Dual Blackwell PCIe llama.cpp b9095 released!</a></h3>
 <p class="item-line">llama.cpp enables NCCL-free tensor parallelism on Blackwell GPUs</p>
-<div class="item-meta"><span class="source">r/LocalLLaMA</span><span class="sep">·</span>2026-05-10 13:12 UTC<span class="sep">·</span>tool<span class="spacer"></span><span class="score">0.74</span><span class="score-detail">(n 0.89 · t 0.50)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="reddit" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg><span>r/LocalLLaMA</span></span><span class="sep">·</span>2026-05-10 13:12 UTC<span class="sep">·</span>tool<span class="spacer"></span><span class="score">0.74</span><span class="score-detail">(n 0.89 · t 0.50)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1282,11 +1618,13 @@
 <li>Try it in a small sandbox before adding it to production workflow.</li>
 </ul>
 </details>
+</div>
 </article></li>
 <li><article class="item" data-tier="top" data-read-index="6">
+<div class="item-body">
 <h3 class="item-title"><a href="https://old.reddit.com/r/MachineLearning/comments/1t8zja2/colss_a_mathstyle_expression_evaluator_for_numpy" target="_blank" rel="noopener noreferrer">&quot;colss&quot; a math-style expression evaluator for NumPy arrays [P]</a></h3>
 <p class="item-line">colss simplifies NumPy array expressions with math syntax</p>
-<div class="item-meta"><span class="source">r/MachineLearning</span><span class="sep">·</span>2026-05-10 06:53 UTC<span class="sep">·</span>tool<span class="spacer"></span><span class="score">0.73</span><span class="score-detail">(n 0.88 · t 0.55)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="reddit" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg><span>r/MachineLearning</span></span><span class="sep">·</span>2026-05-10 06:53 UTC<span class="sep">·</span>tool<span class="spacer"></span><span class="score">0.73</span><span class="score-detail">(n 0.88 · t 0.55)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1295,11 +1633,13 @@
 <li>Try it in a small sandbox before adding it to production workflow.</li>
 </ul>
 </details>
+</div>
 </article></li>
 <li><article class="item" data-tier="top" data-read-index="7">
+<div class="item-body">
 <h3 class="item-title"><a href="https://old.reddit.com/r/LocalLLaMA/comments/1t8s83r/nvidia_ai_releases_star_elastic_one_checkpoint" target="_blank" rel="noopener noreferrer">NVIDIA AI Releases Star Elastic: One Checkpoint that Contains 30B, 23B, and 12B Reasoning Models with Zero-Shot Slicing</a></h3>
 <p class="item-line">NVIDIA releases Star Elastic checkpoint with multiple model sizes</p>
-<div class="item-meta"><span class="source">r/LocalLLaMA</span><span class="sep">·</span>2026-05-10 00:48 UTC<span class="sep">·</span>model release<span class="spacer"></span><span class="score">0.71</span><span class="score-detail">(n 0.86 · t 0.50)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="reddit" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg><span>r/LocalLLaMA</span></span><span class="sep">·</span>2026-05-10 00:48 UTC<span class="sep">·</span>model release<span class="spacer"></span><span class="score">0.71</span><span class="score-detail">(n 0.86 · t 0.50)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1308,11 +1648,13 @@
 <li>Check migration notes, pricing, and benchmark deltas before adopting.</li>
 </ul>
 </details>
+</div>
 </article></li>
 <li><article class="item" data-tier="top" data-read-index="8">
+<div class="item-body">
 <h3 class="item-title"><a href="https://github.com/Imbad0202/academic-research-skills" target="_blank" rel="noopener noreferrer">Academic Research Skills for Claude Code</a></h3>
 <p class="item-line">GitHub guide for using Claude Code in academic research</p>
-<div class="item-meta"><span class="source">Hacker News (AI-filtered)</span><span class="sep">·</span>2026-05-10 13:42 UTC<span class="sep">·</span>tool<span class="spacer"></span><span class="score">0.66</span><span class="score-detail">(n 0.81 · t 0.65)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="github" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M7 4.5h9.5a2 2 0 0 1 2 2v13H8a2.5 2.5 0 0 1 0-5h10.5M7 4.5a2 2 0 0 0-2 2v10.5M9 8h6"/></svg><span>Hacker News (AI-filtered)</span></span><span class="sep">·</span>2026-05-10 13:42 UTC<span class="sep">·</span>tool<span class="spacer"></span><span class="score">0.66</span><span class="score-detail">(n 0.81 · t 0.65)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1323,11 +1665,13 @@
 <li>Try it in a small sandbox before adding it to production workflow.</li>
 </ul>
 </details>
+</div>
 </article></li>
 <li><article class="item" data-tier="normal" data-read-index="9">
+<div class="item-body">
 <h3 class="item-title"><a href="https://blog.google/innovation-and-ai/technology/developers-tools/expanded-gemini-api-file-search-multimodal-rag" target="_blank" rel="noopener noreferrer">Gemini API File Search is now multimodal</a></h3>
 <p class="item-line">Gemini API adds multimodal file search</p>
-<div class="item-meta"><span class="source">Hacker News (AI-filtered)</span><span class="sep">·</span>2026-05-10 03:22 UTC<span class="sep">·</span>model release<span class="spacer"></span><span class="score">0.66</span><span class="score-detail">(n 0.48 · t 0.65)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="hacker-news" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4.5" y="4.5" width="15" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8.5 8l3.5 4 3.5-4M12 12v4"/></svg><span>Hacker News (AI-filtered)</span></span><span class="sep">·</span>2026-05-10 03:22 UTC<span class="sep">·</span>model release<span class="spacer"></span><span class="score">0.66</span><span class="score-detail">(n 0.48 · t 0.65)</span></div>
 <details class="item-explain">
 <summary>why surfaced · medium</summary>
 <ul>
@@ -1337,11 +1681,13 @@
 <li>Check migration notes, pricing, and benchmark deltas before adopting.</li>
 </ul>
 </details>
+</div>
 </article></li>
-<li><article class="item" data-tier="top" data-read-index="10">
+<li><article class="item has-image" data-tier="top" data-read-index="10">
+<div class="item-body">
 <h3 class="item-title"><a href="https://the-decoder.com/gpt-5-5-costs-49-to-92-percent-more-than-its-predecessor-depending-on-the-input-length" target="_blank" rel="noopener noreferrer">GPT-5.5 costs 49 to 92 percent more than its predecessor, depending on the input length</a></h3>
 <p class="item-line">GPT-5.5 costs 49-92% higher than GPT-5.4 depending on input length</p>
-<div class="item-meta"><span class="source">The Decoder</span><span class="sep">·</span>2026-05-10 08:05 UTC<span class="sep">·</span>company announcement<span class="spacer"></span><span class="score">0.66</span><span class="score-detail">(n 0.85 · t 0.74)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="news" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.5 6.5h15v10.8a1.7 1.7 0 0 1-1.7 1.7H6.2a1.7 1.7 0 0 1-1.7-1.7V6.5ZM7.5 10h4.5M7.5 13h9M7.5 16h7M14.5 9.5H17v2.5h-2.5z"/></svg><span>The Decoder</span></span><span class="sep">·</span>2026-05-10 08:05 UTC<span class="sep">·</span>company announcement<span class="spacer"></span><span class="score">0.66</span><span class="score-detail">(n 0.85 · t 0.74)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1350,11 +1696,14 @@
 <li>Scan for API, pricing, policy, or platform changes that affect shipped systems.</li>
 </ul>
 </details>
+</div>
+<img class="item-thumb" src="https://the-decoder.com/wp-content/uploads/2026/04/openai_logo_orange.png" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
 </article></li>
 <li><article class="item" data-tier="top" data-read-index="11">
+<div class="item-body">
 <h3 class="item-title"><a href="https://techcrunch.com/2026/05/10/were-feeling-cynical-about-xais-big-deal-with-anthropic" target="_blank" rel="noopener noreferrer">We’re feeling cynical about xAI’s big deal with Anthropic</a></h3>
 <p class="item-line">Equity podcast critiques xAI-Anthropic partnership motives</p>
-<div class="item-meta"><span class="source">TechCrunch AI</span><span class="sep">·</span>2026-05-10 15:34 UTC<span class="sep">·</span>opinion<span class="spacer"></span><span class="score">0.66</span><span class="score-detail">(n 0.81 · t 0.72)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="news" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.5 6.5h15v10.8a1.7 1.7 0 0 1-1.7 1.7H6.2a1.7 1.7 0 0 1-1.7-1.7V6.5ZM7.5 10h4.5M7.5 13h9M7.5 16h7M14.5 9.5H17v2.5h-2.5z"/></svg><span>TechCrunch AI</span></span><span class="sep">·</span>2026-05-10 15:34 UTC<span class="sep">·</span>opinion<span class="spacer"></span><span class="score">0.66</span><span class="score-detail">(n 0.81 · t 0.72)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1364,11 +1713,13 @@
 <li>Read the primary source and decide whether it changes your next action.</li>
 </ul>
 </details>
+</div>
 </article></li>
-<li><article class="item" data-tier="top" data-read-index="12">
+<li><article class="item has-image" data-tier="top" data-read-index="12">
+<div class="item-body">
 <h3 class="item-title"><a href="https://the-decoder.com/bytedance-plans-over-30-billion-for-ai-expansion-bets-big-on-chinese-chips" target="_blank" rel="noopener noreferrer">ByteDance plans over $30 billion for AI expansion, bets big on Chinese chips</a></h3>
 <p class="item-line">ByteDance raises 2026 AI budget to $30B with Chinese chip focus</p>
-<div class="item-meta"><span class="source">The Decoder</span><span class="sep">·</span>2026-05-10 09:34 UTC<span class="sep">·</span>company announcement<span class="spacer"></span><span class="score">0.66</span><span class="score-detail">(n 0.83 · t 0.74)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="news" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.5 6.5h15v10.8a1.7 1.7 0 0 1-1.7 1.7H6.2a1.7 1.7 0 0 1-1.7-1.7V6.5ZM7.5 10h4.5M7.5 13h9M7.5 16h7M14.5 9.5H17v2.5h-2.5z"/></svg><span>The Decoder</span></span><span class="sep">·</span>2026-05-10 09:34 UTC<span class="sep">·</span>company announcement<span class="spacer"></span><span class="score">0.66</span><span class="score-detail">(n 0.83 · t 0.74)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1377,11 +1728,14 @@
 <li>Scan for API, pricing, policy, or platform changes that affect shipped systems.</li>
 </ul>
 </details>
+</div>
+<img class="item-thumb" src="https://the-decoder.com/wp-content/uploads/2025/12/china_neural_network.jpeg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
 </article></li>
-<li><article class="item" data-tier="top" data-read-index="13">
+<li><article class="item has-image" data-tier="top" data-read-index="13">
+<div class="item-body">
 <h3 class="item-title"><a href="https://the-decoder.com/anthropic-and-openai-sit-down-with-religious-leaders-to-seek-ethical-advice" target="_blank" rel="noopener noreferrer">Anthropic and OpenAI sit down with religious leaders to seek ethical advice</a></h3>
 <p class="item-line">Anthropic and OpenAI consult religious leaders on AI ethics</p>
-<div class="item-meta"><span class="source">The Decoder</span><span class="sep">·</span>2026-05-10 10:41 UTC<span class="sep">·</span>company announcement<span class="spacer"></span><span class="score">0.65</span><span class="score-detail">(n 0.81 · t 0.74)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="news" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.5 6.5h15v10.8a1.7 1.7 0 0 1-1.7 1.7H6.2a1.7 1.7 0 0 1-1.7-1.7V6.5ZM7.5 10h4.5M7.5 13h9M7.5 16h7M14.5 9.5H17v2.5h-2.5z"/></svg><span>The Decoder</span></span><span class="sep">·</span>2026-05-10 10:41 UTC<span class="sep">·</span>company announcement<span class="spacer"></span><span class="score">0.65</span><span class="score-detail">(n 0.81 · t 0.74)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1390,11 +1744,14 @@
 <li>Scan for API, pricing, policy, or platform changes that affect shipped systems.</li>
 </ul>
 </details>
+</div>
+<img class="item-thumb" src="https://the-decoder.com/wp-content/uploads/2026/05/openai_anthropic_religion.png" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
 </article></li>
 <li><article class="item" data-tier="top" data-read-index="14">
+<div class="item-body">
 <h3 class="item-title"><a href="https://techcrunch.com/2026/05/09/voice-ai-in-india-is-hard-wispr-flow-is-betting-on-it-anyway" target="_blank" rel="noopener noreferrer">Voice AI in India is hard. Wispr Flow is betting on it anyway.</a></h3>
 <p class="item-line">Wispr Flow expands voice AI in India despite challenges</p>
-<div class="item-meta"><span class="source">TechCrunch AI</span><span class="sep">·</span>2026-05-10 02:00 UTC<span class="sep">·</span>company announcement<span class="spacer"></span><span class="score">0.65</span><span class="score-detail">(n 0.86 · t 0.72)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="news" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.5 6.5h15v10.8a1.7 1.7 0 0 1-1.7 1.7H6.2a1.7 1.7 0 0 1-1.7-1.7V6.5ZM7.5 10h4.5M7.5 13h9M7.5 16h7M14.5 9.5H17v2.5h-2.5z"/></svg><span>TechCrunch AI</span></span><span class="sep">·</span>2026-05-10 02:00 UTC<span class="sep">·</span>company announcement<span class="spacer"></span><span class="score">0.65</span><span class="score-detail">(n 0.86 · t 0.72)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1403,11 +1760,13 @@
 <li>Scan for API, pricing, policy, or platform changes that affect shipped systems.</li>
 </ul>
 </details>
+</div>
 </article></li>
 <li><article class="item" data-tier="top" data-read-index="15">
+<div class="item-body">
 <h3 class="item-title"><a href="https://techcrunch.com/2026/05/09/artificial-intelligence-definition-glossary-hallucinations-guide-to-common-ai-terms" target="_blank" rel="noopener noreferrer">So you’ve heard these AI terms and nodded along; let’s fix that</a></h3>
 <p class="item-line">Glossary explains common AI terminology</p>
-<div class="item-meta"><span class="source">TechCrunch AI</span><span class="sep">·</span>2026-05-09 21:45 UTC<span class="sep">·</span>tutorial<span class="spacer"></span><span class="score">0.64</span><span class="score-detail">(n 0.87 · t 0.72)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="news" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.5 6.5h15v10.8a1.7 1.7 0 0 1-1.7 1.7H6.2a1.7 1.7 0 0 1-1.7-1.7V6.5ZM7.5 10h4.5M7.5 13h9M7.5 16h7M14.5 9.5H17v2.5h-2.5z"/></svg><span>TechCrunch AI</span></span><span class="sep">·</span>2026-05-09 21:45 UTC<span class="sep">·</span>tutorial<span class="spacer"></span><span class="score">0.64</span><span class="score-detail">(n 0.87 · t 0.72)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1416,11 +1775,13 @@
 <li>Use this as implementation reference if it matches your stack.</li>
 </ul>
 </details>
+</div>
 </article></li>
-<li><article class="item" data-tier="normal" data-read-index="16">
+<li><article class="item has-image" data-tier="normal" data-read-index="16">
+<div class="item-body">
 <h3 class="item-title"><a href="https://old.reddit.com/r/LocalLLaMA/comments/1t8db1j/model_add_sarvam_moe_architecture_support_by" target="_blank" rel="noopener noreferrer">model: add sarvam_moe architecture support by sumitchatterjee13 · Pull Request #20275 · ggml-org/llama.cpp</a></h3>
 <p class="item-line">llama.cpp adds Sarvam-30B MoE model support</p>
-<div class="item-meta"><span class="source">r/LocalLLaMA</span><span class="sep">·</span>2026-05-09 18:46 UTC<span class="sep">·</span>model release<span class="spacer"></span><span class="score">0.63</span><span class="score-detail">(n 0.63 · t 0.50)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="reddit" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg><span>r/LocalLLaMA</span></span><span class="sep">·</span>2026-05-09 18:46 UTC<span class="sep">·</span>model release<span class="spacer"></span><span class="score">0.63</span><span class="score-detail">(n 0.63 · t 0.50)</span></div>
 <details class="item-explain">
 <summary>why surfaced · medium</summary>
 <ul>
@@ -1429,11 +1790,14 @@
 <li>Check migration notes, pricing, and benchmark deltas before adopting.</li>
 </ul>
 </details>
+</div>
+<img class="item-thumb" src="https://external-preview.redd.it/3UF2WHnMZZCv0pI7m8hJWtiy-ksLfai1-7Hwh_22hZg.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=fae880631272e404720e635823cee9f37644b281" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
 </article></li>
 <li><article class="item" data-tier="top" data-read-index="17">
+<div class="item-body">
 <h3 class="item-title"><a href="https://old.reddit.com/r/LocalLLaMA/comments/1t8wne7/the_gap_between_knowing_something_and_actually" target="_blank" rel="noopener noreferrer">The gap between knowing something and actually understanding it — AI accelerated my learning curve</a></h3>
 <p class="item-line">User reflects on AI&#39;s role in accelerating their learning curve</p>
-<div class="item-meta"><span class="source">r/LocalLLaMA</span><span class="sep">·</span>2026-05-10 04:21 UTC<span class="sep">·</span>opinion<span class="spacer"></span><span class="score">0.59</span><span class="score-detail">(n 0.84 · t 0.50)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="reddit" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg><span>r/LocalLLaMA</span></span><span class="sep">·</span>2026-05-10 04:21 UTC<span class="sep">·</span>opinion<span class="spacer"></span><span class="score">0.59</span><span class="score-detail">(n 0.84 · t 0.50)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1442,11 +1806,13 @@
 <li>Read the primary source and decide whether it changes your next action.</li>
 </ul>
 </details>
+</div>
 </article></li>
-<li><article class="item" data-tier="top" data-read-index="18">
+<li><article class="item has-image" data-tier="top" data-read-index="18">
+<div class="item-body">
 <h3 class="item-title"><a href="https://old.reddit.com/r/MachineLearning/comments/1t8f61o/llm_rankings_are_not_a_ladder_experimental" target="_blank" rel="noopener noreferrer">LLM rankings are not a ladder: experimental results from a transitive benchmark graph [D]</a></h3>
 <p class="item-line">LLM Win visualizes model benchmark results as a directed graph</p>
-<div class="item-meta"><span class="source">r/MachineLearning</span><span class="sep">·</span>2026-05-09 19:16 UTC<span class="sep">·</span>tool<span class="spacer"></span><span class="score">0.59</span><span class="score-detail">(n 0.85 · t 0.55)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="reddit" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg><span>r/MachineLearning</span></span><span class="sep">·</span>2026-05-09 19:16 UTC<span class="sep">·</span>tool<span class="spacer"></span><span class="score">0.59</span><span class="score-detail">(n 0.85 · t 0.55)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1455,11 +1821,14 @@
 <li>Try it in a small sandbox before adding it to production workflow.</li>
 </ul>
 </details>
+</div>
+<img class="item-thumb" src="https://preview.redd.it/668yjlucu80h1.png?width=140&amp;height=83&amp;auto=webp&amp;s=7116ed2e8c6b20acec6f0f1cddcd6c1f4694d0e9" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
 </article></li>
 <li><article class="item" data-tier="top" data-read-index="19">
+<div class="item-body">
 <h3 class="item-title"><a href="https://old.reddit.com/r/LocalLLaMA/comments/1t94ito/i_have_deepseek_v4_pro_at_home" target="_blank" rel="noopener noreferrer">I have DeepSeek V4 Pro at home</a></h3>
 <p class="item-line">User runs DeepSeek V4 Pro locally on Epyc workstation</p>
-<div class="item-meta"><span class="source">r/LocalLLaMA</span><span class="sep">·</span>2026-05-10 11:35 UTC<span class="sep">·</span>model release<span class="spacer"></span><span class="score">0.59</span><span class="score-detail">(n 0.77 · t 0.50)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="reddit" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg><span>r/LocalLLaMA</span></span><span class="sep">·</span>2026-05-10 11:35 UTC<span class="sep">·</span>model release<span class="spacer"></span><span class="score">0.59</span><span class="score-detail">(n 0.77 · t 0.50)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1469,11 +1838,13 @@
 <li>Check migration notes, pricing, and benchmark deltas before adopting.</li>
 </ul>
 </details>
+</div>
 </article></li>
-<li><article class="item" data-tier="top" data-read-index="20">
+<li><article class="item has-image" data-tier="top" data-read-index="20">
+<div class="item-body">
 <h3 class="item-title"><a href="https://old.reddit.com/r/LocalLLaMA/comments/1t8f33t/apple_removes_256gb_m3_ultra_mac_studio_model" target="_blank" rel="noopener noreferrer">Apple Removes 256GB M3 Ultra Mac Studio Model From Online Store</a></h3>
 <p class="item-line">Apple removes 256GB M3 Ultra Mac Studio model</p>
-<div class="item-meta"><span class="source">r/LocalLLaMA</span><span class="sep">·</span>2026-05-09 19:15 UTC<span class="sep">·</span>company announcement<span class="spacer"></span><span class="score">0.58</span><span class="score-detail">(n 0.83 · t 0.50)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="reddit" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg><span>r/LocalLLaMA</span></span><span class="sep">·</span>2026-05-09 19:15 UTC<span class="sep">·</span>company announcement<span class="spacer"></span><span class="score">0.58</span><span class="score-detail">(n 0.83 · t 0.50)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1482,10 +1853,13 @@
 <li>Scan for API, pricing, policy, or platform changes that affect shipped systems.</li>
 </ul>
 </details>
+</div>
+<img class="item-thumb" src="https://external-preview.redd.it/ENUq30zs9O9lnOcCgVQ4qEmp0MDGnNkoFlHvr_Xj0AI.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=48dc4a126fd1b5099b5b6d4c15da0033f49b5b3b" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
 </article></li>
 <li><article class="item" data-tier="top" data-read-index="21">
+<div class="item-body">
 <h3 class="item-title"><a href="https://producthunt.com/products/agentpeek" target="_blank" rel="noopener noreferrer">AgentPeek</a></h3>
-<div class="item-meta"><span class="source">Product Hunt</span><span class="sep">·</span>2026-05-09 22:27 UTC<span class="sep">·</span>tool<span class="spacer"></span><span class="score">0.56</span><span class="score-detail">(n 0.75 · t 0.50)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="feed" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" d="M5 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM4 10a10 10 0 0 1 10 10M4 5a15 15 0 0 1 15 15"/></svg><span>Product Hunt</span></span><span class="sep">·</span>2026-05-09 22:27 UTC<span class="sep">·</span>tool<span class="spacer"></span><span class="score">0.56</span><span class="score-detail">(n 0.75 · t 0.50)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1494,11 +1868,13 @@
 <li>Try it in a small sandbox before adding it to production workflow.</li>
 </ul>
 </details>
+</div>
 </article></li>
 <li><article class="item" data-tier="top" data-read-index="22">
+<div class="item-body">
 <h3 class="item-title"><a href="https://old.reddit.com/r/MachineLearning/comments/1t95gc6/any_implementations_similar_to_d4rt_d" target="_blank" rel="noopener noreferrer">Any implementations similar to D4RT? [D]</a></h3>
 <p class="item-line">Seeking D4RT implementations for 4D scene understanding</p>
-<div class="item-meta"><span class="source">r/MachineLearning</span><span class="sep">·</span>2026-05-10 12:20 UTC<span class="sep">·</span>discussion<span class="spacer"></span><span class="score">0.54</span><span class="score-detail">(n 0.84 · t 0.55)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="reddit" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg><span>r/MachineLearning</span></span><span class="sep">·</span>2026-05-10 12:20 UTC<span class="sep">·</span>discussion<span class="spacer"></span><span class="score">0.54</span><span class="score-detail">(n 0.84 · t 0.55)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1508,11 +1884,13 @@
 <li>Use this as weak signal and verify against primary sources.</li>
 </ul>
 </details>
+</div>
 </article></li>
 <li><article class="item" data-tier="top" data-read-index="23">
+<div class="item-body">
 <h3 class="item-title"><a href="https://old.reddit.com/r/LocalLLaMA/comments/1t99upf/getting_a_feel_for_how_fast_x_tokenssecond_really" target="_blank" rel="noopener noreferrer">Getting a feel for how fast X tokens/second really is.</a></h3>
 <p class="item-line">Community discusses token-per-second performance benchmarks</p>
-<div class="item-meta"><span class="source">r/LocalLLaMA</span><span class="sep">·</span>2026-05-10 15:23 UTC<span class="sep">·</span>discussion<span class="spacer"></span><span class="score">0.54</span><span class="score-detail">(n 0.86 · t 0.50)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="reddit" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg><span>r/LocalLLaMA</span></span><span class="sep">·</span>2026-05-10 15:23 UTC<span class="sep">·</span>discussion<span class="spacer"></span><span class="score">0.54</span><span class="score-detail">(n 0.86 · t 0.50)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1522,11 +1900,13 @@
 <li>Use this as weak signal and verify against primary sources.</li>
 </ul>
 </details>
+</div>
 </article></li>
 <li><article class="item" data-tier="top" data-read-index="24">
+<div class="item-body">
 <h3 class="item-title"><a href="https://old.reddit.com/r/LocalLLaMA/comments/1t97163/building_out_my_tool_library_any_recommendations" target="_blank" rel="noopener noreferrer">Building out my tool library, any recommendations? I just added email capability and im starting to get hyped!</a></h3>
 <p class="item-line">User builds toolset for local LLM workflows</p>
-<div class="item-meta"><span class="source">r/LocalLLaMA</span><span class="sep">·</span>2026-05-10 13:31 UTC<span class="sep">·</span>discussion<span class="spacer"></span><span class="score">0.54</span><span class="score-detail">(n 0.87 · t 0.50)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="reddit" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg><span>r/LocalLLaMA</span></span><span class="sep">·</span>2026-05-10 13:31 UTC<span class="sep">·</span>discussion<span class="spacer"></span><span class="score">0.54</span><span class="score-detail">(n 0.87 · t 0.50)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1536,11 +1916,13 @@
 <li>Use this as weak signal and verify against primary sources.</li>
 </ul>
 </details>
+</div>
 </article></li>
 <li><article class="item" data-tier="top" data-read-index="25">
+<div class="item-body">
 <h3 class="item-title"><a href="https://old.reddit.com/r/LocalLLaMA/comments/1t8vpto/how_long_should_we_expect_until_we_get_a_gguf_for" target="_blank" rel="noopener noreferrer">How long should we expect until we get a gguf for ZAYA1-8B</a></h3>
 <p class="item-line">Discussion on expected release timeline for ZAYA1-8B gguf model</p>
-<div class="item-meta"><span class="source">r/LocalLLaMA</span><span class="sep">·</span>2026-05-10 03:35 UTC<span class="sep">·</span>discussion<span class="spacer"></span><span class="score">0.52</span><span class="score-detail">(n 0.87 · t 0.50)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="reddit" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg><span>r/LocalLLaMA</span></span><span class="sep">·</span>2026-05-10 03:35 UTC<span class="sep">·</span>discussion<span class="spacer"></span><span class="score">0.52</span><span class="score-detail">(n 0.87 · t 0.50)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1549,11 +1931,13 @@
 <li>Use this as weak signal and verify against primary sources.</li>
 </ul>
 </details>
+</div>
 </article></li>
 <li><article class="item" data-tier="top" data-read-index="26">
+<div class="item-body">
 <h3 class="item-title"><a href="https://old.reddit.com/r/LocalLLaMA/comments/1t92hff/hello_from_10km_high_thanks_to_qwen_36_35b_a3b" target="_blank" rel="noopener noreferrer">Hello from 10KM high! - Thanks to Qwen 3.6 35b a3b!</a></h3>
 <p class="item-line">User shares experience using Qwen 3.6 35b a3b to solve WiFi issue on flight</p>
-<div class="item-meta"><span class="source">r/LocalLLaMA</span><span class="sep">·</span>2026-05-10 09:43 UTC<span class="sep">·</span>discussion<span class="spacer"></span><span class="score">0.52</span><span class="score-detail">(n 0.83 · t 0.50)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="reddit" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg><span>r/LocalLLaMA</span></span><span class="sep">·</span>2026-05-10 09:43 UTC<span class="sep">·</span>discussion<span class="spacer"></span><span class="score">0.52</span><span class="score-detail">(n 0.83 · t 0.50)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1562,11 +1946,13 @@
 <li>Use this as weak signal and verify against primary sources.</li>
 </ul>
 </details>
+</div>
 </article></li>
 <li><article class="item" data-tier="normal" data-read-index="27">
+<div class="item-body">
 <h3 class="item-title"><a href="https://old.reddit.com/r/MachineLearning/comments/1t929x3/parax_v07_parametric_modeling_in_jax_p" target="_blank" rel="noopener noreferrer">Parax v0.7: Parametric Modeling in JAX [P]</a></h3>
 <p class="item-line">Parax v0.7 released: Parametric modeling library for JAX with improved API</p>
-<div class="item-meta"><span class="source">r/MachineLearning</span><span class="sep">·</span>2026-05-10 09:31 UTC<span class="sep">·</span>tool<span class="spacer"></span><span class="score">0.52</span><span class="score-detail">(n 0.15 · t 0.55)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="reddit" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg><span>r/MachineLearning</span></span><span class="sep">·</span>2026-05-10 09:31 UTC<span class="sep">·</span>tool<span class="spacer"></span><span class="score">0.52</span><span class="score-detail">(n 0.15 · t 0.55)</span></div>
 <details class="item-explain">
 <summary>why surfaced · familiar</summary>
 <ul>
@@ -1575,11 +1961,13 @@
 <li>Try it in a small sandbox before adding it to production workflow.</li>
 </ul>
 </details>
+</div>
 </article></li>
 <li><article class="item" data-tier="top" data-read-index="28">
+<div class="item-body">
 <h3 class="item-title"><a href="https://old.reddit.com/r/LocalLLaMA/comments/1t8yf4d/am_i_running_this_llamabench_of_qwen3627b_on" target="_blank" rel="noopener noreferrer">am I running this llama-bench of Qwen3.6-27B on these V100s right?</a></h3>
 <p class="item-line">Discussion on running Qwen3.6-27B on V100 GPUs for code generation</p>
-<div class="item-meta"><span class="source">r/LocalLLaMA</span><span class="sep">·</span>2026-05-10 05:52 UTC<span class="sep">·</span>discussion<span class="spacer"></span><span class="score">0.52</span><span class="score-detail">(n 0.84 · t 0.50)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="reddit" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg><span>r/LocalLLaMA</span></span><span class="sep">·</span>2026-05-10 05:52 UTC<span class="sep">·</span>discussion<span class="spacer"></span><span class="score">0.52</span><span class="score-detail">(n 0.84 · t 0.50)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1588,11 +1976,13 @@
 <li>Use this as weak signal and verify against primary sources.</li>
 </ul>
 </details>
+</div>
 </article></li>
-<li><article class="item" data-tier="top" data-read-index="29">
+<li><article class="item has-image" data-tier="top" data-read-index="29">
+<div class="item-body">
 <h3 class="item-title"><a href="https://old.reddit.com/r/LocalLLaMA/comments/1t96kfh/speeding_up_local_llm_for_usable_coding_agent" target="_blank" rel="noopener noreferrer">Speeding up local LLM for usable coding agent</a></h3>
 <p class="item-line">Discussion on optimizing Qwen 3.6 35B-A3B speed for coding agents</p>
-<div class="item-meta"><span class="source">r/LocalLLaMA</span><span class="sep">·</span>2026-05-10 13:11 UTC<span class="sep">·</span>discussion<span class="spacer"></span><span class="score">0.52</span><span class="score-detail">(n 0.80 · t 0.50)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="reddit" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg><span>r/LocalLLaMA</span></span><span class="sep">·</span>2026-05-10 13:11 UTC<span class="sep">·</span>discussion<span class="spacer"></span><span class="score">0.52</span><span class="score-detail">(n 0.80 · t 0.50)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1602,11 +1992,14 @@
 <li>Use this as weak signal and verify against primary sources.</li>
 </ul>
 </details>
+</div>
+<img class="item-thumb" src="https://preview.redd.it/czgji3pq4b0h1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=787e5dc75bcb670a1e9b0b28ff552a4573140eea" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
 </article></li>
-<li><article class="item" data-tier="top" data-read-index="30">
+<li><article class="item has-image" data-tier="top" data-read-index="30">
+<div class="item-body">
 <h3 class="item-title"><a href="https://old.reddit.com/r/LocalLLaMA/comments/1t8olv3/exactly_a_year_ago_i_started_working_on_an_mcp" target="_blank" rel="noopener noreferrer">Exactly a year ago, I started working on an MCP server I launched on reddit that became by far my most active open source project!</a></h3>
 <p class="item-line">MCP server project becomes active open-source project</p>
-<div class="item-meta"><span class="source">r/LocalLLaMA</span><span class="sep">·</span>2026-05-09 22:08 UTC<span class="sep">·</span>discussion<span class="spacer"></span><span class="score">0.51</span><span class="score-detail">(n 0.85 · t 0.50)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="reddit" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg><span>r/LocalLLaMA</span></span><span class="sep">·</span>2026-05-09 22:08 UTC<span class="sep">·</span>discussion<span class="spacer"></span><span class="score">0.51</span><span class="score-detail">(n 0.85 · t 0.50)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1615,11 +2008,14 @@
 <li>Use this as weak signal and verify against primary sources.</li>
 </ul>
 </details>
+</div>
+<img class="item-thumb" src="https://external-preview.redd.it/2wPHJLFAM3cXHpd3i1I_GectAxIAHcR_jf9_XJdXMA4.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=94319c8b785812aaa302581d7dea0da26f05066d" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
 </article></li>
 <li><article class="item" data-tier="top" data-read-index="31">
+<div class="item-body">
 <h3 class="item-title"><a href="https://old.reddit.com/r/MachineLearning/comments/1t8nks7/anyone_trying_to_submit_for_icml_fm4ls_workshop" target="_blank" rel="noopener noreferrer">Anyone Trying to submit for ICML FM4LS workshop but noticed link closed Early? [D]</a></h3>
 <p class="item-line">ICML FM4LS workshop submission link closed early</p>
-<div class="item-meta"><span class="source">r/MachineLearning</span><span class="sep">·</span>2026-05-09 21:26 UTC<span class="sep">·</span>discussion<span class="spacer"></span><span class="score">0.51</span><span class="score-detail">(n 0.81 · t 0.55)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="reddit" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg><span>r/MachineLearning</span></span><span class="sep">·</span>2026-05-09 21:26 UTC<span class="sep">·</span>discussion<span class="spacer"></span><span class="score">0.51</span><span class="score-detail">(n 0.81 · t 0.55)</span></div>
 <details class="item-explain">
 <summary>why surfaced · high</summary>
 <ul>
@@ -1628,11 +2024,13 @@
 <li>Use this as weak signal and verify against primary sources.</li>
 </ul>
 </details>
+</div>
 </article></li>
 <li><article class="item" data-tier="normal" data-read-index="32">
+<div class="item-body">
 <h3 class="item-title"><a href="https://theverge.com/tech/924933/google-chrome-4gb-gemini-nano-ai-features" target="_blank" rel="noopener noreferrer">Chrome&#39;s AI features may be hogging 4GB of your computer storage</a></h3>
 <p class="item-line">Report on Chrome&#39;s AI features consuming 4GB of storage</p>
-<div class="item-meta"><span class="source">Hacker News (AI-filtered)</span><span class="sep">·</span>2026-05-10 15:22 UTC<span class="sep">·</span>news<span class="spacer"></span><span class="score">0.37</span><span class="score-detail">(n 0.00 · t 0.65)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="hacker-news" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4.5" y="4.5" width="15" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8.5 8l3.5 4 3.5-4M12 12v4"/></svg><span>Hacker News (AI-filtered)</span></span><span class="sep">·</span>2026-05-10 15:22 UTC<span class="sep">·</span>news<span class="spacer"></span><span class="score">0.37</span><span class="score-detail">(n 0.00 · t 0.65)</span></div>
 <details class="item-explain">
 <summary>why surfaced · familiar</summary>
 <ul>
@@ -1643,12 +2041,14 @@
 <li>Read the primary source and decide whether it changes your next action.</li>
 </ul>
 </details>
+</div>
 </article></li></ol>
 <div class="bucket-head">Yesterday &amp; older<span class="count">(7)</span></div>
-<ol class="feed-list"><li><article class="item" data-tier="normal" data-read-index="1">
+<ol class="feed-list"><li><article class="item has-image" data-tier="normal" data-read-index="1">
+<div class="item-body">
 <h3 class="item-title"><a href="https://infoq.com/news/2026/05/cloudflare-dynamic-workflows" target="_blank" rel="noopener noreferrer">Cloudflare Ships Dynamic Workflows, Bringing Durable Execution to Per-Tenant and Per-Agent Code</a></h3>
 <p class="item-line">Cloudflare releases Dynamic Workflows for per-tenant durable execution</p>
-<div class="item-meta"><span class="source">InfoQ AI/ML/Data</span><span class="sep">·</span>2026-05-09 09:31 UTC<span class="sep">·</span>company announcement<span class="spacer"></span><span class="score">0.49</span><span class="score-detail">(n 0.00 · t 0.78)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="news" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.5 6.5h15v10.8a1.7 1.7 0 0 1-1.7 1.7H6.2a1.7 1.7 0 0 1-1.7-1.7V6.5ZM7.5 10h4.5M7.5 13h9M7.5 16h7M14.5 9.5H17v2.5h-2.5z"/></svg><span>InfoQ AI/ML/Data</span></span><span class="sep">·</span>2026-05-09 09:31 UTC<span class="sep">·</span>company announcement<span class="spacer"></span><span class="score">0.49</span><span class="score-detail">(n 0.00 · t 0.78)</span></div>
 <details class="item-explain">
 <summary>why surfaced · familiar</summary>
 <ul>
@@ -1657,11 +2057,14 @@
 <li>Scan for API, pricing, policy, or platform changes that affect shipped systems.</li>
 </ul>
 </details>
+</div>
+<img class="item-thumb" src="https://res.infoq.com/news/2026/05/cloudflare-dynamic-workflows/en/headerimage/generatedHeaderImage-1778146936420.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
 </article></li>
-<li><article class="item" data-tier="normal" data-read-index="2">
+<li><article class="item has-image" data-tier="normal" data-read-index="2">
+<div class="item-body">
 <h3 class="item-title"><a href="https://arstechnica.com/ai/2026/05/the-new-wild-west-of-ai-kids-toys" target="_blank" rel="noopener noreferrer">The new Wild West of AI kids’ toys</a></h3>
 <p class="item-line">AI kids&#39; toys raise regulatory concerns</p>
-<div class="item-meta"><span class="source">Ars Technica AI</span><span class="sep">·</span>2026-05-09 11:00 UTC<span class="sep">·</span>news<span class="spacer"></span><span class="score">0.33</span><span class="score-detail">(n 0.00 · t 0.78)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="feed" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" d="M5 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM4 10a10 10 0 0 1 10 10M4 5a15 15 0 0 1 15 15"/></svg><span>Ars Technica AI</span></span><span class="sep">·</span>2026-05-09 11:00 UTC<span class="sep">·</span>news<span class="spacer"></span><span class="score">0.33</span><span class="score-detail">(n 0.00 · t 0.78)</span></div>
 <details class="item-explain">
 <summary>why surfaced · familiar</summary>
 <ul>
@@ -1670,11 +2073,14 @@
 <li>Read the primary source and decide whether it changes your next action.</li>
 </ul>
 </details>
+</div>
+<img class="item-thumb" src="https://cdn.arstechnica.net/wp-content/uploads/2026/05/GettyImages-2240670637-1152x648.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
 </article></li>
-<li><article class="item" data-tier="normal" data-read-index="3">
+<li><article class="item has-image" data-tier="normal" data-read-index="3">
+<div class="item-body">
 <h3 class="item-title"><a href="https://wired.com/story/security-news-this-week-hackable-robot-lawnmower-unlocks-a-new-nightmare" target="_blank" rel="noopener noreferrer">Hackable Robot Lawn Mower Unlocks a New Nightmare</a></h3>
 <p class="item-line">Hackable robot lawn mower raises security concerns</p>
-<div class="item-meta"><span class="source">WIRED AI</span><span class="sep">·</span>2026-05-09 10:30 UTC<span class="sep">·</span>news<span class="spacer"></span><span class="score">0.32</span><span class="score-detail">(n 0.00 · t 0.76)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="news" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.5 6.5h15v10.8a1.7 1.7 0 0 1-1.7 1.7H6.2a1.7 1.7 0 0 1-1.7-1.7V6.5ZM7.5 10h4.5M7.5 13h9M7.5 16h7M14.5 9.5H17v2.5h-2.5z"/></svg><span>WIRED AI</span></span><span class="sep">·</span>2026-05-09 10:30 UTC<span class="sep">·</span>news<span class="spacer"></span><span class="score">0.32</span><span class="score-detail">(n 0.00 · t 0.76)</span></div>
 <details class="item-explain">
 <summary>why surfaced · familiar</summary>
 <ul>
@@ -1683,11 +2089,14 @@
 <li>Read the primary source and decide whether it changes your next action.</li>
 </ul>
 </details>
+</div>
+<img class="item-thumb" src="https://media.wired.com/photos/69fe6f189caafa670d32bc82/master/pass/security_mower_GettyImages-1454488331.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
 </article></li>
 <li><article class="item" data-tier="normal" data-read-index="4">
+<div class="item-body">
 <h3 class="item-title"><a href="https://techcrunch.com/2026/05/09/nvidia-has-already-committed-40b-to-equity-ai-deals-this-year" target="_blank" rel="noopener noreferrer">Nvidia has already committed $40B to equity AI deals this year</a></h3>
 <p class="item-line">Nvidia commits $40B to AI equity deals</p>
-<div class="item-meta"><span class="source">TechCrunch AI</span><span class="sep">·</span>2026-05-09 14:43 UTC<span class="sep">·</span>company announcement<span class="spacer"></span><span class="score">0.32</span><span class="score-detail">(n 0.00 · t 0.72)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="news" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.5 6.5h15v10.8a1.7 1.7 0 0 1-1.7 1.7H6.2a1.7 1.7 0 0 1-1.7-1.7V6.5ZM7.5 10h4.5M7.5 13h9M7.5 16h7M14.5 9.5H17v2.5h-2.5z"/></svg><span>TechCrunch AI</span></span><span class="sep">·</span>2026-05-09 14:43 UTC<span class="sep">·</span>company announcement<span class="spacer"></span><span class="score">0.32</span><span class="score-detail">(n 0.00 · t 0.72)</span></div>
 <details class="item-explain">
 <summary>why surfaced · familiar</summary>
 <ul>
@@ -1696,11 +2105,13 @@
 <li>Scan for API, pricing, policy, or platform changes that affect shipped systems.</li>
 </ul>
 </details>
+</div>
 </article></li>
-<li><article class="item" data-tier="normal" data-read-index="5">
+<li><article class="item has-image" data-tier="normal" data-read-index="5">
+<div class="item-body">
 <h3 class="item-title"><a href="https://the-decoder.com/broadcom-reportedly-wont-build-openais-custom-chip-unless-microsoft-buys-40-percent-of-them" target="_blank" rel="noopener noreferrer">Broadcom reportedly won&#39;t build OpenAI&#39;s custom chip unless Microsoft buys 40 percent of them</a></h3>
 <p class="item-line">OpenAI&#39;s custom chip project faces funding hurdles due to Broadcom&#39;s conditions</p>
-<div class="item-meta"><span class="source">The Decoder</span><span class="sep">·</span>2026-05-09 10:45 UTC<span class="sep">·</span>news<span class="spacer"></span><span class="score">0.32</span><span class="score-detail">(n 0.00 · t 0.74)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="news" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.5 6.5h15v10.8a1.7 1.7 0 0 1-1.7 1.7H6.2a1.7 1.7 0 0 1-1.7-1.7V6.5ZM7.5 10h4.5M7.5 13h9M7.5 16h7M14.5 9.5H17v2.5h-2.5z"/></svg><span>The Decoder</span></span><span class="sep">·</span>2026-05-09 10:45 UTC<span class="sep">·</span>news<span class="spacer"></span><span class="score">0.32</span><span class="score-detail">(n 0.00 · t 0.74)</span></div>
 <details class="item-explain">
 <summary>why surfaced · familiar</summary>
 <ul>
@@ -1709,11 +2120,14 @@
 <li>Read the primary source and decide whether it changes your next action.</li>
 </ul>
 </details>
+</div>
+<img class="item-thumb" src="https://the-decoder.com/wp-content/uploads/2026/05/openai_chatgpt.png" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
 </article></li>
-<li><article class="item" data-tier="normal" data-read-index="6">
+<li><article class="item has-image" data-tier="normal" data-read-index="6">
+<div class="item-body">
 <h3 class="item-title"><a href="https://the-decoder.com/googles-preferred-sources-feature-is-a-free-pass-for-more-garbage-in-search" target="_blank" rel="noopener noreferrer">Google&#39;s &quot;Preferred Sources&quot; feature is a free pass for more garbage in search</a></h3>
 <p class="item-line">Google&#39;s Preferred Sources feature criticized for shifting responsibility to users</p>
-<div class="item-meta"><span class="source">The Decoder</span><span class="sep">·</span>2026-05-09 10:29 UTC<span class="sep">·</span>opinion<span class="spacer"></span><span class="score">0.32</span><span class="score-detail">(n 0.00 · t 0.74)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="news" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.5 6.5h15v10.8a1.7 1.7 0 0 1-1.7 1.7H6.2a1.7 1.7 0 0 1-1.7-1.7V6.5ZM7.5 10h4.5M7.5 13h9M7.5 16h7M14.5 9.5H17v2.5h-2.5z"/></svg><span>The Decoder</span></span><span class="sep">·</span>2026-05-09 10:29 UTC<span class="sep">·</span>opinion<span class="spacer"></span><span class="score">0.32</span><span class="score-detail">(n 0.00 · t 0.74)</span></div>
 <details class="item-explain">
 <summary>why surfaced · familiar</summary>
 <ul>
@@ -1722,11 +2136,14 @@
 <li>Read the primary source and decide whether it changes your next action.</li>
 </ul>
 </details>
+</div>
+<img class="item-thumb" src="https://the-decoder.com/wp-content/uploads/2026/05/google_web_dystopia-1.png" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
 </article></li>
-<li><article class="item" data-tier="normal" data-read-index="7">
+<li><article class="item has-image" data-tier="normal" data-read-index="7">
+<div class="item-body">
 <h3 class="item-title"><a href="https://the-decoder.com/pseudoscientific-emotion-ai-is-invading-the-workplace-an-atlantic-report-shows" target="_blank" rel="noopener noreferrer">Pseudoscientific emotion AI is invading the workplace, an Atlantic report shows</a></h3>
 <p class="item-line">Emotion AI in workplaces faces criticism for pseudoscientific claims</p>
-<div class="item-meta"><span class="source">The Decoder</span><span class="sep">·</span>2026-05-09 07:20 UTC<span class="sep">·</span>news<span class="spacer"></span><span class="score">0.31</span><span class="score-detail">(n 0.00 · t 0.74)</span></div>
+<div class="item-meta"><span class="source"><svg class="source-glyph" data-source-glyph="news" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.5 6.5h15v10.8a1.7 1.7 0 0 1-1.7 1.7H6.2a1.7 1.7 0 0 1-1.7-1.7V6.5ZM7.5 10h4.5M7.5 13h9M7.5 16h7M14.5 9.5H17v2.5h-2.5z"/></svg><span>The Decoder</span></span><span class="sep">·</span>2026-05-09 07:20 UTC<span class="sep">·</span>news<span class="spacer"></span><span class="score">0.31</span><span class="score-detail">(n 0.00 · t 0.74)</span></div>
 <details class="item-explain">
 <summary>why surfaced · familiar</summary>
 <ul>
@@ -1735,6 +2152,8 @@
 <li>Read the primary source and decide whether it changes your next action.</li>
 </ul>
 </details>
+</div>
+<img class="item-thumb" src="https://the-decoder.com/wp-content/uploads/2023/07/surveillance_camera.png" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
 </article></li></ol>
 <div class="completion-row"><strong>You're caught up</strong><span>Next refresh follows the public schedule.</span></div>
 <!-- CHRONICLE_FEED_END -->
@@ -1813,6 +2232,10 @@ const ROOT_PREFIX = DATE_PATH_MATCH
   : /\/daily\/?$/.test(location.pathname)
     ? "../"
     : "./";
+const MOBILE_READER_QUERY = "(max-width: 720px)";
+const READER_ANIM_MS = 420;
+const READER_JUMPCUT_MS = 170;
+const READER_HELPERS = window.ChronicleReaderState || null;
 
 const state = {
   data: null,
@@ -1823,6 +2246,17 @@ const state = {
   activeFeed: "main",
   resumePromptDay: null,
   scrollTicking: false,
+  gestureLock: null,
+  reader: {
+    media: null,
+    active: false,
+    index: 0,
+    items: [],
+    itemKey: "",
+    animating: false,
+    sheetOpen: false,
+    gesture: null,
+  },
 };
 
 initTheme();
@@ -1834,6 +2268,7 @@ wireFilterControls();
 wireRefreshControl();
 wireReadingControls();
 wirePullToRefresh();
+wireMobileReader();
 updateLedeText();
 document.getElementById("archiveCtaButton").href = rootUrl("daily/");
 document.getElementById("homeLink").href = rootUrl("");
@@ -1999,7 +2434,11 @@ async function switchFeedTab(next) {
 
   await loadFeed();
   if (feed) feed.classList.remove("is-switching");
-  scrollToTop();
+  if (state.reader.active) {
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
+  } else {
+    scrollToTop();
+  }
 }
 
 function syncFeedTabs() {
@@ -2070,11 +2509,40 @@ function wireReadingControls() {
   document.getElementById("topJump").addEventListener("click", () => scrollToTop());
   document.getElementById("resumeReading").addEventListener("click", () => {
     const prompt = document.getElementById("resumePrompt");
+    if (state.reader.active && prompt.dataset.readerIndex) {
+      const index = Number(prompt.dataset.readerIndex);
+      hideResumePrompt();
+      setReaderIndex(index, { focus: true, jumpcut: true });
+      return;
+    }
     const y = Number(prompt.dataset.resumeY || 0);
     hideResumePrompt();
     window.scrollTo({ top: y, behavior: prefersReducedMotion() ? "auto" : "smooth" });
   });
   window.addEventListener("scroll", onReadingScroll, { passive: true });
+}
+
+function wireMobileReader() {
+  if (typeof matchMedia === "function") {
+    state.reader.media = matchMedia(MOBILE_READER_QUERY);
+    const rerender = () => {
+      updateReaderViewportHeight();
+      if (state.data) renderFeed();
+    };
+    if (typeof state.reader.media.addEventListener === "function") {
+      state.reader.media.addEventListener("change", rerender);
+    } else if (typeof state.reader.media.addListener === "function") {
+      state.reader.media.addListener(rerender);
+    }
+  }
+
+  updateReaderViewportHeight();
+  window.addEventListener("resize", updateReaderViewportHeight, { passive: true });
+  window.addEventListener("orientationchange", updateReaderViewportHeight, { passive: true });
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener("resize", updateReaderViewportHeight, { passive: true });
+  }
+  window.addEventListener("beforeunload", saveReaderProgress);
 }
 
 function onReadingScroll() {
@@ -2107,6 +2575,7 @@ function wirePullToRefresh() {
   let pulling = false;
   let pullDistance = 0;
   let refreshing = false;
+  let startedInReader = false;
 
   function applyVisual(distance) {
     const eased = Math.min(distance, MAX_PULL_PX);
@@ -2152,6 +2621,8 @@ function wirePullToRefresh() {
     if (refreshing) return;
     if (window.scrollY > 0) return;
     if (event.touches.length !== 1) return;
+    startedInReader = Boolean(event.target?.closest?.("#mobileReader"));
+    if (startedInReader && (!state.reader.active || state.reader.index > 0)) return;
     const touch = event.touches[0];
     activeId = touch.identifier;
     startX = touch.clientX;
@@ -2175,6 +2646,8 @@ function wirePullToRefresh() {
       if (dy <= 0 || window.scrollY > 0) { activeId = null; return; }
       if (Math.abs(dx) > Math.abs(dy)) { activeId = null; return; }
       if (dy < COMMIT_PX) return;
+      if (startedInReader && state.gestureLock?.owner === "reader") { activeId = null; return; }
+      if (startedInReader) lockGesture("ptr");
       pulling = true;
       indicator.classList.add("is-active");
     }
@@ -2199,8 +2672,10 @@ function wirePullToRefresh() {
       resetIndicator(true);
     }
     activeId = null;
+    startedInReader = false;
     pulling = false;
     pullDistance = 0;
+    releaseGesture("ptr");
   }
 
   document.addEventListener("touchend", endTouch, { passive: true });
@@ -2219,6 +2694,7 @@ async function loadFeed() {
     renderFilterShell();
     renderFeed();
   } catch (error) {
+    disableMobileReader();
     showNotice(`Chronicle could not load the feed: ${error.message}`);
     document.getElementById("statusText").textContent = "feed unavailable";
     document.getElementById("statusLine").classList.add("is-failed");
@@ -2297,7 +2773,7 @@ function renderTopRow(item) {
 
 function renderTopNewsMeta(item) {
   const meta = node("div", "top-news-meta");
-  meta.append(node("span", "source", item.source_name || "Unknown source"));
+  meta.append(sourceLabel(item));
   meta.append(sep(), document.createTextNode(relTime(parseDate(item.published_at)) || "unknown"));
   if (item.kind && item.kind !== "unknown") meta.append(sep(), document.createTextNode(KIND_LABELS[item.kind] || item.kind));
   const score = Number(item.score);
@@ -2433,11 +2909,36 @@ function renderFeed() {
   const main = document.getElementById("feed");
   const items = visibleItems();
   if (!items.length) {
+    disableMobileReader();
     main.replaceChildren(emptyState("No matching items", "Relax the filters or hit reset."));
     hideResumePrompt();
     return;
   }
 
+  const buckets = groupFeedItems(items);
+  const orderedItems = buckets.flatMap((bucket) => bucket.items);
+
+  const fragments = [];
+  let displayIndex = 0;
+  for (const bucket of buckets) {
+    if (!bucket.items.length) continue;
+    const head = node("div", "bucket-head");
+    head.append(
+      document.createTextNode(bucket.label),
+      Object.assign(document.createElement("span"), { className: "count", textContent: `(${bucket.items.length})` }),
+    );
+    fragments.push(head);
+    for (const item of bucket.items) fragments.push(renderItem(item, ++displayIndex));
+  }
+  fragments.push(renderCompletionRow());
+  main.replaceChildren(...fragments);
+  const readerReady = enhanceMobileReader(orderedItems);
+  if (readerReady) prepareReaderResumePrompt(orderedItems.length);
+  else prepareResumePrompt(displayIndex);
+  updateTopJump();
+}
+
+function groupFeedItems(items) {
   const now = Date.now();
   const buckets = [
     { label: "Last 3 hours", items: [] },
@@ -2454,42 +2955,593 @@ function renderFeed() {
   for (const bucket of buckets) {
     bucket.items.sort((a, b) => (Number(b.score) || 0) - (Number(a.score) || 0));
   }
+  return buckets;
+}
 
-  const fragments = [];
-  let displayIndex = 0;
-  for (const bucket of buckets) {
-    if (!bucket.items.length) continue;
-    const head = node("div", "bucket-head");
-    head.append(
-      document.createTextNode(bucket.label),
-      Object.assign(document.createElement("span"), { className: "count", textContent: `(${bucket.items.length})` }),
-    );
-    fragments.push(head);
-    for (const item of bucket.items) fragments.push(renderItem(item, ++displayIndex));
+function shouldUseMobileReader() {
+  return Boolean(
+    READER_HELPERS &&
+    state.reader.media?.matches &&
+    "PointerEvent" in window &&
+    !document.body.classList.contains("reader-disabled"),
+  );
+}
+
+function enhanceMobileReader(items) {
+  if (!shouldUseMobileReader()) {
+    disableMobileReader();
+    return false;
   }
-  fragments.push(renderCompletionRow());
-  main.replaceChildren(...fragments);
-  prepareResumePrompt(displayIndex);
-  updateTopJump();
+  try {
+    const reader = ensureMobileReader();
+    const previousKey = state.reader.itemKey;
+    const previousIndex = state.reader.index;
+    const day = currentFeedDay();
+    const signature = readerFilterSignature();
+    const sameScope =
+      state.reader.active &&
+      state.reader.feedRole === state.activeFeed &&
+      state.reader.day === day &&
+      state.reader.signature === signature;
+    const nextIndex = sameScope
+      ? READER_HELPERS.indexAfterFilterChange(previousKey, items, previousIndex)
+      : 0;
+
+    state.reader.active = true;
+    state.reader.items = items;
+    state.reader.index = nextIndex;
+    state.reader.itemKey = readerItemKey(items[nextIndex]);
+    state.reader.feedRole = state.activeFeed;
+    state.reader.day = day;
+    state.reader.signature = signature;
+    document.body.classList.add("has-mobile-reader");
+    reader.hidden = false;
+    renderReaderSlots();
+    renderReaderIndexSheet();
+    updateReaderProgress();
+    return true;
+  } catch (error) {
+    console.warn("[chronicle-reader] mobile reader disabled", error);
+    disableMobileReader();
+    return false;
+  }
+}
+
+function ensureMobileReader() {
+  let reader = document.getElementById("mobileReader");
+  if (reader) return reader;
+
+  reader = node("section", "mobile-reader");
+  reader.id = "mobileReader";
+  reader.hidden = true;
+  reader.setAttribute("role", "region");
+  reader.setAttribute("aria-label", "Mobile feed reader");
+
+  const status = node("div", "reader-status");
+  const counter = node("span", "reader-counter", "0 / 0");
+  counter.id = "readerCounter";
+  counter.setAttribute("aria-live", "polite");
+  const rail = node("div", "reader-rail");
+  rail.setAttribute("aria-hidden", "true");
+  rail.appendChild(document.createElement("span"));
+  const indexButton = document.createElement("button");
+  indexButton.type = "button";
+  indexButton.className = "reader-index-button";
+  indexButton.id = "readerIndexButton";
+  indexButton.textContent = "Index";
+  indexButton.setAttribute("aria-expanded", "false");
+  indexButton.setAttribute("aria-controls", "readerIndexSheet");
+  indexButton.dataset.noSwipe = "true";
+  status.append(counter, rail, indexButton);
+
+  const deck = node("div", "reader-deck");
+  deck.id = "readerDeck";
+  deck.tabIndex = 0;
+  deck.setAttribute("aria-label", "Swipe up for next item, swipe down for previous item");
+  const slots = node("div", "reader-slots");
+  slots.id = "readerSlots";
+  deck.appendChild(slots);
+
+  const sheet = node("div", "reader-index-sheet");
+  sheet.id = "readerIndexSheet";
+  sheet.hidden = true;
+  sheet.dataset.noSwipe = "true";
+  sheet.setAttribute("role", "dialog");
+  sheet.setAttribute("aria-label", "Feed index");
+  sheet.setAttribute("aria-modal", "false");
+  sheet.appendChild(readerIndexHead());
+  sheet.appendChild(node("div", "reader-index-list"));
+
+  reader.append(status, deck, sheet);
+  document.getElementById("feed").appendChild(reader);
+
+  indexButton.addEventListener("click", () => toggleReaderIndexSheet());
+  deck.addEventListener("pointerdown", onReaderPointerDown);
+  deck.addEventListener("pointermove", onReaderPointerMove);
+  deck.addEventListener("pointerup", onReaderPointerEnd);
+  deck.addEventListener("pointercancel", onReaderPointerEnd);
+  deck.addEventListener("keydown", onReaderKeyDown);
+  return reader;
+}
+
+function readerIndexHead() {
+  const head = node("div", "reader-index-head");
+  head.appendChild(document.createTextNode("Index"));
+  const close = document.createElement("button");
+  close.type = "button";
+  close.className = "reader-close";
+  close.textContent = "Close";
+  close.dataset.noSwipe = "true";
+  close.addEventListener("click", () => closeReaderIndexSheet());
+  head.appendChild(close);
+  return head;
+}
+
+function disableMobileReader() {
+  document.body.classList.remove("has-mobile-reader");
+  state.reader.active = false;
+  state.reader.items = [];
+  state.reader.itemKey = "";
+  state.reader.gesture = null;
+  state.reader.animating = false;
+  state.reader.sheetOpen = false;
+  state.gestureLock = null;
+  const reader = document.getElementById("mobileReader");
+  if (reader) reader.remove();
+}
+
+function renderReaderSlots() {
+  const slots = document.getElementById("readerSlots");
+  if (!slots) return;
+  const items = state.reader.items;
+  const index = READER_HELPERS.clampIndex(state.reader.index, items.length);
+  const entries = [
+    { offset: -1, className: "is-prev" },
+    { offset: 0, className: "is-current" },
+    { offset: 1, className: "is-next" },
+  ];
+  const cards = [];
+  for (const entry of entries) {
+    const item = items[index + entry.offset];
+    if (!item) continue;
+    const card = renderReaderCard(item, index + entry.offset, entry.className, entry.offset >= 0);
+    card.dataset.readerSlot = String(entry.offset);
+    if (entry.offset !== 0) {
+      card.setAttribute("aria-hidden", "true");
+      card.inert = true;
+      disableFocusableChildren(card);
+    }
+    cards.push(card);
+  }
+  slots.replaceChildren(...cards);
+}
+
+function renderReaderCard(item, index, positionClass, eagerImage) {
+  const article = node("article", `reader-card ${positionClass}`);
+  article.tabIndex = positionClass === "is-current" ? 0 : -1;
+  article.dataset.readerItemKey = readerItemKey(item);
+  article.setAttribute("aria-label", `Item ${index + 1} of ${state.reader.items.length}`);
+
+  const image = readerImage(item, eagerImage);
+  if (image) article.appendChild(image);
+  else article.classList.add("is-text-first");
+
+  const body = node("div", "reader-body");
+  const meta = node("div", "reader-meta");
+  meta.append(sourceLabel(item));
+  meta.append(sep(), document.createTextNode(relTime(parseDate(item.primary?.published_at)) || "unknown"));
+  if (item.kind && item.kind !== "unknown") meta.append(sep(), document.createTextNode(KIND_LABELS[item.kind] || item.kind));
+  const score = Number(item.score);
+  if (Number.isFinite(score)) meta.append(sep(), document.createTextNode(score.toFixed(2)));
+  body.appendChild(meta);
+
+  const title = item.primary?.title || "Untitled item";
+  const heading = node("h2", "reader-title");
+  heading.appendChild(link(item.primary?.url, title));
+  body.appendChild(heading);
+
+  const line = readableLine(item, title);
+  if (line) body.appendChild(node("p", "reader-line", line));
+
+  const reasons = Array.isArray(item.why_this_surfaced) ? item.why_this_surfaced.filter(Boolean) : [];
+  const firstReason = reasons[0] || item.builder_action || "";
+  if (firstReason) body.appendChild(node("p", "reader-reason", firstReason));
+  const explain = renderReaderExplain(item, reasons);
+  if (explain) body.appendChild(explain);
+
+  article.appendChild(body);
+  return article;
+}
+
+function readerImage(item, eager) {
+  const src = itemImageUrl(item);
+  if (!src) return null;
+  const img = document.createElement("img");
+  img.className = "reader-media";
+  img.src = src;
+  img.alt = "";
+  img.loading = eager ? "eager" : "lazy";
+  img.decoding = "async";
+  img.referrerPolicy = "no-referrer";
+  try { img.fetchPriority = eager ? "high" : "low"; } catch (_) {}
+  img.addEventListener("error", () => {
+    const card = img.closest(".reader-card");
+    img.remove();
+    card?.classList.add("is-text-first");
+  }, { once: true });
+  return img;
+}
+
+function renderReaderExplain(item, reasons) {
+  if (!reasons.length && !item.builder_action) return null;
+  const details = node("details", "reader-explain");
+  const summary = document.createElement("summary");
+  summary.textContent = "why surfaced";
+  const list = document.createElement("ul");
+  reasons.forEach((reason) => {
+    const row = document.createElement("li");
+    row.textContent = reason;
+    list.appendChild(row);
+  });
+  if (item.builder_action) {
+    const row = document.createElement("li");
+    row.textContent = item.builder_action;
+    list.appendChild(row);
+  }
+  details.append(summary, list);
+  return details;
+}
+
+function updateReaderProgress() {
+  const count = state.reader.items.length;
+  const index = READER_HELPERS.clampIndex(state.reader.index, count);
+  const counter = document.getElementById("readerCounter");
+  if (counter) counter.textContent = count ? `${index + 1} / ${count}` : "0 / 0";
+  const reader = document.getElementById("mobileReader");
+  if (reader) reader.style.setProperty("--reader-progress", count ? String((index + 1) / count) : "0");
+  state.reader.itemKey = readerItemKey(state.reader.items[index]);
+}
+
+function renderReaderIndexSheet() {
+  const sheet = document.getElementById("readerIndexSheet");
+  if (!sheet) return;
+  const list = sheet.querySelector(".reader-index-list");
+  if (!list) return;
+  const rows = state.reader.items.map((item, index) => {
+    const row = document.createElement("button");
+    row.type = "button";
+    row.className = "reader-index-row";
+    row.dataset.noSwipe = "true";
+    row.dataset.readerIndex = String(index);
+    row.setAttribute("aria-current", String(index === state.reader.index));
+    row.append(
+      node("span", "reader-index-number", String(index + 1).padStart(2, "0")),
+      node("span", "reader-index-title", item.primary?.title || "Untitled item"),
+      node("span", "reader-index-meta", Number.isFinite(Number(item.score)) ? Number(item.score).toFixed(2) : ""),
+    );
+    row.addEventListener("click", () => {
+      closeReaderIndexSheet();
+      setReaderIndex(index, { focus: true, jumpcut: true });
+    });
+    return row;
+  });
+  list.replaceChildren(...rows);
+}
+
+function toggleReaderIndexSheet() {
+  state.reader.sheetOpen ? closeReaderIndexSheet() : openReaderIndexSheet();
+}
+
+function openReaderIndexSheet() {
+  const sheet = document.getElementById("readerIndexSheet");
+  const button = document.getElementById("readerIndexButton");
+  if (!sheet || !button) return;
+  renderReaderIndexSheet();
+  sheet.hidden = false;
+  state.reader.sheetOpen = true;
+  button.setAttribute("aria-expanded", "true");
+  sheet.querySelector(".reader-index-row[aria-current='true']")?.scrollIntoView({ block: "nearest" });
+}
+
+function closeReaderIndexSheet() {
+  const sheet = document.getElementById("readerIndexSheet");
+  const button = document.getElementById("readerIndexButton");
+  if (!sheet || !button) return;
+  sheet.hidden = true;
+  state.reader.sheetOpen = false;
+  button.setAttribute("aria-expanded", "false");
+}
+
+function setReaderIndex(index, options = {}) {
+  if (!state.reader.active) return;
+  const deck = document.getElementById("readerDeck");
+  const next = READER_HELPERS.clampIndex(index, state.reader.items.length);
+  state.reader.index = next;
+  state.reader.itemKey = readerItemKey(state.reader.items[next]);
+  if (options.jumpcut && deck && !prefersReducedMotion()) deck.classList.add("is-jumpcut");
+  renderReaderSlots();
+  renderReaderIndexSheet();
+  updateReaderProgress();
+  saveReaderProgress();
+  if (options.focus) requestAnimationFrame(() => focusActiveReaderCard());
+  if (options.jumpcut && deck) {
+    window.setTimeout(() => deck.classList.remove("is-jumpcut"), prefersReducedMotion() ? 0 : READER_JUMPCUT_MS);
+  }
+}
+
+function focusActiveReaderCard() {
+  document.querySelector(".reader-card.is-current")?.focus({ preventScroll: true });
+}
+
+function navigateReader(direction, options = {}) {
+  if (!state.reader.active || state.reader.animating) return;
+  const delta = direction === "next" ? 1 : -1;
+  const next = READER_HELPERS.clampIndex(state.reader.index + delta, state.reader.items.length);
+  if (next === state.reader.index) {
+    resetReaderDrag(true);
+    return;
+  }
+  if (options.jumpcut || prefersReducedMotion()) {
+    setReaderIndex(next, { focus: options.focus, jumpcut: options.jumpcut });
+    return;
+  }
+  animateReaderNavigation(next, direction, options.focus);
+}
+
+function animateReaderNavigation(nextIndex, direction, focus) {
+  const deck = document.getElementById("readerDeck");
+  const current = document.querySelector(".reader-card.is-current");
+  const incoming = document.querySelector(direction === "next" ? ".reader-card.is-next" : ".reader-card.is-prev");
+  if (!deck || !current || !incoming) {
+    setReaderIndex(nextIndex, { focus, jumpcut: true });
+    return;
+  }
+  state.reader.animating = true;
+  deck.classList.add("is-animating");
+  const sign = direction === "next" ? -1 : 1;
+  requestAnimationFrame(() => {
+    current.style.transform = `translate3d(0, ${sign * 34}%, 0) rotateX(${sign * -8}deg) scale(0.97)`;
+    current.style.opacity = "0";
+    incoming.style.transform = "translate3d(0, 0, 0) rotateX(0deg) scale(1)";
+    incoming.style.opacity = "1";
+  });
+  window.setTimeout(() => {
+    deck.classList.remove("is-animating");
+    state.reader.animating = false;
+    setReaderIndex(nextIndex, { focus });
+  }, READER_ANIM_MS);
+}
+
+function onReaderPointerDown(event) {
+  if (!state.reader.active || state.reader.animating || state.reader.sheetOpen) return;
+  if (event.pointerType === "mouse" && event.button !== 0) return;
+  if (isReaderInteractiveTarget(event.target)) return;
+  state.reader.gesture = {
+    pointerId: event.pointerId,
+    startX: event.clientX,
+    startY: event.clientY,
+    startTs: performance.now(),
+    claimed: false,
+  };
+  event.currentTarget.setPointerCapture?.(event.pointerId);
+}
+
+function onReaderPointerMove(event) {
+  const gesture = state.reader.gesture;
+  if (!gesture || gesture.pointerId !== event.pointerId || state.reader.animating) return;
+  const dx = event.clientX - gesture.startX;
+  const dy = event.clientY - gesture.startY;
+  const result = READER_HELPERS.classifyGesture({
+    dx,
+    dy,
+    elapsedMs: performance.now() - gesture.startTs,
+    index: state.reader.index,
+    total: state.reader.items.length,
+  });
+  if (result.intent === "pending") return;
+  if (result.intent === "cancel") {
+    cancelReaderGesture();
+    return;
+  }
+  if (result.intent === "pull-to-refresh") {
+    lockGesture("ptr");
+    cancelReaderGesture({ release: false });
+    return;
+  }
+  if (state.gestureLock && state.gestureLock.owner !== "reader") return;
+  lockGesture("reader");
+  gesture.claimed = true;
+  if (event.cancelable) event.preventDefault();
+  applyReaderDrag(dy);
+}
+
+function onReaderPointerEnd(event) {
+  const gesture = state.reader.gesture;
+  if (!gesture || gesture.pointerId !== event.pointerId) return;
+  const dx = event.clientX - gesture.startX;
+  const dy = event.clientY - gesture.startY;
+  const result = READER_HELPERS.classifyGesture({
+    dx,
+    dy,
+    elapsedMs: performance.now() - gesture.startTs,
+    index: state.reader.index,
+    total: state.reader.items.length,
+  });
+  state.reader.gesture = null;
+  releaseGesture("reader");
+  if (result.intent === "next" || result.intent === "previous") navigateReader(result.intent);
+  else resetReaderDrag(true);
+}
+
+function onReaderKeyDown(event) {
+  if (!state.reader.active || isReaderInteractiveTarget(event.target)) return;
+  if (event.key === "ArrowDown" || event.key === "PageDown" || (event.key === " " && !event.shiftKey)) {
+    event.preventDefault();
+    navigateReader("next", { focus: true });
+  } else if (event.key === "ArrowUp" || event.key === "PageUp" || (event.key === " " && event.shiftKey)) {
+    event.preventDefault();
+    navigateReader("previous", { focus: true });
+  } else if (event.key === "Home") {
+    event.preventDefault();
+    setReaderIndex(0, { focus: true, jumpcut: true });
+  } else if (event.key === "End") {
+    event.preventDefault();
+    setReaderIndex(state.reader.items.length - 1, { focus: true, jumpcut: true });
+  } else if (event.key === "Escape" && state.reader.sheetOpen) {
+    closeReaderIndexSheet();
+  }
+}
+
+function applyReaderDrag(dy) {
+  const deck = document.getElementById("readerDeck");
+  const current = document.querySelector(".reader-card.is-current");
+  if (!deck || !current) return;
+  const height = Math.max(1, deck.getBoundingClientRect().height);
+  const progress = Math.min(1, Math.abs(dy) / Math.max(160, height * 0.5));
+  const direction = dy < 0 ? "next" : "previous";
+  const incoming = document.querySelector(direction === "next" ? ".reader-card.is-next" : ".reader-card.is-prev");
+  const limited = Math.max(-height * 0.35, Math.min(height * 0.35, dy));
+  current.style.transform = `translate3d(0, ${limited * 0.22}px, 0) rotateX(${(-limited / height) * 10}deg) scale(${1 - progress * 0.018})`;
+  current.style.opacity = String(1 - progress * 0.18);
+  if (incoming) {
+    const start = direction === "next" ? height * 0.84 : -height * 0.84;
+    const travel = direction === "next" ? -Math.abs(dy) * 0.92 : Math.abs(dy) * 0.92;
+    const offset = start + travel;
+    incoming.style.opacity = String(Math.min(1, 0.12 + progress * 1.1));
+    incoming.style.transform = `translate3d(0, ${offset}px, 0) rotateX(${direction === "next" ? -7 + progress * 7 : 7 - progress * 7}deg) scale(${0.985 + progress * 0.015})`;
+  }
+}
+
+function resetReaderDrag(animate) {
+  const deck = document.getElementById("readerDeck");
+  const cards = document.querySelectorAll(".reader-card");
+  if (animate && deck && !prefersReducedMotion()) deck.classList.add("is-animating");
+  cards.forEach((card) => {
+    card.style.transform = "";
+    card.style.opacity = "";
+  });
+  if (animate && deck) {
+    window.setTimeout(() => deck.classList.remove("is-animating"), prefersReducedMotion() ? 0 : 180);
+  }
+}
+
+function cancelReaderGesture(options = {}) {
+  state.reader.gesture = null;
+  if (options.release !== false) releaseGesture("reader");
+  resetReaderDrag(true);
+}
+
+function isReaderInteractiveTarget(target) {
+  return Boolean(target?.closest?.("a, button, summary, details, input, select, textarea, [data-no-swipe]"));
+}
+
+function disableFocusableChildren(root) {
+  root.querySelectorAll("a, button, summary, input, select, textarea, [tabindex]").forEach((element) => {
+    element.dataset.readerTabIndex = element.getAttribute("tabindex") || "";
+    element.setAttribute("tabindex", "-1");
+  });
+}
+
+function lockGesture(owner) {
+  if (state.gestureLock && state.gestureLock.owner !== owner) return false;
+  state.gestureLock = { owner, ts: Date.now() };
+  return true;
+}
+
+function releaseGesture(owner) {
+  if (!state.gestureLock || state.gestureLock.owner === owner) state.gestureLock = null;
+}
+
+function readerFilterSignature() {
+  return READER_HELPERS.filterSignature({
+    kinds: [...state.kinds],
+    highNovelty: state.highNovelty,
+    discussionOnly: state.discussionOnly,
+  });
+}
+
+function readerProgressKey() {
+  return READER_HELPERS.progressKey(currentFeedDay(), state.activeFeed, readerFilterSignature());
+}
+
+function readerItemKey(item) {
+  return item ? READER_HELPERS.itemKey(item) : "";
+}
+
+function readReaderProgress() {
+  if (!READER_HELPERS) return null;
+  try {
+    const value = JSON.parse(localStorage.getItem(readerProgressKey()) || "null");
+    if (!value || Date.now() - Number(value.ts || 0) > PROGRESS_TTL_MS) return null;
+    return value;
+  } catch (_) {
+    return null;
+  }
+}
+
+function prepareReaderResumePrompt(total) {
+  const saved = readReaderProgress();
+  if (!saved || Number(saved.index) < 3 || saved.itemKey === state.reader.itemKey) {
+    hideResumePrompt();
+    return;
+  }
+  const index = READER_HELPERS.restoreIndex(state.reader.items, saved, 0);
+  if (index <= state.reader.index || index >= total) {
+    hideResumePrompt();
+    return;
+  }
+  const prompt = document.getElementById("resumePrompt");
+  const button = document.getElementById("resumeReading");
+  prompt.dataset.readerIndex = String(index);
+  button.textContent = `Resume at item ${index + 1}`;
+  prompt.hidden = false;
+}
+
+function saveReaderProgress() {
+  if (!state.reader.active || !state.reader.items.length || !READER_HELPERS) return;
+  try {
+    if (state.reader.index <= 0) {
+      localStorage.removeItem(readerProgressKey());
+      return;
+    }
+    localStorage.setItem(readerProgressKey(), JSON.stringify({
+      itemKey: state.reader.itemKey,
+      index: state.reader.index,
+      ts: Date.now(),
+    }));
+  } catch (_) {}
+}
+
+function clearReaderProgress() {
+  if (!READER_HELPERS) return;
+  try { localStorage.removeItem(readerProgressKey()); } catch (_) {}
+}
+
+function updateReaderViewportHeight() {
+  const height = Math.round(window.visualViewport?.height || window.innerHeight || 0);
+  if (height > 0) document.documentElement.style.setProperty("--reader-vh", `${height}px`);
 }
 
 function renderItem(item, displayIndex) {
   const article = node("article", "item");
   article.dataset.tier = Number(item.novelty || 0) >= NOVELTY_TOP ? "top" : "normal";
   article.dataset.readIndex = String(displayIndex);
+  const body = node("div", "item-body");
+  const image = itemImage(item);
+  if (image) article.classList.add("has-image");
 
   const h3 = node("h3", "item-title");
   h3.appendChild(link(item.primary?.url, item.primary?.title || "Untitled item"));
-  article.appendChild(h3);
+  body.appendChild(h3);
 
   const title = item.primary?.title || "";
   const oneLiner = readableLine(item, title);
   if (oneLiner) {
-    article.appendChild(node("p", "item-line", oneLiner));
+    body.appendChild(node("p", "item-line", oneLiner));
   }
 
   const meta = node("div", "item-meta");
-  meta.append(node("span", "source", item.primary?.source_name || "Unknown source"));
+  meta.append(sourceLabel(item));
   meta.append(sep(), document.createTextNode(relTime(parseDate(item.primary?.published_at)) || "unknown"));
   if (item.kind && item.kind !== "unknown") meta.append(sep(), document.createTextNode(KIND_LABELS[item.kind] || item.kind));
   if (item.primary?.repo?.stargazers_count) {
@@ -2524,13 +3576,134 @@ function renderItem(item, displayIndex) {
     meta.append(node("span", "score-detail", `(${parts.join(" · ")})`));
   }
 
-  article.append(meta);
+  body.append(meta);
   const explain = renderExplain(item);
-  if (explain) article.appendChild(explain);
+  if (explain) body.appendChild(explain);
   if (sourceTrail(item).length > 1 || item.primary?.date_confidence !== "high") {
-    article.appendChild(renderSourceTrail(item));
+    body.appendChild(renderSourceTrail(item));
   }
+  article.appendChild(body);
+  if (image) article.appendChild(image);
   return article;
+}
+
+const SOURCE_GLYPHS = {
+  arxiv: {
+    viewBox: "0 0 17.732 24.269",
+    content: '<path fill="currentColor" d="M573.549,280.916l2.266,2.738,6.674-7.84c.353-.47.52-.717.353-1.117a1.218,1.218,0,0,0-1.061-.748h0a.953.953,0,0,0-.712.262Z" transform="translate(-566.984 -271.548)"/><path fill="currentColor" d="M579.525,282.225l-10.606-10.174a1.413,1.413,0,0,0-.834-.5,1.09,1.09,0,0,0-1.027.66c-.167.4-.047.681.319,1.206l8.44,10.242h0l-6.282,7.716a1.336,1.336,0,0,0-.323,1.3,1.114,1.114,0,0,0,1.04.69A.992.992,0,0,0,571,293l8.519-7.92A1.924,1.924,0,0,0,579.525,282.225Z" transform="translate(-566.984 -271.548)"/><path fill="currentColor" d="M584.32,293.912l-8.525-10.275,0,0L573.53,280.9l-1.389,1.254a2.063,2.063,0,0,0,0,2.965l10.812,10.419a.925.925,0,0,0,.742.282,1.039,1.039,0,0,0,.953-.667A1.261,1.261,0,0,0,584.32,293.912Z" transform="translate(-566.984 -271.548)"/>',
+  },
+  reddit: {
+    viewBox: "0 0 24 24",
+    content: '<path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/>',
+  },
+  youtube: {
+    viewBox: "0 0 24 24",
+    content: '<rect x="3.5" y="6.5" width="17" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="currentColor" d="M10.4 9.25v5.5L15.25 12l-4.85-2.75Z"/>',
+  },
+  github: {
+    viewBox: "0 0 24 24",
+    content: '<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M7 4.5h9.5a2 2 0 0 1 2 2v13H8a2.5 2.5 0 0 1 0-5h10.5M7 4.5a2 2 0 0 0-2 2v10.5M9 8h6"/>',
+  },
+  huggingface: {
+    viewBox: "0 0 24 24",
+    content: '<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5.5 13.5c-.9-3.5 1.6-7 6.5-7s7.4 3.5 6.5 7c-.5 3.3-2.9 5.5-6.5 5.5s-6-2.2-6.5-5.5Z"/><circle cx="8.8" cy="10.5" r="1.05" fill="currentColor"/><circle cx="15.2" cy="10.5" r="1.05" fill="currentColor"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M8.4 15c1.1 1.25 2.3 1.85 3.6 1.85s2.5-.6 3.6-1.85"/>',
+  },
+  "hacker-news": {
+    viewBox: "0 0 24 24",
+    content: '<rect x="4.5" y="4.5" width="15" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8.5 8l3.5 4 3.5-4M12 12v4"/>',
+  },
+  openai: {
+    viewBox: "0 0 24 24",
+    content: '<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 3.5l1.5 4 4 1.5-4 1.5-1.5 4-1.5-4-4-1.5 4-1.5L12 3.5ZM5 16.5l.65 1.85L7.5 19l-1.85.65L5 21.5l-.65-1.85L2.5 19l1.85-.65L5 16.5ZM18.5 14l.45 1.25 1.3.5-1.3.5-.45 1.25-.5-1.25-1.25-.5 1.25-.5.5-1.25Z"/>',
+  },
+  news: {
+    viewBox: "0 0 24 24",
+    content: '<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.5 6.5h15v10.8a1.7 1.7 0 0 1-1.7 1.7H6.2a1.7 1.7 0 0 1-1.7-1.7V6.5ZM7.5 10h4.5M7.5 13h9M7.5 16h7M14.5 9.5H17v2.5h-2.5z"/>',
+  },
+  discussion: {
+    viewBox: "0 0 24 24",
+    content: '<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 6.5h10a2.5 2.5 0 0 1 2.5 2.5v3.5A2.5 2.5 0 0 1 15 15H8l-3 3v-3.2A2.5 2.5 0 0 1 2.5 12.3V9A2.5 2.5 0 0 1 5 6.5ZM8 10h5M8 12.8h3.5"/>',
+  },
+  feed: {
+    viewBox: "0 0 24 24",
+    content: '<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" d="M5 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM4 10a10 10 0 0 1 10 10M4 5a15 15 0 0 1 15 15"/>',
+  },
+};
+
+function sourceLabel(item) {
+  const data = sourceData(item);
+  const kind = sourceGlyphKind(data);
+  const source = node("span", "source");
+  source.appendChild(sourceGlyph(kind));
+  source.appendChild(document.createTextNode(data.source_name || "Unknown source"));
+  return source;
+}
+
+function sourceData(item) {
+  return item?.primary || item || {};
+}
+
+function sourceGlyph(kind) {
+  const glyph = SOURCE_GLYPHS[kind] || SOURCE_GLYPHS.feed;
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("class", "source-glyph");
+  svg.setAttribute("data-source-glyph", kind);
+  svg.setAttribute("viewBox", glyph.viewBox);
+  svg.setAttribute("aria-hidden", "true");
+  svg.setAttribute("focusable", "false");
+  svg.innerHTML = glyph.content;
+  return svg;
+}
+
+function sourceGlyphKind(item) {
+  const source = sourceData(item);
+  const values = [
+    source.source_id,
+    source.source_name,
+    source.url,
+    source.original_url,
+    source.discussion_url,
+    source.discussion_source,
+  ].filter(Boolean).join(" ").toLowerCase();
+  const sourceId = String(source.source_id || "").toLowerCase();
+  const sourceName = String(source.source_name || "").toLowerCase();
+  if (sourceId.startsWith("r_") || sourceName.startsWith("r/") || values.includes("reddit.com")) return "reddit";
+  if (sourceId.startsWith("arxiv_") || sourceName.startsWith("arxiv") || values.includes("arxiv.org")) return "arxiv";
+  if (sourceId.startsWith("yt_") || values.includes("youtube") || values.includes("youtu.be")) return "youtube";
+  if (sourceId.startsWith("github_") || sourceId.startsWith("repo_") || values.includes("github.com") || /\breleases\b/.test(sourceName)) return "github";
+  if (sourceId.startsWith("hf_") || values.includes("hugging face") || values.includes("huggingface.co")) return "huggingface";
+  if (sourceId.startsWith("hn_") || values.includes("hacker news") || values.includes("news.ycombinator.com")) return "hacker-news";
+  if (sourceId === "openai" || sourceName.startsWith("openai") || values.includes("openai.com")) return "openai";
+  if (sourceId.includes("lobsters") || values.includes("lobste.rs")) return "discussion";
+  if (/(infoq|techcrunch|decoder|wired|venturebeat|verge)/.test(values)) return "news";
+  return "feed";
+}
+
+function itemImage(item) {
+  const src = itemImageUrl(item);
+  if (!src) return null;
+  const img = document.createElement("img");
+  img.className = "item-thumb";
+  img.src = src;
+  img.alt = "";
+  img.loading = "lazy";
+  img.decoding = "async";
+  img.referrerPolicy = "no-referrer";
+  img.addEventListener("error", () => {
+    const article = img.closest(".item");
+    img.remove();
+    article?.classList.remove("has-image");
+  }, { once: true });
+  return img;
+}
+
+function itemImageUrl(item) {
+  const candidates = [item?.primary, ...(Array.isArray(item?.members) ? item.members : [])];
+  for (const candidate of candidates) {
+    const src = safeImageUrl(candidate?.image_url);
+    if (src) return src;
+  }
+  return "";
 }
 
 function renderExplain(item) {
@@ -2678,12 +3851,22 @@ function rootUrl(path) {
 
 function scrollToTop() {
   hideResumePrompt();
+  if (state.reader.active) {
+    setReaderIndex(0, { focus: true, jumpcut: true });
+    clearReaderProgress();
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
+    return;
+  }
   clearReadingProgress();
   window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
 }
 
 function updateTopJump() {
   const button = document.getElementById("topJump");
+  if (state.reader.active) {
+    button.classList.remove("is-visible");
+    return;
+  }
   const feed = document.getElementById("feed");
   const feedTop = feed.getBoundingClientRect().top + window.scrollY;
   const nearTop = window.scrollY < Math.max(520, feedTop + 240);
@@ -2711,9 +3894,11 @@ function hideResumePrompt() {
   const prompt = document.getElementById("resumePrompt");
   prompt.hidden = true;
   delete prompt.dataset.resumeY;
+  delete prompt.dataset.readerIndex;
 }
 
 function saveReadingProgress() {
+  if (state.reader.active) return;
   if (!state.data) return;
   const day = currentFeedDay();
   if (!day) return;
@@ -2753,7 +3938,7 @@ function pruneReadingProgress() {
     const entries = [];
     for (let i = 0; i < localStorage.length; i += 1) {
       const key = localStorage.key(i);
-      if (!key || !key.startsWith("chronicle-progress:")) continue;
+      if (!key || (!key.startsWith("chronicle-progress:") && !key.startsWith("chronicle-reader:v1:"))) continue;
       let ts = 0;
       try {
         ts = Number(JSON.parse(localStorage.getItem(key) || "null")?.ts || 0);
