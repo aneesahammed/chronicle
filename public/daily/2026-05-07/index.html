@@ -2751,6 +2751,7 @@ const ROOT_PREFIX = DATE_PATH_MATCH
     : "./";
 const MOBILE_READER_QUERY = "(max-width: 720px)";
 const READER_HELPERS = window.ChronicleReaderState || null;
+const READER_VISIBILITY_THRESHOLDS = Array.from({ length: 21 }, (_, index) => index / 20);
 
 const state = {
   data: null,
@@ -2772,6 +2773,9 @@ const state = {
     scrollTicking: false,
     syncingScroll: false,
     scrollReleaseTimer: 0,
+    motionFrame: 0,
+    observer: null,
+    visibility: new Map(),
   },
 };
 
@@ -3617,6 +3621,11 @@ function disableMobileReader() {
   state.reader.itemKey = "";
   state.reader.scrollTicking = false;
   state.reader.syncingScroll = false;
+  state.reader.visibility.clear();
+  state.reader.observer?.disconnect();
+  state.reader.observer = null;
+  if (state.reader.motionFrame) cancelAnimationFrame(state.reader.motionFrame);
+  state.reader.motionFrame = 0;
   window.clearTimeout(state.reader.scrollReleaseTimer);
   state.reader.scrollReleaseTimer = 0;
   state.reader.sheetOpen = false;
@@ -3636,6 +3645,7 @@ function renderReaderSlots() {
     return card;
   });
   slots.replaceChildren(...cards);
+  observeReaderCards();
   updateReaderScrollMotion();
 }
 
@@ -3943,6 +3953,38 @@ function onReaderDeckScroll() {
   });
 }
 
+function observeReaderCards() {
+  state.reader.visibility.clear();
+  state.reader.observer?.disconnect();
+  state.reader.observer = null;
+  const deck = document.getElementById("readerDeck");
+  const cards = document.querySelectorAll(".reader-card");
+  if (!deck || !cards.length || typeof IntersectionObserver !== "function") return;
+  state.reader.observer = new IntersectionObserver(onReaderIntersections, {
+    root: deck,
+    threshold: READER_VISIBILITY_THRESHOLDS,
+  });
+  cards.forEach((card) => state.reader.observer.observe(card));
+}
+
+function onReaderIntersections(entries) {
+  for (const entry of entries) {
+    const index = Number(entry.target.dataset.readerIndex);
+    if (Number.isFinite(index)) {
+      state.reader.visibility.set(index, entry.isIntersecting ? entry.intersectionRatio : 0);
+    }
+  }
+  scheduleReaderMotionUpdate();
+}
+
+function scheduleReaderMotionUpdate() {
+  if (!state.reader.active || state.reader.motionFrame) return;
+  state.reader.motionFrame = requestAnimationFrame(() => {
+    state.reader.motionFrame = 0;
+    updateReaderScrollMotion();
+  });
+}
+
 function updateReaderScrollMotion() {
   const deck = document.getElementById("readerDeck");
   const cards = document.querySelectorAll(".reader-card");
@@ -3958,6 +4000,7 @@ function updateReaderScrollMotion() {
   cards.forEach((card) => {
     const frame = card.querySelector(".reader-card-frame");
     if (!frame) return;
+    const index = Number(card.dataset.readerIndex);
     const raw = (card.offsetTop - deck.scrollTop) / height;
     const progress = Math.max(-1, Math.min(1, raw));
     const distance = Math.abs(progress);
@@ -3966,10 +4009,15 @@ function updateReaderScrollMotion() {
       return;
     }
     const eased = Math.sign(progress) * Math.sin(Math.min(1, distance) * Math.PI / 2);
+    const fallbackVisibility = Math.max(0, 1 - distance);
+    const observedVisibility = Number.isFinite(index) ? state.reader.visibility.get(index) : undefined;
+    const visibility = Math.max(fallbackVisibility, Number.isFinite(observedVisibility) ? observedVisibility : 0);
+    const arrival = Math.max(0, Math.min(1, visibility));
+    const opacity = 0.62 + Math.pow(arrival, 0.72) * 0.38;
     frame.style.setProperty("--reader-tilt", `${(-eased * 6.2).toFixed(3)}deg`);
     frame.style.setProperty("--reader-lift", `${(eased * 9.5).toFixed(2)}px`);
     frame.style.setProperty("--reader-scale", String(Math.max(0.98, 1 - distance * 0.02).toFixed(4)));
-    frame.style.setProperty("--reader-opacity", String(Math.max(0.9, 1 - distance * 0.1).toFixed(4)));
+    frame.style.setProperty("--reader-opacity", String(Math.min(0.995, opacity).toFixed(4)));
     frame.style.setProperty("--reader-shade", String(Math.min(0.14, distance * 0.14).toFixed(4)));
     frame.style.setProperty("--reader-fold-origin", progress < 0 ? "50% 0%" : "50% 100%");
   });
