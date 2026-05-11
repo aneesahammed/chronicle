@@ -1376,9 +1376,14 @@
       white-space: nowrap;
     }
     .reader-explain-cue {
-      color: var(--accent);
+      color: var(--ink-3);
       font-size: 13px;
       line-height: 1;
+    }
+    .reader-explain summary:hover .reader-explain-cue,
+    .reader-explain summary:focus-visible .reader-explain-cue,
+    .reader-explain[open] .reader-explain-cue {
+      color: var(--accent);
     }
     .reader-explain[open] .reader-explain-cue {
       transform: rotate(45deg);
