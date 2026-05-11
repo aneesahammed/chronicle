@@ -20,11 +20,11 @@ test("mobile reader enhances the static feed without removing the fallback list"
   await expect(page.getByRole("dialog", { name: "Feed index" })).toBeHidden();
 });
 
-test("mobile reader supports custom swipe and keyboard navigation", async ({ page }) => {
+test("mobile reader supports scroll snap and keyboard navigation", async ({ page }) => {
   await page.goto("/");
   await expect(page.locator("#mobileReader")).toBeVisible();
 
-  await dragReader(page, -180);
+  await scrollReaderTo(page, 1);
   await expect(page.locator("#readerCounter")).toHaveText(/^2 \/ /);
 
   await page.locator("#readerDeck").focus();
@@ -69,24 +69,14 @@ test("desktop keeps the original list experience", async ({ browser }) => {
   await page.close();
 });
 
-async function dragReader(page: import("@playwright/test").Page, deltaY: number) {
-  await page.locator("#readerDeck").evaluate((deck, dy) => {
-    const rect = deck.getBoundingClientRect();
-    const x = rect.left + rect.width / 2;
-    const y = rect.top + rect.height / 2;
-    const init = {
-      pointerId: 7,
-      pointerType: "touch",
-      isPrimary: true,
-      clientX: x,
-      clientY: y,
-      bubbles: true,
-      cancelable: true,
-    };
-    deck.dispatchEvent(new PointerEvent("pointerdown", init));
-    deck.dispatchEvent(new PointerEvent("pointermove", { ...init, clientY: y + dy }));
-    deck.dispatchEvent(new PointerEvent("pointerup", { ...init, clientY: y + dy }));
-  }, deltaY);
+async function scrollReaderTo(page: import("@playwright/test").Page, index: number) {
+  await page.waitForTimeout(80);
+  await page.locator("#readerDeck").evaluate((deck, targetIndex) => {
+    const target = deck.querySelector(`.reader-card[data-reader-index="${targetIndex}"]`);
+    if (!target) throw new Error(`reader card ${targetIndex} not found`);
+    deck.scrollTo({ top: (target as HTMLElement).offsetTop, behavior: "auto" });
+    deck.dispatchEvent(new Event("scroll"));
+  }, index);
 }
 
 async function visibleBounds(page: import("@playwright/test").Page) {

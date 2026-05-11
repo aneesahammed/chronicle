@@ -2,9 +2,6 @@
   "use strict";
 
   const PREFIX = "chronicle-reader:v1";
-  const DEFAULT_COMMIT_PX = 10;
-  const DEFAULT_THRESHOLD_PX = 56;
-  const DEFAULT_VELOCITY_PX_MS = 0.45;
 
   function clampIndex(index, total) {
     const count = Number(total) || 0;
@@ -56,30 +53,6 @@
     return clampIndex(previousIndex, list.length);
   }
 
-  function classifyGesture(input) {
-    const dx = Number(input && input.dx) || 0;
-    const dy = Number(input && input.dy) || 0;
-    const elapsedMs = Math.max(1, Number(input && input.elapsedMs) || 1);
-    const index = Number(input && input.index) || 0;
-    const total = Number(input && input.total) || 0;
-    const commitPx = Number(input && input.commitPx) || DEFAULT_COMMIT_PX;
-    const thresholdPx = Number(input && input.thresholdPx) || DEFAULT_THRESHOLD_PX;
-    const velocityPxMs = Number(input && input.velocityPxMs) || DEFAULT_VELOCITY_PX_MS;
-    const absX = Math.abs(dx);
-    const absY = Math.abs(dy);
-
-    if (absX < commitPx && absY < commitPx) return { intent: "pending" };
-    if (absX > absY * 1.15) return { intent: "cancel" };
-    if (dy > 0 && index <= 0) return { intent: "pull-to-refresh" };
-
-    const velocity = absY / elapsedMs;
-    const committed = absY >= thresholdPx || (absY >= commitPx * 2 && velocity >= velocityPxMs);
-    if (!committed) return { intent: "bounce" };
-    if (dy < 0 && index < total - 1) return { intent: "next" };
-    if (dy > 0 && index > 0) return { intent: "previous" };
-    return { intent: "bounce" };
-  }
-
   function encodePart(value) {
     return encodeURIComponent(String(value)).replace(/%/g, "~");
   }
@@ -96,6 +69,5 @@
     progressKey,
     restoreIndex,
     indexAfterFilterChange,
-    classifyGesture,
   });
 })(globalThis);

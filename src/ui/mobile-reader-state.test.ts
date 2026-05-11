@@ -11,13 +11,6 @@ type ReaderStateApi = {
   progressKey(day: string, tab: string, signature: string): string;
   restoreIndex(items: unknown[], saved: { itemKey?: string; index?: number } | null, fallbackIndex?: number): number;
   indexAfterFilterChange(previousKey: string, items: unknown[], previousIndex: number): number;
-  classifyGesture(input: {
-    dx: number;
-    dy: number;
-    elapsedMs: number;
-    index: number;
-    total: number;
-  }): { intent: string };
 };
 
 test("mobile reader state preserves position by stable item key", async () => {
@@ -45,17 +38,6 @@ test("mobile reader progress key is scoped by day tab and filters", async () => 
     reader.progressKey("2026-05-11", "repo", signatureA),
     reader.progressKey("2026-05-11", "learning", signatureA),
   );
-});
-
-test("mobile reader gesture classifier separates reader swipes from pull refresh", async () => {
-  const reader = await loadReaderState();
-
-  assert.equal(reader.classifyGesture({ dx: 4, dy: 8, elapsedMs: 30, index: 1, total: 5 }).intent, "pending");
-  assert.equal(reader.classifyGesture({ dx: 70, dy: 20, elapsedMs: 90, index: 1, total: 5 }).intent, "cancel");
-  assert.equal(reader.classifyGesture({ dx: 4, dy: 24, elapsedMs: 70, index: 0, total: 5 }).intent, "pull-to-refresh");
-  assert.equal(reader.classifyGesture({ dx: 2, dy: -70, elapsedMs: 160, index: 1, total: 5 }).intent, "next");
-  assert.equal(reader.classifyGesture({ dx: 2, dy: 70, elapsedMs: 160, index: 1, total: 5 }).intent, "previous");
-  assert.equal(reader.classifyGesture({ dx: 2, dy: -70, elapsedMs: 160, index: 4, total: 5 }).intent, "bounce");
 });
 
 async function loadReaderState(): Promise<ReaderStateApi> {

@@ -978,8 +978,6 @@
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
     }
-    .reader-deck.is-animating .reader-card,
-    .reader-deck.is-jumpcut .reader-card,
     .reader-rail > span {
       transition-duration: 0.01ms !important;
     }
@@ -1125,26 +1123,39 @@
       position: relative;
       height: var(--reader-deck-h, clamp(300px, calc(var(--reader-vh, 100svh) - 310px), 620px));
       min-height: 0;
-      perspective: 1100px;
       outline: none;
-      touch-action: none;
+      overflow-x: hidden;
+      overflow-y: auto;
+      overscroll-behavior-y: contain;
+      scroll-behavior: auto;
+      scroll-snap-type: y mandatory;
+      scrollbar-width: none;
+      touch-action: pan-y;
+      -webkit-overflow-scrolling: touch;
+    }
+    .reader-deck::-webkit-scrollbar {
+      display: none;
+    }
+    .reader-slots {
+      display: grid;
+      gap: 14px;
+      min-height: 100%;
     }
     .reader-card {
       --reader-rail-h: 58px;
-      position: absolute;
-      inset: 0;
+      position: relative;
       display: grid;
       grid-template-rows: auto 1fr;
+      height: var(--reader-deck-h, clamp(300px, calc(var(--reader-vh, 100svh) - 310px), 620px));
       overflow: hidden;
       min-width: 0;
       border: 1px solid var(--rule);
       border-radius: 8px;
       background: var(--paper);
       isolation: isolate;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
       box-shadow: 0 16px 42px rgba(0, 0, 0, 0.12);
-      transform-origin: 50% 50%;
-      will-change: transform, opacity;
-      backface-visibility: hidden;
     }
     .reader-card:not(.is-text-first) {
       grid-template-rows: auto minmax(0, 1fr);
@@ -1153,30 +1164,8 @@
       outline: 2px solid var(--accent);
       outline-offset: 3px;
     }
-    .reader-card.is-prev {
-      opacity: 0;
-      transform: translate3d(0, -84%, 0) rotateX(7deg) scale(0.985);
-      pointer-events: none;
-    }
     .reader-card.is-current {
-      opacity: 1;
-      transform: translate3d(0, 0, 0) rotateX(0deg) scale(1);
-      z-index: 2;
-    }
-    .reader-card.is-next {
-      opacity: 0;
-      transform: translate3d(0, 84%, 0) rotateX(-7deg) scale(0.985);
-      pointer-events: none;
-    }
-    .reader-deck.is-animating .reader-card,
-    .reader-deck.is-jumpcut .reader-card {
-      transition:
-        transform 420ms cubic-bezier(0.2, 0.75, 0.18, 1),
-        opacity 320ms ease,
-        box-shadow 320ms ease;
-    }
-    .reader-deck.is-jumpcut .reader-card {
-      transition-duration: 170ms;
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.14);
     }
     .reader-media {
       display: block;
@@ -2451,8 +2440,6 @@ const ROOT_PREFIX = DATE_PATH_MATCH
     ? "../"
     : "./";
 const MOBILE_READER_QUERY = "(max-width: 720px)";
-const READER_ANIM_MS = 420;
-const READER_JUMPCUT_MS = 170;
 const READER_HELPERS = window.ChronicleReaderState || null;
 
 const state = {
@@ -2471,9 +2458,10 @@ const state = {
     index: 0,
     items: [],
     itemKey: "",
-    animating: false,
     sheetOpen: false,
-    gesture: null,
+    scrollTicking: false,
+    syncingScroll: false,
+    scrollReleaseTimer: 0,
   },
 };
 
@@ -2840,7 +2828,7 @@ function wirePullToRefresh() {
     if (window.scrollY > 0) return;
     if (event.touches.length !== 1) return;
     startedInReader = Boolean(event.target?.closest?.("#mobileReader"));
-    if (startedInReader && (!state.reader.active || state.reader.index > 0)) return;
+    if (startedInReader && (!state.reader.active || state.reader.index > 0 || Number(document.getElementById("readerDeck")?.scrollTop || 0) > 1)) return;
     const touch = event.touches[0];
     activeId = touch.identifier;
     startX = touch.clientX;
@@ -2863,6 +2851,7 @@ function wirePullToRefresh() {
     if (!pulling) {
       if (dy <= 0 || window.scrollY > 0) { activeId = null; return; }
       if (Math.abs(dx) > Math.abs(dy)) { activeId = null; return; }
+      if (startedInReader && Number(document.getElementById("readerDeck")?.scrollTop || 0) > 1) { activeId = null; return; }
       if (dy < COMMIT_PX) return;
       if (startedInReader && state.gestureLock?.owner === "reader") { activeId = null; return; }
       if (startedInReader) lockGesture("ptr");
@@ -3178,10 +3167,11 @@ function groupFeedItems(items) {
 }
 
 function shouldUseMobileReader() {
+  const supportsSnap = !window.CSS || !CSS.supports || CSS.supports("scroll-snap-type: y mandatory");
   return Boolean(
     READER_HELPERS &&
     state.reader.media?.matches &&
-    "PointerEvent" in window &&
+    supportsSnap &&
     !document.body.classList.contains("reader-disabled"),
   );
 }
@@ -3219,6 +3209,7 @@ function enhanceMobileReader(items) {
     renderReaderSlots();
     renderReaderIndexSheet();
     updateReaderProgress();
+    requestAnimationFrame(() => scrollReaderToIndex(nextIndex, { behavior: "auto" }));
     return true;
   } catch (error) {
     console.warn("[chronicle-reader] mobile reader disabled", error);
@@ -3260,7 +3251,7 @@ function ensureMobileReader() {
   const deck = node("div", "reader-deck");
   deck.id = "readerDeck";
   deck.tabIndex = 0;
-  deck.setAttribute("aria-label", "Swipe up for next item, swipe down for previous item");
+  deck.setAttribute("aria-label", "Scroll for next and previous feed items");
   const slots = node("div", "reader-slots");
   slots.id = "readerSlots";
   deck.appendChild(slots);
@@ -3280,10 +3271,7 @@ function ensureMobileReader() {
   document.getElementById("feed").appendChild(reader);
 
   indexButton.addEventListener("click", () => toggleReaderIndexSheet());
-  deck.addEventListener("pointerdown", onReaderPointerDown);
-  deck.addEventListener("pointermove", onReaderPointerMove);
-  deck.addEventListener("pointerup", onReaderPointerEnd);
-  deck.addEventListener("pointercancel", onReaderPointerEnd);
+  deck.addEventListener("scroll", onReaderDeckScroll, { passive: true });
   deck.addEventListener("keydown", onReaderKeyDown);
   return reader;
 }
@@ -3316,8 +3304,10 @@ function disableMobileReader() {
   state.reader.active = false;
   state.reader.items = [];
   state.reader.itemKey = "";
-  state.reader.gesture = null;
-  state.reader.animating = false;
+  state.reader.scrollTicking = false;
+  state.reader.syncingScroll = false;
+  window.clearTimeout(state.reader.scrollReleaseTimer);
+  state.reader.scrollReleaseTimer = 0;
   state.reader.sheetOpen = false;
   state.gestureLock = null;
   const reader = document.getElementById("mobileReader");
@@ -3329,30 +3319,18 @@ function renderReaderSlots() {
   if (!slots) return;
   const items = state.reader.items;
   const index = READER_HELPERS.clampIndex(state.reader.index, items.length);
-  const entries = [
-    { offset: -1, className: "is-prev" },
-    { offset: 0, className: "is-current" },
-    { offset: 1, className: "is-next" },
-  ];
-  const cards = [];
-  for (const entry of entries) {
-    const item = items[index + entry.offset];
-    if (!item) continue;
-    const card = renderReaderCard(item, index + entry.offset, entry.className, entry.offset >= 0);
-    card.dataset.readerSlot = String(entry.offset);
-    if (entry.offset !== 0) {
-      card.setAttribute("aria-hidden", "true");
-      card.inert = true;
-      disableFocusableChildren(card);
-    }
-    cards.push(card);
-  }
+  const cards = items.map((item, itemIndex) => {
+    const card = renderReaderCard(item, itemIndex, itemIndex === index, itemIndex <= index + 1);
+    setReaderCardActive(card, itemIndex === index);
+    return card;
+  });
   slots.replaceChildren(...cards);
 }
 
-function renderReaderCard(item, index, positionClass, eagerImage) {
-  const article = node("article", `reader-card ${positionClass}`);
-  article.tabIndex = positionClass === "is-current" ? 0 : -1;
+function renderReaderCard(item, index, isCurrent, eagerImage) {
+  const article = node("article", `reader-card${isCurrent ? " is-current" : ""}`);
+  article.tabIndex = isCurrent ? 0 : -1;
+  article.dataset.readerIndex = String(index);
   article.dataset.readerItemKey = readerItemKey(item);
   article.setAttribute("aria-label", `Item ${index + 1} of ${state.reader.items.length}`);
 
@@ -3587,19 +3565,81 @@ function closeReaderIndexSheet() {
 
 function setReaderIndex(index, options = {}) {
   if (!state.reader.active) return;
-  const deck = document.getElementById("readerDeck");
+  const next = READER_HELPERS.clampIndex(index, state.reader.items.length);
+  setActiveReaderIndex(next, { save: true });
+  scrollReaderToIndex(next, { behavior: options.jumpcut || prefersReducedMotion() ? "auto" : "smooth" });
+  if (options.focus) requestAnimationFrame(() => focusActiveReaderCard());
+}
+
+function setActiveReaderIndex(index, options = {}) {
   const next = READER_HELPERS.clampIndex(index, state.reader.items.length);
   state.reader.index = next;
   state.reader.itemKey = readerItemKey(state.reader.items[next]);
-  if (options.jumpcut && deck && !prefersReducedMotion()) deck.classList.add("is-jumpcut");
-  renderReaderSlots();
+  syncReaderCardStates();
   renderReaderIndexSheet();
   updateReaderProgress();
-  saveReaderProgress();
-  if (options.focus) requestAnimationFrame(() => focusActiveReaderCard());
-  if (options.jumpcut && deck) {
-    window.setTimeout(() => deck.classList.remove("is-jumpcut"), prefersReducedMotion() ? 0 : READER_JUMPCUT_MS);
+  if (options.save !== false) saveReaderProgress();
+}
+
+function syncReaderCardStates() {
+  document.querySelectorAll(".reader-card").forEach((card) => {
+    setReaderCardActive(card, Number(card.dataset.readerIndex) === state.reader.index);
+  });
+}
+
+function setReaderCardActive(card, active) {
+  card.classList.toggle("is-current", active);
+  card.tabIndex = active ? 0 : -1;
+  if (active) {
+    card.removeAttribute("aria-hidden");
+    card.inert = false;
+    restoreFocusableChildren(card);
+  } else {
+    card.setAttribute("aria-hidden", "true");
+    card.inert = true;
+    disableFocusableChildren(card);
   }
+}
+
+function scrollReaderToIndex(index, options = {}) {
+  const deck = document.getElementById("readerDeck");
+  const card = document.querySelector(`.reader-card[data-reader-index="${READER_HELPERS.clampIndex(index, state.reader.items.length)}"]`);
+  if (!deck || !card) return;
+  const behavior = options.behavior || "auto";
+  state.reader.syncingScroll = true;
+  window.clearTimeout(state.reader.scrollReleaseTimer);
+  deck.scrollTo({ top: card.offsetTop, behavior });
+  state.reader.scrollReleaseTimer = window.setTimeout(() => {
+    state.reader.syncingScroll = false;
+    state.reader.scrollReleaseTimer = 0;
+    onReaderDeckScroll();
+  }, behavior === "smooth" ? 360 : 60);
+}
+
+function onReaderDeckScroll() {
+  if (!state.reader.active || state.reader.syncingScroll || state.reader.scrollTicking) return;
+  state.reader.scrollTicking = true;
+  requestAnimationFrame(() => {
+    state.reader.scrollTicking = false;
+    const next = nearestReaderIndex();
+    if (next !== state.reader.index) setActiveReaderIndex(next, { save: true });
+  });
+}
+
+function nearestReaderIndex() {
+  const deck = document.getElementById("readerDeck");
+  const cards = [...document.querySelectorAll(".reader-card")];
+  if (!deck || !cards.length) return state.reader.index;
+  let closestIndex = state.reader.index;
+  let closestDistance = Infinity;
+  for (const card of cards) {
+    const distance = Math.abs(card.offsetTop - deck.scrollTop);
+    if (distance < closestDistance) {
+      closestDistance = distance;
+      closestIndex = Number(card.dataset.readerIndex) || 0;
+    }
+  }
+  return READER_HELPERS.clampIndex(closestIndex, state.reader.items.length);
 }
 
 function focusActiveReaderCard() {
@@ -3607,103 +3647,10 @@ function focusActiveReaderCard() {
 }
 
 function navigateReader(direction, options = {}) {
-  if (!state.reader.active || state.reader.animating) return;
+  if (!state.reader.active) return;
   const delta = direction === "next" ? 1 : -1;
   const next = READER_HELPERS.clampIndex(state.reader.index + delta, state.reader.items.length);
-  if (next === state.reader.index) {
-    resetReaderDrag(true);
-    return;
-  }
-  if (options.jumpcut || prefersReducedMotion()) {
-    setReaderIndex(next, { focus: options.focus, jumpcut: options.jumpcut });
-    return;
-  }
-  animateReaderNavigation(next, direction, options.focus);
-}
-
-function animateReaderNavigation(nextIndex, direction, focus) {
-  const deck = document.getElementById("readerDeck");
-  const current = document.querySelector(".reader-card.is-current");
-  const incoming = document.querySelector(direction === "next" ? ".reader-card.is-next" : ".reader-card.is-prev");
-  if (!deck || !current || !incoming) {
-    setReaderIndex(nextIndex, { focus, jumpcut: true });
-    return;
-  }
-  state.reader.animating = true;
-  deck.classList.add("is-animating");
-  const sign = direction === "next" ? -1 : 1;
-  requestAnimationFrame(() => {
-    current.style.transform = `translate3d(0, ${sign * 34}%, 0) rotateX(${sign * -8}deg) scale(0.97)`;
-    current.style.opacity = "0";
-    incoming.style.transform = "translate3d(0, 0, 0) rotateX(0deg) scale(1)";
-    incoming.style.opacity = "1";
-  });
-  window.setTimeout(() => {
-    deck.classList.remove("is-animating");
-    state.reader.animating = false;
-    setReaderIndex(nextIndex, { focus });
-  }, READER_ANIM_MS);
-}
-
-function onReaderPointerDown(event) {
-  if (!state.reader.active || state.reader.animating || state.reader.sheetOpen) return;
-  if (event.pointerType === "mouse" && event.button !== 0) return;
-  if (isReaderInteractiveTarget(event.target)) return;
-  state.reader.gesture = {
-    pointerId: event.pointerId,
-    startX: event.clientX,
-    startY: event.clientY,
-    startTs: performance.now(),
-    claimed: false,
-  };
-  event.currentTarget.setPointerCapture?.(event.pointerId);
-}
-
-function onReaderPointerMove(event) {
-  const gesture = state.reader.gesture;
-  if (!gesture || gesture.pointerId !== event.pointerId || state.reader.animating) return;
-  const dx = event.clientX - gesture.startX;
-  const dy = event.clientY - gesture.startY;
-  const result = READER_HELPERS.classifyGesture({
-    dx,
-    dy,
-    elapsedMs: performance.now() - gesture.startTs,
-    index: state.reader.index,
-    total: state.reader.items.length,
-  });
-  if (result.intent === "pending") return;
-  if (result.intent === "cancel") {
-    cancelReaderGesture();
-    return;
-  }
-  if (result.intent === "pull-to-refresh") {
-    lockGesture("ptr");
-    cancelReaderGesture({ release: false });
-    return;
-  }
-  if (state.gestureLock && state.gestureLock.owner !== "reader") return;
-  lockGesture("reader");
-  gesture.claimed = true;
-  if (event.cancelable) event.preventDefault();
-  applyReaderDrag(dy);
-}
-
-function onReaderPointerEnd(event) {
-  const gesture = state.reader.gesture;
-  if (!gesture || gesture.pointerId !== event.pointerId) return;
-  const dx = event.clientX - gesture.startX;
-  const dy = event.clientY - gesture.startY;
-  const result = READER_HELPERS.classifyGesture({
-    dx,
-    dy,
-    elapsedMs: performance.now() - gesture.startTs,
-    index: state.reader.index,
-    total: state.reader.items.length,
-  });
-  state.reader.gesture = null;
-  releaseGesture("reader");
-  if (result.intent === "next" || result.intent === "previous") navigateReader(result.intent);
-  else resetReaderDrag(true);
+  if (next !== state.reader.index) setReaderIndex(next, { focus: options.focus, jumpcut: options.jumpcut });
 }
 
 function onReaderKeyDown(event) {
@@ -3725,45 +3672,6 @@ function onReaderKeyDown(event) {
   }
 }
 
-function applyReaderDrag(dy) {
-  const deck = document.getElementById("readerDeck");
-  const current = document.querySelector(".reader-card.is-current");
-  if (!deck || !current) return;
-  const height = Math.max(1, deck.getBoundingClientRect().height);
-  const progress = Math.min(1, Math.abs(dy) / Math.max(160, height * 0.5));
-  const direction = dy < 0 ? "next" : "previous";
-  const incoming = document.querySelector(direction === "next" ? ".reader-card.is-next" : ".reader-card.is-prev");
-  const limited = Math.max(-height * 0.35, Math.min(height * 0.35, dy));
-  current.style.transform = `translate3d(0, ${limited * 0.22}px, 0) rotateX(${(-limited / height) * 10}deg) scale(${1 - progress * 0.018})`;
-  current.style.opacity = String(1 - progress * 0.18);
-  if (incoming) {
-    const start = direction === "next" ? height * 0.84 : -height * 0.84;
-    const travel = direction === "next" ? -Math.abs(dy) * 0.92 : Math.abs(dy) * 0.92;
-    const offset = start + travel;
-    incoming.style.opacity = String(Math.min(1, 0.12 + progress * 1.1));
-    incoming.style.transform = `translate3d(0, ${offset}px, 0) rotateX(${direction === "next" ? -7 + progress * 7 : 7 - progress * 7}deg) scale(${0.985 + progress * 0.015})`;
-  }
-}
-
-function resetReaderDrag(animate) {
-  const deck = document.getElementById("readerDeck");
-  const cards = document.querySelectorAll(".reader-card");
-  if (animate && deck && !prefersReducedMotion()) deck.classList.add("is-animating");
-  cards.forEach((card) => {
-    card.style.transform = "";
-    card.style.opacity = "";
-  });
-  if (animate && deck) {
-    window.setTimeout(() => deck.classList.remove("is-animating"), prefersReducedMotion() ? 0 : 180);
-  }
-}
-
-function cancelReaderGesture(options = {}) {
-  state.reader.gesture = null;
-  if (options.release !== false) releaseGesture("reader");
-  resetReaderDrag(true);
-}
-
 function isReaderInteractiveTarget(target) {
   return Boolean(target?.closest?.("a, button, summary, details, input, select, textarea, [data-no-swipe]"));
 }
@@ -3772,6 +3680,15 @@ function disableFocusableChildren(root) {
   root.querySelectorAll("a, button, summary, input, select, textarea, [tabindex]").forEach((element) => {
     element.dataset.readerTabIndex = element.getAttribute("tabindex") || "";
     element.setAttribute("tabindex", "-1");
+  });
+}
+
+function restoreFocusableChildren(root) {
+  root.querySelectorAll("[data-reader-tab-index]").forEach((element) => {
+    const previous = element.dataset.readerTabIndex;
+    if (previous) element.setAttribute("tabindex", previous);
+    else element.removeAttribute("tabindex");
+    delete element.dataset.readerTabIndex;
   });
 }
 
@@ -3866,6 +3783,9 @@ function updateReaderViewportHeight() {
     const nextHeight = Math.max(286, Math.min(620, available));
     document.documentElement.style.setProperty("--reader-deck-h", `${nextHeight}px`);
     document.body.classList.toggle("is-reader-compact", nextHeight < 470 || height < 720);
+    if (state.reader.active) {
+      requestAnimationFrame(() => scrollReaderToIndex(state.reader.index, { behavior: "auto" }));
+    }
   }
 }
 
