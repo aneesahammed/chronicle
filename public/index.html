@@ -310,7 +310,6 @@
     min-width: 0;
     gap: 10px;
     padding-bottom: 12px;
-    border-bottom: 1px solid var(--rule);
   }
   .top-story.has-image {
     grid-template-columns: minmax(0, 1fr) minmax(220px, 34%);
@@ -383,6 +382,9 @@
   }
   .top-row:not(.has-image) {
     grid-template-columns: minmax(0, 1fr);
+  }
+  .top-row:last-child {
+    border-bottom: 0;
   }
   .top-row-title {
     min-width: 0;
@@ -1051,6 +1053,7 @@
       align-items: center;
       gap: 10px;
       min-height: 36px;
+      padding-bottom: 8px;
       color: var(--ink-3);
       font: 11px/1.4 var(--font-mono);
       letter-spacing: 0.04em;
@@ -1132,6 +1135,7 @@
       scrollbar-width: none;
       touch-action: pan-y;
       -webkit-overflow-scrolling: touch;
+      border-radius: 8px;
     }
     .reader-deck::-webkit-scrollbar {
       display: none;
@@ -1162,7 +1166,9 @@
       border-radius: 8px;
       background: var(--paper);
       isolation: isolate;
-      box-shadow: 0 16px 42px rgba(0, 0, 0, 0.12);
+      box-shadow:
+        0 2px 6px rgba(11, 13, 16, 0.04),
+        0 8px 24px rgba(11, 13, 16, 0.07);
       opacity: var(--reader-opacity, 1);
       transform:
         translate3d(0, var(--reader-lift, 0px), 0)
@@ -1199,7 +1205,10 @@
       outline-offset: 3px;
     }
     .reader-card.is-current .reader-card-frame {
-      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.14);
+      box-shadow:
+        0 4px 12px rgba(11, 13, 16, 0.06),
+        0 16px 40px rgba(11, 13, 16, 0.12),
+        0 32px 64px rgba(11, 13, 16, 0.06);
     }
     .reader-media {
       display: block;
@@ -1435,20 +1444,45 @@
       inset: auto 0 0 0;
       z-index: 50;
       max-height: min(78svh, 620px);
-      padding: 14px 18px calc(18px + env(safe-area-inset-bottom, 0px));
+      padding: 0 18px calc(18px + env(safe-area-inset-bottom, 0px));
       border-top: 1px solid var(--rule);
       background: color-mix(in srgb, var(--panel) 96%, transparent);
       box-shadow: 0 -18px 48px rgba(0, 0, 0, 0.18);
       overflow: auto;
+      touch-action: pan-y;
+      will-change: transform;
+    }
+    .reader-index-sheet.is-snapping {
+      transition: transform 280ms cubic-bezier(0.32, 0.72, 0, 1);
+    }
+    .reader-index-handle {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 20px;
+      margin: 0 -18px;
+      background: inherit;
+      cursor: grab;
+      touch-action: none;
+    }
+    .reader-index-handle::before {
+      content: "";
+      width: 36px;
+      height: 4px;
+      border-radius: 2px;
+      background: var(--rule);
     }
     .reader-index-head {
       position: sticky;
-      top: 0;
+      top: 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      padding-bottom: 12px;
+      padding: 14px 0 12px;
       background: inherit;
       color: var(--ink);
       font: 600 15px/1.2 var(--font-display);
@@ -3141,6 +3175,7 @@ function wirePullToRefresh() {
     if (window.scrollY > 0) return;
     if (event.touches.length !== 1) return;
     startedInReader = Boolean(event.target?.closest?.("#mobileReader"));
+    if (event.target?.closest?.("#readerIndexSheet")) return;
     if (startedInReader && (!state.reader.active || state.reader.index > 0 || Number(document.getElementById("readerDeck")?.scrollTop || 0) > 1)) return;
     const touch = event.touches[0];
     activeId = touch.identifier;
@@ -3577,6 +3612,9 @@ function ensureMobileReader() {
   sheet.setAttribute("role", "dialog");
   sheet.setAttribute("aria-label", "Feed index");
   sheet.setAttribute("aria-modal", "false");
+  const handle = node("div", "reader-index-handle");
+  handle.setAttribute("aria-hidden", "true");
+  sheet.appendChild(handle);
   sheet.appendChild(readerIndexHead());
   sheet.appendChild(readerRefineSection());
   sheet.appendChild(node("div", "reader-index-list"));
@@ -3587,6 +3625,13 @@ function ensureMobileReader() {
   indexButton.addEventListener("click", () => toggleReaderIndexSheet());
   deck.addEventListener("scroll", onReaderDeckScroll, { passive: true });
   deck.addEventListener("keydown", onReaderKeyDown);
+  wireSheetSwipe(sheet);
+  document.addEventListener("pointerdown", (e) => {
+    if (!state.reader.sheetOpen) return;
+    if (!e.target?.closest?.("#readerIndexSheet") && !e.target?.closest?.("#readerIndexButton")) {
+      closeReaderIndexSheet();
+    }
+  }, { passive: true });
   return reader;
 }
 
@@ -3881,9 +3926,68 @@ function closeReaderIndexSheet() {
   const sheet = document.getElementById("readerIndexSheet");
   const button = document.getElementById("readerIndexButton");
   if (!sheet || !button) return;
+  sheet.style.transform = "";
+  sheet.classList.remove("is-snapping");
   sheet.hidden = true;
   state.reader.sheetOpen = false;
   button.setAttribute("aria-expanded", "false");
+}
+
+function wireSheetSwipe(sheet) {
+  let startY = 0;
+  let currentY = 0;
+  let dragging = false;
+
+  // reset if sheet is closed externally mid-drag (outside click, keyboard, etc.)
+  sheet.addEventListener("hidden", () => { dragging = false; }, { passive: true });
+
+  sheet.addEventListener("touchstart", (e) => {
+    if (e.touches.length !== 1) return;
+    if (sheet.scrollTop > 2) return;
+    startY = e.touches[0].clientY;
+    currentY = startY;
+    dragging = true;
+    sheet.classList.remove("is-snapping");
+  }, { passive: true });
+
+  sheet.addEventListener("touchmove", (e) => {
+    if (!dragging || e.touches.length !== 1) return;
+    currentY = e.touches[0].clientY;
+    const dy = currentY - startY;
+    if (dy <= 0) {
+      sheet.style.transform = "";
+      return;
+    }
+    const clamped = dy < 80 ? dy : 80 + (dy - 80) * 0.25;
+    sheet.style.transform = `translateY(${clamped.toFixed(1)}px)`;
+  }, { passive: true });
+
+  function onEnd() {
+    if (!dragging) return;
+    dragging = false;
+    const dy = currentY - startY;
+    sheet.classList.add("is-snapping");
+    if (dy > 72) {
+      sheet.style.transform = `translateY(100%)`;
+      const onCommit = (e) => {
+        if (e.propertyName !== "transform") return;
+        sheet.removeEventListener("transitionend", onCommit);
+        closeReaderIndexSheet();
+      };
+      sheet.addEventListener("transitionend", onCommit);
+    } else {
+      sheet.style.transform = "";
+      const onSnap = (e) => {
+        if (e.propertyName !== "transform") return;
+        sheet.removeEventListener("transitionend", onSnap);
+        sheet.classList.remove("is-snapping");
+      };
+      sheet.addEventListener("transitionend", onSnap);
+    }
+  }
+
+  sheet.addEventListener("touchend", onEnd, { passive: true });
+  sheet.addEventListener("touchcancel", onEnd, { passive: true });
 }
 
 function setReaderIndex(index, options = {}) {
