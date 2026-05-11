@@ -1140,31 +1140,61 @@
       display: grid;
       gap: 14px;
       min-height: 100%;
+      perspective: 1200px;
+      perspective-origin: 50% 50%;
     }
     .reader-card {
       --reader-rail-h: 58px;
       position: relative;
+      height: var(--reader-deck-h, clamp(300px, calc(var(--reader-vh, 100svh) - 310px), 620px));
+      min-width: 0;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+    .reader-card-frame {
+      position: absolute;
+      inset: 0;
       display: grid;
       grid-template-rows: auto 1fr;
-      height: var(--reader-deck-h, clamp(300px, calc(var(--reader-vh, 100svh) - 310px), 620px));
       overflow: hidden;
       min-width: 0;
       border: 1px solid var(--rule);
       border-radius: 8px;
       background: var(--paper);
       isolation: isolate;
-      scroll-snap-align: start;
-      scroll-snap-stop: always;
       box-shadow: 0 16px 42px rgba(0, 0, 0, 0.12);
+      opacity: var(--reader-opacity, 1);
+      transform:
+        translate3d(0, var(--reader-lift, 0px), 0)
+        rotateX(var(--reader-tilt, 0deg))
+        scale(var(--reader-scale, 1));
+      transform-origin: var(--reader-fold-origin, 50% 50%);
+      will-change: transform, opacity;
+      backface-visibility: hidden;
     }
-    .reader-card:not(.is-text-first) {
+    .reader-card-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      pointer-events: none;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 0.16)
+        );
+      opacity: var(--reader-shade, 0);
+      transition: opacity 120ms ease-out;
+    }
+    .reader-card:not(.is-text-first) .reader-card-frame {
       grid-template-rows: auto minmax(0, 1fr);
     }
     .reader-card:focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 3px;
     }
-    .reader-card.is-current {
+    .reader-card.is-current .reader-card-frame {
       box-shadow: 0 18px 46px rgba(0, 0, 0, 0.14);
     }
     .reader-media {
@@ -1175,7 +1205,7 @@
       background: var(--paper-2);
       border-bottom: 1px solid var(--rule);
     }
-    .reader-card.is-text-first {
+    .reader-card.is-text-first .reader-card-frame {
       grid-template-rows: auto 1fr;
       background:
         linear-gradient(180deg, color-mix(in srgb, var(--ink) 3%, transparent), transparent 34%),
@@ -1380,6 +1410,16 @@
     .reader-explain ul {
       margin: 8px 0 0;
       padding-left: 17px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reader-card-frame {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+      }
+      .reader-card-frame::after {
+        display: none;
+      }
     }
     .reader-index-sheet[hidden] {
       display: none;
@@ -3501,6 +3541,7 @@ function enhanceMobileReader(items) {
     renderReaderSlots();
     renderReaderIndexSheet();
     updateReaderProgress();
+    updateReaderScrollMotion();
     requestAnimationFrame(() => scrollReaderToIndex(nextIndex, { behavior: "auto" }));
     return true;
   } catch (error) {
@@ -3617,6 +3658,7 @@ function renderReaderSlots() {
     return card;
   });
   slots.replaceChildren(...cards);
+  updateReaderScrollMotion();
 }
 
 function renderReaderCard(item, index, isCurrent, eagerImage) {
@@ -3625,9 +3667,10 @@ function renderReaderCard(item, index, isCurrent, eagerImage) {
   article.dataset.readerIndex = String(index);
   article.dataset.readerItemKey = readerItemKey(item);
   article.setAttribute("aria-label", `Item ${index + 1} of ${state.reader.items.length}`);
+  const frame = node("div", "reader-card-frame");
 
   const image = readerImage(item, eagerImage);
-  if (image) article.appendChild(image);
+  if (image) frame.appendChild(image);
   else article.classList.add("is-text-first");
 
   const body = node("div", "reader-body");
@@ -3651,8 +3694,9 @@ function renderReaderCard(item, index, isCurrent, eagerImage) {
   const firstReason = reasons[0] || item.builder_action || "";
   const explain = renderReaderExplain(item, reasons, firstReason);
 
-  article.appendChild(body);
-  article.appendChild(explain);
+  frame.appendChild(body);
+  frame.appendChild(explain);
+  article.appendChild(frame);
   return article;
 }
 
@@ -3901,6 +3945,7 @@ function scrollReaderToIndex(index, options = {}) {
   state.reader.syncingScroll = true;
   window.clearTimeout(state.reader.scrollReleaseTimer);
   deck.scrollTo({ top: card.offsetTop, behavior });
+  updateReaderScrollMotion();
   state.reader.scrollReleaseTimer = window.setTimeout(() => {
     state.reader.syncingScroll = false;
     state.reader.scrollReleaseTimer = 0;
@@ -3909,13 +3954,56 @@ function scrollReaderToIndex(index, options = {}) {
 }
 
 function onReaderDeckScroll() {
-  if (!state.reader.active || state.reader.syncingScroll || state.reader.scrollTicking) return;
+  if (!state.reader.active || state.reader.scrollTicking) return;
   state.reader.scrollTicking = true;
   requestAnimationFrame(() => {
     state.reader.scrollTicking = false;
+    updateReaderScrollMotion();
+    if (state.reader.syncingScroll) return;
     const next = nearestReaderIndex();
     if (next !== state.reader.index) setActiveReaderIndex(next, { save: true });
   });
+}
+
+function updateReaderScrollMotion() {
+  const deck = document.getElementById("readerDeck");
+  const cards = document.querySelectorAll(".reader-card");
+  if (!deck || !cards.length) return;
+  if (prefersReducedMotion()) {
+    cards.forEach((card) => {
+      const frame = card.querySelector(".reader-card-frame");
+      if (frame) clearReaderScrollMotion(frame);
+    });
+    return;
+  }
+  const height = Math.max(1, deck.clientHeight || deck.getBoundingClientRect().height || 1);
+  cards.forEach((card) => {
+    const frame = card.querySelector(".reader-card-frame");
+    if (!frame) return;
+    const raw = (card.offsetTop - deck.scrollTop) / height;
+    const progress = Math.max(-1, Math.min(1, raw));
+    const distance = Math.abs(progress);
+    if (distance < 0.015) {
+      clearReaderScrollMotion(frame);
+      return;
+    }
+    const eased = Math.sign(progress) * Math.sin(Math.min(1, distance) * Math.PI / 2);
+    frame.style.setProperty("--reader-tilt", `${(-eased * 6.2).toFixed(3)}deg`);
+    frame.style.setProperty("--reader-lift", `${(eased * 9.5).toFixed(2)}px`);
+    frame.style.setProperty("--reader-scale", String(Math.max(0.98, 1 - distance * 0.02).toFixed(4)));
+    frame.style.setProperty("--reader-opacity", String(Math.max(0.9, 1 - distance * 0.1).toFixed(4)));
+    frame.style.setProperty("--reader-shade", String(Math.min(0.14, distance * 0.14).toFixed(4)));
+    frame.style.setProperty("--reader-fold-origin", progress < 0 ? "50% 0%" : "50% 100%");
+  });
+}
+
+function clearReaderScrollMotion(card) {
+  card.style.removeProperty("--reader-tilt");
+  card.style.removeProperty("--reader-lift");
+  card.style.removeProperty("--reader-scale");
+  card.style.removeProperty("--reader-opacity");
+  card.style.removeProperty("--reader-shade");
+  card.style.removeProperty("--reader-fold-origin");
 }
 
 function nearestReaderIndex() {
@@ -4076,7 +4164,10 @@ function updateReaderViewportHeight() {
     document.documentElement.style.setProperty("--reader-deck-h", `${nextHeight}px`);
     document.body.classList.toggle("is-reader-compact", nextHeight < 470 || height < 720);
     if (state.reader.active) {
-      requestAnimationFrame(() => scrollReaderToIndex(state.reader.index, { behavior: "auto" }));
+      requestAnimationFrame(() => {
+        scrollReaderToIndex(state.reader.index, { behavior: "auto" });
+        updateReaderScrollMotion();
+      });
     }
   }
 }
