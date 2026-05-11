@@ -6,10 +6,13 @@ test("mobile reader enhances the static feed without removing the fallback list"
   await expect(page.locator("#mobileReader")).toBeVisible();
   await expect(page.locator(".reader-card.is-current")).toBeVisible();
   await expect(page.locator("#readerCounter")).toHaveText(/\d+ \/ \d+/);
+  await expect(page.locator(".filterbar")).toBeHidden();
   await expect(page.locator("#feed .feed-list").first()).toBeHidden();
 
   await page.getByRole("button", { name: "Index" }).click();
   await expect(page.getByRole("dialog", { name: "Feed index" })).toBeVisible();
+  await page.locator(".reader-refine summary").click();
+  await expect(page.locator(".reader-refine-panel").getByRole("button", { name: "high novelty" })).toBeVisible();
   await expect(page.locator(".reader-index-row").first()).toHaveAttribute("aria-current", "true");
 
   await page.locator(".reader-index-row").nth(1).click();

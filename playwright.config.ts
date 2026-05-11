@@ -10,6 +10,7 @@ export default defineConfig({
   fullyParallel: true,
   use: {
     baseURL,
+    serviceWorkers: "block",
     trace: "on-first-retry",
   },
   webServer: {
