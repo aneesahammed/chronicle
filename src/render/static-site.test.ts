@@ -19,6 +19,38 @@ test("writeRenderedHomePage renders escaped feed content into the template", asy
   assert.match(html, /<ol class="feed-list">/);
 });
 
+test("writeRenderedHomePage renders muted source glyphs", async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "chronicle-static-arxiv-"));
+  await fs.writeFile(path.join(root, "index.html"), feedTemplate());
+
+  await writeRenderedHomePage(root, feedFixture({}, [
+    {
+      source_id: "arxiv_lg",
+      source_name: "arXiv cs.LG",
+      url: "https://arxiv.org/abs/2605.06676",
+      original_url: "https://arxiv.org/abs/2605.06676",
+    },
+    {
+      source_id: "hn_ai",
+      source_name: "Hacker News (AI-filtered)",
+      url: "https://news.ycombinator.com/item?id=1",
+      original_url: "https://news.ycombinator.com/item?id=1",
+    },
+    {
+      source_id: "github_ai_recent_stars",
+      source_name: "GitHub",
+      url: "https://github.com/example/repo",
+      original_url: "https://github.com/example/repo",
+    },
+  ]));
+
+  const html = await fs.readFile(path.join(root, "index.html"), "utf8");
+  assert.match(html, /data-source-glyph="arxiv" viewBox="0 0 17\.732 24\.269"/);
+  assert.match(html, /data-source-glyph="hacker-news"/);
+  assert.match(html, /data-source-glyph="github"/);
+  assert.match(html, /<span>arXiv cs\.LG<\/span>/);
+});
+
 test("writeRenderedHomePage fails when required template anchors are missing", async () => {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), "chronicle-static-missing-"));
   await fs.writeFile(path.join(root, "index.html"), "<!doctype html><title>Chronicle</title>");
@@ -76,32 +108,47 @@ function feedTemplate(): string {
   ].join("\n");
 }
 
-function feedFixture(overrides: { title?: string; one_liner?: string } = {}): FeedFile {
+function feedFixture(overrides: {
+  title?: string;
+  one_liner?: string;
+  source_id?: string;
+  source_name?: string;
+  url?: string;
+  original_url?: string;
+} = {}, extraItems: Partial<RawItem>[] = []): FeedFile {
   const primary: RawItem = {
     id: "item-1",
-    source_id: "source",
-    source_name: "Source",
+    source_id: overrides.source_id ?? "source",
+    source_name: overrides.source_name ?? "Source",
     trust: 0.9,
     title: overrides.title ?? "Alpha \"Beta\" & Co",
-    url: "https://example.com/a?x=1&y=2",
-    original_url: "https://example.com/a?x=1&y=2",
+    url: overrides.url ?? "https://example.com/a?x=1&y=2",
+    original_url: overrides.original_url ?? "https://example.com/a?x=1&y=2",
     summary: "Summary",
     published_at: "2026-05-05T09:00:00.000Z",
     published_at_source: "feed",
     date_confidence: "high",
   };
-  const cluster: ScoredCluster = {
-    id: "cluster-1",
-    primary,
-    members: [primary],
+  const clusters: ScoredCluster[] = [primary, ...extraItems.map((item, index) => ({
+    ...primary,
+    id: `item-${index + 2}`,
+    source_id: item.source_id ?? primary.source_id,
+    source_name: item.source_name ?? primary.source_name,
+    title: item.title ?? `${primary.title} ${index + 2}`,
+    url: item.url ?? primary.url,
+    original_url: item.original_url ?? item.url ?? primary.original_url,
+  }))].map((item, index) => ({
+    id: `cluster-${index + 1}`,
+    primary: item,
+    members: [item],
     source_trail: [{
-      source_id: primary.source_id,
-      source_name: primary.source_name,
-      title: primary.title,
-      url: primary.url,
-      published_at: primary.published_at,
-      published_at_source: primary.published_at_source,
-      date_confidence: primary.date_confidence,
+      source_id: item.source_id,
+      source_name: item.source_name,
+      title: item.title,
+      url: item.url,
+      published_at: item.published_at,
+      published_at_source: item.published_at_source,
+      date_confidence: item.date_confidence,
     }],
     also_seen_on: [],
     kind: "tool",
@@ -110,10 +157,10 @@ function feedFixture(overrides: { title?: string; one_liner?: string } = {}): Fe
     novelty: 0.9,
     novelty_label: "high",
     trust: 0.9,
-    score: 0.8,
+    score: 0.8 - index * 0.01,
     why_this_surfaced: ["high novelty against the 30-day history"],
     builder_action: "Try it in a sandbox.",
-  };
+  }));
   return {
     generated_at: "2026-05-05T10:00:00.000Z",
     last_successful_generated_at: "2026-05-05T10:00:00.000Z",
@@ -125,7 +172,7 @@ function feedFixture(overrides: { title?: string; one_liner?: string } = {}): Fe
     source_failed: 0,
     failed_sources: [],
     source_health: [],
-    count: 1,
-    clusters: [cluster],
+    count: clusters.length,
+    clusters,
   };
 }

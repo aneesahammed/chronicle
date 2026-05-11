@@ -12,6 +12,26 @@ const JSONLD_START = "<!-- CHRONICLE_JSONLD_START -->";
 const JSONLD_END = "<!-- CHRONICLE_JSONLD_END -->";
 const ARCHIVE_START = "<!-- CHRONICLE_ARCHIVE_START -->";
 const ARCHIVE_END = "<!-- CHRONICLE_ARCHIVE_END -->";
+type SourceGlyphKind =
+  | "arxiv"
+  | "reddit"
+  | "youtube"
+  | "github"
+  | "huggingface"
+  | "hacker-news"
+  | "openai"
+  | "news"
+  | "discussion"
+  | "feed";
+
+interface SourceGlyphContext {
+  source_id?: string;
+  source_name?: string;
+  url?: string;
+  original_url?: string;
+  discussion_url?: string;
+  discussion_source?: string;
+}
 
 export interface ArchiveDay {
   date: string;
@@ -234,26 +254,101 @@ function renderFeed(feed: FeedFile): string {
 function renderItem(item: ScoredCluster, index: number): string {
   const title = item.primary.title || "Untitled item";
   const line = readableLine(item.one_liner || item.primary.summary || "", title);
+  const image = renderItemImage(item);
   return [
-    `<article class="item" data-tier="${item.novelty >= 0.7 ? "top" : "normal"}" data-read-index="${index}">`,
+    `<article class="item${image ? " has-image" : ""}" data-tier="${item.novelty >= 0.7 ? "top" : "normal"}" data-read-index="${index}">`,
+    `<div class="item-body">`,
     `<h3 class="item-title">${externalLink(item.primary.url, title)}</h3>`,
     line ? `<p class="item-line">${escapeHtml(line)}</p>` : "",
     `<div class="item-meta">${itemMeta(item)}</div>`,
     renderExplain(item),
     renderSourceTrail(item),
+    `</div>`,
+    image,
     `</article>`,
   ].filter(Boolean).join("\n");
 }
 
+function renderItemImage(item: ScoredCluster): string {
+  const src = itemImageUrl(item);
+  if (!src) return "";
+  return `<img class="item-thumb" src="${escapeAttr(src)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">`;
+}
+
+function itemImageUrl(item: ScoredCluster): string {
+  for (const candidate of [item.primary, ...(item.members ?? [])]) {
+    const src = safeImageUrl(candidate.image_url);
+    if (src) return src;
+  }
+  return "";
+}
+
 function itemMeta(item: ScoredCluster): string {
   const parts = [
-    `<span class="source">${escapeHtml(item.primary.source_name || "Unknown source")}</span>`,
+    sourceLabelHtml(item.primary),
     escapeHtml(relativeDate(item.primary.published_at)),
     item.kind && item.kind !== "unknown" ? escapeHtml(item.kind.replaceAll("_", " ")) : "",
   ].filter(Boolean);
   const score = Number.isFinite(item.score) ? item.score.toFixed(2) : "--";
   const detail = `n ${item.novelty.toFixed(2)} · t ${item.trust.toFixed(2)}`;
   return `${parts.join(`<span class="sep">·</span>`)}<span class="spacer"></span><span class="score">${score}</span><span class="score-detail">(${escapeHtml(detail)})</span>`;
+}
+
+function sourceLabelHtml(source: SourceGlyphContext): string {
+  const name = escapeHtml(source.source_name || "Unknown source");
+  return `<span class="source">${sourceGlyphSvg(sourceGlyphKind(source))}<span>${name}</span></span>`;
+}
+
+function sourceGlyphSvg(kind: SourceGlyphKind): string {
+  switch (kind) {
+    case "arxiv":
+      return svgGlyph(kind, "0 0 17.732 24.269", `<path fill="currentColor" d="M573.549,280.916l2.266,2.738,6.674-7.84c.353-.47.52-.717.353-1.117a1.218,1.218,0,0,0-1.061-.748h0a.953.953,0,0,0-.712.262Z" transform="translate(-566.984 -271.548)"/><path fill="currentColor" d="M579.525,282.225l-10.606-10.174a1.413,1.413,0,0,0-.834-.5,1.09,1.09,0,0,0-1.027.66c-.167.4-.047.681.319,1.206l8.44,10.242h0l-6.282,7.716a1.336,1.336,0,0,0-.323,1.3,1.114,1.114,0,0,0,1.04.69A.992.992,0,0,0,571,293l8.519-7.92A1.924,1.924,0,0,0,579.525,282.225Z" transform="translate(-566.984 -271.548)"/><path fill="currentColor" d="M584.32,293.912l-8.525-10.275,0,0L573.53,280.9l-1.389,1.254a2.063,2.063,0,0,0,0,2.965l10.812,10.419a.925.925,0,0,0,.742.282,1.039,1.039,0,0,0,.953-.667A1.261,1.261,0,0,0,584.32,293.912Z" transform="translate(-566.984 -271.548)"/>`);
+    case "reddit":
+      return svgGlyph(kind, "0 0 24 24", `<path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/>`);
+    case "youtube":
+      return svgGlyph(kind, "0 0 24 24", `<rect x="3.5" y="6.5" width="17" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="currentColor" d="M10.4 9.25v5.5L15.25 12l-4.85-2.75Z"/>`);
+    case "github":
+      return svgGlyph(kind, "0 0 24 24", `<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M7 4.5h9.5a2 2 0 0 1 2 2v13H8a2.5 2.5 0 0 1 0-5h10.5M7 4.5a2 2 0 0 0-2 2v10.5M9 8h6"/>`);
+    case "huggingface":
+      return svgGlyph(kind, "0 0 24 24", `<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5.5 13.5c-.9-3.5 1.6-7 6.5-7s7.4 3.5 6.5 7c-.5 3.3-2.9 5.5-6.5 5.5s-6-2.2-6.5-5.5Z"/><circle cx="8.8" cy="10.5" r="1.05" fill="currentColor"/><circle cx="15.2" cy="10.5" r="1.05" fill="currentColor"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M8.4 15c1.1 1.25 2.3 1.85 3.6 1.85s2.5-.6 3.6-1.85"/>`);
+    case "hacker-news":
+      return svgGlyph(kind, "0 0 24 24", `<rect x="4.5" y="4.5" width="15" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8.5 8l3.5 4 3.5-4M12 12v4"/>`);
+    case "openai":
+      return svgGlyph(kind, "0 0 24 24", `<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 3.5l1.5 4 4 1.5-4 1.5-1.5 4-1.5-4-4-1.5 4-1.5L12 3.5ZM5 16.5l.65 1.85L7.5 19l-1.85.65L5 21.5l-.65-1.85L2.5 19l1.85-.65L5 16.5ZM18.5 14l.45 1.25 1.3.5-1.3.5-.45 1.25-.5-1.25-1.25-.5 1.25-.5.5-1.25Z"/>`);
+    case "news":
+      return svgGlyph(kind, "0 0 24 24", `<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.5 6.5h15v10.8a1.7 1.7 0 0 1-1.7 1.7H6.2a1.7 1.7 0 0 1-1.7-1.7V6.5ZM7.5 10h4.5M7.5 13h9M7.5 16h7M14.5 9.5H17v2.5h-2.5z"/>`);
+    case "discussion":
+      return svgGlyph(kind, "0 0 24 24", `<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 6.5h10a2.5 2.5 0 0 1 2.5 2.5v3.5A2.5 2.5 0 0 1 15 15H8l-3 3v-3.2A2.5 2.5 0 0 1 2.5 12.3V9A2.5 2.5 0 0 1 5 6.5ZM8 10h5M8 12.8h3.5"/>`);
+    case "feed":
+      return svgGlyph(kind, "0 0 24 24", `<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" d="M5 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM4 10a10 10 0 0 1 10 10M4 5a15 15 0 0 1 15 15"/>`);
+  }
+}
+
+function svgGlyph(kind: SourceGlyphKind, viewBox: string, content: string): string {
+  return `<svg class="source-glyph" data-source-glyph="${kind}" viewBox="${viewBox}" aria-hidden="true" focusable="false">${content}</svg>`;
+}
+
+function sourceGlyphKind(source: SourceGlyphContext): SourceGlyphKind {
+  const values = [
+    source.source_id,
+    source.source_name,
+    source.url,
+    source.original_url,
+    source.discussion_url,
+    source.discussion_source,
+  ].filter(Boolean).join(" ").toLowerCase();
+  const sourceId = String(source.source_id ?? "").toLowerCase();
+  const sourceName = String(source.source_name ?? "").toLowerCase();
+  if (sourceId.startsWith("r_") || sourceName.startsWith("r/") || values.includes("reddit.com")) return "reddit";
+  if (sourceId.startsWith("arxiv_") || sourceName.startsWith("arxiv") || values.includes("arxiv.org")) return "arxiv";
+  if (sourceId.startsWith("yt_") || values.includes("youtube") || values.includes("youtu.be")) return "youtube";
+  if (sourceId.startsWith("github_") || sourceId.startsWith("repo_") || values.includes("github.com") || /\breleases\b/.test(sourceName)) return "github";
+  if (sourceId.startsWith("hf_") || values.includes("hugging face") || values.includes("huggingface.co")) return "huggingface";
+  if (sourceId.startsWith("hn_") || values.includes("hacker news") || values.includes("news.ycombinator.com")) return "hacker-news";
+  if (sourceId === "openai" || sourceName.startsWith("openai") || values.includes("openai.com")) return "openai";
+  if (sourceId.includes("lobsters") || values.includes("lobste.rs")) return "discussion";
+  if (/(infoq|techcrunch|decoder|wired|venturebeat|verge)/.test(values)) return "news";
+  return "feed";
 }
 
 function renderExplain(item: ScoredCluster): string {
@@ -476,7 +571,7 @@ function healthHtml(feed: FeedFile): string {
 
 function topNewsMeta(item: TopNewsItem): string {
   return [
-    `<span class="source">${escapeHtml(item.source_name || "Unknown source")}</span>`,
+    sourceLabelHtml(item),
     escapeHtml(relativeDate(item.published_at)),
     item.kind && item.kind !== "unknown" ? escapeHtml(item.kind.replaceAll("_", " ")) : "",
     Number.isFinite(item.score) ? item.score.toFixed(2) : "",
@@ -546,6 +641,15 @@ function safeHttpUrl(value: string): string {
   try {
     const parsed = new URL(value);
     return parsed.protocol === "http:" || parsed.protocol === "https:" ? parsed.toString() : "";
+  } catch {
+    return "";
+  }
+}
+
+function safeImageUrl(value: string | undefined): string {
+  try {
+    const parsed = new URL(String(value || ""));
+    return parsed.protocol === "https:" ? parsed.toString() : "";
   } catch {
     return "";
   }
