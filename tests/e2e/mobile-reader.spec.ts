@@ -35,6 +35,31 @@ test("mobile reader supports custom swipe and keyboard navigation", async ({ pag
   await expect(page.locator("#readerCounter")).toHaveText(/^2 \/ /);
 });
 
+test("compact mobile reader keeps image cards readable on iPhone SE", async ({ browser }) => {
+  const page = await browser.newPage({ viewport: { width: 375, height: 667 } });
+  await page.goto("/");
+  await expect(page.locator("#mobileReader")).toBeVisible();
+
+  await page.getByRole("button", { name: "Index" }).click();
+  await page.locator(".reader-index-row").nth(10).click();
+  await page.reload();
+  await expect(page.locator("#mobileReader")).toBeVisible();
+
+  await page.getByRole("button", { name: "Index" }).click();
+  await page.locator(".reader-index-row").nth(5).click();
+  await expect(page.locator(".reader-card.is-current .reader-media")).toBeVisible();
+
+  const closed = await visibleBounds(page);
+  expect(closed.cardBottom).toBeLessThanOrEqual(closed.viewportHeight);
+  expect(closed.titleBottom).toBeLessThan(closed.explainTop);
+
+  await page.locator(".reader-card.is-current .reader-explain summary").click();
+  const open = await visibleBounds(page);
+  expect(open.explainBottom).toBeLessThanOrEqual(open.viewportHeight);
+
+  await page.close();
+});
+
 test("desktop keeps the original list experience", async ({ browser }) => {
   const page = await browser.newPage({ viewport: { width: 1100, height: 900 } });
   await page.goto("/");
@@ -62,4 +87,23 @@ async function dragReader(page: import("@playwright/test").Page, deltaY: number)
     deck.dispatchEvent(new PointerEvent("pointermove", { ...init, clientY: y + dy }));
     deck.dispatchEvent(new PointerEvent("pointerup", { ...init, clientY: y + dy }));
   }, deltaY);
+}
+
+async function visibleBounds(page: import("@playwright/test").Page) {
+  return page.evaluate(() => {
+    const card = document.querySelector(".reader-card.is-current");
+    const title = card?.querySelector(".reader-title");
+    const explain = card?.querySelector(".reader-explain");
+    const rect = (element: Element | null | undefined) => {
+      const bounds = element?.getBoundingClientRect();
+      return bounds ? { top: bounds.top, bottom: bounds.bottom } : { top: 0, bottom: 0 };
+    };
+    return {
+      viewportHeight: window.innerHeight,
+      cardBottom: rect(card).bottom,
+      titleBottom: rect(title).bottom,
+      explainTop: rect(explain).top,
+      explainBottom: rect(explain).bottom,
+    };
+  });
 }

@@ -1123,7 +1123,7 @@
     }
     .reader-deck {
       position: relative;
-      height: var(--reader-deck-h, clamp(360px, calc(var(--reader-vh, 100svh) - 310px), 620px));
+      height: var(--reader-deck-h, clamp(300px, calc(var(--reader-vh, 100svh) - 310px), 620px));
       min-height: 0;
       perspective: 1100px;
       outline: none;
@@ -1139,6 +1139,7 @@
       border: 1px solid var(--rule);
       border-radius: 8px;
       background: var(--paper);
+      isolation: isolate;
       box-shadow: 0 16px 42px rgba(0, 0, 0, 0.12);
       transform-origin: 50% 50%;
       will-change: transform, opacity;
@@ -1222,6 +1223,13 @@
       gap: 9px;
       padding: 14px 18px calc(18px + env(safe-area-inset-bottom, 0px));
     }
+    body.is-reader-compact .reader-media {
+      height: clamp(108px, 17svh, 132px);
+    }
+    body.is-reader-compact .reader-card:not(.is-text-first) .reader-body {
+      gap: 5px;
+      padding: 9px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+    }
     .reader-meta {
       display: flex;
       flex-wrap: wrap;
@@ -1237,6 +1245,25 @@
       gap: 5px;
       color: var(--ink-2);
     }
+    body.is-reader-compact .reader-card:not(.is-text-first) .reader-meta {
+      flex-wrap: nowrap;
+      overflow: hidden;
+      gap: 5px;
+      font-size: 10px;
+      line-height: 1.35;
+      white-space: nowrap;
+    }
+    body.is-reader-compact .reader-card:not(.is-text-first) .reader-meta .source {
+      min-width: 0;
+    }
+    body.is-reader-compact .reader-card:not(.is-text-first) .reader-meta .source span {
+      display: inline-block;
+      max-width: min(34vw, 132px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      vertical-align: bottom;
+    }
     .reader-title {
       color: var(--ink);
       font: 650 clamp(24px, 8vw, 34px)/1.12 var(--font-display);
@@ -1251,6 +1278,11 @@
       line-height: 1.1;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 3;
+    }
+    body.is-reader-compact .reader-card:not(.is-text-first) .reader-title {
+      font-size: clamp(20px, 6.1vw, 24px);
+      line-height: 1.08;
+      -webkit-line-clamp: 2;
     }
     .reader-title a {
       border-bottom: 1px solid transparent;
@@ -1273,6 +1305,11 @@
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 2;
     }
+    body.is-reader-compact .reader-card:not(.is-text-first) .reader-line {
+      font-size: 14px;
+      line-height: 1.32;
+      -webkit-line-clamp: 2;
+    }
     .reader-reason {
       margin-top: auto;
       padding-top: 10px;
@@ -1290,9 +1327,37 @@
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 2;
     }
+    body.is-reader-compact .reader-card:not(.is-text-first) .reader-reason {
+      padding-top: 6px;
+      font-size: 11px;
+      line-height: 1.35;
+      -webkit-line-clamp: 1;
+    }
     .reader-explain {
       color: var(--ink-3);
       font: 12px/1.5 var(--font-body);
+    }
+    .reader-explain[open] {
+      position: absolute;
+      inset: auto 18px calc(16px + env(safe-area-inset-bottom, 0px));
+      z-index: 3;
+      max-height: min(48%, 230px);
+      overflow: auto;
+      padding: 10px 0 0;
+      border-top: 1px solid var(--rule);
+      background:
+        linear-gradient(180deg, color-mix(in srgb, var(--paper) 88%, transparent), var(--paper) 16px),
+        var(--paper);
+      box-shadow: 0 -18px 30px color-mix(in srgb, var(--paper) 94%, transparent);
+    }
+    body.is-reader-compact .reader-explain {
+      font-size: 11px;
+      line-height: 1.4;
+    }
+    body.is-reader-compact .reader-explain[open] {
+      inset-inline: 16px;
+      bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+      max-height: min(50%, 210px);
     }
     .reader-explain summary {
       cursor: pointer;
@@ -3518,7 +3583,7 @@ function readerRefineSection() {
 }
 
 function disableMobileReader() {
-  document.body.classList.remove("has-mobile-reader");
+  document.body.classList.remove("has-mobile-reader", "is-reader-compact");
   state.reader.active = false;
   state.reader.items = [];
   state.reader.itemKey = "";
@@ -4058,14 +4123,16 @@ function updateReaderViewportHeight() {
   const deck = document.getElementById("readerDeck");
   if (!deck || !state.reader.media?.matches) {
     document.documentElement.style.removeProperty("--reader-deck-h");
+    document.body.classList.remove("is-reader-compact");
     return;
   }
   const rect = deck.getBoundingClientRect();
   const bottomInset = 18;
   const available = Math.floor(height - rect.top - bottomInset);
   if (available > 0) {
-    const nextHeight = Math.max(360, Math.min(620, available));
+    const nextHeight = Math.max(286, Math.min(620, available));
     document.documentElement.style.setProperty("--reader-deck-h", `${nextHeight}px`);
+    document.body.classList.toggle("is-reader-compact", nextHeight < 470 || height < 720);
   }
 }
 
