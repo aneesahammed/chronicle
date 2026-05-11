@@ -1130,6 +1130,7 @@
       touch-action: none;
     }
     .reader-card {
+      --reader-rail-h: 58px;
       position: absolute;
       inset: 0;
       display: grid;
@@ -1195,7 +1196,7 @@
       align-self: start;
       gap: 9px;
       padding-top: clamp(34px, 7svh, 64px);
-      padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+      padding-bottom: calc(var(--reader-rail-h) + 18px + env(safe-area-inset-bottom, 0px));
     }
     .reader-card.is-text-first .reader-meta {
       font-size: 10px;
@@ -1214,21 +1215,25 @@
     .reader-body {
       min-width: 0;
       min-height: 0;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       gap: 11px;
-      padding: 18px 18px calc(18px + env(safe-area-inset-bottom, 0px));
+      padding: 18px 18px calc(var(--reader-rail-h) + 18px + env(safe-area-inset-bottom, 0px));
     }
     .reader-card:not(.is-text-first) .reader-body {
       gap: 9px;
-      padding: 14px 18px calc(18px + env(safe-area-inset-bottom, 0px));
+      padding: 14px 18px calc(var(--reader-rail-h) + 14px + env(safe-area-inset-bottom, 0px));
     }
     body.is-reader-compact .reader-media {
       height: clamp(108px, 17svh, 132px);
     }
+    body.is-reader-compact .reader-card {
+      --reader-rail-h: 48px;
+    }
     body.is-reader-compact .reader-card:not(.is-text-first) .reader-body {
       gap: 5px;
-      padding: 9px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+      padding: 9px 16px calc(var(--reader-rail-h) + 9px + env(safe-area-inset-bottom, 0px));
     }
     .reader-meta {
       display: flex;
@@ -1303,70 +1308,81 @@
       font-size: 15px;
       line-height: 1.45;
       -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
+      -webkit-line-clamp: 3;
     }
     body.is-reader-compact .reader-card:not(.is-text-first) .reader-line {
       font-size: 14px;
       line-height: 1.32;
       -webkit-line-clamp: 2;
     }
-    .reader-reason {
-      margin-top: auto;
-      padding-top: 10px;
-      border-top: 1px solid var(--rule);
-      color: var(--ink-3);
-      font: 13px/1.5 var(--font-body);
-    }
-    .reader-card:not(.is-text-first) .reader-reason {
-      display: -webkit-box;
-      overflow: hidden;
-      margin-top: 0;
-      padding-top: 8px;
-      font-size: 12px;
-      line-height: 1.4;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
-    }
-    body.is-reader-compact .reader-card:not(.is-text-first) .reader-reason {
-      padding-top: 6px;
-      font-size: 11px;
-      line-height: 1.35;
-      -webkit-line-clamp: 1;
-    }
     .reader-explain {
+      position: absolute;
+      inset: auto 18px calc(14px + env(safe-area-inset-bottom, 0px));
+      z-index: 3;
+      min-height: var(--reader-rail-h);
+      border-top: 1px solid var(--rule);
+      background:
+        linear-gradient(180deg, color-mix(in srgb, var(--paper) 92%, transparent), var(--paper) 18px),
+        var(--paper);
+      box-shadow: 0 -16px 28px color-mix(in srgb, var(--paper) 92%, transparent);
       color: var(--ink-3);
       font: 12px/1.5 var(--font-body);
     }
     .reader-explain[open] {
-      position: absolute;
-      inset: auto 18px calc(16px + env(safe-area-inset-bottom, 0px));
-      z-index: 3;
-      max-height: min(48%, 230px);
+      max-height: min(56%, 260px);
       overflow: auto;
-      padding: 10px 0 0;
-      border-top: 1px solid var(--rule);
-      background:
-        linear-gradient(180deg, color-mix(in srgb, var(--paper) 88%, transparent), var(--paper) 16px),
-        var(--paper);
-      box-shadow: 0 -18px 30px color-mix(in srgb, var(--paper) 94%, transparent);
+      padding-bottom: 8px;
     }
     body.is-reader-compact .reader-explain {
       font-size: 11px;
       line-height: 1.4;
     }
-    body.is-reader-compact .reader-explain[open] {
+    body.is-reader-compact .reader-explain {
       inset-inline: 16px;
-      bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+      bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    }
+    body.is-reader-compact .reader-explain[open] {
       max-height: min(50%, 210px);
     }
     .reader-explain summary {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 8px;
+      min-height: var(--reader-rail-h);
       cursor: pointer;
       color: var(--ink-2);
       font: 11px/1.4 var(--font-mono);
       letter-spacing: 0.04em;
       list-style: none;
     }
+    .reader-explain[open] summary {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      min-height: 34px;
+      background: var(--paper);
+    }
     .reader-explain summary::-webkit-details-marker { display: none; }
+    .reader-explain-label {
+      color: var(--ink-2);
+      white-space: nowrap;
+    }
+    .reader-explain-preview {
+      min-width: 0;
+      overflow: hidden;
+      color: var(--ink-3);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .reader-explain-cue {
+      color: var(--accent);
+      font-size: 13px;
+      line-height: 1;
+    }
+    .reader-explain[open] .reader-explain-cue {
+      transform: rotate(45deg);
+    }
     .reader-explain ul {
       margin: 8px 0 0;
       padding-left: 17px;
@@ -3621,11 +3637,10 @@ function renderReaderCard(item, index, positionClass, eagerImage) {
 
   const reasons = Array.isArray(item.why_this_surfaced) ? item.why_this_surfaced.filter(Boolean) : [];
   const firstReason = reasons[0] || item.builder_action || "";
-  if (firstReason) body.appendChild(node("p", "reader-reason", firstReason));
-  const explain = renderReaderExplain(item, reasons);
-  if (explain) body.appendChild(explain);
+  const explain = renderReaderExplain(item, reasons, firstReason);
 
   article.appendChild(body);
+  article.appendChild(explain);
   return article;
 }
 
@@ -3648,18 +3663,23 @@ function readerImage(item, eager) {
   return img;
 }
 
-function renderReaderExplain(item, reasons) {
-  if (!reasons.length && !item.builder_action) return null;
+function renderReaderExplain(item, reasons, firstReason) {
   const details = node("details", "reader-explain");
+  details.dataset.noSwipe = "true";
   const summary = document.createElement("summary");
-  summary.textContent = "why surfaced";
+  summary.append(
+    node("span", "reader-explain-label", "why surfaced"),
+    node("span", "reader-explain-preview", firstReason || "ranked by Chronicle signals"),
+    node("span", "reader-explain-cue", "+"),
+  );
   const list = document.createElement("ul");
-  reasons.forEach((reason) => {
+  const rows = reasons.length ? reasons : [firstReason || "Ranked by Chronicle signals."];
+  rows.forEach((reason) => {
     const row = document.createElement("li");
     row.textContent = reason;
     list.appendChild(row);
   });
-  if (item.builder_action) {
+  if (item.builder_action && !rows.includes(item.builder_action)) {
     const row = document.createElement("li");
     row.textContent = item.builder_action;
     list.appendChild(row);
