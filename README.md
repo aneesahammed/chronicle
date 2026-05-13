@@ -37,7 +37,10 @@ sources → fetch → canonicalize → window-filter → cluster
   No embeddings in v1.
 - **Classify** runs main-feed clusters through Gemini structured output first,
   then Groq as fallback. Repo and learning feeds use deterministic
-  classification so release/video sources do not burn LLM tokens.
+  classification so GitHub Trending/video sources do not burn LLM tokens.
+- **Repo Radar** scrapes GitHub Trending daily, filters for AI-relevant projects,
+  enriches with GitHub metadata when available, and pulls a best-effort README
+  image from raw GitHub content without spending README API calls.
 - **Learning videos** are filtered for instructional intent at ingestion.
   Ads, brand campaigns, launches, and pre-release clips are dropped because
   Chronicle does not have a separate non-learning video lane.
@@ -93,9 +96,12 @@ All knobs live in source. Eyeball output for a week, then adjust:
 
 ## Cost
 
-Gemini calls are roughly proportional to fresh main-feed clusters. Repo releases,
-trending repos, videos, and courses skip LLM classification. GitHub Actions
-provides `GITHUB_TOKEN` for repo radar API calls.
+Gemini calls are roughly proportional to fresh main-feed clusters. Trending
+repos, videos, and courses skip LLM classification. GitHub Actions provides
+`GITHUB_TOKEN` for repo metadata enrichment; README images use raw GitHub URLs
+to avoid spending GitHub API quota. Repo items are fresh because they appeared
+on GitHub Trending during the current run, not because their repo was created
+or pushed recently.
 
 DataCamp AI and Karpathy's YouTube are intentionally not enabled as scheduled
 sources yet. DataCamp returned 403 to direct Node fetches, and Karpathy's

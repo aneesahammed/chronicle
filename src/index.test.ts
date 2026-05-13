@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { promises as fs } from "node:fs";
+import { readFileSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import test from "node:test";
@@ -160,6 +161,90 @@ hn_ai_keywords: []
     }),
     /could not read repo history/,
   );
+});
+
+test("runPipeline keeps previously seen repos when they are currently trending", async () => {
+  const trendingHtml = readFileSync(new URL("./sources/fixtures/github-trending-daily.html", import.meta.url), "utf8");
+  globalThis.fetch = async (input) => {
+    const url = String(input);
+    if (url === "https://github.com/trending?since=daily") return new Response(trendingHtml);
+    if (url === "https://api.github.com/repos/acme/agent-runtime") {
+      return Response.json({
+        full_name: "acme/agent-runtime",
+        name: "agent-runtime",
+        html_url: "https://github.com/acme/agent-runtime",
+        description: "Persistent memory and tool runtime for AI coding agents.",
+        language: "TypeScript",
+        license: { spdx_id: "MIT" },
+        topics: ["llm", "agents"],
+        stargazers_count: 1300,
+        forks_count: 90,
+        open_issues_count: 7,
+        pushed_at: "2026-05-13T08:00:00.000Z",
+        created_at: "2026-04-01T00:00:00.000Z",
+      });
+    }
+    if (url === "https://raw.githubusercontent.com/acme/agent-runtime/HEAD/README.md") {
+      return new Response("![preview](https://cdn.example.com/agent.png)\nAI coding agent runtime.");
+    }
+    if (url.startsWith("https://api.github.com/repos/")) {
+      return Response.json({
+        full_name: url.replace("https://api.github.com/repos/", ""),
+        name: url.split("/").at(-1),
+        html_url: url.replace("https://api.github.com/repos/", "https://github.com/"),
+        description: "General web project",
+        stargazers_count: 1000,
+        topics: [],
+      });
+    }
+    if (url.startsWith("https://raw.githubusercontent.com/")) return new Response("General web project.");
+    throw new Error(`unexpected fetch ${url}`);
+  };
+
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "chronicle-current-trending-repo-"));
+  const publicDir = path.join(root, "public");
+  const dataDir = path.join(root, "data");
+  const registryPath = path.join(root, "registry.yaml");
+  await fs.mkdir(dataDir, { recursive: true });
+  await fs.writeFile(path.join(dataDir, "repo-history.json"), JSON.stringify({
+    repos: {
+      "acme/agent-runtime": {
+        full_name: "acme/agent-runtime",
+        first_seen_at: "2026-04-01T00:00:00.000Z",
+        last_seen_at: "2026-04-02T00:00:00.000Z",
+        stargazers_count: 1000,
+      },
+    },
+  }, null, 2));
+  await fs.writeFile(registryPath, `
+sources:
+  - id: github_trending_daily
+    name: GitHub Trending
+    type: github_trending
+    url: https://github.com/trending?since=daily
+    trust: 0.66
+    source_role: repo
+    kind_hint: repo_trending
+    limit: 25
+hn_ai_keywords:
+  - ai
+`);
+
+  await runPipeline({
+    registryPath,
+    publicDir,
+    dataDir,
+    now: new Date("2026-05-13T12:00:00.000Z"),
+    env: {},
+  });
+
+  const repos = JSON.parse(await fs.readFile(path.join(publicDir, "repos.json"), "utf8"));
+  const repo = repos.clusters.find((cluster: { primary: { repo?: { full_name?: string } } }) =>
+    cluster.primary.repo?.full_name === "acme/agent-runtime");
+  assert.ok(repo);
+  assert.equal(repo.primary.repo.stars_today, 143);
+  assert.equal(repo.primary.repo.stars_delta_run, 300);
+  assert.equal(repo.quality, "signal");
 });
 
 test("runPipeline preserves the previous feed when scoring produces no output", async () => {

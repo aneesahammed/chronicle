@@ -114,6 +114,15 @@ sources:
     trust: 0.78
     limit: 10
 
+  - id: sean_goedecke
+    name: Sean Goedecke
+    type: rss
+    url: https://www.seangoedecke.com/rss.xml
+    trust: 0.78
+    kind_hint: opinion
+    ai_filter: true
+    limit: 10
+
   # ── Reporting / broader tech signal ─────────────────────────────────────
   - id: techcrunch_ai
     name: TechCrunch AI
@@ -201,6 +210,15 @@ sources:
     ai_filter: true
     limit: 20
 
+  - id: marktechpost
+    name: MarkTechPost
+    type: rss
+    url: https://www.marktechpost.com/feed
+    trust: 0.48
+    kind_hint: news
+    ai_filter: true
+    limit: 10
+
   # ── Discussion / front pages ────────────────────────────────────────────
   - id: hn_ai
     name: Hacker News (AI-filtered)
@@ -260,6 +278,7 @@ sources:
     url_include:
       - anthropic.com/news/
       - anthropic.com/engineering/
+      - anthropic.com/research/
     limit: 12
 
   - id: mistral
@@ -419,95 +438,14 @@ sources:
     limit: 12
 
   # ── GitHub repo radar ───────────────────────────────────────────────────
-  - id: repo_llamacpp
-    name: llama.cpp releases
-    type: github_releases
-    url: https://api.github.com/repos/ggml-org/llama.cpp/releases?per_page=10
-    trust: 0.82
-    source_role: repo
-    kind_hint: repo_release
-    limit: 5
-
-  - id: repo_ollama
-    name: Ollama releases
-    type: github_releases
-    url: https://api.github.com/repos/ollama/ollama/releases?per_page=10
-    trust: 0.82
-    source_role: repo
-    kind_hint: repo_release
-    limit: 5
-
-  - id: repo_vllm
-    name: vLLM releases
-    type: github_releases
-    url: https://api.github.com/repos/vllm-project/vllm/releases?per_page=10
-    trust: 0.82
-    source_role: repo
-    kind_hint: repo_release
-    limit: 5
-
-  - id: repo_sglang
-    name: SGLang releases
-    type: github_releases
-    url: https://api.github.com/repos/sgl-project/sglang/releases?per_page=10
-    trust: 0.80
-    source_role: repo
-    kind_hint: repo_release
-    limit: 5
-
-  - id: repo_litellm
-    name: LiteLLM releases
-    type: github_releases
-    url: https://api.github.com/repos/BerriAI/litellm/releases?per_page=10
-    trust: 0.78
-    source_role: repo
-    kind_hint: repo_release
-    limit: 5
-
-  - id: repo_openhands
-    name: OpenHands releases
-    type: github_releases
-    url: https://api.github.com/repos/All-Hands-AI/OpenHands/releases?per_page=10
-    trust: 0.78
-    source_role: repo
-    kind_hint: repo_release
-    limit: 5
-
-  - id: repo_open_webui
-    name: Open WebUI releases
-    type: github_releases
-    url: https://api.github.com/repos/open-webui/open-webui/releases?per_page=10
-    trust: 0.76
-    source_role: repo
-    kind_hint: repo_release
-    limit: 5
-
-  - id: repo_continue
-    name: Continue releases
-    type: github_releases
-    url: https://api.github.com/repos/continuedev/continue/releases?per_page=10
-    trust: 0.76
-    source_role: repo
-    kind_hint: repo_release
-    limit: 5
-
-  - id: github_ai_recent_stars
-    name: GitHub
-    type: github_repo_search
-    url: https://api.github.com/search/repositories?q=topic:llm%20stars:500..*%20pushed:>=${date_minus_30d}&sort=stars&order=desc&per_page=30
-    trust: 0.62
+  - id: github_trending_daily
+    name: GitHub Trending
+    type: github_trending
+    url: https://github.com/trending?since=daily
+    trust: 0.66
     source_role: repo
     kind_hint: repo_trending
-    limit: 20
-
-  - id: github_ai_new_repos
-    name: GitHub
-    type: github_repo_search
-    url: https://api.github.com/search/repositories?q=topic:ai-agent%20created:>=${date_minus_30d}%20stars:100..*&sort=stars&order=desc&per_page=30
-    trust: 0.60
-    source_role: repo
-    kind_hint: repo_trending
-    limit: 20
+    limit: 25
 
   # ── Learning / videos ───────────────────────────────────────────────────
   - id: yt_deeplearning_ai
@@ -576,6 +514,16 @@ sources:
     url: https://www.youtube.com/feeds/videos.xml?channel_id=UCV_6HOhwxYLXAGd-JOqKPoQ
     trust: 0.72
     source_role: learning
+    kind_hint: video
+    ai_filter: true
+    limit: 8
+
+  - id: yt_nate_b_jones
+    name: AI News & Strategy Daily
+    type: youtube_rss
+    url: https://www.youtube.com/feeds/videos.xml?channel_id=UC0C-17n9iuUQPylguM1d-lQ
+    trust: 0.62
+    source_role: main
     kind_hint: video
     ai_filter: true
     limit: 8

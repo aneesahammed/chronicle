@@ -179,8 +179,8 @@ function deterministicQuality(cluster: Cluster, kind: Kind): Quality {
   if (kind === "repo_release") return cluster.primary.trust >= 0.75 ? "signal" : "mixed";
   if (kind === "repo_trending") {
     const stars = cluster.primary.repo?.stargazers_count ?? 0;
-    const delta = cluster.primary.repo?.stars_delta_30d ?? 0;
-    return stars >= 1000 || delta >= 100 ? "signal" : "mixed";
+    const starsToday = cluster.primary.repo?.stars_today ?? 0;
+    return stars >= 1000 || starsToday >= 50 ? "signal" : "mixed";
   }
   if (kind === "video" || kind === "course") return cluster.primary.trust >= 0.75 ? "signal" : "mixed";
   return fallbackQuality(cluster, kind);

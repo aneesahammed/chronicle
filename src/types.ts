@@ -46,6 +46,7 @@ export interface SourceConfig {
     | "sitemap"
     | "github_releases"
     | "github_repo_search"
+    | "github_trending"
     | "page_list"
     | "youtube_rss";
   url: string;
@@ -110,7 +111,11 @@ export interface RepoMetadata {
   created_at?: string;
   release_tag?: string;
   release_name?: string;
+  stars_today?: number;
+  stars_delta_run?: number;
   stars_delta_30d?: number;
+  trending_period?: "daily";
+  readme_image_url?: string;
 }
 
 export interface LearningMetadata {

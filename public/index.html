@@ -2666,7 +2666,7 @@ const FEEDS = {
     label: "Repos",
     path: "repos.json",
     countLabel: "items",
-    lede: "Releases and trending repos from the projects builders ship. Stars, deltas, and what's new.",
+    lede: "AI-related projects currently moving on GitHub Trending. Ranked by fresh star velocity, filtered for builder signal.",
   },
   learning: {
     label: "Learning",
@@ -4256,7 +4256,10 @@ function renderItem(item, displayIndex) {
   if (item.primary?.repo?.stargazers_count) {
     meta.append(sep(), document.createTextNode(`${formatNumber(item.primary.repo.stargazers_count)} stars`));
   }
-  if (item.primary?.repo?.stars_delta_30d) {
+  if (item.primary?.repo?.stars_today) {
+    meta.append(sep(), document.createTextNode(`+${formatNumber(item.primary.repo.stars_today)} stars today`));
+  }
+  if (!item.primary?.repo?.stars_today && item.primary?.repo?.stars_delta_30d) {
     meta.append(sep(), document.createTextNode(`+${formatNumber(item.primary.repo.stars_delta_30d)} stars`));
   }
   if (item.primary?.learning?.provider) {

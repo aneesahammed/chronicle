@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 import { fetchAll } from "./fetchers.ts";
 import type { Registry } from "../types.ts";
@@ -429,6 +430,122 @@ test("fetchAll filters and de-duplicates GitHub repo search results", async () =
   assert.equal(result.items[0].kind_hint, "repo_trending");
 });
 
+test("fetchAll reads GitHub Trending, filters AI repos, and extracts README images", async () => {
+  const trendingHtml = readFileSync(new URL("./fixtures/github-trending-daily.html", import.meta.url), "utf8");
+  globalThis.fetch = async (input) => {
+    const url = String(input);
+    if (url === "https://github.com/trending?since=daily") return new Response(trendingHtml);
+    if (url === "https://api.github.com/repos/acme/agent-runtime") {
+      return Response.json(githubRepo({
+        full_name: "acme/agent-runtime",
+        name: "agent-runtime",
+        description: "Persistent memory and tool runtime for AI coding agents.",
+        stars: 1300,
+        topics: ["llm", "agents"],
+      }));
+    }
+    if (url === "https://raw.githubusercontent.com/acme/agent-runtime/HEAD/README.md") {
+      return new Response([
+        "![build](https://img.shields.io/badge/build-passing-green.svg)",
+        "![stars](https://api.star-history.com/svg?repos=acme/agent-runtime&type=date)",
+        "![screenshot](docs/screenshot.png)",
+        "AI coding agent memory runtime.",
+      ].join("\n"));
+    }
+    if (url === "https://api.github.com/repos/acme/plain-web-app") {
+      return Response.json(githubRepo({
+        full_name: "acme/plain-web-app",
+        name: "plain-web-app",
+        description: "A plain app",
+        stars: 8400,
+        topics: [],
+      }));
+    }
+    if (url === "https://raw.githubusercontent.com/acme/plain-web-app/HEAD/README.md") {
+      return new Response("A small web app template.");
+    }
+    if (url === "https://api.github.com/repos/acme/awesome-ai") {
+      return Response.json(githubRepo({
+        full_name: "acme/awesome-ai",
+        name: "awesome-ai",
+        description: "Awesome AI papers and prompts.",
+        stars: 20000,
+        topics: ["ai"],
+      }));
+    }
+    if (url === "https://raw.githubusercontent.com/acme/awesome-ai/HEAD/README.md") {
+      return new Response("![logo](https://cdn.example.com/awesome.png)");
+    }
+    if (url === "https://api.github.com/repos/acme/vector-lab") {
+      return new Response("temporary metadata failure", { status: 500, statusText: "Server Error" });
+    }
+    if (url === "https://raw.githubusercontent.com/acme/vector-lab/HEAD/README.md") {
+      return new Response([
+        "<img src=\"/assets/vector.png\" alt=\"Vector Lab screenshot\">",
+        "RAG and vector embeddings for local search.",
+      ].join("\n"));
+    }
+    if (url === "https://api.github.com/repos/acme/diffusion-ui") {
+      return Response.json(githubRepo({
+        full_name: "acme/diffusion-ui",
+        name: "diffusion-ui",
+        description: "Local diffusion model interface for image experiments.",
+        stars: 2400,
+        forks: 310,
+        topics: ["diffusion"],
+      }));
+    }
+    if (url === "https://raw.githubusercontent.com/acme/diffusion-ui/HEAD/README.md") {
+      return new Response("![preview](https://cdn.example.com/diffusion-preview.png)");
+    }
+    throw new Error(`unexpected fetch ${url}`);
+  };
+
+  const result = await fetchAll({
+    sources: [{
+      id: "github_trending_daily",
+      name: "GitHub Trending",
+      type: "github_trending",
+      url: "https://github.com/trending?since=daily",
+      trust: 0.66,
+      source_role: "repo",
+      kind_hint: "repo_trending",
+      limit: 25,
+    }],
+    hn_ai_keywords: [],
+  }, { now: new Date("2026-05-13T12:00:00.000Z") });
+
+  assert.equal(result.source_failed, 0);
+  assert.equal(result.items.length, 3);
+  assert.deepEqual(result.items.map((item) => item.repo?.full_name), [
+    "acme/agent-runtime",
+    "acme/vector-lab",
+    "acme/diffusion-ui",
+  ]);
+
+  const agent = result.items[0];
+  assert.equal(agent.kind_hint, "repo_trending");
+  assert.equal(agent.published_at, "2026-05-13T12:00:00.000Z");
+  assert.equal(agent.published_at_source, "generated_fallback");
+  assert.equal(agent.date_confidence, "low");
+  assert.equal(agent.repo?.stars_today, 143);
+  assert.equal(agent.repo?.trending_period, "daily");
+  assert.equal(agent.engagement?.score, 143);
+  assert.equal(agent.image_url, "https://raw.githubusercontent.com/acme/agent-runtime/HEAD/docs/screenshot.png");
+  assert.equal(agent.image_source, "github_readme");
+  assert.equal(agent.repo?.readme_image_url, agent.image_url);
+
+  const vector = result.items[1];
+  assert.equal(vector.repo?.stargazers_count, 980);
+  assert.equal(vector.repo?.forks_count, 44);
+  assert.equal(vector.image_url, "https://raw.githubusercontent.com/acme/vector-lab/HEAD/assets/vector.png");
+
+  const diffusion = result.items[2];
+  assert.equal(diffusion.repo?.stargazers_count, 2400);
+  assert.equal(diffusion.repo?.forks_count, 310);
+  assert.equal(diffusion.image_url, "https://cdn.example.com/diffusion-preview.png");
+});
+
 test("fetchAll adds learning metadata for YouTube RSS", async () => {
   globalThis.fetch = async () => new Response(`
     <feed xmlns="http://www.w3.org/2005/Atom">
@@ -660,6 +777,7 @@ function githubRepo(overrides: {
   name: string;
   description?: string;
   stars: number;
+  forks?: number;
   topics?: string[];
 }) {
   return {
@@ -671,7 +789,7 @@ function githubRepo(overrides: {
     license: { spdx_id: "MIT" },
     topics: overrides.topics ?? ["llm", "agents"],
     stargazers_count: overrides.stars,
-    forks_count: 10,
+    forks_count: overrides.forks ?? 10,
     open_issues_count: 4,
     pushed_at: "2026-05-01T00:00:00Z",
     created_at: "2026-04-01T00:00:00Z",

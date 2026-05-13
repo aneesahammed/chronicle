@@ -51,6 +51,31 @@ test("writeRenderedHomePage renders muted source glyphs", async () => {
   assert.match(html, /<span>arXiv cs\.LG<\/span>/);
 });
 
+test("writeRenderedHomePage renders repo README images and daily star velocity", async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "chronicle-static-repo-image-"));
+  await fs.writeFile(path.join(root, "index.html"), feedTemplate());
+
+  await writeRenderedHomePage(root, feedFixture({
+    source_id: "github_trending_daily",
+    source_name: "GitHub Trending",
+    url: "https://github.com/acme/agent-runtime",
+    original_url: "https://github.com/acme/agent-runtime",
+    image_url: "https://cdn.example.com/agent.png",
+    image_source: "github_readme",
+    kind: "repo_trending",
+    repo: {
+      full_name: "acme/agent-runtime",
+      html_url: "https://github.com/acme/agent-runtime",
+      stargazers_count: 1300,
+      stars_today: 143,
+    },
+  }));
+
+  const html = await fs.readFile(path.join(root, "index.html"), "utf8");
+  assert.match(html, /<img class="item-thumb" src="https:\/\/cdn\.example\.com\/agent\.png"/);
+  assert.match(html, /\+143 stars today/);
+});
+
 test("writeRenderedHomePage fails when required template anchors are missing", async () => {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), "chronicle-static-missing-"));
   await fs.writeFile(path.join(root, "index.html"), "<!doctype html><title>Chronicle</title>");
@@ -115,6 +140,10 @@ function feedFixture(overrides: {
   source_name?: string;
   url?: string;
   original_url?: string;
+  image_url?: string;
+  image_source?: string;
+  kind?: ScoredCluster["kind"];
+  repo?: RawItem["repo"];
 } = {}, extraItems: Partial<RawItem>[] = []): FeedFile {
   const primary: RawItem = {
     id: "item-1",
@@ -125,9 +154,12 @@ function feedFixture(overrides: {
     url: overrides.url ?? "https://example.com/a?x=1&y=2",
     original_url: overrides.original_url ?? "https://example.com/a?x=1&y=2",
     summary: "Summary",
+    image_url: overrides.image_url,
+    image_source: overrides.image_source,
     published_at: "2026-05-05T09:00:00.000Z",
     published_at_source: "feed",
     date_confidence: "high",
+    repo: overrides.repo,
   };
   const clusters: ScoredCluster[] = [primary, ...extraItems.map((item, index) => ({
     ...primary,
@@ -151,7 +183,7 @@ function feedFixture(overrides: {
       date_confidence: item.date_confidence,
     }],
     also_seen_on: [],
-    kind: "tool",
+    kind: overrides.kind ?? "tool",
     quality: "signal",
     one_liner: overrides.one_liner ?? "Read 'now' <tag>",
     novelty: 0.9,

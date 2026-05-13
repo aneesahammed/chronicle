@@ -27,6 +27,8 @@ const YOUTUBE_RSS_TIMEOUT_MS = 8_000;
 const SITEMAP_CHILD_LIMIT = 25;
 const SITEMAP_CANDIDATE_MULTIPLIER = 8;
 const SITEMAP_MIN_CANDIDATES = 40;
+const GITHUB_README_TIMEOUT_MS = 8_000;
+const GITHUB_README_PREVIEW_CHARS = 500;
 const UNKNOWN_PUBLISHED_AT = "1970-01-01T00:00:00.000Z";
 
 class FetchHttpError extends Error {
@@ -314,6 +316,92 @@ async function fetchGithubRepoSearch(s: SourceConfig, options: FetchAllOptions):
     .filter(Boolean) as RawItem[];
 }
 
+async function fetchGithubTrending(s: SourceConfig, options: FetchAllOptions): Promise<RawItem[]> {
+  const now = options.now ?? new Date();
+  const html = await fetchText(s.url);
+  const candidates = parseGithubTrendingHtml(html, s.url);
+  const seen = new Set<string>();
+  const unique = candidates.filter((candidate) => {
+    if (seen.has(candidate.full_name)) return false;
+    seen.add(candidate.full_name);
+    return true;
+  });
+
+  const items = await mapLimit(unique, 4, async (candidate) => {
+    try {
+      return await enrichGithubTrendingCandidate(s, candidate, options, now);
+    } catch (error) {
+      console.warn(`[github-trending] repo skipped for ${candidate.full_name}: ${(error as Error).message}`);
+      return null;
+    }
+  });
+  return items.filter(Boolean).slice(0, s.limit) as RawItem[];
+}
+
+async function enrichGithubTrendingCandidate(
+  s: SourceConfig,
+  candidate: GithubTrendingCandidate,
+  options: FetchAllOptions,
+  now: Date,
+): Promise<RawItem | null> {
+  const [repo, readme] = await Promise.all([
+    fetchGithubRepoMetadata(candidate.full_name, options),
+    fetchGithubReadme(candidate.full_name),
+  ]);
+
+  if (repo?.archived || repo?.disabled || repo?.fork) return null;
+
+  const description = repo?.description ?? candidate.description;
+  const topics = repo?.topics ?? [];
+  const readmePreview = readme?.slice(0, GITHUB_README_PREVIEW_CHARS) ?? "";
+  if (!isGithubTrendingAiCandidate(candidate, repo, readmePreview)) return null;
+
+  const readmeUrl = githubRawReadmeUrl(candidate.full_name);
+  const readmeImage = readme ? extractReadmeImage(readme, readmeUrl) : undefined;
+  const starsToday = candidate.stars_today ?? 0;
+  const totalStars = repo?.stargazers_count ?? candidate.stargazers_count;
+  const forks = repo?.forks_count ?? candidate.forks_count;
+  const license = repo?.license?.spdx_id ?? undefined;
+  const language = repo?.language ?? candidate.language;
+  const title = starsToday > 0
+    ? `${candidate.full_name} (+${formatNumber(starsToday)} stars today)`
+    : `${candidate.full_name} (${formatNumber(totalStars)} stars)`;
+
+  return normalize(s, {
+    title,
+    url: repo?.html_url ?? candidate.html_url,
+    summary: [
+      description,
+      language,
+      license,
+      starsToday > 0 ? `+${formatNumber(starsToday)} stars today` : undefined,
+      ...topics,
+    ].filter(Boolean).join(" · "),
+    image_url: readmeImage,
+    image_source: readmeImage ? "github_readme" : undefined,
+    published_at: now.toISOString(),
+    published_at_source: "generated_fallback",
+    date_confidence: "low",
+    engagement: { score: starsToday },
+    repo: {
+      full_name: candidate.full_name,
+      html_url: repo?.html_url ?? candidate.html_url,
+      description: description ?? undefined,
+      language: language ?? undefined,
+      license,
+      topics,
+      stargazers_count: totalStars,
+      forks_count: forks,
+      open_issues_count: repo?.open_issues_count,
+      pushed_at: repo?.pushed_at,
+      created_at: repo?.created_at,
+      stars_today: starsToday,
+      trending_period: "daily",
+      readme_image_url: readmeImage,
+    },
+  });
+}
+
 interface GithubRelease {
   tag_name: string;
   name?: string | null;
@@ -345,6 +433,17 @@ interface GithubRepo {
   archived?: boolean;
   disabled?: boolean;
   fork?: boolean;
+}
+
+interface GithubTrendingCandidate {
+  full_name: string;
+  name: string;
+  html_url: string;
+  description?: string;
+  language?: string;
+  stargazers_count: number;
+  forks_count: number;
+  stars_today: number;
 }
 
 // ---- Selector-backed page list -------------------------------------------
@@ -680,6 +779,137 @@ function githubHeaders(env: NodeJS.ProcessEnv | undefined): Record<string, strin
   };
 }
 
+function parseGithubTrendingHtml(html: string, baseUrl: string): GithubTrendingCandidate[] {
+  const $ = cheerio.load(html);
+  return $("article.Box-row").toArray().flatMap((element) => {
+    const row = $(element);
+    const href = row.find("h2 a").first().attr("href");
+    const fullName = href ? githubFullNameFromHref(href, baseUrl) : undefined;
+    if (!fullName) return [];
+    const name = fullName.split("/")[1] ?? fullName;
+    const mutedLinks = row.find("a.Link--muted").map((_, link) => $(link).text().trim()).get();
+    return [{
+      full_name: fullName,
+      name,
+      html_url: `https://github.com/${fullName}`,
+      description: textOrUndefined(row.find("p").first().text()),
+      language: textOrUndefined(row.find('[itemprop="programmingLanguage"]').first().text()),
+      stargazers_count: parseGithubCount(mutedLinks[0]),
+      forks_count: parseGithubCount(mutedLinks[1]),
+      stars_today: parseGithubCount(row.find("span.float-sm-right").first().text()),
+    }];
+  });
+}
+
+async function fetchGithubRepoMetadata(fullName: string, options: FetchAllOptions): Promise<GithubRepo | undefined> {
+  try {
+    return await fetchJson<GithubRepo>(githubRepoApiUrl(fullName), githubHeaders(options.env));
+  } catch (error) {
+    console.warn(`[github-trending] metadata skipped for ${fullName}: ${(error as Error).message}`);
+    return undefined;
+  }
+}
+
+async function fetchGithubReadme(fullName: string): Promise<string | undefined> {
+  try {
+    return await fetchText(githubRawReadmeUrl(fullName), {
+      attempts: 1,
+      timeoutMs: GITHUB_README_TIMEOUT_MS,
+    });
+  } catch (error) {
+    console.warn(`[github-trending] README skipped for ${fullName}: ${(error as Error).message}`);
+    return undefined;
+  }
+}
+
+function isGithubTrendingAiCandidate(
+  candidate: GithubTrendingCandidate,
+  repo: GithubRepo | undefined,
+  readmePreview: string,
+): boolean {
+  if (isLowSignalRepoName(candidate.name)) return false;
+  const text = normalizeFilterText([
+    candidate.full_name,
+    repo?.description ?? candidate.description,
+    ...(repo?.topics ?? []),
+    readmePreview,
+  ].filter(Boolean).join(" "));
+  return repoAiPatterns().some((pattern) => pattern.test(text));
+}
+
+function extractReadmeImage(readme: string, readmeUrl: string): string | undefined {
+  for (const image of markdownImages(readme)) {
+    const safe = sanitizeImageUrl(resolveReadmeImageSrc(image.src, readmeUrl));
+    if (safe && !isBadgeImage(safe, image.alt)) return safe;
+  }
+
+  const $ = cheerio.load(readme);
+  for (const element of $("img").toArray()) {
+    const img = $(element);
+    const src = img.attr("src") ?? img.attr("data-src");
+    const safe = sanitizeImageUrl(resolveReadmeImageSrc(src, readmeUrl));
+    const alt = img.attr("alt") ?? img.attr("title") ?? "";
+    if (safe && !isBadgeImage(safe, alt)) return safe;
+  }
+  return undefined;
+}
+
+function markdownImages(markdown: string): { alt: string; src: string }[] {
+  const images: { alt: string; src: string }[] = [];
+  const pattern = /!\[([^\]]*)]\(\s*<?([^)\s>]+)>?(?:\s+["'][^"']*["'])?\s*\)/g;
+  for (const match of markdown.matchAll(pattern)) {
+    images.push({ alt: match[1] ?? "", src: match[2] ?? "" });
+  }
+  return images;
+}
+
+function resolveReadmeImageSrc(value: string | undefined, readmeUrl: string): string | undefined {
+  try {
+    const raw = String(value ?? "").trim();
+    if (!raw) return undefined;
+    if (/^https?:\/\//i.test(raw)) return raw;
+    const base = new URL(readmeUrl);
+    if (raw.startsWith("/") && base.hostname === "raw.githubusercontent.com") {
+      const [owner, repo, ref] = base.pathname.split("/").filter(Boolean);
+      if (owner && repo && ref) return `https://raw.githubusercontent.com/${owner}/${repo}/${ref}${raw}`;
+    }
+    return new URL(raw, base).toString();
+  } catch {
+    return undefined;
+  }
+}
+
+function isBadgeImage(value: string, alt: string): boolean {
+  const url = safeUrl(value);
+  if (!url) return true;
+  const host = url.hostname.toLowerCase();
+  const path = url.pathname.toLowerCase();
+  const label = normalizeFilterText(`${alt} ${host} ${path}`);
+  if (/(?:^|\.)shields\.io$|(?:^|\.)badgen\.net$|badge\.fury\.io$/.test(host)) return true;
+  if (/^(?:api\.)?star-history\.com$|^starchart\.cc$|^readme-typing-svg\.demolab\.com$/.test(host)) return true;
+  if (host === "skills.sh" && path.startsWith("/b/")) return true;
+  if (/(?:^|\/)(?:badge|badges|shields?)(?:[./_-]|$)/.test(path)) return true;
+  return /\.svg$/i.test(path) && /\b(?:badge|build|ci|coverage|license|version|npm|pypi|status|downloads?)\b/.test(label);
+}
+
+function githubFullNameFromHref(href: string, baseUrl: string): string | undefined {
+  const url = new URL(href, baseUrl);
+  if (url.hostname !== "github.com") return undefined;
+  const parts = url.pathname.split("/").filter(Boolean).slice(0, 2);
+  if (parts.length !== 2) return undefined;
+  return parts.map(decodeURIComponent).join("/");
+}
+
+function githubRepoApiUrl(fullName: string): string {
+  const [owner, repo] = fullName.split("/");
+  return `https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}`;
+}
+
+function githubRawReadmeUrl(fullName: string): string {
+  const [owner, repo] = fullName.split("/");
+  return `https://raw.githubusercontent.com/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/HEAD/README.md`;
+}
+
 function repoFromGitHubApiUrl(value: string): string {
   const url = new URL(value);
   const match = url.pathname.match(/\/repos\/([^/]+\/[^/]+)\/releases/);
@@ -700,20 +930,53 @@ function daysAgo(now: Date, days: number): string {
 function isRepoRadarCandidate(repo: GithubRepo): boolean {
   if (repo.archived || repo.disabled || repo.fork) return false;
   if ((repo.stargazers_count ?? 0) < 100) return false;
-  if (/(?:^|[-_])(awesome|list|papers|prompts)(?:$|[-_])/i.test(repo.name)) return false;
+  if (isLowSignalRepoName(repo.name)) return false;
   const text = `${repo.full_name} ${repo.description ?? ""} ${(repo.topics ?? []).join(" ")}`.toLowerCase();
+  return repoAiPatterns().some((pattern) => pattern.test(text));
+}
+
+function repoAiPatterns(): RegExp[] {
   return [
     /(?:^|[^a-z0-9])ai(?:$|[^a-z0-9])/,
+    /(?:^|[^a-z0-9])ml(?:$|[^a-z0-9])/,
     /(?:^|[^a-z0-9])llms?(?:$|[^a-z0-9])/,
-    /(?:^|[^a-z0-9])agents?(?:$|[^a-z0-9])/,
+    /(?:^|[^a-z0-9])ai[- ]agents?(?:$|[^a-z0-9])/,
+    /(?:^|[^a-z0-9])llm[- ]agents?(?:$|[^a-z0-9])/,
+    /(?:^|[^a-z0-9])coding[- ]agents?(?:$|[^a-z0-9])/,
+    /(?:^|[^a-z0-9])computer[- ]use[- ]agents?(?:$|[^a-z0-9])/,
+    /(?:^|[^a-z0-9])agentic(?:$|[^a-z0-9])/,
     /(?:^|[^a-z0-9])inference(?:$|[^a-z0-9])/,
     /(?:^|[^a-z0-9])mcp(?:$|[^a-z0-9])/,
     /(?:^|[^a-z0-9])transformers?(?:$|[^a-z0-9])/,
     /(?:^|[^a-z0-9])rag(?:$|[^a-z0-9])/,
+    /(?:^|[^a-z0-9])embeddings?(?:$|[^a-z0-9])/,
     /(?:^|[^a-z0-9])diffusion(?:$|[^a-z0-9])/,
     /(?:^|[^a-z0-9])machine[- ]learning(?:$|[^a-z0-9])/,
     /(?:^|[^a-z0-9])generative(?:$|[^a-z0-9])/,
-  ].some((pattern) => pattern.test(text));
+    /(?:^|[^a-z0-9])openai(?:$|[^a-z0-9])/,
+    /(?:^|[^a-z0-9])claude(?:$|[^a-z0-9])/,
+    /(?:^|[^a-z0-9])anthropic(?:$|[^a-z0-9])/,
+  ];
+}
+
+function isLowSignalRepoName(value: string): boolean {
+  return /(?:^|[-_])(awesome|list|papers|prompts)(?:$|[-_])/i.test(value);
+}
+
+function textOrUndefined(value: string): string | undefined {
+  const text = value.replace(/\s+/g, " ").trim();
+  return text || undefined;
+}
+
+function parseGithubCount(value: string | undefined): number {
+  const match = String(value ?? "").trim().toLowerCase().match(/([\d,.]+)\s*([km])?/);
+  if (!match) return 0;
+  const base = Number(match[1].replaceAll(",", ""));
+  if (!Number.isFinite(base)) return 0;
+  const suffix = match[2];
+  if (suffix === "m") return Math.round(base * 1_000_000);
+  if (suffix === "k") return Math.round(base * 1_000);
+  return Math.round(base);
 }
 
 function assertPageListSelectors(s: SourceConfig): void {
@@ -1067,6 +1330,7 @@ export async function fetchAll(reg: Registry, options: FetchAllOptions = {}): Pr
         case "sitemap":     items = await fetchSitemap(s, reg.hn_ai_keywords); break;
         case "github_releases": items = await fetchGithubReleases(s, options); break;
         case "github_repo_search": items = await fetchGithubRepoSearch(s, options); break;
+        case "github_trending": items = await fetchGithubTrending(s, options); break;
         case "page_list":   items = await fetchPageList(s, reg.hn_ai_keywords); break;
       }
       return {

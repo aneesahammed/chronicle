@@ -288,6 +288,11 @@ function itemMeta(item: ScoredCluster): string {
     sourceLabelHtml(item.primary),
     escapeHtml(relativeDate(item.primary.published_at)),
     item.kind && item.kind !== "unknown" ? escapeHtml(item.kind.replaceAll("_", " ")) : "",
+    item.primary.repo?.stargazers_count ? escapeHtml(`${formatNumber(item.primary.repo.stargazers_count)} stars`) : "",
+    item.primary.repo?.stars_today ? escapeHtml(`+${formatNumber(item.primary.repo.stars_today)} stars today`) : "",
+    !item.primary.repo?.stars_today && item.primary.repo?.stars_delta_30d
+      ? escapeHtml(`+${formatNumber(item.primary.repo.stars_delta_30d)} stars`)
+      : "",
   ].filter(Boolean);
   const score = Number.isFinite(item.score) ? item.score.toFixed(2) : "--";
   const detail = `n ${item.novelty.toFixed(2)} · t ${item.trust.toFixed(2)}`;
@@ -635,6 +640,10 @@ function shortDate(iso: string): string {
   const date = new Date(iso);
   if (Number.isNaN(date.getTime())) return "unknown";
   return date.toISOString().slice(0, 10);
+}
+
+function formatNumber(value: number): string {
+  return new Intl.NumberFormat("en-US").format(value);
 }
 
 function safeHttpUrl(value: string): string {

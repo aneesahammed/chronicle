@@ -177,6 +177,25 @@ test("classifyClusters skips LLM work for repo and learning kinds", async () => 
   assert.equal(result.items[1].kind, "video");
 });
 
+test("repo trending deterministic quality uses daily stars before legacy deltas", async () => {
+  const result = await classifyClusters([cluster({
+    source_role: "repo",
+    kind_hint: "repo_trending",
+    title: "acme/agent-runtime",
+    summary: "AI coding agent runtime.",
+    repo: {
+      full_name: "acme/agent-runtime",
+      html_url: "https://github.com/acme/agent-runtime",
+      stargazers_count: 500,
+      stars_today: 75,
+      stars_delta_30d: 0,
+    },
+  })]);
+
+  assert.equal(result.items[0].kind, "repo_trending");
+  assert.equal(result.items[0].quality, "signal");
+});
+
 function cluster(overrides: Partial<RawItem> = {}): Cluster {
   const primary: RawItem = {
     id: "x",

@@ -36,6 +36,7 @@ export function scoreCluster(
     (now.getTime() - new Date(c.primary.published_at).getTime()) / 3.6e6;
   const recency = Math.max(0, Math.min(1, 1 - ageHours / 48));
   const engagement = engagementSignal(c);
+  const repoVelocity = cls.kind === "repo_trending" ? repoTrendingVelocitySignal(c) : 0;
 
   const baseScore =
     W.trust   * trust +
@@ -44,7 +45,7 @@ export function scoreCluster(
     W.cluster * cluster +
     W.recency * recency +
     W.engagement * engagement;
-  const score = clamp(baseScore - qualityPenalty(c, cls, noveltyScore));
+  const score = clamp(baseScore + repoVelocity * 0.12 - qualityPenalty(c, cls, noveltyScore));
   const novelty_label = noveltyLabel(noveltyScore);
 
   return {
@@ -84,6 +85,11 @@ function engagementSignal(c: Cluster): number {
   return clamp(Math.max(scoreSignal, commentSignal));
 }
 
+function repoTrendingVelocitySignal(c: Cluster): number {
+  const starsToday = Math.max(0, ...c.members.map((member) => member.repo?.stars_today ?? 0));
+  return clamp(Math.log10(starsToday + 1) / 3);
+}
+
 function qualityPenalty(c: Cluster, cls: Classification, noveltyScore: number): number {
   let penalty = 0;
   if (cls.kind === "discussion" && c.members.length === 1 && engagementSignal(c) < 0.25) {
@@ -114,6 +120,9 @@ function whyThisSurfaced(
   else reasons.push("kept only because multiple signals offset hype risk");
 
   if (c.members.length > 1) reasons.push(`corroborated by ${c.members.length} sources`);
+  if (cls.kind === "repo_trending" && repoTrendingVelocitySignal(c) >= 0.55) {
+    reasons.push("high daily GitHub star velocity");
+  }
   if (c.primary.trust >= 0.85) reasons.push("primary source has high trust weight");
   if (recency >= 0.85) reasons.push("fresh within the current refresh window");
   if (engagement >= 0.55) reasons.push("source-native discussion or engagement is unusually high");

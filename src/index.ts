@@ -391,7 +391,6 @@ function applyRepoHistory(
     if (item.kind_hint === "repo_trending") {
       if (seenThisRun.has(fullName)) continue;
       seenThisRun.add(fullName);
-      if (Date.parse(firstSeenAt) < cutoff) continue;
     }
 
     out.push({
@@ -410,7 +409,11 @@ function applyRepoHistory(
         created_at: repo.created_at,
         release_tag: repo.release_tag,
         release_name: repo.release_name,
+        stars_today: repo.stars_today,
+        stars_delta_run: starsDelta,
         stars_delta_30d: starsDelta,
+        trending_period: repo.trending_period,
+        readme_image_url: repo.readme_image_url,
       },
     });
   }
