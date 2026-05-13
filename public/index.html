@@ -510,10 +510,10 @@
     cursor: default;
     opacity: 0.45;
   }
-  /* Feed swap crossfade — fade-out before content mutation, fade-in
-     after the new feed renders. Gated in JS for reduced-motion. */
+  /* Feed swap crossfade — JS renders immediately and lets the new feed
+     fade in without delaying text availability. */
   #feed {
-    transition: opacity 200ms ease, transform 200ms ease;
+    transition: opacity 120ms ease, transform 120ms ease;
   }
   #feed.is-switching {
     opacity: 0;
@@ -2800,6 +2800,9 @@ const MS_PER_HOUR = 36e5;
 const MS_PER_DAY = 86400000;
 const PROGRESS_TTL_MS = 7 * MS_PER_DAY;
 const MAX_PROGRESS_ENTRIES = 14;
+const FEED_CACHE_TTL_MS = 5 * 60 * 1000;
+const IMAGE_HYDRATE_BATCH = 6;
+const IMAGE_HYDRATE_ROOT_MARGIN = "640px 0px";
 const DATE_PATH_MATCH = location.pathname.match(/\/daily\/(\d{4}-\d{2}-\d{2})\/?$/);
 const ROOT_PREFIX = DATE_PATH_MATCH
   ? "../../"
@@ -2819,6 +2822,11 @@ const state = {
   activeFeed: "main",
   resumePromptDay: null,
   scrollTicking: false,
+  loadSeq: 0,
+  feedCache: new Map(),
+  feedRequests: new Map(),
+  feedImageObserver: null,
+  feedImageTimer: 0,
   gestureLock: null,
   reader: {
     media: null,
@@ -2937,7 +2945,7 @@ function wireFilterControls() {
 
 function wireRefreshControl() {
   document.getElementById("refreshButton").addEventListener("click", async () => {
-    await loadFeed();
+    await loadFeed({ force: true });
   });
 }
 
@@ -3001,16 +3009,10 @@ async function switchFeedTab(next) {
     window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Fade-out → swap content → fade-in. The 160ms wait lets the
-  // container reach opacity 0 before the DOM mutation, so the eye
-  // perceives a handoff rather than a content snap.
-  if (!reduceMotion && feed) {
-    feed.classList.add("is-switching");
-    await new Promise((resolve) => setTimeout(resolve, 160));
-  }
+  if (!reduceMotion && feed) feed.classList.add("is-switching");
 
   await loadFeed();
-  if (feed) feed.classList.remove("is-switching");
+  if (feed) requestAnimationFrame(() => feed.classList.remove("is-switching"));
   if (state.reader.active) {
     window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
   } else {
@@ -3071,9 +3073,7 @@ async function prefetchSectionCounts() {
     if (role === state.activeFeed) return;
     try {
       const url = rootUrl(FEEDS[role].path);
-      const response = await fetch(url, { cache: "no-cache" });
-      if (!response.ok) return;
-      const data = await response.json();
+      const data = await fetchFeedData(url);
       if (typeof data?.count === "number") updateSectionCount(role, data.count);
     } catch (_) {
       // count stays blank on failure — non-critical
@@ -3182,7 +3182,7 @@ function wirePullToRefresh() {
     label.textContent = "refreshing…";
     const startedAt = Date.now();
     try {
-      await loadFeed();
+      await loadFeed({ force: true });
     } finally {
       const elapsed = Date.now() - startedAt;
       const wait = Math.max(0, SPIN_MIN_MS - elapsed);
@@ -3261,11 +3261,34 @@ function wirePullToRefresh() {
   document.addEventListener("touchcancel", endTouch, { passive: true });
 }
 
-async function loadFeed() {
+async function fetchFeedData(url, options = {}) {
+  const cached = state.feedCache.get(url);
+  const now = Date.now();
+  if (!options.force && cached && now - cached.ts < FEED_CACHE_TTL_MS) {
+    return cached.data;
+  }
+  if (!options.force && state.feedRequests.has(url)) {
+    return state.feedRequests.get(url);
+  }
+  const request = fetch(url, { cache: options.force ? "reload" : "no-cache" })
+    .then(async (response) => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const data = await response.json();
+      state.feedCache.set(url, { data, ts: Date.now() });
+      return data;
+    })
+    .finally(() => state.feedRequests.delete(url));
+  state.feedRequests.set(url, request);
+  return request;
+}
+
+async function loadFeed(options = {}) {
+  const seq = ++state.loadSeq;
+  const url = feedUrl();
   try {
-    const response = await fetch(feedUrl(), { cache: "no-cache" });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    state.data = await response.json();
+    const data = await fetchFeedData(url, options);
+    if (seq !== state.loadSeq) return;
+    state.data = data;
     updateSectionCount(state.activeFeed, state.data?.count);
     updateStatus();
     renderTopNews();
@@ -3273,6 +3296,7 @@ async function loadFeed() {
     renderFilterShell();
     renderFeed();
   } catch (error) {
+    if (seq !== state.loadSeq) return;
     disableMobileReader();
     showNotice(`Chronicle could not load the feed: ${error.message}`);
     document.getElementById("statusText").textContent = "feed unavailable";
@@ -3486,6 +3510,7 @@ function renderFilterShell() {
 
 function renderFeed() {
   const main = document.getElementById("feed");
+  resetFeedImageHydration();
   const items = visibleItems();
   if (!items.length) {
     disableMobileReader();
@@ -3511,6 +3536,7 @@ function renderFeed() {
   }
   fragments.push(renderCompletionRow());
   main.replaceChildren(...fragments);
+  scheduleFeedImageHydration(main);
   const readerReady = enhanceMobileReader(orderedItems);
   if (readerReady) prepareReaderResumePrompt(orderedItems.length);
   else prepareResumePrompt(displayIndex);
@@ -4516,7 +4542,7 @@ function itemImage(item) {
   if (!src) return null;
   const img = document.createElement("img");
   img.className = "item-thumb";
-  img.src = src;
+  img.dataset.src = src;
   img.alt = "";
   img.loading = "lazy";
   img.decoding = "async";
@@ -4527,6 +4553,54 @@ function itemImage(item) {
     article?.classList.remove("has-image");
   }, { once: true });
   return img;
+}
+
+function resetFeedImageHydration() {
+  if (state.feedImageObserver) {
+    state.feedImageObserver.disconnect();
+    state.feedImageObserver = null;
+  }
+  if (state.feedImageTimer) {
+    window.clearTimeout(state.feedImageTimer);
+    state.feedImageTimer = 0;
+  }
+}
+
+function scheduleFeedImageHydration(root) {
+  const images = [...root.querySelectorAll("img.item-thumb[data-src]")];
+  if (!images.length) return;
+  const firstPaint = () => {
+    images.slice(0, 2).forEach(hydrateFeedImage);
+    const rest = images.slice(2).filter((img) => img.dataset.src);
+    if (!rest.length) return;
+    if (typeof IntersectionObserver === "function") {
+      state.feedImageObserver = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          state.feedImageObserver?.unobserve(entry.target);
+          hydrateFeedImage(entry.target);
+        }
+      }, { rootMargin: IMAGE_HYDRATE_ROOT_MARGIN, threshold: 0.01 });
+      rest.forEach((img) => state.feedImageObserver.observe(img));
+      return;
+    }
+    hydrateFeedImagesInBatches(rest);
+  };
+  requestAnimationFrame(() => requestAnimationFrame(firstPaint));
+}
+
+function hydrateFeedImagesInBatches(images, index = 0) {
+  const end = Math.min(images.length, index + IMAGE_HYDRATE_BATCH);
+  for (let i = index; i < end; i++) hydrateFeedImage(images[i]);
+  if (end >= images.length) return;
+  state.feedImageTimer = window.setTimeout(() => hydrateFeedImagesInBatches(images, end), 80);
+}
+
+function hydrateFeedImage(img) {
+  const src = img?.dataset?.src;
+  if (!src || img.getAttribute("src")) return;
+  img.src = src;
+  delete img.dataset.src;
 }
 
 function itemImageUrl(item) {
