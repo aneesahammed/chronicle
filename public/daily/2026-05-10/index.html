@@ -310,7 +310,6 @@
     min-width: 0;
     gap: 10px;
     padding-bottom: 12px;
-    border-bottom: 1px solid var(--rule);
   }
   .top-story.has-image {
     grid-template-columns: minmax(0, 1fr) minmax(220px, 34%);
@@ -383,6 +382,9 @@
   }
   .top-row:not(.has-image) {
     grid-template-columns: minmax(0, 1fr);
+  }
+  .top-row:last-child {
+    border-bottom: 0;
   }
   .top-row-title {
     min-width: 0;
@@ -508,10 +510,10 @@
     cursor: default;
     opacity: 0.45;
   }
-  /* Feed swap crossfade — fade-out before content mutation, fade-in
-     after the new feed renders. Gated in JS for reduced-motion. */
+  /* Feed swap crossfade — JS renders immediately and lets the new feed
+     fade in without delaying text availability. */
   #feed {
-    transition: opacity 200ms ease, transform 200ms ease;
+    transition: opacity 120ms ease, transform 120ms ease;
   }
   #feed.is-switching {
     opacity: 0;
@@ -970,6 +972,47 @@
   }
   footer a { border-bottom: 1px solid var(--rule); }
   .health strong { color: var(--ink-2); font-weight: 500; }
+  .source-details {
+    position: relative;
+    display: inline-block;
+  }
+  .source-details summary {
+    color: var(--ink-2);
+    cursor: pointer;
+    list-style: none;
+    border-bottom: 1px solid var(--rule);
+  }
+  .source-details summary::-webkit-details-marker { display: none; }
+  .source-details summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+  .source-details-body {
+    display: block;
+    margin-top: 8px;
+    max-width: min(420px, calc(100vw - 32px));
+    padding: 10px 12px;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    color: var(--ink-2);
+    box-shadow: 0 14px 32px color-mix(in oklch, var(--ink) 10%, transparent);
+    font: 12px/1.45 var(--font-body);
+    letter-spacing: 0;
+  }
+  .source-details-context {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--ink-3);
+  }
+  .source-details-list {
+    display: grid;
+    gap: 4px;
+  }
+  .source-details-row { display: block; }
+  .source-details-body strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
@@ -1051,6 +1094,7 @@
       align-items: center;
       gap: 10px;
       min-height: 36px;
+      padding-bottom: 8px;
       color: var(--ink-3);
       font: 11px/1.4 var(--font-mono);
       letter-spacing: 0.04em;
@@ -1132,6 +1176,7 @@
       scrollbar-width: none;
       touch-action: pan-y;
       -webkit-overflow-scrolling: touch;
+      border-radius: 8px;
     }
     .reader-deck::-webkit-scrollbar {
       display: none;
@@ -1140,7 +1185,7 @@
       display: grid;
       gap: 14px;
       min-height: 100%;
-      perspective: 1200px;
+      perspective: 900px;
       perspective-origin: 50% 50%;
     }
     .reader-card {
@@ -1162,13 +1207,19 @@
       border-radius: 8px;
       background: var(--paper);
       isolation: isolate;
-      box-shadow: 0 16px 42px rgba(0, 0, 0, 0.12);
+      box-shadow:
+        0 2px 6px rgba(11, 13, 16, 0.04),
+        0 8px 24px rgba(11, 13, 16, 0.07);
       opacity: var(--reader-opacity, 1);
       transform:
         translate3d(0, var(--reader-lift, 0px), 0)
         rotateX(var(--reader-tilt, 0deg))
+        scaleX(var(--reader-scaleX, 1))
         scale(var(--reader-scale, 1));
       transform-origin: var(--reader-fold-origin, 50% 50%);
+      transition:
+        opacity 240ms cubic-bezier(0.16, 1, 0.3, 1),
+        transform 240ms cubic-bezier(0.16, 1, 0.3, 1);
       will-change: transform, opacity;
       backface-visibility: hidden;
     }
@@ -1195,7 +1246,10 @@
       outline-offset: 3px;
     }
     .reader-card.is-current .reader-card-frame {
-      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.14);
+      box-shadow:
+        0 4px 12px rgba(11, 13, 16, 0.06),
+        0 16px 40px rgba(11, 13, 16, 0.12),
+        0 32px 64px rgba(11, 13, 16, 0.06);
     }
     .reader-media {
       display: block;
@@ -1415,7 +1469,9 @@
       .reader-card-frame {
         opacity: 1 !important;
         transform: none !important;
+        transition: none !important;
         animation: none !important;
+        --reader-scaleX: 1 !important;
       }
       .reader-card-frame::after {
         display: none;
@@ -1429,20 +1485,45 @@
       inset: auto 0 0 0;
       z-index: 50;
       max-height: min(78svh, 620px);
-      padding: 14px 18px calc(18px + env(safe-area-inset-bottom, 0px));
+      padding: 0 18px calc(18px + env(safe-area-inset-bottom, 0px));
       border-top: 1px solid var(--rule);
       background: color-mix(in srgb, var(--panel) 96%, transparent);
       box-shadow: 0 -18px 48px rgba(0, 0, 0, 0.18);
       overflow: auto;
+      touch-action: pan-y;
+      will-change: transform;
+    }
+    .reader-index-sheet.is-snapping {
+      transition: transform 280ms cubic-bezier(0.32, 0.72, 0, 1);
+    }
+    .reader-index-handle {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 20px;
+      margin: 0 -18px;
+      background: inherit;
+      cursor: grab;
+      touch-action: none;
+    }
+    .reader-index-handle::before {
+      content: "";
+      width: 36px;
+      height: 4px;
+      border-radius: 2px;
+      background: var(--rule);
     }
     .reader-index-head {
       position: sticky;
-      top: 0;
+      top: 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      padding-bottom: 12px;
+      padding: 14px 0 12px;
       background: inherit;
       color: var(--ink);
       font: 600 15px/1.2 var(--font-display);
@@ -2459,7 +2540,7 @@ const FEEDS = {
     label: "Repos",
     path: "repos.json",
     countLabel: "items",
-    lede: "Releases and trending repos from the projects builders ship. Stars, deltas, and what's new.",
+    lede: "AI-related projects currently moving on GitHub Trending. Ranked by fresh star velocity, filtered for builder signal.",
   },
   learning: {
     label: "Learning",
@@ -2473,6 +2554,10 @@ const MS_PER_HOUR = 36e5;
 const MS_PER_DAY = 86400000;
 const PROGRESS_TTL_MS = 7 * MS_PER_DAY;
 const MAX_PROGRESS_ENTRIES = 14;
+const FEED_CACHE_TTL_MS = 5 * 60 * 1000;
+const IMAGE_HYDRATE_BATCH = 6;
+const IMAGE_HYDRATE_ROOT_MARGIN = "640px 0px";
+const MATERIAL_SOURCE_FAILURE_RATIO = 0.10;
 const DATE_PATH_MATCH = location.pathname.match(/\/daily\/(\d{4}-\d{2}-\d{2})\/?$/);
 const ROOT_PREFIX = DATE_PATH_MATCH
   ? "../../"
@@ -2492,6 +2577,11 @@ const state = {
   activeFeed: "main",
   resumePromptDay: null,
   scrollTicking: false,
+  loadSeq: 0,
+  feedCache: new Map(),
+  feedRequests: new Map(),
+  feedImageObserver: null,
+  feedImageTimer: 0,
   gestureLock: null,
   reader: {
     media: null,
@@ -2610,7 +2700,7 @@ function wireFilterControls() {
 
 function wireRefreshControl() {
   document.getElementById("refreshButton").addEventListener("click", async () => {
-    await loadFeed();
+    await loadFeed({ force: true });
   });
 }
 
@@ -2674,16 +2764,10 @@ async function switchFeedTab(next) {
     window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Fade-out → swap content → fade-in. The 160ms wait lets the
-  // container reach opacity 0 before the DOM mutation, so the eye
-  // perceives a handoff rather than a content snap.
-  if (!reduceMotion && feed) {
-    feed.classList.add("is-switching");
-    await new Promise((resolve) => setTimeout(resolve, 160));
-  }
+  if (!reduceMotion && feed) feed.classList.add("is-switching");
 
   await loadFeed();
-  if (feed) feed.classList.remove("is-switching");
+  if (feed) requestAnimationFrame(() => feed.classList.remove("is-switching"));
   if (state.reader.active) {
     window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
   } else {
@@ -2744,9 +2828,7 @@ async function prefetchSectionCounts() {
     if (role === state.activeFeed) return;
     try {
       const url = rootUrl(FEEDS[role].path);
-      const response = await fetch(url, { cache: "no-cache" });
-      if (!response.ok) return;
-      const data = await response.json();
+      const data = await fetchFeedData(url);
       if (typeof data?.count === "number") updateSectionCount(role, data.count);
     } catch (_) {
       // count stays blank on failure — non-critical
@@ -2855,7 +2937,7 @@ function wirePullToRefresh() {
     label.textContent = "refreshing…";
     const startedAt = Date.now();
     try {
-      await loadFeed();
+      await loadFeed({ force: true });
     } finally {
       const elapsed = Date.now() - startedAt;
       const wait = Math.max(0, SPIN_MIN_MS - elapsed);
@@ -2872,6 +2954,7 @@ function wirePullToRefresh() {
     if (window.scrollY > 0) return;
     if (event.touches.length !== 1) return;
     startedInReader = Boolean(event.target?.closest?.("#mobileReader"));
+    if (event.target?.closest?.("#readerIndexSheet")) return;
     if (startedInReader && (!state.reader.active || state.reader.index > 0 || Number(document.getElementById("readerDeck")?.scrollTop || 0) > 1)) return;
     const touch = event.touches[0];
     activeId = touch.identifier;
@@ -2933,11 +3016,34 @@ function wirePullToRefresh() {
   document.addEventListener("touchcancel", endTouch, { passive: true });
 }
 
-async function loadFeed() {
+async function fetchFeedData(url, options = {}) {
+  const cached = state.feedCache.get(url);
+  const now = Date.now();
+  if (!options.force && cached && now - cached.ts < FEED_CACHE_TTL_MS) {
+    return cached.data;
+  }
+  if (!options.force && state.feedRequests.has(url)) {
+    return state.feedRequests.get(url);
+  }
+  const request = fetch(url, { cache: options.force ? "reload" : "no-cache" })
+    .then(async (response) => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const data = await response.json();
+      state.feedCache.set(url, { data, ts: Date.now() });
+      return data;
+    })
+    .finally(() => state.feedRequests.delete(url));
+  state.feedRequests.set(url, request);
+  return request;
+}
+
+async function loadFeed(options = {}) {
+  const seq = ++state.loadSeq;
+  const url = feedUrl();
   try {
-    const response = await fetch(feedUrl(), { cache: "no-cache" });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    state.data = await response.json();
+    const data = await fetchFeedData(url, options);
+    if (seq !== state.loadSeq) return;
+    state.data = data;
     updateSectionCount(state.activeFeed, state.data?.count);
     updateStatus();
     renderTopNews();
@@ -2945,6 +3051,7 @@ async function loadFeed() {
     renderFilterShell();
     renderFeed();
   } catch (error) {
+    if (seq !== state.loadSeq) return;
     disableMobileReader();
     showNotice(`Chronicle could not load the feed: ${error.message}`);
     document.getElementById("statusText").textContent = "feed unavailable";
@@ -3069,6 +3176,7 @@ function updateStatus() {
   const sourceTotal = Number(data.source_total ?? 0);
   const sourceOk = Number(data.source_ok ?? sourceTotal);
   const sourceFailed = Number(data.source_failed ?? 0);
+  const failedSources = Array.isArray(data.failed_sources) ? data.failed_sources : [];
   const mode = String(data.classification_mode ?? "fallback");
   const status = String(data.refresh_status ?? "ok");
 
@@ -3080,28 +3188,85 @@ function updateStatus() {
   else if (stale) statusLine.classList.add("is-stale");
   const updatedRel = generated ? relTime(generated, true) : "unknown";
   const count = data.count ?? data.clusters?.length ?? 0;
-  statusText.textContent = `${count} items · updated ${updatedRel}`;
+  const statusParts = [`${count} ${itemCountLabel(count)}`, `updated ${updatedRel}`];
+  if (status === "failed") statusParts.push("refresh failed");
+  else if (sourceFailed > 0) statusParts.push(sourceSkipSummary(sourceFailed));
+  statusText.textContent = statusParts.join(" · ");
 
   // Footer health strip — DOM-built, no innerHTML
   const health = document.getElementById("healthStrip");
   const sourceFrag = sourceTotal ? `${sourceOk}/${sourceTotal} sources` : "sources unknown";
   const tail = [];
-  if (sourceFailed) tail.push(`${sourceFailed} failed`);
   if (mode !== "llm" && state.activeFeed === "main") tail.push(`classify ${mode}`);
   tail.push(`window ${data.window_hours ?? 36}h`);
-  health.replaceChildren(
-    Object.assign(document.createElement("strong"), { textContent: sourceFrag }),
-    document.createTextNode(tail.length ? ` · ${tail.join(" · ")}` : ""),
-  );
+  const healthNodes = [Object.assign(document.createElement("strong"), { textContent: sourceFrag })];
+  if (sourceFailed > 0) {
+    healthNodes.push(document.createTextNode(" · "), sourceFailureDetails({
+      failedSources,
+      sourceFailed,
+      sourceOk,
+      sourceTotal,
+    }));
+  }
+  if (tail.length) healthNodes.push(document.createTextNode(` · ${tail.join(" · ")}`));
+  health.replaceChildren(...healthNodes);
 
   // Notice — only material problems
   const notices = [];
   if (status === "failed") notices.push("Latest refresh failed — showing the last successful feed.");
-  else if (status === "partial") notices.push("Some sources failed during the latest refresh.");
+  else if (hasMaterialSourceFailure({ status, sourceFailed, sourceTotal })) {
+    notices.push(`${sourceSkipSummary(sourceFailed)} during refresh. Feed refreshed from ${sourceOk}/${sourceTotal} sources.`);
+  }
   if (stale) notices.push("This feed is older than 30 hours.");
   if (mode !== "llm" && state.activeFeed === "main") notices.push("Classification is degraded (LLM unavailable).");
   if (notices.length) showNotice(notices.join(" "));
   else clearNotice();
+}
+
+function sourceSkipSummary(count) {
+  return `${count} source${count === 1 ? "" : "s"} skipped`;
+}
+
+function itemCountLabel(count) {
+  return count === 1 ? "item" : "items";
+}
+
+function sourceFailureDetails({ failedSources, sourceFailed, sourceOk, sourceTotal }) {
+  const details = document.createElement("details");
+  details.className = "source-details";
+  details.append(Object.assign(document.createElement("summary"), {
+    textContent: sourceSkipSummary(sourceFailed),
+  }));
+
+  const body = node("span", "source-details-body");
+  body.append(Object.assign(document.createElement("span"), {
+    className: "source-details-context",
+    textContent: `Feed refreshed from ${sourceOk}/${sourceTotal || "unknown"} sources.`,
+  }));
+  const list = node("span", "source-details-list");
+  const sources = failedSources.length
+    ? failedSources
+    : [{ name: sourceSkipSummary(sourceFailed), message: "" }];
+  sources.forEach((source) => {
+    const item = node("span", "source-details-row");
+    const name = source?.name || source?.id || "Unknown source";
+    item.append(Object.assign(document.createElement("strong"), { textContent: name }));
+    const message = compactErrorMessage(source?.message);
+    if (message) item.append(document.createTextNode(`: ${message}`));
+    list.append(item);
+  });
+  body.append(list);
+  details.append(body);
+  return details;
+}
+
+function compactErrorMessage(message) {
+  return String(message || "").replace(/\s+/g, " ").trim().slice(0, 180);
+}
+
+function hasMaterialSourceFailure({ status, sourceFailed, sourceTotal }) {
+  if (status !== "partial" || sourceFailed <= 0 || sourceTotal <= 0) return false;
+  return sourceFailed / sourceTotal >= MATERIAL_SOURCE_FAILURE_RATIO;
 }
 
 function renderArchiveBanner() {
@@ -3158,6 +3323,7 @@ function renderFilterShell() {
 
 function renderFeed() {
   const main = document.getElementById("feed");
+  resetFeedImageHydration();
   const items = visibleItems();
   if (!items.length) {
     disableMobileReader();
@@ -3183,6 +3349,7 @@ function renderFeed() {
   }
   fragments.push(renderCompletionRow());
   main.replaceChildren(...fragments);
+  scheduleFeedImageHydration(main);
   const readerReady = enhanceMobileReader(orderedItems);
   if (readerReady) prepareReaderResumePrompt(orderedItems.length);
   else prepareResumePrompt(displayIndex);
@@ -3308,6 +3475,9 @@ function ensureMobileReader() {
   sheet.setAttribute("role", "dialog");
   sheet.setAttribute("aria-label", "Feed index");
   sheet.setAttribute("aria-modal", "false");
+  const handle = node("div", "reader-index-handle");
+  handle.setAttribute("aria-hidden", "true");
+  sheet.appendChild(handle);
   sheet.appendChild(readerIndexHead());
   sheet.appendChild(readerRefineSection());
   sheet.appendChild(node("div", "reader-index-list"));
@@ -3318,6 +3488,13 @@ function ensureMobileReader() {
   indexButton.addEventListener("click", () => toggleReaderIndexSheet());
   deck.addEventListener("scroll", onReaderDeckScroll, { passive: true });
   deck.addEventListener("keydown", onReaderKeyDown);
+  wireSheetSwipe(sheet);
+  document.addEventListener("pointerdown", (e) => {
+    if (!state.reader.sheetOpen) return;
+    if (!e.target?.closest?.("#readerIndexSheet") && !e.target?.closest?.("#readerIndexButton")) {
+      closeReaderIndexSheet();
+    }
+  }, { passive: true });
   return reader;
 }
 
@@ -3612,9 +3789,68 @@ function closeReaderIndexSheet() {
   const sheet = document.getElementById("readerIndexSheet");
   const button = document.getElementById("readerIndexButton");
   if (!sheet || !button) return;
+  sheet.style.transform = "";
+  sheet.classList.remove("is-snapping");
   sheet.hidden = true;
   state.reader.sheetOpen = false;
   button.setAttribute("aria-expanded", "false");
+}
+
+function wireSheetSwipe(sheet) {
+  let startY = 0;
+  let currentY = 0;
+  let dragging = false;
+
+  // reset if sheet is closed externally mid-drag (outside click, keyboard, etc.)
+  sheet.addEventListener("hidden", () => { dragging = false; }, { passive: true });
+
+  sheet.addEventListener("touchstart", (e) => {
+    if (e.touches.length !== 1) return;
+    if (sheet.scrollTop > 2) return;
+    startY = e.touches[0].clientY;
+    currentY = startY;
+    dragging = true;
+    sheet.classList.remove("is-snapping");
+  }, { passive: true });
+
+  sheet.addEventListener("touchmove", (e) => {
+    if (!dragging || e.touches.length !== 1) return;
+    currentY = e.touches[0].clientY;
+    const dy = currentY - startY;
+    if (dy <= 0) {
+      sheet.style.transform = "";
+      return;
+    }
+    const clamped = dy < 80 ? dy : 80 + (dy - 80) * 0.25;
+    sheet.style.transform = `translateY(${clamped.toFixed(1)}px)`;
+  }, { passive: true });
+
+  function onEnd() {
+    if (!dragging) return;
+    dragging = false;
+    const dy = currentY - startY;
+    sheet.classList.add("is-snapping");
+    if (dy > 72) {
+      sheet.style.transform = `translateY(100%)`;
+      const onCommit = (e) => {
+        if (e.propertyName !== "transform") return;
+        sheet.removeEventListener("transitionend", onCommit);
+        closeReaderIndexSheet();
+      };
+      sheet.addEventListener("transitionend", onCommit);
+    } else {
+      sheet.style.transform = "";
+      const onSnap = (e) => {
+        if (e.propertyName !== "transform") return;
+        sheet.removeEventListener("transitionend", onSnap);
+        sheet.classList.remove("is-snapping");
+      };
+      sheet.addEventListener("transitionend", onSnap);
+    }
+  }
+
+  sheet.addEventListener("touchend", onEnd, { passive: true });
+  sheet.addEventListener("touchcancel", onEnd, { passive: true });
 }
 
 function setReaderIndex(index, options = {}) {
@@ -3734,32 +3970,58 @@ function updateReaderScrollMotion() {
     const raw = (card.offsetTop - deck.scrollTop) / height;
     const progress = Math.max(-1, Math.min(1, raw));
     const distance = Math.abs(progress);
-    if (distance < 0.015) {
-      clearReaderScrollMotion(frame);
+    if (distance < 0.012) {
+      restReaderScrollMotion(frame);
       return;
     }
-    const eased = Math.sign(progress) * Math.sin(Math.min(1, distance) * Math.PI / 2);
-    const fallbackVisibility = Math.max(0, 1 - distance);
+    // cylinder curve: sin maps linear scroll distance onto a drum arc
+    const arc = Math.sin(Math.min(1, distance) * Math.PI / 2);
+    const eased = Math.sign(progress) * arc;
+    // arrival: 0 = fully off-screen, 1 = snapped
+    const fallbackArrival = Math.max(0, 1 - distance);
     const observedVisibility = Number.isFinite(index) ? state.reader.visibility.get(index) : undefined;
-    const visibility = Math.max(fallbackVisibility, Number.isFinite(observedVisibility) ? observedVisibility : 0);
-    const arrival = Math.max(0, Math.min(1, visibility));
-    const opacity = 0.62 + Math.pow(arrival, 0.72) * 0.38;
-    frame.style.setProperty("--reader-tilt", `${(-eased * 6.2).toFixed(3)}deg`);
-    frame.style.setProperty("--reader-lift", `${(eased * 9.5).toFixed(2)}px`);
-    frame.style.setProperty("--reader-scale", String(Math.max(0.98, 1 - distance * 0.02).toFixed(4)));
-    frame.style.setProperty("--reader-opacity", String(Math.min(0.995, opacity).toFixed(4)));
-    frame.style.setProperty("--reader-shade", String(Math.min(0.14, distance * 0.14).toFixed(4)));
+    const arrival = Math.max(fallbackArrival, Number.isFinite(observedVisibility) ? observedVisibility : 0);
+    // opacity: 0.4 off-screen → 1.0 snapped (pow < 1 keeps mid-scroll visible)
+    const opacity = 0.4 + Math.pow(arrival, 0.45) * 0.6;
+    // tilt: stronger angle gives the cylindrical drum feel
+    const tilt = -eased * 14;
+    // lift: cards roll up/down as if on a drum surface
+    const lift = eased * 18;
+    // scaleX narrows card width as it rolls to the far edge of the cylinder
+    const scaleX = 1 - arc * 0.15;
+    // uniform scale: slight shrink adds depth without fighting scaleX
+    const scale = Math.max(0.96, 1 - distance * 0.04);
+    // shade darkens cards rolling away
+    const shade = Math.min(0.32, arc * 0.32);
+    frame.style.setProperty("--reader-tilt", `${tilt.toFixed(3)}deg`);
+    frame.style.setProperty("--reader-lift", `${lift.toFixed(2)}px`);
+    frame.style.setProperty("--reader-scaleX", scaleX.toFixed(4));
+    frame.style.setProperty("--reader-scale", scale.toFixed(4));
+    frame.style.setProperty("--reader-opacity", Math.min(0.999, opacity).toFixed(4));
+    frame.style.setProperty("--reader-shade", shade.toFixed(4));
     frame.style.setProperty("--reader-fold-origin", progress < 0 ? "50% 0%" : "50% 100%");
   });
 }
 
-function clearReaderScrollMotion(card) {
-  card.style.removeProperty("--reader-tilt");
-  card.style.removeProperty("--reader-lift");
-  card.style.removeProperty("--reader-scale");
-  card.style.removeProperty("--reader-opacity");
-  card.style.removeProperty("--reader-shade");
-  card.style.removeProperty("--reader-fold-origin");
+// Set vars to their CSS-default resting values so the CSS transition eases them in.
+function restReaderScrollMotion(frame) {
+  frame.style.setProperty("--reader-tilt", "0deg");
+  frame.style.setProperty("--reader-lift", "0px");
+  frame.style.setProperty("--reader-scaleX", "1");
+  frame.style.setProperty("--reader-scale", "1");
+  frame.style.setProperty("--reader-opacity", "1");
+  frame.style.setProperty("--reader-shade", "0");
+}
+
+// Hard-remove all vars (no transition) — only used for prefers-reduced-motion.
+function clearReaderScrollMotion(frame) {
+  frame.style.removeProperty("--reader-tilt");
+  frame.style.removeProperty("--reader-lift");
+  frame.style.removeProperty("--reader-scaleX");
+  frame.style.removeProperty("--reader-scale");
+  frame.style.removeProperty("--reader-opacity");
+  frame.style.removeProperty("--reader-shade");
+  frame.style.removeProperty("--reader-fold-origin");
 }
 
 function nearestReaderIndex() {
@@ -3953,7 +4215,10 @@ function renderItem(item, displayIndex) {
   if (item.primary?.repo?.stargazers_count) {
     meta.append(sep(), document.createTextNode(`${formatNumber(item.primary.repo.stargazers_count)} stars`));
   }
-  if (item.primary?.repo?.stars_delta_30d) {
+  if (item.primary?.repo?.stars_today) {
+    meta.append(sep(), document.createTextNode(`+${formatNumber(item.primary.repo.stars_today)} stars today`));
+  }
+  if (!item.primary?.repo?.stars_today && item.primary?.repo?.stars_delta_30d) {
     meta.append(sep(), document.createTextNode(`+${formatNumber(item.primary.repo.stars_delta_30d)} stars`));
   }
   if (item.primary?.learning?.provider) {
@@ -4090,7 +4355,7 @@ function itemImage(item) {
   if (!src) return null;
   const img = document.createElement("img");
   img.className = "item-thumb";
-  img.src = src;
+  img.dataset.src = src;
   img.alt = "";
   img.loading = "lazy";
   img.decoding = "async";
@@ -4101,6 +4366,54 @@ function itemImage(item) {
     article?.classList.remove("has-image");
   }, { once: true });
   return img;
+}
+
+function resetFeedImageHydration() {
+  if (state.feedImageObserver) {
+    state.feedImageObserver.disconnect();
+    state.feedImageObserver = null;
+  }
+  if (state.feedImageTimer) {
+    window.clearTimeout(state.feedImageTimer);
+    state.feedImageTimer = 0;
+  }
+}
+
+function scheduleFeedImageHydration(root) {
+  const images = [...root.querySelectorAll("img.item-thumb[data-src]")];
+  if (!images.length) return;
+  const firstPaint = () => {
+    images.slice(0, 2).forEach(hydrateFeedImage);
+    const rest = images.slice(2).filter((img) => img.dataset.src);
+    if (!rest.length) return;
+    if (typeof IntersectionObserver === "function") {
+      state.feedImageObserver = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          state.feedImageObserver?.unobserve(entry.target);
+          hydrateFeedImage(entry.target);
+        }
+      }, { rootMargin: IMAGE_HYDRATE_ROOT_MARGIN, threshold: 0.01 });
+      rest.forEach((img) => state.feedImageObserver.observe(img));
+      return;
+    }
+    hydrateFeedImagesInBatches(rest);
+  };
+  requestAnimationFrame(() => requestAnimationFrame(firstPaint));
+}
+
+function hydrateFeedImagesInBatches(images, index = 0) {
+  const end = Math.min(images.length, index + IMAGE_HYDRATE_BATCH);
+  for (let i = index; i < end; i++) hydrateFeedImage(images[i]);
+  if (end >= images.length) return;
+  state.feedImageTimer = window.setTimeout(() => hydrateFeedImagesInBatches(images, end), 80);
+}
+
+function hydrateFeedImage(img) {
+  const src = img?.dataset?.src;
+  if (!src || img.getAttribute("src")) return;
+  img.src = src;
+  delete img.dataset.src;
 }
 
 function itemImageUrl(item) {

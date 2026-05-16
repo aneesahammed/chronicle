@@ -563,15 +563,60 @@ function replaceBetween(html: string, start: string, end: string, content: strin
 
 function statusText(feed: FeedFile): string {
   const updated = relativeDate(feed.generated_at);
-  return `${feed.count} items · updated ${updated}`;
+  const parts = [`${feed.count} ${itemCountLabel(feed.count)}`, `updated ${updated}`];
+  if (feed.refresh_status === "failed") {
+    parts.push("refresh failed");
+  } else if (feed.source_failed > 0) {
+    parts.push(sourceSkipSummary(feed.source_failed));
+  }
+  return parts.join(" · ");
 }
 
 function healthHtml(feed: FeedFile): string {
   const tail = [];
-  if (feed.source_failed) tail.push(`${feed.source_failed} failed`);
   if (feed.classification_mode !== "llm") tail.push(`classify ${feed.classification_mode}`);
   tail.push(`window ${feed.window_hours}h`);
-  return `<strong>${feed.source_ok}/${feed.source_total} sources</strong> · ${escapeHtml(tail.join(" · "))}`;
+  const sourceDetails = feed.source_failed > 0 ? sourceFailureDetailsHtml(feed) : "";
+  return [
+    `<strong>${feed.source_ok}/${feed.source_total} sources</strong>`,
+    sourceDetails,
+    tail.length ? escapeHtml(tail.join(" · ")) : "",
+  ].filter(Boolean).join(" · ");
+}
+
+function sourceSkipSummary(count: number): string {
+  return `${count} source${count === 1 ? "" : "s"} skipped`;
+}
+
+function itemCountLabel(count: number): string {
+  return count === 1 ? "item" : "items";
+}
+
+function sourceFailureDetailsHtml(feed: FeedFile): string {
+  const failed = feed.failed_sources ?? [];
+  const rows = failed.length
+    ? failed.map((source) => {
+      const name = source.name || source.id || "Unknown source";
+      const message = compactErrorMessage(source.message);
+      return `<span class="source-details-row"><strong>${escapeHtml(name)}</strong>${message ? `: ${escapeHtml(message)}` : ""}</span>`;
+    }).join("")
+    : `<span class="source-details-row">${escapeHtml(sourceSkipSummary(feed.source_failed))}</span>`;
+  return [
+    `<details class="source-details">`,
+    `<summary>${escapeHtml(sourceSkipSummary(feed.source_failed))}</summary>`,
+    `<span class="source-details-body">`,
+    `<span class="source-details-context">Feed refreshed from ${feed.source_ok}/${feed.source_total} sources.</span>`,
+    `<span class="source-details-list">${rows}</span>`,
+    `</span>`,
+    `</details>`,
+  ].join("");
+}
+
+function compactErrorMessage(message: string | undefined): string {
+  return String(message ?? "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 180);
 }
 
 function topNewsMeta(item: TopNewsItem): string {

@@ -76,6 +76,29 @@ test("writeRenderedHomePage renders repo README images and daily star velocity",
   assert.match(html, /\+143 stars today/);
 });
 
+test("writeRenderedHomePage renders non-material source failures as quiet status", async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "chronicle-static-source-skips-"));
+  await fs.writeFile(path.join(root, "index.html"), feedTemplate());
+  const feed = feedFixture();
+  feed.refresh_status = "partial";
+  feed.source_total = 48;
+  feed.source_ok = 47;
+  feed.source_failed = 1;
+  feed.failed_sources = [{
+    id: "marktechpost",
+    name: "MarkTechPost",
+    message: "Invalid character in entity name\nLine: 0\nColumn: 117\nChar: =",
+  }];
+
+  await writeRenderedHomePage(root, feed);
+
+  const html = await fs.readFile(path.join(root, "index.html"), "utf8");
+  assert.match(html, /<span id="statusText">1 item · updated .* · 1 source skipped<\/span>/);
+  assert.match(html, /<summary>1 source skipped<\/summary>/);
+  assert.match(html, /<strong>MarkTechPost<\/strong>: Invalid character in entity name Line: 0 Column: 117 Char: =/);
+  assert.doesNotMatch(html, /1 failed/);
+});
+
 test("writeRenderedHomePage fails when required template anchors are missing", async () => {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), "chronicle-static-missing-"));
   await fs.writeFile(path.join(root, "index.html"), "<!doctype html><title>Chronicle</title>");
