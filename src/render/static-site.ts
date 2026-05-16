@@ -48,7 +48,9 @@ export async function writeRenderedHomePage(publicDir: string, feed: FeedFile) {
   if (!template) return;
   await writeFileAtomic(indexPath, renderFeedPage(template, feed, {
     canonicalUrl: SITE_URL,
-    title: "Chronicle - daily AI signal",
+    title: "Chronicle: Daily AI Signal for Builders",
+    description: homeMetaDescription(),
+    h1: "Chronicle: Daily AI Signal for Builders",
   }));
 }
 
@@ -61,6 +63,8 @@ export async function writeRenderedDailyPage(publicDir: string, feed: FeedFile) 
   await writeFileAtomic(dayPath, renderFeedPage(template, feed, {
     canonicalUrl: `${SITE_URL}daily/${date}/`,
     title: `Chronicle AI Brief, ${longDate(date)}`,
+    description: dailyMetaDescription(feed, date),
+    h1: `Chronicle AI Brief, ${longDate(date)}`,
     archiveDate: date,
   }));
 }
@@ -74,7 +78,26 @@ export async function writeArchiveIndexPage(
   const template = await readOptionalText(archivePath);
   if (!template) return;
   const meta = archiveMeta(days);
+  const description = archiveMetaDescription();
   let html = replaceBetween(template, ARCHIVE_START, ARCHIVE_END, renderArchiveDays(days), "archive markers");
+  html = replaceRequired(
+    html,
+    /<meta name="description" content="[^"]*">/,
+    `<meta name="description" content="${escapeAttr(description)}">`,
+    "archive meta description",
+  );
+  html = replaceRequired(
+    html,
+    /<meta property="og:description" content="[^"]*">/,
+    `<meta property="og:description" content="${escapeAttr(description)}">`,
+    "archive Open Graph description",
+  );
+  html = replaceRequired(
+    html,
+    /<meta name="twitter:description" content="[^"]*">/,
+    `<meta name="twitter:description" content="${escapeAttr(description)}">`,
+    "archive Twitter description",
+  );
   html = replaceRequired(
     html,
     /<p class="lede-meta" id="ledeMeta">[\s\S]*?<\/p>/,
@@ -121,14 +144,21 @@ export async function writeFeedSchema(publicDir: string) {
 function renderFeedPage(
   template: string,
   feed: FeedFile,
-  options: { canonicalUrl: string; title: string; archiveDate?: string },
+  options: { canonicalUrl: string; title: string; description: string; h1: string; archiveDate?: string },
 ): string {
   const hasTopNews = Boolean(feed.top_news?.length);
+  const socialTitle = options.archiveDate ? options.title : "Chronicle";
   let html = replaceRequired(
     template,
     /<title>[\s\S]*?<\/title>/,
     `<title>${escapeHtml(options.title)}</title>`,
     "document title",
+  );
+  html = replaceRequired(
+    html,
+    /<meta name="description" content="[^"]*">/,
+    `<meta name="description" content="${escapeAttr(options.description)}">`,
+    "meta description",
   );
   html = replaceRequired(
     html,
@@ -145,8 +175,32 @@ function renderFeedPage(
   html = replaceRequired(
     html,
     /<meta property="og:title" content="[^"]*">/,
-    `<meta property="og:title" content="${escapeAttr(options.archiveDate ? options.title : "Chronicle")}">`,
+    `<meta property="og:title" content="${escapeAttr(socialTitle)}">`,
     "Open Graph title",
+  );
+  html = replaceRequired(
+    html,
+    /<meta property="og:description" content="[^"]*">/,
+    `<meta property="og:description" content="${escapeAttr(options.description)}">`,
+    "Open Graph description",
+  );
+  html = replaceRequired(
+    html,
+    /<meta name="twitter:title" content="[^"]*">/,
+    `<meta name="twitter:title" content="${escapeAttr(socialTitle)}">`,
+    "Twitter title",
+  );
+  html = replaceRequired(
+    html,
+    /<meta name="twitter:description" content="[^"]*">/,
+    `<meta name="twitter:description" content="${escapeAttr(options.description)}">`,
+    "Twitter description",
+  );
+  html = replaceRequired(
+    html,
+    /<h1 id="page-title"([^>]*)>[\s\S]*?<\/h1>/,
+    `<h1 id="page-title"$1>${escapeHtml(options.h1)}</h1>`,
+    "page H1",
   );
   html = replaceRequired(
     html,
@@ -272,7 +326,7 @@ function renderItem(item: ScoredCluster, index: number): string {
 function renderItemImage(item: ScoredCluster): string {
   const src = itemImageUrl(item);
   if (!src) return "";
-  return `<img class="item-thumb" src="${escapeAttr(src)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">`;
+  return `<img class="item-thumb" src="${escapeAttr(src)}" alt="${escapeAttr(imageAltText(item))}" width="352" height="220" loading="lazy" decoding="async" referrerpolicy="no-referrer" fetchpriority="low">`;
 }
 
 function itemImageUrl(item: ScoredCluster): string {
@@ -281,6 +335,52 @@ function itemImageUrl(item: ScoredCluster): string {
     if (src) return src;
   }
   return "";
+}
+
+function imageAltText(item: ScoredCluster): string {
+  const title = compactText(item.primary.title || item.one_liner || "Chronicle item");
+  return truncateText(`Thumbnail for ${title}`, 160);
+}
+
+function homeMetaDescription(): string {
+  return "Chronicle is a daily AI signal filter for builders. Track AI news, model releases, papers, repos, and tutorials with repeated hype pushed down.";
+}
+
+function archiveMetaDescription(): string {
+  return "Browse Chronicle's archived daily AI briefs, with past AI news, model releases, papers, repos, and learning links ranked for builders.";
+}
+
+function dailyMetaDescription(feed: FeedFile, date: string): string {
+  const topics = feed.clusters
+    .slice(0, 2)
+    .map((item) => metaTopic(item))
+    .filter(Boolean);
+  const prefix = `${longDate(date)} Chronicle AI brief`;
+  if (!topics.length) {
+    return `${prefix}: ranked AI news, papers, model releases, repos, and learning links for builders.`;
+  }
+  const extraCount = Math.max(0, feed.clusters.length - topics.length);
+  const extra = extraCount ? `, plus ${extraCount} more AI signals` : "";
+  return truncateText(`${prefix}: ${topics.join(", ")}${extra}.`, 160);
+}
+
+function metaTopic(item: ScoredCluster): string {
+  const title = item.primary.title || "";
+  const line = readableLine(item.one_liner || item.primary.summary || "", title);
+  return truncateText(compactText(line || title), 38);
+}
+
+function truncateText(value: string, maxLength: number): string {
+  const text = compactText(value);
+  if (text.length <= maxLength) return text;
+  const clipped = text.slice(0, Math.max(0, maxLength - 1));
+  const boundary = clipped.search(/\s+\S*$/);
+  const trimmed = (boundary > maxLength * 0.62 ? clipped.slice(0, boundary) : clipped).trimEnd();
+  return `${trimmed.replace(/[,:;.\s]+$/, "")}...`;
+}
+
+function compactText(value: string): string {
+  return String(value || "").replace(/\s+/g, " ").trim();
 }
 
 function itemMeta(item: ScoredCluster): string {

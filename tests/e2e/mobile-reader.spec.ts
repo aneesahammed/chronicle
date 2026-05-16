@@ -46,7 +46,8 @@ test("compact mobile reader keeps image cards readable on iPhone SE", async ({ b
   await expect(page.locator("#mobileReader")).toBeVisible();
 
   await page.getByRole("button", { name: "Index" }).click();
-  await page.locator(".reader-index-row").nth(5).click();
+  const imageIndex = await firstImageReaderIndex(page, 5);
+  await page.locator(`.reader-index-row[data-reader-index="${imageIndex}"]`).click();
   await expect(page.locator(".reader-card.is-current .reader-media")).toBeVisible();
 
   const closed = await visibleBounds(page);
@@ -96,4 +97,15 @@ async function visibleBounds(page: import("@playwright/test").Page) {
       explainBottom: rect(explain).bottom,
     };
   });
+}
+
+async function firstImageReaderIndex(page: import("@playwright/test").Page, startIndex: number) {
+  return page.locator(".reader-card").evaluateAll((cards, minIndex) => {
+    const card = cards.find((candidate) => {
+      const index = Number((candidate as HTMLElement).dataset.readerIndex || -1);
+      return index >= Number(minIndex) && Boolean(candidate.querySelector(".reader-media"));
+    }) as HTMLElement | undefined;
+    if (!card?.dataset.readerIndex) throw new Error("No image-backed reader card found");
+    return Number(card.dataset.readerIndex);
+  }, startIndex);
 }

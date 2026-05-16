@@ -8,17 +8,17 @@
 <meta name="theme-color" content="#0c0e12" media="(prefers-color-scheme: dark)">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' https: data:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <title>Chronicle archive — daily AI signal</title>
-<meta name="description" content="Browse past daily snapshots of the Chronicle AI signal feed.">
+<meta name="description" content="Browse Chronicle&#39;s archived daily AI briefs, with past AI news, model releases, papers, repos, and learning links ranked for builders.">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="canonical" href="https://chronicle.tinycrafts.ai/daily/">
 <meta property="og:title" content="Chronicle archive">
-<meta property="og:description" content="Past daily snapshots of the Chronicle feed.">
+<meta property="og:description" content="Browse Chronicle&#39;s archived daily AI briefs, with past AI news, model releases, papers, repos, and learning links ranked for builders.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://chronicle.tinycrafts.ai/daily/">
 <meta property="og:image" content="https://chronicle.tinycrafts.ai/icon-512.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chronicle archive">
-<meta name="twitter:description" content="Past daily snapshots of the Chronicle feed.">
+<meta name="twitter:description" content="Browse Chronicle&#39;s archived daily AI briefs, with past AI news, model releases, papers, repos, and learning links ranked for builders.">
 <meta name="twitter:image" content="https://chronicle.tinycrafts.ai/icon-512.png">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -99,6 +99,17 @@
   a:focus-visible, button:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 4px;
+  }
+  .vh {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
   }
   .shell {
     width: min(100%, 1080px);
@@ -308,7 +319,8 @@
     <button class="theme-toggle" id="themeToggle" type="button">theme</button>
   </header>
 
-  <section class="lede">
+  <section class="lede" aria-labelledby="archiveTitle">
+    <h1 id="archiveTitle" class="vh">Chronicle Archive</h1>
     <p class="lede-text">Past daily snapshots of the Chronicle feed. Each tile is a frozen view of that day's clustered AI signal.</p>
     <p class="lede-meta" id="ledeMeta">15 days · 2026-05-02 -&gt; 2026-05-16 · 849 items</p>
   </section>

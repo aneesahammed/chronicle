@@ -4,7 +4,7 @@ import os from "node:os";
 import path from "node:path";
 import test from "node:test";
 import type { FeedFile, RawItem, ScoredCluster } from "../types.ts";
-import { writeRenderedHomePage, writeSyndicationFeeds } from "./static-site.ts";
+import { writeRenderedDailyPage, writeRenderedHomePage, writeSyndicationFeeds } from "./static-site.ts";
 
 test("writeRenderedHomePage renders escaped feed content into the template", async () => {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), "chronicle-static-render-"));
@@ -14,6 +14,8 @@ test("writeRenderedHomePage renders escaped feed content into the template", asy
 
   const html = await fs.readFile(path.join(root, "index.html"), "utf8");
   assert.match(html, /<script type="application\/ld\+json">/);
+  assert.match(html, /<title>Chronicle: Daily AI Signal for Builders<\/title>/);
+  assert.match(html, /<h1 id="page-title">Chronicle: Daily AI Signal for Builders<\/h1>/);
   assert.match(html, /Alpha &quot;Beta&quot; &amp; Co/);
   assert.match(html, /Read &#39;now&#39; &lt;tag&gt;/);
   assert.match(html, /<ol class="feed-list">/);
@@ -72,8 +74,22 @@ test("writeRenderedHomePage renders repo README images and daily star velocity",
   }));
 
   const html = await fs.readFile(path.join(root, "index.html"), "utf8");
-  assert.match(html, /<img class="item-thumb" src="https:\/\/cdn\.example\.com\/agent\.png"/);
+  assert.match(html, /<img class="item-thumb" src="https:\/\/cdn\.example\.com\/agent\.png" alt="Thumbnail for Alpha &quot;Beta&quot; &amp; Co" width="352" height="220"/);
   assert.match(html, /\+143 stars today/);
+});
+
+test("writeRenderedDailyPage renders date-specific SEO metadata", async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "chronicle-static-daily-seo-"));
+  await fs.writeFile(path.join(root, "index.html"), feedTemplate());
+  await fs.mkdir(path.join(root, "daily", "2026-05-05"), { recursive: true });
+
+  await writeRenderedDailyPage(root, feedFixture());
+
+  const html = await fs.readFile(path.join(root, "daily", "2026-05-05", "index.html"), "utf8");
+  assert.match(html, /<title>Chronicle AI Brief, May 5, 2026<\/title>/);
+  assert.match(html, /<meta name="description" content="May 5, 2026 Chronicle AI brief:/);
+  assert.match(html, /<h1 id="page-title">Chronicle AI Brief, May 5, 2026<\/h1>/);
+  assert.match(html, /<link rel="canonical" href="https:\/\/chronicle\.tinycrafts\.ai\/daily\/2026-05-05\/">/);
 });
 
 test("writeRenderedHomePage renders non-material source failures as quiet status", async () => {
@@ -105,7 +121,7 @@ test("writeRenderedHomePage fails when required template anchors are missing", a
 
   await assert.rejects(
     writeRenderedHomePage(root, feedFixture()),
-    /static template is missing canonical link/,
+    /static template is missing meta description/,
   );
 });
 
@@ -131,15 +147,20 @@ function feedTemplate(): string {
     "<html>",
     "<head>",
     "<title>Chronicle</title>",
+    '<meta name="description" content="Old description">',
     '<link rel="canonical" href="https://chronicle.tinycrafts.ai/">',
     '<meta property="og:title" content="Chronicle">',
+    '<meta property="og:description" content="Old OG description">',
     '<meta property="og:url" content="https://chronicle.tinycrafts.ai/">',
+    '<meta name="twitter:title" content="Chronicle">',
+    '<meta name="twitter:description" content="Old Twitter description">',
     "<!-- CHRONICLE_JSONLD_START -->",
     "<!-- CHRONICLE_JSONLD_END -->",
     "</head>",
     "<body>",
     '<span id="statusText">checking sources...</span>',
     '<div class="health" id="healthStrip">checking sources...</div>',
+    '<h1 id="page-title">Chronicle</h1>',
     '<section class="top-news" id="topNews" aria-labelledby="top-news-title" hidden>',
     "<!-- CHRONICLE_TOP_NEWS_START -->",
     "<!-- CHRONICLE_TOP_NEWS_END -->",
