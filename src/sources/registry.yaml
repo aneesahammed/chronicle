@@ -81,7 +81,7 @@ sources:
     name: Hamel Husain
     type: rss
     url: https://hamel.dev/index.xml
-    trust: 0.85
+    trust: 0.90
     limit: 10
 
   - id: lilian_weng
@@ -436,6 +436,15 @@ sources:
     url_exclude:
       - /blog/topic/
     limit: 12
+
+  - id: fahd_mirza
+    name: Fahd Mirza YouTube
+    type: youtube_rss
+    url: https://www.youtube.com/feeds/videos.xml?channel_id=UCPix8N6PMRI4KzgyjuZeF0g
+    trust: 0.66
+    source_role: main
+    kind_hint: video
+    limit: 8
 
   # ── GitHub repo radar ───────────────────────────────────────────────────
   - id: github_trending_daily
