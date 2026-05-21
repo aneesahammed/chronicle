@@ -3,6 +3,7 @@ import { promises as fs } from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import test from "node:test";
+import { fileURLToPath } from "node:url";
 import type { FeedFile, RawItem, ScoredCluster } from "../types.ts";
 import { writeRenderedDailyPage, writeRenderedHomePage, writeSyndicationFeeds } from "./static-site.ts";
 
@@ -19,6 +20,17 @@ test("writeRenderedHomePage renders escaped feed content into the template", asy
   assert.match(html, /Alpha &quot;Beta&quot; &amp; Co/);
   assert.match(html, /Read &#39;now&#39; &lt;tag&gt;/);
   assert.match(html, /<ol class="feed-list">/);
+});
+
+test("public templates include GoatCounter with CSP allowances", async () => {
+  const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
+  for (const templatePath of ["public/index.html", "public/daily/index.html"]) {
+    const html = await fs.readFile(path.join(repoRoot, templatePath), "utf8");
+    assert.match(html, /data-goatcounter="https:\/\/chronicle\.goatcounter\.com\/count"/);
+    assert.match(html, /src="https:\/\/gc\.zgo\.at\/count\.js"/);
+    assert.match(html, /script-src[^"]*https:\/\/gc\.zgo\.at/);
+    assert.match(html, /connect-src[^"]*https:\/\/chronicle\.goatcounter\.com/);
+  }
 });
 
 test("writeRenderedHomePage renders muted source glyphs", async () => {

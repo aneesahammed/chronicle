@@ -88,14 +88,49 @@ test("completeJsonWithProviders retries a short Gemini rate limit then succeeds"
   assert.equal(result.content, '{"ok":"yes"}');
 });
 
-test("createLlmProviders defaults to Gemini 2.0 Flash with a free-tier-friendly delay", () => {
+test("completeJsonWithProviders moves long Gemini rate limits to the fallback provider", async () => {
+  let geminiCalls = 0;
+  let groqCalls = 0;
+  const gemini = new GeminiProvider("key", "gemini-test", {
+    batchDelayMs: 0,
+    fetchImpl: async () => {
+      geminiCalls++;
+      return Response.json({
+        error: {
+          message: "rate limited",
+          details: [{
+            "@type": "type.googleapis.com/google.rpc.RetryInfo",
+            retryDelay: "45s",
+          }],
+        },
+      }, { status: 429 });
+    },
+  });
+  const groq = {
+    name: "groq" as const,
+    model: "groq-test",
+    batchDelayMs: 0,
+    completeJson: async () => {
+      groqCalls++;
+      return { content: '{"ok":"yes"}', provider: "groq" as const, model: "groq-test" };
+    },
+  };
+
+  const result = await completeJsonWithProviders([gemini, groq], request);
+
+  assert.equal(result.provider, "groq");
+  assert.equal(geminiCalls, 1);
+  assert.equal(groqCalls, 1);
+});
+
+test("createLlmProviders defaults to Gemini 3.1 Flash-Lite with a conservative delay", () => {
   const providers = createLlmProviders({
     GEMINI_API_KEY: "gemini-key",
     GROQ_API_KEY: "groq-key",
   });
 
   assert.equal(providers[0].name, "gemini");
-  assert.equal(providers[0].model, "gemini-2.0-flash");
+  assert.equal(providers[0].model, "gemini-3.1-flash-lite");
   assert.equal(providers[0].batchDelayMs, 4_500);
   assert.equal(providers[1].name, "groq");
   assert.equal(providers[1].batchDelayMs, 30_000);

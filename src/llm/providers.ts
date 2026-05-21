@@ -54,7 +54,9 @@ export class ProviderRateLimitError extends Error {
 
 const GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models";
 const GROQ_CHAT_COMPLETIONS_URL = "https://api.groq.com/openai/v1/chat/completions";
-const DEFAULT_GEMINI_MODEL = "gemini-2.0-flash";
+const DEFAULT_GEMINI_MODEL = "gemini-3.1-flash-lite";
+// Keep this conservative. Gemini rate limits vary by project, tier, and model,
+// and Google surfaces active quotas in AI Studio rather than stable public constants.
 const DEFAULT_GEMINI_BATCH_DELAY_MS = 4_500;
 const DEFAULT_GROQ_MODEL = "qwen/qwen3-32b";
 const DEFAULT_GROQ_BATCH_DELAY_MS = 30_000;
