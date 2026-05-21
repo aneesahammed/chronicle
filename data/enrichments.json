@@ -596,6 +596,30 @@
       "enriched_at": "2026-05-20T06:35:30.224Z",
       "failure_count": 0
     },
+    "https://arxiv.org/abs/2605.20234": {
+      "url": "https://arxiv.org/abs/2605.20234",
+      "title": "TabPFN-MT: A Natively Multitask In-Context Learner for Tabular Data",
+      "source_name": "arXiv cs.LG",
+      "dek": "TabPFN-MT handles multitask predictions in tabular data contexts.",
+      "brief": "TabPFN-MT extends Prior-Data Fitted networks (PFNs) to multitask learning, enabling simultaneous inference for multiple targets. It uses a shared decoder and expanded y-encoder to capture inter-task dependencies, avoiding repeated forward passes required by single-task models.",
+      "image_alt": "TabPFN-MT architecture diagram showing multitask components",
+      "status": "ok",
+      "attempted_at": "2026-05-21T06:36:42.463Z",
+      "enriched_at": "2026-05-21T06:36:42.463Z",
+      "failure_count": 0
+    },
+    "https://arxiv.org/abs/2605.21468": {
+      "url": "https://arxiv.org/abs/2605.21468",
+      "title": "You Only Need Minimal RLVR Training: Extrapolating LLMs via Rank-1 Trajectories",
+      "source_name": "Hugging Face Daily Papers",
+      "dek": "RLVR training gains mostly come from rank-1 parameter updates.",
+      "brief": "Research shows RLVR-trained LLMs achieve most performance improvements via low-rank weight changes. The RELEX method extrapolates training outcomes using rank-1 trajectory approximations, reducing compute needs while maintaining accuracy.",
+      "image_alt": "LLM parameter trajectory visualization with rank-1 projection",
+      "status": "ok",
+      "attempted_at": "2026-05-21T06:36:42.463Z",
+      "enriched_at": "2026-05-21T06:36:42.463Z",
+      "failure_count": 0
+    },
     "https://aws.amazon.com/blogs/machine-learning/accelerate-ml-feature-pipelines-with-new-capabilities-in-amazon-sagemaker-feature-store": {
       "url": "https://aws.amazon.com/blogs/machine-learning/accelerate-ml-feature-pipelines-with-new-capabilities-in-amazon-sagemaker-feature-store",
       "title": "Accelerate ML feature pipelines with new capabilities in Amazon SageMaker Feature Store",
@@ -618,6 +642,18 @@
       "status": "ok",
       "attempted_at": "2026-05-07T12:57:41.328Z",
       "enriched_at": "2026-05-07T12:57:41.328Z",
+      "failure_count": 0
+    },
+    "https://aws.amazon.com/blogs/machine-learning/announcing-openai-compatible-api-support-for-amazon-sagemaker-ai-endpoints": {
+      "url": "https://aws.amazon.com/blogs/machine-learning/announcing-openai-compatible-api-support-for-amazon-sagemaker-ai-endpoints",
+      "title": "Announcing OpenAI-compatible API support for Amazon SageMaker AI endpoints",
+      "source_name": "AWS Machine Learning Blog",
+      "dek": "SageMaker now supports OpenAI API compatibility for endpoints.",
+      "brief": "Amazon SageMaker AI endpoints now expose OpenAI-compatible APIs, allowing SDKs like LangChain to interface directly. No code changes or custom clients are needed - only endpoint URL updates are required for integration.",
+      "image_alt": "AWS SageMaker API integration flow with OpenAI compatibility",
+      "status": "ok",
+      "attempted_at": "2026-05-21T06:36:42.463Z",
+      "enriched_at": "2026-05-21T06:36:42.463Z",
       "failure_count": 0
     },
     "https://aws.amazon.com/blogs/machine-learning/automate-schema-generation-for-intelligent-document-processing": {
@@ -1297,6 +1333,18 @@
       "enriched_at": "2026-05-18T18:55:46.778Z",
       "failure_count": 0
     },
+    "https://marktechpost.com/2026/05/20/meet-turbovec-a-rust-vector-index-with-python-bindings-and-built-on-googles-turboquant-algorithm": {
+      "url": "https://marktechpost.com/2026/05/20/meet-turbovec-a-rust-vector-index-with-python-bindings-and-built-on-googles-turboquant-algorithm",
+      "title": "Meet Turbovec: A Rust Vector Index with Python Bindings, and Built on Google’s TurboQuant Algorithm",
+      "source_name": "MarkTechPost",
+      "dek": "Turbovec compresses vector indexes 16x using TurboQuant.",
+      "brief": "Turbovec implements Google's TurboQuant algorithm for vector search, reducing memory usage by 16x. The Rust-based library with Python bindings enables efficient RAG pipelines by compressing 10M embeddings to 4GB.",
+      "image_alt": "Turbovec vector index architecture with compression metrics",
+      "status": "ok",
+      "attempted_at": "2026-05-21T06:36:42.463Z",
+      "enriched_at": "2026-05-21T06:36:42.463Z",
+      "failure_count": 0
+    },
     "https://marktechpost.com/2026/05/20/nvidia-ai-releases-nemotron-labs-diffusion-a-tri-mode-language-model-with-6x-tokens-per-forward-over-qwen3-8b": {
       "url": "https://marktechpost.com/2026/05/20/nvidia-ai-releases-nemotron-labs-diffusion-a-tri-mode-language-model-with-6x-tokens-per-forward-over-qwen3-8b",
       "title": "NVIDIA AI Releases Nemotron-Labs-Diffusion: A Tri-Mode Language Model with 6× Tokens Per Forward Over Qwen3-8B",
@@ -1725,6 +1773,20 @@
       "status": "ok",
       "attempted_at": "2026-05-18T13:36:28.328Z",
       "enriched_at": "2026-05-18T13:36:28.328Z",
+      "failure_count": 0
+    },
+    "https://old.reddit.com/r/LocalLLaMA/comments/1tivvd4/i_got_qwen3vlembedding2b_working_with_rkllm_on_an": {
+      "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tivvd4/i_got_qwen3vlembedding2b_working_with_rkllm_on_an",
+      "title": "I got Qwen3-VL-Embedding-2B working with rkllm on an Orange Pi 5b",
+      "source_name": "r/LocalLLaMA",
+      "dek": "Qwen3-VL-Embedding-2B runs on Orange Pi 5b with rkllm.",
+      "brief": "A Reddit user successfully deployed Qwen3-VL-Embedding-2B on Orange Pi 5b using rkllm. The model processes webcam images at ~10 seconds per inference, comparing against 1,300+ text phrases for similarity.",
+      "image_url": "https://external-preview.redd.it/AIxQ4FR2L-4I5Ap0LqJXORqjUutkRwwjhU-sG0OhYx8.png?width=640&crop=smart&auto=webp&s=436519c599c92cd52989ae785aaef6fa342c9621",
+      "image_alt": "Orange Pi 5b with Qwen3-VL model inference setup",
+      "image_source": "rss_media",
+      "status": "ok",
+      "attempted_at": "2026-05-21T06:36:42.463Z",
+      "enriched_at": "2026-05-21T06:36:42.463Z",
       "failure_count": 0
     },
     "https://old.reddit.com/r/MachineLearning/comments/1t2hd9b/built_a_efficient_and_fast_mri_compression": {
