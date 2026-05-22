@@ -1,89 +1,63 @@
 {
-  "generated_at": "2026-05-22T06:34:43.937Z",
-  "last_successful_generated_at": "2026-05-22T06:34:43.937Z",
-  "refresh_status": "partial",
+  "generated_at": "2026-05-22T13:12:31.467Z",
+  "last_successful_generated_at": "2026-05-22T13:12:31.467Z",
+  "refresh_status": "ok",
   "classification_mode": "deterministic",
   "window_hours": 720,
   "source_total": 7,
-  "source_ok": 1,
-  "source_failed": 6,
-  "failed_sources": [
-    {
-      "id": "yt_deeplearning_ai",
-      "name": "DeepLearning.AI YouTube",
-      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCcIXc5mJsHVYTZR1maL5l9w"
-    },
-    {
-      "id": "yt_google_deepmind",
-      "name": "Google DeepMind YouTube",
-      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCP7jMXSY2xbc3KCAE0MHQ-A"
-    },
-    {
-      "id": "yt_openai",
-      "name": "OpenAI YouTube",
-      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A"
-    },
-    {
-      "id": "yt_nvidia_developer",
-      "name": "NVIDIA Developer YouTube",
-      "message": "HTTP 500 Internal Server Error - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 500 (Server Error)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,s - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCBHcMCGaiJhv-ESTcWGJPcw"
-    },
-    {
-      "id": "yt_huggingface",
-      "name": "Hugging Face YouTube",
-      "message": "HTTP 500 Internal Server Error - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 500 (Server Error)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,s - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCHlNU7kIZhRgSbhHvFoy72w"
-    },
-    {
-      "id": "yt_microsoft_365_developer",
-      "name": "Microsoft 365 Developer YouTube",
-      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCV_6HOhwxYLXAGd-JOqKPoQ"
-    }
-  ],
+  "source_ok": 7,
+  "source_failed": 0,
+  "failed_sources": [],
   "source_health": [
     {
       "id": "yt_deeplearning_ai",
       "name": "DeepLearning.AI YouTube",
-      "status": "failed",
-      "fetched_count": 0,
-      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCcIXc5mJsHVYTZR1maL5l9w",
-      "fresh_count": 0,
-      "stale_count": 0
+      "status": "ok",
+      "fetched_count": 8,
+      "fresh_count": 8,
+      "stale_count": 0,
+      "oldest_published_at": "2026-05-21T22:04:31.000Z",
+      "newest_published_at": "2026-05-21T23:42:30.000Z"
     },
     {
       "id": "yt_google_deepmind",
       "name": "Google DeepMind YouTube",
-      "status": "failed",
-      "fetched_count": 0,
-      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCP7jMXSY2xbc3KCAE0MHQ-A",
+      "status": "ok",
+      "fetched_count": 1,
       "fresh_count": 0,
-      "stale_count": 0
+      "stale_count": 1,
+      "oldest_published_at": "2026-04-09T13:27:40.000Z",
+      "newest_published_at": "2026-04-09T13:27:40.000Z"
     },
     {
       "id": "yt_openai",
       "name": "OpenAI YouTube",
-      "status": "failed",
-      "fetched_count": 0,
-      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A",
-      "fresh_count": 0,
-      "stale_count": 0
+      "status": "ok",
+      "fetched_count": 2,
+      "fresh_count": 2,
+      "stale_count": 0,
+      "oldest_published_at": "2026-05-13T23:13:27.000Z",
+      "newest_published_at": "2026-05-14T20:28:12.000Z"
     },
     {
       "id": "yt_nvidia_developer",
       "name": "NVIDIA Developer YouTube",
-      "status": "failed",
-      "fetched_count": 0,
-      "message": "HTTP 500 Internal Server Error - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 500 (Server Error)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,s - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCBHcMCGaiJhv-ESTcWGJPcw",
-      "fresh_count": 0,
-      "stale_count": 0
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 6,
+      "stale_count": 0,
+      "oldest_published_at": "2026-05-08T13:06:04.000Z",
+      "newest_published_at": "2026-05-21T05:06:47.000Z"
     },
     {
       "id": "yt_huggingface",
       "name": "Hugging Face YouTube",
-      "status": "failed",
-      "fetched_count": 0,
-      "message": "HTTP 500 Internal Server Error - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 500 (Server Error)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,s - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCHlNU7kIZhRgSbhHvFoy72w",
-      "fresh_count": 0,
-      "stale_count": 0
+      "status": "ok",
+      "fetched_count": 4,
+      "fresh_count": 3,
+      "stale_count": 1,
+      "oldest_published_at": "2026-04-16T04:01:42.000Z",
+      "newest_published_at": "2026-04-29T11:55:24.000Z"
     },
     {
       "id": "yt_google_developers",
@@ -98,226 +72,1149 @@
     {
       "id": "yt_microsoft_365_developer",
       "name": "Microsoft 365 Developer YouTube",
-      "status": "failed",
-      "fetched_count": 0,
-      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCV_6HOhwxYLXAGd-JOqKPoQ",
-      "fresh_count": 0,
-      "stale_count": 0
+      "status": "ok",
+      "fetched_count": 1,
+      "fresh_count": 1,
+      "stale_count": 0,
+      "oldest_published_at": "2026-04-23T06:14:22.000Z",
+      "newest_published_at": "2026-04-23T06:14:22.000Z"
     }
   ],
-  "count": 3,
+  "count": 16,
   "clusters": [
     {
-      "id": "1ssuc0i",
+      "id": "1hmak0u",
       "primary": {
-        "id": "1ssuc0i",
-        "source_id": "yt_google_developers",
-        "source_name": "Google for Developers YouTube",
+        "id": "1hmak0u",
+        "source_id": "yt_deeplearning_ai",
+        "source_name": "DeepLearning.AI YouTube",
         "source_role": "learning",
-        "trust": 0.72,
+        "trust": 0.78,
         "kind_hint": "video",
-        "title": "Build next-gen AI experiences with Google AI Studio and Google Antigravity",
-        "url": "https://youtube.com/watch?v=orudZzP8vUc",
-        "original_url": "https://www.youtube.com/watch?v=orudZzP8vUc",
-        "image_url": "https://i.ytimg.com/vi/orudZzP8vUc/hqdefault.jpg",
+        "title": "AI Dev 26 x SF | Brandon Middleton: Vibe Coding Master Class",
+        "url": "https://youtube.com/watch?v=sz1lB31xxqo",
+        "original_url": "https://www.youtube.com/watch?v=sz1lB31xxqo",
+        "image_url": "https://i.ytimg.com/vi/sz1lB31xxqo/hqdefault.jpg",
         "image_source": "youtube_thumbnail",
-        "published_at": "2026-05-21T22:41:09.000Z",
+        "published_at": "2026-05-21T23:10:41.000Z",
         "published_at_source": "feed",
         "date_confidence": "high",
         "learning": {
           "provider": "YouTube",
-          "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-          "video_id": "orudZzP8vUc"
+          "channel_id": "UCcIXc5mJsHVYTZR1maL5l9w",
+          "video_id": "sz1lB31xxqo"
         }
       },
       "members": [
         {
-          "id": "1ssuc0i",
-          "source_id": "yt_google_developers",
-          "source_name": "Google for Developers YouTube",
+          "id": "1hmak0u",
+          "source_id": "yt_deeplearning_ai",
+          "source_name": "DeepLearning.AI YouTube",
           "source_role": "learning",
-          "trust": 0.72,
+          "trust": 0.78,
           "kind_hint": "video",
-          "title": "Build next-gen AI experiences with Google AI Studio and Google Antigravity",
-          "url": "https://youtube.com/watch?v=orudZzP8vUc",
-          "original_url": "https://www.youtube.com/watch?v=orudZzP8vUc",
-          "image_url": "https://i.ytimg.com/vi/orudZzP8vUc/hqdefault.jpg",
+          "title": "AI Dev 26 x SF | Brandon Middleton: Vibe Coding Master Class",
+          "url": "https://youtube.com/watch?v=sz1lB31xxqo",
+          "original_url": "https://www.youtube.com/watch?v=sz1lB31xxqo",
+          "image_url": "https://i.ytimg.com/vi/sz1lB31xxqo/hqdefault.jpg",
           "image_source": "youtube_thumbnail",
-          "published_at": "2026-05-21T22:41:09.000Z",
+          "published_at": "2026-05-21T23:10:41.000Z",
           "published_at_source": "feed",
           "date_confidence": "high",
           "learning": {
             "provider": "YouTube",
-            "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-            "video_id": "orudZzP8vUc"
+            "channel_id": "UCcIXc5mJsHVYTZR1maL5l9w",
+            "video_id": "sz1lB31xxqo"
           }
         }
       ],
       "source_trail": [
         {
-          "source_id": "yt_google_developers",
-          "source_name": "Google for Developers YouTube",
-          "title": "Build next-gen AI experiences with Google AI Studio and Google Antigravity",
-          "url": "https://youtube.com/watch?v=orudZzP8vUc",
-          "published_at": "2026-05-21T22:41:09.000Z",
+          "source_id": "yt_deeplearning_ai",
+          "source_name": "DeepLearning.AI YouTube",
+          "title": "AI Dev 26 x SF | Brandon Middleton: Vibe Coding Master Class",
+          "url": "https://youtube.com/watch?v=sz1lB31xxqo",
+          "published_at": "2026-05-21T23:10:41.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "also_seen_on": [],
       "kind": "video",
-      "quality": "mixed",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.968,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.81,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1nc4kl1",
+      "primary": {
+        "id": "1nc4kl1",
+        "source_id": "yt_deeplearning_ai",
+        "source_name": "DeepLearning.AI YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "AI Dev 26 x SF | Erik Thorelli: Deploying AI Code Review at Scale",
+        "url": "https://youtube.com/watch?v=zbuf9J5KgOM",
+        "original_url": "https://www.youtube.com/watch?v=zbuf9J5KgOM",
+        "image_url": "https://i.ytimg.com/vi/zbuf9J5KgOM/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-05-21T23:22:02.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCcIXc5mJsHVYTZR1maL5l9w",
+          "video_id": "zbuf9J5KgOM"
+        }
+      },
+      "members": [
+        {
+          "id": "1nc4kl1",
+          "source_id": "yt_deeplearning_ai",
+          "source_name": "DeepLearning.AI YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "AI Dev 26 x SF | Erik Thorelli: Deploying AI Code Review at Scale",
+          "url": "https://youtube.com/watch?v=zbuf9J5KgOM",
+          "original_url": "https://www.youtube.com/watch?v=zbuf9J5KgOM",
+          "image_url": "https://i.ytimg.com/vi/zbuf9J5KgOM/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-05-21T23:22:02.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCcIXc5mJsHVYTZR1maL5l9w",
+            "video_id": "zbuf9J5KgOM"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_deeplearning_ai",
+          "source_name": "DeepLearning.AI YouTube",
+          "title": "AI Dev 26 x SF | Erik Thorelli: Deploying AI Code Review at Scale",
+          "url": "https://youtube.com/watch?v=zbuf9J5KgOM",
+          "published_at": "2026-05-21T23:22:02.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.958,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.807,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "16fitl6",
+      "primary": {
+        "id": "16fitl6",
+        "source_id": "yt_deeplearning_ai",
+        "source_name": "DeepLearning.AI YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "AI Dev 26 x SF | Tom Howlett: Can LLMs Generate Enterprise Quality Code?",
+        "url": "https://youtube.com/watch?v=Z_pCTBtCmck",
+        "original_url": "https://www.youtube.com/watch?v=Z_pCTBtCmck",
+        "image_url": "https://i.ytimg.com/vi/Z_pCTBtCmck/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-05-21T23:31:42.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCcIXc5mJsHVYTZR1maL5l9w",
+          "video_id": "Z_pCTBtCmck"
+        }
+      },
+      "members": [
+        {
+          "id": "16fitl6",
+          "source_id": "yt_deeplearning_ai",
+          "source_name": "DeepLearning.AI YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "AI Dev 26 x SF | Tom Howlett: Can LLMs Generate Enterprise Quality Code?",
+          "url": "https://youtube.com/watch?v=Z_pCTBtCmck",
+          "original_url": "https://www.youtube.com/watch?v=Z_pCTBtCmck",
+          "image_url": "https://i.ytimg.com/vi/Z_pCTBtCmck/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-05-21T23:31:42.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCcIXc5mJsHVYTZR1maL5l9w",
+            "video_id": "Z_pCTBtCmck"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_deeplearning_ai",
+          "source_name": "DeepLearning.AI YouTube",
+          "title": "AI Dev 26 x SF | Tom Howlett: Can LLMs Generate Enterprise Quality Code?",
+          "url": "https://youtube.com/watch?v=Z_pCTBtCmck",
+          "published_at": "2026-05-21T23:31:42.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.954,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.806,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1g6fft2",
+      "primary": {
+        "id": "1g6fft2",
+        "source_id": "yt_deeplearning_ai",
+        "source_name": "DeepLearning.AI YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "AI Dev 26 x SF | Ashwyn Sharma: Every App Needs a Voice UI. Here's How to Build It",
+        "url": "https://youtube.com/watch?v=7VISmcJpqis",
+        "original_url": "https://www.youtube.com/watch?v=7VISmcJpqis",
+        "image_url": "https://i.ytimg.com/vi/7VISmcJpqis/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-05-21T23:42:30.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCcIXc5mJsHVYTZR1maL5l9w",
+          "video_id": "7VISmcJpqis"
+        }
+      },
+      "members": [
+        {
+          "id": "1g6fft2",
+          "source_id": "yt_deeplearning_ai",
+          "source_name": "DeepLearning.AI YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "AI Dev 26 x SF | Ashwyn Sharma: Every App Needs a Voice UI. Here's How to Build It",
+          "url": "https://youtube.com/watch?v=7VISmcJpqis",
+          "original_url": "https://www.youtube.com/watch?v=7VISmcJpqis",
+          "image_url": "https://i.ytimg.com/vi/7VISmcJpqis/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-05-21T23:42:30.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCcIXc5mJsHVYTZR1maL5l9w",
+            "video_id": "7VISmcJpqis"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_deeplearning_ai",
+          "source_name": "DeepLearning.AI YouTube",
+          "title": "AI Dev 26 x SF | Ashwyn Sharma: Every App Needs a Voice UI. Here's How to Build It",
+          "url": "https://youtube.com/watch?v=7VISmcJpqis",
+          "published_at": "2026-05-21T23:42:30.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.942,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.803,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "2xbl1x",
+      "primary": {
+        "id": "2xbl1x",
+        "source_id": "yt_deeplearning_ai",
+        "source_name": "DeepLearning.AI YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "AI Dev 26 x SF | Idan Raman: The Identity Crisis of Browser Agents",
+        "url": "https://youtube.com/watch?v=klAynlP04h0",
+        "original_url": "https://www.youtube.com/watch?v=klAynlP04h0",
+        "image_url": "https://i.ytimg.com/vi/klAynlP04h0/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-05-21T23:38:01.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCcIXc5mJsHVYTZR1maL5l9w",
+          "video_id": "klAynlP04h0"
+        }
+      },
+      "members": [
+        {
+          "id": "2xbl1x",
+          "source_id": "yt_deeplearning_ai",
+          "source_name": "DeepLearning.AI YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "AI Dev 26 x SF | Idan Raman: The Identity Crisis of Browser Agents",
+          "url": "https://youtube.com/watch?v=klAynlP04h0",
+          "original_url": "https://www.youtube.com/watch?v=klAynlP04h0",
+          "image_url": "https://i.ytimg.com/vi/klAynlP04h0/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-05-21T23:38:01.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCcIXc5mJsHVYTZR1maL5l9w",
+            "video_id": "klAynlP04h0"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_deeplearning_ai",
+          "source_name": "DeepLearning.AI YouTube",
+          "title": "AI Dev 26 x SF | Idan Raman: The Identity Crisis of Browser Agents",
+          "url": "https://youtube.com/watch?v=klAynlP04h0",
+          "published_at": "2026-05-21T23:38:01.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.93,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.799,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "glsyqr",
+      "primary": {
+        "id": "glsyqr",
+        "source_id": "yt_deeplearning_ai",
+        "source_name": "DeepLearning.AI YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "AI Dev 26 x SF | Barun Singh & Kennith Jackson; The Hidden Cost of AI Velocity and AI Agents",
+        "url": "https://youtube.com/watch?v=e9QDd1Osrro",
+        "original_url": "https://www.youtube.com/watch?v=e9QDd1Osrro",
+        "image_url": "https://i.ytimg.com/vi/e9QDd1Osrro/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-05-21T22:04:31.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCcIXc5mJsHVYTZR1maL5l9w",
+          "video_id": "e9QDd1Osrro"
+        }
+      },
+      "members": [
+        {
+          "id": "glsyqr",
+          "source_id": "yt_deeplearning_ai",
+          "source_name": "DeepLearning.AI YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "AI Dev 26 x SF | Barun Singh & Kennith Jackson; The Hidden Cost of AI Velocity and AI Agents",
+          "url": "https://youtube.com/watch?v=e9QDd1Osrro",
+          "original_url": "https://www.youtube.com/watch?v=e9QDd1Osrro",
+          "image_url": "https://i.ytimg.com/vi/e9QDd1Osrro/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-05-21T22:04:31.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCcIXc5mJsHVYTZR1maL5l9w",
+            "video_id": "e9QDd1Osrro"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_deeplearning_ai",
+          "source_name": "DeepLearning.AI YouTube",
+          "title": "AI Dev 26 x SF | Barun Singh & Kennith Jackson; The Hidden Cost of AI Velocity and AI Agents",
+          "url": "https://youtube.com/watch?v=e9QDd1Osrro",
+          "published_at": "2026-05-21T22:04:31.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.905,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.789,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1ap94xq",
+      "primary": {
+        "id": "1ap94xq",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "CUDA Live: CUDA-Q Academic Demo Day",
+        "url": "https://youtube.com/watch?v=H7TE0JWJLjE",
+        "original_url": "https://www.youtube.com/watch?v=H7TE0JWJLjE",
+        "image_url": "https://i.ytimg.com/vi/H7TE0JWJLjE/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-05-21T05:06:47.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "H7TE0JWJLjE"
+        }
+      },
+      "members": [
+        {
+          "id": "1ap94xq",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "CUDA Live: CUDA-Q Academic Demo Day",
+          "url": "https://youtube.com/watch?v=H7TE0JWJLjE",
+          "original_url": "https://www.youtube.com/watch?v=H7TE0JWJLjE",
+          "image_url": "https://i.ytimg.com/vi/H7TE0JWJLjE/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-05-21T05:06:47.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "H7TE0JWJLjE"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "CUDA Live: CUDA-Q Academic Demo Day",
+          "url": "https://youtube.com/watch?v=H7TE0JWJLjE",
+          "published_at": "2026-05-21T05:06:47.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.983,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.784,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "9xhuma",
+      "primary": {
+        "id": "9xhuma",
+        "source_id": "yt_deeplearning_ai",
+        "source_name": "DeepLearning.AI YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "AI Dev 26 x SF | Ondra Urban: Agents with Wallets? Putting 25,000 Tools on x402",
+        "url": "https://youtube.com/watch?v=_KAXZtMSDlo",
+        "original_url": "https://www.youtube.com/watch?v=_KAXZtMSDlo",
+        "image_url": "https://i.ytimg.com/vi/_KAXZtMSDlo/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-05-21T22:52:59.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCcIXc5mJsHVYTZR1maL5l9w",
+          "video_id": "_KAXZtMSDlo"
+        }
+      },
+      "members": [
+        {
+          "id": "9xhuma",
+          "source_id": "yt_deeplearning_ai",
+          "source_name": "DeepLearning.AI YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "AI Dev 26 x SF | Ondra Urban: Agents with Wallets? Putting 25,000 Tools on x402",
+          "url": "https://youtube.com/watch?v=_KAXZtMSDlo",
+          "original_url": "https://www.youtube.com/watch?v=_KAXZtMSDlo",
+          "image_url": "https://i.ytimg.com/vi/_KAXZtMSDlo/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-05-21T22:52:59.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCcIXc5mJsHVYTZR1maL5l9w",
+            "video_id": "_KAXZtMSDlo"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_deeplearning_ai",
+          "source_name": "DeepLearning.AI YouTube",
+          "title": "AI Dev 26 x SF | Ondra Urban: Agents with Wallets? Putting 25,000 Tools on x402",
+          "url": "https://youtube.com/watch?v=_KAXZtMSDlo",
+          "published_at": "2026-05-21T22:52:59.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
       "one_liner": "",
       "novelty": 0.871,
       "novelty_label": "high",
-      "trust": 0.72,
-      "score": 0.665,
+      "trust": 0.78,
+      "score": 0.78,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal"
+        "classified as concrete builder or research signal"
       ],
       "builder_action": "Queue it for focused learning if the topic matches your current work."
     },
     {
-      "id": "rg1vj8",
+      "id": "1ldvuyi",
       "primary": {
-        "id": "rg1vj8",
-        "source_id": "yt_google_developers",
-        "source_name": "Google for Developers YouTube",
+        "id": "1ldvuyi",
+        "source_id": "yt_deeplearning_ai",
+        "source_name": "DeepLearning.AI YouTube",
         "source_role": "learning",
-        "trust": 0.72,
+        "trust": 0.78,
         "kind_hint": "video",
-        "title": "Build agents with Gemini API",
-        "url": "https://youtube.com/watch?v=OdrOmc_RX8A",
-        "original_url": "https://www.youtube.com/watch?v=OdrOmc_RX8A",
-        "image_url": "https://i.ytimg.com/vi/OdrOmc_RX8A/hqdefault.jpg",
+        "title": "AI Dev 26 x SF | Atai Barkai: Fullstack Agents & Generative UI with AG UI",
+        "url": "https://youtube.com/watch?v=EeyLHsND5i0",
+        "original_url": "https://www.youtube.com/watch?v=EeyLHsND5i0",
+        "image_url": "https://i.ytimg.com/vi/EeyLHsND5i0/hqdefault.jpg",
         "image_source": "youtube_thumbnail",
-        "published_at": "2026-05-21T23:52:17.000Z",
+        "published_at": "2026-05-21T23:40:15.000Z",
         "published_at_source": "feed",
         "date_confidence": "high",
         "learning": {
           "provider": "YouTube",
-          "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-          "video_id": "OdrOmc_RX8A"
+          "channel_id": "UCcIXc5mJsHVYTZR1maL5l9w",
+          "video_id": "EeyLHsND5i0"
         }
       },
       "members": [
         {
-          "id": "rg1vj8",
-          "source_id": "yt_google_developers",
-          "source_name": "Google for Developers YouTube",
+          "id": "1ldvuyi",
+          "source_id": "yt_deeplearning_ai",
+          "source_name": "DeepLearning.AI YouTube",
           "source_role": "learning",
-          "trust": 0.72,
+          "trust": 0.78,
           "kind_hint": "video",
-          "title": "Build agents with Gemini API",
-          "url": "https://youtube.com/watch?v=OdrOmc_RX8A",
-          "original_url": "https://www.youtube.com/watch?v=OdrOmc_RX8A",
-          "image_url": "https://i.ytimg.com/vi/OdrOmc_RX8A/hqdefault.jpg",
+          "title": "AI Dev 26 x SF | Atai Barkai: Fullstack Agents & Generative UI with AG UI",
+          "url": "https://youtube.com/watch?v=EeyLHsND5i0",
+          "original_url": "https://www.youtube.com/watch?v=EeyLHsND5i0",
+          "image_url": "https://i.ytimg.com/vi/EeyLHsND5i0/hqdefault.jpg",
           "image_source": "youtube_thumbnail",
-          "published_at": "2026-05-21T23:52:17.000Z",
+          "published_at": "2026-05-21T23:40:15.000Z",
           "published_at_source": "feed",
           "date_confidence": "high",
           "learning": {
             "provider": "YouTube",
-            "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-            "video_id": "OdrOmc_RX8A"
+            "channel_id": "UCcIXc5mJsHVYTZR1maL5l9w",
+            "video_id": "EeyLHsND5i0"
           }
         }
       ],
       "source_trail": [
         {
-          "source_id": "yt_google_developers",
-          "source_name": "Google for Developers YouTube",
-          "title": "Build agents with Gemini API",
-          "url": "https://youtube.com/watch?v=OdrOmc_RX8A",
-          "published_at": "2026-05-21T23:52:17.000Z",
+          "source_id": "yt_deeplearning_ai",
+          "source_name": "DeepLearning.AI YouTube",
+          "title": "AI Dev 26 x SF | Atai Barkai: Fullstack Agents & Generative UI with AG UI",
+          "url": "https://youtube.com/watch?v=EeyLHsND5i0",
+          "published_at": "2026-05-21T23:40:15.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "also_seen_on": [],
       "kind": "video",
-      "quality": "mixed",
+      "quality": "signal",
       "one_liner": "",
-      "novelty": 0.673,
-      "novelty_label": "medium",
-      "trust": 0.72,
-      "score": 0.607,
+      "novelty": 0.854,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.776,
       "why_this_surfaced": [
-        "meaningfully different from recent coverage",
-        "classified as useful but lower-confidence signal",
-        "fresh within the current refresh window"
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
       ],
       "builder_action": "Queue it for focused learning if the topic matches your current work."
     },
     {
-      "id": "vfdhxj",
+      "id": "1934au2",
       "primary": {
-        "id": "vfdhxj",
-        "source_id": "yt_google_developers",
-        "source_name": "Google for Developers YouTube",
+        "id": "1934au2",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
         "source_role": "learning",
-        "trust": 0.72,
+        "trust": 0.78,
         "kind_hint": "video",
-        "title": "Building agents with real-world reasoning",
-        "url": "https://youtube.com/watch?v=e7gFaim6vLs",
-        "original_url": "https://www.youtube.com/watch?v=e7gFaim6vLs",
-        "image_url": "https://i.ytimg.com/vi/e7gFaim6vLs/hqdefault.jpg",
+        "title": "How to Authenticate Agent Skills Before Execution | Nemotron Labs",
+        "url": "https://youtube.com/watch?v=sVpKonYJ4D4",
+        "original_url": "https://www.youtube.com/watch?v=sVpKonYJ4D4",
+        "image_url": "https://i.ytimg.com/vi/sVpKonYJ4D4/hqdefault.jpg",
         "image_source": "youtube_thumbnail",
-        "published_at": "2026-05-21T17:15:38.000Z",
+        "published_at": "2026-05-20T07:05:32.000Z",
         "published_at_source": "feed",
         "date_confidence": "high",
         "learning": {
           "provider": "YouTube",
-          "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-          "video_id": "e7gFaim6vLs"
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "sVpKonYJ4D4"
         }
       },
       "members": [
         {
-          "id": "vfdhxj",
-          "source_id": "yt_google_developers",
-          "source_name": "Google for Developers YouTube",
+          "id": "1934au2",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
           "source_role": "learning",
-          "trust": 0.72,
+          "trust": 0.78,
           "kind_hint": "video",
-          "title": "Building agents with real-world reasoning",
-          "url": "https://youtube.com/watch?v=e7gFaim6vLs",
-          "original_url": "https://www.youtube.com/watch?v=e7gFaim6vLs",
-          "image_url": "https://i.ytimg.com/vi/e7gFaim6vLs/hqdefault.jpg",
+          "title": "How to Authenticate Agent Skills Before Execution | Nemotron Labs",
+          "url": "https://youtube.com/watch?v=sVpKonYJ4D4",
+          "original_url": "https://www.youtube.com/watch?v=sVpKonYJ4D4",
+          "image_url": "https://i.ytimg.com/vi/sVpKonYJ4D4/hqdefault.jpg",
           "image_source": "youtube_thumbnail",
-          "published_at": "2026-05-21T17:15:38.000Z",
+          "published_at": "2026-05-20T07:05:32.000Z",
           "published_at_source": "feed",
           "date_confidence": "high",
           "learning": {
             "provider": "YouTube",
-            "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-            "video_id": "e7gFaim6vLs"
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "sVpKonYJ4D4"
           }
         }
       ],
       "source_trail": [
         {
-          "source_id": "yt_google_developers",
-          "source_name": "Google for Developers YouTube",
-          "title": "Building agents with real-world reasoning",
-          "url": "https://youtube.com/watch?v=e7gFaim6vLs",
-          "published_at": "2026-05-21T17:15:38.000Z",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "How to Authenticate Agent Skills Before Execution | Nemotron Labs",
+          "url": "https://youtube.com/watch?v=sVpKonYJ4D4",
+          "published_at": "2026-05-20T07:05:32.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "also_seen_on": [],
       "kind": "video",
-      "quality": "mixed",
+      "quality": "signal",
       "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.72,
-      "score": 0.344,
+      "novelty": 0.951,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.748,
       "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "7ux34d",
+      "primary": {
+        "id": "7ux34d",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "Make LLMs Fly: Accelerating Bielik With NVIDIA Minitron and Data Curator",
+        "url": "https://youtube.com/watch?v=xpDBugxPBhs",
+        "original_url": "https://www.youtube.com/watch?v=xpDBugxPBhs",
+        "image_url": "https://i.ytimg.com/vi/xpDBugxPBhs/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-05-19T19:46:39.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "xpDBugxPBhs"
+        }
+      },
+      "members": [
+        {
+          "id": "7ux34d",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "Make LLMs Fly: Accelerating Bielik With NVIDIA Minitron and Data Curator",
+          "url": "https://youtube.com/watch?v=xpDBugxPBhs",
+          "original_url": "https://www.youtube.com/watch?v=xpDBugxPBhs",
+          "image_url": "https://i.ytimg.com/vi/xpDBugxPBhs/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-05-19T19:46:39.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "xpDBugxPBhs"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "Make LLMs Fly: Accelerating Bielik With NVIDIA Minitron and Data Curator",
+          "url": "https://youtube.com/watch?v=xpDBugxPBhs",
+          "published_at": "2026-05-19T19:46:39.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.938,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.744,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "obm2y5",
+      "primary": {
+        "id": "obm2y5",
+        "source_id": "yt_huggingface",
+        "source_name": "Hugging Face YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "How To Win Humanity's Last Hackathon - The hardest agent contest in AI.",
+        "url": "https://youtube.com/watch?v=xRFuPkp4iP8",
+        "original_url": "https://www.youtube.com/watch?v=xRFuPkp4iP8",
+        "image_url": "https://i.ytimg.com/vi/xRFuPkp4iP8/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-04-29T11:55:24.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
+          "video_id": "xRFuPkp4iP8"
+        }
+      },
+      "members": [
+        {
+          "id": "obm2y5",
+          "source_id": "yt_huggingface",
+          "source_name": "Hugging Face YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "How To Win Humanity's Last Hackathon - The hardest agent contest in AI.",
+          "url": "https://youtube.com/watch?v=xRFuPkp4iP8",
+          "original_url": "https://www.youtube.com/watch?v=xRFuPkp4iP8",
+          "image_url": "https://i.ytimg.com/vi/xRFuPkp4iP8/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-04-29T11:55:24.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
+            "video_id": "xRFuPkp4iP8"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_huggingface",
+          "source_name": "Hugging Face YouTube",
+          "title": "How To Win Humanity's Last Hackathon - The hardest agent contest in AI.",
+          "url": "https://youtube.com/watch?v=xRFuPkp4iP8",
+          "published_at": "2026-04-29T11:55:24.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.933,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.743,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "12nkbmk",
+      "primary": {
+        "id": "12nkbmk",
+        "source_id": "yt_openai",
+        "source_name": "OpenAI YouTube",
+        "source_role": "learning",
+        "trust": 0.82,
+        "kind_hint": "video",
+        "title": "Build Hour: GPT-Realtime-2",
+        "url": "https://youtube.com/watch?v=qGS9Ghnq1RU",
+        "original_url": "https://www.youtube.com/watch?v=qGS9Ghnq1RU",
+        "image_url": "https://i.ytimg.com/vi/qGS9Ghnq1RU/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-05-13T23:13:27.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
+          "video_id": "qGS9Ghnq1RU"
+        }
+      },
+      "members": [
+        {
+          "id": "12nkbmk",
+          "source_id": "yt_openai",
+          "source_name": "OpenAI YouTube",
+          "source_role": "learning",
+          "trust": 0.82,
+          "kind_hint": "video",
+          "title": "Build Hour: GPT-Realtime-2",
+          "url": "https://youtube.com/watch?v=qGS9Ghnq1RU",
+          "original_url": "https://www.youtube.com/watch?v=qGS9Ghnq1RU",
+          "image_url": "https://i.ytimg.com/vi/qGS9Ghnq1RU/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-05-13T23:13:27.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
+            "video_id": "qGS9Ghnq1RU"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_openai",
+          "source_name": "OpenAI YouTube",
+          "title": "Build Hour: GPT-Realtime-2",
+          "url": "https://youtube.com/watch?v=qGS9Ghnq1RU",
+          "published_at": "2026-05-13T23:13:27.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.842,
+      "novelty_label": "high",
+      "trust": 0.82,
+      "score": 0.725,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1vjjy82",
+      "primary": {
+        "id": "1vjjy82",
+        "source_id": "yt_huggingface",
+        "source_name": "Hugging Face YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "Multi-Agent AutoResearch with Open Source Models",
+        "url": "https://youtube.com/watch?v=aUlhaeb0o4w",
+        "original_url": "https://www.youtube.com/watch?v=aUlhaeb0o4w",
+        "image_url": "https://i.ytimg.com/vi/aUlhaeb0o4w/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-04-27T09:22:25.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
+          "video_id": "aUlhaeb0o4w"
+        }
+      },
+      "members": [
+        {
+          "id": "1vjjy82",
+          "source_id": "yt_huggingface",
+          "source_name": "Hugging Face YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "Multi-Agent AutoResearch with Open Source Models",
+          "url": "https://youtube.com/watch?v=aUlhaeb0o4w",
+          "original_url": "https://www.youtube.com/watch?v=aUlhaeb0o4w",
+          "image_url": "https://i.ytimg.com/vi/aUlhaeb0o4w/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-04-27T09:22:25.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
+            "video_id": "aUlhaeb0o4w"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_huggingface",
+          "source_name": "Hugging Face YouTube",
+          "title": "Multi-Agent AutoResearch with Open Source Models",
+          "url": "https://youtube.com/watch?v=aUlhaeb0o4w",
+          "published_at": "2026-04-27T09:22:25.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.873,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.725,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "14ez60d",
+      "primary": {
+        "id": "14ez60d",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "Google X NVIDIA Developer Stream: Building GPU-accelerated multi-agent apps",
+        "url": "https://youtube.com/watch?v=R5YLS2skVgg",
+        "original_url": "https://www.youtube.com/watch?v=R5YLS2skVgg",
+        "image_url": "https://i.ytimg.com/vi/R5YLS2skVgg/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-05-13T05:05:56.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "R5YLS2skVgg"
+        }
+      },
+      "members": [
+        {
+          "id": "14ez60d",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "Google X NVIDIA Developer Stream: Building GPU-accelerated multi-agent apps",
+          "url": "https://youtube.com/watch?v=R5YLS2skVgg",
+          "original_url": "https://www.youtube.com/watch?v=R5YLS2skVgg",
+          "image_url": "https://i.ytimg.com/vi/R5YLS2skVgg/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-05-13T05:05:56.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "R5YLS2skVgg"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "Google X NVIDIA Developer Stream: Building GPU-accelerated multi-agent apps",
+          "url": "https://youtube.com/watch?v=R5YLS2skVgg",
+          "published_at": "2026-05-13T05:05:56.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.873,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.724,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1y2h5oj",
+      "primary": {
+        "id": "1y2h5oj",
+        "source_id": "yt_openai",
+        "source_name": "OpenAI YouTube",
+        "source_role": "learning",
+        "trust": 0.82,
+        "kind_hint": "video",
+        "title": "Codex for Everyday Work: AI Agents Beyond Coding",
+        "url": "https://youtube.com/watch?v=DLP9CagE3dU",
+        "original_url": "https://www.youtube.com/watch?v=DLP9CagE3dU",
+        "image_url": "https://i.ytimg.com/vi/DLP9CagE3dU/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-05-14T20:28:12.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
+          "video_id": "DLP9CagE3dU"
+        }
+      },
+      "members": [
+        {
+          "id": "1y2h5oj",
+          "source_id": "yt_openai",
+          "source_name": "OpenAI YouTube",
+          "source_role": "learning",
+          "trust": 0.82,
+          "kind_hint": "video",
+          "title": "Codex for Everyday Work: AI Agents Beyond Coding",
+          "url": "https://youtube.com/watch?v=DLP9CagE3dU",
+          "original_url": "https://www.youtube.com/watch?v=DLP9CagE3dU",
+          "image_url": "https://i.ytimg.com/vi/DLP9CagE3dU/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-05-14T20:28:12.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
+            "video_id": "DLP9CagE3dU"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_openai",
+          "source_name": "OpenAI YouTube",
+          "title": "Codex for Everyday Work: AI Agents Beyond Coding",
+          "url": "https://youtube.com/watch?v=DLP9CagE3dU",
+          "published_at": "2026-05-14T20:28:12.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.838,
+      "novelty_label": "high",
+      "trust": 0.82,
+      "score": 0.723,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
       ],
       "builder_action": "Queue it for focused learning if the topic matches your current work."
     }
