@@ -1101,6 +1101,18 @@
       "enriched_at": "2026-05-05T18:48:45.171Z",
       "failure_count": 0
     },
+    "https://blog.kog.ai/real-time-llm-inference-on-standard-gpus-3-000-tokens-s-per-request": {
+      "url": "https://blog.kog.ai/real-time-llm-inference-on-standard-gpus-3-000-tokens-s-per-request",
+      "title": "Real-time LLM Inference on Standard GPUs: 3k tokens/s per request",
+      "source_name": "Hacker News (AI-filtered)",
+      "dek": "Kog AI's new inference engine achieves 3,000 tokens/s on standard datacenter GPUs without speculative decoding.",
+      "brief": "The Kog Inference Engine (KIE) tech preview demonstrates high-throughput inference, reaching 3,000 tokens/s on 8x AMD MI300X GPUs and 2,100 tokens/s on 8x NVIDIA H200s. These results were achieved using 2B models in FP16 precision. The company plans to extend support to large third-party Mixture-of-Experts (MoE) models while maintaining similar performance benchmarks.",
+      "image_alt": "Benchmark chart comparing token throughput across AMD and NVIDIA GPU configurations",
+      "status": "ok",
+      "attempted_at": "2026-05-29T13:29:42.819Z",
+      "enriched_at": "2026-05-29T13:29:42.819Z",
+      "failure_count": 0
+    },
     "https://blog.tilderesearch.com/blog/aurora": {
       "url": "https://blog.tilderesearch.com/blog/aurora",
       "title": "Aurora: A Leverage-Aware Optimizer for Rectangular Matrices",
@@ -1614,6 +1626,20 @@
       "status": "ok",
       "attempted_at": "2026-05-03T12:35:14.217Z",
       "enriched_at": "2026-05-03T12:35:14.217Z",
+      "failure_count": 0
+    },
+    "https://infoq.com/news/2026/05/github-agentic-token-savings": {
+      "url": "https://infoq.com/news/2026/05/github-agentic-token-savings",
+      "title": "GitHub Slashes Agent Workflow Token Spend up to 62% with Daily Audits and MCP Pruning",
+      "source_name": "InfoQ AI/ML/Data",
+      "dek": "GitHub reduced agentic CI workflow token costs by up to 62% through automated pruning and optimization strategies.",
+      "brief": "GitHub implemented a system to monitor and optimize token usage in agentic workflows. By pruning unused Model Context Protocol (MCP) tools, replacing specific MCP calls with the native gh CLI, and deploying daily auditor agents, they significantly lowered operational costs. Teams can now track spend via token-usage.jsonl artifacts and an Effective Tokens metric to identify and address regressions.",
+      "image_url": "https://res.infoq.com/news/2026/05/github-agentic-token-savings/en/headerimage/header-1779918825690.jpeg",
+      "image_alt": "GitHub agent workflow optimization dashboard showing token usage metrics",
+      "image_source": "rss_content",
+      "status": "ok",
+      "attempted_at": "2026-05-29T13:29:42.819Z",
+      "enriched_at": "2026-05-29T13:29:42.819Z",
       "failure_count": 0
     },
     "https://infoq.com/news/2026/05/gke-agent-sandbox-hypercluster": {
@@ -2772,6 +2798,17 @@
       "status": "failed",
       "attempted_at": "2026-05-27T13:34:34.417Z",
       "enriched_at": "2026-05-27T13:34:34.417Z",
+      "failure_count": 1
+    },
+    "https://old.reddit.com/r/MachineLearning/comments/1tqvuz9/building_a_monokernel_for_llm_inference_on_amd": {
+      "url": "https://old.reddit.com/r/MachineLearning/comments/1tqvuz9/building_a_monokernel_for_llm_inference_on_amd",
+      "title": "Building a monokernel for LLM inference on AMD MI300X - up to 3,300 output tokens/s per request [P]",
+      "source_name": "r/MachineLearning",
+      "dek": "Monokernel implementation for LLM inference on AMD MI300X achieves 3,300 tokens/s by optimizing memory access to physical die topology.",
+      "brief": "We built a monokernel that runs the full decode sequence as one GPU-resident program on AMD MI300X, with some neat optimizations. The die topology is central to the result, we map memory access patterns to the physical layout, compute units group by their associated IOD, and the hardware runs at its full design performance. Up to 3,300 output tokens/s per request, batch size 1, no speculative decoding, no quantizati…",
+      "status": "failed",
+      "attempted_at": "2026-05-29T13:29:42.819Z",
+      "enriched_at": "2026-05-29T13:29:42.819Z",
       "failure_count": 1
     },
     "https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai": {
