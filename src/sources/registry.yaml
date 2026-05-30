@@ -49,6 +49,16 @@ sources:
     ai_filter: true
     limit: 15
 
+  - id: martin_fowler
+    name: Martin Fowler
+    type: rss
+    url: https://martinfowler.com/feed.atom
+    # Highest-priority builder source; AI filtering keeps broad software posts out.
+    trust: 1.00
+    kind_hint: opinion
+    ai_filter: true
+    limit: 10
+
   - id: latent_space
     name: Latent Space
     type: rss

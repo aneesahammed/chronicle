@@ -12,6 +12,7 @@ test("sourceFamily groups arXiv categories together", () => {
   assert.equal(sourceFamily("arxiv_lg"), "arxiv");
   assert.equal(sourceFamily("r_localllama"), "discussion");
   assert.equal(sourceFamily("hn_ai"), "hacker_news");
+  assert.equal(sourceFamily("martin_fowler"), "builders");
 });
 
 test("selectDiverseClusters caps arXiv at 3 items when alternatives exist", () => {
