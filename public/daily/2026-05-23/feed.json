@@ -1,0 +1,3729 @@
+{
+  "generated_at": "2026-05-23T12:38:46.165Z",
+  "last_successful_generated_at": "2026-05-23T12:38:46.165Z",
+  "refresh_status": "ok",
+  "classification_mode": "llm",
+  "window_hours": 36,
+  "source_total": 50,
+  "source_ok": 50,
+  "source_failed": 0,
+  "failed_sources": [],
+  "source_health": [
+    {
+      "id": "arxiv_cl",
+      "name": "arXiv cs.CL",
+      "status": "ok",
+      "fetched_count": 0,
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "arxiv_lg",
+      "name": "arXiv cs.LG",
+      "status": "ok",
+      "fetched_count": 3,
+      "fresh_count": 3,
+      "stale_count": 0,
+      "oldest_published_at": "2026-05-23T04:00:00.000Z",
+      "newest_published_at": "2026-05-23T04:00:00.000Z"
+    },
+    {
+      "id": "hf_papers",
+      "name": "Hugging Face Daily Papers",
+      "status": "ok",
+      "fetched_count": 20,
+      "fresh_count": 0,
+      "stale_count": 20,
+      "oldest_published_at": "2026-05-07T20:00:00.000Z",
+      "newest_published_at": "2026-05-20T20:00:00.000Z"
+    },
+    {
+      "id": "hf_trending_models",
+      "name": "Hugging Face trending models",
+      "status": "ok",
+      "fetched_count": 20,
+      "fresh_count": 0,
+      "stale_count": 20,
+      "oldest_published_at": "2026-01-29T21:17:57.000Z",
+      "newest_published_at": "2026-05-18T11:14:09.000Z"
+    },
+    {
+      "id": "simonw",
+      "name": "Simon Willison",
+      "status": "ok",
+      "fetched_count": 11,
+      "fresh_count": 0,
+      "stale_count": 11,
+      "oldest_published_at": "2026-05-19T20:28:16.000Z",
+      "newest_published_at": "2026-05-21T19:52:19.000Z"
+    },
+    {
+      "id": "latent_space",
+      "name": "Latent Space",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 2,
+      "stale_count": 8,
+      "oldest_published_at": "2026-05-15T00:30:21.000Z",
+      "newest_published_at": "2026-05-23T04:21:17.000Z"
+    },
+    {
+      "id": "interconnects",
+      "name": "Interconnects (Lambert)",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-04-03T16:57:36.000Z",
+      "newest_published_at": "2026-05-16T17:00:11.000Z"
+    },
+    {
+      "id": "import_ai",
+      "name": "Import AI (Jack Clark)",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-03-09T12:45:54.000Z",
+      "newest_published_at": "2026-05-18T13:31:17.000Z"
+    },
+    {
+      "id": "eugene_yan",
+      "name": "Eugene Yan",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2025-04-20T00:00:00.000Z",
+      "newest_published_at": "2026-05-03T00:00:00.000Z"
+    },
+    {
+      "id": "hamel",
+      "name": "Hamel Husain",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2024-12-13T08:00:00.000Z",
+      "newest_published_at": "2026-03-26T07:00:00.000Z"
+    },
+    {
+      "id": "lilian_weng",
+      "name": "Lilian Weng",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2023-01-10T17:00:00.000Z",
+      "newest_published_at": "2025-05-01T00:00:00.000Z"
+    },
+    {
+      "id": "chip_huyen",
+      "name": "Chip Huyen",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2023-06-07T00:00:00.000Z",
+      "newest_published_at": "2025-01-16T00:00:00.000Z"
+    },
+    {
+      "id": "addy_osmani",
+      "name": "Addy Osmani",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-02-25T00:00:00.000Z",
+      "newest_published_at": "2026-05-16T00:00:00.000Z"
+    },
+    {
+      "id": "daniel_miessler",
+      "name": "Daniel Miessler",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-04-19T23:20:32.000Z",
+      "newest_published_at": "2026-05-20T19:00:00.000Z"
+    },
+    {
+      "id": "sean_goedecke",
+      "name": "Sean Goedecke",
+      "status": "ok",
+      "fetched_count": 7,
+      "fresh_count": 0,
+      "stale_count": 7,
+      "oldest_published_at": "2026-05-09T00:00:00.000Z",
+      "newest_published_at": "2026-05-21T00:00:00.000Z"
+    },
+    {
+      "id": "techcrunch_ai",
+      "name": "TechCrunch AI",
+      "status": "ok",
+      "fetched_count": 12,
+      "fresh_count": 7,
+      "stale_count": 5,
+      "oldest_published_at": "2026-05-21T15:27:00.000Z",
+      "newest_published_at": "2026-05-22T23:03:33.000Z"
+    },
+    {
+      "id": "the_decoder",
+      "name": "The Decoder",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 10,
+      "stale_count": 0,
+      "oldest_published_at": "2026-05-22T13:36:27.000Z",
+      "newest_published_at": "2026-05-23T10:55:03.000Z"
+    },
+    {
+      "id": "mit_tech_review_ai",
+      "name": "MIT Technology Review AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 1,
+      "stale_count": 9,
+      "oldest_published_at": "2026-05-15T09:00:00.000Z",
+      "newest_published_at": "2026-05-22T10:00:00.000Z"
+    },
+    {
+      "id": "ars_ai",
+      "name": "Ars Technica AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 3,
+      "stale_count": 7,
+      "oldest_published_at": "2026-05-19T13:45:31.000Z",
+      "newest_published_at": "2026-05-22T19:39:04.000Z"
+    },
+    {
+      "id": "infoq_ai",
+      "name": "InfoQ AI/ML/Data",
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 4,
+      "stale_count": 2,
+      "oldest_published_at": "2026-05-21T12:55:00.000Z",
+      "newest_published_at": "2026-05-22T14:32:00.000Z"
+    },
+    {
+      "id": "stackoverflow_blog",
+      "name": "Stack Overflow Blog",
+      "status": "ok",
+      "fetched_count": 7,
+      "fresh_count": 2,
+      "stale_count": 5,
+      "oldest_published_at": "2026-05-13T07:40:00.000Z",
+      "newest_published_at": "2026-05-22T14:00:00.000Z"
+    },
+    {
+      "id": "the_verge_ai",
+      "name": "The Verge AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 6,
+      "stale_count": 4,
+      "oldest_published_at": "2026-05-21T15:54:03.000Z",
+      "newest_published_at": "2026-05-23T11:00:00.000Z"
+    },
+    {
+      "id": "wired_ai",
+      "name": "WIRED AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 2,
+      "stale_count": 8,
+      "oldest_published_at": "2026-05-19T20:00:48.000Z",
+      "newest_published_at": "2026-05-22T15:00:00.000Z"
+    },
+    {
+      "id": "nine_to_five_google_ai",
+      "name": "9to5Google AI",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "2017-08-08T14:44:01.000Z",
+      "newest_published_at": "2025-10-08T15:22:03.000Z"
+    },
+    {
+      "id": "product_hunt",
+      "name": "Product Hunt",
+      "status": "ok",
+      "fetched_count": 2,
+      "fresh_count": 2,
+      "stale_count": 0,
+      "oldest_published_at": "2026-05-22T02:35:07.000Z",
+      "newest_published_at": "2026-05-23T02:56:16.000Z"
+    },
+    {
+      "id": "marktechpost",
+      "name": "MarkTechPost",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 5,
+      "stale_count": 5,
+      "oldest_published_at": "2026-05-21T04:58:31.000Z",
+      "newest_published_at": "2026-05-23T10:32:09.000Z"
+    },
+    {
+      "id": "hn_ai",
+      "name": "Hacker News (AI-filtered)",
+      "status": "ok",
+      "fetched_count": 3,
+      "fresh_count": 3,
+      "stale_count": 0,
+      "oldest_published_at": "2026-05-22T10:38:26.000Z",
+      "newest_published_at": "2026-05-22T18:17:57.000Z"
+    },
+    {
+      "id": "hn_show_ai",
+      "name": "Show HN (AI-filtered)",
+      "status": "ok",
+      "fetched_count": 1,
+      "fresh_count": 0,
+      "stale_count": 1,
+      "oldest_published_at": "2026-05-21T16:42:34.000Z",
+      "newest_published_at": "2026-05-21T16:42:34.000Z"
+    },
+    {
+      "id": "lobsters_ai",
+      "name": "Lobsters (AI tag)",
+      "status": "ok",
+      "fetched_count": 20,
+      "fresh_count": 1,
+      "stale_count": 19,
+      "oldest_published_at": "2026-05-04T11:06:16.000Z",
+      "newest_published_at": "2026-05-22T05:38:44.000Z"
+    },
+    {
+      "id": "r_localllama",
+      "name": "r/LocalLLaMA",
+      "status": "ok",
+      "fetched_count": 25,
+      "fresh_count": 25,
+      "stale_count": 0,
+      "oldest_published_at": "2026-05-22T13:07:23.000Z",
+      "newest_published_at": "2026-05-23T10:01:14.000Z"
+    },
+    {
+      "id": "r_ml",
+      "name": "r/MachineLearning",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 5,
+      "stale_count": 0,
+      "oldest_published_at": "2026-05-22T20:24:35.000Z",
+      "newest_published_at": "2026-05-23T07:47:21.000Z"
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-05-16T00:00:00.000Z",
+      "newest_published_at": "2026-05-22T00:00:00.000Z"
+    },
+    {
+      "id": "deepmind",
+      "name": "Google DeepMind",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-05-16T08:08:44.000Z",
+      "newest_published_at": "2026-05-21T19:46:42.000Z"
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "status": "ok",
+      "fetched_count": 12,
+      "fresh_count": 0,
+      "stale_count": 12,
+      "oldest_published_at": "2026-05-07T00:00:00.000Z",
+      "newest_published_at": "2026-05-22T00:00:00.000Z"
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-03-16T00:00:00.000Z",
+      "newest_published_at": "2026-05-22T00:00:00.000Z"
+    },
+    {
+      "id": "google_research",
+      "name": "Google Research",
+      "status": "ok",
+      "fetched_count": 8,
+      "fresh_count": 0,
+      "stale_count": 8,
+      "oldest_published_at": "2026-03-31T16:16:00.000Z",
+      "newest_published_at": "2026-04-22T17:00:00.000Z"
+    },
+    {
+      "id": "google_ai_keyword",
+      "name": "Google AI on Keyword",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "2026-05-21T00:00:00.000Z",
+      "newest_published_at": "2026-05-21T00:00:00.000Z"
+    },
+    {
+      "id": "meta_ai",
+      "name": "Meta AI Blog",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "1970-01-01T00:00:00.000Z",
+      "newest_published_at": "2026-04-08T00:00:00.000Z"
+    },
+    {
+      "id": "microsoft_research",
+      "name": "Microsoft Research",
+      "status": "ok",
+      "fetched_count": 8,
+      "fresh_count": 0,
+      "stale_count": 8,
+      "oldest_published_at": "2026-04-30T21:53:21.000Z",
+      "newest_published_at": "2026-05-21T17:00:00.000Z"
+    },
+    {
+      "id": "azure_ai_blog",
+      "name": "Azure AI Blog",
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 0,
+      "stale_count": 6,
+      "oldest_published_at": "2026-04-28T16:00:00.000Z",
+      "newest_published_at": "2026-05-20T16:00:00.000Z"
+    },
+    {
+      "id": "aws_ml_blog",
+      "name": "AWS Machine Learning Blog",
+      "status": "ok",
+      "fetched_count": 11,
+      "fresh_count": 0,
+      "stale_count": 11,
+      "oldest_published_at": "2026-05-19T15:26:37.000Z",
+      "newest_published_at": "2026-05-21T22:22:28.000Z"
+    },
+    {
+      "id": "nvidia_developer_blog",
+      "name": "NVIDIA Developer Blog",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-05-13T18:00:00.000Z",
+      "newest_published_at": "2026-05-21T18:31:56.000Z"
+    },
+    {
+      "id": "cloudflare_ai_changelog",
+      "name": "Cloudflare AI Changelog",
+      "status": "ok",
+      "fetched_count": 11,
+      "fresh_count": 0,
+      "stale_count": 11,
+      "oldest_published_at": "2026-05-08T00:00:00.000Z",
+      "newest_published_at": "2026-05-21T00:00:00.000Z"
+    },
+    {
+      "id": "cohere_blog",
+      "name": "Cohere Blog",
+      "status": "ok",
+      "fetched_count": 8,
+      "fresh_count": 0,
+      "stale_count": 8,
+      "oldest_published_at": "2026-03-16T20:28:39.000Z",
+      "newest_published_at": "2026-05-20T00:00:00.000Z"
+    },
+    {
+      "id": "ai2_blog",
+      "name": "Ai2 Blog",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "2026-04-30T08:00:00.000Z",
+      "newest_published_at": "2026-05-19T08:00:00.000Z"
+    },
+    {
+      "id": "together",
+      "name": "Together AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-04-29T00:00:00.000Z",
+      "newest_published_at": "2026-05-19T00:00:00.000Z"
+    },
+    {
+      "id": "modal",
+      "name": "Modal",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-04-08T00:00:00.000Z",
+      "newest_published_at": "2026-05-21T00:00:00.000Z"
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "status": "ok",
+      "fetched_count": 12,
+      "fresh_count": 0,
+      "stale_count": 12,
+      "oldest_published_at": "2026-03-02T12:00:00.000Z",
+      "newest_published_at": "2026-03-25T12:00:00.000Z"
+    },
+    {
+      "id": "fahd_mirza",
+      "name": "Fahd Mirza YouTube",
+      "status": "ok",
+      "fetched_count": 8,
+      "fresh_count": 3,
+      "stale_count": 5,
+      "oldest_published_at": "2026-05-19T21:00:07.000Z",
+      "newest_published_at": "2026-05-23T05:00:12.000Z"
+    },
+    {
+      "id": "yt_nate_b_jones",
+      "name": "AI News & Strategy Daily",
+      "status": "ok",
+      "fetched_count": 7,
+      "fresh_count": 3,
+      "stale_count": 4,
+      "oldest_published_at": "2026-05-20T03:00:16.000Z",
+      "newest_published_at": "2026-05-23T03:00:02.000Z"
+    }
+  ],
+  "top_news": [
+    {
+      "cluster_id": "1aixyzx",
+      "title": "The Attribution Impossibility: No Feature Ranking Is Faithful, Stable, and Complete Under Collinearity",
+      "url": "https://arxiv.org/abs/2605.21492",
+      "source_name": "arXiv cs.LG",
+      "published_at": "2026-05-23T04:00:00.000Z",
+      "kind": "paper",
+      "score": 0.8,
+      "dek": "New research proves that feature ranking in machine learning models is inherently unstable and unreliable when input features are collinear.",
+      "brief": "Researchers have demonstrated that no feature ranking method can be simultaneously faithful, stable, and complete under collinearity. For collinear features, rankings are essentially random. The study identifies only two valid design families: unstable faithful-complete methods and stable ensemble methods like DASH. The findings were verified using 305 Lean 4 theorems.",
+      "image_alt": "Diagram showing the dichotomy between faithful-complete and ensemble attribution methods.",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-05-23T06:19:33.264Z"
+    },
+    {
+      "cluster_id": "m11y2y",
+      "title": "I built a Mamba1 variant I call SM1 with d_state=1 that runs on Blackwell in pure PyTorch [P]",
+      "url": "https://old.reddit.com/r/MachineLearning/comments/1tl7f8z/i_built_a_mamba1_variant_i_call_sm1_with_d_state1",
+      "source_name": "r/MachineLearning",
+      "published_at": "2026-05-23T05:30:26.000Z",
+      "kind": "tool",
+      "score": 0.733,
+      "dek": "A new Mamba1 variant, SM1, enables d_state=1 performance using pure PyTorch ops, bypassing complex custom kernel requirements.",
+      "brief": "SM1 (Scalar Mamba1) replaces the selective scan with native PyTorch operations, providing a closed-form solution for the d_state=1 recurrence. This implementation is designed to run on hardware like Blackwell without needing specialized kernels, making it more portable and easier to deploy on systems where standard mamba-ssm is unavailable.",
+      "image_alt": "Code snippet showing the PyTorch implementation of the SM1 scalar recurrence.",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-05-23T06:19:33.264Z"
+    },
+    {
+      "cluster_id": "1f2r24c",
+      "title": "One of the world's top law schools draws a hard line against AI in legal education",
+      "url": "https://the-decoder.com/one-of-the-worlds-top-law-schools-draws-a-hard-line-against-ai-in-legal-education",
+      "source_name": "The Decoder",
+      "published_at": "2026-05-23T10:55:03.000Z",
+      "kind": "news",
+      "score": 0.786,
+      "dek": "UC Berkeley Law will prohibit AI usage in nearly all graded coursework starting in summer 2026.",
+      "brief": "The policy restricts AI for outlining, drafting, and proofreading, though research use remains permitted. The school aims to ensure students develop foundational legal reasoning skills independently before integrating AI tools into their professional workflows.",
+      "image_url": "https://the-decoder.com/wp-content/uploads/2025/04/ai_law_illustration-3.png",
+      "image_alt": "UC Berkeley Law school building exterior",
+      "image_source": "rss_content",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-05-23T12:38:46.165Z"
+    },
+    {
+      "cluster_id": "1024e0h",
+      "title": "Perplexity Open-Sources Bumblebee: A Read-Only Supply-Chain Scanner for Developer Endpoints",
+      "url": "https://marktechpost.com/2026/05/23/perplexity-open-sources-bumblebee-a-read-only-supply-chain-scanner-for-developer-endpoints",
+      "source_name": "MarkTechPost",
+      "published_at": "2026-05-23T08:17:27.000Z",
+      "kind": "tool",
+      "score": 0.714,
+      "dek": "Perplexity has open-sourced Bumblebee, a read-only security tool for auditing developer endpoints.",
+      "brief": "Bumblebee is a Go-based inventory collector for macOS and Linux that scans npm, PyPI, Go modules, and editor extensions without executing code or invoking package managers. It is designed to identify supply-chain risks on developer machines by maintaining a zero-dependency, read-only footprint.",
+      "image_url": "https://www.marktechpost.com/wp-content/uploads/2026/05/Screenshot-2026-05-23-at-1.20.14-AM-1.png",
+      "image_alt": "Bumblebee security tool architecture diagram",
+      "image_source": "rss_media",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-05-23T12:38:46.165Z"
+    },
+    {
+      "cluster_id": "1raqe80",
+      "title": "Open source Kanban desktop app that runs parallel agents on every card",
+      "url": "https://kanbots.dev/",
+      "source_name": "Hacker News (AI-filtered)",
+      "published_at": "2026-05-22T18:17:57Z",
+      "kind": "tool",
+      "score": 0.652,
+      "dek": "KanBots is an open-source Kanban desktop app that assigns autonomous agents to individual task cards.",
+      "brief": "The application allows users to dispatch Claude Code or Codex agents to work on tasks in parallel, each operating within its own worktree. It supports an autopilot mode where agents can split tasks, execute code, and verify their own output.",
+      "image_alt": "KanBots desktop interface showing parallel agent task cards",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-05-23T12:38:46.165Z"
+    }
+  ],
+  "count": 48,
+  "clusters": [
+    {
+      "id": "1aixyzx",
+      "primary": {
+        "id": "1aixyzx",
+        "source_id": "arxiv_lg",
+        "source_name": "arXiv cs.LG",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "paper",
+        "title": "The Attribution Impossibility: No Feature Ranking Is Faithful, Stable, and Complete Under Collinearity",
+        "url": "https://arxiv.org/abs/2605.21492",
+        "original_url": "https://arxiv.org/abs/2605.21492",
+        "summary": "No feature ranking can be simultaneously faithful, stable, and complete when features are collinear. For collinear pairs, ranking reduces to a coin flip. We prove this impossibility, quantify it for four model classes, resolve it via ensemble averaging (DASH), and machine-verify it with 305 Lean 4 theorems. We characterize the complete attribution design space: exactly two families of methods exist -- faithful-complete methods (unstable, with rankings that flip up to 50% of the time) and ensemble methods like DASH (stable, reporting ties for symmetric features) -- and no method lies outside th",
+        "published_at": "2026-05-23T04:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1aixyzx",
+          "source_id": "arxiv_lg",
+          "source_name": "arXiv cs.LG",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "paper",
+          "title": "The Attribution Impossibility: No Feature Ranking Is Faithful, Stable, and Complete Under Collinearity",
+          "url": "https://arxiv.org/abs/2605.21492",
+          "original_url": "https://arxiv.org/abs/2605.21492",
+          "summary": "No feature ranking can be simultaneously faithful, stable, and complete when features are collinear. For collinear pairs, ranking reduces to a coin flip. We prove this impossibility, quantify it for four model classes, resolve it via ensemble averaging (DASH), and machine-verify it with 305 Lean 4 theorems. We characterize the complete attribution design space: exactly two families of methods exist -- faithful-complete methods (unstable, with rankings that flip up to 50% of the time) and ensemble methods like DASH (stable, reporting ties for symmetric features) -- and no method lies outside th",
+          "published_at": "2026-05-23T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "arxiv_lg",
+          "source_name": "arXiv cs.LG",
+          "title": "The Attribution Impossibility: No Feature Ranking Is Faithful, Stable, and Complete Under Collinearity",
+          "url": "https://arxiv.org/abs/2605.21492",
+          "published_at": "2026-05-23T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "Proves feature ranking is unstable under collinearity and proposes DASH ensemble averaging to mitigate the issue.",
+      "novelty": 0.815,
+      "novelty_label": "high",
+      "trust": 0.9,
+      "score": 0.8,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "1f2r24c",
+      "primary": {
+        "id": "1f2r24c",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "One of the world's top law schools draws a hard line against AI in legal education",
+        "url": "https://the-decoder.com/one-of-the-worlds-top-law-schools-draws-a-hard-line-against-ai-in-legal-education",
+        "original_url": "https://the-decoder.com/one-of-the-worlds-top-law-schools-draws-a-hard-line-against-ai-in-legal-education/",
+        "summary": "UC Berkeley Law will ban AI from nearly all graded work starting in summer 2026, from outlining and drafting to proofreading. Only research use remains allowed. The school’s rationale: future lawyers must first learn to think for themselves before they can use AI meaningfully. The article One of the world's top law schools draws a hard line against AI in legal education appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2025/04/ai_law_illustration-3.png",
+        "image_source": "rss_content",
+        "published_at": "2026-05-23T10:55:03.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1f2r24c",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "One of the world's top law schools draws a hard line against AI in legal education",
+          "url": "https://the-decoder.com/one-of-the-worlds-top-law-schools-draws-a-hard-line-against-ai-in-legal-education",
+          "original_url": "https://the-decoder.com/one-of-the-worlds-top-law-schools-draws-a-hard-line-against-ai-in-legal-education/",
+          "summary": "UC Berkeley Law will ban AI from nearly all graded work starting in summer 2026, from outlining and drafting to proofreading. Only research use remains allowed. The school’s rationale: future lawyers must first learn to think for themselves before they can use AI meaningfully. The article One of the world's top law schools draws a hard line against AI in legal education appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2025/04/ai_law_illustration-3.png",
+          "image_source": "rss_content",
+          "published_at": "2026-05-23T10:55:03.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "One of the world's top law schools draws a hard line against AI in legal education",
+          "url": "https://the-decoder.com/one-of-the-worlds-top-law-schools-draws-a-hard-line-against-ai-in-legal-education",
+          "published_at": "2026-05-23T10:55:03.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "UC Berkeley Law announces a ban on AI usage for graded coursework starting in 2026.",
+      "novelty": 0.853,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.786,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "19oz5x0",
+      "primary": {
+        "id": "19oz5x0",
+        "source_id": "arxiv_lg",
+        "source_name": "arXiv cs.LG",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "paper",
+        "title": "Teaching Language Models to Forecast Research Success Through Comparative Idea Evaluation",
+        "url": "https://arxiv.org/abs/2605.21491",
+        "original_url": "https://arxiv.org/abs/2605.21491",
+        "summary": "As language models accelerate scientific research by automating hypothesis generation and implementation, a new bottleneck emerges: evaluating and filtering hundreds of AI-generated ideas without exhaustive experimentation. We ask whether LMs can learn to forecast the empirical success of research ideas before any experiments are run. We study comparative empirical forecasting: given a benchmark-specific research goal and two candidate ideas, predict which will achieve better benchmark performance. We construct a dataset of 11,488 idea pairs grounded in objective outcomes from PapersWithCode.",
+        "published_at": "2026-05-23T04:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "19oz5x0",
+          "source_id": "arxiv_lg",
+          "source_name": "arXiv cs.LG",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "paper",
+          "title": "Teaching Language Models to Forecast Research Success Through Comparative Idea Evaluation",
+          "url": "https://arxiv.org/abs/2605.21491",
+          "original_url": "https://arxiv.org/abs/2605.21491",
+          "summary": "As language models accelerate scientific research by automating hypothesis generation and implementation, a new bottleneck emerges: evaluating and filtering hundreds of AI-generated ideas without exhaustive experimentation. We ask whether LMs can learn to forecast the empirical success of research ideas before any experiments are run. We study comparative empirical forecasting: given a benchmark-specific research goal and two candidate ideas, predict which will achieve better benchmark performance. We construct a dataset of 11,488 idea pairs grounded in objective outcomes from PapersWithCode.",
+          "published_at": "2026-05-23T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "arxiv_lg",
+          "source_name": "arXiv cs.LG",
+          "title": "Teaching Language Models to Forecast Research Success Through Comparative Idea Evaluation",
+          "url": "https://arxiv.org/abs/2605.21491",
+          "published_at": "2026-05-23T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "Evaluates whether language models can effectively forecast the empirical success of AI-generated research ideas.",
+      "novelty": 0.81,
+      "novelty_label": "high",
+      "trust": 0.9,
+      "score": 0.799,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "5p7f1y",
+      "primary": {
+        "id": "5p7f1y",
+        "source_id": "ars_ai",
+        "source_name": "Ars Technica AI",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "news",
+        "title": "US scrambles to stop Internet users re-creating dead pilots’ voices",
+        "url": "https://arstechnica.com/ai/2026/05/ai-users-re-create-dead-pilots-voices-from-crash-investigation-docs",
+        "original_url": "https://arstechnica.com/ai/2026/05/ai-users-re-create-dead-pilots-voices-from-crash-investigation-docs/",
+        "summary": "Workaround flouts law that bans NTSB disclosures of cockpit audio recordings.",
+        "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/05/Screenshot-2026-05-22-at-9.11.47-AM-1152x648.png",
+        "image_source": "rss_media",
+        "published_at": "2026-05-22T19:39:04.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "5p7f1y",
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "news",
+          "title": "US scrambles to stop Internet users re-creating dead pilots’ voices",
+          "url": "https://arstechnica.com/ai/2026/05/ai-users-re-create-dead-pilots-voices-from-crash-investigation-docs",
+          "original_url": "https://arstechnica.com/ai/2026/05/ai-users-re-create-dead-pilots-voices-from-crash-investigation-docs/",
+          "summary": "Workaround flouts law that bans NTSB disclosures of cockpit audio recordings.",
+          "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/05/Screenshot-2026-05-22-at-9.11.47-AM-1152x648.png",
+          "image_source": "rss_media",
+          "published_at": "2026-05-22T19:39:04.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "title": "US scrambles to stop Internet users re-creating dead pilots’ voices",
+          "url": "https://arstechnica.com/ai/2026/05/ai-users-re-create-dead-pilots-voices-from-crash-investigation-docs",
+          "published_at": "2026-05-22T19:39:04.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Regulatory concerns arise over the use of AI to synthesize voices from restricted NTSB cockpit audio recordings.",
+      "novelty": 0.842,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.767,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "m11y2y",
+      "primary": {
+        "id": "m11y2y",
+        "source_id": "r_ml",
+        "source_name": "r/MachineLearning",
+        "source_role": "main",
+        "trust": 0.55,
+        "kind_hint": "discussion",
+        "title": "I built a Mamba1 variant I call SM1 with d_state=1 that runs on Blackwell in pure PyTorch [P]",
+        "url": "https://old.reddit.com/r/MachineLearning/comments/1tl7f8z/i_built_a_mamba1_variant_i_call_sm1_with_d_state1",
+        "original_url": "https://old.reddit.com/r/MachineLearning/comments/1tl7f8z/i_built_a_mamba1_variant_i_call_sm1_with_d_state1/",
+        "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1tl7f8z/i_built_a_mamba1_variant_i_call_sm1_with_d_state1",
+        "discussion_source": "r/MachineLearning",
+        "summary": "On windows mamba-ssm is not easily available and doesn't compile on sm_120. SM1 (Scalar Mamba1) replaces the entire selective scan with two native PyTorch ops: L = torch.cumprod(dA, dim=1) h = L * (h0.unsqueeze(1) + torch.cumsum(dBx / L.clamp(min=1e-6), dim=1)) y = h * C This is the exact closed-form solution to the d_state=1 recurrence via variation of parameters. Not an approximation, it is identical to sequential computation of floating point precision. d_state=2 breaks it. d_state=1 is the boundary where the closed form exists. The Mamba1 scan intermediates are (B, T, F, S). SM1 eliminates",
+        "published_at": "2026-05-23T05:30:26.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "m11y2y",
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "source_role": "main",
+          "trust": 0.55,
+          "kind_hint": "discussion",
+          "title": "I built a Mamba1 variant I call SM1 with d_state=1 that runs on Blackwell in pure PyTorch [P]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1tl7f8z/i_built_a_mamba1_variant_i_call_sm1_with_d_state1",
+          "original_url": "https://old.reddit.com/r/MachineLearning/comments/1tl7f8z/i_built_a_mamba1_variant_i_call_sm1_with_d_state1/",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1tl7f8z/i_built_a_mamba1_variant_i_call_sm1_with_d_state1",
+          "discussion_source": "r/MachineLearning",
+          "summary": "On windows mamba-ssm is not easily available and doesn't compile on sm_120. SM1 (Scalar Mamba1) replaces the entire selective scan with two native PyTorch ops: L = torch.cumprod(dA, dim=1) h = L * (h0.unsqueeze(1) + torch.cumsum(dBx / L.clamp(min=1e-6), dim=1)) y = h * C This is the exact closed-form solution to the d_state=1 recurrence via variation of parameters. Not an approximation, it is identical to sequential computation of floating point precision. d_state=2 breaks it. d_state=1 is the boundary where the closed form exists. The Mamba1 scan intermediates are (B, T, F, S). SM1 eliminates",
+          "published_at": "2026-05-23T05:30:26.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "title": "I built a Mamba1 variant I call SM1 with d_state=1 that runs on Blackwell in pure PyTorch [P]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1tl7f8z/i_built_a_mamba1_variant_i_call_sm1_with_d_state1",
+          "published_at": "2026-05-23T05:30:26.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1tl7f8z/i_built_a_mamba1_variant_i_call_sm1_with_d_state1",
+          "discussion_source": "r/MachineLearning"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "A custom Mamba1 variant implemented in pure PyTorch to improve compatibility and performance on specific hardware.",
+      "novelty": 0.852,
+      "novelty_label": "high",
+      "trust": 0.55,
+      "score": 0.733,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "1024e0h",
+      "primary": {
+        "id": "1024e0h",
+        "source_id": "marktechpost",
+        "source_name": "MarkTechPost",
+        "source_role": "main",
+        "trust": 0.48,
+        "kind_hint": "news",
+        "title": "Perplexity Open-Sources Bumblebee: A Read-Only Supply-Chain Scanner for Developer Endpoints",
+        "url": "https://marktechpost.com/2026/05/23/perplexity-open-sources-bumblebee-a-read-only-supply-chain-scanner-for-developer-endpoints",
+        "original_url": "https://www.marktechpost.com/2026/05/23/perplexity-open-sources-bumblebee-a-read-only-supply-chain-scanner-for-developer-endpoints/",
+        "summary": "Perplexity has open-sourced Bumblebee, an internal security tool it uses to protect the developer systems behind its search product, Comet, and Computer. Bumblebee is a read-only inventory collector for macOS and Linux developer endpoints. It scans npm, PyPI, Go modules, MCP configs, editor extensions, and browser extensions — without invoking any package manager or running any code. The post Perplexity Open-Sources Bumblebee: A Read-Only Supply-Chain Scanner for Developer Endpoints appeared first on MarkTechPost.",
+        "image_url": "https://www.marktechpost.com/wp-content/uploads/2026/05/Screenshot-2026-05-23-at-1.20.14-AM-1.png",
+        "image_source": "rss_media",
+        "published_at": "2026-05-23T08:17:27.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1024e0h",
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "source_role": "main",
+          "trust": 0.48,
+          "kind_hint": "news",
+          "title": "Perplexity Open-Sources Bumblebee: A Read-Only Supply-Chain Scanner for Developer Endpoints",
+          "url": "https://marktechpost.com/2026/05/23/perplexity-open-sources-bumblebee-a-read-only-supply-chain-scanner-for-developer-endpoints",
+          "original_url": "https://www.marktechpost.com/2026/05/23/perplexity-open-sources-bumblebee-a-read-only-supply-chain-scanner-for-developer-endpoints/",
+          "summary": "Perplexity has open-sourced Bumblebee, an internal security tool it uses to protect the developer systems behind its search product, Comet, and Computer. Bumblebee is a read-only inventory collector for macOS and Linux developer endpoints. It scans npm, PyPI, Go modules, MCP configs, editor extensions, and browser extensions — without invoking any package manager or running any code. The post Perplexity Open-Sources Bumblebee: A Read-Only Supply-Chain Scanner for Developer Endpoints appeared first on MarkTechPost.",
+          "image_url": "https://www.marktechpost.com/wp-content/uploads/2026/05/Screenshot-2026-05-23-at-1.20.14-AM-1.png",
+          "image_source": "rss_media",
+          "published_at": "2026-05-23T08:17:27.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "title": "Perplexity Open-Sources Bumblebee: A Read-Only Supply-Chain Scanner for Developer Endpoints",
+          "url": "https://marktechpost.com/2026/05/23/perplexity-open-sources-bumblebee-a-read-only-supply-chain-scanner-for-developer-endpoints",
+          "published_at": "2026-05-23T08:17:27.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Perplexity open-sourced Bumblebee, a read-only security scanner for developer endpoints on macOS and Linux.",
+      "novelty": 0.825,
+      "novelty_label": "high",
+      "trust": 0.48,
+      "score": 0.714,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "4lfhym",
+      "primary": {
+        "id": "4lfhym",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Gemma4 26b a4b Apex quant is quite good",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl9woz/gemma4_26b_a4b_apex_quant_is_quite_good",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl9woz/gemma4_26b_a4b_apex_quant_is_quite_good/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl9woz/gemma4_26b_a4b_apex_quant_is_quite_good",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "I tried mudler's apex quant for gemma4 26b a4b and it was amazing! I got 38tps at 90.000 context with no loop and suprisingly no quality degradation. I used mudler/gemma-4-26B-A4B-it-APEX-GGUF / APEX-I-Compact (15gb) on my RX 9060 XT 16 GB with llama.cpp Vulkan. For comperison, my previous quant gemma4 26b a4b unsloth ud-q5kxl quant (21.2gb) looped with similar long-context test at 50k context Im not claiming its a universally better quant. But it is worth give a go imo. submitted by /u/Any-Chipmunk5480 [link] [comments]",
+        "published_at": "2026-05-23T07:44:54.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "4lfhym",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Gemma4 26b a4b Apex quant is quite good",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl9woz/gemma4_26b_a4b_apex_quant_is_quite_good",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl9woz/gemma4_26b_a4b_apex_quant_is_quite_good/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl9woz/gemma4_26b_a4b_apex_quant_is_quite_good",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "I tried mudler's apex quant for gemma4 26b a4b and it was amazing! I got 38tps at 90.000 context with no loop and suprisingly no quality degradation. I used mudler/gemma-4-26B-A4B-it-APEX-GGUF / APEX-I-Compact (15gb) on my RX 9060 XT 16 GB with llama.cpp Vulkan. For comperison, my previous quant gemma4 26b a4b unsloth ud-q5kxl quant (21.2gb) looped with similar long-context test at 50k context Im not claiming its a universally better quant. But it is worth give a go imo. submitted by /u/Any-Chipmunk5480 [link] [comments]",
+          "published_at": "2026-05-23T07:44:54.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Gemma4 26b a4b Apex quant is quite good",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl9woz/gemma4_26b_a4b_apex_quant_is_quite_good",
+          "published_at": "2026-05-23T07:44:54.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl9woz/gemma4_26b_a4b_apex_quant_is_quite_good",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "User report on performance and quality of Gemma4 26b using APEX quantization on consumer hardware.",
+      "novelty": 0.814,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.715,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "1gg7yfp",
+      "primary": {
+        "id": "1gg7yfp",
+        "source_id": "marktechpost",
+        "source_name": "MarkTechPost",
+        "source_role": "main",
+        "trust": 0.48,
+        "kind_hint": "news",
+        "title": "Nous Research Releases Contrastive Neuron Attribution (CNA): Sparse MLP Circuit Steering Without SAE Training or Weight Modification",
+        "url": "https://marktechpost.com/2026/05/23/nous-research-releases-contrastive-neuron-attribution-cna-sparse-mlp-circuit-steering-without-sae-training-or-weight-modification",
+        "original_url": "https://www.marktechpost.com/2026/05/23/nous-research-releases-contrastive-neuron-attribution-cna-sparse-mlp-circuit-steering-without-sae-training-or-weight-modification/",
+        "summary": "Nous Research releases Contrastive Neuron Attribution (CNA), a method that identifies and ablates sparse MLP neuron circuits to steer LLM behavior — no sparse autoencoder training, no weight modification, and no degradation of general capability benchmarks. The post Nous Research Releases Contrastive Neuron Attribution (CNA): Sparse MLP Circuit Steering Without SAE Training or Weight Modification appeared first on MarkTechPost.",
+        "image_url": "https://www.marktechpost.com/wp-content/uploads/2026/05/Screenshot-2026-05-23-at-2.48.09-AM.png",
+        "image_source": "rss_media",
+        "published_at": "2026-05-23T10:32:09.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1gg7yfp",
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "source_role": "main",
+          "trust": 0.48,
+          "kind_hint": "news",
+          "title": "Nous Research Releases Contrastive Neuron Attribution (CNA): Sparse MLP Circuit Steering Without SAE Training or Weight Modification",
+          "url": "https://marktechpost.com/2026/05/23/nous-research-releases-contrastive-neuron-attribution-cna-sparse-mlp-circuit-steering-without-sae-training-or-weight-modification",
+          "original_url": "https://www.marktechpost.com/2026/05/23/nous-research-releases-contrastive-neuron-attribution-cna-sparse-mlp-circuit-steering-without-sae-training-or-weight-modification/",
+          "summary": "Nous Research releases Contrastive Neuron Attribution (CNA), a method that identifies and ablates sparse MLP neuron circuits to steer LLM behavior — no sparse autoencoder training, no weight modification, and no degradation of general capability benchmarks. The post Nous Research Releases Contrastive Neuron Attribution (CNA): Sparse MLP Circuit Steering Without SAE Training or Weight Modification appeared first on MarkTechPost.",
+          "image_url": "https://www.marktechpost.com/wp-content/uploads/2026/05/Screenshot-2026-05-23-at-2.48.09-AM.png",
+          "image_source": "rss_media",
+          "published_at": "2026-05-23T10:32:09.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "title": "Nous Research Releases Contrastive Neuron Attribution (CNA): Sparse MLP Circuit Steering Without SAE Training or Weight Modification",
+          "url": "https://marktechpost.com/2026/05/23/nous-research-releases-contrastive-neuron-attribution-cna-sparse-mlp-circuit-steering-without-sae-training-or-weight-modification",
+          "published_at": "2026-05-23T10:32:09.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "Nous Research released CNA, a method for steering LLM behavior by ablating sparse MLP circuits without SAE training.",
+      "novelty": 0.789,
+      "novelty_label": "high",
+      "trust": 0.48,
+      "score": 0.707,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
+    },
+    {
+      "id": "18ty8wc",
+      "primary": {
+        "id": "18ty8wc",
+        "source_id": "latent_space",
+        "source_name": "Latent Space",
+        "source_role": "main",
+        "trust": 0.85,
+        "title": "[AINews] All Model Labs are now Agent Labs",
+        "url": "https://latent.space/p/ainews-all-model-labs-are-now-agent",
+        "original_url": "https://www.latent.space/p/ainews-all-model-labs-are-now-agent",
+        "summary": "a quiet day lets us tie together a few quotes as all model labs become agent labs",
+        "image_url": "https://substackcdn.com/image/fetch/$s_!TLyU!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F348d0573-16b0-46d0-a852-ccaae2b6ff4f_1122x534.png",
+        "image_source": "rss_enclosure",
+        "published_at": "2026-05-23T04:21:17.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "18ty8wc",
+          "source_id": "latent_space",
+          "source_name": "Latent Space",
+          "source_role": "main",
+          "trust": 0.85,
+          "title": "[AINews] All Model Labs are now Agent Labs",
+          "url": "https://latent.space/p/ainews-all-model-labs-are-now-agent",
+          "original_url": "https://www.latent.space/p/ainews-all-model-labs-are-now-agent",
+          "summary": "a quiet day lets us tie together a few quotes as all model labs become agent labs",
+          "image_url": "https://substackcdn.com/image/fetch/$s_!TLyU!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F348d0573-16b0-46d0-a852-ccaae2b6ff4f_1122x534.png",
+          "image_source": "rss_enclosure",
+          "published_at": "2026-05-23T04:21:17.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "latent_space",
+          "source_name": "Latent Space",
+          "title": "[AINews] All Model Labs are now Agent Labs",
+          "url": "https://latent.space/p/ainews-all-model-labs-are-now-agent",
+          "published_at": "2026-05-23T04:21:17.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "Commentary on the industry-wide shift from general model development to agentic workflows.",
+      "novelty": 0.823,
+      "novelty_label": "high",
+      "trust": 0.85,
+      "score": 0.679,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "vr7qul",
+      "primary": {
+        "id": "vr7qul",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "meituan-longcat/LongCat-Video-Avatar-1.5 · Hugging Face",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl4wpi/meituanlongcatlongcatvideoavatar15_hugging_face",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl4wpi/meituanlongcatlongcatvideoavatar15_hugging_face/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl4wpi/meituanlongcatlongcatvideoavatar15_hugging_face",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "🚀 Model Introduction We are excited to announce the release of LongCat-Video-Avatar 1.5, an upgraded open-source framework that prioritizes extreme empirical optimization and production-readiness for audio-driven human video generation. Built upon the LongCat-Video foundation model, v1.5 delivers highly stable, commercial-grade avatar video synthesis supporting native tasks including Audio-Text-to-Video (AT2V), Audio-Text-Image-to-Video (ATI2V), and Video Continuation, with seamless compatibility for both single-stream and multi-stream audio inputs. Key Features 🌟 Upgraded Audio Encoder (Whi",
+        "image_url": "https://external-preview.redd.it/fmsP1Z7xInODnL921n9DI2hNxnLjtqEMj64a_zcsPNk.png?width=640&crop=smart&auto=webp&s=8122cb70f1637b2062ab03674c38e0183534131c",
+        "image_source": "rss_media",
+        "published_at": "2026-05-23T03:27:39.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "vr7qul",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "meituan-longcat/LongCat-Video-Avatar-1.5 · Hugging Face",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl4wpi/meituanlongcatlongcatvideoavatar15_hugging_face",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl4wpi/meituanlongcatlongcatvideoavatar15_hugging_face/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl4wpi/meituanlongcatlongcatvideoavatar15_hugging_face",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "🚀 Model Introduction We are excited to announce the release of LongCat-Video-Avatar 1.5, an upgraded open-source framework that prioritizes extreme empirical optimization and production-readiness for audio-driven human video generation. Built upon the LongCat-Video foundation model, v1.5 delivers highly stable, commercial-grade avatar video synthesis supporting native tasks including Audio-Text-to-Video (AT2V), Audio-Text-Image-to-Video (ATI2V), and Video Continuation, with seamless compatibility for both single-stream and multi-stream audio inputs. Key Features 🌟 Upgraded Audio Encoder (Whi",
+          "image_url": "https://external-preview.redd.it/fmsP1Z7xInODnL921n9DI2hNxnLjtqEMj64a_zcsPNk.png?width=640&crop=smart&auto=webp&s=8122cb70f1637b2062ab03674c38e0183534131c",
+          "image_source": "rss_media",
+          "published_at": "2026-05-23T03:27:39.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "meituan-longcat/LongCat-Video-Avatar-1.5 · Hugging Face",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl4wpi/meituanlongcatlongcatvideoavatar15_hugging_face",
+          "published_at": "2026-05-23T03:27:39.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl4wpi/meituanlongcatlongcatvideoavatar15_hugging_face",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "Release of LongCat-Video-Avatar 1.5, an open-source framework for audio-driven human video generation.",
+      "novelty": 0.803,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.704,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
+    },
+    {
+      "id": "42ut48",
+      "primary": {
+        "id": "42ut48",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Alibaba's latest AI model ran autonomously for 35 hours to optimize code for its own custom chip",
+        "url": "https://the-decoder.com/alibabas-latest-ai-model-ran-autonomously-for-35-hours-to-optimize-code-for-its-own-custom-chip",
+        "original_url": "https://the-decoder.com/alibabas-latest-ai-model-ran-autonomously-for-35-hours-to-optimize-code-for-its-own-custom-chip/",
+        "summary": "Alibaba's Qwen team releases Qwen3.7-Max, a proprietary model built for long-running autonomous agent tasks. It matches Claude Opus 4.6 on benchmarks and beats Chinese rivals like DeepSeek V4 Pro and Kimi K2.6. The team also demos the model steering a four-legged robot. The article Alibaba's latest AI model ran autonomously for 35 hours to optimize code for its own custom chip appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/qwen3.7-max-banner.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-05-23T10:17:48.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "42ut48",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Alibaba's latest AI model ran autonomously for 35 hours to optimize code for its own custom chip",
+          "url": "https://the-decoder.com/alibabas-latest-ai-model-ran-autonomously-for-35-hours-to-optimize-code-for-its-own-custom-chip",
+          "original_url": "https://the-decoder.com/alibabas-latest-ai-model-ran-autonomously-for-35-hours-to-optimize-code-for-its-own-custom-chip/",
+          "summary": "Alibaba's Qwen team releases Qwen3.7-Max, a proprietary model built for long-running autonomous agent tasks. It matches Claude Opus 4.6 on benchmarks and beats Chinese rivals like DeepSeek V4 Pro and Kimi K2.6. The team also demos the model steering a four-legged robot. The article Alibaba's latest AI model ran autonomously for 35 hours to optimize code for its own custom chip appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/qwen3.7-max-banner.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-05-23T10:17:48.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        },
+        {
+          "id": "d4dd3u",
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "source_role": "main",
+          "trust": 0.66,
+          "kind_hint": "video",
+          "title": "Qwen3.7 Max vs Claude Opus 4.6 — Honest Head to Head",
+          "url": "https://youtube.com/watch?v=FvPajdVrYeU",
+          "original_url": "https://www.youtube.com/watch?v=FvPajdVrYeU",
+          "image_url": "https://i.ytimg.com/vi/FvPajdVrYeU/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-05-22T19:39:08.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+            "video_id": "FvPajdVrYeU"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Alibaba's latest AI model ran autonomously for 35 hours to optimize code for its own custom chip",
+          "url": "https://the-decoder.com/alibabas-latest-ai-model-ran-autonomously-for-35-hours-to-optimize-code-for-its-own-custom-chip",
+          "published_at": "2026-05-23T10:17:48.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        },
+        {
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "title": "Qwen3.7 Max vs Claude Opus 4.6 — Honest Head to Head",
+          "url": "https://youtube.com/watch?v=FvPajdVrYeU",
+          "published_at": "2026-05-22T19:39:08.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [
+        {
+          "source_name": "Fahd Mirza YouTube",
+          "title": "Qwen3.7 Max vs Claude Opus 4.6 — Honest Head to Head",
+          "url": "https://youtube.com/watch?v=FvPajdVrYeU",
+          "published_at": "2026-05-22T19:39:08.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "kind": "model_release",
+      "quality": "mixed",
+      "one_liner": "Alibaba releases Qwen3.7-Max, a proprietary model for autonomous agent tasks, with claims of matching Claude Opus 4.6.",
+      "novelty": 0.857,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.688,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "corroborated by 2 sources",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
+    },
+    {
+      "id": "1e1cv35",
+      "primary": {
+        "id": "1e1cv35",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Blackwell and PDL performance increase",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkw1su/blackwell_and_pdl_performance_increase",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkw1su/blackwell_and_pdl_performance_increase/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkw1su/blackwell_and_pdl_performance_increase",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "Llama.cpp recently introduced support for Programmatic Dependent Launch (PDL), which is a new feature in Nvidia GPUs (CC >= 90, not including ADA) such as Blackwell. (See PR 22522.) In short, PDL enables more efficient execution of kernels and as a result better performance. So far, it's not enabled by default, if you don't know about it, you will likely miss it. To enable PDL you need to build Llama.cpp with the '-DGGML_CUDA_PDL=ON' flag and it's not yet enabled for all kernels, there is likely more performance to be had once more kernels are enabled with PDL. (To later disable PDL, if needed",
+        "published_at": "2026-05-22T21:09:31.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1e1cv35",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Blackwell and PDL performance increase",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkw1su/blackwell_and_pdl_performance_increase",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkw1su/blackwell_and_pdl_performance_increase/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkw1su/blackwell_and_pdl_performance_increase",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "Llama.cpp recently introduced support for Programmatic Dependent Launch (PDL), which is a new feature in Nvidia GPUs (CC >= 90, not including ADA) such as Blackwell. (See PR 22522.) In short, PDL enables more efficient execution of kernels and as a result better performance. So far, it's not enabled by default, if you don't know about it, you will likely miss it. To enable PDL you need to build Llama.cpp with the '-DGGML_CUDA_PDL=ON' flag and it's not yet enabled for all kernels, there is likely more performance to be had once more kernels are enabled with PDL. (To later disable PDL, if needed",
+          "published_at": "2026-05-22T21:09:31.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Blackwell and PDL performance increase",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkw1su/blackwell_and_pdl_performance_increase",
+          "published_at": "2026-05-22T21:09:31.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkw1su/blackwell_and_pdl_performance_increase",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Llama.cpp adds support for Programmatic Dependent Launch (PDL) to improve kernel execution efficiency on Blackwell GPUs.",
+      "novelty": 0.826,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.7,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1raqe80",
+      "primary": {
+        "id": "1raqe80",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "Open source Kanban desktop app that runs parallel agents on every card",
+        "url": "https://kanbots.dev/",
+        "original_url": "https://www.kanbots.dev/",
+        "discussion_url": "https://news.ycombinator.com/item?id=48239413",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-05-22T18:17:57Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 229,
+          "comments": 136
+        }
+      },
+      "members": [
+        {
+          "id": "1raqe80",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "Open source Kanban desktop app that runs parallel agents on every card",
+          "url": "https://kanbots.dev/",
+          "original_url": "https://www.kanbots.dev/",
+          "discussion_url": "https://news.ycombinator.com/item?id=48239413",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-05-22T18:17:57Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 229,
+            "comments": 136
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "Open source Kanban desktop app that runs parallel agents on every card",
+          "url": "https://kanbots.dev/",
+          "published_at": "2026-05-22T18:17:57Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=48239413",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "mixed",
+      "one_liner": "An open-source Kanban desktop application that integrates parallel agents for task management.",
+      "novelty": 0.826,
+      "novelty_label": "high",
+      "trust": 0.65,
+      "score": 0.652,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "19yyrlz",
+      "primary": {
+        "id": "19yyrlz",
+        "source_id": "arxiv_lg",
+        "source_name": "arXiv cs.LG",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "paper",
+        "title": "Temporal Contrastive Transformer for Financial Crime Detection: Self-Supervised Sequence Embeddings via Predictive Contrastive Coding",
+        "url": "https://arxiv.org/abs/2605.21490",
+        "original_url": "https://arxiv.org/abs/2605.21490",
+        "summary": "We introduce the Temporal Contrastive Transformer (TCT), a representation learning framework designed to capture contextual temporal dynamics in sequences of financial transactions. The model is trained using a self-supervised contrastive objective to produce embeddings that encode behavioral patterns over time, with the goal of supporting downstream fraud detection tasks. We evaluate TCT in a realistic setting by using the learned embeddings as input features to a gradient boosting classifier. Experimental results show that embeddings alone achieve meaningful predictive performance (AUC 0.864",
+        "published_at": "2026-05-23T04:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "19yyrlz",
+          "source_id": "arxiv_lg",
+          "source_name": "arXiv cs.LG",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "paper",
+          "title": "Temporal Contrastive Transformer for Financial Crime Detection: Self-Supervised Sequence Embeddings via Predictive Contrastive Coding",
+          "url": "https://arxiv.org/abs/2605.21490",
+          "original_url": "https://arxiv.org/abs/2605.21490",
+          "summary": "We introduce the Temporal Contrastive Transformer (TCT), a representation learning framework designed to capture contextual temporal dynamics in sequences of financial transactions. The model is trained using a self-supervised contrastive objective to produce embeddings that encode behavioral patterns over time, with the goal of supporting downstream fraud detection tasks. We evaluate TCT in a realistic setting by using the learned embeddings as input features to a gradient boosting classifier. Experimental results show that embeddings alone achieve meaningful predictive performance (AUC 0.864",
+          "published_at": "2026-05-23T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "arxiv_lg",
+          "source_name": "arXiv cs.LG",
+          "title": "Temporal Contrastive Transformer for Financial Crime Detection: Self-Supervised Sequence Embeddings via Predictive Contrastive Coding",
+          "url": "https://arxiv.org/abs/2605.21490",
+          "published_at": "2026-05-23T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "mixed",
+      "one_liner": "Presents a temporal contrastive transformer for financial transaction sequence embeddings using self-supervised learning.",
+      "novelty": 0.771,
+      "novelty_label": "high",
+      "trust": 0.9,
+      "score": 0.675,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "10q4dnk",
+      "primary": {
+        "id": "10q4dnk",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "club-rdna16: practical 16GB AMD/Radeon local LLM testing repo",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl4o1m/clubrdna16_practical_16gb_amdradeon_local_llm",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl4o1m/clubrdna16_practical_16gb_amdradeon_local_llm/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl4o1m/clubrdna16_practical_16gb_amdradeon_local_llm",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "Following on from club-5060ti, I’ve been doing some testing with my desktop AMD GPU and wanted to make a similar repo for 16GB Radeon cards. Repo: https://github.com/5p00kyy/club-rdna16 Pages/results: https://5p00kyy.github.io/club-rdna16/ The first test machine is an RX 6900 XT 16GB running llama.cpp with ROCm/HIP. I’ve mainly been testing Qwen3.6 27B and Qwen3.6 35B-A3B using the Unsloth MTP GGUFs, currently using the UD-IQ3_XXS model quant with q8 KV cache. The repo is meant to be practical rather than a synthetic leaderboard. I’m trying to capture the stuff that actually matters when someo",
+        "published_at": "2026-05-23T03:16:23.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "10q4dnk",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "club-rdna16: practical 16GB AMD/Radeon local LLM testing repo",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl4o1m/clubrdna16_practical_16gb_amdradeon_local_llm",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl4o1m/clubrdna16_practical_16gb_amdradeon_local_llm/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl4o1m/clubrdna16_practical_16gb_amdradeon_local_llm",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "Following on from club-5060ti, I’ve been doing some testing with my desktop AMD GPU and wanted to make a similar repo for 16GB Radeon cards. Repo: https://github.com/5p00kyy/club-rdna16 Pages/results: https://5p00kyy.github.io/club-rdna16/ The first test machine is an RX 6900 XT 16GB running llama.cpp with ROCm/HIP. I’ve mainly been testing Qwen3.6 27B and Qwen3.6 35B-A3B using the Unsloth MTP GGUFs, currently using the UD-IQ3_XXS model quant with q8 KV cache. The repo is meant to be practical rather than a synthetic leaderboard. I’m trying to capture the stuff that actually matters when someo",
+          "published_at": "2026-05-23T03:16:23.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "club-rdna16: practical 16GB AMD/Radeon local LLM testing repo",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl4o1m/clubrdna16_practical_16gb_amdradeon_local_llm",
+          "published_at": "2026-05-23T03:16:23.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl4o1m/clubrdna16_practical_16gb_amdradeon_local_llm",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "A repository providing performance testing and benchmarks for running LLMs on 16GB AMD Radeon GPUs.",
+      "novelty": 0.768,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.693,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "c149nh",
+      "primary": {
+        "id": "c149nh",
+        "source_id": "yt_nate_b_jones",
+        "source_name": "AI News & Strategy Daily",
+        "source_role": "main",
+        "trust": 0.62,
+        "kind_hint": "video",
+        "title": "The massive mistake in AI memory #ai #tech #programming",
+        "url": "https://youtube.com/shorts/5RCsb9XMuIU",
+        "original_url": "https://www.youtube.com/shorts/5RCsb9XMuIU",
+        "published_at": "2026-05-23T03:00:02.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UC0C-17n9iuUQPylguM1d-lQ"
+        }
+      },
+      "members": [
+        {
+          "id": "c149nh",
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "source_role": "main",
+          "trust": 0.62,
+          "kind_hint": "video",
+          "title": "The massive mistake in AI memory #ai #tech #programming",
+          "url": "https://youtube.com/shorts/5RCsb9XMuIU",
+          "original_url": "https://www.youtube.com/shorts/5RCsb9XMuIU",
+          "published_at": "2026-05-23T03:00:02.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UC0C-17n9iuUQPylguM1d-lQ"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "title": "The massive mistake in AI memory #ai #tech #programming",
+          "url": "https://youtube.com/shorts/5RCsb9XMuIU",
+          "published_at": "2026-05-23T03:00:02.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.848,
+      "novelty_label": "high",
+      "trust": 0.62,
+      "score": 0.632,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "imllcu",
+      "primary": {
+        "id": "imllcu",
+        "source_id": "fahd_mirza",
+        "source_name": "Fahd Mirza YouTube",
+        "source_role": "main",
+        "trust": 0.66,
+        "kind_hint": "video",
+        "title": "Weekly AI Recap - Qwen3.7, MTP in llama.cpp, SANA and More | May 2026",
+        "url": "https://youtube.com/watch?v=vIR7LGp9oHA",
+        "original_url": "https://www.youtube.com/watch?v=vIR7LGp9oHA",
+        "image_url": "https://i.ytimg.com/vi/vIR7LGp9oHA/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-05-23T05:00:12.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+          "video_id": "vIR7LGp9oHA"
+        }
+      },
+      "members": [
+        {
+          "id": "imllcu",
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "source_role": "main",
+          "trust": 0.66,
+          "kind_hint": "video",
+          "title": "Weekly AI Recap - Qwen3.7, MTP in llama.cpp, SANA and More | May 2026",
+          "url": "https://youtube.com/watch?v=vIR7LGp9oHA",
+          "original_url": "https://www.youtube.com/watch?v=vIR7LGp9oHA",
+          "image_url": "https://i.ytimg.com/vi/vIR7LGp9oHA/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-05-23T05:00:12.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+            "video_id": "vIR7LGp9oHA"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "title": "Weekly AI Recap - Qwen3.7, MTP in llama.cpp, SANA and More | May 2026",
+          "url": "https://youtube.com/watch?v=vIR7LGp9oHA",
+          "published_at": "2026-05-23T05:00:12.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.794,
+      "novelty_label": "high",
+      "trust": 0.66,
+      "score": 0.628,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1v1l2wr",
+      "primary": {
+        "id": "1v1l2wr",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Google CEO Pichai now calls links a \"part\" of search, redefining the web's role in its own product",
+        "url": "https://the-decoder.com/google-ceo-pichai-now-calls-links-a-part-of-search-redefining-the-webs-role-in-its-own-product",
+        "original_url": "https://the-decoder.com/google-ceo-pichai-now-calls-links-a-part-of-search-redefining-the-webs-role-in-its-own-product/",
+        "summary": "Google CEO Sundar Pichai now calls links and sources a \"part\" of search, when in reality, they're its foundation. The wording is deliberate: new features keep users inside the Google ecosystem, and the company is shifting from traffic distributor to AI publisher whose source selection is becoming a question of editorial power. The article Google CEO Pichai now calls links a \"part\" of search, redefining the web's role in its own product appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/google_web_dystopia-2.png",
+        "image_source": "rss_content",
+        "published_at": "2026-05-23T09:16:10.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1v1l2wr",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Google CEO Pichai now calls links a \"part\" of search, redefining the web's role in its own product",
+          "url": "https://the-decoder.com/google-ceo-pichai-now-calls-links-a-part-of-search-redefining-the-webs-role-in-its-own-product",
+          "original_url": "https://the-decoder.com/google-ceo-pichai-now-calls-links-a-part-of-search-redefining-the-webs-role-in-its-own-product/",
+          "summary": "Google CEO Sundar Pichai now calls links and sources a \"part\" of search, when in reality, they're its foundation. The wording is deliberate: new features keep users inside the Google ecosystem, and the company is shifting from traffic distributor to AI publisher whose source selection is becoming a question of editorial power. The article Google CEO Pichai now calls links a \"part\" of search, redefining the web's role in its own product appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/google_web_dystopia-2.png",
+          "image_source": "rss_content",
+          "published_at": "2026-05-23T09:16:10.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Google CEO Pichai now calls links a \"part\" of search, redefining the web's role in its own product",
+          "url": "https://the-decoder.com/google-ceo-pichai-now-calls-links-a-part-of-search-redefining-the-webs-role-in-its-own-product",
+          "published_at": "2026-05-23T09:16:10.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Analysis of Google's evolving search strategy and the diminishing role of external links in AI-driven results.",
+      "novelty": 0.803,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.656,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "4kerbj",
+      "primary": {
+        "id": "4kerbj",
+        "source_id": "yt_nate_b_jones",
+        "source_name": "AI News & Strategy Daily",
+        "source_role": "main",
+        "trust": 0.62,
+        "kind_hint": "video",
+        "title": "This 30-cent database gives your AI infinite memory #ai #tech #coding",
+        "url": "https://youtube.com/shorts/eszYRrsIdHg",
+        "original_url": "https://www.youtube.com/shorts/eszYRrsIdHg",
+        "published_at": "2026-05-23T00:00:25.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UC0C-17n9iuUQPylguM1d-lQ"
+        }
+      },
+      "members": [
+        {
+          "id": "4kerbj",
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "source_role": "main",
+          "trust": 0.62,
+          "kind_hint": "video",
+          "title": "This 30-cent database gives your AI infinite memory #ai #tech #coding",
+          "url": "https://youtube.com/shorts/eszYRrsIdHg",
+          "original_url": "https://www.youtube.com/shorts/eszYRrsIdHg",
+          "published_at": "2026-05-23T00:00:25.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UC0C-17n9iuUQPylguM1d-lQ"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "title": "This 30-cent database gives your AI infinite memory #ai #tech #coding",
+          "url": "https://youtube.com/shorts/eszYRrsIdHg",
+          "published_at": "2026-05-23T00:00:25.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.837,
+      "novelty_label": "high",
+      "trust": 0.62,
+      "score": 0.623,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "p80utb",
+      "primary": {
+        "id": "p80utb",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Qwen3.6 27B Pure Quant: 40 tok/s on 16 GB VRAM",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkzk9e/qwen36_27b_pure_quant_40_toks_on_16_gb_vram",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkzk9e/qwen36_27b_pure_quant_40_toks_on_16_gb_vram/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkzk9e/qwen36_27b_pure_quant_40_toks_on_16_gb_vram",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "Hello everyone! I want to share the result of my experiment to make Qwen3.6 27B Q4_K_M fits in to my RTX 5060 Ti 16 GB. Inspired by u/Due-Project-7507's work on Ununnilium/Qwen3.6-27B-IQ4_XS-pure-GGUF. Using the same pure quantization method, I was able to create a Q4_K_M ggufs that fit completely in 16 GB VRAM. Model URL: https://huggingface.co/huytd189/Qwen3.6-27B-pure-GGUF There are two versions Q4_K_M MTP (15.4 GB) and Q4_K_M non-MTP (15.1 GB). You can download the GGUF and run with the latest llama.cpp version this way: llama-server -m Qwen3.6-27B-MTP-Q4_K_M-pure.gguf -fitt 128 -c 65536 -",
+        "image_url": "https://external-preview.redd.it/D3_qD_30tojxucrOKmECqSjckLHTOoDu5wWUmXrHzmU.png?width=140&height=75&auto=webp&s=cf55a9f8071f9a20639a2add4e721f7dd00cc9b9",
+        "image_source": "rss_media",
+        "published_at": "2026-05-22T23:29:14.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "p80utb",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Qwen3.6 27B Pure Quant: 40 tok/s on 16 GB VRAM",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkzk9e/qwen36_27b_pure_quant_40_toks_on_16_gb_vram",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkzk9e/qwen36_27b_pure_quant_40_toks_on_16_gb_vram/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkzk9e/qwen36_27b_pure_quant_40_toks_on_16_gb_vram",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "Hello everyone! I want to share the result of my experiment to make Qwen3.6 27B Q4_K_M fits in to my RTX 5060 Ti 16 GB. Inspired by u/Due-Project-7507's work on Ununnilium/Qwen3.6-27B-IQ4_XS-pure-GGUF. Using the same pure quantization method, I was able to create a Q4_K_M ggufs that fit completely in 16 GB VRAM. Model URL: https://huggingface.co/huytd189/Qwen3.6-27B-pure-GGUF There are two versions Q4_K_M MTP (15.4 GB) and Q4_K_M non-MTP (15.1 GB). You can download the GGUF and run with the latest llama.cpp version this way: llama-server -m Qwen3.6-27B-MTP-Q4_K_M-pure.gguf -fitt 128 -c 65536 -",
+          "image_url": "https://external-preview.redd.it/D3_qD_30tojxucrOKmECqSjckLHTOoDu5wWUmXrHzmU.png?width=140&height=75&auto=webp&s=cf55a9f8071f9a20639a2add4e721f7dd00cc9b9",
+          "image_source": "rss_media",
+          "published_at": "2026-05-22T23:29:14.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Qwen3.6 27B Pure Quant: 40 tok/s on 16 GB VRAM",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkzk9e/qwen36_27b_pure_quant_40_toks_on_16_gb_vram",
+          "published_at": "2026-05-22T23:29:14.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkzk9e/qwen36_27b_pure_quant_40_toks_on_16_gb_vram",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "A pure quantization method for Qwen3.6 27B, enabling 40 tok/s performance on 16GB VRAM hardware.",
+      "novelty": 0.7,
+      "novelty_label": "medium",
+      "trust": 0.5,
+      "score": 0.666,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "dbous7",
+      "primary": {
+        "id": "dbous7",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Anthropic warns Claude Mythos Preview finds bugs faster than developers can patch them",
+        "url": "https://the-decoder.com/anthropic-warns-claude-mythos-preview-finds-bugs-faster-than-developers-can-patch-them",
+        "original_url": "https://the-decoder.com/anthropic-warns-claude-mythos-preview-finds-bugs-faster-than-developers-can-patch-them/",
+        "summary": "Anthropic's AI model Claude Mythos Preview, working with about 50 partners as part of Project Glasswing, has found over 10,000 critical vulnerabilities in system-critical software. The bugs are piling up faster than anyone can patch them. Anthropic warns this creates a high-risk transition period and says no company, itself included, has built safeguards strong enough to prevent misuse of these models. The article Anthropic warns Claude Mythos Preview finds bugs faster than developers can patch them appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/glasswing_claude.png",
+        "image_source": "rss_content",
+        "published_at": "2026-05-23T07:42:10.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "dbous7",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Anthropic warns Claude Mythos Preview finds bugs faster than developers can patch them",
+          "url": "https://the-decoder.com/anthropic-warns-claude-mythos-preview-finds-bugs-faster-than-developers-can-patch-them",
+          "original_url": "https://the-decoder.com/anthropic-warns-claude-mythos-preview-finds-bugs-faster-than-developers-can-patch-them/",
+          "summary": "Anthropic's AI model Claude Mythos Preview, working with about 50 partners as part of Project Glasswing, has found over 10,000 critical vulnerabilities in system-critical software. The bugs are piling up faster than anyone can patch them. Anthropic warns this creates a high-risk transition period and says no company, itself included, has built safeguards strong enough to prevent misuse of these models. The article Anthropic warns Claude Mythos Preview finds bugs faster than developers can patch them appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/glasswing_claude.png",
+          "image_source": "rss_content",
+          "published_at": "2026-05-23T07:42:10.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Anthropic warns Claude Mythos Preview finds bugs faster than developers can patch them",
+          "url": "https://the-decoder.com/anthropic-warns-claude-mythos-preview-finds-bugs-faster-than-developers-can-patch-them",
+          "published_at": "2026-05-23T07:42:10.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Anthropic reports that its Claude Mythos model identified 10,000+ software vulnerabilities, outpacing current patching capacity.",
+      "novelty": 0.772,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.644,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "qkcthh",
+      "primary": {
+        "id": "qkcthh",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "How VCs and founders use inflated ‘ARR’ to crown AI startups",
+        "url": "https://techcrunch.com/2026/05/22/how-vcs-and-founders-use-inflated-arr-to-kingmake-ai-startups",
+        "original_url": "https://techcrunch.com/2026/05/22/how-vcs-and-founders-use-inflated-arr-to-kingmake-ai-startups/",
+        "summary": "Some AI startups are stretching traditional revenue metrics when talking about progress publicly. And their investors are fully aware.",
+        "published_at": "2026-05-22T20:40:48.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "qkcthh",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "How VCs and founders use inflated ‘ARR’ to crown AI startups",
+          "url": "https://techcrunch.com/2026/05/22/how-vcs-and-founders-use-inflated-arr-to-kingmake-ai-startups",
+          "original_url": "https://techcrunch.com/2026/05/22/how-vcs-and-founders-use-inflated-arr-to-kingmake-ai-startups/",
+          "summary": "Some AI startups are stretching traditional revenue metrics when talking about progress publicly. And their investors are fully aware.",
+          "published_at": "2026-05-22T20:40:48.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "How VCs and founders use inflated ‘ARR’ to crown AI startups",
+          "url": "https://techcrunch.com/2026/05/22/how-vcs-and-founders-use-inflated-arr-to-kingmake-ai-startups",
+          "published_at": "2026-05-22T20:40:48.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "Analysis of how some AI startups and investors use non-standard revenue metrics to inflate perceived growth.",
+      "novelty": 0.836,
+      "novelty_label": "high",
+      "trust": 0.72,
+      "score": 0.641,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "sq6hlj",
+      "primary": {
+        "id": "sq6hlj",
+        "source_id": "r_ml",
+        "source_name": "r/MachineLearning",
+        "source_role": "main",
+        "trust": 0.55,
+        "kind_hint": "discussion",
+        "title": "Anonymous Data Upload for Submission [D]",
+        "url": "https://old.reddit.com/r/MachineLearning/comments/1tl1bry/anonymous_data_upload_for_submission_d",
+        "original_url": "https://old.reddit.com/r/MachineLearning/comments/1tl1bry/anonymous_data_upload_for_submission_d/",
+        "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1tl1bry/anonymous_data_upload_for_submission_d",
+        "discussion_source": "r/MachineLearning",
+        "summary": "How do you upload data anonymously for a submission (ACL/EMNLP)? I have several models I need to upload for replication and was thinking HuggingFace, but HF offers download tracking on a paid plan. Does this violate the policy since there is the potential of tracking the download even if you do not use the service? Most grateful in advance. submitted by /u/Budget_Mission8145 [link] [comments]",
+        "published_at": "2026-05-23T00:44:47.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "sq6hlj",
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "source_role": "main",
+          "trust": 0.55,
+          "kind_hint": "discussion",
+          "title": "Anonymous Data Upload for Submission [D]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1tl1bry/anonymous_data_upload_for_submission_d",
+          "original_url": "https://old.reddit.com/r/MachineLearning/comments/1tl1bry/anonymous_data_upload_for_submission_d/",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1tl1bry/anonymous_data_upload_for_submission_d",
+          "discussion_source": "r/MachineLearning",
+          "summary": "How do you upload data anonymously for a submission (ACL/EMNLP)? I have several models I need to upload for replication and was thinking HuggingFace, but HF offers download tracking on a paid plan. Does this violate the policy since there is the potential of tracking the download even if you do not use the service? Most grateful in advance. submitted by /u/Budget_Mission8145 [link] [comments]",
+          "published_at": "2026-05-23T00:44:47.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "title": "Anonymous Data Upload for Submission [D]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1tl1bry/anonymous_data_upload_for_submission_d",
+          "published_at": "2026-05-23T00:44:47.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1tl1bry/anonymous_data_upload_for_submission_d",
+          "discussion_source": "r/MachineLearning"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "signal",
+      "one_liner": "Practical discussion on maintaining anonymity for blind peer review submissions when hosting model weights.",
+      "novelty": 0.786,
+      "novelty_label": "high",
+      "trust": 0.55,
+      "score": 0.626,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "1agnyxg",
+      "primary": {
+        "id": "1agnyxg",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "NVIDIA Removes Gaming Revenue Category From Financial Reports",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkw5ri/nvidia_removes_gaming_revenue_category_from",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkw5ri/nvidia_removes_gaming_revenue_category_from/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkw5ri/nvidia_removes_gaming_revenue_category_from",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "submitted by /u/HumanDrone8721 [link] [comments]",
+        "published_at": "2026-05-22T21:13:35.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1agnyxg",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "NVIDIA Removes Gaming Revenue Category From Financial Reports",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkw5ri/nvidia_removes_gaming_revenue_category_from",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkw5ri/nvidia_removes_gaming_revenue_category_from/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkw5ri/nvidia_removes_gaming_revenue_category_from",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "submitted by /u/HumanDrone8721 [link] [comments]",
+          "published_at": "2026-05-22T21:13:35.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "NVIDIA Removes Gaming Revenue Category From Financial Reports",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkw5ri/nvidia_removes_gaming_revenue_category_from",
+          "published_at": "2026-05-22T21:13:35.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkw5ri/nvidia_removes_gaming_revenue_category_from",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "NVIDIA updates financial reporting structure, removing the dedicated gaming revenue category.",
+      "novelty": 0.848,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.594,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "pd2lwh",
+      "primary": {
+        "id": "pd2lwh",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Qwen3.6-35B-A3B Q4 262k context on 8GB 3070 Ti = +30tps",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkxnuc/qwen3635ba3b_q4_262k_context_on_8gb_3070_ti_30tps",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkxnuc/qwen3635ba3b_q4_262k_context_on_8gb_3070_ti_30tps/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkxnuc/qwen3635ba3b_q4_262k_context_on_8gb_3070_ti_30tps",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "..and on 8GB VRAM I can even push the context to 320K, 400K, 512K, and yes.. 1M. But it does start to slow down noticeably beyond 150k so I'd only do this if I ever really want the larger context. This is using APEX-I-Quality or Q4_K_XL quants both are better than Q4_K_M (IQ4_NL_XL for beyond 512k context). I have a total of 32GB of DDR4-2666 which is slightly above minimum DDR4. I see a lot of users with better GPUs and more VRAM seem to be getting less efficiency and have to drop context all the way to 64k or below to run at good tps, I don't understand why. But here are two things I learned",
+        "image_url": "https://preview.redd.it/cpc4r9q7cr2h1.png?width=140&height=49&auto=webp&s=65fdd6dd8a05a0ce116c3753b77386a022c4f07a",
+        "image_source": "rss_media",
+        "published_at": "2026-05-22T22:11:24.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "pd2lwh",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Qwen3.6-35B-A3B Q4 262k context on 8GB 3070 Ti = +30tps",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkxnuc/qwen3635ba3b_q4_262k_context_on_8gb_3070_ti_30tps",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkxnuc/qwen3635ba3b_q4_262k_context_on_8gb_3070_ti_30tps/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkxnuc/qwen3635ba3b_q4_262k_context_on_8gb_3070_ti_30tps",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "..and on 8GB VRAM I can even push the context to 320K, 400K, 512K, and yes.. 1M. But it does start to slow down noticeably beyond 150k so I'd only do this if I ever really want the larger context. This is using APEX-I-Quality or Q4_K_XL quants both are better than Q4_K_M (IQ4_NL_XL for beyond 512k context). I have a total of 32GB of DDR4-2666 which is slightly above minimum DDR4. I see a lot of users with better GPUs and more VRAM seem to be getting less efficiency and have to drop context all the way to 64k or below to run at good tps, I don't understand why. But here are two things I learned",
+          "image_url": "https://preview.redd.it/cpc4r9q7cr2h1.png?width=140&height=49&auto=webp&s=65fdd6dd8a05a0ce116c3753b77386a022c4f07a",
+          "image_source": "rss_media",
+          "published_at": "2026-05-22T22:11:24.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Qwen3.6-35B-A3B Q4 262k context on 8GB 3070 Ti = +30tps",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkxnuc/qwen3635ba3b_q4_262k_context_on_8gb_3070_ti_30tps",
+          "published_at": "2026-05-22T22:11:24.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkxnuc/qwen3635ba3b_q4_262k_context_on_8gb_3070_ti_30tps",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "signal",
+      "one_liner": "User report on running Qwen3.6-35B with high context windows on consumer hardware using specific quantization.",
+      "novelty": 0.655,
+      "novelty_label": "medium",
+      "trust": 0.5,
+      "score": 0.571,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "1u52oyv",
+      "primary": {
+        "id": "1u52oyv",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "Uber Improves Restaurant Recommendations Using Real-Time Signals and Listwise Ranking",
+        "url": "https://infoq.com/news/2026/05/uber-eats-ranking-system",
+        "original_url": "https://www.infoq.com/news/2026/05/uber-eats-ranking-system/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Uber updates its Uber Eats Home Feed recommendation system using near real-time user sequence features and a Generative Recommender model. The system evolves from hand-crafted features to transformer-based sequence modeling, reduces feature freshness from 24 hours to seconds, and shifts from pointwise scoring to listwise GenRec for improved contextual ranking and real-time personalization. By Leela Kumili",
+        "image_url": "https://res.infoq.com/news/2026/05/uber-eats-ranking-system/en/headerimage/generatedHeaderImage-1779039533128.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-05-22T14:32:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1u52oyv",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "Uber Improves Restaurant Recommendations Using Real-Time Signals and Listwise Ranking",
+          "url": "https://infoq.com/news/2026/05/uber-eats-ranking-system",
+          "original_url": "https://www.infoq.com/news/2026/05/uber-eats-ranking-system/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "Uber updates its Uber Eats Home Feed recommendation system using near real-time user sequence features and a Generative Recommender model. The system evolves from hand-crafted features to transformer-based sequence modeling, reduces feature freshness from 24 hours to seconds, and shifts from pointwise scoring to listwise GenRec for improved contextual ranking and real-time personalization. By Leela Kumili",
+          "image_url": "https://res.infoq.com/news/2026/05/uber-eats-ranking-system/en/headerimage/generatedHeaderImage-1779039533128.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-05-22T14:32:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "Uber Improves Restaurant Recommendations Using Real-Time Signals and Listwise Ranking",
+          "url": "https://infoq.com/news/2026/05/uber-eats-ranking-system",
+          "published_at": "2026-05-22T14:32:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "signal",
+      "one_liner": "Uber details transition to transformer-based real-time sequence modeling for restaurant recommendations.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.506,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+    },
+    {
+      "id": "eatc1k",
+      "primary": {
+        "id": "eatc1k",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "G4-MeroMero-26B-A4B-it-uncensored-heretic Is Out Now, a Finetune of gemma-4-26B-A4B-it, With KLD of 0.0152 and 12/100 Refusals!",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl1wpd/g4meromero26ba4bituncensoredheretic_is_out_now_a",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl1wpd/g4meromero26ba4bituncensoredheretic_is_out_now_a/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl1wpd/g4meromero26ba4bituncensoredheretic_is_out_now_a",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "When I previously posted the uncensored version of the 31B version of the MeroMero finetune, quite a few people asked for the 26B-A4B version, I wasn't so keen on it because I considered the 31B to be the better version, but I understand that people might want the 26B-A4B version for speed and/or smaller VRAM/RAM requirements, so here it is, the G4-MeroMero-26B-A4B-it-uncensored-heretic. Provided in both Safetensors and GGUFs. Safetensors: llmfan46/G4-MeroMero-26B-A4B-it-uncensored-heretic: https://huggingface.co/llmfan46/G4-MeroMero-26B-A4B-it-uncensored-heretic GGUFs: llmfan46/G4-MeroMero-26",
+        "image_url": "https://external-preview.redd.it/gSlsnzJc3zRUXIwholKZwcUeSos9bcCICafrGQ2pZQU.png?width=640&crop=smart&auto=webp&s=1014b4a2f0648b7ee2c4a172b22f04e1b9696527",
+        "image_source": "rss_media",
+        "published_at": "2026-05-23T01:10:59.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "eatc1k",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "G4-MeroMero-26B-A4B-it-uncensored-heretic Is Out Now, a Finetune of gemma-4-26B-A4B-it, With KLD of 0.0152 and 12/100 Refusals!",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl1wpd/g4meromero26ba4bituncensoredheretic_is_out_now_a",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl1wpd/g4meromero26ba4bituncensoredheretic_is_out_now_a/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl1wpd/g4meromero26ba4bituncensoredheretic_is_out_now_a",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "When I previously posted the uncensored version of the 31B version of the MeroMero finetune, quite a few people asked for the 26B-A4B version, I wasn't so keen on it because I considered the 31B to be the better version, but I understand that people might want the 26B-A4B version for speed and/or smaller VRAM/RAM requirements, so here it is, the G4-MeroMero-26B-A4B-it-uncensored-heretic. Provided in both Safetensors and GGUFs. Safetensors: llmfan46/G4-MeroMero-26B-A4B-it-uncensored-heretic: https://huggingface.co/llmfan46/G4-MeroMero-26B-A4B-it-uncensored-heretic GGUFs: llmfan46/G4-MeroMero-26",
+          "image_url": "https://external-preview.redd.it/gSlsnzJc3zRUXIwholKZwcUeSos9bcCICafrGQ2pZQU.png?width=640&crop=smart&auto=webp&s=1014b4a2f0648b7ee2c4a172b22f04e1b9696527",
+          "image_source": "rss_media",
+          "published_at": "2026-05-23T01:10:59.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "G4-MeroMero-26B-A4B-it-uncensored-heretic Is Out Now, a Finetune of gemma-4-26B-A4B-it, With KLD of 0.0152 and 12/100 Refusals!",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl1wpd/g4meromero26ba4bituncensoredheretic_is_out_now_a",
+          "published_at": "2026-05-23T01:10:59.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl1wpd/g4meromero26ba4bituncensoredheretic_is_out_now_a",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "mixed",
+      "one_liner": "Community finetune of Gemma-4-26B focused on removing refusal behaviors.",
+      "novelty": 0.664,
+      "novelty_label": "medium",
+      "trust": 0.5,
+      "score": 0.546,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
+    },
+    {
+      "id": "1hluwba",
+      "primary": {
+        "id": "1hluwba",
+        "source_id": "marktechpost",
+        "source_name": "MarkTechPost",
+        "source_role": "main",
+        "trust": 0.48,
+        "kind_hint": "news",
+        "title": "Microsoft Releases Fara1.5: A Family of Browser Computer-Use Agents (4B/9B/27B) That Outperform OpenAI Operator and Gemini 2.5 Computer Use on Online-Mind2Web",
+        "url": "https://marktechpost.com/2026/05/22/microsoft-releases-fara1-5-a-family-of-browser-computer-use-agents-4b-9b-27b-that-outperform-openai-operator-and-gemini-2-5-computer-use-on-online-mind2web",
+        "original_url": "https://www.marktechpost.com/2026/05/22/microsoft-releases-fara1-5-a-family-of-browser-computer-use-agents-4b-9b-27b-that-outperform-openai-operator-and-gemini-2-5-computer-use-on-online-mind2web/",
+        "summary": "Microsoft Research released Fara1.5, a family of browser computer-use agents in 4B, 9B, and 27B sizes. Fara1.5-27B scores 72% on Online-Mind2Web, outperforming OpenAI Operator, Gemini 2.5 Computer Use, and Yutori Navigator n1. The release also includes FaraGen1.5, a synthetic data pipeline that trains agents on gated The post Microsoft Releases Fara1.5: A Family of Browser Computer-Use Agents (4B/9B/27B) That Outperform OpenAI Operator and Gemini 2.5 Computer Use on Online-Mind2Web appeared first on MarkTechPost.",
+        "image_url": "https://www.marktechpost.com/wp-content/uploads/2026/05/Screenshot-2026-05-22-at-1.31.26-AM-1.png",
+        "image_source": "rss_media",
+        "published_at": "2026-05-22T08:32:55.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1hluwba",
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "source_role": "main",
+          "trust": 0.48,
+          "kind_hint": "news",
+          "title": "Microsoft Releases Fara1.5: A Family of Browser Computer-Use Agents (4B/9B/27B) That Outperform OpenAI Operator and Gemini 2.5 Computer Use on Online-Mind2Web",
+          "url": "https://marktechpost.com/2026/05/22/microsoft-releases-fara1-5-a-family-of-browser-computer-use-agents-4b-9b-27b-that-outperform-openai-operator-and-gemini-2-5-computer-use-on-online-mind2web",
+          "original_url": "https://www.marktechpost.com/2026/05/22/microsoft-releases-fara1-5-a-family-of-browser-computer-use-agents-4b-9b-27b-that-outperform-openai-operator-and-gemini-2-5-computer-use-on-online-mind2web/",
+          "summary": "Microsoft Research released Fara1.5, a family of browser computer-use agents in 4B, 9B, and 27B sizes. Fara1.5-27B scores 72% on Online-Mind2Web, outperforming OpenAI Operator, Gemini 2.5 Computer Use, and Yutori Navigator n1. The release also includes FaraGen1.5, a synthetic data pipeline that trains agents on gated The post Microsoft Releases Fara1.5: A Family of Browser Computer-Use Agents (4B/9B/27B) That Outperform OpenAI Operator and Gemini 2.5 Computer Use on Online-Mind2Web appeared first on MarkTechPost.",
+          "image_url": "https://www.marktechpost.com/wp-content/uploads/2026/05/Screenshot-2026-05-22-at-1.31.26-AM-1.png",
+          "image_source": "rss_media",
+          "published_at": "2026-05-22T08:32:55.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "title": "Microsoft Releases Fara1.5: A Family of Browser Computer-Use Agents (4B/9B/27B) That Outperform OpenAI Operator and Gemini 2.5 Computer Use on Online-Mind2Web",
+          "url": "https://marktechpost.com/2026/05/22/microsoft-releases-fara1-5-a-family-of-browser-computer-use-agents-4b-9b-27b-that-outperform-openai-operator-and-gemini-2-5-computer-use-on-online-mind2web",
+          "published_at": "2026-05-22T08:32:55.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "Microsoft releases Fara1.5, a family of browser-based computer-use agents with benchmark results on Online-Mind2Web.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.48,
+      "score": 0.427,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
+    },
+    {
+      "id": "183jb20",
+      "primary": {
+        "id": "183jb20",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "OpenAI Appshots turn any Mac window into context for Codex",
+        "url": "https://the-decoder.com/openai-appshots-turn-any-mac-window-into-context-for-codex",
+        "original_url": "https://the-decoder.com/openai-appshots-turn-any-mac-window-into-context-for-codex/",
+        "summary": "With the new Codex feature Appshots, Mac users can send the contents of any app window to OpenAI's coding assistant Codex at the press of a button, giving it the context it needs for a task. The article OpenAI Appshots turn any Mac window into context for Codex appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/04/openai_dark_pattern.png",
+        "image_source": "rss_content",
+        "published_at": "2026-05-22T16:56:20.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "183jb20",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "OpenAI Appshots turn any Mac window into context for Codex",
+          "url": "https://the-decoder.com/openai-appshots-turn-any-mac-window-into-context-for-codex",
+          "original_url": "https://the-decoder.com/openai-appshots-turn-any-mac-window-into-context-for-codex/",
+          "summary": "With the new Codex feature Appshots, Mac users can send the contents of any app window to OpenAI's coding assistant Codex at the press of a button, giving it the context it needs for a task. The article OpenAI Appshots turn any Mac window into context for Codex appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/04/openai_dark_pattern.png",
+          "image_source": "rss_content",
+          "published_at": "2026-05-22T16:56:20.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "OpenAI Appshots turn any Mac window into context for Codex",
+          "url": "https://the-decoder.com/openai-appshots-turn-any-mac-window-into-context-for-codex",
+          "published_at": "2026-05-22T16:56:20.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "OpenAI introduces Appshots for macOS, allowing users to share window context with their coding assistant.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.501,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "13aahys",
+      "primary": {
+        "id": "13aahys",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "397B competitor that fits in 256 RAM?",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl43xu/397b_competitor_that_fits_in_256_ram",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl43xu/397b_competitor_that_fits_in_256_ram/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl43xu/397b_competitor_that_fits_in_256_ram",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "Does one exist? I noticed 3.6 QWEN did not release locally in 397B-17B. Anything that can compete locally? any comment is appreciated submitted by /u/quietsubstrate [link] [comments]",
+        "published_at": "2026-05-23T02:50:32.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "13aahys",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "397B competitor that fits in 256 RAM?",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl43xu/397b_competitor_that_fits_in_256_ram",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl43xu/397b_competitor_that_fits_in_256_ram/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl43xu/397b_competitor_that_fits_in_256_ram",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "Does one exist? I noticed 3.6 QWEN did not release locally in 397B-17B. Anything that can compete locally? any comment is appreciated submitted by /u/quietsubstrate [link] [comments]",
+          "published_at": "2026-05-23T02:50:32.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "397B competitor that fits in 256 RAM?",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl43xu/397b_competitor_that_fits_in_256_ram",
+          "published_at": "2026-05-23T02:50:32.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tl43xu/397b_competitor_that_fits_in_256_ram",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "Community discussion regarding local LLM alternatives to 397B parameter models that fit within 256GB of RAM.",
+      "novelty": 0.906,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.541,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "1y141s8",
+      "primary": {
+        "id": "1y141s8",
+        "source_id": "marktechpost",
+        "source_name": "MarkTechPost",
+        "source_role": "main",
+        "trust": 0.48,
+        "kind_hint": "news",
+        "title": "Build Recurrent-Depth Transformers with OpenMythos for MLA, GQA, Sparse MoE, and Loop-Scaled Reasoning",
+        "url": "https://marktechpost.com/2026/05/22/build-recurrent-depth-transformers-with-openmythos-for-mla-gqa-sparse-moe-and-loop-scaled-reasoning",
+        "original_url": "https://www.marktechpost.com/2026/05/22/build-recurrent-depth-transformers-with-openmythos-for-mla-gqa-sparse-moe-and-loop-scaled-reasoning/",
+        "summary": "In this tutorial, we explore OpenMythos by building an advanced recurrent-depth transformer workflow that runs end-to-end in Google Colab. We create both MLA and GQA model variants, compare their parameter counts, and check the stability of the recurrent injection matrix through its spectral radius. The post Build Recurrent-Depth Transformers with OpenMythos for MLA, GQA, Sparse MoE, and Loop-Scaled Reasoning appeared first on MarkTechPost.",
+        "published_at": "2026-05-22T07:39:30.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1y141s8",
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "source_role": "main",
+          "trust": 0.48,
+          "kind_hint": "news",
+          "title": "Build Recurrent-Depth Transformers with OpenMythos for MLA, GQA, Sparse MoE, and Loop-Scaled Reasoning",
+          "url": "https://marktechpost.com/2026/05/22/build-recurrent-depth-transformers-with-openmythos-for-mla-gqa-sparse-moe-and-loop-scaled-reasoning",
+          "original_url": "https://www.marktechpost.com/2026/05/22/build-recurrent-depth-transformers-with-openmythos-for-mla-gqa-sparse-moe-and-loop-scaled-reasoning/",
+          "summary": "In this tutorial, we explore OpenMythos by building an advanced recurrent-depth transformer workflow that runs end-to-end in Google Colab. We create both MLA and GQA model variants, compare their parameter counts, and check the stability of the recurrent injection matrix through its spectral radius. The post Build Recurrent-Depth Transformers with OpenMythos for MLA, GQA, Sparse MoE, and Loop-Scaled Reasoning appeared first on MarkTechPost.",
+          "published_at": "2026-05-22T07:39:30.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "title": "Build Recurrent-Depth Transformers with OpenMythos for MLA, GQA, Sparse MoE, and Loop-Scaled Reasoning",
+          "url": "https://marktechpost.com/2026/05/22/build-recurrent-depth-transformers-with-openmythos-for-mla-gqa-sparse-moe-and-loop-scaled-reasoning",
+          "published_at": "2026-05-22T07:39:30.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "signal",
+      "one_liner": "Technical guide on building recurrent-depth transformers using OpenMythos, covering MLA, GQA, and MoE architectures.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.48,
+      "score": 0.425,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "e8rj20",
+      "primary": {
+        "id": "e8rj20",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "Cloudflare Completes Its Agent Infrastructure Stack with Browser Run Rebuild and Six-Layer Platform",
+        "url": "https://infoq.com/news/2026/05/cloudflare-agent-platform-stack",
+        "original_url": "https://www.infoq.com/news/2026/05/cloudflare-agent-platform-stack/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Cloudflare rebuilt Browser Run on its own Containers platform, delivering 4x higher concurrency and 50% faster response times. The upgrade completes a six-layer agent infrastructure stack: compute (Dynamic Workers + Sandboxes), orchestration (Dynamic Workflows), memory (Agent Memory), browsing (Browser Run), and commerce (Stripe Projects). By Steef-Jan Wiggers",
+        "image_url": "https://www.infoq.com/styles/static/images/logo/logo_bigger.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-05-22T09:21:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "e8rj20",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "Cloudflare Completes Its Agent Infrastructure Stack with Browser Run Rebuild and Six-Layer Platform",
+          "url": "https://infoq.com/news/2026/05/cloudflare-agent-platform-stack",
+          "original_url": "https://www.infoq.com/news/2026/05/cloudflare-agent-platform-stack/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "Cloudflare rebuilt Browser Run on its own Containers platform, delivering 4x higher concurrency and 50% faster response times. The upgrade completes a six-layer agent infrastructure stack: compute (Dynamic Workers + Sandboxes), orchestration (Dynamic Workflows), memory (Agent Memory), browsing (Browser Run), and commerce (Stripe Projects). By Steef-Jan Wiggers",
+          "image_url": "https://www.infoq.com/styles/static/images/logo/logo_bigger.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-05-22T09:21:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "Cloudflare Completes Its Agent Infrastructure Stack with Browser Run Rebuild and Six-Layer Platform",
+          "url": "https://infoq.com/news/2026/05/cloudflare-agent-platform-stack",
+          "published_at": "2026-05-22T09:21:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "signal",
+      "one_liner": "Cloudflare updates its agent infrastructure stack, reporting performance gains from migrating Browser Run to its container platform.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.497,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+    },
+    {
+      "id": "1rid793",
+      "primary": {
+        "id": "1rid793",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Have we passed the peak of inflated expectations?",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tlcars/have_we_passed_the_peak_of_inflated_expectations",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tlcars/have_we_passed_the_peak_of_inflated_expectations/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tlcars/have_we_passed_the_peak_of_inflated_expectations",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "I noticed the number of people in this sub going down a bit and checked out some google trends. Any idea what's causing this sharp decline? submitted by /u/fairydreaming [link] [comments]",
+        "image_url": "https://preview.redd.it/wi888uoazu2h1.png?width=140&height=61&auto=webp&s=f7fd8f43b465a5f948baa1728155de70372e8332",
+        "image_source": "rss_media",
+        "published_at": "2026-05-23T10:01:14.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1rid793",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Have we passed the peak of inflated expectations?",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tlcars/have_we_passed_the_peak_of_inflated_expectations",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tlcars/have_we_passed_the_peak_of_inflated_expectations/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tlcars/have_we_passed_the_peak_of_inflated_expectations",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "I noticed the number of people in this sub going down a bit and checked out some google trends. Any idea what's causing this sharp decline? submitted by /u/fairydreaming [link] [comments]",
+          "image_url": "https://preview.redd.it/wi888uoazu2h1.png?width=140&height=61&auto=webp&s=f7fd8f43b465a5f948baa1728155de70372e8332",
+          "image_source": "rss_media",
+          "published_at": "2026-05-23T10:01:14.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Have we passed the peak of inflated expectations?",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tlcars/have_we_passed_the_peak_of_inflated_expectations",
+          "published_at": "2026-05-23T10:01:14.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tlcars/have_we_passed_the_peak_of_inflated_expectations",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "Speculative discussion on the decline of interest in local LLM communities based on traffic trends.",
+      "novelty": 0.855,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.538,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "4mayxv",
+      "primary": {
+        "id": "4mayxv",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "Presentation: AI Native Engineering",
+        "url": "https://infoq.com/presentations/ai-native-engineering",
+        "original_url": "https://www.infoq.com/presentations/ai-native-engineering/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Ian Thomas shares a case study on embracing AI-native engineering within Meta’s Reality Labs. He explains the \"Assess and Grow\" framework, a maturity model designed to move teams from manual toil to AI-integrated innovation. He discusses real-world wins - including hitting 90% code coverage in record time - while addressing senior concerns like \"code slop,\" review fatigue, and maintaining quality. By Ian Thomas",
+        "image_url": "https://res.infoq.com/presentations/ai-native-engineering/en/mediumimage/medium-1778664122266.jpeg",
+        "image_source": "rss_content",
+        "published_at": "2026-05-22T09:18:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "4mayxv",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "Presentation: AI Native Engineering",
+          "url": "https://infoq.com/presentations/ai-native-engineering",
+          "original_url": "https://www.infoq.com/presentations/ai-native-engineering/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "Ian Thomas shares a case study on embracing AI-native engineering within Meta’s Reality Labs. He explains the \"Assess and Grow\" framework, a maturity model designed to move teams from manual toil to AI-integrated innovation. He discusses real-world wins - including hitting 90% code coverage in record time - while addressing senior concerns like \"code slop,\" review fatigue, and maintaining quality. By Ian Thomas",
+          "image_url": "https://res.infoq.com/presentations/ai-native-engineering/en/mediumimage/medium-1778664122266.jpeg",
+          "image_source": "rss_content",
+          "published_at": "2026-05-22T09:18:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "Presentation: AI Native Engineering",
+          "url": "https://infoq.com/presentations/ai-native-engineering",
+          "published_at": "2026-05-22T09:18:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "signal",
+      "one_liner": "A case study on implementing an AI-native engineering maturity model to improve team productivity at Meta.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.497,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "rkjr4x",
+      "primary": {
+        "id": "rkjr4x",
+        "source_id": "r_ml",
+        "source_name": "r/MachineLearning",
+        "source_role": "main",
+        "trust": 0.55,
+        "kind_hint": "discussion",
+        "title": "Custom image encoder [P]",
+        "url": "https://old.reddit.com/r/MachineLearning/comments/1tkwnx5/custom_image_encoder_p",
+        "original_url": "https://old.reddit.com/r/MachineLearning/comments/1tkwnx5/custom_image_encoder_p/",
+        "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1tkwnx5/custom_image_encoder_p",
+        "discussion_source": "r/MachineLearning",
+        "summary": "Hello, I would like to know whether building my own image encoder would be a good idea instead of using models like CLIP, SigLIP/SigLIP2, or DINO. My use case is video frame classification. My pipeline is the following: the client sends me a video stream, sampled at 1 frame per 1 or 2 second, forming segments of 15 frames (30 seconds). I compute embeddings for these frames and send them to a small custom Transformer (1.5M to 9M parameters). This works very well on GPU. However, I have two main constraints: processing speed and deployment on small CPU-only devices. A CLIP-S0 encoder processes a",
+        "published_at": "2026-05-22T21:32:35.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "rkjr4x",
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "source_role": "main",
+          "trust": 0.55,
+          "kind_hint": "discussion",
+          "title": "Custom image encoder [P]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1tkwnx5/custom_image_encoder_p",
+          "original_url": "https://old.reddit.com/r/MachineLearning/comments/1tkwnx5/custom_image_encoder_p/",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1tkwnx5/custom_image_encoder_p",
+          "discussion_source": "r/MachineLearning",
+          "summary": "Hello, I would like to know whether building my own image encoder would be a good idea instead of using models like CLIP, SigLIP/SigLIP2, or DINO. My use case is video frame classification. My pipeline is the following: the client sends me a video stream, sampled at 1 frame per 1 or 2 second, forming segments of 15 frames (30 seconds). I compute embeddings for these frames and send them to a small custom Transformer (1.5M to 9M parameters). This works very well on GPU. However, I have two main constraints: processing speed and deployment on small CPU-only devices. A CLIP-S0 encoder processes a",
+          "published_at": "2026-05-22T21:32:35.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "title": "Custom image encoder [P]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1tkwnx5/custom_image_encoder_p",
+          "published_at": "2026-05-22T21:32:35.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1tkwnx5/custom_image_encoder_p",
+          "discussion_source": "r/MachineLearning"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "Community discussion on the trade-offs of training custom image encoders versus using established models like CLIP or DINO.",
+      "novelty": 0.886,
+      "novelty_label": "high",
+      "trust": 0.55,
+      "score": 0.538,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "1u9g95s",
+      "primary": {
+        "id": "1u9g95s",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "Microsoft starts canceling Claude Code licenses",
+        "url": "https://theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad",
+        "original_url": "https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad",
+        "discussion_url": "https://news.ycombinator.com/item?id=48238896",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-05-22T17:32:04Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 322,
+          "comments": 267
+        }
+      },
+      "members": [
+        {
+          "id": "1u9g95s",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "Microsoft starts canceling Claude Code licenses",
+          "url": "https://theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad",
+          "original_url": "https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad",
+          "discussion_url": "https://news.ycombinator.com/item?id=48238896",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-05-22T17:32:04Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 322,
+            "comments": 267
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "Microsoft starts canceling Claude Code licenses",
+          "url": "https://theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad",
+          "published_at": "2026-05-22T17:32:04Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=48238896",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Reports indicate Microsoft is discontinuing Claude Code licenses for certain users.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.65,
+      "score": 0.357,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1i217w",
+      "primary": {
+        "id": "1i217w",
+        "source_id": "stackoverflow_blog",
+        "source_name": "Stack Overflow Blog",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "opinion",
+        "title": "Dispatches from O'Reilly: The accidental orchestrator",
+        "url": "https://stackoverflow.blog/2026/05/22/dispatches-from-o-reilly-the-accidental-orchestrator",
+        "original_url": "https://stackoverflow.blog/2026/05/22/dispatches-from-o-reilly-the-accidental-orchestrator/",
+        "summary": "Experiments in agentic engineering and AI-driven development",
+        "published_at": "2026-05-22T14:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1i217w",
+          "source_id": "stackoverflow_blog",
+          "source_name": "Stack Overflow Blog",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "opinion",
+          "title": "Dispatches from O'Reilly: The accidental orchestrator",
+          "url": "https://stackoverflow.blog/2026/05/22/dispatches-from-o-reilly-the-accidental-orchestrator",
+          "original_url": "https://stackoverflow.blog/2026/05/22/dispatches-from-o-reilly-the-accidental-orchestrator/",
+          "summary": "Experiments in agentic engineering and AI-driven development",
+          "published_at": "2026-05-22T14:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "stackoverflow_blog",
+          "source_name": "Stack Overflow Blog",
+          "title": "Dispatches from O'Reilly: The accidental orchestrator",
+          "url": "https://stackoverflow.blog/2026/05/22/dispatches-from-o-reilly-the-accidental-orchestrator",
+          "published_at": "2026-05-22T14:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "Reflections on the challenges and experiments involved in agentic engineering and AI-driven development.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.72,
+      "score": 0.329,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "11qvaga",
+      "primary": {
+        "id": "11qvaga",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Scrambling to max StrixHalo (+NVLink dual eGPU 3090 mod)",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkulbk/scrambling_to_max_strixhalo_nvlink_dual_egpu_3090",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkulbk/scrambling_to_max_strixhalo_nvlink_dual_egpu_3090/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkulbk/scrambling_to_max_strixhalo_nvlink_dual_egpu_3090",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "https://preview.redd.it/kz66mxzseq2h1.jpg?width=4096&format=pjpg&auto=webp&s=da98623808c4bde0dc79b239c8cf8930c5572769 https://preview.redd.it/ocsigi0veq2h1.jpg?width=4096&format=pjpg&auto=webp&s=eb4b053e46e434b2c54de7fff6c584e01c80ea5e This pic is not representing bench setup, just happily captured while I figured out running same model over 3 GPUs. Halo is always busy, 3090s are waiting Halo does his job. In short. 1. Strix halo alone (124GB UMA VRAM) is already nice but adding 1 or 2 eGPUs is pretty good for running the recently popular 27B or 31B dense models. 2. The native bandwidth limit",
+        "image_url": "https://preview.redd.it/kz66mxzseq2h1.jpg?width=140&height=105&auto=webp&s=580e6406912e9a28f71c0952c32a216504efe251",
+        "image_source": "rss_media",
+        "published_at": "2026-05-22T20:15:49.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "11qvaga",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Scrambling to max StrixHalo (+NVLink dual eGPU 3090 mod)",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkulbk/scrambling_to_max_strixhalo_nvlink_dual_egpu_3090",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkulbk/scrambling_to_max_strixhalo_nvlink_dual_egpu_3090/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkulbk/scrambling_to_max_strixhalo_nvlink_dual_egpu_3090",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "https://preview.redd.it/kz66mxzseq2h1.jpg?width=4096&format=pjpg&auto=webp&s=da98623808c4bde0dc79b239c8cf8930c5572769 https://preview.redd.it/ocsigi0veq2h1.jpg?width=4096&format=pjpg&auto=webp&s=eb4b053e46e434b2c54de7fff6c584e01c80ea5e This pic is not representing bench setup, just happily captured while I figured out running same model over 3 GPUs. Halo is always busy, 3090s are waiting Halo does his job. In short. 1. Strix halo alone (124GB UMA VRAM) is already nice but adding 1 or 2 eGPUs is pretty good for running the recently popular 27B or 31B dense models. 2. The native bandwidth limit",
+          "image_url": "https://preview.redd.it/kz66mxzseq2h1.jpg?width=140&height=105&auto=webp&s=580e6406912e9a28f71c0952c32a216504efe251",
+          "image_source": "rss_media",
+          "published_at": "2026-05-22T20:15:49.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Scrambling to max StrixHalo (+NVLink dual eGPU 3090 mod)",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkulbk/scrambling_to_max_strixhalo_nvlink_dual_egpu_3090",
+          "published_at": "2026-05-22T20:15:49.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tkulbk/scrambling_to_max_strixhalo_nvlink_dual_egpu_3090",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "Hardware enthusiast discussion regarding custom eGPU setups and performance tuning for local LLM inference.",
+      "novelty": 0.879,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.522,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "b7s616",
+      "primary": {
+        "id": "b7s616",
+        "source_id": "stackoverflow_blog",
+        "source_name": "Stack Overflow Blog",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "opinion",
+        "title": "Breaking your AI storage bottlenecks",
+        "url": "https://stackoverflow.blog/2026/05/22/breaking-your-ai-storage-bottlenecks",
+        "original_url": "https://stackoverflow.blog/2026/05/22/breaking-your-ai-storage-bottlenecks/",
+        "summary": "Recorded at HumanX, Ryan sits down with Garima Kapoor and Anand Babu Periasamy, co-founders and co-CEOs of MinIO, to chat about eliminating the storage bottlenecks that leave GPUs underutilized, their partnership with NVIDIA on the new STX reference architecture, and why modern AI infrastructure is converging on S3-compatible object storage.",
+        "published_at": "2026-05-22T07:40:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "b7s616",
+          "source_id": "stackoverflow_blog",
+          "source_name": "Stack Overflow Blog",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "opinion",
+          "title": "Breaking your AI storage bottlenecks",
+          "url": "https://stackoverflow.blog/2026/05/22/breaking-your-ai-storage-bottlenecks",
+          "original_url": "https://stackoverflow.blog/2026/05/22/breaking-your-ai-storage-bottlenecks/",
+          "summary": "Recorded at HumanX, Ryan sits down with Garima Kapoor and Anand Babu Periasamy, co-founders and co-CEOs of MinIO, to chat about eliminating the storage bottlenecks that leave GPUs underutilized, their partnership with NVIDIA on the new STX reference architecture, and why modern AI infrastructure is converging on S3-compatible object storage.",
+          "published_at": "2026-05-22T07:40:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "stackoverflow_blog",
+          "source_name": "Stack Overflow Blog",
+          "title": "Breaking your AI storage bottlenecks",
+          "url": "https://stackoverflow.blog/2026/05/22/breaking-your-ai-storage-bottlenecks",
+          "published_at": "2026-05-22T07:40:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "mixed",
+      "one_liner": "MinIO discusses storage bottlenecks for GPU-intensive AI workloads and a reference architecture with NVIDIA.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.72,
+      "score": 0.318,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+    },
+    {
+      "id": "dgmve1",
+      "primary": {
+        "id": "dgmve1",
+        "source_id": "r_ml",
+        "source_name": "r/MachineLearning",
+        "source_role": "main",
+        "trust": 0.55,
+        "kind_hint": "discussion",
+        "title": "COLM 2026 ReviewsDiscussion [D]",
+        "url": "https://old.reddit.com/r/MachineLearning/comments/1tkuu66/colm_2026_reviewsdiscussion_d",
+        "original_url": "https://old.reddit.com/r/MachineLearning/comments/1tkuu66/colm_2026_reviewsdiscussion_d/",
+        "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1tkuu66/colm_2026_reviewsdiscussion_d",
+        "discussion_source": "r/MachineLearning",
+        "summary": "Didn't see one so wanted to make one myself. Reviews are actually already out, curious what everyone thinks about the quality of the reviews? I've heard it's a mixed bag and apparently a concerning amount of AI generated reviews for some people. submitted by /u/RandomMan0880 [link] [comments]",
+        "published_at": "2026-05-22T20:24:35.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "dgmve1",
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "source_role": "main",
+          "trust": 0.55,
+          "kind_hint": "discussion",
+          "title": "COLM 2026 ReviewsDiscussion [D]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1tkuu66/colm_2026_reviewsdiscussion_d",
+          "original_url": "https://old.reddit.com/r/MachineLearning/comments/1tkuu66/colm_2026_reviewsdiscussion_d/",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1tkuu66/colm_2026_reviewsdiscussion_d",
+          "discussion_source": "r/MachineLearning",
+          "summary": "Didn't see one so wanted to make one myself. Reviews are actually already out, curious what everyone thinks about the quality of the reviews? I've heard it's a mixed bag and apparently a concerning amount of AI generated reviews for some people. submitted by /u/RandomMan0880 [link] [comments]",
+          "published_at": "2026-05-22T20:24:35.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "title": "COLM 2026 ReviewsDiscussion [D]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1tkuu66/colm_2026_reviewsdiscussion_d",
+          "published_at": "2026-05-22T20:24:35.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1tkuu66/colm_2026_reviewsdiscussion_d",
+          "discussion_source": "r/MachineLearning"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "Community discussion regarding the quality and potential AI-generated content in COLM 2026 conference reviews.",
+      "novelty": 0.773,
+      "novelty_label": "high",
+      "trust": 0.55,
+      "score": 0.502,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "1fjqlcw",
+      "primary": {
+        "id": "1fjqlcw",
+        "source_id": "yt_nate_b_jones",
+        "source_name": "AI News & Strategy Daily",
+        "source_role": "main",
+        "trust": 0.62,
+        "kind_hint": "video",
+        "title": "The One AI Writing Hack Nobody Talks About.",
+        "url": "https://youtube.com/watch?v=ltbzgzZZmgI",
+        "original_url": "https://www.youtube.com/watch?v=ltbzgzZZmgI",
+        "image_url": "https://i.ytimg.com/vi/ltbzgzZZmgI/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-05-22T14:00:54.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UC0C-17n9iuUQPylguM1d-lQ",
+          "video_id": "ltbzgzZZmgI"
+        }
+      },
+      "members": [
+        {
+          "id": "1fjqlcw",
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "source_role": "main",
+          "trust": 0.62,
+          "kind_hint": "video",
+          "title": "The One AI Writing Hack Nobody Talks About.",
+          "url": "https://youtube.com/watch?v=ltbzgzZZmgI",
+          "original_url": "https://www.youtube.com/watch?v=ltbzgzZZmgI",
+          "image_url": "https://i.ytimg.com/vi/ltbzgzZZmgI/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-05-22T14:00:54.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UC0C-17n9iuUQPylguM1d-lQ",
+            "video_id": "ltbzgzZZmgI"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "title": "The One AI Writing Hack Nobody Talks About.",
+          "url": "https://youtube.com/watch?v=ltbzgzZZmgI",
+          "published_at": "2026-05-22T14:00:54.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.62,
+      "score": 0.306,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "15d3p6t",
+      "primary": {
+        "id": "15d3p6t",
+        "source_id": "fahd_mirza",
+        "source_name": "Fahd Mirza YouTube",
+        "source_role": "main",
+        "trust": 0.66,
+        "kind_hint": "video",
+        "title": "Qwen3.7 Max + OpenClaw — Full Setup and Live Agent Test",
+        "url": "https://youtube.com/watch?v=1szGRUWIPTA",
+        "original_url": "https://www.youtube.com/watch?v=1szGRUWIPTA",
+        "image_url": "https://i.ytimg.com/vi/1szGRUWIPTA/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-05-22T07:48:46.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+          "video_id": "1szGRUWIPTA"
+        }
+      },
+      "members": [
+        {
+          "id": "15d3p6t",
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "source_role": "main",
+          "trust": 0.66,
+          "kind_hint": "video",
+          "title": "Qwen3.7 Max + OpenClaw — Full Setup and Live Agent Test",
+          "url": "https://youtube.com/watch?v=1szGRUWIPTA",
+          "original_url": "https://www.youtube.com/watch?v=1szGRUWIPTA",
+          "image_url": "https://i.ytimg.com/vi/1szGRUWIPTA/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-05-22T07:48:46.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+            "video_id": "1szGRUWIPTA"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "title": "Qwen3.7 Max + OpenClaw — Full Setup and Live Agent Test",
+          "url": "https://youtube.com/watch?v=1szGRUWIPTA",
+          "published_at": "2026-05-22T07:48:46.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.66,
+      "score": 0.305,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "81vcdg",
+      "primary": {
+        "id": "81vcdg",
+        "source_id": "lobsters_ai",
+        "source_name": "Lobsters (AI tag)",
+        "source_role": "main",
+        "trust": 0.7,
+        "title": "Dissecting ThunderKittens, anatomy of a compact DSL for high-performance AI kernels",
+        "url": "https://hamzaelshafie.bearblog.dev/dissecting-thunderkittens-anatomy-of-a-compact-dsl-for-high-performance-ai-kernels",
+        "original_url": "https://hamzaelshafie.bearblog.dev/dissecting-thunderkittens-anatomy-of-a-compact-dsl-for-high-performance-ai-kernels/",
+        "discussion_url": "https://hamzaelshafie.bearblog.dev/dissecting-thunderkittens-anatomy-of-a-compact-dsl-for-high-performance-ai-kernels",
+        "discussion_source": "Lobsters (AI tag)",
+        "summary": "Comments",
+        "published_at": "2026-05-22T05:38:44.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "81vcdg",
+          "source_id": "lobsters_ai",
+          "source_name": "Lobsters (AI tag)",
+          "source_role": "main",
+          "trust": 0.7,
+          "title": "Dissecting ThunderKittens, anatomy of a compact DSL for high-performance AI kernels",
+          "url": "https://hamzaelshafie.bearblog.dev/dissecting-thunderkittens-anatomy-of-a-compact-dsl-for-high-performance-ai-kernels",
+          "original_url": "https://hamzaelshafie.bearblog.dev/dissecting-thunderkittens-anatomy-of-a-compact-dsl-for-high-performance-ai-kernels/",
+          "discussion_url": "https://hamzaelshafie.bearblog.dev/dissecting-thunderkittens-anatomy-of-a-compact-dsl-for-high-performance-ai-kernels",
+          "discussion_source": "Lobsters (AI tag)",
+          "summary": "Comments",
+          "published_at": "2026-05-22T05:38:44.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "lobsters_ai",
+          "source_name": "Lobsters (AI tag)",
+          "title": "Dissecting ThunderKittens, anatomy of a compact DSL for high-performance AI kernels",
+          "url": "https://hamzaelshafie.bearblog.dev/dissecting-thunderkittens-anatomy-of-a-compact-dsl-for-high-performance-ai-kernels",
+          "published_at": "2026-05-22T05:38:44.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://hamzaelshafie.bearblog.dev/dissecting-thunderkittens-anatomy-of-a-compact-dsl-for-high-performance-ai-kernels",
+          "discussion_source": "Lobsters (AI tag)"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "signal",
+      "one_liner": "Technical breakdown of ThunderKittens, a DSL for writing high-performance GPU kernels.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.7,
+      "score": 0.473,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "mxbmf1",
+      "primary": {
+        "id": "mxbmf1",
+        "source_id": "marktechpost",
+        "source_name": "MarkTechPost",
+        "source_role": "main",
+        "trust": 0.48,
+        "kind_hint": "news",
+        "title": "A Step-by-Step Coding Tutorial to Implement GBrain: The Self-Wiring Memory Layer Built by Y Combinator’s Garry Tan for AI Agents",
+        "url": "https://marktechpost.com/2026/05/22/a-step-by-step-coding-tutorial-to-implement-gbrain-the-self-wiring-memory-layer-built-by-y-combinators-garry-tan-for-ai-agents",
+        "original_url": "https://www.marktechpost.com/2026/05/22/a-step-by-step-coding-tutorial-to-implement-gbrain-the-self-wiring-memory-layer-built-by-y-combinators-garry-tan-for-ai-agents/",
+        "summary": "AI agents start every session from zero — no memory of meetings, notes, or decisions. GBrain, the open-source memory layer Y Combinator's Garry Tan built to power his own OpenClaw and Hermes deployments, fixes that with a markdown-first knowledge graph that wires itself through regex inference, not LLM calls. This step-by-step coding tutorial walks through installing GBrain v0.38.2.0, building a brain repo, running hybrid search, and connecting it to Claude Code via MCP — about 20 minutes, all terminal output captured live. The post A Step-by-Step Coding Tutorial to Implement GBrain: The Self-",
+        "published_at": "2026-05-22T18:23:40.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "mxbmf1",
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "source_role": "main",
+          "trust": 0.48,
+          "kind_hint": "news",
+          "title": "A Step-by-Step Coding Tutorial to Implement GBrain: The Self-Wiring Memory Layer Built by Y Combinator’s Garry Tan for AI Agents",
+          "url": "https://marktechpost.com/2026/05/22/a-step-by-step-coding-tutorial-to-implement-gbrain-the-self-wiring-memory-layer-built-by-y-combinators-garry-tan-for-ai-agents",
+          "original_url": "https://www.marktechpost.com/2026/05/22/a-step-by-step-coding-tutorial-to-implement-gbrain-the-self-wiring-memory-layer-built-by-y-combinators-garry-tan-for-ai-agents/",
+          "summary": "AI agents start every session from zero — no memory of meetings, notes, or decisions. GBrain, the open-source memory layer Y Combinator's Garry Tan built to power his own OpenClaw and Hermes deployments, fixes that with a markdown-first knowledge graph that wires itself through regex inference, not LLM calls. This step-by-step coding tutorial walks through installing GBrain v0.38.2.0, building a brain repo, running hybrid search, and connecting it to Claude Code via MCP — about 20 minutes, all terminal output captured live. The post A Step-by-Step Coding Tutorial to Implement GBrain: The Self-",
+          "published_at": "2026-05-22T18:23:40.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "title": "A Step-by-Step Coding Tutorial to Implement GBrain: The Self-Wiring Memory Layer Built by Y Combinator’s Garry Tan for AI Agents",
+          "url": "https://marktechpost.com/2026/05/22/a-step-by-step-coding-tutorial-to-implement-gbrain-the-self-wiring-memory-layer-built-by-y-combinators-garry-tan-for-ai-agents",
+          "published_at": "2026-05-22T18:23:40.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "mixed",
+      "one_liner": "Tutorial on implementing GBrain, a markdown-based knowledge graph memory layer for AI agents.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.48,
+      "score": 0.281,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "obunlb",
+      "primary": {
+        "id": "obunlb",
+        "source_id": "ars_ai",
+        "source_name": "Ars Technica AI",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "news",
+        "title": "Trump abruptly cancels EO signing event after top AI firm CEOs declined to go",
+        "url": "https://arstechnica.com/tech-policy/2026/05/trump-canceled-ai-safety-testing-eo-after-snub-from-tech-ceos",
+        "original_url": "https://arstechnica.com/tech-policy/2026/05/trump-canceled-ai-safety-testing-eo-after-snub-from-tech-ceos/",
+        "summary": "Trump delays AI safety testing EO, claiming it would be an innovation “blocker.”",
+        "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/05/GettyImages-2276026044-1152x648-1779465384.jpg",
+        "image_source": "rss_media",
+        "published_at": "2026-05-22T16:51:40.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "obunlb",
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "news",
+          "title": "Trump abruptly cancels EO signing event after top AI firm CEOs declined to go",
+          "url": "https://arstechnica.com/tech-policy/2026/05/trump-canceled-ai-safety-testing-eo-after-snub-from-tech-ceos",
+          "original_url": "https://arstechnica.com/tech-policy/2026/05/trump-canceled-ai-safety-testing-eo-after-snub-from-tech-ceos/",
+          "summary": "Trump delays AI safety testing EO, claiming it would be an innovation “blocker.”",
+          "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/05/GettyImages-2276026044-1152x648-1779465384.jpg",
+          "image_source": "rss_media",
+          "published_at": "2026-05-22T16:51:40.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "title": "Trump abruptly cancels EO signing event after top AI firm CEOs declined to go",
+          "url": "https://arstechnica.com/tech-policy/2026/05/trump-canceled-ai-safety-testing-eo-after-snub-from-tech-ceos",
+          "published_at": "2026-05-22T16:51:40.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Political reporting on the cancellation of an executive order regarding AI safety testing.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.347,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "olm4nh",
+      "primary": {
+        "id": "olm4nh",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "InfoQ Launches Online AI Engineering Cohort and Certification for Senior Software Practitioners",
+        "url": "https://infoq.com/news/2026/05/ai-engineering-certification-pro",
+        "original_url": "https://www.infoq.com/news/2026/05/ai-engineering-certification-pro/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "InfoQ has launched a five-week online AI Engineering certification for senior practitioners working on production AI systems, covering RAG, agents, AI platforms, evals, reliability, and operational trade-offs. By Artenisa Chatziou",
+        "image_url": "https://res.infoq.com/news/2026/05/ai-engineering-certification-pro/en/headerimage/Online-AI-Engineeing-Cohort-1779430356799.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-05-22T13:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "olm4nh",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "InfoQ Launches Online AI Engineering Cohort and Certification for Senior Software Practitioners",
+          "url": "https://infoq.com/news/2026/05/ai-engineering-certification-pro",
+          "original_url": "https://www.infoq.com/news/2026/05/ai-engineering-certification-pro/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "InfoQ has launched a five-week online AI Engineering certification for senior practitioners working on production AI systems, covering RAG, agents, AI platforms, evals, reliability, and operational trade-offs. By Artenisa Chatziou",
+          "image_url": "https://res.infoq.com/news/2026/05/ai-engineering-certification-pro/en/headerimage/Online-AI-Engineeing-Cohort-1779430356799.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-05-22T13:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "InfoQ Launches Online AI Engineering Cohort and Certification for Senior Software Practitioners",
+          "url": "https://infoq.com/news/2026/05/ai-engineering-certification-pro",
+          "published_at": "2026-05-22T13:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "mixed",
+      "one_liner": "InfoQ launches a five-week certification program for senior software engineers focused on production AI systems.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.341,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+    },
+    {
+      "id": "1ygezr0",
+      "primary": {
+        "id": "1ygezr0",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "OpenAI launches a ChatGPT Powerpoint plugin and warns it might accidentally delete your content",
+        "url": "https://the-decoder.com/openai-launches-a-chatgpt-powerpoint-plugin-and-warns-it-might-accidentally-delete-your-content",
+        "original_url": "https://the-decoder.com/openai-launches-a-chatgpt-powerpoint-plugin-and-warns-it-might-accidentally-delete-your-content/",
+        "summary": "OpenAI brings ChatGPT directly into PowerPoint. A new beta plugin creates presentations from notes, documents, or images and edits existing slides. The add-in is available worldwide across all tiers. OpenAI recommends saving important decks before using it. The article OpenAI launches a ChatGPT Powerpoint plugin and warns it might accidentally delete your content appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/03/openai_gpt54-3.png",
+        "image_source": "rss_content",
+        "published_at": "2026-05-22T17:51:50.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1ygezr0",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "OpenAI launches a ChatGPT Powerpoint plugin and warns it might accidentally delete your content",
+          "url": "https://the-decoder.com/openai-launches-a-chatgpt-powerpoint-plugin-and-warns-it-might-accidentally-delete-your-content",
+          "original_url": "https://the-decoder.com/openai-launches-a-chatgpt-powerpoint-plugin-and-warns-it-might-accidentally-delete-your-content/",
+          "summary": "OpenAI brings ChatGPT directly into PowerPoint. A new beta plugin creates presentations from notes, documents, or images and edits existing slides. The add-in is available worldwide across all tiers. OpenAI recommends saving important decks before using it. The article OpenAI launches a ChatGPT Powerpoint plugin and warns it might accidentally delete your content appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/03/openai_gpt54-3.png",
+          "image_source": "rss_content",
+          "published_at": "2026-05-22T17:51:50.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "OpenAI launches a ChatGPT Powerpoint plugin and warns it might accidentally delete your content",
+          "url": "https://the-decoder.com/openai-launches-a-chatgpt-powerpoint-plugin-and-warns-it-might-accidentally-delete-your-content",
+          "published_at": "2026-05-22T17:51:50.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "mixed",
+      "one_liner": "OpenAI releases a PowerPoint plugin for slide generation with noted data loss risks.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.34,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "f42m0h",
+      "primary": {
+        "id": "f42m0h",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Deepseek reportedly prioritizes AGI research over quick profits despite billions in funding",
+        "url": "https://the-decoder.com/deepseek-reportedly-prioritizes-agi-research-over-quick-profits-despite-billions-in-funding",
+        "original_url": "https://the-decoder.com/deepseek-reportedly-prioritizes-agi-research-over-quick-profits-despite-billions-in-funding/",
+        "summary": "Deepseek is about to raise around $10 billion, which would value the Chinese AI startup at roughly $45 billion. Founder Liang Wenfeng is telling investors he's putting AGI research ahead of short-term profits. The article Deepseek reportedly prioritizes AGI research over quick profits despite billions in funding appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/04/deepseek_chart_background.png",
+        "image_source": "rss_content",
+        "published_at": "2026-05-22T17:18:58.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "f42m0h",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Deepseek reportedly prioritizes AGI research over quick profits despite billions in funding",
+          "url": "https://the-decoder.com/deepseek-reportedly-prioritizes-agi-research-over-quick-profits-despite-billions-in-funding",
+          "original_url": "https://the-decoder.com/deepseek-reportedly-prioritizes-agi-research-over-quick-profits-despite-billions-in-funding/",
+          "summary": "Deepseek is about to raise around $10 billion, which would value the Chinese AI startup at roughly $45 billion. Founder Liang Wenfeng is telling investors he's putting AGI research ahead of short-term profits. The article Deepseek reportedly prioritizes AGI research over quick profits despite billions in funding appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/04/deepseek_chart_background.png",
+          "image_source": "rss_content",
+          "published_at": "2026-05-22T17:18:58.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Deepseek reportedly prioritizes AGI research over quick profits despite billions in funding",
+          "url": "https://the-decoder.com/deepseek-reportedly-prioritizes-agi-research-over-quick-profits-despite-billions-in-funding",
+          "published_at": "2026-05-22T17:18:58.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Report on Deepseek's funding round and stated strategic focus on AGI research.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.339,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    }
+  ]
+}

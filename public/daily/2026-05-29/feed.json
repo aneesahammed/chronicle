@@ -1,0 +1,3206 @@
+{
+  "generated_at": "2026-05-29T19:10:47.554Z",
+  "last_successful_generated_at": "2026-05-29T19:10:47.554Z",
+  "refresh_status": "partial",
+  "classification_mode": "llm",
+  "window_hours": 36,
+  "source_total": 50,
+  "source_ok": 49,
+  "source_failed": 1,
+  "failed_sources": [
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "message": "HTTP 404 Not Found - <!DOCTYPE html><html lang=\"en\" class> <head><meta charset=\"UTF-8\"><title>Frontier AI LLMs, assistants, agents, services | Mistral AI</title><meta name=\"description\" content=\"The most powerful AI platform for enterprises. Customize, fine-tun - url=https://mistral.ai/sitemap.xml"
+    }
+  ],
+  "source_health": [
+    {
+      "id": "arxiv_cl",
+      "name": "arXiv cs.CL",
+      "status": "ok",
+      "fetched_count": 3,
+      "fresh_count": 3,
+      "stale_count": 0,
+      "oldest_published_at": "2026-05-29T04:00:00.000Z",
+      "newest_published_at": "2026-05-29T04:00:00.000Z"
+    },
+    {
+      "id": "arxiv_lg",
+      "name": "arXiv cs.LG",
+      "status": "ok",
+      "fetched_count": 3,
+      "fresh_count": 3,
+      "stale_count": 0,
+      "oldest_published_at": "2026-05-29T04:00:00.000Z",
+      "newest_published_at": "2026-05-29T04:00:00.000Z"
+    },
+    {
+      "id": "hf_papers",
+      "name": "Hugging Face Daily Papers",
+      "status": "ok",
+      "fetched_count": 20,
+      "fresh_count": 0,
+      "stale_count": 20,
+      "oldest_published_at": "2026-05-08T20:00:00.000Z",
+      "newest_published_at": "2026-05-27T20:00:00.000Z"
+    },
+    {
+      "id": "hf_trending_models",
+      "name": "Hugging Face trending models",
+      "status": "ok",
+      "fetched_count": 20,
+      "fresh_count": 1,
+      "stale_count": 19,
+      "oldest_published_at": "2026-03-02T20:05:49.000Z",
+      "newest_published_at": "2026-05-28T09:43:54.000Z"
+    },
+    {
+      "id": "simonw",
+      "name": "Simon Willison",
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 3,
+      "stale_count": 3,
+      "oldest_published_at": "2026-05-25T23:58:17.000Z",
+      "newest_published_at": "2026-05-29T01:23:08.000Z"
+    },
+    {
+      "id": "latent_space",
+      "name": "Latent Space",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 3,
+      "stale_count": 7,
+      "oldest_published_at": "2026-05-20T22:42:06.000Z",
+      "newest_published_at": "2026-05-29T02:07:24.000Z"
+    },
+    {
+      "id": "interconnects",
+      "name": "Interconnects (Lambert)",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-04-09T21:28:39.000Z",
+      "newest_published_at": "2026-05-26T15:39:02.000Z"
+    },
+    {
+      "id": "import_ai",
+      "name": "Import AI (Jack Clark)",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-03-16T12:30:50.000Z",
+      "newest_published_at": "2026-05-26T12:32:03.000Z"
+    },
+    {
+      "id": "eugene_yan",
+      "name": "Eugene Yan",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2025-04-20T00:00:00.000Z",
+      "newest_published_at": "2026-05-03T00:00:00.000Z"
+    },
+    {
+      "id": "hamel",
+      "name": "Hamel Husain",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2024-12-13T08:00:00.000Z",
+      "newest_published_at": "2026-03-26T07:00:00.000Z"
+    },
+    {
+      "id": "lilian_weng",
+      "name": "Lilian Weng",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2023-01-10T17:00:00.000Z",
+      "newest_published_at": "2025-05-01T00:00:00.000Z"
+    },
+    {
+      "id": "chip_huyen",
+      "name": "Chip Huyen",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2023-06-07T00:00:00.000Z",
+      "newest_published_at": "2025-01-16T00:00:00.000Z"
+    },
+    {
+      "id": "addy_osmani",
+      "name": "Addy Osmani",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-03-14T00:00:00.000Z",
+      "newest_published_at": "2026-05-24T00:00:00.000Z"
+    },
+    {
+      "id": "daniel_miessler",
+      "name": "Daniel Miessler",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-04-25T09:40:27.000Z",
+      "newest_published_at": "2026-05-26T20:45:00.000Z"
+    },
+    {
+      "id": "sean_goedecke",
+      "name": "Sean Goedecke",
+      "status": "ok",
+      "fetched_count": 7,
+      "fresh_count": 0,
+      "stale_count": 7,
+      "oldest_published_at": "2026-05-09T00:00:00.000Z",
+      "newest_published_at": "2026-05-21T00:00:00.000Z"
+    },
+    {
+      "id": "techcrunch_ai",
+      "name": "TechCrunch AI",
+      "status": "ok",
+      "fetched_count": 12,
+      "fresh_count": 12,
+      "stale_count": 0,
+      "oldest_published_at": "2026-05-28T18:52:51.000Z",
+      "newest_published_at": "2026-05-29T18:49:19.000Z"
+    },
+    {
+      "id": "the_decoder",
+      "name": "The Decoder",
+      "status": "ok",
+      "fetched_count": 8,
+      "fresh_count": 8,
+      "stale_count": 0,
+      "oldest_published_at": "2026-05-28T21:20:09.000Z",
+      "newest_published_at": "2026-05-29T18:11:34.000Z"
+    },
+    {
+      "id": "mit_tech_review_ai",
+      "name": "MIT Technology Review AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 2,
+      "stale_count": 8,
+      "oldest_published_at": "2026-05-19T20:15:18.000Z",
+      "newest_published_at": "2026-05-29T10:00:00.000Z"
+    },
+    {
+      "id": "ars_ai",
+      "name": "Ars Technica AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 5,
+      "stale_count": 5,
+      "oldest_published_at": "2026-05-26T17:46:01.000Z",
+      "newest_published_at": "2026-05-29T16:16:14.000Z"
+    },
+    {
+      "id": "infoq_ai",
+      "name": "InfoQ AI/ML/Data",
+      "status": "ok",
+      "fetched_count": 9,
+      "fresh_count": 2,
+      "stale_count": 7,
+      "oldest_published_at": "2026-05-26T09:00:00.000Z",
+      "newest_published_at": "2026-05-29T12:00:00.000Z"
+    },
+    {
+      "id": "stackoverflow_blog",
+      "name": "Stack Overflow Blog",
+      "status": "ok",
+      "fetched_count": 9,
+      "fresh_count": 3,
+      "stale_count": 6,
+      "oldest_published_at": "2026-05-20T04:45:00.000Z",
+      "newest_published_at": "2026-05-29T14:00:00.000Z"
+    },
+    {
+      "id": "the_verge_ai",
+      "name": "The Verge AI",
+      "status": "ok",
+      "fetched_count": 7,
+      "fresh_count": 7,
+      "stale_count": 0,
+      "oldest_published_at": "2026-05-28T14:08:36.000Z",
+      "newest_published_at": "2026-05-29T17:37:43.000Z"
+    },
+    {
+      "id": "wired_ai",
+      "name": "WIRED AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 5,
+      "stale_count": 5,
+      "oldest_published_at": "2026-05-26T20:46:03.000Z",
+      "newest_published_at": "2026-05-29T16:30:00.000Z"
+    },
+    {
+      "id": "nine_to_five_google_ai",
+      "name": "9to5Google AI",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "2017-08-08T14:44:01.000Z",
+      "newest_published_at": "2025-10-08T15:22:03.000Z"
+    },
+    {
+      "id": "product_hunt",
+      "name": "Product Hunt",
+      "status": "ok",
+      "fetched_count": 4,
+      "fresh_count": 2,
+      "stale_count": 2,
+      "oldest_published_at": "2026-04-01T19:46:27.000Z",
+      "newest_published_at": "2026-05-29T06:41:50.000Z"
+    },
+    {
+      "id": "marktechpost",
+      "name": "MarkTechPost",
+      "status": "ok",
+      "fetched_count": 9,
+      "fresh_count": 6,
+      "stale_count": 3,
+      "oldest_published_at": "2026-05-27T07:23:10.000Z",
+      "newest_published_at": "2026-05-29T08:43:32.000Z"
+    },
+    {
+      "id": "hn_ai",
+      "name": "Hacker News (AI-filtered)",
+      "status": "ok",
+      "fetched_count": 4,
+      "fresh_count": 3,
+      "stale_count": 1,
+      "oldest_published_at": "2026-05-26T07:06:28.000Z",
+      "newest_published_at": "2026-05-29T16:22:01.000Z"
+    },
+    {
+      "id": "hn_show_ai",
+      "name": "Show HN (AI-filtered)",
+      "status": "ok",
+      "fetched_count": 3,
+      "fresh_count": 2,
+      "stale_count": 1,
+      "oldest_published_at": "2026-05-27T20:37:42.000Z",
+      "newest_published_at": "2026-05-29T13:37:38.000Z"
+    },
+    {
+      "id": "lobsters_ai",
+      "name": "Lobsters (AI tag)",
+      "status": "ok",
+      "fetched_count": 20,
+      "fresh_count": 3,
+      "stale_count": 17,
+      "oldest_published_at": "2026-05-07T18:25:16.000Z",
+      "newest_published_at": "2026-05-29T18:52:09.000Z"
+    },
+    {
+      "id": "r_localllama",
+      "name": "r/LocalLLaMA",
+      "status": "ok",
+      "fetched_count": 25,
+      "fresh_count": 25,
+      "stale_count": 0,
+      "oldest_published_at": "2026-05-28T20:18:55.000Z",
+      "newest_published_at": "2026-05-29T17:53:19.000Z"
+    },
+    {
+      "id": "r_ml",
+      "name": "r/MachineLearning",
+      "status": "ok",
+      "fetched_count": 9,
+      "fresh_count": 9,
+      "stale_count": 0,
+      "oldest_published_at": "2026-05-28T21:38:16.000Z",
+      "newest_published_at": "2026-05-29T17:38:14.000Z"
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 5,
+      "stale_count": 5,
+      "oldest_published_at": "2026-05-27T00:00:00.000Z",
+      "newest_published_at": "2026-05-29T12:00:00.000Z"
+    },
+    {
+      "id": "deepmind",
+      "name": "Google DeepMind",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-05-16T08:08:44.000Z",
+      "newest_published_at": "2026-05-21T19:46:42.000Z"
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "status": "ok",
+      "fetched_count": 12,
+      "fresh_count": 1,
+      "stale_count": 11,
+      "oldest_published_at": "2026-05-14T00:00:00.000Z",
+      "newest_published_at": "2026-05-28T10:01:59.000Z"
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 404 Not Found - <!DOCTYPE html><html lang=\"en\" class> <head><meta charset=\"UTF-8\"><title>Frontier AI LLMs, assistants, agents, services | Mistral AI</title><meta name=\"description\" content=\"The most powerful AI platform for enterprises. Customize, fine-tun - url=https://mistral.ai/sitemap.xml",
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "google_research",
+      "name": "Google Research",
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 0,
+      "stale_count": 6,
+      "oldest_published_at": "2026-04-08T20:01:33.000Z",
+      "newest_published_at": "2026-04-22T17:00:00.000Z"
+    },
+    {
+      "id": "google_ai_keyword",
+      "name": "Google AI on Keyword",
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 4,
+      "stale_count": 2,
+      "oldest_published_at": "2026-05-21T00:00:00.000Z",
+      "newest_published_at": "2026-05-29T19:00:00.000Z"
+    },
+    {
+      "id": "meta_ai",
+      "name": "Meta AI Blog",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "1970-01-01T00:00:00.000Z",
+      "newest_published_at": "2026-04-08T00:00:00.000Z"
+    },
+    {
+      "id": "microsoft_research",
+      "name": "Microsoft Research",
+      "status": "ok",
+      "fetched_count": 8,
+      "fresh_count": 1,
+      "stale_count": 7,
+      "oldest_published_at": "2026-05-11T17:19:28.000Z",
+      "newest_published_at": "2026-05-28T16:00:00.000Z"
+    },
+    {
+      "id": "azure_ai_blog",
+      "name": "Azure AI Blog",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "2026-05-06T14:00:00.000Z",
+      "newest_published_at": "2026-05-22T15:00:00.000Z"
+    },
+    {
+      "id": "aws_ml_blog",
+      "name": "AWS Machine Learning Blog",
+      "status": "ok",
+      "fetched_count": 11,
+      "fresh_count": 7,
+      "stale_count": 4,
+      "oldest_published_at": "2026-05-27T18:00:07.000Z",
+      "newest_published_at": "2026-05-28T21:54:06.000Z"
+    },
+    {
+      "id": "nvidia_developer_blog",
+      "name": "NVIDIA Developer Blog",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 2,
+      "stale_count": 8,
+      "oldest_published_at": "2026-05-21T18:00:00.000Z",
+      "newest_published_at": "2026-05-29T16:00:00.000Z"
+    },
+    {
+      "id": "cloudflare_ai_changelog",
+      "name": "Cloudflare AI Changelog",
+      "status": "ok",
+      "fetched_count": 7,
+      "fresh_count": 2,
+      "stale_count": 5,
+      "oldest_published_at": "2026-05-20T00:00:00.000Z",
+      "newest_published_at": "2026-05-29T00:00:00.000Z"
+    },
+    {
+      "id": "cohere_blog",
+      "name": "Cohere Blog",
+      "status": "ok",
+      "fetched_count": 9,
+      "fresh_count": 0,
+      "stale_count": 9,
+      "oldest_published_at": "2026-05-19T00:00:00.000Z",
+      "newest_published_at": "2026-05-28T00:00:00.000Z"
+    },
+    {
+      "id": "ai2_blog",
+      "name": "Ai2 Blog",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "2026-04-30T08:00:00.000Z",
+      "newest_published_at": "2026-05-19T08:00:00.000Z"
+    },
+    {
+      "id": "together",
+      "name": "Together AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-04-29T00:00:00.000Z",
+      "newest_published_at": "2026-05-19T00:00:00.000Z"
+    },
+    {
+      "id": "modal",
+      "name": "Modal",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-04-10T00:00:00.000Z",
+      "newest_published_at": "2026-05-27T00:00:00.000Z"
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "status": "ok",
+      "fetched_count": 12,
+      "fresh_count": 0,
+      "stale_count": 12,
+      "oldest_published_at": "2026-03-02T12:00:00.000Z",
+      "newest_published_at": "2026-03-25T12:00:00.000Z"
+    },
+    {
+      "id": "fahd_mirza",
+      "name": "Fahd Mirza YouTube",
+      "status": "ok",
+      "fetched_count": 8,
+      "fresh_count": 2,
+      "stale_count": 6,
+      "oldest_published_at": "2026-05-25T21:03:06.000Z",
+      "newest_published_at": "2026-05-29T07:00:16.000Z"
+    },
+    {
+      "id": "yt_nate_b_jones",
+      "name": "AI News & Strategy Daily",
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 2,
+      "stale_count": 4,
+      "oldest_published_at": "2026-05-27T03:00:01.000Z",
+      "newest_published_at": "2026-05-29T00:00:02.000Z"
+    }
+  ],
+  "top_news": [
+    {
+      "cluster_id": "1pctodh",
+      "title": "Mechanistic origins of catastrophic forgetting: why RL preserves circuits better than SFT?",
+      "url": "https://arxiv.org/abs/2605.28860",
+      "source_name": "arXiv cs.LG",
+      "published_at": "2026-05-29T04:00:00.000Z",
+      "kind": "paper",
+      "score": 0.801,
+      "dek": "New research explores why reinforcement learning (RL) preserves model circuits better than supervised fine-tuning (SFT) during training.",
+      "brief": "Researchers investigate the mechanistic differences between RL and SFT to explain why RL is more resistant to catastrophic forgetting. The study suggests that policy-gradient updates in RL maintain closer alignment with the base model's internal circuits compared to the weight shifts observed in SFT.",
+      "image_alt": "Diagram showing neural network circuit preservation",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-05-29T06:39:55.100Z"
+    },
+    {
+      "cluster_id": "x6a8vt",
+      "title": "GitHub Slashes Agent Workflow Token Spend up to 62% with Daily Audits and MCP Pruning",
+      "url": "https://infoq.com/news/2026/05/github-agentic-token-savings",
+      "source_name": "InfoQ AI/ML/Data",
+      "published_at": "2026-05-29T08:30:00.000Z",
+      "kind": "news",
+      "score": 0.776,
+      "dek": "GitHub reduced agentic CI workflow token costs by up to 62% through automated pruning and optimization strategies.",
+      "brief": "GitHub implemented a system to monitor and optimize token usage in agentic workflows. By pruning unused Model Context Protocol (MCP) tools, replacing specific MCP calls with the native gh CLI, and deploying daily auditor agents, they significantly lowered operational costs. Teams can now track spend via token-usage.jsonl artifacts and an Effective Tokens metric to identify and address regressions.",
+      "image_url": "https://res.infoq.com/news/2026/05/github-agentic-token-savings/en/headerimage/header-1779918825690.jpeg",
+      "image_alt": "GitHub agent workflow optimization dashboard showing token usage metrics",
+      "image_source": "rss_content",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-05-29T13:29:42.819Z"
+    },
+    {
+      "cluster_id": "23s5o4",
+      "title": "Real-time LLM Inference on Standard GPUs: 3k tokens/s per request",
+      "url": "https://blog.kog.ai/real-time-llm-inference-on-standard-gpus-3-000-tokens-s-per-request",
+      "source_name": "Hacker News (AI-filtered)",
+      "published_at": "2026-05-29T09:47:23Z",
+      "kind": "tool",
+      "score": 0.776,
+      "dek": "Kog AI's new inference engine achieves 3,000 tokens/s on standard datacenter GPUs without speculative decoding.",
+      "brief": "The Kog Inference Engine (KIE) tech preview demonstrates high-throughput inference, reaching 3,000 tokens/s on 8x AMD MI300X GPUs and 2,100 tokens/s on 8x NVIDIA H200s. These results were achieved using 2B models in FP16 precision. The company plans to extend support to large third-party Mixture-of-Experts (MoE) models while maintaining similar performance benchmarks.",
+      "image_alt": "Benchmark chart comparing token throughput across AMD and NVIDIA GPU configurations",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-05-29T13:29:42.819Z"
+    },
+    {
+      "cluster_id": "1k76y6u",
+      "title": "A shared playbook for trustworthy third party evaluations",
+      "url": "https://openai.com/index/trustworthy-third-party-evaluations-foundations",
+      "source_name": "OpenAI",
+      "published_at": "2026-05-29T00:00:00.000Z",
+      "kind": "company_announcement",
+      "score": 0.796,
+      "dek": "OpenAI has released a framework for conducting independent third-party evaluations of frontier AI models.",
+      "brief": "The guidance focuses on moving beyond simple chatbot-style prompting to more rigorous assessment methods. It outlines best practices for evaluating model capabilities and safety mitigations, aiming to establish industry standards for validating claims about frontier systems.",
+      "image_alt": "Diagram illustrating the framework for third-party AI model evaluation",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-05-29T19:10:47.554Z"
+    },
+    {
+      "cluster_id": "1r7y5h4",
+      "title": "Realtime - Cloudflare's Realtime WebSocket adapter now auto-reconnects and buffers WebRTC media",
+      "url": "https://developers.cloudflare.com/changelog/post/2026-05-29-websocket-adapter-auto-reconnect",
+      "source_name": "Cloudflare AI Changelog",
+      "published_at": "2026-05-29T00:00:00.000Z",
+      "kind": "tool",
+      "score": 0.761,
+      "dek": "Cloudflare's Realtime WebSocket adapter now supports automatic reconnection and media buffering for WebRTC streams.",
+      "brief": "The update improves reliability for the Realtime SFU by allowing audio and video streams to persist through brief endpoint disconnects or restarts. This reduces the need for manual reconnection logic when routing live media across Cloudflare's global network.",
+      "image_alt": "Technical diagram showing WebRTC media flow with buffer and reconnection logic",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-05-29T19:10:47.554Z"
+    }
+  ],
+  "count": 41,
+  "clusters": [
+    {
+      "id": "1pctodh",
+      "primary": {
+        "id": "1pctodh",
+        "source_id": "arxiv_lg",
+        "source_name": "arXiv cs.LG",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "paper",
+        "title": "Mechanistic origins of catastrophic forgetting: why RL preserves circuits better than SFT?",
+        "url": "https://arxiv.org/abs/2605.28860",
+        "original_url": "https://arxiv.org/abs/2605.28860",
+        "summary": "Fine-tuning large language models (LLMs) frequently induces catastrophic forgetting of prior capabilities. Recent work has shown that reinforcement learning (RL) retains prior capabilities more effectively than supervised fine-tuning (SFT), attributing this to policy-gradient updates remaining closer to the base policy \\cite{shenfeld2025rl}. We extend this behavioral account to the mechanistic level and ask whether RL's advantage is mirrored by stronger preservation of internal computational circuits. We introduce differential circuit vulnerability, a head-level measure of how much a circuit d",
+        "published_at": "2026-05-29T04:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1pctodh",
+          "source_id": "arxiv_lg",
+          "source_name": "arXiv cs.LG",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "paper",
+          "title": "Mechanistic origins of catastrophic forgetting: why RL preserves circuits better than SFT?",
+          "url": "https://arxiv.org/abs/2605.28860",
+          "original_url": "https://arxiv.org/abs/2605.28860",
+          "summary": "Fine-tuning large language models (LLMs) frequently induces catastrophic forgetting of prior capabilities. Recent work has shown that reinforcement learning (RL) retains prior capabilities more effectively than supervised fine-tuning (SFT), attributing this to policy-gradient updates remaining closer to the base policy \\cite{shenfeld2025rl}. We extend this behavioral account to the mechanistic level and ask whether RL's advantage is mirrored by stronger preservation of internal computational circuits. We introduce differential circuit vulnerability, a head-level measure of how much a circuit d",
+          "published_at": "2026-05-29T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "arxiv_lg",
+          "source_name": "arXiv cs.LG",
+          "title": "Mechanistic origins of catastrophic forgetting: why RL preserves circuits better than SFT?",
+          "url": "https://arxiv.org/abs/2605.28860",
+          "published_at": "2026-05-29T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "Study on why RL fine-tuning preserves model circuits and reduces catastrophic forgetting compared to SFT.",
+      "novelty": 0.853,
+      "novelty_label": "high",
+      "trust": 0.9,
+      "score": 0.801,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "1k76y6u",
+      "primary": {
+        "id": "1k76y6u",
+        "source_id": "openai",
+        "source_name": "OpenAI",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "company_announcement",
+        "title": "A shared playbook for trustworthy third party evaluations",
+        "url": "https://openai.com/index/trustworthy-third-party-evaluations-foundations",
+        "original_url": "https://openai.com/index/trustworthy-third-party-evaluations-foundations",
+        "summary": "OpenAI shares guidance on third-party AI evaluations, covering how to assess model capabilities, safeguards, and validity for frontier systems.",
+        "published_at": "2026-05-29T00:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1k76y6u",
+          "source_id": "openai",
+          "source_name": "OpenAI",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "company_announcement",
+          "title": "A shared playbook for trustworthy third party evaluations",
+          "url": "https://openai.com/index/trustworthy-third-party-evaluations-foundations",
+          "original_url": "https://openai.com/index/trustworthy-third-party-evaluations-foundations",
+          "summary": "OpenAI shares guidance on third-party AI evaluations, covering how to assess model capabilities, safeguards, and validity for frontier systems.",
+          "published_at": "2026-05-29T00:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "openai",
+          "source_name": "OpenAI",
+          "title": "A shared playbook for trustworthy third party evaluations",
+          "url": "https://openai.com/index/trustworthy-third-party-evaluations-foundations",
+          "published_at": "2026-05-29T00:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "signal",
+      "one_liner": "OpenAI guidance on methodology for third-party evaluation of frontier AI models.",
+      "novelty": 0.859,
+      "novelty_label": "high",
+      "trust": 0.9,
+      "score": 0.796,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+    },
+    {
+      "id": "x6a8vt",
+      "primary": {
+        "id": "x6a8vt",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "GitHub Slashes Agent Workflow Token Spend up to 62% with Daily Audits and MCP Pruning",
+        "url": "https://infoq.com/news/2026/05/github-agentic-token-savings",
+        "original_url": "https://www.infoq.com/news/2026/05/github-agentic-token-savings/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "GitHub reports cutting token costs in agentic CI workflows by up to 62% by pruning unused MCP tools, swapping some MCP calls for gh CLI, and running daily “auditor” and “optimizer” agents. A token-usage.jsonl artefact and an Effective Tokens metric help track spend across models and spot regressions. By Mark Silvester",
+        "image_url": "https://res.infoq.com/news/2026/05/github-agentic-token-savings/en/headerimage/header-1779918825690.jpeg",
+        "image_source": "rss_content",
+        "published_at": "2026-05-29T08:30:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "x6a8vt",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "GitHub Slashes Agent Workflow Token Spend up to 62% with Daily Audits and MCP Pruning",
+          "url": "https://infoq.com/news/2026/05/github-agentic-token-savings",
+          "original_url": "https://www.infoq.com/news/2026/05/github-agentic-token-savings/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "GitHub reports cutting token costs in agentic CI workflows by up to 62% by pruning unused MCP tools, swapping some MCP calls for gh CLI, and running daily “auditor” and “optimizer” agents. A token-usage.jsonl artefact and an Effective Tokens metric help track spend across models and spot regressions. By Mark Silvester",
+          "image_url": "https://res.infoq.com/news/2026/05/github-agentic-token-savings/en/headerimage/header-1779918825690.jpeg",
+          "image_source": "rss_content",
+          "published_at": "2026-05-29T08:30:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "GitHub Slashes Agent Workflow Token Spend up to 62% with Daily Audits and MCP Pruning",
+          "url": "https://infoq.com/news/2026/05/github-agentic-token-savings",
+          "published_at": "2026-05-29T08:30:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "GitHub reduced agentic CI token costs by 62% using MCP tool pruning and automated auditor agents.",
+      "novelty": 0.837,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.776,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "23s5o4",
+      "primary": {
+        "id": "23s5o4",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "Real-time LLM Inference on Standard GPUs: 3k tokens/s per request",
+        "url": "https://blog.kog.ai/real-time-llm-inference-on-standard-gpus-3-000-tokens-s-per-request",
+        "original_url": "https://blog.kog.ai/real-time-llm-inference-on-standard-gpus-3-000-tokens-s-per-request/",
+        "discussion_url": "https://news.ycombinator.com/item?id=48321076",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-05-29T09:47:23Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 178,
+          "comments": 79
+        }
+      },
+      "members": [
+        {
+          "id": "23s5o4",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "Real-time LLM Inference on Standard GPUs: 3k tokens/s per request",
+          "url": "https://blog.kog.ai/real-time-llm-inference-on-standard-gpus-3-000-tokens-s-per-request",
+          "original_url": "https://blog.kog.ai/real-time-llm-inference-on-standard-gpus-3-000-tokens-s-per-request/",
+          "discussion_url": "https://news.ycombinator.com/item?id=48321076",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-05-29T09:47:23Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 178,
+            "comments": 79
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "Real-time LLM Inference on Standard GPUs: 3k tokens/s per request",
+          "url": "https://blog.kog.ai/real-time-llm-inference-on-standard-gpus-3-000-tokens-s-per-request",
+          "published_at": "2026-05-29T09:47:23Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=48321076",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Technical overview of achieving 3,000 tokens/s inference throughput on standard GPU hardware.",
+      "novelty": 0.826,
+      "novelty_label": "high",
+      "trust": 0.65,
+      "score": 0.776,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "1nydosz",
+      "primary": {
+        "id": "1nydosz",
+        "source_id": "arxiv_lg",
+        "source_name": "arXiv cs.LG",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "paper",
+        "title": "One Mask to Rule Them All: On Hidden Facts after Editing and How to Find Them",
+        "url": "https://arxiv.org/abs/2605.28839",
+        "original_url": "https://arxiv.org/abs/2605.28839",
+        "summary": "Knowledge editing methods such as ROME and MEMIT update factual associations in transformer models by modifying MLP weights. While evaluated mainly by output behavior, their internal mechanism remains underexplored. We investigate whether edits rely on a common mechanism, regardless of which fact is modified. Despite fact-specific weight changes, we argue that ROME and MEMIT target the same subset of weights critical for maintaining edits. To isolate this subset, we train a compact binary mask over the edited weights. The mask reverses 80% of edits on the training set and over 70% on the test",
+        "published_at": "2026-05-29T04:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1nydosz",
+          "source_id": "arxiv_lg",
+          "source_name": "arXiv cs.LG",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "paper",
+          "title": "One Mask to Rule Them All: On Hidden Facts after Editing and How to Find Them",
+          "url": "https://arxiv.org/abs/2605.28839",
+          "original_url": "https://arxiv.org/abs/2605.28839",
+          "summary": "Knowledge editing methods such as ROME and MEMIT update factual associations in transformer models by modifying MLP weights. While evaluated mainly by output behavior, their internal mechanism remains underexplored. We investigate whether edits rely on a common mechanism, regardless of which fact is modified. Despite fact-specific weight changes, we argue that ROME and MEMIT target the same subset of weights critical for maintaining edits. To isolate this subset, we train a compact binary mask over the edited weights. The mask reverses 80% of edits on the training set and over 70% on the test",
+          "published_at": "2026-05-29T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "arxiv_lg",
+          "source_name": "arXiv cs.LG",
+          "title": "One Mask to Rule Them All: On Hidden Facts after Editing and How to Find Them",
+          "url": "https://arxiv.org/abs/2605.28839",
+          "published_at": "2026-05-29T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "Analysis of internal mechanisms in ROME and MEMIT knowledge editing, identifying common patterns in MLP weight modifications.",
+      "novelty": 0.8,
+      "novelty_label": "high",
+      "trust": 0.9,
+      "score": 0.785,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "1eofiqu",
+      "primary": {
+        "id": "1eofiqu",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Google fixes several bugs in Gemini usage limits that burned through quotas too fast",
+        "url": "https://the-decoder.com/google-fixes-several-bugs-in-gemini-usage-limits-that-burned-through-quotas-too-fast",
+        "original_url": "https://the-decoder.com/google-fixes-several-bugs-in-gemini-usage-limits-that-burned-through-quotas-too-fast/",
+        "summary": "A bug in Google's Gemini app caused just one or two Omni videos to eat up the entire usage quota. Google has fixed the bug, Ultra members now get twice as many video generations, and failed requests are no longer charged. Google also plans to add more transparency around other usage. The article Google fixes several bugs in Gemini usage limits that burned through quotas too fast appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/04/google_gemini_optical_trick.png",
+        "image_source": "rss_content",
+        "published_at": "2026-05-29T17:51:46.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1eofiqu",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Google fixes several bugs in Gemini usage limits that burned through quotas too fast",
+          "url": "https://the-decoder.com/google-fixes-several-bugs-in-gemini-usage-limits-that-burned-through-quotas-too-fast",
+          "original_url": "https://the-decoder.com/google-fixes-several-bugs-in-gemini-usage-limits-that-burned-through-quotas-too-fast/",
+          "summary": "A bug in Google's Gemini app caused just one or two Omni videos to eat up the entire usage quota. Google has fixed the bug, Ultra members now get twice as many video generations, and failed requests are no longer charged. Google also plans to add more transparency around other usage. The article Google fixes several bugs in Gemini usage limits that burned through quotas too fast appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/04/google_gemini_optical_trick.png",
+          "image_source": "rss_content",
+          "published_at": "2026-05-29T17:51:46.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Google fixes several bugs in Gemini usage limits that burned through quotas too fast",
+          "url": "https://the-decoder.com/google-fixes-several-bugs-in-gemini-usage-limits-that-burned-through-quotas-too-fast",
+          "published_at": "2026-05-29T17:51:46.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Google resolves Gemini quota bugs and updates usage transparency policies.",
+      "novelty": 0.816,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.776,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1r7y5h4",
+      "primary": {
+        "id": "1r7y5h4",
+        "source_id": "cloudflare_ai_changelog",
+        "source_name": "Cloudflare AI Changelog",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tool",
+        "title": "Realtime - Cloudflare's Realtime WebSocket adapter now auto-reconnects and buffers WebRTC media",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-05-29-websocket-adapter-auto-reconnect",
+        "original_url": "https://developers.cloudflare.com/changelog/post/2026-05-29-websocket-adapter-auto-reconnect/",
+        "summary": "Cloudflare Realtime SFU is a WebRTC Selective Forwarding Unit that runs on Cloudflare's global network, so you can route live audio, video, and data between WebRTC clients around the world without managing SFU infrastructure or regions. When you use the WebSocket adapter to stream WebRTC media to a WebSocket endpoint, the adapter now auto-reconnects and buffers audio and video after brief endpoint disconnects or restarts. Streaming WebRTC media to WebSocket endpoints Many teams also use Realtime SFU as the media layer for backend applications, such as transcription, recording, note-taking, and",
+        "published_at": "2026-05-29T00:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1r7y5h4",
+          "source_id": "cloudflare_ai_changelog",
+          "source_name": "Cloudflare AI Changelog",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tool",
+          "title": "Realtime - Cloudflare's Realtime WebSocket adapter now auto-reconnects and buffers WebRTC media",
+          "url": "https://developers.cloudflare.com/changelog/post/2026-05-29-websocket-adapter-auto-reconnect",
+          "original_url": "https://developers.cloudflare.com/changelog/post/2026-05-29-websocket-adapter-auto-reconnect/",
+          "summary": "Cloudflare Realtime SFU is a WebRTC Selective Forwarding Unit that runs on Cloudflare's global network, so you can route live audio, video, and data between WebRTC clients around the world without managing SFU infrastructure or regions. When you use the WebSocket adapter to stream WebRTC media to a WebSocket endpoint, the adapter now auto-reconnects and buffers audio and video after brief endpoint disconnects or restarts. Streaming WebRTC media to WebSocket endpoints Many teams also use Realtime SFU as the media layer for backend applications, such as transcription, recording, note-taking, and",
+          "published_at": "2026-05-29T00:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "cloudflare_ai_changelog",
+          "source_name": "Cloudflare AI Changelog",
+          "title": "Realtime - Cloudflare's Realtime WebSocket adapter now auto-reconnects and buffers WebRTC media",
+          "url": "https://developers.cloudflare.com/changelog/post/2026-05-29-websocket-adapter-auto-reconnect",
+          "published_at": "2026-05-29T00:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Cloudflare Realtime WebSocket adapter update adds auto-reconnect and WebRTC media buffering.",
+      "novelty": 0.835,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.761,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "1r0ug1a",
+      "primary": {
+        "id": "1r0ug1a",
+        "source_id": "arxiv_lg",
+        "source_name": "arXiv cs.LG",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "paper",
+        "title": "Representation Signatures and Risk-Feedback Alignment in LLM Trading Agents",
+        "url": "https://arxiv.org/abs/2605.28850",
+        "original_url": "https://arxiv.org/abs/2605.28850",
+        "summary": "We study behavioral alignment and representation dynamics of large language model (LLM) agents in financial decision environments. Using TradeArena, an auditable trading-agent testbed with risk reports, execution simulation, memory, and replayable trajectories, we analyze how rationales, positions, and interventions evolve under market stress. We find measurable pre-failure signatures: planning embeddings drift from normal-state centroids, fused plan-risk representations separate normal from pre-drawdown states, and manifold diagnostics show effective-rank contraction before failures. To addre",
+        "published_at": "2026-05-29T04:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1r0ug1a",
+          "source_id": "arxiv_lg",
+          "source_name": "arXiv cs.LG",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "paper",
+          "title": "Representation Signatures and Risk-Feedback Alignment in LLM Trading Agents",
+          "url": "https://arxiv.org/abs/2605.28850",
+          "original_url": "https://arxiv.org/abs/2605.28850",
+          "summary": "We study behavioral alignment and representation dynamics of large language model (LLM) agents in financial decision environments. Using TradeArena, an auditable trading-agent testbed with risk reports, execution simulation, memory, and replayable trajectories, we analyze how rationales, positions, and interventions evolve under market stress. We find measurable pre-failure signatures: planning embeddings drift from normal-state centroids, fused plan-risk representations separate normal from pre-drawdown states, and manifold diagnostics show effective-rank contraction before failures. To addre",
+          "published_at": "2026-05-29T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "arxiv_lg",
+          "source_name": "arXiv cs.LG",
+          "title": "Representation Signatures and Risk-Feedback Alignment in LLM Trading Agents",
+          "url": "https://arxiv.org/abs/2605.28850",
+          "published_at": "2026-05-29T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "Study of LLM agent behavior in financial trading using TradeArena, focusing on risk-feedback alignment and representation.",
+      "novelty": 0.797,
+      "novelty_label": "high",
+      "trust": 0.9,
+      "score": 0.784,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "nb5jzt",
+      "primary": {
+        "id": "nb5jzt",
+        "source_id": "simonw",
+        "source_name": "Simon Willison",
+        "source_role": "main",
+        "trust": 0.9,
+        "title": "llm-anthropic 0.25.1",
+        "url": "https://simonwillison.net/2026/May/28/llm-anthropic",
+        "original_url": "https://simonwillison.net/2026/May/28/llm-anthropic/#atom-everything",
+        "published_at": "2026-05-28T23:54:56.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "nb5jzt",
+          "source_id": "simonw",
+          "source_name": "Simon Willison",
+          "source_role": "main",
+          "trust": 0.9,
+          "title": "llm-anthropic 0.25.1",
+          "url": "https://simonwillison.net/2026/May/28/llm-anthropic",
+          "original_url": "https://simonwillison.net/2026/May/28/llm-anthropic/#atom-everything",
+          "published_at": "2026-05-28T23:54:56.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "simonw",
+          "source_name": "Simon Willison",
+          "title": "llm-anthropic 0.25.1",
+          "url": "https://simonwillison.net/2026/May/28/llm-anthropic",
+          "published_at": "2026-05-28T23:54:56.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Update to the llm-anthropic CLI tool for interacting with Anthropic models.",
+      "novelty": 0.719,
+      "novelty_label": "medium",
+      "trust": 0.9,
+      "score": 0.754,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "m9n8v3",
+      "primary": {
+        "id": "m9n8v3",
+        "source_id": "aws_ml_blog",
+        "source_name": "AWS Machine Learning Blog",
+        "source_role": "main",
+        "trust": 0.8,
+        "kind_hint": "tutorial",
+        "title": "Evaluating Deep Agents using LangSmith on AWS",
+        "url": "https://aws.amazon.com/blogs/machine-learning/evaluating-deep-agents-using-langsmith-on-aws",
+        "original_url": "https://aws.amazon.com/blogs/machine-learning/evaluating-deep-agents-using-langsmith-on-aws/",
+        "summary": "This post combines learnings from LangChain’s work on evaluating deep agents and Anthropic’s guide to demystifying evals for AI agents into a practical guide. In this post, you will learn how to: 1) apply five evaluation patterns for deep agents, 2) build offline evaluations using pytest and LangSmith, and 3) configure online monitoring for production. The walkthrough uses a text-to-SQL deep agent with Amazon Bedrock for the full development to production lifecycle.",
+        "published_at": "2026-05-28T20:32:23.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "m9n8v3",
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "source_role": "main",
+          "trust": 0.8,
+          "kind_hint": "tutorial",
+          "title": "Evaluating Deep Agents using LangSmith on AWS",
+          "url": "https://aws.amazon.com/blogs/machine-learning/evaluating-deep-agents-using-langsmith-on-aws",
+          "original_url": "https://aws.amazon.com/blogs/machine-learning/evaluating-deep-agents-using-langsmith-on-aws/",
+          "summary": "This post combines learnings from LangChain’s work on evaluating deep agents and Anthropic’s guide to demystifying evals for AI agents into a practical guide. In this post, you will learn how to: 1) apply five evaluation patterns for deep agents, 2) build offline evaluations using pytest and LangSmith, and 3) configure online monitoring for production. The walkthrough uses a text-to-SQL deep agent with Amazon Bedrock for the full development to production lifecycle.",
+          "published_at": "2026-05-28T20:32:23.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "title": "Evaluating Deep Agents using LangSmith on AWS",
+          "url": "https://aws.amazon.com/blogs/machine-learning/evaluating-deep-agents-using-langsmith-on-aws",
+          "published_at": "2026-05-28T20:32:23.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "signal",
+      "one_liner": "Guide on implementing offline evaluation patterns for deep agents using LangSmith on AWS.",
+      "novelty": 0.806,
+      "novelty_label": "high",
+      "trust": 0.8,
+      "score": 0.752,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "1nd8luf",
+      "primary": {
+        "id": "1nd8luf",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "Presentation: Building Evals for AI Adoption: From Principles to Practice",
+        "url": "https://infoq.com/presentations/eval-ai-adoption",
+        "original_url": "https://www.infoq.com/presentations/eval-ai-adoption/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Mallika Rao discusses the hidden risk of evaluation debt in production AI systems, drawing on her experience at Twitter, Walmart, and Netflix. She explains why traditional metrics fail modern architectures, breaks down a five-layer evaluation stack spanning infrastructure and UX, and shares a diagnostic maturity model to help engineering leaders eliminate silent semantic failures. By Mallika Rao",
+        "image_url": "https://res.infoq.com/presentations/eval-ai-adoption/en/mediumimage/medium-1779185675202.jpeg",
+        "image_source": "rss_content",
+        "published_at": "2026-05-29T12:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1nd8luf",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "Presentation: Building Evals for AI Adoption: From Principles to Practice",
+          "url": "https://infoq.com/presentations/eval-ai-adoption",
+          "original_url": "https://www.infoq.com/presentations/eval-ai-adoption/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "Mallika Rao discusses the hidden risk of evaluation debt in production AI systems, drawing on her experience at Twitter, Walmart, and Netflix. She explains why traditional metrics fail modern architectures, breaks down a five-layer evaluation stack spanning infrastructure and UX, and shares a diagnostic maturity model to help engineering leaders eliminate silent semantic failures. By Mallika Rao",
+          "image_url": "https://res.infoq.com/presentations/eval-ai-adoption/en/mediumimage/medium-1779185675202.jpeg",
+          "image_source": "rss_content",
+          "published_at": "2026-05-29T12:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "Presentation: Building Evals for AI Adoption: From Principles to Practice",
+          "url": "https://infoq.com/presentations/eval-ai-adoption",
+          "published_at": "2026-05-29T12:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "signal",
+      "one_liner": "Practical guide on building a multi-layer evaluation stack for production AI systems to avoid evaluation debt.",
+      "novelty": 0.757,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.758,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "ysznjg",
+      "primary": {
+        "id": "ysznjg",
+        "source_id": "r_ml",
+        "source_name": "r/MachineLearning",
+        "source_role": "main",
+        "trust": 0.55,
+        "kind_hint": "discussion",
+        "title": "Building a monokernel for LLM inference on AMD MI300X - up to 3,300 output tokens/s per request [P]",
+        "url": "https://old.reddit.com/r/MachineLearning/comments/1tqvuz9/building_a_monokernel_for_llm_inference_on_amd",
+        "original_url": "https://old.reddit.com/r/MachineLearning/comments/1tqvuz9/building_a_monokernel_for_llm_inference_on_amd/",
+        "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1tqvuz9/building_a_monokernel_for_llm_inference_on_amd",
+        "discussion_source": "r/MachineLearning",
+        "summary": "We built a monokernel that runs the full decode sequence as one GPU-resident program on AMD MI300X, with some neat optimizations. The die topology is central to the result, we map memory access patterns to the physical layout, compute units group by their associated IOD, and the hardware runs at its full design performance. Up to 3,300 output tokens/s per request, batch size 1, no speculative decoding, no quantization, on 8x MI300X. This preview runs a small 2B coding model, and we plan to support large frontier MoE in the future. Technical deep dive: https://blog.kog.ai/building-a-single-kern",
+        "published_at": "2026-05-29T08:54:29.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "ysznjg",
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "source_role": "main",
+          "trust": 0.55,
+          "kind_hint": "discussion",
+          "title": "Building a monokernel for LLM inference on AMD MI300X - up to 3,300 output tokens/s per request [P]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1tqvuz9/building_a_monokernel_for_llm_inference_on_amd",
+          "original_url": "https://old.reddit.com/r/MachineLearning/comments/1tqvuz9/building_a_monokernel_for_llm_inference_on_amd/",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1tqvuz9/building_a_monokernel_for_llm_inference_on_amd",
+          "discussion_source": "r/MachineLearning",
+          "summary": "We built a monokernel that runs the full decode sequence as one GPU-resident program on AMD MI300X, with some neat optimizations. The die topology is central to the result, we map memory access patterns to the physical layout, compute units group by their associated IOD, and the hardware runs at its full design performance. Up to 3,300 output tokens/s per request, batch size 1, no speculative decoding, no quantization, on 8x MI300X. This preview runs a small 2B coding model, and we plan to support large frontier MoE in the future. Technical deep dive: https://blog.kog.ai/building-a-single-kern",
+          "published_at": "2026-05-29T08:54:29.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "title": "Building a monokernel for LLM inference on AMD MI300X - up to 3,300 output tokens/s per request [P]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1tqvuz9/building_a_monokernel_for_llm_inference_on_amd",
+          "published_at": "2026-05-29T08:54:29.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1tqvuz9/building_a_monokernel_for_llm_inference_on_amd",
+          "discussion_source": "r/MachineLearning"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "A monokernel implementation for AMD MI300X achieves 3,300 tokens/s by optimizing memory access for die topology.",
+      "novelty": 0.835,
+      "novelty_label": "high",
+      "trust": 0.55,
+      "score": 0.723,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "y31qq5",
+      "primary": {
+        "id": "y31qq5",
+        "source_id": "marktechpost",
+        "source_name": "MarkTechPost",
+        "source_role": "main",
+        "trust": 0.48,
+        "kind_hint": "news",
+        "title": "Meet mKernel: A Multi-GPU, Multi-Node Fused Kernel Library for GPU-Driven Communication",
+        "url": "https://marktechpost.com/2026/05/29/meet-mkernel-a-multi-gpu-multi-node-fused-kernel-library-for-gpu-driven-communication",
+        "original_url": "https://www.marktechpost.com/2026/05/29/meet-mkernel-a-multi-gpu-multi-node-fused-kernel-library-for-gpu-driven-communication/",
+        "summary": "UC Berkeley's UCCL team releases mKernel, fusing intra-node NVLink, inter-node RDMA, and dense compute into a single persistent CUDA kernel. The post Meet mKernel: A Multi-GPU, Multi-Node Fused Kernel Library for GPU-Driven Communication appeared first on MarkTechPost.",
+        "published_at": "2026-05-29T08:43:32.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "y31qq5",
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "source_role": "main",
+          "trust": 0.48,
+          "kind_hint": "news",
+          "title": "Meet mKernel: A Multi-GPU, Multi-Node Fused Kernel Library for GPU-Driven Communication",
+          "url": "https://marktechpost.com/2026/05/29/meet-mkernel-a-multi-gpu-multi-node-fused-kernel-library-for-gpu-driven-communication",
+          "original_url": "https://www.marktechpost.com/2026/05/29/meet-mkernel-a-multi-gpu-multi-node-fused-kernel-library-for-gpu-driven-communication/",
+          "summary": "UC Berkeley's UCCL team releases mKernel, fusing intra-node NVLink, inter-node RDMA, and dense compute into a single persistent CUDA kernel. The post Meet mKernel: A Multi-GPU, Multi-Node Fused Kernel Library for GPU-Driven Communication appeared first on MarkTechPost.",
+          "published_at": "2026-05-29T08:43:32.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "title": "Meet mKernel: A Multi-GPU, Multi-Node Fused Kernel Library for GPU-Driven Communication",
+          "url": "https://marktechpost.com/2026/05/29/meet-mkernel-a-multi-gpu-multi-node-fused-kernel-library-for-gpu-driven-communication",
+          "published_at": "2026-05-29T08:43:32.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "mKernel library fuses intra-node NVLink and inter-node RDMA into a single persistent CUDA kernel.",
+      "novelty": 0.845,
+      "novelty_label": "high",
+      "trust": 0.48,
+      "score": 0.71,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "1ggolgq",
+      "primary": {
+        "id": "1ggolgq",
+        "source_id": "cloudflare_ai_changelog",
+        "source_name": "Cloudflare AI Changelog",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tool",
+        "title": "Radar - TLS bug detection in the Cloudflare Radar post-quantum checker",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-05-29-radar-pq-tls-bug-detection",
+        "original_url": "https://developers.cloudflare.com/changelog/post/2026-05-29-radar-pq-tls-bug-detection/",
+        "summary": "The Radar post-quantum TLS support checker now also reports TLS bugs detected during the handshake test. When a scanned host exhibits compatibility issues, the results include details on the specific bugs detected, along with guidance on how to investigate and remediate each issue. The bugs section only appears for hosts where issues are found. The following TLS bugs are detected: Split ClientHello — The connection fails with a fragmented post-quantum ClientHello but succeeds with classical handshakes. Typically caused by middleboxes or firewalls that cannot reassemble split TLS messages. HRR",
+        "image_url": "https://developers.cloudflare.com/_astro/pq-tls-bug-detection.BrmsVMno_ZIsLXh.webp",
+        "image_source": "rss_content",
+        "published_at": "2026-05-29T00:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1ggolgq",
+          "source_id": "cloudflare_ai_changelog",
+          "source_name": "Cloudflare AI Changelog",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tool",
+          "title": "Radar - TLS bug detection in the Cloudflare Radar post-quantum checker",
+          "url": "https://developers.cloudflare.com/changelog/post/2026-05-29-radar-pq-tls-bug-detection",
+          "original_url": "https://developers.cloudflare.com/changelog/post/2026-05-29-radar-pq-tls-bug-detection/",
+          "summary": "The Radar post-quantum TLS support checker now also reports TLS bugs detected during the handshake test. When a scanned host exhibits compatibility issues, the results include details on the specific bugs detected, along with guidance on how to investigate and remediate each issue. The bugs section only appears for hosts where issues are found. The following TLS bugs are detected: Split ClientHello — The connection fails with a fragmented post-quantum ClientHello but succeeds with classical handshakes. Typically caused by middleboxes or firewalls that cannot reassemble split TLS messages. HRR",
+          "image_url": "https://developers.cloudflare.com/_astro/pq-tls-bug-detection.BrmsVMno_ZIsLXh.webp",
+          "image_source": "rss_content",
+          "published_at": "2026-05-29T00:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "cloudflare_ai_changelog",
+          "source_name": "Cloudflare AI Changelog",
+          "title": "Radar - TLS bug detection in the Cloudflare Radar post-quantum checker",
+          "url": "https://developers.cloudflare.com/changelog/post/2026-05-29-radar-pq-tls-bug-detection",
+          "published_at": "2026-05-29T00:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Cloudflare Radar post-quantum TLS checker now reports specific handshake bugs and remediation guidance.",
+      "novelty": 0.75,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.736,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "itbgqj",
+      "primary": {
+        "id": "itbgqj",
+        "source_id": "aws_ml_blog",
+        "source_name": "AWS Machine Learning Blog",
+        "source_role": "main",
+        "trust": 0.8,
+        "kind_hint": "tutorial",
+        "title": "Streamline external access to Amazon SageMaker MLflow using a REST API proxy",
+        "url": "https://aws.amazon.com/blogs/machine-learning/streamline-external-access-to-amazon-sagemaker-mlflow-using-a-rest-api-proxy",
+        "original_url": "https://aws.amazon.com/blogs/machine-learning/streamline-external-access-to-amazon-sagemaker-mlflow-using-a-rest-api-proxy/",
+        "summary": "In this post, we demonstrate how to build a secure Flask-based MLflow proxy service that provides HTTPS access to Amazon SageMaker MLflow without requiring the MLflow SDK. This solution is for organizations undergoing cloud transformation who want to preserve their existing ML workflows while adopting cloud-native services.",
+        "published_at": "2026-05-28T20:35:44.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "itbgqj",
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "source_role": "main",
+          "trust": 0.8,
+          "kind_hint": "tutorial",
+          "title": "Streamline external access to Amazon SageMaker MLflow using a REST API proxy",
+          "url": "https://aws.amazon.com/blogs/machine-learning/streamline-external-access-to-amazon-sagemaker-mlflow-using-a-rest-api-proxy",
+          "original_url": "https://aws.amazon.com/blogs/machine-learning/streamline-external-access-to-amazon-sagemaker-mlflow-using-a-rest-api-proxy/",
+          "summary": "In this post, we demonstrate how to build a secure Flask-based MLflow proxy service that provides HTTPS access to Amazon SageMaker MLflow without requiring the MLflow SDK. This solution is for organizations undergoing cloud transformation who want to preserve their existing ML workflows while adopting cloud-native services.",
+          "published_at": "2026-05-28T20:35:44.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "title": "Streamline external access to Amazon SageMaker MLflow using a REST API proxy",
+          "url": "https://aws.amazon.com/blogs/machine-learning/streamline-external-access-to-amazon-sagemaker-mlflow-using-a-rest-api-proxy",
+          "published_at": "2026-05-28T20:35:44.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "signal",
+      "one_liner": "Guide to building a Flask-based REST proxy for secure external access to Amazon SageMaker MLflow.",
+      "novelty": 0.732,
+      "novelty_label": "medium",
+      "trust": 0.8,
+      "score": 0.729,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "wfxqp5",
+      "primary": {
+        "id": "wfxqp5",
+        "source_id": "nvidia_developer_blog",
+        "source_name": "NVIDIA Developer Blog",
+        "source_role": "main",
+        "trust": 0.82,
+        "kind_hint": "tool",
+        "title": "How to Automate AI Model Documentation with the NVIDIA MCG Toolkit",
+        "url": "https://developer.nvidia.com/blog/how-to-automate-ai-model-documentation-with-the-nvidia-mcg-toolkit",
+        "original_url": "https://developer.nvidia.com/blog/how-to-automate-ai-model-documentation-with-the-nvidia-mcg-toolkit/",
+        "summary": "As AI models grow in complexity and regulatory scrutiny intensifies under frameworks including California’s AB-2013 and the EU AI Act, software teams... As AI models grow in complexity and regulatory scrutiny intensifies under frameworks including California’s AB-2013 and the EU AI Act, software teams face a challenge beyond delivering great code: They need to produce comprehensive, auditable model documentation before the models are released. Model cards describe how a model works, its intended use and license, training data, performance… Source",
+        "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/05/image3-8-768x432.png",
+        "image_source": "rss_content",
+        "published_at": "2026-05-29T16:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "wfxqp5",
+          "source_id": "nvidia_developer_blog",
+          "source_name": "NVIDIA Developer Blog",
+          "source_role": "main",
+          "trust": 0.82,
+          "kind_hint": "tool",
+          "title": "How to Automate AI Model Documentation with the NVIDIA MCG Toolkit",
+          "url": "https://developer.nvidia.com/blog/how-to-automate-ai-model-documentation-with-the-nvidia-mcg-toolkit",
+          "original_url": "https://developer.nvidia.com/blog/how-to-automate-ai-model-documentation-with-the-nvidia-mcg-toolkit/",
+          "summary": "As AI models grow in complexity and regulatory scrutiny intensifies under frameworks including California’s AB-2013 and the EU AI Act, software teams... As AI models grow in complexity and regulatory scrutiny intensifies under frameworks including California’s AB-2013 and the EU AI Act, software teams face a challenge beyond delivering great code: They need to produce comprehensive, auditable model documentation before the models are released. Model cards describe how a model works, its intended use and license, training data, performance… Source",
+          "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/05/image3-8-768x432.png",
+          "image_source": "rss_content",
+          "published_at": "2026-05-29T16:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "nvidia_developer_blog",
+          "source_name": "NVIDIA Developer Blog",
+          "title": "How to Automate AI Model Documentation with the NVIDIA MCG Toolkit",
+          "url": "https://developer.nvidia.com/blog/how-to-automate-ai-model-documentation-with-the-nvidia-mcg-toolkit",
+          "published_at": "2026-05-29T16:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "mixed",
+      "one_liner": "NVIDIA toolkit for automating AI model documentation to meet regulatory compliance requirements.",
+      "novelty": 0.804,
+      "novelty_label": "high",
+      "trust": 0.82,
+      "score": 0.675,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "b47oio",
+      "primary": {
+        "id": "b47oio",
+        "source_id": "marktechpost",
+        "source_name": "MarkTechPost",
+        "source_role": "main",
+        "trust": 0.48,
+        "kind_hint": "news",
+        "title": "Hexo Labs Open-Sources SIA: A Self-Improving Agent That Updates Both the Harness and the Model Weights",
+        "url": "https://marktechpost.com/2026/05/29/hexo-labs-open-sources-sia-a-self-improving-agent-that-updates-both-the-harness-and-the-model-weights",
+        "original_url": "https://www.marktechpost.com/2026/05/29/hexo-labs-open-sources-sia-a-self-improving-agent-that-updates-both-the-harness-and-the-model-weights/",
+        "summary": "Hexo Labs released SIA, an open-source self-improving loop, under an MIT license. A Feedback-Agent reads each run's trajectory, then either rewrites the scaffold or triggers a LoRA weight update on gpt-oss-120b. Combining both levers beat scaffold-only iteration on LawBench, TriMul GPU kernels, and scRNA-seq denoising. The post Hexo Labs Open-Sources SIA: A Self-Improving Agent That Updates Both the Harness and the Model Weights appeared first on MarkTechPost.",
+        "image_url": "https://www.marktechpost.com/wp-content/uploads/2026/05/Screenshot-2026-05-29-at-12.13.58-AM-1.png",
+        "image_source": "rss_media",
+        "published_at": "2026-05-29T07:28:37.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "b47oio",
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "source_role": "main",
+          "trust": 0.48,
+          "kind_hint": "news",
+          "title": "Hexo Labs Open-Sources SIA: A Self-Improving Agent That Updates Both the Harness and the Model Weights",
+          "url": "https://marktechpost.com/2026/05/29/hexo-labs-open-sources-sia-a-self-improving-agent-that-updates-both-the-harness-and-the-model-weights",
+          "original_url": "https://www.marktechpost.com/2026/05/29/hexo-labs-open-sources-sia-a-self-improving-agent-that-updates-both-the-harness-and-the-model-weights/",
+          "summary": "Hexo Labs released SIA, an open-source self-improving loop, under an MIT license. A Feedback-Agent reads each run's trajectory, then either rewrites the scaffold or triggers a LoRA weight update on gpt-oss-120b. Combining both levers beat scaffold-only iteration on LawBench, TriMul GPU kernels, and scRNA-seq denoising. The post Hexo Labs Open-Sources SIA: A Self-Improving Agent That Updates Both the Harness and the Model Weights appeared first on MarkTechPost.",
+          "image_url": "https://www.marktechpost.com/wp-content/uploads/2026/05/Screenshot-2026-05-29-at-12.13.58-AM-1.png",
+          "image_source": "rss_media",
+          "published_at": "2026-05-29T07:28:37.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "title": "Hexo Labs Open-Sources SIA: A Self-Improving Agent That Updates Both the Harness and the Model Weights",
+          "url": "https://marktechpost.com/2026/05/29/hexo-labs-open-sources-sia-a-self-improving-agent-that-updates-both-the-harness-and-the-model-weights",
+          "published_at": "2026-05-29T07:28:37.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "SIA open-source framework for self-improving agents via scaffold updates and LoRA weight tuning.",
+      "novelty": 0.781,
+      "novelty_label": "high",
+      "trust": 0.48,
+      "score": 0.689,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "rjqw9k",
+      "primary": {
+        "id": "rjqw9k",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "Claude Opus 4.8",
+        "url": "https://anthropic.com/news/claude-opus-4-8",
+        "original_url": "https://www.anthropic.com/news/claude-opus-4-8",
+        "discussion_url": "https://news.ycombinator.com/item?id=48311647",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-05-28T16:49:14Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 1703,
+          "comments": 1333
+        }
+      },
+      "members": [
+        {
+          "id": "rjqw9k",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "Claude Opus 4.8",
+          "url": "https://anthropic.com/news/claude-opus-4-8",
+          "original_url": "https://www.anthropic.com/news/claude-opus-4-8",
+          "discussion_url": "https://news.ycombinator.com/item?id=48311647",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-05-28T16:49:14Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 1703,
+            "comments": 1333
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "Claude Opus 4.8",
+          "url": "https://anthropic.com/news/claude-opus-4-8",
+          "published_at": "2026-05-28T16:49:14Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=48311647",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "Anthropic releases Claude Opus 4.8.",
+      "novelty": 0.6,
+      "novelty_label": "medium",
+      "trust": 0.65,
+      "score": 0.689,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as concrete builder or research signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
+    },
+    {
+      "id": "rlzr0k",
+      "primary": {
+        "id": "rlzr0k",
+        "source_id": "aws_ml_blog",
+        "source_name": "AWS Machine Learning Blog",
+        "source_role": "main",
+        "trust": 0.8,
+        "kind_hint": "tutorial",
+        "title": "Training Azerbaijani language models on Amazon SageMaker AI",
+        "url": "https://aws.amazon.com/blogs/machine-learning/training-azerbaijani-language-models-on-amazon-sagemaker-ai",
+        "original_url": "https://aws.amazon.com/blogs/machine-learning/training-azerbaijani-language-models-on-amazon-sagemaker-ai/",
+        "summary": "Azercell Telecom LLC, Azerbaijan's leading telecommunications provider, wanted to build an Azerbaijani large language model (LLM) on Amazon SageMaker AI for telecom use cases and a customer-facing chatbot. The challenge: adapting foundation models (FMs) to a morphologically rich language with limited training data and no existing blueprint for efficient LLM training in Azerbaijani. In a six-week collaboration, Azercell worked with the AWS Generative AI Innovation Center to establish a production-ready framework on Amazon SageMaker AI.",
+        "published_at": "2026-05-28T21:54:06.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "rlzr0k",
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "source_role": "main",
+          "trust": 0.8,
+          "kind_hint": "tutorial",
+          "title": "Training Azerbaijani language models on Amazon SageMaker AI",
+          "url": "https://aws.amazon.com/blogs/machine-learning/training-azerbaijani-language-models-on-amazon-sagemaker-ai",
+          "original_url": "https://aws.amazon.com/blogs/machine-learning/training-azerbaijani-language-models-on-amazon-sagemaker-ai/",
+          "summary": "Azercell Telecom LLC, Azerbaijan's leading telecommunications provider, wanted to build an Azerbaijani large language model (LLM) on Amazon SageMaker AI for telecom use cases and a customer-facing chatbot. The challenge: adapting foundation models (FMs) to a morphologically rich language with limited training data and no existing blueprint for efficient LLM training in Azerbaijani. In a six-week collaboration, Azercell worked with the AWS Generative AI Innovation Center to establish a production-ready framework on Amazon SageMaker AI.",
+          "published_at": "2026-05-28T21:54:06.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "title": "Training Azerbaijani language models on Amazon SageMaker AI",
+          "url": "https://aws.amazon.com/blogs/machine-learning/training-azerbaijani-language-models-on-amazon-sagemaker-ai",
+          "published_at": "2026-05-28T21:54:06.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "signal",
+      "one_liner": "Case study on fine-tuning foundation models for the morphologically rich Azerbaijani language on SageMaker.",
+      "novelty": 0.714,
+      "novelty_label": "medium",
+      "trust": 0.8,
+      "score": 0.726,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "1p4gb9o",
+      "primary": {
+        "id": "1p4gb9o",
+        "source_id": "hf_trending_models",
+        "source_name": "Hugging Face trending models",
+        "source_role": "main",
+        "trust": 0.58,
+        "kind_hint": "model_release",
+        "title": "LiquidAI/LFM2.5-8B-A1B (8854 downloads, 194 likes)",
+        "url": "https://huggingface.co/LiquidAI/LFM2.5-8B-A1B",
+        "original_url": "https://huggingface.co/LiquidAI/LFM2.5-8B-A1B",
+        "summary": "transformers, safetensors, lfm2_moe, text-generation, liquid, lfm2.5",
+        "published_at": "2026-05-28T09:43:54.000Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 194
+        }
+      },
+      "members": [
+        {
+          "id": "1p4gb9o",
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "source_role": "main",
+          "trust": 0.58,
+          "kind_hint": "model_release",
+          "title": "LiquidAI/LFM2.5-8B-A1B (8854 downloads, 194 likes)",
+          "url": "https://huggingface.co/LiquidAI/LFM2.5-8B-A1B",
+          "original_url": "https://huggingface.co/LiquidAI/LFM2.5-8B-A1B",
+          "summary": "transformers, safetensors, lfm2_moe, text-generation, liquid, lfm2.5",
+          "published_at": "2026-05-28T09:43:54.000Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 194
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "title": "LiquidAI/LFM2.5-8B-A1B (8854 downloads, 194 likes)",
+          "url": "https://huggingface.co/LiquidAI/LFM2.5-8B-A1B",
+          "published_at": "2026-05-28T09:43:54.000Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "Liquid AI releases LFM2.5-8B-A1B, an 8.3B parameter MoE model with 1.5B active parameters.",
+      "novelty": 0.629,
+      "novelty_label": "medium",
+      "trust": 0.58,
+      "score": 0.66,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as concrete builder or research signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
+    },
+    {
+      "id": "149bsvr",
+      "primary": {
+        "id": "149bsvr",
+        "source_id": "lobsters_ai",
+        "source_name": "Lobsters (AI tag)",
+        "source_role": "main",
+        "trust": 0.7,
+        "title": "Building Machine Learning Systems for a Trillion Trillion Floating Point Operations (2024)",
+        "url": "https://youtube.com/watch?v=139UPjoq7Kw",
+        "original_url": "https://www.youtube.com/watch?v=139UPjoq7Kw",
+        "discussion_url": "https://youtube.com/watch?v=139UPjoq7Kw",
+        "discussion_source": "Lobsters (AI tag)",
+        "summary": "Comments",
+        "published_at": "2026-05-29T13:51:42.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "149bsvr",
+          "source_id": "lobsters_ai",
+          "source_name": "Lobsters (AI tag)",
+          "source_role": "main",
+          "trust": 0.7,
+          "title": "Building Machine Learning Systems for a Trillion Trillion Floating Point Operations (2024)",
+          "url": "https://youtube.com/watch?v=139UPjoq7Kw",
+          "original_url": "https://www.youtube.com/watch?v=139UPjoq7Kw",
+          "discussion_url": "https://youtube.com/watch?v=139UPjoq7Kw",
+          "discussion_source": "Lobsters (AI tag)",
+          "summary": "Comments",
+          "published_at": "2026-05-29T13:51:42.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "lobsters_ai",
+          "source_name": "Lobsters (AI tag)",
+          "title": "Building Machine Learning Systems for a Trillion Trillion Floating Point Operations (2024)",
+          "url": "https://youtube.com/watch?v=139UPjoq7Kw",
+          "published_at": "2026-05-29T13:51:42.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://youtube.com/watch?v=139UPjoq7Kw",
+          "discussion_source": "Lobsters (AI tag)"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "signal",
+      "one_liner": "Technical discussion on scaling machine learning systems to exascale compute.",
+      "novelty": 0.773,
+      "novelty_label": "high",
+      "trust": 0.7,
+      "score": 0.667,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "1geh8ox",
+      "primary": {
+        "id": "1geh8ox",
+        "source_id": "simonw",
+        "source_name": "Simon Willison",
+        "source_role": "main",
+        "trust": 0.9,
+        "title": "Claude Opus 4.8: \"a modest but tangible improvement\"",
+        "url": "https://simonwillison.net/2026/May/28/claude-opus-4-8",
+        "original_url": "https://simonwillison.net/2026/May/28/claude-opus-4-8/#atom-everything",
+        "published_at": "2026-05-28T23:59:50.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1geh8ox",
+          "source_id": "simonw",
+          "source_name": "Simon Willison",
+          "source_role": "main",
+          "trust": 0.9,
+          "title": "Claude Opus 4.8: \"a modest but tangible improvement\"",
+          "url": "https://simonwillison.net/2026/May/28/claude-opus-4-8",
+          "original_url": "https://simonwillison.net/2026/May/28/claude-opus-4-8/#atom-everything",
+          "published_at": "2026-05-28T23:59:50.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        },
+        {
+          "id": "1j41qgp",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Anthropic ships Claude Opus 4.8 as a \"modest but tangible improvement\" that tops GPT-5.5 in most benchmarks",
+          "url": "https://the-decoder.com/anthropic-ships-claude-opus-4-8-as-a-modest-but-tangible-improvement-that-tops-gpt-5-5-in-most-benchmarks",
+          "original_url": "https://the-decoder.com/anthropic-ships-claude-opus-4-8-as-a-modest-but-tangible-improvement-that-tops-gpt-5-5-in-most-benchmarks/",
+          "summary": "Anthropic releases Claude Opus 4.8, which beats GPT-5.5 and Gemini 3.1 Pro in most benchmarks. The model also catches its own coding errors four times more often than its predecessor. Alongside the launch, Anthropic is rolling out dynamic workflows that can spin up hundreds of parallel sub-agents to handle tasks like codebase-wide migrations. The article Anthropic ships Claude Opus 4.8 as a \"modest but tangible improvement\" that tops GPT-5.5 in most benchmarks appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/claude_opus_48_title-scaled.webp",
+          "image_source": "rss_content",
+          "published_at": "2026-05-28T21:20:09.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "simonw",
+          "source_name": "Simon Willison",
+          "title": "Claude Opus 4.8: \"a modest but tangible improvement\"",
+          "url": "https://simonwillison.net/2026/May/28/claude-opus-4-8",
+          "published_at": "2026-05-28T23:59:50.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        },
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Anthropic ships Claude Opus 4.8 as a \"modest but tangible improvement\" that tops GPT-5.5 in most benchmarks",
+          "url": "https://the-decoder.com/anthropic-ships-claude-opus-4-8-as-a-modest-but-tangible-improvement-that-tops-gpt-5-5-in-most-benchmarks",
+          "published_at": "2026-05-28T21:20:09.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [
+        {
+          "source_name": "The Decoder",
+          "title": "Anthropic ships Claude Opus 4.8 as a \"modest but tangible improvement\" that tops GPT-5.5 in most benchmarks",
+          "url": "https://the-decoder.com/anthropic-ships-claude-opus-4-8-as-a-modest-but-tangible-improvement-that-tops-gpt-5-5-in-most-benchmarks",
+          "published_at": "2026-05-28T21:20:09.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "A brief analysis of performance improvements in the Claude Opus 4.8 model release.",
+      "novelty": 0.753,
+      "novelty_label": "high",
+      "trust": 0.9,
+      "score": 0.666,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "corroborated by 2 sources",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1nspf4b",
+      "primary": {
+        "id": "1nspf4b",
+        "source_id": "aws_ml_blog",
+        "source_name": "AWS Machine Learning Blog",
+        "source_role": "main",
+        "trust": 0.8,
+        "kind_hint": "tutorial",
+        "title": "Build a custom portal with embedded Amazon SageMaker AI MLflow Apps",
+        "url": "https://aws.amazon.com/blogs/machine-learning/build-a-custom-portal-with-embedded-amazon-sagemaker-ai-mlflow-apps",
+        "original_url": "https://aws.amazon.com/blogs/machine-learning/build-a-custom-portal-with-embedded-amazon-sagemaker-ai-mlflow-apps/",
+        "summary": "In this post, you learn how to build a custom portal with embedded SageMaker AI MLflow Apps UI. You walk through the architecture pattern behind a React front end paired with a Flask reverse proxy that handles AWS Signature Version 4 (SigV4) authentication, deploy the entire stack through the AWS Cloud Development Kit (AWS CDK), validate the deployment, and review security considerations and cleanup procedures.",
+        "published_at": "2026-05-28T20:39:22.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1nspf4b",
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "source_role": "main",
+          "trust": 0.8,
+          "kind_hint": "tutorial",
+          "title": "Build a custom portal with embedded Amazon SageMaker AI MLflow Apps",
+          "url": "https://aws.amazon.com/blogs/machine-learning/build-a-custom-portal-with-embedded-amazon-sagemaker-ai-mlflow-apps",
+          "original_url": "https://aws.amazon.com/blogs/machine-learning/build-a-custom-portal-with-embedded-amazon-sagemaker-ai-mlflow-apps/",
+          "summary": "In this post, you learn how to build a custom portal with embedded SageMaker AI MLflow Apps UI. You walk through the architecture pattern behind a React front end paired with a Flask reverse proxy that handles AWS Signature Version 4 (SigV4) authentication, deploy the entire stack through the AWS Cloud Development Kit (AWS CDK), validate the deployment, and review security considerations and cleanup procedures.",
+          "published_at": "2026-05-28T20:39:22.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "title": "Build a custom portal with embedded Amazon SageMaker AI MLflow Apps",
+          "url": "https://aws.amazon.com/blogs/machine-learning/build-a-custom-portal-with-embedded-amazon-sagemaker-ai-mlflow-apps",
+          "published_at": "2026-05-28T20:39:22.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "signal",
+      "one_liner": "Guide to building a custom portal for SageMaker MLflow Apps using React and a Flask reverse proxy for SigV4 authentication.",
+      "novelty": 0.698,
+      "novelty_label": "medium",
+      "trust": 0.8,
+      "score": 0.719,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "x31w8r",
+      "primary": {
+        "id": "x31w8r",
+        "source_id": "marktechpost",
+        "source_name": "MarkTechPost",
+        "source_role": "main",
+        "trust": 0.48,
+        "kind_hint": "news",
+        "title": "Liquid AI Releases LFM2.5-8B-A1B: An On-Device MoE Model With 8.3B Total and 1.5B Active Parameters",
+        "url": "https://marktechpost.com/2026/05/28/liquid-ai-releases-lfm2-5-8b-a1b-an-on-device-moe-model-with-8-3b-total-and-1-5b-active-parameters",
+        "original_url": "https://www.marktechpost.com/2026/05/28/liquid-ai-releases-lfm2-5-8b-a1b-an-on-device-moe-model-with-8-3b-total-and-1-5b-active-parameters/",
+        "summary": "Liquid AI's LFM2.5-8B-A1B activates 1.5B of 8.3B parameters, offering 128K context, reasoning, and tool calling on consumer hardware. The post Liquid AI Releases LFM2.5-8B-A1B: An On-Device MoE Model With 8.3B Total and 1.5B Active Parameters appeared first on MarkTechPost.",
+        "image_url": "https://www.marktechpost.com/wp-content/uploads/2026/05/Screenshot-2026-05-28-at-4.29.30-PM-1.png",
+        "image_source": "rss_media",
+        "published_at": "2026-05-28T23:29:49.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "x31w8r",
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "source_role": "main",
+          "trust": 0.48,
+          "kind_hint": "news",
+          "title": "Liquid AI Releases LFM2.5-8B-A1B: An On-Device MoE Model With 8.3B Total and 1.5B Active Parameters",
+          "url": "https://marktechpost.com/2026/05/28/liquid-ai-releases-lfm2-5-8b-a1b-an-on-device-moe-model-with-8-3b-total-and-1-5b-active-parameters",
+          "original_url": "https://www.marktechpost.com/2026/05/28/liquid-ai-releases-lfm2-5-8b-a1b-an-on-device-moe-model-with-8-3b-total-and-1-5b-active-parameters/",
+          "summary": "Liquid AI's LFM2.5-8B-A1B activates 1.5B of 8.3B parameters, offering 128K context, reasoning, and tool calling on consumer hardware. The post Liquid AI Releases LFM2.5-8B-A1B: An On-Device MoE Model With 8.3B Total and 1.5B Active Parameters appeared first on MarkTechPost.",
+          "image_url": "https://www.marktechpost.com/wp-content/uploads/2026/05/Screenshot-2026-05-28-at-4.29.30-PM-1.png",
+          "image_source": "rss_media",
+          "published_at": "2026-05-28T23:29:49.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "title": "Liquid AI Releases LFM2.5-8B-A1B: An On-Device MoE Model With 8.3B Total and 1.5B Active Parameters",
+          "url": "https://marktechpost.com/2026/05/28/liquid-ai-releases-lfm2-5-8b-a1b-an-on-device-moe-model-with-8-3b-total-and-1-5b-active-parameters",
+          "published_at": "2026-05-28T23:29:49.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "Technical overview of Liquid AI's LFM2.5-8B-A1B MoE model, featuring 128K context and tool calling.",
+      "novelty": 0.77,
+      "novelty_label": "high",
+      "trust": 0.48,
+      "score": 0.672,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
+    },
+    {
+      "id": "1iallx5",
+      "primary": {
+        "id": "1iallx5",
+        "source_id": "r_ml",
+        "source_name": "r/MachineLearning",
+        "source_role": "main",
+        "trust": 0.55,
+        "kind_hint": "discussion",
+        "title": "Does anyone have a copy of the ICDAR2013 Chinese Handwriting Competition Dataset? [R]",
+        "url": "https://old.reddit.com/r/MachineLearning/comments/1tr9cls/does_anyone_have_a_copy_of_the_icdar2013_chinese",
+        "original_url": "https://old.reddit.com/r/MachineLearning/comments/1tr9cls/does_anyone_have_a_copy_of_the_icdar2013_chinese/",
+        "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1tr9cls/does_anyone_have_a_copy_of_the_icdar2013_chinese",
+        "discussion_source": "r/MachineLearning",
+        "summary": "I understand that this is a little unorthodox, but I'm desperately trying to download a copy of the ICDAR2013 Chinese Handwriting Recognition Competition Dataset. Unfortunately, the linked page in the Conference Archive: https://nlpr.ia.ac.cn/databases/handwriting/Download.html appears to be down, and has been down for the past few weeks consistently. I've checked every source I can find, like Kaggle, HuggingFace, remnant Google Drive and Baidu Netdisk links, even checking if someone's accidentally committed it to github, but no dice. I've tried every google dorking trick I know to no avail. W",
+        "published_at": "2026-05-29T17:35:43.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1iallx5",
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "source_role": "main",
+          "trust": 0.55,
+          "kind_hint": "discussion",
+          "title": "Does anyone have a copy of the ICDAR2013 Chinese Handwriting Competition Dataset? [R]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1tr9cls/does_anyone_have_a_copy_of_the_icdar2013_chinese",
+          "original_url": "https://old.reddit.com/r/MachineLearning/comments/1tr9cls/does_anyone_have_a_copy_of_the_icdar2013_chinese/",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1tr9cls/does_anyone_have_a_copy_of_the_icdar2013_chinese",
+          "discussion_source": "r/MachineLearning",
+          "summary": "I understand that this is a little unorthodox, but I'm desperately trying to download a copy of the ICDAR2013 Chinese Handwriting Recognition Competition Dataset. Unfortunately, the linked page in the Conference Archive: https://nlpr.ia.ac.cn/databases/handwriting/Download.html appears to be down, and has been down for the past few weeks consistently. I've checked every source I can find, like Kaggle, HuggingFace, remnant Google Drive and Baidu Netdisk links, even checking if someone's accidentally committed it to github, but no dice. I've tried every google dorking trick I know to no avail. W",
+          "published_at": "2026-05-29T17:35:43.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "title": "Does anyone have a copy of the ICDAR2013 Chinese Handwriting Competition Dataset? [R]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1tr9cls/does_anyone_have_a_copy_of_the_icdar2013_chinese",
+          "published_at": "2026-05-29T17:35:43.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1tr9cls/does_anyone_have_a_copy_of_the_icdar2013_chinese",
+          "discussion_source": "r/MachineLearning"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "signal",
+      "one_liner": "Community request for access to the legacy ICDAR2013 Chinese Handwriting dataset.",
+      "novelty": 0.845,
+      "novelty_label": "high",
+      "trust": 0.55,
+      "score": 0.661,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "1xvxo9q",
+      "primary": {
+        "id": "1xvxo9q",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "Notes from the Mistral AI Now Summit in Paris",
+        "url": "https://koenvangilst.nl/lab/mistral-ai-now-summit",
+        "original_url": "https://koenvangilst.nl/lab/mistral-ai-now-summit",
+        "discussion_url": "https://news.ycombinator.com/item?id=48325340",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-05-29T16:22:01Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 185,
+          "comments": 44
+        }
+      },
+      "members": [
+        {
+          "id": "1xvxo9q",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "Notes from the Mistral AI Now Summit in Paris",
+          "url": "https://koenvangilst.nl/lab/mistral-ai-now-summit",
+          "original_url": "https://koenvangilst.nl/lab/mistral-ai-now-summit",
+          "discussion_url": "https://news.ycombinator.com/item?id=48325340",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-05-29T16:22:01Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 185,
+            "comments": 44
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "Notes from the Mistral AI Now Summit in Paris",
+          "url": "https://koenvangilst.nl/lab/mistral-ai-now-summit",
+          "published_at": "2026-05-29T16:22:01Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=48325340",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Summary of announcements and presentations from the Mistral AI Now summit.",
+      "novelty": 0.773,
+      "novelty_label": "high",
+      "trust": 0.65,
+      "score": 0.658,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "13reree",
+      "primary": {
+        "id": "13reree",
+        "source_id": "ars_ai",
+        "source_name": "Ars Technica AI",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "news",
+        "title": "Startup offers free home cleaning—if it can record it all for robot training",
+        "url": "https://arstechnica.com/ai/2026/05/robot-training-startup-will-send-humans-wearing-cameras-to-clean-your-home",
+        "original_url": "https://arstechnica.com/ai/2026/05/robot-training-startup-will-send-humans-wearing-cameras-to-clean-your-home/",
+        "summary": "The latest twist in paying humans to wear head cameras for robot training data.",
+        "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/05/Screenshot-2026-05-29-at-9.24.24-AM-1152x648.png",
+        "image_source": "rss_media",
+        "published_at": "2026-05-29T16:16:14.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "13reree",
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "news",
+          "title": "Startup offers free home cleaning—if it can record it all for robot training",
+          "url": "https://arstechnica.com/ai/2026/05/robot-training-startup-will-send-humans-wearing-cameras-to-clean-your-home",
+          "original_url": "https://arstechnica.com/ai/2026/05/robot-training-startup-will-send-humans-wearing-cameras-to-clean-your-home/",
+          "summary": "The latest twist in paying humans to wear head cameras for robot training data.",
+          "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/05/Screenshot-2026-05-29-at-9.24.24-AM-1152x648.png",
+          "image_source": "rss_media",
+          "published_at": "2026-05-29T16:16:14.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "title": "Startup offers free home cleaning—if it can record it all for robot training",
+          "url": "https://arstechnica.com/ai/2026/05/robot-training-startup-will-send-humans-wearing-cameras-to-clean-your-home",
+          "published_at": "2026-05-29T16:16:14.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Report on a startup collecting home video data for robot training.",
+      "novelty": 0.818,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.671,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "s11jtz",
+      "primary": {
+        "id": "s11jtz",
+        "source_id": "marktechpost",
+        "source_name": "MarkTechPost",
+        "source_role": "main",
+        "trust": 0.48,
+        "kind_hint": "news",
+        "title": "Anthropic Ships Claude Opus 4.8 Alongside Dynamic Workflows and Cheaper Fast Mode, With Workflows Capped at 1,000 Subagents",
+        "url": "https://marktechpost.com/2026/05/28/anthropic-ships-claude-opus-4-8-alongside-dynamic-workflows-and-cheaper-fast-mode-with-workflows-capped-at-1000-subagents",
+        "original_url": "https://www.marktechpost.com/2026/05/28/anthropic-ships-claude-opus-4-8-alongside-dynamic-workflows-and-cheaper-fast-mode-with-workflows-capped-at-1000-subagents/",
+        "summary": "Anthropic's Claude Opus 4.8 brings dynamic workflows and cheaper fast mode to Claude Code, now in research preview The post Anthropic Ships Claude Opus 4.8 Alongside Dynamic Workflows and Cheaper Fast Mode, With Workflows Capped at 1,000 Subagents appeared first on MarkTechPost.",
+        "published_at": "2026-05-28T22:12:16.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "s11jtz",
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "source_role": "main",
+          "trust": 0.48,
+          "kind_hint": "news",
+          "title": "Anthropic Ships Claude Opus 4.8 Alongside Dynamic Workflows and Cheaper Fast Mode, With Workflows Capped at 1,000 Subagents",
+          "url": "https://marktechpost.com/2026/05/28/anthropic-ships-claude-opus-4-8-alongside-dynamic-workflows-and-cheaper-fast-mode-with-workflows-capped-at-1000-subagents",
+          "original_url": "https://www.marktechpost.com/2026/05/28/anthropic-ships-claude-opus-4-8-alongside-dynamic-workflows-and-cheaper-fast-mode-with-workflows-capped-at-1000-subagents/",
+          "summary": "Anthropic's Claude Opus 4.8 brings dynamic workflows and cheaper fast mode to Claude Code, now in research preview The post Anthropic Ships Claude Opus 4.8 Alongside Dynamic Workflows and Cheaper Fast Mode, With Workflows Capped at 1,000 Subagents appeared first on MarkTechPost.",
+          "published_at": "2026-05-28T22:12:16.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "title": "Anthropic Ships Claude Opus 4.8 Alongside Dynamic Workflows and Cheaper Fast Mode, With Workflows Capped at 1,000 Subagents",
+          "url": "https://marktechpost.com/2026/05/28/anthropic-ships-claude-opus-4-8-alongside-dynamic-workflows-and-cheaper-fast-mode-with-workflows-capped-at-1000-subagents",
+          "published_at": "2026-05-28T22:12:16.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "Anthropic released Claude Opus 4.8 with dynamic workflows and a cheaper fast mode for Claude Code.",
+      "novelty": 0.727,
+      "novelty_label": "medium",
+      "trust": 0.48,
+      "score": 0.657,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
+    },
+    {
+      "id": "85j87s",
+      "primary": {
+        "id": "85j87s",
+        "source_id": "simonw",
+        "source_name": "Simon Willison",
+        "source_role": "main",
+        "trust": 0.9,
+        "title": "Anthropic's run-rate revenue hits $47 billion",
+        "url": "https://simonwillison.net/2026/May/29/anthropic",
+        "original_url": "https://simonwillison.net/2026/May/29/anthropic/#atom-everything",
+        "published_at": "2026-05-29T01:23:08.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "85j87s",
+          "source_id": "simonw",
+          "source_name": "Simon Willison",
+          "source_role": "main",
+          "trust": 0.9,
+          "title": "Anthropic's run-rate revenue hits $47 billion",
+          "url": "https://simonwillison.net/2026/May/29/anthropic",
+          "original_url": "https://simonwillison.net/2026/May/29/anthropic/#atom-everything",
+          "published_at": "2026-05-29T01:23:08.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "simonw",
+          "source_name": "Simon Willison",
+          "title": "Anthropic's run-rate revenue hits $47 billion",
+          "url": "https://simonwillison.net/2026/May/29/anthropic",
+          "published_at": "2026-05-29T01:23:08.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Report on Anthropic's estimated annual revenue run-rate.",
+      "novelty": 0.698,
+      "novelty_label": "medium",
+      "trust": 0.9,
+      "score": 0.638,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as useful but lower-confidence signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "h006mo",
+      "primary": {
+        "id": "h006mo",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "New review paper argues code is how AI agents think and act, not just what they produce",
+        "url": "https://the-decoder.com/new-review-paper-argues-code-is-how-ai-agents-think-and-act-not-just-what-they-produce",
+        "original_url": "https://the-decoder.com/new-review-paper-argues-code-is-how-ai-agents-think-and-act-not-just-what-they-produce/",
+        "summary": "A new review paper argues that the real bottleneck for autonomous AI agents isn't the language model itself but the software layer wrapped around it. Tools, memory, testing, and permission boundaries turn a stateless model into a working agent. Deepseek is already building a dedicated \"Harness\" team in Beijing with a core formula that confirms the thesis: model plus harness equals AI agent. The article New review paper argues code is how AI agents think and act, not just what they produce appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/Code-Agent-Harness-Nano-Banana-Pro.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-05-29T13:10:59.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "h006mo",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "New review paper argues code is how AI agents think and act, not just what they produce",
+          "url": "https://the-decoder.com/new-review-paper-argues-code-is-how-ai-agents-think-and-act-not-just-what-they-produce",
+          "original_url": "https://the-decoder.com/new-review-paper-argues-code-is-how-ai-agents-think-and-act-not-just-what-they-produce/",
+          "summary": "A new review paper argues that the real bottleneck for autonomous AI agents isn't the language model itself but the software layer wrapped around it. Tools, memory, testing, and permission boundaries turn a stateless model into a working agent. Deepseek is already building a dedicated \"Harness\" team in Beijing with a core formula that confirms the thesis: model plus harness equals AI agent. The article New review paper argues code is how AI agents think and act, not just what they produce appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/Code-Agent-Harness-Nano-Banana-Pro.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-05-29T13:10:59.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "New review paper argues code is how AI agents think and act, not just what they produce",
+          "url": "https://the-decoder.com/new-review-paper-argues-code-is-how-ai-agents-think-and-act-not-just-what-they-produce",
+          "published_at": "2026-05-29T13:10:59.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "Review article discussing the role of software layers and code in autonomous agent architectures.",
+      "novelty": 0.826,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.659,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "d1uwsb",
+      "primary": {
+        "id": "d1uwsb",
+        "source_id": "hn_show_ai",
+        "source_name": "Show HN (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.58,
+        "kind_hint": "tool",
+        "title": "Show HN: AISlop, a CLI for catching AI generated code smells",
+        "url": "https://github.com/scanaislop/aislop",
+        "original_url": "https://github.com/scanaislop/aislop",
+        "discussion_url": "https://news.ycombinator.com/item?id=48322956",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-05-29T13:37:38Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 69,
+          "comments": 56
+        }
+      },
+      "members": [
+        {
+          "id": "d1uwsb",
+          "source_id": "hn_show_ai",
+          "source_name": "Show HN (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.58,
+          "kind_hint": "tool",
+          "title": "Show HN: AISlop, a CLI for catching AI generated code smells",
+          "url": "https://github.com/scanaislop/aislop",
+          "original_url": "https://github.com/scanaislop/aislop",
+          "discussion_url": "https://news.ycombinator.com/item?id=48322956",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-05-29T13:37:38Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 69,
+            "comments": 56
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_show_ai",
+          "source_name": "Show HN (AI-filtered)",
+          "title": "Show HN: AISlop, a CLI for catching AI generated code smells",
+          "url": "https://github.com/scanaislop/aislop",
+          "published_at": "2026-05-29T13:37:38Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=48322956",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "mixed",
+      "one_liner": "CLI tool for detecting common code smells in AI-generated source code.",
+      "novelty": 0.771,
+      "novelty_label": "high",
+      "trust": 0.58,
+      "score": 0.634,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "1wevkvl",
+      "primary": {
+        "id": "1wevkvl",
+        "source_id": "yt_nate_b_jones",
+        "source_name": "AI News & Strategy Daily",
+        "source_role": "main",
+        "trust": 0.62,
+        "kind_hint": "video",
+        "title": "How Claude AI actually solves hard problems #claude #aitools",
+        "url": "https://youtube.com/shorts/Na29eKTInFk",
+        "original_url": "https://www.youtube.com/shorts/Na29eKTInFk",
+        "published_at": "2026-05-29T00:00:02.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UC0C-17n9iuUQPylguM1d-lQ"
+        }
+      },
+      "members": [
+        {
+          "id": "1wevkvl",
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "source_role": "main",
+          "trust": 0.62,
+          "kind_hint": "video",
+          "title": "How Claude AI actually solves hard problems #claude #aitools",
+          "url": "https://youtube.com/shorts/Na29eKTInFk",
+          "original_url": "https://www.youtube.com/shorts/Na29eKTInFk",
+          "published_at": "2026-05-29T00:00:02.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UC0C-17n9iuUQPylguM1d-lQ"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "title": "How Claude AI actually solves hard problems #claude #aitools",
+          "url": "https://youtube.com/shorts/Na29eKTInFk",
+          "published_at": "2026-05-29T00:00:02.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.747,
+      "novelty_label": "medium",
+      "trust": 0.62,
+      "score": 0.586,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "h40og7",
+      "primary": {
+        "id": "h40og7",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "This chip startup just raised $135M on a bet that AI’s biggest bottleneck isn’t compute — it’s memory",
+        "url": "https://techcrunch.com/2026/05/29/xcena-secures-135m-at-570m-valuation-betting-on-memory-as-ais-real-bottleneck",
+        "original_url": "https://techcrunch.com/2026/05/29/xcena-secures-135m-at-570m-valuation-betting-on-memory-as-ais-real-bottleneck/",
+        "summary": "South Korean chip startup XCENA is betting that AI's real bottleneck is not compute, but memory.",
+        "published_at": "2026-05-29T12:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "h40og7",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "This chip startup just raised $135M on a bet that AI’s biggest bottleneck isn’t compute — it’s memory",
+          "url": "https://techcrunch.com/2026/05/29/xcena-secures-135m-at-570m-valuation-betting-on-memory-as-ais-real-bottleneck",
+          "original_url": "https://techcrunch.com/2026/05/29/xcena-secures-135m-at-570m-valuation-betting-on-memory-as-ais-real-bottleneck/",
+          "summary": "South Korean chip startup XCENA is betting that AI's real bottleneck is not compute, but memory.",
+          "published_at": "2026-05-29T12:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "This chip startup just raised $135M on a bet that AI’s biggest bottleneck isn’t compute — it’s memory",
+          "url": "https://techcrunch.com/2026/05/29/xcena-secures-135m-at-570m-valuation-betting-on-memory-as-ais-real-bottleneck",
+          "published_at": "2026-05-29T12:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Chip startup XCENA raises $135M to focus on memory-centric AI hardware architectures.",
+      "novelty": 0.844,
+      "novelty_label": "high",
+      "trust": 0.72,
+      "score": 0.658,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "vieblx",
+      "primary": {
+        "id": "vieblx",
+        "source_id": "fahd_mirza",
+        "source_name": "Fahd Mirza YouTube",
+        "source_role": "main",
+        "trust": 0.66,
+        "kind_hint": "video",
+        "title": "Step 3.7 Flash - 198B Open Source Model That Does Everything; Does it Really?",
+        "url": "https://youtube.com/watch?v=pY1uMhjbiWs",
+        "original_url": "https://www.youtube.com/watch?v=pY1uMhjbiWs",
+        "image_url": "https://i.ytimg.com/vi/pY1uMhjbiWs/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-05-29T07:00:16.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+          "video_id": "pY1uMhjbiWs"
+        }
+      },
+      "members": [
+        {
+          "id": "vieblx",
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "source_role": "main",
+          "trust": 0.66,
+          "kind_hint": "video",
+          "title": "Step 3.7 Flash - 198B Open Source Model That Does Everything; Does it Really?",
+          "url": "https://youtube.com/watch?v=pY1uMhjbiWs",
+          "original_url": "https://www.youtube.com/watch?v=pY1uMhjbiWs",
+          "image_url": "https://i.ytimg.com/vi/pY1uMhjbiWs/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-05-29T07:00:16.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+            "video_id": "pY1uMhjbiWs"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "title": "Step 3.7 Flash - 198B Open Source Model That Does Everything; Does it Really?",
+          "url": "https://youtube.com/watch?v=pY1uMhjbiWs",
+          "published_at": "2026-05-29T07:00:16.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.789,
+      "novelty_label": "high",
+      "trust": 0.66,
+      "score": 0.619,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "l1r2g2",
+      "primary": {
+        "id": "l1r2g2",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "After Nvidia’s $20B not-aqui-hire, AI chip startup Groq reportedly raising $650M",
+        "url": "https://techcrunch.com/2026/05/29/after-nvidias-20b-not-aqui-hire-ai-chip-startup-groq-reportedly-raising-650m",
+        "original_url": "https://techcrunch.com/2026/05/29/after-nvidias-20b-not-aqui-hire-ai-chip-startup-groq-reportedly-raising-650m/",
+        "summary": "Chipmaker Groq is looking to raise $650 million in internal funding as it pivots from hardware to focus more on AI inference, the process of refining the way AI models respond to prompted requests, per Axios.",
+        "published_at": "2026-05-29T17:27:13.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "l1r2g2",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "After Nvidia’s $20B not-aqui-hire, AI chip startup Groq reportedly raising $650M",
+          "url": "https://techcrunch.com/2026/05/29/after-nvidias-20b-not-aqui-hire-ai-chip-startup-groq-reportedly-raising-650m",
+          "original_url": "https://techcrunch.com/2026/05/29/after-nvidias-20b-not-aqui-hire-ai-chip-startup-groq-reportedly-raising-650m/",
+          "summary": "Chipmaker Groq is looking to raise $650 million in internal funding as it pivots from hardware to focus more on AI inference, the process of refining the way AI models respond to prompted requests, per Axios.",
+          "published_at": "2026-05-29T17:27:13.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "After Nvidia’s $20B not-aqui-hire, AI chip startup Groq reportedly raising $650M",
+          "url": "https://techcrunch.com/2026/05/29/after-nvidias-20b-not-aqui-hire-ai-chip-startup-groq-reportedly-raising-650m",
+          "published_at": "2026-05-29T17:27:13.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Report on Groq seeking $650M in funding to focus on AI inference.",
+      "novelty": 0.811,
+      "novelty_label": "high",
+      "trust": 0.72,
+      "score": 0.657,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1rbxrlc",
+      "primary": {
+        "id": "1rbxrlc",
+        "source_id": "stackoverflow_blog",
+        "source_name": "Stack Overflow Blog",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "opinion",
+        "title": "The find out stage of AI is just supply chain and password protection​​​​‌ ‍ ​‍​‍‌‍ ‌ ​‍‌‍‍‌‌‍‌ ‌‍‍‌‌‍ ‍​‍​‍​ ‍‍​‍​‍‌ ​ ‌‍​‌‌‍ ‍‌‍‍‌‌ ‌​‌ ‍‌​‍ ‍‌‍‍‌‌‍ ​‍​‍​‍ ​​‍​‍‌‍‍​‌ ​‍‌‍‌‌‌‍‌‍​‍​‍​ ‍‍​‍​‍‌‍‍​‌ ‌​‌ ‌​‌ ​​‌ ​ ​ ‍‍​‍ ​‍ ‌‍​ ‌‍ ‌‌ ​ ​‍ ‍‌ ​ ‌ ‌​‌‍​‌‌‍​ ‌‍‍ ‌‍ ‌ ‌‍‌‍‌‌‌ ​‍‌‍‌‍‌‍ ​‌‍ ‌ ‌ ​‍ ‍‌‍​ ‌‍ ​‍ ‌‍‍‌‌‍ ‍‌ ‌​‌‍‌‌‌‍ ‍‌ ‌​​‍ ‌‍‌‌‌‍‌​‌‍‍‌‌ ‌​​‍ ‌‍ ‌‌‍ ‌‍‌​‌‍‌‌​ ‌‌ ​​‌ ​‍‌‍‌‌‌ ​ ‌‍‌‌‌‍ ‍‌ ‌​‌‍​‌‌ ‌​‌‍‍‌‌‍ ‌‍ ‍​ ‍ ‌‍‍‌‌‍‌​​ ‌‌‍‌‍‌‍​‌​ ‍‌​ ​‌‌‍‌‍​ ‌‍‌‍​‌​ ‍​​‍ ‌​ ‌​‌‍​‍‌‍‌‍​ ​​​‍ ‌​ ‌​‌‍​‌​ ‌​‌‍​‌​‍ ‌‌‍​‌‌‍​ ​ ​​​ ‌ ​‍ ‌​ ‍​‌‍‌‌​ ‌ ‌‍‌‌‌‍‌‍‌‍‌​‌‍‌‌​ ‌ ​ ​‍​ ​ ​ ‌‌‌‍‌‍​ ‍ ‌ ‌​‌ ‍‌‌ ​​‌‍‌‌​ ‌‌‍​‍‌‍ ​‌‍ ‌‍‌ ‌‌​​‌‍ ‌ ​ ‌ ‌​​ ‍ ‌ ​​‌‍​‌‌ ‌​‌‍‍​​ ‌‌ ‌​‌‍‍‌‌ ‌​‌‍ ​‌‍‌‌​ ‌‍​‍‌‍​‌‌ ​ ‌‍‌‌‌‌‌‌‌ ​‍‌‍ ​​ ‌‌‍‍​‌ ‌​‌ ‌​‌ ​​‌ ​ ​‍‌‌​ ​ ‌​​‌​‍‌‌​ ​‍‌​‌‍​‍‌‌​ ​‍‌​‌‍‌‍​ ‌‍ ‌‌ ​ ​‍ ‍‌ ​ ‌ ‌​‌‍​‌‌‍​ ‌‍‍ ‌‍ ‌ ‌‍‌‍‌‌‌ ​‍‌‍‌‍‌‍ ​‌‍ ‌ ‌ ​‍ ‍‌‍​ ‌‍ ​‍‌‍‌‍‍‌‌‍‌​​ ‌‌‍‌‍‌‍​‌​ ‍‌​ ​‌‌‍‌‍​ ‌‍‌‍​‌​ ‍​​‍ ‌​ ‌​‌‍​‍‌‍‌‍​ ​​​‍ ‌​ ‌​‌‍​‌​ ‌​‌‍​‌​‍ ‌‌‍​‌‌‍​ ​ ​​​ ‌ ​‍ ‌​ ‍​‌‍‌‌​ ‌ ‌‍‌‌‌‍‌‍‌‍‌​‌‍‌‌​ ‌ ​ ​‍​ ​ ​ ‌‌‌‍‌‍​‍‌‍‌ ‌​‌ ‍‌‌ ​​‌‍‌‌​ ‌‌‍​‍‌‍ ​‌‍ ‌‍‌ ‌‌​​‌‍ ‌ ​ ‌ ‌​​‍‌‍‌ ​​‌‍​‌‌ ‌​‌‍‍​​ ‌‌ ‌​‌‍‍‌‌ ‌​‌‍ ​‌‍‌‌​‍‌‍‌ ​​‌‍‌‌‌ ​‍‌ ​ ‌ ​​‌‍‌‌‌‍​ ‌ ‌​‌‍‍‌‌ ‌‍‌‍‌‌​ ‌‌ ​​‌ ‌‌‌‍​‍‌‍ ​‌‍‍‌‌ ​ ‌‍‍​‌‍‌‌‌‍‌​​‍​‍‌ ‌",
+        "url": "https://stackoverflow.blog/2026/05/29/find-out-stage-ai-supply-chain-password-protection",
+        "original_url": "https://stackoverflow.blog/2026/05/29/find-out-stage-ai-supply-chain-password-protection/",
+        "summary": "In this two-for-one special recorded at HumanX, Ryan is joined by Dataiku’s Florian Douetteau to chat about the governance, orchestration, and data requirements for serious agentic systems and 1Password’s Nancy Wang for a conversation on making agent swarms secure.​​​​‌ ‍ ​‍​‍‌‍ ‌ ​‍‌‍‍‌‌‍‌ ‌‍‍‌‌‍ ‍​‍​‍​ ‍‍​‍​‍‌ ​ ‌‍​‌‌‍ ‍‌‍‍‌‌ ‌​‌ ‍‌​‍ ‍‌‍‍‌‌‍ ​‍​‍​‍ ​​‍​‍‌‍‍​‌ ​‍‌‍‌‌‌‍‌‍​‍​‍​ ‍‍​‍​‍‌‍‍​‌ ‌​‌ ‌​‌ ​​‌ ​ ​ ‍‍​‍ ​‍ ‌‍​ ‌‍ ‌‌ ​ ​‍ ‍‌ ​ ‌ ‌​‌‍​‌‌‍​ ‌‍‍ ‌‍ ‌ ‌‍‌‍‌‌‌ ​‍‌‍‌‍‌‍ ​‌‍ ‌ ‌ ​‍ ‍‌‍​ ‌‍ ​‍ ‌‍‍‌‌‍ ‍‌ ‌​‌‍‌‌‌‍ ‍‌ ‌​​‍ ‌‍‌‌‌‍‌​‌‍‍‌‌ ‌​​‍ ‌‍ ‌‌‍ ‌‍‌​‌‍‌‌​ ‌‌ ​​‌ ​‍‌‍‌‌‌ ​ ‌‍‌‌‌‍ ‍‌ ‌​‌‍​‌‌ ‌​‌‍‍",
+        "published_at": "2026-05-29T07:40:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1rbxrlc",
+          "source_id": "stackoverflow_blog",
+          "source_name": "Stack Overflow Blog",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "opinion",
+          "title": "The find out stage of AI is just supply chain and password protection​​​​‌ ‍ ​‍​‍‌‍ ‌ ​‍‌‍‍‌‌‍‌ ‌‍‍‌‌‍ ‍​‍​‍​ ‍‍​‍​‍‌ ​ ‌‍​‌‌‍ ‍‌‍‍‌‌ ‌​‌ ‍‌​‍ ‍‌‍‍‌‌‍ ​‍​‍​‍ ​​‍​‍‌‍‍​‌ ​‍‌‍‌‌‌‍‌‍​‍​‍​ ‍‍​‍​‍‌‍‍​‌ ‌​‌ ‌​‌ ​​‌ ​ ​ ‍‍​‍ ​‍ ‌‍​ ‌‍ ‌‌ ​ ​‍ ‍‌ ​ ‌ ‌​‌‍​‌‌‍​ ‌‍‍ ‌‍ ‌ ‌‍‌‍‌‌‌ ​‍‌‍‌‍‌‍ ​‌‍ ‌ ‌ ​‍ ‍‌‍​ ‌‍ ​‍ ‌‍‍‌‌‍ ‍‌ ‌​‌‍‌‌‌‍ ‍‌ ‌​​‍ ‌‍‌‌‌‍‌​‌‍‍‌‌ ‌​​‍ ‌‍ ‌‌‍ ‌‍‌​‌‍‌‌​ ‌‌ ​​‌ ​‍‌‍‌‌‌ ​ ‌‍‌‌‌‍ ‍‌ ‌​‌‍​‌‌ ‌​‌‍‍‌‌‍ ‌‍ ‍​ ‍ ‌‍‍‌‌‍‌​​ ‌‌‍‌‍‌‍​‌​ ‍‌​ ​‌‌‍‌‍​ ‌‍‌‍​‌​ ‍​​‍ ‌​ ‌​‌‍​‍‌‍‌‍​ ​​​‍ ‌​ ‌​‌‍​‌​ ‌​‌‍​‌​‍ ‌‌‍​‌‌‍​ ​ ​​​ ‌ ​‍ ‌​ ‍​‌‍‌‌​ ‌ ‌‍‌‌‌‍‌‍‌‍‌​‌‍‌‌​ ‌ ​ ​‍​ ​ ​ ‌‌‌‍‌‍​ ‍ ‌ ‌​‌ ‍‌‌ ​​‌‍‌‌​ ‌‌‍​‍‌‍ ​‌‍ ‌‍‌ ‌‌​​‌‍ ‌ ​ ‌ ‌​​ ‍ ‌ ​​‌‍​‌‌ ‌​‌‍‍​​ ‌‌ ‌​‌‍‍‌‌ ‌​‌‍ ​‌‍‌‌​ ‌‍​‍‌‍​‌‌ ​ ‌‍‌‌‌‌‌‌‌ ​‍‌‍ ​​ ‌‌‍‍​‌ ‌​‌ ‌​‌ ​​‌ ​ ​‍‌‌​ ​ ‌​​‌​‍‌‌​ ​‍‌​‌‍​‍‌‌​ ​‍‌​‌‍‌‍​ ‌‍ ‌‌ ​ ​‍ ‍‌ ​ ‌ ‌​‌‍​‌‌‍​ ‌‍‍ ‌‍ ‌ ‌‍‌‍‌‌‌ ​‍‌‍‌‍‌‍ ​‌‍ ‌ ‌ ​‍ ‍‌‍​ ‌‍ ​‍‌‍‌‍‍‌‌‍‌​​ ‌‌‍‌‍‌‍​‌​ ‍‌​ ​‌‌‍‌‍​ ‌‍‌‍​‌​ ‍​​‍ ‌​ ‌​‌‍​‍‌‍‌‍​ ​​​‍ ‌​ ‌​‌‍​‌​ ‌​‌‍​‌​‍ ‌‌‍​‌‌‍​ ​ ​​​ ‌ ​‍ ‌​ ‍​‌‍‌‌​ ‌ ‌‍‌‌‌‍‌‍‌‍‌​‌‍‌‌​ ‌ ​ ​‍​ ​ ​ ‌‌‌‍‌‍​‍‌‍‌ ‌​‌ ‍‌‌ ​​‌‍‌‌​ ‌‌‍​‍‌‍ ​‌‍ ‌‍‌ ‌‌​​‌‍ ‌ ​ ‌ ‌​​‍‌‍‌ ​​‌‍​‌‌ ‌​‌‍‍​​ ‌‌ ‌​‌‍‍‌‌ ‌​‌‍ ​‌‍‌‌​‍‌‍‌ ​​‌‍‌‌‌ ​‍‌ ​ ‌ ​​‌‍‌‌‌‍​ ‌ ‌​‌‍‍‌‌ ‌‍‌‍‌‌​ ‌‌ ​​‌ ‌‌‌‍​‍‌‍ ​‌‍‍‌‌ ​ ‌‍‍​‌‍‌‌‌‍‌​​‍​‍‌ ‌",
+          "url": "https://stackoverflow.blog/2026/05/29/find-out-stage-ai-supply-chain-password-protection",
+          "original_url": "https://stackoverflow.blog/2026/05/29/find-out-stage-ai-supply-chain-password-protection/",
+          "summary": "In this two-for-one special recorded at HumanX, Ryan is joined by Dataiku’s Florian Douetteau to chat about the governance, orchestration, and data requirements for serious agentic systems and 1Password’s Nancy Wang for a conversation on making agent swarms secure.​​​​‌ ‍ ​‍​‍‌‍ ‌ ​‍‌‍‍‌‌‍‌ ‌‍‍‌‌‍ ‍​‍​‍​ ‍‍​‍​‍‌ ​ ‌‍​‌‌‍ ‍‌‍‍‌‌ ‌​‌ ‍‌​‍ ‍‌‍‍‌‌‍ ​‍​‍​‍ ​​‍​‍‌‍‍​‌ ​‍‌‍‌‌‌‍‌‍​‍​‍​ ‍‍​‍​‍‌‍‍​‌ ‌​‌ ‌​‌ ​​‌ ​ ​ ‍‍​‍ ​‍ ‌‍​ ‌‍ ‌‌ ​ ​‍ ‍‌ ​ ‌ ‌​‌‍​‌‌‍​ ‌‍‍ ‌‍ ‌ ‌‍‌‍‌‌‌ ​‍‌‍‌‍‌‍ ​‌‍ ‌ ‌ ​‍ ‍‌‍​ ‌‍ ​‍ ‌‍‍‌‌‍ ‍‌ ‌​‌‍‌‌‌‍ ‍‌ ‌​​‍ ‌‍‌‌‌‍‌​‌‍‍‌‌ ‌​​‍ ‌‍ ‌‌‍ ‌‍‌​‌‍‌‌​ ‌‌ ​​‌ ​‍‌‍‌‌‌ ​ ‌‍‌‌‌‍ ‍‌ ‌​‌‍​‌‌ ‌​‌‍‍",
+          "published_at": "2026-05-29T07:40:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "stackoverflow_blog",
+          "source_name": "Stack Overflow Blog",
+          "title": "The find out stage of AI is just supply chain and password protection​​​​‌ ‍ ​‍​‍‌‍ ‌ ​‍‌‍‍‌‌‍‌ ‌‍‍‌‌‍ ‍​‍​‍​ ‍‍​‍​‍‌ ​ ‌‍​‌‌‍ ‍‌‍‍‌‌ ‌​‌ ‍‌​‍ ‍‌‍‍‌‌‍ ​‍​‍​‍ ​​‍​‍‌‍‍​‌ ​‍‌‍‌‌‌‍‌‍​‍​‍​ ‍‍​‍​‍‌‍‍​‌ ‌​‌ ‌​‌ ​​‌ ​ ​ ‍‍​‍ ​‍ ‌‍​ ‌‍ ‌‌ ​ ​‍ ‍‌ ​ ‌ ‌​‌‍​‌‌‍​ ‌‍‍ ‌‍ ‌ ‌‍‌‍‌‌‌ ​‍‌‍‌‍‌‍ ​‌‍ ‌ ‌ ​‍ ‍‌‍​ ‌‍ ​‍ ‌‍‍‌‌‍ ‍‌ ‌​‌‍‌‌‌‍ ‍‌ ‌​​‍ ‌‍‌‌‌‍‌​‌‍‍‌‌ ‌​​‍ ‌‍ ‌‌‍ ‌‍‌​‌‍‌‌​ ‌‌ ​​‌ ​‍‌‍‌‌‌ ​ ‌‍‌‌‌‍ ‍‌ ‌​‌‍​‌‌ ‌​‌‍‍‌‌‍ ‌‍ ‍​ ‍ ‌‍‍‌‌‍‌​​ ‌‌‍‌‍‌‍​‌​ ‍‌​ ​‌‌‍‌‍​ ‌‍‌‍​‌​ ‍​​‍ ‌​ ‌​‌‍​‍‌‍‌‍​ ​​​‍ ‌​ ‌​‌‍​‌​ ‌​‌‍​‌​‍ ‌‌‍​‌‌‍​ ​ ​​​ ‌ ​‍ ‌​ ‍​‌‍‌‌​ ‌ ‌‍‌‌‌‍‌‍‌‍‌​‌‍‌‌​ ‌ ​ ​‍​ ​ ​ ‌‌‌‍‌‍​ ‍ ‌ ‌​‌ ‍‌‌ ​​‌‍‌‌​ ‌‌‍​‍‌‍ ​‌‍ ‌‍‌ ‌‌​​‌‍ ‌ ​ ‌ ‌​​ ‍ ‌ ​​‌‍​‌‌ ‌​‌‍‍​​ ‌‌ ‌​‌‍‍‌‌ ‌​‌‍ ​‌‍‌‌​ ‌‍​‍‌‍​‌‌ ​ ‌‍‌‌‌‌‌‌‌ ​‍‌‍ ​​ ‌‌‍‍​‌ ‌​‌ ‌​‌ ​​‌ ​ ​‍‌‌​ ​ ‌​​‌​‍‌‌​ ​‍‌​‌‍​‍‌‌​ ​‍‌​‌‍‌‍​ ‌‍ ‌‌ ​ ​‍ ‍‌ ​ ‌ ‌​‌‍​‌‌‍​ ‌‍‍ ‌‍ ‌ ‌‍‌‍‌‌‌ ​‍‌‍‌‍‌‍ ​‌‍ ‌ ‌ ​‍ ‍‌‍​ ‌‍ ​‍‌‍‌‍‍‌‌‍‌​​ ‌‌‍‌‍‌‍​‌​ ‍‌​ ​‌‌‍‌‍​ ‌‍‌‍​‌​ ‍​​‍ ‌​ ‌​‌‍​‍‌‍‌‍​ ​​​‍ ‌​ ‌​‌‍​‌​ ‌​‌‍​‌​‍ ‌‌‍​‌‌‍​ ​ ​​​ ‌ ​‍ ‌​ ‍​‌‍‌‌​ ‌ ‌‍‌‌‌‍‌‍‌‍‌​‌‍‌‌​ ‌ ​ ​‍​ ​ ​ ‌‌‌‍‌‍​‍‌‍‌ ‌​‌ ‍‌‌ ​​‌‍‌‌​ ‌‌‍​‍‌‍ ​‌‍ ‌‍‌ ‌‌​​‌‍ ‌ ​ ‌ ‌​​‍‌‍‌ ​​‌‍​‌‌ ‌​‌‍‍​​ ‌‌ ‌​‌‍‍‌‌ ‌​‌‍ ​‌‍‌‌​‍‌‍‌ ​​‌‍‌‌‌ ​‍‌ ​ ‌ ​​‌‍‌‌‌‍​ ‌ ‌​‌‍‍‌‌ ‌‍‌‍‌‌​ ‌‌ ​​‌ ‌‌‌‍​‍‌‍ ​‌‍‍‌‌ ​ ‌‍‍​‌‍‌‌‌‍‌​​‍​‍‌ ‌",
+          "url": "https://stackoverflow.blog/2026/05/29/find-out-stage-ai-supply-chain-password-protection",
+          "published_at": "2026-05-29T07:40:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "Podcast discussion on governance, orchestration, and security for agentic systems.",
+      "novelty": 0.82,
+      "novelty_label": "high",
+      "trust": 0.72,
+      "score": 0.563,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "32ohhf",
+      "primary": {
+        "id": "32ohhf",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "OpenAI is giving away its life sciences AI model to help governments prepare for the next pandemic",
+        "url": "https://the-decoder.com/openai-is-giving-away-its-life-sciences-ai-model-to-help-governments-prepare-for-the-next-pandemic",
+        "original_url": "https://the-decoder.com/openai-is-giving-away-its-life-sciences-ai-model-to-help-governments-prepare-for-the-next-pandemic/",
+        "summary": "OpenAI is offering its life sciences model GPT-Rosalind for free through the new Rosalind Biodefense program, aimed at pandemic preparedness and biodefense. Early partners include Lawrence Livermore National Laboratory, Johns Hopkins, and vaccine initiative CEPI. Applications are open worldwide. The article OpenAI is giving away its life sciences AI model to help governments prepare for the next pandemic appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/04/openai_gpt_rosalind_bio.png",
+        "image_source": "rss_content",
+        "published_at": "2026-05-29T16:51:30.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "32ohhf",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "OpenAI is giving away its life sciences AI model to help governments prepare for the next pandemic",
+          "url": "https://the-decoder.com/openai-is-giving-away-its-life-sciences-ai-model-to-help-governments-prepare-for-the-next-pandemic",
+          "original_url": "https://the-decoder.com/openai-is-giving-away-its-life-sciences-ai-model-to-help-governments-prepare-for-the-next-pandemic/",
+          "summary": "OpenAI is offering its life sciences model GPT-Rosalind for free through the new Rosalind Biodefense program, aimed at pandemic preparedness and biodefense. Early partners include Lawrence Livermore National Laboratory, Johns Hopkins, and vaccine initiative CEPI. Applications are open worldwide. The article OpenAI is giving away its life sciences AI model to help governments prepare for the next pandemic appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/04/openai_gpt_rosalind_bio.png",
+          "image_source": "rss_content",
+          "published_at": "2026-05-29T16:51:30.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "OpenAI is giving away its life sciences AI model to help governments prepare for the next pandemic",
+          "url": "https://the-decoder.com/openai-is-giving-away-its-life-sciences-ai-model-to-help-governments-prepare-for-the-next-pandemic",
+          "published_at": "2026-05-29T16:51:30.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "mixed",
+      "one_liner": "OpenAI is providing access to its GPT-Rosalind life sciences model to select research partners for biodefense.",
+      "novelty": 0.798,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.657,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+    },
+    {
+      "id": "1r9qutc",
+      "primary": {
+        "id": "1r9qutc",
+        "source_id": "fahd_mirza",
+        "source_name": "Fahd Mirza YouTube",
+        "source_role": "main",
+        "trust": 0.66,
+        "kind_hint": "video",
+        "title": "LFM2.5-8B-A1B: Local Agentic AI with Multilingual Support Tested",
+        "url": "https://youtube.com/watch?v=v4I58hq637M",
+        "original_url": "https://www.youtube.com/watch?v=v4I58hq637M",
+        "image_url": "https://i.ytimg.com/vi/v4I58hq637M/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-05-28T21:38:42.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+          "video_id": "v4I58hq637M"
+        }
+      },
+      "members": [
+        {
+          "id": "1r9qutc",
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "source_role": "main",
+          "trust": 0.66,
+          "kind_hint": "video",
+          "title": "LFM2.5-8B-A1B: Local Agentic AI with Multilingual Support Tested",
+          "url": "https://youtube.com/watch?v=v4I58hq637M",
+          "original_url": "https://www.youtube.com/watch?v=v4I58hq637M",
+          "image_url": "https://i.ytimg.com/vi/v4I58hq637M/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-05-28T21:38:42.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+            "video_id": "v4I58hq637M"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "title": "LFM2.5-8B-A1B: Local Agentic AI with Multilingual Support Tested",
+          "url": "https://youtube.com/watch?v=v4I58hq637M",
+          "published_at": "2026-05-28T21:38:42.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.812,
+      "novelty_label": "high",
+      "trust": 0.66,
+      "score": 0.61,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "mqdg27",
+      "primary": {
+        "id": "mqdg27",
+        "source_id": "product_hunt",
+        "source_name": "Product Hunt",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "tool",
+        "title": "PromptLayer",
+        "url": "https://producthunt.com/products/promptlayer-2",
+        "original_url": "https://www.producthunt.com/products/promptlayer-2",
+        "summary": "Discussion | Link",
+        "published_at": "2026-05-29T06:41:50.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "mqdg27",
+          "source_id": "product_hunt",
+          "source_name": "Product Hunt",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "tool",
+          "title": "PromptLayer",
+          "url": "https://producthunt.com/products/promptlayer-2",
+          "original_url": "https://www.producthunt.com/products/promptlayer-2",
+          "summary": "Discussion | Link",
+          "published_at": "2026-05-29T06:41:50.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "product_hunt",
+          "source_name": "Product Hunt",
+          "title": "PromptLayer",
+          "url": "https://producthunt.com/products/promptlayer-2",
+          "published_at": "2026-05-29T06:41:50.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "mixed",
+      "one_liner": "PromptLayer is a platform for managing and monitoring LLM prompts and API requests.",
+      "novelty": 0.7,
+      "novelty_label": "medium",
+      "trust": 0.5,
+      "score": 0.555,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "qnz7dy",
+      "primary": {
+        "id": "qnz7dy",
+        "source_id": "the_verge_ai",
+        "source_name": "The Verge AI",
+        "source_role": "main",
+        "trust": 0.68,
+        "kind_hint": "news",
+        "title": "Tech companies desperately want to film you doing chores",
+        "url": "https://theverge.com/ai-artificial-intelligence/940007/ai-companies-will-pay-for-robot-training-data",
+        "original_url": "https://www.theverge.com/ai-artificial-intelligence/940007/ai-companies-will-pay-for-robot-training-data",
+        "summary": "This week, an AI training startup called Shift said it would clean New Yorkers' homes for free. It has plans to expand into other cities as well, including London, and looking around my flat, I get the appeal. But there's a catch. There's always a catch. In exchange for the cleaning, Shift wants footage of its cleaners at work: scrubbing dishes, wiping counters, dusting tables, mopping floors. It wants everything. Video of all the boring domestic labor we'd happily outsource if we could - and that robotics companies are racing to teach machines to do so they can sell us something to do it for",
+        "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/05/STK414_AI_CVIRGINIA_I__0009_7.png?quality=90&",
+        "image_source": "rss_content",
+        "published_at": "2026-05-29T17:37:43.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "qnz7dy",
+          "source_id": "the_verge_ai",
+          "source_name": "The Verge AI",
+          "source_role": "main",
+          "trust": 0.68,
+          "kind_hint": "news",
+          "title": "Tech companies desperately want to film you doing chores",
+          "url": "https://theverge.com/ai-artificial-intelligence/940007/ai-companies-will-pay-for-robot-training-data",
+          "original_url": "https://www.theverge.com/ai-artificial-intelligence/940007/ai-companies-will-pay-for-robot-training-data",
+          "summary": "This week, an AI training startup called Shift said it would clean New Yorkers' homes for free. It has plans to expand into other cities as well, including London, and looking around my flat, I get the appeal. But there's a catch. There's always a catch. In exchange for the cleaning, Shift wants footage of its cleaners at work: scrubbing dishes, wiping counters, dusting tables, mopping floors. It wants everything. Video of all the boring domestic labor we'd happily outsource if we could - and that robotics companies are racing to teach machines to do so they can sell us something to do it for",
+          "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/05/STK414_AI_CVIRGINIA_I__0009_7.png?quality=90&",
+          "image_source": "rss_content",
+          "published_at": "2026-05-29T17:37:43.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_verge_ai",
+          "source_name": "The Verge AI",
+          "title": "Tech companies desperately want to film you doing chores",
+          "url": "https://theverge.com/ai-artificial-intelligence/940007/ai-companies-will-pay-for-robot-training-data",
+          "published_at": "2026-05-29T17:37:43.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Startups are offering free home cleaning services in exchange for collecting video data to train robotics models.",
+      "novelty": 0.82,
+      "novelty_label": "high",
+      "trust": 0.68,
+      "score": 0.651,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1i7hcxu",
+      "primary": {
+        "id": "1i7hcxu",
+        "source_id": "lobsters_ai",
+        "source_name": "Lobsters (AI tag)",
+        "source_role": "main",
+        "trust": 0.7,
+        "title": "\"But it happened.\" - Casey Muratori's comment on Eric Schmidt's commencement speech",
+        "url": "https://youtu.be/tlQ7EoJDTQY",
+        "original_url": "https://youtu.be/tlQ7EoJDTQY",
+        "discussion_url": "https://youtu.be/tlQ7EoJDTQY",
+        "discussion_source": "Lobsters (AI tag)",
+        "summary": "Comments",
+        "published_at": "2026-05-29T18:52:09.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1i7hcxu",
+          "source_id": "lobsters_ai",
+          "source_name": "Lobsters (AI tag)",
+          "source_role": "main",
+          "trust": 0.7,
+          "title": "\"But it happened.\" - Casey Muratori's comment on Eric Schmidt's commencement speech",
+          "url": "https://youtu.be/tlQ7EoJDTQY",
+          "original_url": "https://youtu.be/tlQ7EoJDTQY",
+          "discussion_url": "https://youtu.be/tlQ7EoJDTQY",
+          "discussion_source": "Lobsters (AI tag)",
+          "summary": "Comments",
+          "published_at": "2026-05-29T18:52:09.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "lobsters_ai",
+          "source_name": "Lobsters (AI tag)",
+          "title": "\"But it happened.\" - Casey Muratori's comment on Eric Schmidt's commencement speech",
+          "url": "https://youtu.be/tlQ7EoJDTQY",
+          "published_at": "2026-05-29T18:52:09.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://youtu.be/tlQ7EoJDTQY",
+          "discussion_source": "Lobsters (AI tag)"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "Discussion regarding recent public commentary on AI development.",
+      "novelty": 0.782,
+      "novelty_label": "high",
+      "trust": 0.7,
+      "score": 0.566,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    }
+  ]
+}

@@ -1,0 +1,3641 @@
+{
+  "generated_at": "2026-05-26T19:06:44.689Z",
+  "last_successful_generated_at": "2026-05-26T19:06:44.689Z",
+  "refresh_status": "ok",
+  "classification_mode": "llm",
+  "window_hours": 36,
+  "source_total": 50,
+  "source_ok": 50,
+  "source_failed": 0,
+  "failed_sources": [],
+  "source_health": [
+    {
+      "id": "arxiv_cl",
+      "name": "arXiv cs.CL",
+      "status": "ok",
+      "fetched_count": 3,
+      "fresh_count": 3,
+      "stale_count": 0,
+      "oldest_published_at": "2026-05-26T04:00:00.000Z",
+      "newest_published_at": "2026-05-26T04:00:00.000Z"
+    },
+    {
+      "id": "arxiv_lg",
+      "name": "arXiv cs.LG",
+      "status": "ok",
+      "fetched_count": 3,
+      "fresh_count": 3,
+      "stale_count": 0,
+      "oldest_published_at": "2026-05-26T04:00:00.000Z",
+      "newest_published_at": "2026-05-26T04:00:00.000Z"
+    },
+    {
+      "id": "hf_papers",
+      "name": "Hugging Face Daily Papers",
+      "status": "ok",
+      "fetched_count": 20,
+      "fresh_count": 0,
+      "stale_count": 20,
+      "oldest_published_at": "2026-05-08T20:00:00.000Z",
+      "newest_published_at": "2026-05-24T20:00:00.000Z"
+    },
+    {
+      "id": "hf_trending_models",
+      "name": "Hugging Face trending models",
+      "status": "ok",
+      "fetched_count": 20,
+      "fresh_count": 0,
+      "stale_count": 20,
+      "oldest_published_at": "2026-01-29T21:17:57.000Z",
+      "newest_published_at": "2026-05-21T09:05:55.000Z"
+    },
+    {
+      "id": "simonw",
+      "name": "Simon Willison",
+      "status": "ok",
+      "fetched_count": 4,
+      "fresh_count": 1,
+      "stale_count": 3,
+      "oldest_published_at": "2026-05-21T18:21:07.000Z",
+      "newest_published_at": "2026-05-25T23:58:17.000Z"
+    },
+    {
+      "id": "latent_space",
+      "name": "Latent Space",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-05-15T00:30:21.000Z",
+      "newest_published_at": "2026-05-23T04:21:17.000Z"
+    },
+    {
+      "id": "interconnects",
+      "name": "Interconnects (Lambert)",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 1,
+      "stale_count": 9,
+      "oldest_published_at": "2026-04-09T21:28:39.000Z",
+      "newest_published_at": "2026-05-26T15:39:02.000Z"
+    },
+    {
+      "id": "import_ai",
+      "name": "Import AI (Jack Clark)",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 1,
+      "stale_count": 9,
+      "oldest_published_at": "2026-03-16T12:30:50.000Z",
+      "newest_published_at": "2026-05-26T12:32:03.000Z"
+    },
+    {
+      "id": "eugene_yan",
+      "name": "Eugene Yan",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2025-04-20T00:00:00.000Z",
+      "newest_published_at": "2026-05-03T00:00:00.000Z"
+    },
+    {
+      "id": "hamel",
+      "name": "Hamel Husain",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2024-12-13T08:00:00.000Z",
+      "newest_published_at": "2026-03-26T07:00:00.000Z"
+    },
+    {
+      "id": "lilian_weng",
+      "name": "Lilian Weng",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2023-01-10T17:00:00.000Z",
+      "newest_published_at": "2025-05-01T00:00:00.000Z"
+    },
+    {
+      "id": "chip_huyen",
+      "name": "Chip Huyen",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2023-06-07T00:00:00.000Z",
+      "newest_published_at": "2025-01-16T00:00:00.000Z"
+    },
+    {
+      "id": "addy_osmani",
+      "name": "Addy Osmani",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-03-14T00:00:00.000Z",
+      "newest_published_at": "2026-05-24T00:00:00.000Z"
+    },
+    {
+      "id": "daniel_miessler",
+      "name": "Daniel Miessler",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-04-22T07:00:00.000Z",
+      "newest_published_at": "2026-05-23T20:30:00.000Z"
+    },
+    {
+      "id": "sean_goedecke",
+      "name": "Sean Goedecke",
+      "status": "ok",
+      "fetched_count": 7,
+      "fresh_count": 0,
+      "stale_count": 7,
+      "oldest_published_at": "2026-05-09T00:00:00.000Z",
+      "newest_published_at": "2026-05-21T00:00:00.000Z"
+    },
+    {
+      "id": "techcrunch_ai",
+      "name": "TechCrunch AI",
+      "status": "ok",
+      "fetched_count": 12,
+      "fresh_count": 8,
+      "stale_count": 4,
+      "oldest_published_at": "2026-05-23T13:00:00.000Z",
+      "newest_published_at": "2026-05-26T18:33:01.000Z"
+    },
+    {
+      "id": "the_decoder",
+      "name": "The Decoder",
+      "status": "ok",
+      "fetched_count": 9,
+      "fresh_count": 9,
+      "stale_count": 0,
+      "oldest_published_at": "2026-05-25T07:30:09.000Z",
+      "newest_published_at": "2026-05-26T18:31:07.000Z"
+    },
+    {
+      "id": "mit_tech_review_ai",
+      "name": "MIT Technology Review AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 3,
+      "stale_count": 7,
+      "oldest_published_at": "2026-05-18T17:35:43.000Z",
+      "newest_published_at": "2026-05-26T14:54:10.000Z"
+    },
+    {
+      "id": "ars_ai",
+      "name": "Ars Technica AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 2,
+      "stale_count": 8,
+      "oldest_published_at": "2026-05-19T18:37:02.000Z",
+      "newest_published_at": "2026-05-26T17:46:01.000Z"
+    },
+    {
+      "id": "infoq_ai",
+      "name": "InfoQ AI/ML/Data",
+      "status": "ok",
+      "fetched_count": 9,
+      "fresh_count": 5,
+      "stale_count": 4,
+      "oldest_published_at": "2026-05-22T13:00:00.000Z",
+      "newest_published_at": "2026-05-26T10:00:00.000Z"
+    },
+    {
+      "id": "stackoverflow_blog",
+      "name": "Stack Overflow Blog",
+      "status": "ok",
+      "fetched_count": 7,
+      "fresh_count": 1,
+      "stale_count": 6,
+      "oldest_published_at": "2026-05-15T07:40:00.000Z",
+      "newest_published_at": "2026-05-26T07:40:00.000Z"
+    },
+    {
+      "id": "the_verge_ai",
+      "name": "The Verge AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 5,
+      "stale_count": 5,
+      "oldest_published_at": "2026-05-22T14:30:00.000Z",
+      "newest_published_at": "2026-05-26T14:00:00.000Z"
+    },
+    {
+      "id": "wired_ai",
+      "name": "WIRED AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 10,
+      "stale_count": 0,
+      "oldest_published_at": "2026-05-25T10:30:00.000Z",
+      "newest_published_at": "2026-05-26T10:00:00.000Z"
+    },
+    {
+      "id": "nine_to_five_google_ai",
+      "name": "9to5Google AI",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "2017-08-08T14:44:01.000Z",
+      "newest_published_at": "2025-10-08T15:22:03.000Z"
+    },
+    {
+      "id": "product_hunt",
+      "name": "Product Hunt",
+      "status": "ok",
+      "fetched_count": 1,
+      "fresh_count": 0,
+      "stale_count": 1,
+      "oldest_published_at": "2026-05-22T15:07:49.000Z",
+      "newest_published_at": "2026-05-22T15:07:49.000Z"
+    },
+    {
+      "id": "marktechpost",
+      "name": "MarkTechPost",
+      "status": "ok",
+      "fetched_count": 9,
+      "fresh_count": 5,
+      "stale_count": 4,
+      "oldest_published_at": "2026-05-24T07:42:09.000Z",
+      "newest_published_at": "2026-05-26T07:56:17.000Z"
+    },
+    {
+      "id": "hn_ai",
+      "name": "Hacker News (AI-filtered)",
+      "status": "ok",
+      "fetched_count": 3,
+      "fresh_count": 2,
+      "stale_count": 1,
+      "oldest_published_at": "2026-05-22T15:10:22.000Z",
+      "newest_published_at": "2026-05-26T12:08:33.000Z"
+    },
+    {
+      "id": "hn_show_ai",
+      "name": "Show HN (AI-filtered)",
+      "status": "ok",
+      "fetched_count": 0,
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "lobsters_ai",
+      "name": "Lobsters (AI tag)",
+      "status": "ok",
+      "fetched_count": 20,
+      "fresh_count": 2,
+      "stale_count": 18,
+      "oldest_published_at": "2026-05-05T00:23:59.000Z",
+      "newest_published_at": "2026-05-25T17:07:48.000Z"
+    },
+    {
+      "id": "r_localllama",
+      "name": "r/LocalLLaMA",
+      "status": "ok",
+      "fetched_count": 25,
+      "fresh_count": 25,
+      "stale_count": 0,
+      "oldest_published_at": "2026-05-25T19:52:43.000Z",
+      "newest_published_at": "2026-05-26T17:51:07.000Z"
+    },
+    {
+      "id": "r_ml",
+      "name": "r/MachineLearning",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 5,
+      "stale_count": 0,
+      "oldest_published_at": "2026-05-25T21:56:57.000Z",
+      "newest_published_at": "2026-05-26T16:18:47.000Z"
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-05-18T10:00:00.000Z",
+      "newest_published_at": "2026-05-25T00:00:00.000Z"
+    },
+    {
+      "id": "deepmind",
+      "name": "Google DeepMind",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-05-16T08:08:44.000Z",
+      "newest_published_at": "2026-05-21T19:46:42.000Z"
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "status": "ok",
+      "fetched_count": 12,
+      "fresh_count": 1,
+      "stale_count": 11,
+      "oldest_published_at": "2026-05-07T00:00:00.000Z",
+      "newest_published_at": "2026-05-26T18:05:40.000Z"
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-03-16T00:00:00.000Z",
+      "newest_published_at": "2026-05-22T00:00:00.000Z"
+    },
+    {
+      "id": "google_research",
+      "name": "Google Research",
+      "status": "ok",
+      "fetched_count": 8,
+      "fresh_count": 0,
+      "stale_count": 8,
+      "oldest_published_at": "2026-03-31T16:16:00.000Z",
+      "newest_published_at": "2026-04-22T17:00:00.000Z"
+    },
+    {
+      "id": "google_ai_keyword",
+      "name": "Google AI on Keyword",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "2026-05-21T00:00:00.000Z",
+      "newest_published_at": "2026-05-21T00:00:00.000Z"
+    },
+    {
+      "id": "meta_ai",
+      "name": "Meta AI Blog",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "1970-01-01T00:00:00.000Z",
+      "newest_published_at": "2026-04-08T00:00:00.000Z"
+    },
+    {
+      "id": "microsoft_research",
+      "name": "Microsoft Research",
+      "status": "ok",
+      "fetched_count": 8,
+      "fresh_count": 0,
+      "stale_count": 8,
+      "oldest_published_at": "2026-04-30T21:53:21.000Z",
+      "newest_published_at": "2026-05-21T17:00:00.000Z"
+    },
+    {
+      "id": "azure_ai_blog",
+      "name": "Azure AI Blog",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "2026-05-06T14:00:00.000Z",
+      "newest_published_at": "2026-05-22T15:00:00.000Z"
+    },
+    {
+      "id": "aws_ml_blog",
+      "name": "AWS Machine Learning Blog",
+      "status": "ok",
+      "fetched_count": 11,
+      "fresh_count": 6,
+      "stale_count": 5,
+      "oldest_published_at": "2026-05-21T16:08:54.000Z",
+      "newest_published_at": "2026-05-26T17:57:18.000Z"
+    },
+    {
+      "id": "nvidia_developer_blog",
+      "name": "NVIDIA Developer Blog",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-05-13T18:00:00.000Z",
+      "newest_published_at": "2026-05-21T18:31:56.000Z"
+    },
+    {
+      "id": "cloudflare_ai_changelog",
+      "name": "Cloudflare AI Changelog",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-05-11T00:00:00.000Z",
+      "newest_published_at": "2026-05-21T00:00:00.000Z"
+    },
+    {
+      "id": "cohere_blog",
+      "name": "Cohere Blog",
+      "status": "ok",
+      "fetched_count": 7,
+      "fresh_count": 0,
+      "stale_count": 7,
+      "oldest_published_at": "2026-03-31T00:00:00.000Z",
+      "newest_published_at": "2026-05-20T00:00:00.000Z"
+    },
+    {
+      "id": "ai2_blog",
+      "name": "Ai2 Blog",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "2026-04-30T08:00:00.000Z",
+      "newest_published_at": "2026-05-19T08:00:00.000Z"
+    },
+    {
+      "id": "together",
+      "name": "Together AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-04-29T00:00:00.000Z",
+      "newest_published_at": "2026-05-19T00:00:00.000Z"
+    },
+    {
+      "id": "modal",
+      "name": "Modal",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-04-08T00:00:00.000Z",
+      "newest_published_at": "2026-05-21T00:00:00.000Z"
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "status": "ok",
+      "fetched_count": 12,
+      "fresh_count": 0,
+      "stale_count": 12,
+      "oldest_published_at": "2026-03-02T12:00:00.000Z",
+      "newest_published_at": "2026-03-25T12:00:00.000Z"
+    },
+    {
+      "id": "fahd_mirza",
+      "name": "Fahd Mirza YouTube",
+      "status": "ok",
+      "fetched_count": 8,
+      "fresh_count": 2,
+      "stale_count": 6,
+      "oldest_published_at": "2026-05-22T19:39:08.000Z",
+      "newest_published_at": "2026-05-26T07:00:09.000Z"
+    },
+    {
+      "id": "yt_nate_b_jones",
+      "name": "AI News & Strategy Daily",
+      "status": "ok",
+      "fetched_count": 7,
+      "fresh_count": 3,
+      "stale_count": 4,
+      "oldest_published_at": "2026-05-23T14:00:33.000Z",
+      "newest_published_at": "2026-05-26T14:00:15.000Z"
+    }
+  ],
+  "top_news": [
+    {
+      "cluster_id": "1sq1stg",
+      "title": "Algometrics: Forecasting Under Algorithmic Feedback",
+      "url": "https://arxiv.org/abs/2605.23978",
+      "source_name": "arXiv cs.LG",
+      "published_at": "2026-05-26T04:00:00.000Z",
+      "kind": "paper",
+      "score": 0.801,
+      "dek": "Algometrics introduces a framework to analyze time series where predictive models influence the data they forecast.",
+      "brief": "In algorithmic markets, models become part of the data-generating process. The framework distinguishes between historical risk (passive forecasting) and deployment risk (where forecasts drive actions), proving that deployment risk is not identifiable from historical data alone.",
+      "image_alt": "Diagram showing a feedback loop between a predictive model and market data",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-05-26T06:33:47.533Z"
+    },
+    {
+      "cluster_id": "1olz0jg",
+      "title": "Meet OmniVoice Studio: A Local, Open-Source Alternative to ElevenLabs",
+      "url": "https://marktechpost.com/2026/05/26/meet-omnivoice-studio-a-local-open-source-alternative-to-elevenlabs",
+      "source_name": "MarkTechPost",
+      "published_at": "2026-05-26T07:56:17.000Z",
+      "kind": "tool",
+      "score": 0.678,
+      "dek": "OmniVoice Studio provides a local, open-source alternative to ElevenLabs for voice cloning, dubbing, and real-time dictation.",
+      "brief": "OmniVoice Studio enables voice processing tasks entirely on local hardware, eliminating the need for cloud APIs or subscriptions. It supports 646 languages for TTS and includes an MCP server, allowing for direct integration with tools like Claude and Cursor.",
+      "image_alt": "OmniVoice Studio logo.",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-05-26T13:23:10.905Z"
+    },
+    {
+      "cluster_id": "14htwvc",
+      "title": "3D-printable humanoid legs let robotics experiments run wild",
+      "url": "https://arstechnica.com/ai/2026/05/3d-printable-humanoid-legs-let-robotics-experiments-run-wild",
+      "source_name": "Ars Technica AI",
+      "published_at": "2026-05-26T17:16:07.000Z",
+      "kind": "tool",
+      "score": 0.79,
+      "dek": "Hugging Face releases a 3D-printable bipedal robot project for robotics research.",
+      "brief": "Hugging Face debuts $2,500 bipedal robot project for builders and researchers.",
+      "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/05/Hugging-Face-LeHumanoid-Robot-legs-1152x648.png",
+      "image_source": "rss_media",
+      "enrichment_status": "metadata_only",
+      "enriched_at": "2026-05-26T19:06:44.689Z"
+    },
+    {
+      "cluster_id": "1e21ytj",
+      "title": "Anthropic: How We Contain Claude",
+      "url": "https://anthropic.com/engineering/how-we-contain-claude",
+      "source_name": "Anthropic",
+      "published_at": "2026-05-26T18:05:40.000Z",
+      "kind": "company_announcement",
+      "score": 0.783,
+      "dek": "Anthropic details the technical infrastructure and security measures used to contain Claude models.",
+      "brief": "Anthropic details the technical infrastructure and security measures used to contain Claude models.",
+      "enrichment_status": "metadata_only",
+      "enriched_at": "2026-05-26T19:06:44.689Z"
+    },
+    {
+      "cluster_id": "7bt6z8",
+      "title": "Augmented Equivariant Mesh Networks for Anatomical Mesh Segmentation (ICML 2026 Workshops) [R]",
+      "url": "https://old.reddit.com/r/MachineLearning/comments/1tobtmu/augmented_equivariant_mesh_networks_for",
+      "source_name": "r/MachineLearning",
+      "published_at": "2026-05-26T16:18:47.000Z",
+      "kind": "paper",
+      "score": 0.734,
+      "dek": "EAMS introduces an equivariant architecture for anatomical mesh segmentation that maintains performance despite variations in patient pose and mesh resolution.",
+      "brief": "The Equivariant Anatomical Mesh Segmentor (EAMS) addresses the sensitivity of existing mesh and point-cloud models to geometric perturbations. By leveraging Equivariant Mesh Neural Networks (EMNN), the model maintains robustness against arbitrary rotations and resolution changes, preventing the significant IoU drops observed in non-equivariant methods during test-time shifts.",
+      "image_alt": "Visualization of anatomical mesh segmentation showing consistent performance across different patient poses.",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-05-26T19:06:44.689Z"
+    }
+  ],
+  "count": 48,
+  "clusters": [
+    {
+      "id": "1sq1stg",
+      "primary": {
+        "id": "1sq1stg",
+        "source_id": "arxiv_lg",
+        "source_name": "arXiv cs.LG",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "paper",
+        "title": "Algometrics: Forecasting Under Algorithmic Feedback",
+        "url": "https://arxiv.org/abs/2605.23978",
+        "original_url": "https://arxiv.org/abs/2605.23978",
+        "summary": "In algorithmic markets, predictive models become part of the data-generating process they aim to forecast. Once their outputs are converted into trades, allocations, execution schedules, or risk controls, they change the future data on which they are evaluated. I introduce algometrics, a framework for time series whose evolution depends on the predictive algorithms forecasting them. The framework distinguishes historical risk, measured under passive forecasting, from deployment risk, measured when forecasts drive actions. I prove three results. First, deployment risk is not identifiable from p",
+        "published_at": "2026-05-26T04:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1sq1stg",
+          "source_id": "arxiv_lg",
+          "source_name": "arXiv cs.LG",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "paper",
+          "title": "Algometrics: Forecasting Under Algorithmic Feedback",
+          "url": "https://arxiv.org/abs/2605.23978",
+          "original_url": "https://arxiv.org/abs/2605.23978",
+          "summary": "In algorithmic markets, predictive models become part of the data-generating process they aim to forecast. Once their outputs are converted into trades, allocations, execution schedules, or risk controls, they change the future data on which they are evaluated. I introduce algometrics, a framework for time series whose evolution depends on the predictive algorithms forecasting them. The framework distinguishes historical risk, measured under passive forecasting, from deployment risk, measured when forecasts drive actions. I prove three results. First, deployment risk is not identifiable from p",
+          "published_at": "2026-05-26T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "arxiv_lg",
+          "source_name": "arXiv cs.LG",
+          "title": "Algometrics: Forecasting Under Algorithmic Feedback",
+          "url": "https://arxiv.org/abs/2605.23978",
+          "published_at": "2026-05-26T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "Introduces a framework for forecasting in markets where predictive models influence the data-generating process.",
+      "novelty": 0.852,
+      "novelty_label": "high",
+      "trust": 0.9,
+      "score": 0.801,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "14htwvc",
+      "primary": {
+        "id": "14htwvc",
+        "source_id": "ars_ai",
+        "source_name": "Ars Technica AI",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "news",
+        "title": "3D-printable humanoid legs let robotics experiments run wild",
+        "url": "https://arstechnica.com/ai/2026/05/3d-printable-humanoid-legs-let-robotics-experiments-run-wild",
+        "original_url": "https://arstechnica.com/ai/2026/05/3d-printable-humanoid-legs-let-robotics-experiments-run-wild/",
+        "summary": "Hugging Face debuts $2,500 bipedal robot project for builders and researchers.",
+        "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/05/Hugging-Face-LeHumanoid-Robot-legs-1152x648.png",
+        "image_source": "rss_media",
+        "published_at": "2026-05-26T17:16:07.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "14htwvc",
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "news",
+          "title": "3D-printable humanoid legs let robotics experiments run wild",
+          "url": "https://arstechnica.com/ai/2026/05/3d-printable-humanoid-legs-let-robotics-experiments-run-wild",
+          "original_url": "https://arstechnica.com/ai/2026/05/3d-printable-humanoid-legs-let-robotics-experiments-run-wild/",
+          "summary": "Hugging Face debuts $2,500 bipedal robot project for builders and researchers.",
+          "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/05/Hugging-Face-LeHumanoid-Robot-legs-1152x648.png",
+          "image_source": "rss_media",
+          "published_at": "2026-05-26T17:16:07.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "title": "3D-printable humanoid legs let robotics experiments run wild",
+          "url": "https://arstechnica.com/ai/2026/05/3d-printable-humanoid-legs-let-robotics-experiments-run-wild",
+          "published_at": "2026-05-26T17:16:07.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Hugging Face releases a 3D-printable bipedal robot project for robotics research.",
+      "novelty": 0.833,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.79,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "15lcz34",
+      "primary": {
+        "id": "15lcz34",
+        "source_id": "aws_ml_blog",
+        "source_name": "AWS Machine Learning Blog",
+        "source_role": "main",
+        "trust": 0.8,
+        "kind_hint": "tutorial",
+        "title": "AgentWatch: Proactive AWS monitoring with ambient agents",
+        "url": "https://aws.amazon.com/blogs/machine-learning/agentwatch-proactive-aws-monitoring-with-ambient-agents",
+        "original_url": "https://aws.amazon.com/blogs/machine-learning/agentwatch-proactive-aws-monitoring-with-ambient-agents/",
+        "summary": "In this post, we demonstrate the capabilities of AgentWatch through practical implementation. You will see how the solution performs infrastructure checks every 15 minutes, summarizing CloudWatch metrics, logs, and alarms across multiple AWS accounts. The agent delivers actionable reports directly to Slack and responds to natural language queries about your infrastructure state. Throughout, we explore three human-in-the-loop patterns that maintain appropriate oversight while maximizing automation.",
+        "published_at": "2026-05-26T17:22:48.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "15lcz34",
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "source_role": "main",
+          "trust": 0.8,
+          "kind_hint": "tutorial",
+          "title": "AgentWatch: Proactive AWS monitoring with ambient agents",
+          "url": "https://aws.amazon.com/blogs/machine-learning/agentwatch-proactive-aws-monitoring-with-ambient-agents",
+          "original_url": "https://aws.amazon.com/blogs/machine-learning/agentwatch-proactive-aws-monitoring-with-ambient-agents/",
+          "summary": "In this post, we demonstrate the capabilities of AgentWatch through practical implementation. You will see how the solution performs infrastructure checks every 15 minutes, summarizing CloudWatch metrics, logs, and alarms across multiple AWS accounts. The agent delivers actionable reports directly to Slack and responds to natural language queries about your infrastructure state. Throughout, we explore three human-in-the-loop patterns that maintain appropriate oversight while maximizing automation.",
+          "published_at": "2026-05-26T17:22:48.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "title": "AgentWatch: Proactive AWS monitoring with ambient agents",
+          "url": "https://aws.amazon.com/blogs/machine-learning/agentwatch-proactive-aws-monitoring-with-ambient-agents",
+          "published_at": "2026-05-26T17:22:48.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "signal",
+      "one_liner": "Demonstrates using ambient agents for proactive AWS infrastructure monitoring and automated metric analysis.",
+      "novelty": 0.8,
+      "novelty_label": "high",
+      "trust": 0.8,
+      "score": 0.784,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "1e21ytj",
+      "primary": {
+        "id": "1e21ytj",
+        "source_id": "anthropic",
+        "source_name": "Anthropic",
+        "source_role": "main",
+        "trust": 0.92,
+        "kind_hint": "company_announcement",
+        "title": "Anthropic: How We Contain Claude",
+        "url": "https://anthropic.com/engineering/how-we-contain-claude",
+        "original_url": "https://www.anthropic.com/engineering/how-we-contain-claude",
+        "published_at": "2026-05-26T18:05:40.000Z",
+        "published_at_source": "sitemap_lastmod",
+        "date_confidence": "medium"
+      },
+      "members": [
+        {
+          "id": "1e21ytj",
+          "source_id": "anthropic",
+          "source_name": "Anthropic",
+          "source_role": "main",
+          "trust": 0.92,
+          "kind_hint": "company_announcement",
+          "title": "Anthropic: How We Contain Claude",
+          "url": "https://anthropic.com/engineering/how-we-contain-claude",
+          "original_url": "https://www.anthropic.com/engineering/how-we-contain-claude",
+          "published_at": "2026-05-26T18:05:40.000Z",
+          "published_at_source": "sitemap_lastmod",
+          "date_confidence": "medium"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "anthropic",
+          "source_name": "Anthropic",
+          "title": "Anthropic: How We Contain Claude",
+          "url": "https://anthropic.com/engineering/how-we-contain-claude",
+          "published_at": "2026-05-26T18:05:40.000Z",
+          "published_at_source": "sitemap_lastmod",
+          "date_confidence": "medium"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "signal",
+      "one_liner": "Anthropic details the technical infrastructure and security measures used to contain Claude models.",
+      "novelty": 0.698,
+      "novelty_label": "medium",
+      "trust": 0.92,
+      "score": 0.783,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+    },
+    {
+      "id": "16urvzy",
+      "primary": {
+        "id": "16urvzy",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "China reportedly now requires top AI researchers to get permission before leaving the country",
+        "url": "https://the-decoder.com/china-reportedly-now-requires-top-ai-researchers-to-get-permission-before-leaving-the-country",
+        "original_url": "https://the-decoder.com/china-reportedly-now-requires-top-ai-researchers-to-get-permission-before-leaving-the-country/",
+        "summary": "China is now restricting overseas travel for top AI researchers at private companies like Alibaba and DeepSeek. Those affected need official approval before leaving the country. Beijing fears data leaks, technology theft, and talent poaching and is tightening its grip on the domestic AI industry. The article China reportedly now requires top AI researchers to get permission before leaving the country appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2025/05/us_china_AI_talent.png",
+        "image_source": "rss_content",
+        "published_at": "2026-05-26T14:25:50.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "16urvzy",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "China reportedly now requires top AI researchers to get permission before leaving the country",
+          "url": "https://the-decoder.com/china-reportedly-now-requires-top-ai-researchers-to-get-permission-before-leaving-the-country",
+          "original_url": "https://the-decoder.com/china-reportedly-now-requires-top-ai-researchers-to-get-permission-before-leaving-the-country/",
+          "summary": "China is now restricting overseas travel for top AI researchers at private companies like Alibaba and DeepSeek. Those affected need official approval before leaving the country. Beijing fears data leaks, technology theft, and talent poaching and is tightening its grip on the domestic AI industry. The article China reportedly now requires top AI researchers to get permission before leaving the country appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2025/05/us_china_AI_talent.png",
+          "image_source": "rss_content",
+          "published_at": "2026-05-26T14:25:50.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "China reportedly now requires top AI researchers to get permission before leaving the country",
+          "url": "https://the-decoder.com/china-reportedly-now-requires-top-ai-researchers-to-get-permission-before-leaving-the-country",
+          "published_at": "2026-05-26T14:25:50.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Reports indicate China is restricting international travel for top AI researchers at private firms.",
+      "novelty": 0.801,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.766,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "7bt6z8",
+      "primary": {
+        "id": "7bt6z8",
+        "source_id": "r_ml",
+        "source_name": "r/MachineLearning",
+        "source_role": "main",
+        "trust": 0.55,
+        "kind_hint": "discussion",
+        "title": "Augmented Equivariant Mesh Networks for Anatomical Mesh Segmentation (ICML 2026 Workshops) [R]",
+        "url": "https://old.reddit.com/r/MachineLearning/comments/1tobtmu/augmented_equivariant_mesh_networks_for",
+        "original_url": "https://old.reddit.com/r/MachineLearning/comments/1tobtmu/augmented_equivariant_mesh_networks_for/",
+        "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1tobtmu/augmented_equivariant_mesh_networks_for",
+        "discussion_source": "r/MachineLearning",
+        "summary": "Paper: https://arxiv.org/abs/2605.08172 Workshops: AI for Science & Structured Data for Health at ICML 2026 Abstract: Anatomical mesh segmentation requires models that operate directly on irregular surface geometry while remaining robust to arbitrary patient pose and mesh resolution variation. Existing task-specific mesh and point-cloud methods are not equivariant, and can degrade sharply under test-time perturbation, for example dropping by 25-26 IoU points on intraoral scan segmentation at 40o tilt. We present EAMS, an Equivariant Anatomical Mesh Segmentor built on Equivariant Mesh Neural Ne",
+        "published_at": "2026-05-26T16:18:47.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "7bt6z8",
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "source_role": "main",
+          "trust": 0.55,
+          "kind_hint": "discussion",
+          "title": "Augmented Equivariant Mesh Networks for Anatomical Mesh Segmentation (ICML 2026 Workshops) [R]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1tobtmu/augmented_equivariant_mesh_networks_for",
+          "original_url": "https://old.reddit.com/r/MachineLearning/comments/1tobtmu/augmented_equivariant_mesh_networks_for/",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1tobtmu/augmented_equivariant_mesh_networks_for",
+          "discussion_source": "r/MachineLearning",
+          "summary": "Paper: https://arxiv.org/abs/2605.08172 Workshops: AI for Science & Structured Data for Health at ICML 2026 Abstract: Anatomical mesh segmentation requires models that operate directly on irregular surface geometry while remaining robust to arbitrary patient pose and mesh resolution variation. Existing task-specific mesh and point-cloud methods are not equivariant, and can degrade sharply under test-time perturbation, for example dropping by 25-26 IoU points on intraoral scan segmentation at 40o tilt. We present EAMS, an Equivariant Anatomical Mesh Segmentor built on Equivariant Mesh Neural Ne",
+          "published_at": "2026-05-26T16:18:47.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "title": "Augmented Equivariant Mesh Networks for Anatomical Mesh Segmentation (ICML 2026 Workshops) [R]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1tobtmu/augmented_equivariant_mesh_networks_for",
+          "published_at": "2026-05-26T16:18:47.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1tobtmu/augmented_equivariant_mesh_networks_for",
+          "discussion_source": "r/MachineLearning"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "Introduces equivariant mesh networks for robust anatomical segmentation on irregular surface geometries.",
+      "novelty": 0.831,
+      "novelty_label": "high",
+      "trust": 0.55,
+      "score": 0.734,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "rd66tf",
+      "primary": {
+        "id": "rd66tf",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "Article: Architecting Cloud-Native Kafka: From Tiered Storage Towards a Diskless Future",
+        "url": "https://infoq.com/articles/architecting-cloud-native-kafka",
+        "original_url": "https://www.infoq.com/articles/architecting-cloud-native-kafka/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "This article explores Kafka's transition toward a cloud-native architecture, examining how tiered storage, FinOps telemetry, elastic consumer scaling, virtual clusters, and Share Groups reshape the operational and economic model of event streaming platforms. It also analyzes emerging diskless-storage proposals and their architectural trade-offs. By Viquar Khan",
+        "image_url": "https://res.infoq.com/articles/architecting-cloud-native-kafka/en/headerimage/architecting-cloud-native-kafka-header-1779433382367.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-05-26T09:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "rd66tf",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "Article: Architecting Cloud-Native Kafka: From Tiered Storage Towards a Diskless Future",
+          "url": "https://infoq.com/articles/architecting-cloud-native-kafka",
+          "original_url": "https://www.infoq.com/articles/architecting-cloud-native-kafka/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "This article explores Kafka's transition toward a cloud-native architecture, examining how tiered storage, FinOps telemetry, elastic consumer scaling, virtual clusters, and Share Groups reshape the operational and economic model of event streaming platforms. It also analyzes emerging diskless-storage proposals and their architectural trade-offs. By Viquar Khan",
+          "image_url": "https://res.infoq.com/articles/architecting-cloud-native-kafka/en/headerimage/architecting-cloud-native-kafka-header-1779433382367.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-05-26T09:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "Article: Architecting Cloud-Native Kafka: From Tiered Storage Towards a Diskless Future",
+          "url": "https://infoq.com/articles/architecting-cloud-native-kafka",
+          "published_at": "2026-05-26T09:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Overview of architectural shifts in Kafka, focusing on tiered storage and cloud-native event streaming operations.",
+      "novelty": 0.783,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.761,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "dyau8j",
+      "primary": {
+        "id": "dyau8j",
+        "source_id": "aws_ml_blog",
+        "source_name": "AWS Machine Learning Blog",
+        "source_role": "main",
+        "trust": 0.8,
+        "kind_hint": "tutorial",
+        "title": "Build high-performance generative AI systems with Strands Agents, NVIDIA NIM, and Amazon Bedrock AgentCore",
+        "url": "https://aws.amazon.com/blogs/machine-learning/build-high-performance-generative-ai-systems-with-strands-agents-nvidia-nim-and-amazon-bedrock-agentcore",
+        "original_url": "https://aws.amazon.com/blogs/machine-learning/build-high-performance-generative-ai-systems-with-strands-agents-nvidia-nim-and-amazon-bedrock-agentcore/",
+        "summary": "In this post you'll learn how to build a multi-agent campaign review system that demonstrates parallel reasoning, context persistence, and traceable execution paths using an integrated architecture that combines NVIDIA NIM for GPU-accelerated inference. Amazon Bedrock AgentCore provides managed runtime, shared memory and built-in observability and Strands Agents provide serverless multi-agent orchestration. This approach supports performance, scalability, and operational insight in production environments. While the example focuses on marketing content review, the same pattern applies to digit",
+        "published_at": "2026-05-26T17:39:46.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "dyau8j",
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "source_role": "main",
+          "trust": 0.8,
+          "kind_hint": "tutorial",
+          "title": "Build high-performance generative AI systems with Strands Agents, NVIDIA NIM, and Amazon Bedrock AgentCore",
+          "url": "https://aws.amazon.com/blogs/machine-learning/build-high-performance-generative-ai-systems-with-strands-agents-nvidia-nim-and-amazon-bedrock-agentcore",
+          "original_url": "https://aws.amazon.com/blogs/machine-learning/build-high-performance-generative-ai-systems-with-strands-agents-nvidia-nim-and-amazon-bedrock-agentcore/",
+          "summary": "In this post you'll learn how to build a multi-agent campaign review system that demonstrates parallel reasoning, context persistence, and traceable execution paths using an integrated architecture that combines NVIDIA NIM for GPU-accelerated inference. Amazon Bedrock AgentCore provides managed runtime, shared memory and built-in observability and Strands Agents provide serverless multi-agent orchestration. This approach supports performance, scalability, and operational insight in production environments. While the example focuses on marketing content review, the same pattern applies to digit",
+          "published_at": "2026-05-26T17:39:46.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "title": "Build high-performance generative AI systems with Strands Agents, NVIDIA NIM, and Amazon Bedrock AgentCore",
+          "url": "https://aws.amazon.com/blogs/machine-learning/build-high-performance-generative-ai-systems-with-strands-agents-nvidia-nim-and-amazon-bedrock-agentcore",
+          "published_at": "2026-05-26T17:39:46.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "signal",
+      "one_liner": "Guide to building multi-agent systems using NVIDIA NIM and Amazon Bedrock AgentCore.",
+      "novelty": 0.653,
+      "novelty_label": "medium",
+      "trust": 0.8,
+      "score": 0.741,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "1vhrir8",
+      "primary": {
+        "id": "1vhrir8",
+        "source_id": "arxiv_cl",
+        "source_name": "arXiv cs.CL",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "paper",
+        "title": "Raon-Speech Technical Report",
+        "url": "https://arxiv.org/abs/2605.23912",
+        "original_url": "https://arxiv.org/abs/2605.23912",
+        "summary": "We present Raon-Speech, a top-performing 9B-parameter speech language model (SpeechLM) for English and Korean speech understanding, answering, and generation, and Raon-SpeechChat, a high-performing full-duplex extension for natural real-time conversation. Raon-Speech successfully transforms a pre-trained LLM into a SpeechLM that both understands and generates speech while preserving strong text capabilities. It trains on 1.38M hours of highly curated English and Korean speech and text datasets with the following training stages: (1) speech modules alignment, (2) end-to-end SpeechLM pre-trainin",
+        "published_at": "2026-05-26T04:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1vhrir8",
+          "source_id": "arxiv_cl",
+          "source_name": "arXiv cs.CL",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "paper",
+          "title": "Raon-Speech Technical Report",
+          "url": "https://arxiv.org/abs/2605.23912",
+          "original_url": "https://arxiv.org/abs/2605.23912",
+          "summary": "We present Raon-Speech, a top-performing 9B-parameter speech language model (SpeechLM) for English and Korean speech understanding, answering, and generation, and Raon-SpeechChat, a high-performing full-duplex extension for natural real-time conversation. Raon-Speech successfully transforms a pre-trained LLM into a SpeechLM that both understands and generates speech while preserving strong text capabilities. It trains on 1.38M hours of highly curated English and Korean speech and text datasets with the following training stages: (1) speech modules alignment, (2) end-to-end SpeechLM pre-trainin",
+          "published_at": "2026-05-26T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "arxiv_cl",
+          "source_name": "arXiv cs.CL",
+          "title": "Raon-Speech Technical Report",
+          "url": "https://arxiv.org/abs/2605.23912",
+          "published_at": "2026-05-26T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "Technical report on Raon-Speech, a 9B parameter SpeechLM for English and Korean speech understanding and generation.",
+      "novelty": 0.622,
+      "novelty_label": "medium",
+      "trust": 0.9,
+      "score": 0.732,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
+    },
+    {
+      "id": "1xa48mh",
+      "primary": {
+        "id": "1xa48mh",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "I finally put my NPU (Intel Arrow Lake) to use doing ASR for my smart home",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tnzjth/i_finally_put_my_npu_intel_arrow_lake_to_use",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tnzjth/i_finally_put_my_npu_intel_arrow_lake_to_use/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tnzjth/i_finally_put_my_npu_intel_arrow_lake_to_use",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "I wrote about what I found in a deep dive elsewhere (which I will no mention because Reddit doesn't like cross linking) but I wanted to share it here since this is where I learn the most about AI stuff and I've seen before questions about NPUs, that are often dismissed as marketing gimmicks (and for the most part they are if we're taking LLMs, but not for other ML workloads). If you care for the traps I found along the way making onnx-asr working on openvino compiled to the NPU, you can read the article, I'm here to post the findings. Table comparing the total time, total energy used (watts du",
+        "image_url": "https://preview.redd.it/9kbfy7aunf3h1.jpg?width=140&height=46&auto=webp&s=2beda5b32548d59f6b0bf4de999ce59f14398382",
+        "image_source": "rss_media",
+        "published_at": "2026-05-26T07:23:31.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1xa48mh",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "I finally put my NPU (Intel Arrow Lake) to use doing ASR for my smart home",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tnzjth/i_finally_put_my_npu_intel_arrow_lake_to_use",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tnzjth/i_finally_put_my_npu_intel_arrow_lake_to_use/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tnzjth/i_finally_put_my_npu_intel_arrow_lake_to_use",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "I wrote about what I found in a deep dive elsewhere (which I will no mention because Reddit doesn't like cross linking) but I wanted to share it here since this is where I learn the most about AI stuff and I've seen before questions about NPUs, that are often dismissed as marketing gimmicks (and for the most part they are if we're taking LLMs, but not for other ML workloads). If you care for the traps I found along the way making onnx-asr working on openvino compiled to the NPU, you can read the article, I'm here to post the findings. Table comparing the total time, total energy used (watts du",
+          "image_url": "https://preview.redd.it/9kbfy7aunf3h1.jpg?width=140&height=46&auto=webp&s=2beda5b32548d59f6b0bf4de999ce59f14398382",
+          "image_source": "rss_media",
+          "published_at": "2026-05-26T07:23:31.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "I finally put my NPU (Intel Arrow Lake) to use doing ASR for my smart home",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tnzjth/i_finally_put_my_npu_intel_arrow_lake_to_use",
+          "published_at": "2026-05-26T07:23:31.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tnzjth/i_finally_put_my_npu_intel_arrow_lake_to_use",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "signal",
+      "one_liner": "A practical implementation of local ASR tasks running on Intel Arrow Lake NPU hardware.",
+      "novelty": 0.864,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.718,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "1uje6r1",
+      "primary": {
+        "id": "1uje6r1",
+        "source_id": "aws_ml_blog",
+        "source_name": "AWS Machine Learning Blog",
+        "source_role": "main",
+        "trust": 0.8,
+        "kind_hint": "tutorial",
+        "title": "Build highly scalable serverless LangGraph multi-agent systems in AWS with Amazon Bedrock AgentCore",
+        "url": "https://aws.amazon.com/blogs/machine-learning/build-highly-scalable-serverless-langgraph-multi-agent-systems-in-aws-with-amazon-bedrock-agentcore",
+        "original_url": "https://aws.amazon.com/blogs/machine-learning/build-highly-scalable-serverless-langgraph-multi-agent-systems-in-aws-with-amazon-bedrock-agentcore/",
+        "summary": "In this post, we provide a solution to build highly scalable, serverless multi-agent generative AI systems on AWS using LangGraph Agents as orchestrators integrated with Amazon Bedrock AgentCore Memory and Amazon Bedrock AgentCore Observability.",
+        "published_at": "2026-05-26T17:41:26.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1uje6r1",
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "source_role": "main",
+          "trust": 0.8,
+          "kind_hint": "tutorial",
+          "title": "Build highly scalable serverless LangGraph multi-agent systems in AWS with Amazon Bedrock AgentCore",
+          "url": "https://aws.amazon.com/blogs/machine-learning/build-highly-scalable-serverless-langgraph-multi-agent-systems-in-aws-with-amazon-bedrock-agentcore",
+          "original_url": "https://aws.amazon.com/blogs/machine-learning/build-highly-scalable-serverless-langgraph-multi-agent-systems-in-aws-with-amazon-bedrock-agentcore/",
+          "summary": "In this post, we provide a solution to build highly scalable, serverless multi-agent generative AI systems on AWS using LangGraph Agents as orchestrators integrated with Amazon Bedrock AgentCore Memory and Amazon Bedrock AgentCore Observability.",
+          "published_at": "2026-05-26T17:41:26.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "title": "Build highly scalable serverless LangGraph multi-agent systems in AWS with Amazon Bedrock AgentCore",
+          "url": "https://aws.amazon.com/blogs/machine-learning/build-highly-scalable-serverless-langgraph-multi-agent-systems-in-aws-with-amazon-bedrock-agentcore",
+          "published_at": "2026-05-26T17:41:26.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "signal",
+      "one_liner": "Implementation guide for serverless multi-agent systems using LangGraph and Amazon Bedrock.",
+      "novelty": 0.622,
+      "novelty_label": "medium",
+      "trust": 0.8,
+      "score": 0.731,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "f04nar",
+      "primary": {
+        "id": "f04nar",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "Google Expands SynthID Adoption for AI Watermarking, Previews Content Detection API",
+        "url": "https://infoq.com/news/2026/05/google-synthid-content-detection",
+        "original_url": "https://www.infoq.com/news/2026/05/google-synthid-content-detection/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Google's SynthID, designed to embed imperceptible signals into AI-generated content, is adding a new Content Detection API on Google Cloud's Gemini Enterprise Agent Platform, after gaining adoption by several industry players including Nvidia and OpenAI. By Sergio De Simone",
+        "image_url": "https://res.infoq.com/news/2026/05/google-synthid-content-detection/en/headerimage/google-synthid-content-detection-1779781502207.jpeg",
+        "image_source": "rss_content",
+        "published_at": "2026-05-26T09:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "f04nar",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "Google Expands SynthID Adoption for AI Watermarking, Previews Content Detection API",
+          "url": "https://infoq.com/news/2026/05/google-synthid-content-detection",
+          "original_url": "https://www.infoq.com/news/2026/05/google-synthid-content-detection/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "Google's SynthID, designed to embed imperceptible signals into AI-generated content, is adding a new Content Detection API on Google Cloud's Gemini Enterprise Agent Platform, after gaining adoption by several industry players including Nvidia and OpenAI. By Sergio De Simone",
+          "image_url": "https://res.infoq.com/news/2026/05/google-synthid-content-detection/en/headerimage/google-synthid-content-detection-1779781502207.jpeg",
+          "image_source": "rss_content",
+          "published_at": "2026-05-26T09:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "Google Expands SynthID Adoption for AI Watermarking, Previews Content Detection API",
+          "url": "https://infoq.com/news/2026/05/google-synthid-content-detection",
+          "published_at": "2026-05-26T09:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Google expands SynthID watermarking adoption and previews a content detection API on Google Cloud.",
+      "novelty": 0.699,
+      "novelty_label": "medium",
+      "trust": 0.78,
+      "score": 0.736,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "ghbhgh",
+      "primary": {
+        "id": "ghbhgh",
+        "source_id": "marktechpost",
+        "source_name": "MarkTechPost",
+        "source_role": "main",
+        "trust": 0.48,
+        "kind_hint": "news",
+        "title": "Design a Complete Multimodal RLVR Pipeline with Open-MM-RL, Vision-Language Prompting, Reward Scoring, and GRPO Export",
+        "url": "https://marktechpost.com/2026/05/26/design-a-complete-multimodal-rlvr-pipeline-with-open-mm-rl-vision-language-prompting-reward-scoring-and-grpo-export",
+        "original_url": "https://www.marktechpost.com/2026/05/26/design-a-complete-multimodal-rlvr-pipeline-with-open-mm-rl-vision-language-prompting-reward-scoring-and-grpo-export/",
+        "summary": "In this tutorial, we explore the TuringEnterprises/Open-MM-RL dataset as a practical foundation for multimodal reasoning and reinforcement learning with verifiable rewards. We load the dataset, inspect its schema, analyze domains, formats, question lengths, answer types, and image distributions, and visualize representative examples from each domain. We also build a lightweight reward function that checks exact, […] The post Design a Complete Multimodal RLVR Pipeline with Open-MM-RL, Vision-Language Prompting, Reward Scoring, and GRPO Export appeared first on MarkTechPost.",
+        "published_at": "2026-05-26T07:25:55.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "ghbhgh",
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "source_role": "main",
+          "trust": 0.48,
+          "kind_hint": "news",
+          "title": "Design a Complete Multimodal RLVR Pipeline with Open-MM-RL, Vision-Language Prompting, Reward Scoring, and GRPO Export",
+          "url": "https://marktechpost.com/2026/05/26/design-a-complete-multimodal-rlvr-pipeline-with-open-mm-rl-vision-language-prompting-reward-scoring-and-grpo-export",
+          "original_url": "https://www.marktechpost.com/2026/05/26/design-a-complete-multimodal-rlvr-pipeline-with-open-mm-rl-vision-language-prompting-reward-scoring-and-grpo-export/",
+          "summary": "In this tutorial, we explore the TuringEnterprises/Open-MM-RL dataset as a practical foundation for multimodal reasoning and reinforcement learning with verifiable rewards. We load the dataset, inspect its schema, analyze domains, formats, question lengths, answer types, and image distributions, and visualize representative examples from each domain. We also build a lightweight reward function that checks exact, […] The post Design a Complete Multimodal RLVR Pipeline with Open-MM-RL, Vision-Language Prompting, Reward Scoring, and GRPO Export appeared first on MarkTechPost.",
+          "published_at": "2026-05-26T07:25:55.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "title": "Design a Complete Multimodal RLVR Pipeline with Open-MM-RL, Vision-Language Prompting, Reward Scoring, and GRPO Export",
+          "url": "https://marktechpost.com/2026/05/26/design-a-complete-multimodal-rlvr-pipeline-with-open-mm-rl-vision-language-prompting-reward-scoring-and-grpo-export",
+          "published_at": "2026-05-26T07:25:55.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "signal",
+      "one_liner": "Guide to building a multimodal RLVR pipeline using Open-MM-RL, including reward scoring and GRPO export.",
+      "novelty": 0.775,
+      "novelty_label": "high",
+      "trust": 0.48,
+      "score": 0.687,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "1tpt4m3",
+      "primary": {
+        "id": "1tpt4m3",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "SkillOpt treats markdown skill files as trainable parameters with proper optimization machinery",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1to1mey/skillopt_treats_markdown_skill_files_as_trainable",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to1mey/skillopt_treats_markdown_skill_files_as_trainable/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to1mey/skillopt_treats_markdown_skill_files_as_trainable",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "Paper came out recently that formalizes something a lot of agent builders have been doing ad hoc. They use a frontier model to propose bounded edits (add/delete/replace) to markdown skill files, then gate every edit against a held out validation set. Only strict improvements accepted, ties rejected, rejected edits become negative signal for the next round. Few things worth noting: Best skills converge with 1 to 4 accepted edits out of many more proposals. Edit budget of 4 to 8 per step works best, remove the cap and performance collapses. Median final skill is ~920 tokens. A skill optimized on",
+        "image_url": "https://preview.redd.it/vun7zfxz8g3h1.jpeg?width=640&crop=smart&auto=webp&s=80376c6022baea2461cd9a85056ee385715819ab",
+        "image_source": "rss_media",
+        "published_at": "2026-05-26T09:20:57.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1tpt4m3",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "SkillOpt treats markdown skill files as trainable parameters with proper optimization machinery",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1to1mey/skillopt_treats_markdown_skill_files_as_trainable",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to1mey/skillopt_treats_markdown_skill_files_as_trainable/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to1mey/skillopt_treats_markdown_skill_files_as_trainable",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "Paper came out recently that formalizes something a lot of agent builders have been doing ad hoc. They use a frontier model to propose bounded edits (add/delete/replace) to markdown skill files, then gate every edit against a held out validation set. Only strict improvements accepted, ties rejected, rejected edits become negative signal for the next round. Few things worth noting: Best skills converge with 1 to 4 accepted edits out of many more proposals. Edit budget of 4 to 8 per step works best, remove the cap and performance collapses. Median final skill is ~920 tokens. A skill optimized on",
+          "image_url": "https://preview.redd.it/vun7zfxz8g3h1.jpeg?width=640&crop=smart&auto=webp&s=80376c6022baea2461cd9a85056ee385715819ab",
+          "image_source": "rss_media",
+          "published_at": "2026-05-26T09:20:57.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "SkillOpt treats markdown skill files as trainable parameters with proper optimization machinery",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1to1mey/skillopt_treats_markdown_skill_files_as_trainable",
+          "published_at": "2026-05-26T09:20:57.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to1mey/skillopt_treats_markdown_skill_files_as_trainable",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "SkillOpt formalizes agentic skill file optimization using bounded edits and validation-based gating.",
+      "novelty": 0.846,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.716,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "1f7xrpl",
+      "primary": {
+        "id": "1f7xrpl",
+        "source_id": "import_ai",
+        "source_name": "Import AI (Jack Clark)",
+        "source_role": "main",
+        "trust": 0.85,
+        "title": "Import AI 458: Reckoning with the future; and a singularity story",
+        "url": "https://jack-clark.net/2026/05/26/import-ai-458-reckoning-with-the-future-and-a-singularity-story",
+        "original_url": "https://jack-clark.net/2026/05/26/import-ai-458-reckoning-with-the-future-and-a-singularity-story/",
+        "summary": "Welcome to Import AI, a newsletter about AI research. Import AI runs on arXiv, cappuccinos, and feedback from readers. If you’d like to support this, please subscribe. This issue consists of a lengthy essay based on a speech I recently gave, and a fictional story attempting to think through what a positive singularity might look […]",
+        "image_url": "https://i0.wp.com/jack-clark.net/wp-content/uploads/2026/05/https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2Fd6d17996-2bef-40a4-abe3-be72a0e8a227_258x258-gTwoS6.jpg?resize=150%2C150&amp;ssl=1",
+        "image_source": "rss_content",
+        "published_at": "2026-05-26T12:32:03.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1f7xrpl",
+          "source_id": "import_ai",
+          "source_name": "Import AI (Jack Clark)",
+          "source_role": "main",
+          "trust": 0.85,
+          "title": "Import AI 458: Reckoning with the future; and a singularity story",
+          "url": "https://jack-clark.net/2026/05/26/import-ai-458-reckoning-with-the-future-and-a-singularity-story",
+          "original_url": "https://jack-clark.net/2026/05/26/import-ai-458-reckoning-with-the-future-and-a-singularity-story/",
+          "summary": "Welcome to Import AI, a newsletter about AI research. Import AI runs on arXiv, cappuccinos, and feedback from readers. If you’d like to support this, please subscribe. This issue consists of a lengthy essay based on a speech I recently gave, and a fictional story attempting to think through what a positive singularity might look […]",
+          "image_url": "https://i0.wp.com/jack-clark.net/wp-content/uploads/2026/05/https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2Fd6d17996-2bef-40a4-abe3-be72a0e8a227_258x258-gTwoS6.jpg?resize=150%2C150&amp;ssl=1",
+          "image_source": "rss_content",
+          "published_at": "2026-05-26T12:32:03.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "import_ai",
+          "source_name": "Import AI (Jack Clark)",
+          "title": "Import AI 458: Reckoning with the future; and a singularity story",
+          "url": "https://jack-clark.net/2026/05/26/import-ai-458-reckoning-with-the-future-and-a-singularity-story",
+          "published_at": "2026-05-26T12:32:03.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "Newsletter essay discussing AI research trends and a fictional story about the singularity.",
+      "novelty": 0.824,
+      "novelty_label": "high",
+      "trust": 0.85,
+      "score": 0.682,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "primary source has high trust weight",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "mqtuzs",
+      "primary": {
+        "id": "mqtuzs",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Tencent Hy-MT2 is now under Apache License 2.0",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1to6g1d/tencent_hymt2_is_now_under_apache_license_20",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to6g1d/tencent_hymt2_is_now_under_apache_license_20/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to6g1d/tencent_hymt2_is_now_under_apache_license_20",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "nice update bois submitted by /u/sword-in-stone [link] [comments]",
+        "published_at": "2026-05-26T13:08:19.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "mqtuzs",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Tencent Hy-MT2 is now under Apache License 2.0",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1to6g1d/tencent_hymt2_is_now_under_apache_license_20",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to6g1d/tencent_hymt2_is_now_under_apache_license_20/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to6g1d/tencent_hymt2_is_now_under_apache_license_20",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "nice update bois submitted by /u/sword-in-stone [link] [comments]",
+          "published_at": "2026-05-26T13:08:19.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Tencent Hy-MT2 is now under Apache License 2.0",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1to6g1d/tencent_hymt2_is_now_under_apache_license_20",
+          "published_at": "2026-05-26T13:08:19.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to6g1d/tencent_hymt2_is_now_under_apache_license_20",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Tencent Hy-MT2 model weights are now available under the Apache 2.0 license.",
+      "novelty": 0.817,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.713,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1olz0jg",
+      "primary": {
+        "id": "1olz0jg",
+        "source_id": "marktechpost",
+        "source_name": "MarkTechPost",
+        "source_role": "main",
+        "trust": 0.48,
+        "kind_hint": "news",
+        "title": "Meet OmniVoice Studio: A Local, Open-Source Alternative to ElevenLabs",
+        "url": "https://marktechpost.com/2026/05/26/meet-omnivoice-studio-a-local-open-source-alternative-to-elevenlabs",
+        "original_url": "https://www.marktechpost.com/2026/05/26/meet-omnivoice-studio-a-local-open-source-alternative-to-elevenlabs/",
+        "summary": "OmniVoice Studio runs voice cloning, video dubbing, real-time dictation, and speaker diarization entirely on your own hardware. No API keys, no cloud account, and no subscription required. The project supports 646 languages for TTS and exposes an MCP server for integration with Claude, Cursor, or any MCP client. The post Meet OmniVoice Studio: A Local, Open-Source Alternative to ElevenLabs appeared first on MarkTechPost.",
+        "published_at": "2026-05-26T07:56:17.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1olz0jg",
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "source_role": "main",
+          "trust": 0.48,
+          "kind_hint": "news",
+          "title": "Meet OmniVoice Studio: A Local, Open-Source Alternative to ElevenLabs",
+          "url": "https://marktechpost.com/2026/05/26/meet-omnivoice-studio-a-local-open-source-alternative-to-elevenlabs",
+          "original_url": "https://www.marktechpost.com/2026/05/26/meet-omnivoice-studio-a-local-open-source-alternative-to-elevenlabs/",
+          "summary": "OmniVoice Studio runs voice cloning, video dubbing, real-time dictation, and speaker diarization entirely on your own hardware. No API keys, no cloud account, and no subscription required. The project supports 646 languages for TTS and exposes an MCP server for integration with Claude, Cursor, or any MCP client. The post Meet OmniVoice Studio: A Local, Open-Source Alternative to ElevenLabs appeared first on MarkTechPost.",
+          "published_at": "2026-05-26T07:56:17.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "title": "Meet OmniVoice Studio: A Local, Open-Source Alternative to ElevenLabs",
+          "url": "https://marktechpost.com/2026/05/26/meet-omnivoice-studio-a-local-open-source-alternative-to-elevenlabs",
+          "published_at": "2026-05-26T07:56:17.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "OmniVoice Studio provides a local, open-source suite for voice cloning, dubbing, and diarization.",
+      "novelty": 0.744,
+      "novelty_label": "medium",
+      "trust": 0.48,
+      "score": 0.678,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "1a01d8o",
+      "primary": {
+        "id": "1a01d8o",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "Outsourcing plus local AI will soon become more economical vs. frontier labs",
+        "url": "https://signalbloom.ai/posts/outsourcing-plus-localai-will-soon-become-more-economical-vs-frontier-labs",
+        "original_url": "https://www.signalbloom.ai/posts/outsourcing-plus-localai-will-soon-become-more-economical-vs-frontier-labs/",
+        "discussion_url": "https://news.ycombinator.com/item?id=48278610",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-05-26T12:08:33Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 159,
+          "comments": 168
+        }
+      },
+      "members": [
+        {
+          "id": "1a01d8o",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "Outsourcing plus local AI will soon become more economical vs. frontier labs",
+          "url": "https://signalbloom.ai/posts/outsourcing-plus-localai-will-soon-become-more-economical-vs-frontier-labs",
+          "original_url": "https://www.signalbloom.ai/posts/outsourcing-plus-localai-will-soon-become-more-economical-vs-frontier-labs/",
+          "discussion_url": "https://news.ycombinator.com/item?id=48278610",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-05-26T12:08:33Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 159,
+            "comments": 168
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "Outsourcing plus local AI will soon become more economical vs. frontier labs",
+          "url": "https://signalbloom.ai/posts/outsourcing-plus-localai-will-soon-become-more-economical-vs-frontier-labs",
+          "published_at": "2026-05-26T12:08:33Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=48278610",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "Speculative analysis on the economic viability of local AI versus frontier model providers.",
+      "novelty": 0.758,
+      "novelty_label": "high",
+      "trust": 0.65,
+      "score": 0.652,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "kpezdh",
+      "primary": {
+        "id": "kpezdh",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "China Expands Travel Curbs to Top AI Talent at Private Firms",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1to2n4r/china_expands_travel_curbs_to_top_ai_talent_at",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to2n4r/china_expands_travel_curbs_to_top_ai_talent_at/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to2n4r/china_expands_travel_curbs_to_top_ai_talent_at",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "https://www.bloomberg.com/news/articles/2026-05-26/china-expands-travel-curbs-to-top-ai-talent-at-private-firms Now it will be much harder to poach Chinese AI talents like the former Qwen head Junyang Lin. It is quite sad that they will also have a hard time to travel to foreign countries for fun. Non-paywalled version from Straits Times: https://www.straitstimes.com/asia/east-asia/china-expands-travel-curbs-to-top-ai-talent-at-private-firms submitted by /u/Ok_Warning2146 [link] [comments]",
+        "published_at": "2026-05-26T10:15:56.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "kpezdh",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "China Expands Travel Curbs to Top AI Talent at Private Firms",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1to2n4r/china_expands_travel_curbs_to_top_ai_talent_at",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to2n4r/china_expands_travel_curbs_to_top_ai_talent_at/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to2n4r/china_expands_travel_curbs_to_top_ai_talent_at",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "https://www.bloomberg.com/news/articles/2026-05-26/china-expands-travel-curbs-to-top-ai-talent-at-private-firms Now it will be much harder to poach Chinese AI talents like the former Qwen head Junyang Lin. It is quite sad that they will also have a hard time to travel to foreign countries for fun. Non-paywalled version from Straits Times: https://www.straitstimes.com/asia/east-asia/china-expands-travel-curbs-to-top-ai-talent-at-private-firms submitted by /u/Ok_Warning2146 [link] [comments]",
+          "published_at": "2026-05-26T10:15:56.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "China Expands Travel Curbs to Top AI Talent at Private Firms",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1to2n4r/china_expands_travel_curbs_to_top_ai_talent_at",
+          "published_at": "2026-05-26T10:15:56.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to2n4r/china_expands_travel_curbs_to_top_ai_talent_at",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Discussion on new travel restrictions for Chinese AI talent and potential impacts on global recruitment.",
+      "novelty": 0.825,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.711,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1w1qq56",
+      "primary": {
+        "id": "1w1qq56",
+        "source_id": "arxiv_cl",
+        "source_name": "arXiv cs.CL",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "paper",
+        "title": "Document Classification Pattern Recognition via Information Fusion: A Systematic Review of Multimodal and Multiview Representation Approaches",
+        "url": "https://arxiv.org/abs/2605.23910",
+        "original_url": "https://arxiv.org/abs/2605.23910",
+        "summary": "Information fusion is used widely to improve document classification by the integration of multiple data sources (multimodal) or representations (multiview). However, the field lacks a unified framework, a quantitative synthesis of its effectiveness, and clear guidance for practitioners. This systematic review addresses these gaps by analysing 139 primary studies. It introduces a formal framework to structure the field, presents the results of a qualitative analysis to identify key trends, and performs a random-effects meta-analysis (to our knowledge, the first focused on document classificati",
+        "published_at": "2026-05-26T04:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1w1qq56",
+          "source_id": "arxiv_cl",
+          "source_name": "arXiv cs.CL",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "paper",
+          "title": "Document Classification Pattern Recognition via Information Fusion: A Systematic Review of Multimodal and Multiview Representation Approaches",
+          "url": "https://arxiv.org/abs/2605.23910",
+          "original_url": "https://arxiv.org/abs/2605.23910",
+          "summary": "Information fusion is used widely to improve document classification by the integration of multiple data sources (multimodal) or representations (multiview). However, the field lacks a unified framework, a quantitative synthesis of its effectiveness, and clear guidance for practitioners. This systematic review addresses these gaps by analysing 139 primary studies. It introduces a formal framework to structure the field, presents the results of a qualitative analysis to identify key trends, and performs a random-effects meta-analysis (to our knowledge, the first focused on document classificati",
+          "published_at": "2026-05-26T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "arxiv_cl",
+          "source_name": "arXiv cs.CL",
+          "title": "Document Classification Pattern Recognition via Information Fusion: A Systematic Review of Multimodal and Multiview Representation Approaches",
+          "url": "https://arxiv.org/abs/2605.23910",
+          "published_at": "2026-05-26T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "mixed",
+      "one_liner": "A systematic review of information fusion techniques for document classification, lacking a unified framework.",
+      "novelty": 0.82,
+      "novelty_label": "high",
+      "trust": 0.9,
+      "score": 0.679,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "1e27mu5",
+      "primary": {
+        "id": "1e27mu5",
+        "source_id": "yt_nate_b_jones",
+        "source_name": "AI News & Strategy Daily",
+        "source_role": "main",
+        "trust": 0.62,
+        "kind_hint": "video",
+        "title": "Shopify CEO Reveals Their Secret AI Developer",
+        "url": "https://youtube.com/watch?v=NRBQmwlILjk",
+        "original_url": "https://www.youtube.com/watch?v=NRBQmwlILjk",
+        "image_url": "https://i.ytimg.com/vi/NRBQmwlILjk/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-05-26T14:00:15.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UC0C-17n9iuUQPylguM1d-lQ",
+          "video_id": "NRBQmwlILjk"
+        }
+      },
+      "members": [
+        {
+          "id": "1e27mu5",
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "source_role": "main",
+          "trust": 0.62,
+          "kind_hint": "video",
+          "title": "Shopify CEO Reveals Their Secret AI Developer",
+          "url": "https://youtube.com/watch?v=NRBQmwlILjk",
+          "original_url": "https://www.youtube.com/watch?v=NRBQmwlILjk",
+          "image_url": "https://i.ytimg.com/vi/NRBQmwlILjk/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-05-26T14:00:15.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UC0C-17n9iuUQPylguM1d-lQ",
+            "video_id": "NRBQmwlILjk"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "title": "Shopify CEO Reveals Their Secret AI Developer",
+          "url": "https://youtube.com/watch?v=NRBQmwlILjk",
+          "published_at": "2026-05-26T14:00:15.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.848,
+      "novelty_label": "high",
+      "trust": 0.62,
+      "score": 0.639,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "rielni",
+      "primary": {
+        "id": "rielni",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "Using AI to write better code more slowly",
+        "url": "https://nolanlawson.com/2026/05/25/using-ai-to-write-better-code-more-slowly",
+        "original_url": "https://nolanlawson.com/2026/05/25/using-ai-to-write-better-code-more-slowly/",
+        "discussion_url": "https://news.ycombinator.com/item?id=48272984",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-05-25T23:16:59Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 1075,
+          "comments": 396
+        }
+      },
+      "members": [
+        {
+          "id": "rielni",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "Using AI to write better code more slowly",
+          "url": "https://nolanlawson.com/2026/05/25/using-ai-to-write-better-code-more-slowly",
+          "original_url": "https://nolanlawson.com/2026/05/25/using-ai-to-write-better-code-more-slowly/",
+          "discussion_url": "https://news.ycombinator.com/item?id=48272984",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-05-25T23:16:59Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 1075,
+            "comments": 396
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "Using AI to write better code more slowly",
+          "url": "https://nolanlawson.com/2026/05/25/using-ai-to-write-better-code-more-slowly",
+          "published_at": "2026-05-25T23:16:59Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=48272984",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "Personal reflection on the trade-offs between AI-assisted coding speed and code quality.",
+      "novelty": 0.813,
+      "novelty_label": "high",
+      "trust": 0.65,
+      "score": 0.651,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1lyn7qg",
+      "primary": {
+        "id": "1lyn7qg",
+        "source_id": "aws_ml_blog",
+        "source_name": "AWS Machine Learning Blog",
+        "source_role": "main",
+        "trust": 0.8,
+        "kind_hint": "tutorial",
+        "title": "Technical deep dive: AgentCore payments and innovation in agentic commerce",
+        "url": "https://aws.amazon.com/blogs/machine-learning/technical-deep-dive-agentcore-payments-and-innovation-in-agentic-commerce",
+        "original_url": "https://aws.amazon.com/blogs/machine-learning/technical-deep-dive-agentcore-payments-and-innovation-in-agentic-commerce/",
+        "summary": "Amazon Bedrock AgentCore payments is now available in preview, it provides instant payments to paid external services with no manual billing setup per provider, stablecoin support for cost-effective microtransactions that make sub-cent transactions economically viable, and configurable spending guardrails that give you fine-grained control over agent budgets and transaction limits. In this post, we walk you through a technical deep dive of AgentCore payments.",
+        "published_at": "2026-05-26T17:57:18.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1lyn7qg",
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "source_role": "main",
+          "trust": 0.8,
+          "kind_hint": "tutorial",
+          "title": "Technical deep dive: AgentCore payments and innovation in agentic commerce",
+          "url": "https://aws.amazon.com/blogs/machine-learning/technical-deep-dive-agentcore-payments-and-innovation-in-agentic-commerce",
+          "original_url": "https://aws.amazon.com/blogs/machine-learning/technical-deep-dive-agentcore-payments-and-innovation-in-agentic-commerce/",
+          "summary": "Amazon Bedrock AgentCore payments is now available in preview, it provides instant payments to paid external services with no manual billing setup per provider, stablecoin support for cost-effective microtransactions that make sub-cent transactions economically viable, and configurable spending guardrails that give you fine-grained control over agent budgets and transaction limits. In this post, we walk you through a technical deep dive of AgentCore payments.",
+          "published_at": "2026-05-26T17:57:18.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "title": "Technical deep dive: AgentCore payments and innovation in agentic commerce",
+          "url": "https://aws.amazon.com/blogs/machine-learning/technical-deep-dive-agentcore-payments-and-innovation-in-agentic-commerce",
+          "published_at": "2026-05-26T17:57:18.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "mixed",
+      "one_liner": "AWS announces preview of AgentCore payments for automated billing and microtransactions in agentic workflows.",
+      "novelty": 0.816,
+      "novelty_label": "high",
+      "trust": 0.8,
+      "score": 0.678,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+    },
+    {
+      "id": "1vw4y43",
+      "primary": {
+        "id": "1vw4y43",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Keye-VL-2.0-30B-A3B -- Introducing DSA attention into multimodality for the first time",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1to63rt/keyevl2030ba3b_introducing_dsa_attention_into",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to63rt/keyevl2030ba3b_introducing_dsa_attention_into/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to63rt/keyevl2030ba3b_introducing_dsa_attention_into",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "Meet Keye-VL-2.0-30B-A3B — the latest 30B-class flagship base model in the Keye series, purpose-built to push the frontier of long-video understanding and to unlock the first generation of Agent capabilities in the Keye family. https://huggingface.co/Kwai-Keye/Keye-VL-2.0-30B-A3B https://preview.redd.it/wsxe233abh3h1.png?width=1244&format=png&auto=webp&s=aa9ffa388e16e4f8f5cb72ed3dae063f99df69f1 https://preview.redd.it/2iymyb9dbh3h1.png?width=2048&format=png&auto=webp&s=a834ce92294c3be059b50c6993f1be6d3faf2767 submitted by /u/External_Mood4719 [link] [comments]",
+        "image_url": "https://external-preview.redd.it/Bcx-D9Fs2VXdPVT_ukvDl60L1qGtC5Cu9eQDaAjqGPQ.png?width=140&height=75&auto=webp&s=7ed982e8c556614a9ef47965be7e3fabaa2fd081",
+        "image_source": "rss_media",
+        "published_at": "2026-05-26T12:55:05.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1vw4y43",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Keye-VL-2.0-30B-A3B -- Introducing DSA attention into multimodality for the first time",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1to63rt/keyevl2030ba3b_introducing_dsa_attention_into",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to63rt/keyevl2030ba3b_introducing_dsa_attention_into/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to63rt/keyevl2030ba3b_introducing_dsa_attention_into",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "Meet Keye-VL-2.0-30B-A3B — the latest 30B-class flagship base model in the Keye series, purpose-built to push the frontier of long-video understanding and to unlock the first generation of Agent capabilities in the Keye family. https://huggingface.co/Kwai-Keye/Keye-VL-2.0-30B-A3B https://preview.redd.it/wsxe233abh3h1.png?width=1244&format=png&auto=webp&s=aa9ffa388e16e4f8f5cb72ed3dae063f99df69f1 https://preview.redd.it/2iymyb9dbh3h1.png?width=2048&format=png&auto=webp&s=a834ce92294c3be059b50c6993f1be6d3faf2767 submitted by /u/External_Mood4719 [link] [comments]",
+          "image_url": "https://external-preview.redd.it/Bcx-D9Fs2VXdPVT_ukvDl60L1qGtC5Cu9eQDaAjqGPQ.png?width=140&height=75&auto=webp&s=7ed982e8c556614a9ef47965be7e3fabaa2fd081",
+          "image_source": "rss_media",
+          "published_at": "2026-05-26T12:55:05.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Keye-VL-2.0-30B-A3B -- Introducing DSA attention into multimodality for the first time",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1to63rt/keyevl2030ba3b_introducing_dsa_attention_into",
+          "published_at": "2026-05-26T12:55:05.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to63rt/keyevl2030ba3b_introducing_dsa_attention_into",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "Release of Keye-VL-2.0-30B-A3B, a multimodal model using DSA attention for video.",
+      "novelty": 0.792,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.706,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
+    },
+    {
+      "id": "1bxrxa",
+      "primary": {
+        "id": "1bxrxa",
+        "source_id": "simonw",
+        "source_name": "Simon Willison",
+        "source_role": "main",
+        "trust": 0.9,
+        "title": "Notes on Pope Leo XIV's encyclical on AI",
+        "url": "https://simonwillison.net/2026/May/25/encyclical-on-ai",
+        "original_url": "https://simonwillison.net/2026/May/25/encyclical-on-ai/#atom-everything",
+        "published_at": "2026-05-25T23:58:17.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1bxrxa",
+          "source_id": "simonw",
+          "source_name": "Simon Willison",
+          "source_role": "main",
+          "trust": 0.9,
+          "title": "Notes on Pope Leo XIV's encyclical on AI",
+          "url": "https://simonwillison.net/2026/May/25/encyclical-on-ai",
+          "original_url": "https://simonwillison.net/2026/May/25/encyclical-on-ai/#atom-everything",
+          "published_at": "2026-05-25T23:58:17.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "simonw",
+          "source_name": "Simon Willison",
+          "title": "Notes on Pope Leo XIV's encyclical on AI",
+          "url": "https://simonwillison.net/2026/May/25/encyclical-on-ai",
+          "published_at": "2026-05-25T23:58:17.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "Analysis of the Vatican's recent encyclical regarding AI ethics and societal impact.",
+      "novelty": 0.733,
+      "novelty_label": "medium",
+      "trust": 0.9,
+      "score": 0.646,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as useful but lower-confidence signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1l4w1to",
+      "primary": {
+        "id": "1l4w1to",
+        "source_id": "marktechpost",
+        "source_name": "MarkTechPost",
+        "source_role": "main",
+        "trust": 0.48,
+        "kind_hint": "news",
+        "title": "Together AI Open-Sources OSCAR: An Attention-Aware 2-Bit KV Cache Quantization System for Long-Context LLM Serving",
+        "url": "https://marktechpost.com/2026/05/25/together-ai-open-sources-oscar-an-attention-aware-2-bit-kv-cache-quantization-system-for-long-context-llm-serving",
+        "original_url": "https://www.marktechpost.com/2026/05/25/together-ai-open-sources-oscar-an-attention-aware-2-bit-kv-cache-quantization-system-for-long-context-llm-serving/",
+        "summary": "Together AI has released OSCAR (Offline Spectral Covariance-Aware Rotation), an INT2 KV cache quantization method for long-context LLM serving. Unlike prior rotation-based approaches that apply data-oblivious Hadamard transforms, OSCAR derives separate rotations for keys and values from attention-aware covariance structures estimated offline. At 2.28 bits per KV element, OSCAR reduces the BF16 accuracy gap to 3.78 points on Qwen3-4B-Thinking-2507 and 1.42 points on Qwen3-8B, while delivering approximately 8× KV memory reduction and up to 3× decode speedup at 100K context length. The post Toget",
+        "image_url": "https://www.marktechpost.com/wp-content/uploads/2026/05/Screenshot-2026-05-25-at-2.24.00-PM-1.png",
+        "image_source": "rss_media",
+        "published_at": "2026-05-25T21:24:31.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1l4w1to",
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "source_role": "main",
+          "trust": 0.48,
+          "kind_hint": "news",
+          "title": "Together AI Open-Sources OSCAR: An Attention-Aware 2-Bit KV Cache Quantization System for Long-Context LLM Serving",
+          "url": "https://marktechpost.com/2026/05/25/together-ai-open-sources-oscar-an-attention-aware-2-bit-kv-cache-quantization-system-for-long-context-llm-serving",
+          "original_url": "https://www.marktechpost.com/2026/05/25/together-ai-open-sources-oscar-an-attention-aware-2-bit-kv-cache-quantization-system-for-long-context-llm-serving/",
+          "summary": "Together AI has released OSCAR (Offline Spectral Covariance-Aware Rotation), an INT2 KV cache quantization method for long-context LLM serving. Unlike prior rotation-based approaches that apply data-oblivious Hadamard transforms, OSCAR derives separate rotations for keys and values from attention-aware covariance structures estimated offline. At 2.28 bits per KV element, OSCAR reduces the BF16 accuracy gap to 3.78 points on Qwen3-4B-Thinking-2507 and 1.42 points on Qwen3-8B, while delivering approximately 8× KV memory reduction and up to 3× decode speedup at 100K context length. The post Toget",
+          "image_url": "https://www.marktechpost.com/wp-content/uploads/2026/05/Screenshot-2026-05-25-at-2.24.00-PM-1.png",
+          "image_source": "rss_media",
+          "published_at": "2026-05-25T21:24:31.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "title": "Together AI Open-Sources OSCAR: An Attention-Aware 2-Bit KV Cache Quantization System for Long-Context LLM Serving",
+          "url": "https://marktechpost.com/2026/05/25/together-ai-open-sources-oscar-an-attention-aware-2-bit-kv-cache-quantization-system-for-long-context-llm-serving",
+          "published_at": "2026-05-25T21:24:31.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Together AI released OSCAR, an INT2 KV cache quantization method using spectral covariance-aware rotation for long-context LLMs.",
+      "novelty": 0.725,
+      "novelty_label": "medium",
+      "trust": 0.48,
+      "score": 0.655,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "s6kct7",
+      "primary": {
+        "id": "s6kct7",
+        "source_id": "mit_tech_review_ai",
+        "source_name": "MIT Technology Review AI",
+        "source_role": "main",
+        "trust": 0.82,
+        "kind_hint": "news",
+        "title": "It’s time to address the looming crisis in entry-level work.",
+        "url": "https://technologyreview.com/2026/05/26/1137865/its-time-to-address-the-looming-crisis-in-entry-level-work",
+        "original_url": "https://www.technologyreview.com/2026/05/26/1137865/its-time-to-address-the-looming-crisis-in-entry-level-work/",
+        "summary": "Artificial intelligence has not so far produced a clean story of mass unemployment. Aggregate employment in developed countries remains broadly stable, and recent assessments have found limited evidence that AI has shifted the headline numbers. But a troubling change may be hiding beneath the surface: the quiet weakening of the first rung of the career…",
+        "published_at": "2026-05-26T09:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "s6kct7",
+          "source_id": "mit_tech_review_ai",
+          "source_name": "MIT Technology Review AI",
+          "source_role": "main",
+          "trust": 0.82,
+          "kind_hint": "news",
+          "title": "It’s time to address the looming crisis in entry-level work.",
+          "url": "https://technologyreview.com/2026/05/26/1137865/its-time-to-address-the-looming-crisis-in-entry-level-work",
+          "original_url": "https://www.technologyreview.com/2026/05/26/1137865/its-time-to-address-the-looming-crisis-in-entry-level-work/",
+          "summary": "Artificial intelligence has not so far produced a clean story of mass unemployment. Aggregate employment in developed countries remains broadly stable, and recent assessments have found limited evidence that AI has shifted the headline numbers. But a troubling change may be hiding beneath the surface: the quiet weakening of the first rung of the career…",
+          "published_at": "2026-05-26T09:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "mit_tech_review_ai",
+          "source_name": "MIT Technology Review AI",
+          "title": "It’s time to address the looming crisis in entry-level work.",
+          "url": "https://technologyreview.com/2026/05/26/1137865/its-time-to-address-the-looming-crisis-in-entry-level-work",
+          "published_at": "2026-05-26T09:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Analysis of the potential impact of AI automation on entry-level job markets.",
+      "novelty": 0.851,
+      "novelty_label": "high",
+      "trust": 0.82,
+      "score": 0.678,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "nh1beo",
+      "primary": {
+        "id": "nh1beo",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Strix Halo users, a rejected PR can give you up to 30% faster PP for MOEs.",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1to00xl/strix_halo_users_a_rejected_pr_can_give_you_up_to",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to00xl/strix_halo_users_a_rejected_pr_can_give_you_up_to/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to00xl/strix_halo_users_a_rejected_pr_can_give_you_up_to",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "Here's the PR by pedapudi. https://github.com/ggml-org/llama.cpp/pull/21344 It's merge request has been denied so it will not be in mainline llama.cpp. The changes are so small that I just put them into whatever the current release of llama.cpp is. Read the PR for more info. It will only work with MOEs. Also, it gives the most boost at low context. As the context rises, the gain diminishes. Pedapudi explains why that happens in the PR. Here are some numbers. It really works well. The tiny amount of time it takes me to apply the code to the current release of llama.cpp is time well spent. main",
+        "published_at": "2026-05-26T07:50:34.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "nh1beo",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Strix Halo users, a rejected PR can give you up to 30% faster PP for MOEs.",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1to00xl/strix_halo_users_a_rejected_pr_can_give_you_up_to",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to00xl/strix_halo_users_a_rejected_pr_can_give_you_up_to/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to00xl/strix_halo_users_a_rejected_pr_can_give_you_up_to",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "Here's the PR by pedapudi. https://github.com/ggml-org/llama.cpp/pull/21344 It's merge request has been denied so it will not be in mainline llama.cpp. The changes are so small that I just put them into whatever the current release of llama.cpp is. Read the PR for more info. It will only work with MOEs. Also, it gives the most boost at low context. As the context rises, the gain diminishes. Pedapudi explains why that happens in the PR. Here are some numbers. It really works well. The tiny amount of time it takes me to apply the code to the current release of llama.cpp is time well spent. main",
+          "published_at": "2026-05-26T07:50:34.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Strix Halo users, a rejected PR can give you up to 30% faster PP for MOEs.",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1to00xl/strix_halo_users_a_rejected_pr_can_give_you_up_to",
+          "published_at": "2026-05-26T07:50:34.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to00xl/strix_halo_users_a_rejected_pr_can_give_you_up_to",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Performance optimization for Strix Halo hardware via custom llama.cpp PR.",
+      "novelty": 0.819,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.705,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "12nxwtx",
+      "primary": {
+        "id": "12nxwtx",
+        "source_id": "aws_ml_blog",
+        "source_name": "AWS Machine Learning Blog",
+        "source_role": "main",
+        "trust": 0.8,
+        "kind_hint": "tutorial",
+        "title": "Build an enterprise observability solution for Amazon Quick",
+        "url": "https://aws.amazon.com/blogs/machine-learning/build-an-enterprise-observability-solution-for-amazon-quick",
+        "original_url": "https://aws.amazon.com/blogs/machine-learning/build-an-enterprise-observability-solution-for-amazon-quick/",
+        "summary": "When hundreds to thousands of users are onboarded to an enterprise AI platform, business leaders and platform owners need visibility into who is using the platform, whether users are satisfied with the answers they receive, and which capabilities are driving the most engagement. Without a centralized observability solution, this data is scattered across multiple AWS […]",
+        "published_at": "2026-05-26T16:09:06.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "12nxwtx",
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "source_role": "main",
+          "trust": 0.8,
+          "kind_hint": "tutorial",
+          "title": "Build an enterprise observability solution for Amazon Quick",
+          "url": "https://aws.amazon.com/blogs/machine-learning/build-an-enterprise-observability-solution-for-amazon-quick",
+          "original_url": "https://aws.amazon.com/blogs/machine-learning/build-an-enterprise-observability-solution-for-amazon-quick/",
+          "summary": "When hundreds to thousands of users are onboarded to an enterprise AI platform, business leaders and platform owners need visibility into who is using the platform, whether users are satisfied with the answers they receive, and which capabilities are driving the most engagement. Without a centralized observability solution, this data is scattered across multiple AWS […]",
+          "published_at": "2026-05-26T16:09:06.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "title": "Build an enterprise observability solution for Amazon Quick",
+          "url": "https://aws.amazon.com/blogs/machine-learning/build-an-enterprise-observability-solution-for-amazon-quick",
+          "published_at": "2026-05-26T16:09:06.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "mixed",
+      "one_liner": "Guide on building observability dashboards for enterprise AI platforms using Amazon QuickSight.",
+      "novelty": 0.779,
+      "novelty_label": "high",
+      "trust": 0.8,
+      "score": 0.664,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "1afq6ce",
+      "primary": {
+        "id": "1afq6ce",
+        "source_id": "yt_nate_b_jones",
+        "source_name": "AI News & Strategy Daily",
+        "source_role": "main",
+        "trust": 0.62,
+        "kind_hint": "video",
+        "title": "Are AI Agents Actually Boosting Productivity? #futureofwork #ai #tech",
+        "url": "https://youtube.com/shorts/rg6xNfwHYUU",
+        "original_url": "https://www.youtube.com/shorts/rg6xNfwHYUU",
+        "published_at": "2026-05-26T03:00:36.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UC0C-17n9iuUQPylguM1d-lQ"
+        }
+      },
+      "members": [
+        {
+          "id": "1afq6ce",
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "source_role": "main",
+          "trust": 0.62,
+          "kind_hint": "video",
+          "title": "Are AI Agents Actually Boosting Productivity? #futureofwork #ai #tech",
+          "url": "https://youtube.com/shorts/rg6xNfwHYUU",
+          "original_url": "https://www.youtube.com/shorts/rg6xNfwHYUU",
+          "published_at": "2026-05-26T03:00:36.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UC0C-17n9iuUQPylguM1d-lQ"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "title": "Are AI Agents Actually Boosting Productivity? #futureofwork #ai #tech",
+          "url": "https://youtube.com/shorts/rg6xNfwHYUU",
+          "published_at": "2026-05-26T03:00:36.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.835,
+      "novelty_label": "high",
+      "trust": 0.62,
+      "score": 0.617,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1sxjzei",
+      "primary": {
+        "id": "1sxjzei",
+        "source_id": "mit_tech_review_ai",
+        "source_name": "MIT Technology Review AI",
+        "source_role": "main",
+        "trust": 0.82,
+        "kind_hint": "news",
+        "title": "A reality check on the AI jobs hysteria",
+        "url": "https://technologyreview.com/2026/05/26/1137855/a-reality-check-on-the-ai-jobs-hysteria",
+        "original_url": "https://www.technologyreview.com/2026/05/26/1137855/a-reality-check-on-the-ai-jobs-hysteria/",
+        "summary": "Haven’t you heard? White-collar jobs are going away, decimated by AI. Waves of layoffs in the tech sector (most recently at Coinbase and Meta and Cisco) are said to presage what will soon come for all of us knowledge workers. But before you quit your job as a software developer or financial analyst—or tech journalist—and…",
+        "published_at": "2026-05-26T09:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1sxjzei",
+          "source_id": "mit_tech_review_ai",
+          "source_name": "MIT Technology Review AI",
+          "source_role": "main",
+          "trust": 0.82,
+          "kind_hint": "news",
+          "title": "A reality check on the AI jobs hysteria",
+          "url": "https://technologyreview.com/2026/05/26/1137855/a-reality-check-on-the-ai-jobs-hysteria",
+          "original_url": "https://www.technologyreview.com/2026/05/26/1137855/a-reality-check-on-the-ai-jobs-hysteria/",
+          "summary": "Haven’t you heard? White-collar jobs are going away, decimated by AI. Waves of layoffs in the tech sector (most recently at Coinbase and Meta and Cisco) are said to presage what will soon come for all of us knowledge workers. But before you quit your job as a software developer or financial analyst—or tech journalist—and…",
+          "published_at": "2026-05-26T09:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "mit_tech_review_ai",
+          "source_name": "MIT Technology Review AI",
+          "title": "A reality check on the AI jobs hysteria",
+          "url": "https://technologyreview.com/2026/05/26/1137855/a-reality-check-on-the-ai-jobs-hysteria",
+          "published_at": "2026-05-26T09:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "A critical look at the current discourse surrounding AI-driven job displacement and labor market trends.",
+      "novelty": 0.836,
+      "novelty_label": "high",
+      "trust": 0.82,
+      "score": 0.673,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1nud84k",
+      "primary": {
+        "id": "1nud84k",
+        "source_id": "wired_ai",
+        "source_name": "WIRED AI",
+        "source_role": "main",
+        "trust": 0.76,
+        "kind_hint": "news",
+        "title": "US Law Enforcement Warns of ‘Anti-Tech Extremism’ as AI Hatred Grows",
+        "url": "https://wired.com/story/us-law-enforcement-warns-of-anti-tech-extremism",
+        "original_url": "https://www.wired.com/story/us-law-enforcement-warns-of-anti-tech-extremism/",
+        "summary": "As Americans stew over the looming risk of job-stealing AI and data centers in their back yards, the feds are raising the alarm about a new category of threat, documents obtained by WIRED show.",
+        "image_url": "https://media.wired.com/photos/6a10b0246e47ced150ad32d6/master/pass/US-Law-Enforcement-Warns-of-Anti-Tech-Extremism-Security.jpg",
+        "image_source": "rss_media",
+        "published_at": "2026-05-26T09:30:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1nud84k",
+          "source_id": "wired_ai",
+          "source_name": "WIRED AI",
+          "source_role": "main",
+          "trust": 0.76,
+          "kind_hint": "news",
+          "title": "US Law Enforcement Warns of ‘Anti-Tech Extremism’ as AI Hatred Grows",
+          "url": "https://wired.com/story/us-law-enforcement-warns-of-anti-tech-extremism",
+          "original_url": "https://www.wired.com/story/us-law-enforcement-warns-of-anti-tech-extremism/",
+          "summary": "As Americans stew over the looming risk of job-stealing AI and data centers in their back yards, the feds are raising the alarm about a new category of threat, documents obtained by WIRED show.",
+          "image_url": "https://media.wired.com/photos/6a10b0246e47ced150ad32d6/master/pass/US-Law-Enforcement-Warns-of-Anti-Tech-Extremism-Security.jpg",
+          "image_source": "rss_media",
+          "published_at": "2026-05-26T09:30:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "wired_ai",
+          "source_name": "WIRED AI",
+          "title": "US Law Enforcement Warns of ‘Anti-Tech Extremism’ as AI Hatred Grows",
+          "url": "https://wired.com/story/us-law-enforcement-warns-of-anti-tech-extremism",
+          "published_at": "2026-05-26T09:30:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Law enforcement report on rising anti-tech sentiment and threats directed at AI infrastructure.",
+      "novelty": 0.872,
+      "novelty_label": "high",
+      "trust": 0.76,
+      "score": 0.671,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "lxr800",
+      "primary": {
+        "id": "lxr800",
+        "source_id": "fahd_mirza",
+        "source_name": "Fahd Mirza YouTube",
+        "source_role": "main",
+        "trust": 0.66,
+        "kind_hint": "video",
+        "title": "DFlash Leaves Qwen Territory - Gemma 4 31B Now Runs 5x Faster with Speculative Decoding",
+        "url": "https://youtube.com/watch?v=BsbAuBRzJvQ",
+        "original_url": "https://www.youtube.com/watch?v=BsbAuBRzJvQ",
+        "image_url": "https://i.ytimg.com/vi/BsbAuBRzJvQ/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-05-26T07:00:09.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+          "video_id": "BsbAuBRzJvQ"
+        }
+      },
+      "members": [
+        {
+          "id": "lxr800",
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "source_role": "main",
+          "trust": 0.66,
+          "kind_hint": "video",
+          "title": "DFlash Leaves Qwen Territory - Gemma 4 31B Now Runs 5x Faster with Speculative Decoding",
+          "url": "https://youtube.com/watch?v=BsbAuBRzJvQ",
+          "original_url": "https://www.youtube.com/watch?v=BsbAuBRzJvQ",
+          "image_url": "https://i.ytimg.com/vi/BsbAuBRzJvQ/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-05-26T07:00:09.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+            "video_id": "BsbAuBRzJvQ"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "title": "DFlash Leaves Qwen Territory - Gemma 4 31B Now Runs 5x Faster with Speculative Decoding",
+          "url": "https://youtube.com/watch?v=BsbAuBRzJvQ",
+          "published_at": "2026-05-26T07:00:09.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.759,
+      "novelty_label": "high",
+      "trust": 0.66,
+      "score": 0.61,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "jajjhg",
+      "primary": {
+        "id": "jajjhg",
+        "source_id": "aws_ml_blog",
+        "source_name": "AWS Machine Learning Blog",
+        "source_role": "main",
+        "trust": 0.8,
+        "kind_hint": "tutorial",
+        "title": "From idea to AI app: Creating intelligent research assistants with Strands",
+        "url": "https://aws.amazon.com/blogs/machine-learning/from-idea-to-ai-app-creating-intelligent-research-assistants-with-strands",
+        "original_url": "https://aws.amazon.com/blogs/machine-learning/from-idea-to-ai-app-creating-intelligent-research-assistants-with-strands/",
+        "summary": "Building an AI app shouldn’t require a PhD in machine learning (ML) or months of wrestling with complex architectures. Yet that’s exactly what happens when you try to orchestrate multiple API calls, manage conversation state, and create agents that can reason on their own. I’ve seen straightforward AI ideas balloon into sprawling projects that demand […]",
+        "published_at": "2026-05-26T16:28:08.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "jajjhg",
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "source_role": "main",
+          "trust": 0.8,
+          "kind_hint": "tutorial",
+          "title": "From idea to AI app: Creating intelligent research assistants with Strands",
+          "url": "https://aws.amazon.com/blogs/machine-learning/from-idea-to-ai-app-creating-intelligent-research-assistants-with-strands",
+          "original_url": "https://aws.amazon.com/blogs/machine-learning/from-idea-to-ai-app-creating-intelligent-research-assistants-with-strands/",
+          "summary": "Building an AI app shouldn’t require a PhD in machine learning (ML) or months of wrestling with complex architectures. Yet that’s exactly what happens when you try to orchestrate multiple API calls, manage conversation state, and create agents that can reason on their own. I’ve seen straightforward AI ideas balloon into sprawling projects that demand […]",
+          "published_at": "2026-05-26T16:28:08.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "title": "From idea to AI app: Creating intelligent research assistants with Strands",
+          "url": "https://aws.amazon.com/blogs/machine-learning/from-idea-to-ai-app-creating-intelligent-research-assistants-with-strands",
+          "published_at": "2026-05-26T16:28:08.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "mixed",
+      "one_liner": "High-level walkthrough of building research assistant agents using the Strands framework.",
+      "novelty": 0.74,
+      "novelty_label": "medium",
+      "trust": 0.8,
+      "score": 0.652,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "rhb7hi",
+      "primary": {
+        "id": "rhb7hi",
+        "source_id": "yt_nate_b_jones",
+        "source_name": "AI News & Strategy Daily",
+        "source_role": "main",
+        "trust": 0.62,
+        "kind_hint": "video",
+        "title": "Why you should never trust ChatGPT's memory #ai #tech #chatgpt",
+        "url": "https://youtube.com/shorts/dSUkYOUX0fc",
+        "original_url": "https://www.youtube.com/shorts/dSUkYOUX0fc",
+        "published_at": "2026-05-26T00:00:21.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UC0C-17n9iuUQPylguM1d-lQ"
+        }
+      },
+      "members": [
+        {
+          "id": "rhb7hi",
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "source_role": "main",
+          "trust": 0.62,
+          "kind_hint": "video",
+          "title": "Why you should never trust ChatGPT's memory #ai #tech #chatgpt",
+          "url": "https://youtube.com/shorts/dSUkYOUX0fc",
+          "original_url": "https://www.youtube.com/shorts/dSUkYOUX0fc",
+          "published_at": "2026-05-26T00:00:21.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UC0C-17n9iuUQPylguM1d-lQ"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "title": "Why you should never trust ChatGPT's memory #ai #tech #chatgpt",
+          "url": "https://youtube.com/shorts/dSUkYOUX0fc",
+          "published_at": "2026-05-26T00:00:21.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.806,
+      "novelty_label": "high",
+      "trust": 0.62,
+      "score": 0.604,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "dafzmn",
+      "primary": {
+        "id": "dafzmn",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Claude Mythos reportedly solves OpenAI's landmark Erdős problem with a \"cute, simple proof\"",
+        "url": "https://the-decoder.com/claude-mythos-reportedly-solves-openais-landmark-erdos-problem-with-a-cute-simple-proof",
+        "original_url": "https://the-decoder.com/claude-mythos-reportedly-solves-openais-landmark-erdos-problem-with-a-cute-simple-proof/",
+        "summary": "Shortly after OpenAI disproved Erdős' unit-distance conjecture, Anthropic shows Claude Mythos can solve the problem too - \"over the weekend.\" Engineer Sholto Douglas says Mythos cracked the 1946 conjecture with a \"cute, simple proof,\" a sign of \"serious overhang\" in AI-driven math discoveries. The article Claude Mythos reportedly solves OpenAI's landmark Erdős problem with a \"cute, simple proof\" appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/openai_anthropic-1.jpeg",
+        "image_source": "rss_content",
+        "published_at": "2026-05-26T18:31:07.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "dafzmn",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Claude Mythos reportedly solves OpenAI's landmark Erdős problem with a \"cute, simple proof\"",
+          "url": "https://the-decoder.com/claude-mythos-reportedly-solves-openais-landmark-erdos-problem-with-a-cute-simple-proof",
+          "original_url": "https://the-decoder.com/claude-mythos-reportedly-solves-openais-landmark-erdos-problem-with-a-cute-simple-proof/",
+          "summary": "Shortly after OpenAI disproved Erdős' unit-distance conjecture, Anthropic shows Claude Mythos can solve the problem too - \"over the weekend.\" Engineer Sholto Douglas says Mythos cracked the 1946 conjecture with a \"cute, simple proof,\" a sign of \"serious overhang\" in AI-driven math discoveries. The article Claude Mythos reportedly solves OpenAI's landmark Erdős problem with a \"cute, simple proof\" appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/openai_anthropic-1.jpeg",
+          "image_source": "rss_content",
+          "published_at": "2026-05-26T18:31:07.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Claude Mythos reportedly solves OpenAI's landmark Erdős problem with a \"cute, simple proof\"",
+          "url": "https://the-decoder.com/claude-mythos-reportedly-solves-openais-landmark-erdos-problem-with-a-cute-simple-proof",
+          "published_at": "2026-05-26T18:31:07.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Report on Claude Mythos reportedly solving a mathematical conjecture previously addressed by OpenAI.",
+      "novelty": 0.829,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.669,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1f7g9oy",
+      "primary": {
+        "id": "1f7g9oy",
+        "source_id": "stackoverflow_blog",
+        "source_name": "Stack Overflow Blog",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "opinion",
+        "title": "Do you have what it takes to run AI in production?",
+        "url": "https://stackoverflow.blog/2026/05/26/do-you-have-what-it-takes-to-run-ai-in-production",
+        "original_url": "https://stackoverflow.blog/2026/05/26/do-you-have-what-it-takes-to-run-ai-in-production/",
+        "summary": "From the floor of HumanX, Ryan Donovan is joined by Peter Salanki, CTO and co-founder of CoreWeave, to chat about what it really takes to run AI in production; the growing importance of observability, utilization, and scheduling; and Peter’s advice for avoiding the trap of over-architecting too early.",
+        "published_at": "2026-05-26T07:40:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1f7g9oy",
+          "source_id": "stackoverflow_blog",
+          "source_name": "Stack Overflow Blog",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "opinion",
+          "title": "Do you have what it takes to run AI in production?",
+          "url": "https://stackoverflow.blog/2026/05/26/do-you-have-what-it-takes-to-run-ai-in-production",
+          "original_url": "https://stackoverflow.blog/2026/05/26/do-you-have-what-it-takes-to-run-ai-in-production/",
+          "summary": "From the floor of HumanX, Ryan Donovan is joined by Peter Salanki, CTO and co-founder of CoreWeave, to chat about what it really takes to run AI in production; the growing importance of observability, utilization, and scheduling; and Peter’s advice for avoiding the trap of over-architecting too early.",
+          "published_at": "2026-05-26T07:40:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "stackoverflow_blog",
+          "source_name": "Stack Overflow Blog",
+          "title": "Do you have what it takes to run AI in production?",
+          "url": "https://stackoverflow.blog/2026/05/26/do-you-have-what-it-takes-to-run-ai-in-production",
+          "published_at": "2026-05-26T07:40:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "Interview with CoreWeave CTO on production AI challenges, observability, and resource scheduling.",
+      "novelty": 0.812,
+      "novelty_label": "high",
+      "trust": 0.72,
+      "score": 0.561,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "2vkans",
+      "primary": {
+        "id": "2vkans",
+        "source_id": "r_ml",
+        "source_name": "r/MachineLearning",
+        "source_role": "main",
+        "trust": 0.55,
+        "kind_hint": "discussion",
+        "title": "[P] Built a portable GPU ISA after reading too many architecture manuals [P]",
+        "url": "https://old.reddit.com/r/MachineLearning/comments/1to76tv/p_built_a_portable_gpu_isa_after_reading_too_many",
+        "original_url": "https://old.reddit.com/r/MachineLearning/comments/1to76tv/p_built_a_portable_gpu_isa_after_reading_too_many/",
+        "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1to76tv/p_built_a_portable_gpu_isa_after_reading_too_many",
+        "discussion_source": "r/MachineLearning",
+        "summary": "I’ve been reading GPU architecture docs in my free time. NVIDIA PTX, AMD ISA reference guides, Intel Xe, reverse-engineered Apple GPU stuff. Over 5,000 pages across 16 microarchitectures. After a while you notice all four vendors are doing the same 11 things with different names. So I wrote a spec that covers all of them and built a toolchain around it. It’s called WAVE. You write a kernel once, it compiles to a portable binary, then thin backends translate it to Metal, PTX, HIP, or SYCL. Same binary verified on Apple M4 Pro, NVIDIA T4, and AMD MI300X. My co-author Onyinye built PyTorch integr",
+        "published_at": "2026-05-26T13:36:10.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "2vkans",
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "source_role": "main",
+          "trust": 0.55,
+          "kind_hint": "discussion",
+          "title": "[P] Built a portable GPU ISA after reading too many architecture manuals [P]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1to76tv/p_built_a_portable_gpu_isa_after_reading_too_many",
+          "original_url": "https://old.reddit.com/r/MachineLearning/comments/1to76tv/p_built_a_portable_gpu_isa_after_reading_too_many/",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1to76tv/p_built_a_portable_gpu_isa_after_reading_too_many",
+          "discussion_source": "r/MachineLearning",
+          "summary": "I’ve been reading GPU architecture docs in my free time. NVIDIA PTX, AMD ISA reference guides, Intel Xe, reverse-engineered Apple GPU stuff. Over 5,000 pages across 16 microarchitectures. After a while you notice all four vendors are doing the same 11 things with different names. So I wrote a spec that covers all of them and built a toolchain around it. It’s called WAVE. You write a kernel once, it compiles to a portable binary, then thin backends translate it to Metal, PTX, HIP, or SYCL. Same binary verified on Apple M4 Pro, NVIDIA T4, and AMD MI300X. My co-author Onyinye built PyTorch integr",
+          "published_at": "2026-05-26T13:36:10.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "title": "[P] Built a portable GPU ISA after reading too many architecture manuals [P]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1to76tv/p_built_a_portable_gpu_isa_after_reading_too_many",
+          "published_at": "2026-05-26T13:36:10.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1to76tv/p_built_a_portable_gpu_isa_after_reading_too_many",
+          "discussion_source": "r/MachineLearning"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "signal",
+      "one_liner": "A comparative analysis of 16 GPU microarchitectures identifying common design patterns across major hardware vendors.",
+      "novelty": 0.84,
+      "novelty_label": "high",
+      "trust": 0.55,
+      "score": 0.653,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "1wwj591",
+      "primary": {
+        "id": "1wwj591",
+        "source_id": "fahd_mirza",
+        "source_name": "Fahd Mirza YouTube",
+        "source_role": "main",
+        "trust": 0.66,
+        "kind_hint": "video",
+        "title": "MiniCPM5-1B: New 1B King for Local AI - Full Demo",
+        "url": "https://youtube.com/watch?v=LoFII97lXEE",
+        "original_url": "https://www.youtube.com/watch?v=LoFII97lXEE",
+        "image_url": "https://i.ytimg.com/vi/LoFII97lXEE/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-05-25T21:03:06.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+          "video_id": "LoFII97lXEE"
+        }
+      },
+      "members": [
+        {
+          "id": "1wwj591",
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "source_role": "main",
+          "trust": 0.66,
+          "kind_hint": "video",
+          "title": "MiniCPM5-1B: New 1B King for Local AI - Full Demo",
+          "url": "https://youtube.com/watch?v=LoFII97lXEE",
+          "original_url": "https://www.youtube.com/watch?v=LoFII97lXEE",
+          "image_url": "https://i.ytimg.com/vi/LoFII97lXEE/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-05-25T21:03:06.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+            "video_id": "LoFII97lXEE"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "title": "MiniCPM5-1B: New 1B King for Local AI - Full Demo",
+          "url": "https://youtube.com/watch?v=LoFII97lXEE",
+          "published_at": "2026-05-25T21:03:06.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.745,
+      "novelty_label": "medium",
+      "trust": 0.66,
+      "score": 0.589,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "4fscqn",
+      "primary": {
+        "id": "4fscqn",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "Universal Music Group and TikTok renew agreement to combat unauthorized AI music",
+        "url": "https://techcrunch.com/2026/05/26/universal-music-group-and-tiktok-renew-agreement-to-combat-unauthorized-ai-music",
+        "original_url": "https://techcrunch.com/2026/05/26/universal-music-group-and-tiktok-renew-agreement-to-combat-unauthorized-ai-music/",
+        "summary": "For years, UMG has pushed platforms, streaming services, and AI companies to implement stricter content moderation policies.",
+        "published_at": "2026-05-26T14:55:05.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "4fscqn",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "Universal Music Group and TikTok renew agreement to combat unauthorized AI music",
+          "url": "https://techcrunch.com/2026/05/26/universal-music-group-and-tiktok-renew-agreement-to-combat-unauthorized-ai-music",
+          "original_url": "https://techcrunch.com/2026/05/26/universal-music-group-and-tiktok-renew-agreement-to-combat-unauthorized-ai-music/",
+          "summary": "For years, UMG has pushed platforms, streaming services, and AI companies to implement stricter content moderation policies.",
+          "published_at": "2026-05-26T14:55:05.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "Universal Music Group and TikTok renew agreement to combat unauthorized AI music",
+          "url": "https://techcrunch.com/2026/05/26/universal-music-group-and-tiktok-renew-agreement-to-combat-unauthorized-ai-music",
+          "published_at": "2026-05-26T14:55:05.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "UMG and TikTok renew a partnership agreement focused on content moderation for AI-generated music.",
+      "novelty": 0.829,
+      "novelty_label": "high",
+      "trust": 0.72,
+      "score": 0.658,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "103blgb",
+      "primary": {
+        "id": "103blgb",
+        "source_id": "wired_ai",
+        "source_name": "WIRED AI",
+        "source_role": "main",
+        "trust": 0.76,
+        "kind_hint": "news",
+        "title": "I’m a Professional Fact-Checker. AI Is Wrong More Often Than You Think",
+        "url": "https://wired.com/story/fact-checking-ai",
+        "original_url": "https://www.wired.com/story/fact-checking-ai/",
+        "summary": "Can AI do fact-checking? A WIRED fact-checker fact-checks.",
+        "image_url": "https://media.wired.com/photos/6a04e6a1d7be752b48cba500/master/pass/AiFactChecking-Final.jpg",
+        "image_source": "rss_media",
+        "published_at": "2026-05-26T10:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "103blgb",
+          "source_id": "wired_ai",
+          "source_name": "WIRED AI",
+          "source_role": "main",
+          "trust": 0.76,
+          "kind_hint": "news",
+          "title": "I’m a Professional Fact-Checker. AI Is Wrong More Often Than You Think",
+          "url": "https://wired.com/story/fact-checking-ai",
+          "original_url": "https://www.wired.com/story/fact-checking-ai/",
+          "summary": "Can AI do fact-checking? A WIRED fact-checker fact-checks.",
+          "image_url": "https://media.wired.com/photos/6a04e6a1d7be752b48cba500/master/pass/AiFactChecking-Final.jpg",
+          "image_source": "rss_media",
+          "published_at": "2026-05-26T10:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "wired_ai",
+          "source_name": "WIRED AI",
+          "title": "I’m a Professional Fact-Checker. AI Is Wrong More Often Than You Think",
+          "url": "https://wired.com/story/fact-checking-ai",
+          "published_at": "2026-05-26T10:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "A qualitative assessment of AI performance in fact-checking tasks.",
+      "novelty": 0.823,
+      "novelty_label": "high",
+      "trust": 0.76,
+      "score": 0.657,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "z4vu5n",
+      "primary": {
+        "id": "z4vu5n",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "This startup is betting India’s gig economy can train the world’s robots",
+        "url": "https://techcrunch.com/2026/05/26/human-archive-taps-into-indias-services-startups-to-collect-data-for-physical-ai",
+        "original_url": "https://techcrunch.com/2026/05/26/human-archive-taps-into-indias-services-startups-to-collect-data-for-physical-ai/",
+        "summary": "Human Archive, a startup founded by UC Berkeley and Stanford researchers, is paying gig workers in India to wear camera-equipped caps and sensor devices to collect the real-world physical training data that AI and robotics labs are racing to acquire.",
+        "published_at": "2026-05-26T16:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "z4vu5n",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "This startup is betting India’s gig economy can train the world’s robots",
+          "url": "https://techcrunch.com/2026/05/26/human-archive-taps-into-indias-services-startups-to-collect-data-for-physical-ai",
+          "original_url": "https://techcrunch.com/2026/05/26/human-archive-taps-into-indias-services-startups-to-collect-data-for-physical-ai/",
+          "summary": "Human Archive, a startup founded by UC Berkeley and Stanford researchers, is paying gig workers in India to wear camera-equipped caps and sensor devices to collect the real-world physical training data that AI and robotics labs are racing to acquire.",
+          "published_at": "2026-05-26T16:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "This startup is betting India’s gig economy can train the world’s robots",
+          "url": "https://techcrunch.com/2026/05/26/human-archive-taps-into-indias-services-startups-to-collect-data-for-physical-ai",
+          "published_at": "2026-05-26T16:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Human Archive is collecting physical training data for robotics using gig workers in India.",
+      "novelty": 0.81,
+      "novelty_label": "high",
+      "trust": 0.72,
+      "score": 0.654,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "yewzcz",
+      "primary": {
+        "id": "yewzcz",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "China Clamps Down on Overseas Travel for AI Talent at Alibaba, DeepSeek",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1to5fj5/china_clamps_down_on_overseas_travel_for_ai",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to5fj5/china_clamps_down_on_overseas_travel_for_ai/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to5fj5/china_clamps_down_on_overseas_travel_for_ai",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "Big, if true. Doesn't bode well for research / OS models out of China. submitted by /u/kaggleqrdl [link] [comments]",
+        "image_url": "https://external-preview.redd.it/ltcog7k3qrXgyql3C149WLcOzZsZGJRdrgmZx75yf4w.jpeg?width=640&crop=smart&auto=webp&s=776ec80d15bac89c6436e5c9e340c3f864263a45",
+        "image_source": "rss_media",
+        "published_at": "2026-05-26T12:26:46.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "yewzcz",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "China Clamps Down on Overseas Travel for AI Talent at Alibaba, DeepSeek",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1to5fj5/china_clamps_down_on_overseas_travel_for_ai",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to5fj5/china_clamps_down_on_overseas_travel_for_ai/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to5fj5/china_clamps_down_on_overseas_travel_for_ai",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "Big, if true. Doesn't bode well for research / OS models out of China. submitted by /u/kaggleqrdl [link] [comments]",
+          "image_url": "https://external-preview.redd.it/ltcog7k3qrXgyql3C149WLcOzZsZGJRdrgmZx75yf4w.jpeg?width=640&crop=smart&auto=webp&s=776ec80d15bac89c6436e5c9e340c3f864263a45",
+          "image_source": "rss_media",
+          "published_at": "2026-05-26T12:26:46.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "China Clamps Down on Overseas Travel for AI Talent at Alibaba, DeepSeek",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1to5fj5/china_clamps_down_on_overseas_travel_for_ai",
+          "published_at": "2026-05-26T12:26:46.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to5fj5/china_clamps_down_on_overseas_travel_for_ai",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Reports suggest increased travel restrictions for AI researchers at major Chinese tech firms.",
+      "novelty": 0.848,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.609,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "rm1a95",
+      "primary": {
+        "id": "rm1a95",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "The AI justice gap solution is slowly turning into an existential paperwork nightmare for US federal courts",
+        "url": "https://the-decoder.com/the-ai-justice-gap-solution-is-slowly-turning-into-an-existential-paperwork-nightmare-for-us-federal-courts",
+        "original_url": "https://the-decoder.com/the-ai-justice-gap-solution-is-slowly-turning-into-an-existential-paperwork-nightmare-for-us-federal-courts/",
+        "summary": "A new study from MIT and the University of Southern California shows that lawsuits filed without a lawyer at US federal courts have nearly doubled since ChatGPT went mainstream. One in five complaints now contains AI-generated text. Judges are resorting to drastic measures to cope with the flood of filings. The article The AI justice gap solution is slowly turning into an existential paperwork nightmare for US federal courts appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/ChatGPT-US-Justice-Generator.png",
+        "image_source": "rss_content",
+        "published_at": "2026-05-26T10:42:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "rm1a95",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "The AI justice gap solution is slowly turning into an existential paperwork nightmare for US federal courts",
+          "url": "https://the-decoder.com/the-ai-justice-gap-solution-is-slowly-turning-into-an-existential-paperwork-nightmare-for-us-federal-courts",
+          "original_url": "https://the-decoder.com/the-ai-justice-gap-solution-is-slowly-turning-into-an-existential-paperwork-nightmare-for-us-federal-courts/",
+          "summary": "A new study from MIT and the University of Southern California shows that lawsuits filed without a lawyer at US federal courts have nearly doubled since ChatGPT went mainstream. One in five complaints now contains AI-generated text. Judges are resorting to drastic measures to cope with the flood of filings. The article The AI justice gap solution is slowly turning into an existential paperwork nightmare for US federal courts appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/ChatGPT-US-Justice-Generator.png",
+          "image_source": "rss_content",
+          "published_at": "2026-05-26T10:42:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "The AI justice gap solution is slowly turning into an existential paperwork nightmare for US federal courts",
+          "url": "https://the-decoder.com/the-ai-justice-gap-solution-is-slowly-turning-into-an-existential-paperwork-nightmare-for-us-federal-courts",
+          "published_at": "2026-05-26T10:42:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Report on the increase of AI-generated filings in US federal courts.",
+      "novelty": 0.818,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.652,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "17kgg28",
+      "primary": {
+        "id": "17kgg28",
+        "source_id": "mit_tech_review_ai",
+        "source_name": "MIT Technology Review AI",
+        "source_role": "main",
+        "trust": 0.82,
+        "kind_hint": "news",
+        "title": "Rethinking organizational design in the age of agentic AI",
+        "url": "https://technologyreview.com/2026/05/26/1137584/rethinking-organizational-design-in-the-age-of-agentic-ai",
+        "original_url": "https://www.technologyreview.com/2026/05/26/1137584/rethinking-organizational-design-in-the-age-of-agentic-ai/",
+        "summary": "Amid rapidly growing adoption of enterprise-level AI agents, there’s a disconnect emerging between ambition and execution. Although 85% of organizations say they want to be agentic within the next three years, 76% say their current operations and infrastructure can’t support that change. They cite a lack of readiness across people, processes, and workflows. The sticky…",
+        "published_at": "2026-05-26T14:54:10.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "17kgg28",
+          "source_id": "mit_tech_review_ai",
+          "source_name": "MIT Technology Review AI",
+          "source_role": "main",
+          "trust": 0.82,
+          "kind_hint": "news",
+          "title": "Rethinking organizational design in the age of agentic AI",
+          "url": "https://technologyreview.com/2026/05/26/1137584/rethinking-organizational-design-in-the-age-of-agentic-ai",
+          "original_url": "https://www.technologyreview.com/2026/05/26/1137584/rethinking-organizational-design-in-the-age-of-agentic-ai/",
+          "summary": "Amid rapidly growing adoption of enterprise-level AI agents, there’s a disconnect emerging between ambition and execution. Although 85% of organizations say they want to be agentic within the next three years, 76% say their current operations and infrastructure can’t support that change. They cite a lack of readiness across people, processes, and workflows. The sticky…",
+          "published_at": "2026-05-26T14:54:10.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "mit_tech_review_ai",
+          "source_name": "MIT Technology Review AI",
+          "title": "Rethinking organizational design in the age of agentic AI",
+          "url": "https://technologyreview.com/2026/05/26/1137584/rethinking-organizational-design-in-the-age-of-agentic-ai",
+          "published_at": "2026-05-26T14:54:10.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "Discussion on organizational challenges in adopting agentic AI workflows.",
+      "novelty": 0.73,
+      "novelty_label": "medium",
+      "trust": 0.82,
+      "score": 0.651,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "17bbo4m",
+      "primary": {
+        "id": "17bbo4m",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "CXMT started selling ram to corsair",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tnz6xz/cxmt_started_selling_ram_to_corsair",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tnz6xz/cxmt_started_selling_ram_to_corsair/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tnz6xz/cxmt_started_selling_ram_to_corsair",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "They started producing cheaper ram for corsair, hopefully it will get cheaper for consumers https://www.tomshardware.com/pc-components/ddr5/chinese-memory-maker-cxmt-enters-the-mainstream-consumer-memory-with-corsair-vengeance-ddr5-kit-chinese-made-dram-emerges-as-an-antidote-for-crushing-shortages submitted by /u/power97992 [link] [comments]",
+        "published_at": "2026-05-26T07:03:57.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "17bbo4m",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "CXMT started selling ram to corsair",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tnz6xz/cxmt_started_selling_ram_to_corsair",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tnz6xz/cxmt_started_selling_ram_to_corsair/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tnz6xz/cxmt_started_selling_ram_to_corsair",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "They started producing cheaper ram for corsair, hopefully it will get cheaper for consumers https://www.tomshardware.com/pc-components/ddr5/chinese-memory-maker-cxmt-enters-the-mainstream-consumer-memory-with-corsair-vengeance-ddr5-kit-chinese-made-dram-emerges-as-an-antidote-for-crushing-shortages submitted by /u/power97992 [link] [comments]",
+          "published_at": "2026-05-26T07:03:57.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "CXMT started selling ram to corsair",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tnz6xz/cxmt_started_selling_ram_to_corsair",
+          "published_at": "2026-05-26T07:03:57.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1tnz6xz/cxmt_started_selling_ram_to_corsair",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Corsair has begun using DRAM modules manufactured by Chinese firm CXMT.",
+      "novelty": 0.847,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.6,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1igej8o",
+      "primary": {
+        "id": "1igej8o",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Okay 27B made me a believer",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1to73op/okay_27b_made_me_a_believer",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to73op/okay_27b_made_me_a_believer/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to73op/okay_27b_made_me_a_believer",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "I previously hated on this model, but I have just been impressed by it, and I understand the hype now. I have been working on a HTML5 game console and I decided to see if Qwen3.6 27B can handle making some quick games in it to showcase functionality (save games, console API handling for stat tracking and heartbeat management, meta data for the game, etc) I gave it 3 files, explaining how the API works, the gamepad controls, and a typescript shader for it to apply. Then I just game it a very simple prompt \"make a breakout game for this console, in the working directory are reference files on ho",
+        "published_at": "2026-05-26T13:32:53.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1igej8o",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Okay 27B made me a believer",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1to73op/okay_27b_made_me_a_believer",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to73op/okay_27b_made_me_a_believer/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to73op/okay_27b_made_me_a_believer",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "I previously hated on this model, but I have just been impressed by it, and I understand the hype now. I have been working on a HTML5 game console and I decided to see if Qwen3.6 27B can handle making some quick games in it to showcase functionality (save games, console API handling for stat tracking and heartbeat management, meta data for the game, etc) I gave it 3 files, explaining how the API works, the gamepad controls, and a typescript shader for it to apply. Then I just game it a very simple prompt \"make a breakout game for this console, in the working directory are reference files on ho",
+          "published_at": "2026-05-26T13:32:53.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Okay 27B made me a believer",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1to73op/okay_27b_made_me_a_believer",
+          "published_at": "2026-05-26T13:32:53.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1to73op/okay_27b_made_me_a_believer",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "User anecdotal experience using Qwen3.6 27B for game development tasks.",
+      "novelty": 0.879,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.54,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "1tirgib",
+      "primary": {
+        "id": "1tirgib",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Turning local agents into self-optimizing agents",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1toejzp/turning_local_agents_into_selfoptimizing_agents",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1toejzp/turning_local_agents_into_selfoptimizing_agents/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1toejzp/turning_local_agents_into_selfoptimizing_agents",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "I was experimenting with a self-optimizing agentic pipeline to climb the benchmark leaderboard (TerminalBench). On a 10-task subset, I got the performance to rise from ~30% → ~90%. That loop worked, so I asked: can the same reflect-and-rewrite step run continuously against everyday chats instead of a benchmark? How it works Every chat with your local LLM goes through a small proxy and is logged. autoswarm reflect has the same local model review those logs, distill concrete lessons, and write them to skills.yaml. Lessons auto-inject into the system prompt of future chats. Run it (LM Studio path",
+        "image_url": "https://preview.redd.it/dj431wtwoi3h1.gif?width=640&crop=smart&s=fccb8119dccde2db59600ab4bb2c0321a85008c3",
+        "image_source": "rss_media",
+        "published_at": "2026-05-26T17:51:07.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1tirgib",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Turning local agents into self-optimizing agents",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1toejzp/turning_local_agents_into_selfoptimizing_agents",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1toejzp/turning_local_agents_into_selfoptimizing_agents/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1toejzp/turning_local_agents_into_selfoptimizing_agents",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "I was experimenting with a self-optimizing agentic pipeline to climb the benchmark leaderboard (TerminalBench). On a 10-task subset, I got the performance to rise from ~30% → ~90%. That loop worked, so I asked: can the same reflect-and-rewrite step run continuously against everyday chats instead of a benchmark? How it works Every chat with your local LLM goes through a small proxy and is logged. autoswarm reflect has the same local model review those logs, distill concrete lessons, and write them to skills.yaml. Lessons auto-inject into the system prompt of future chats. Run it (LM Studio path",
+          "image_url": "https://preview.redd.it/dj431wtwoi3h1.gif?width=640&crop=smart&s=fccb8119dccde2db59600ab4bb2c0321a85008c3",
+          "image_source": "rss_media",
+          "published_at": "2026-05-26T17:51:07.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Turning local agents into self-optimizing agents",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1toejzp/turning_local_agents_into_selfoptimizing_agents",
+          "published_at": "2026-05-26T17:51:07.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1toejzp/turning_local_agents_into_selfoptimizing_agents",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "A report on using reflect-and-rewrite loops to improve agent performance on TerminalBench.",
+      "novelty": 0.795,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.522,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    }
+  ]
+}
