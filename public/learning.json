@@ -1,13 +1,44 @@
 {
-  "generated_at": "2026-06-01T19:56:24.806Z",
-  "last_successful_generated_at": "2026-06-01T19:56:24.806Z",
-  "refresh_status": "ok",
+  "generated_at": "2026-06-02T06:52:48.827Z",
+  "last_successful_generated_at": "2026-06-02T06:52:48.827Z",
+  "refresh_status": "partial",
   "classification_mode": "deterministic",
   "window_hours": 720,
   "source_total": 7,
-  "source_ok": 7,
-  "source_failed": 0,
-  "failed_sources": [],
+  "source_ok": 1,
+  "source_failed": 6,
+  "failed_sources": [
+    {
+      "id": "yt_google_deepmind",
+      "name": "Google DeepMind YouTube",
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCP7jMXSY2xbc3KCAE0MHQ-A"
+    },
+    {
+      "id": "yt_openai",
+      "name": "OpenAI YouTube",
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A"
+    },
+    {
+      "id": "yt_nvidia_developer",
+      "name": "NVIDIA Developer YouTube",
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCBHcMCGaiJhv-ESTcWGJPcw"
+    },
+    {
+      "id": "yt_huggingface",
+      "name": "Hugging Face YouTube",
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCHlNU7kIZhRgSbhHvFoy72w"
+    },
+    {
+      "id": "yt_google_developers",
+      "name": "Google for Developers YouTube",
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UC_x5XG1OV2P6uZZ5FSM9Ttw"
+    },
+    {
+      "id": "yt_microsoft_365_developer",
+      "name": "Microsoft 365 Developer YouTube",
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCV_6HOhwxYLXAGd-JOqKPoQ"
+    }
+  ],
   "source_health": [
     {
       "id": "yt_deeplearning_ai",
@@ -22,421 +53,60 @@
     {
       "id": "yt_google_deepmind",
       "name": "Google DeepMind YouTube",
-      "status": "ok",
-      "fetched_count": 1,
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCP7jMXSY2xbc3KCAE0MHQ-A",
       "fresh_count": 0,
-      "stale_count": 1,
-      "oldest_published_at": "2026-04-09T13:27:40.000Z",
-      "newest_published_at": "2026-04-09T13:27:40.000Z"
+      "stale_count": 0
     },
     {
       "id": "yt_openai",
       "name": "OpenAI YouTube",
-      "status": "ok",
-      "fetched_count": 2,
-      "fresh_count": 2,
-      "stale_count": 0,
-      "oldest_published_at": "2026-05-22T22:48:37.000Z",
-      "newest_published_at": "2026-05-28T20:09:34.000Z"
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A",
+      "fresh_count": 0,
+      "stale_count": 0
     },
     {
       "id": "yt_nvidia_developer",
       "name": "NVIDIA Developer YouTube",
-      "status": "ok",
-      "fetched_count": 8,
-      "fresh_count": 8,
-      "stale_count": 0,
-      "oldest_published_at": "2026-05-21T05:06:47.000Z",
-      "newest_published_at": "2026-06-01T16:15:31.000Z"
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCBHcMCGaiJhv-ESTcWGJPcw",
+      "fresh_count": 0,
+      "stale_count": 0
     },
     {
       "id": "yt_huggingface",
       "name": "Hugging Face YouTube",
-      "status": "ok",
-      "fetched_count": 5,
-      "fresh_count": 1,
-      "stale_count": 4,
-      "oldest_published_at": "2026-04-16T04:01:42.000Z",
-      "newest_published_at": "2026-05-27T08:26:22.000Z"
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCHlNU7kIZhRgSbhHvFoy72w",
+      "fresh_count": 0,
+      "stale_count": 0
     },
     {
       "id": "yt_google_developers",
       "name": "Google for Developers YouTube",
-      "status": "ok",
+      "status": "failed",
       "fetched_count": 0,
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UC_x5XG1OV2P6uZZ5FSM9Ttw",
       "fresh_count": 0,
       "stale_count": 0
     },
     {
       "id": "yt_microsoft_365_developer",
       "name": "Microsoft 365 Developer YouTube",
-      "status": "ok",
-      "fetched_count": 1,
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCV_6HOhwxYLXAGd-JOqKPoQ",
       "fresh_count": 0,
-      "stale_count": 1,
-      "oldest_published_at": "2026-04-23T06:14:22.000Z",
-      "newest_published_at": "2026-04-23T06:14:22.000Z"
+      "stale_count": 0
     }
   ],
-  "count": 16,
+  "count": 8,
   "clusters": [
-    {
-      "id": "3gewc8",
-      "primary": {
-        "id": "3gewc8",
-        "source_id": "yt_nvidia_developer",
-        "source_name": "NVIDIA Developer YouTube",
-        "source_role": "learning",
-        "trust": 0.78,
-        "kind_hint": "video",
-        "title": "Generating Synthetic Defect Images for Visual Inspection With Open Source Physical AI Agent Skills",
-        "url": "https://youtube.com/watch?v=hREG6r-fogo",
-        "original_url": "https://www.youtube.com/watch?v=hREG6r-fogo",
-        "image_url": "https://i.ytimg.com/vi/hREG6r-fogo/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-06-01T16:00:22.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-          "video_id": "hREG6r-fogo"
-        }
-      },
-      "members": [
-        {
-          "id": "3gewc8",
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "source_role": "learning",
-          "trust": 0.78,
-          "kind_hint": "video",
-          "title": "Generating Synthetic Defect Images for Visual Inspection With Open Source Physical AI Agent Skills",
-          "url": "https://youtube.com/watch?v=hREG6r-fogo",
-          "original_url": "https://www.youtube.com/watch?v=hREG6r-fogo",
-          "image_url": "https://i.ytimg.com/vi/hREG6r-fogo/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-06-01T16:00:22.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-            "video_id": "hREG6r-fogo"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "title": "Generating Synthetic Defect Images for Visual Inspection With Open Source Physical AI Agent Skills",
-          "url": "https://youtube.com/watch?v=hREG6r-fogo",
-          "published_at": "2026-06-01T16:00:22.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
-      "novelty": 0.872,
-      "novelty_label": "high",
-      "trust": 0.78,
-      "score": 0.798,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as concrete builder or research signal",
-        "fresh within the current refresh window"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "1ndayvx",
-      "primary": {
-        "id": "1ndayvx",
-        "source_id": "yt_nvidia_developer",
-        "source_name": "NVIDIA Developer YouTube",
-        "source_role": "learning",
-        "trust": 0.78,
-        "kind_hint": "video",
-        "title": "How to Augment Videos at Scale With Open-Source NVIDIA Physical AI Agent Skills",
-        "url": "https://youtube.com/watch?v=KZV5sn1duaU",
-        "original_url": "https://www.youtube.com/watch?v=KZV5sn1duaU",
-        "image_url": "https://i.ytimg.com/vi/KZV5sn1duaU/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-06-01T16:15:31.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-          "video_id": "KZV5sn1duaU"
-        }
-      },
-      "members": [
-        {
-          "id": "1ndayvx",
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "source_role": "learning",
-          "trust": 0.78,
-          "kind_hint": "video",
-          "title": "How to Augment Videos at Scale With Open-Source NVIDIA Physical AI Agent Skills",
-          "url": "https://youtube.com/watch?v=KZV5sn1duaU",
-          "original_url": "https://www.youtube.com/watch?v=KZV5sn1duaU",
-          "image_url": "https://i.ytimg.com/vi/KZV5sn1duaU/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-06-01T16:15:31.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-            "video_id": "KZV5sn1duaU"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "title": "How to Augment Videos at Scale With Open-Source NVIDIA Physical AI Agent Skills",
-          "url": "https://youtube.com/watch?v=KZV5sn1duaU",
-          "published_at": "2026-06-01T16:15:31.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
-      "novelty": 0.69,
-      "novelty_label": "medium",
-      "trust": 0.78,
-      "score": 0.744,
-      "why_this_surfaced": [
-        "meaningfully different from recent coverage",
-        "classified as concrete builder or research signal",
-        "fresh within the current refresh window"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "1gfkuxh",
-      "primary": {
-        "id": "1gfkuxh",
-        "source_id": "yt_huggingface",
-        "source_name": "Hugging Face YouTube",
-        "source_role": "learning",
-        "trust": 0.78,
-        "kind_hint": "video",
-        "title": "How Transformers.js Works: AI Models in JavaScript, Explained",
-        "url": "https://youtube.com/watch?v=A_6UOxQSvvY",
-        "original_url": "https://www.youtube.com/watch?v=A_6UOxQSvvY",
-        "image_url": "https://i.ytimg.com/vi/A_6UOxQSvvY/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-05-27T08:26:22.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
-          "video_id": "A_6UOxQSvvY"
-        }
-      },
-      "members": [
-        {
-          "id": "1gfkuxh",
-          "source_id": "yt_huggingface",
-          "source_name": "Hugging Face YouTube",
-          "source_role": "learning",
-          "trust": 0.78,
-          "kind_hint": "video",
-          "title": "How Transformers.js Works: AI Models in JavaScript, Explained",
-          "url": "https://youtube.com/watch?v=A_6UOxQSvvY",
-          "original_url": "https://www.youtube.com/watch?v=A_6UOxQSvvY",
-          "image_url": "https://i.ytimg.com/vi/A_6UOxQSvvY/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-05-27T08:26:22.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
-            "video_id": "A_6UOxQSvvY"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_huggingface",
-          "source_name": "Hugging Face YouTube",
-          "title": "How Transformers.js Works: AI Models in JavaScript, Explained",
-          "url": "https://youtube.com/watch?v=A_6UOxQSvvY",
-          "published_at": "2026-05-27T08:26:22.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
-      "novelty": 0.902,
-      "novelty_label": "high",
-      "trust": 0.78,
-      "score": 0.733,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "hg4nm9",
-      "primary": {
-        "id": "hg4nm9",
-        "source_id": "yt_openai",
-        "source_name": "OpenAI YouTube",
-        "source_role": "learning",
-        "trust": 0.82,
-        "kind_hint": "video",
-        "title": "Build Hour: Agents SDK",
-        "url": "https://youtube.com/watch?v=tK32trvj_b4",
-        "original_url": "https://www.youtube.com/watch?v=tK32trvj_b4",
-        "image_url": "https://i.ytimg.com/vi/tK32trvj_b4/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-05-28T20:09:34.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
-          "video_id": "tK32trvj_b4"
-        }
-      },
-      "members": [
-        {
-          "id": "hg4nm9",
-          "source_id": "yt_openai",
-          "source_name": "OpenAI YouTube",
-          "source_role": "learning",
-          "trust": 0.82,
-          "kind_hint": "video",
-          "title": "Build Hour: Agents SDK",
-          "url": "https://youtube.com/watch?v=tK32trvj_b4",
-          "original_url": "https://www.youtube.com/watch?v=tK32trvj_b4",
-          "image_url": "https://i.ytimg.com/vi/tK32trvj_b4/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-05-28T20:09:34.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
-            "video_id": "tK32trvj_b4"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_openai",
-          "source_name": "OpenAI YouTube",
-          "title": "Build Hour: Agents SDK",
-          "url": "https://youtube.com/watch?v=tK32trvj_b4",
-          "published_at": "2026-05-28T20:09:34.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.82,
-      "score": 0.472,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "196k2gb",
-      "primary": {
-        "id": "196k2gb",
-        "source_id": "yt_openai",
-        "source_name": "OpenAI YouTube",
-        "source_role": "learning",
-        "trust": 0.82,
-        "kind_hint": "video",
-        "title": "Workspace agents in ChatGPT: Admin and builder controls",
-        "url": "https://youtube.com/watch?v=HaaKUFAOi84",
-        "original_url": "https://www.youtube.com/watch?v=HaaKUFAOi84",
-        "image_url": "https://i.ytimg.com/vi/HaaKUFAOi84/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-05-22T22:48:37.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
-          "video_id": "HaaKUFAOi84"
-        }
-      },
-      "members": [
-        {
-          "id": "196k2gb",
-          "source_id": "yt_openai",
-          "source_name": "OpenAI YouTube",
-          "source_role": "learning",
-          "trust": 0.82,
-          "kind_hint": "video",
-          "title": "Workspace agents in ChatGPT: Admin and builder controls",
-          "url": "https://youtube.com/watch?v=HaaKUFAOi84",
-          "original_url": "https://www.youtube.com/watch?v=HaaKUFAOi84",
-          "image_url": "https://i.ytimg.com/vi/HaaKUFAOi84/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-05-22T22:48:37.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
-            "video_id": "HaaKUFAOi84"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_openai",
-          "source_name": "OpenAI YouTube",
-          "title": "Workspace agents in ChatGPT: Admin and builder controls",
-          "url": "https://youtube.com/watch?v=HaaKUFAOi84",
-          "published_at": "2026-05-22T22:48:37.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.82,
-      "score": 0.472,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
     {
       "id": "yfibcu",
       "primary": {
@@ -987,219 +657,6 @@
           "title": "AI Dev 26 x SF | Andrew Filev: Multi Model Pipelines—How to Get Better AI Results for Less",
           "url": "https://youtube.com/watch?v=L_47rVSuwBU",
           "published_at": "2026-05-22T16:30:36.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.463,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "127v5co",
-      "primary": {
-        "id": "127v5co",
-        "source_id": "yt_nvidia_developer",
-        "source_name": "NVIDIA Developer YouTube",
-        "source_role": "learning",
-        "trust": 0.78,
-        "kind_hint": "video",
-        "title": "How to Build a Video Search AI Agent with NVIDIA VSS Skills and NemoClaw",
-        "url": "https://youtube.com/watch?v=SzvKhAs0XJ8",
-        "original_url": "https://www.youtube.com/watch?v=SzvKhAs0XJ8",
-        "image_url": "https://i.ytimg.com/vi/SzvKhAs0XJ8/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-05-29T21:00:46.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-          "video_id": "SzvKhAs0XJ8"
-        }
-      },
-      "members": [
-        {
-          "id": "127v5co",
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "source_role": "learning",
-          "trust": 0.78,
-          "kind_hint": "video",
-          "title": "How to Build a Video Search AI Agent with NVIDIA VSS Skills and NemoClaw",
-          "url": "https://youtube.com/watch?v=SzvKhAs0XJ8",
-          "original_url": "https://www.youtube.com/watch?v=SzvKhAs0XJ8",
-          "image_url": "https://i.ytimg.com/vi/SzvKhAs0XJ8/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-05-29T21:00:46.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-            "video_id": "SzvKhAs0XJ8"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "title": "How to Build a Video Search AI Agent with NVIDIA VSS Skills and NemoClaw",
-          "url": "https://youtube.com/watch?v=SzvKhAs0XJ8",
-          "published_at": "2026-05-29T21:00:46.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.463,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "ym793m",
-      "primary": {
-        "id": "ym793m",
-        "source_id": "yt_nvidia_developer",
-        "source_name": "NVIDIA Developer YouTube",
-        "source_role": "learning",
-        "trust": 0.78,
-        "kind_hint": "video",
-        "title": "Private, Local AI CUDA Coding Assistance on DGX Spark",
-        "url": "https://youtube.com/watch?v=Q9mA9O_bkew",
-        "original_url": "https://www.youtube.com/watch?v=Q9mA9O_bkew",
-        "image_url": "https://i.ytimg.com/vi/Q9mA9O_bkew/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-05-29T17:07:44.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-          "video_id": "Q9mA9O_bkew"
-        }
-      },
-      "members": [
-        {
-          "id": "ym793m",
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "source_role": "learning",
-          "trust": 0.78,
-          "kind_hint": "video",
-          "title": "Private, Local AI CUDA Coding Assistance on DGX Spark",
-          "url": "https://youtube.com/watch?v=Q9mA9O_bkew",
-          "original_url": "https://www.youtube.com/watch?v=Q9mA9O_bkew",
-          "image_url": "https://i.ytimg.com/vi/Q9mA9O_bkew/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-05-29T17:07:44.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-            "video_id": "Q9mA9O_bkew"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "title": "Private, Local AI CUDA Coding Assistance on DGX Spark",
-          "url": "https://youtube.com/watch?v=Q9mA9O_bkew",
-          "published_at": "2026-05-29T17:07:44.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.463,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "1h7dvk1",
-      "primary": {
-        "id": "1h7dvk1",
-        "source_id": "yt_nvidia_developer",
-        "source_name": "NVIDIA Developer YouTube",
-        "source_role": "learning",
-        "trust": 0.78,
-        "kind_hint": "video",
-        "title": "Distributed AI Inference at Scale on NVIDIA Dynamo With Gcore and Orange Business",
-        "url": "https://youtube.com/watch?v=-bMcP2aFyL0",
-        "original_url": "https://www.youtube.com/watch?v=-bMcP2aFyL0",
-        "image_url": "https://i.ytimg.com/vi/-bMcP2aFyL0/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-05-29T15:50:20.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-          "video_id": "-bMcP2aFyL0"
-        }
-      },
-      "members": [
-        {
-          "id": "1h7dvk1",
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "source_role": "learning",
-          "trust": 0.78,
-          "kind_hint": "video",
-          "title": "Distributed AI Inference at Scale on NVIDIA Dynamo With Gcore and Orange Business",
-          "url": "https://youtube.com/watch?v=-bMcP2aFyL0",
-          "original_url": "https://www.youtube.com/watch?v=-bMcP2aFyL0",
-          "image_url": "https://i.ytimg.com/vi/-bMcP2aFyL0/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-05-29T15:50:20.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-            "video_id": "-bMcP2aFyL0"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "title": "Distributed AI Inference at Scale on NVIDIA Dynamo With Gcore and Orange Business",
-          "url": "https://youtube.com/watch?v=-bMcP2aFyL0",
-          "published_at": "2026-05-29T15:50:20.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
