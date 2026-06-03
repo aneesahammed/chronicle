@@ -73,6 +73,10 @@ jobs:
       - name: Check Chronicle
         run: npm run check
 
+      - name: Record Chronicle refresh start
+        if: github.event_name != 'push' && inputs.refresh_mode != 'deploy_only'
+        run: echo "CHRONICLE_REFRESH_STARTED_AT=$(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)" >> "$GITHUB_ENV"
+
       - name: Refresh Chronicle feed
         if: github.event_name != 'push' && inputs.refresh_mode != 'deploy_only'
         timeout-minutes: 15
@@ -82,6 +86,32 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
         run: npm run run:pipeline
+
+      - name: Assert Chronicle feed freshness
+        if: github.event_name != 'push' && inputs.refresh_mode != 'deploy_only'
+        run: |
+          node <<'NODE'
+          const fs = require("node:fs");
+
+          const startedAt = Date.parse(process.env.CHRONICLE_REFRESH_STARTED_AT ?? "");
+          const feed = JSON.parse(fs.readFileSync("public/feed.json", "utf8"));
+          const generatedAt = Date.parse(feed.generated_at);
+
+          if (!Number.isFinite(startedAt)) {
+            console.error(`::error::Invalid CHRONICLE_REFRESH_STARTED_AT: ${process.env.CHRONICLE_REFRESH_STARTED_AT}`);
+            process.exit(1);
+          }
+          if (!Number.isFinite(generatedAt)) {
+            console.error(`::error::Invalid public/feed.json generated_at: ${feed.generated_at}`);
+            process.exit(1);
+          }
+          if (generatedAt < startedAt) {
+            console.error(`::error::Chronicle feed is stale after refresh. generated_at=${feed.generated_at} refresh_started_at=${process.env.CHRONICLE_REFRESH_STARTED_AT}`);
+            process.exit(1);
+          }
+
+          console.log(`Chronicle feed freshness verified: generated_at=${feed.generated_at}`);
+          NODE
 
       - name: Verify Chronicle feeds
         run: npm run verify:all
@@ -109,7 +139,7 @@ jobs:
             echo "No Chronicle feed changes."
             exit 0
           fi
-          unexpected="$(git diff --cached --name-only | grep -Ev '^(data/enrichments\.json|data/history\.json|data/repo-history\.json|public/index\.html|public/feed\.json|public/repos\.json|public/learning\.json|public/rss\.xml|public/atom\.xml|public/feed\.schema\.json|public/daily/index\.json|public/daily/index\.html|public/daily/[0-9]{4}-[0-9]{2}-[0-9]{2}/feed\.json|public/daily/[0-9]{4}-[0-9]{2}-[0-9]{2}/index\.html|public/robots\.txt|public/sitemap\.xml)$' || true)"
+          unexpected="$(git diff --cached --name-only | grep -Ev '^(data/enrichments\.json|data/history\.json|data/repo-history\.json|public/index\.html|public/feed\.json|public/repos\.json|public/learning\.json|public/rss\.xml|public/atom\.xml|public/feed\.schema\.json|public/daily/index\.json|public/daily/index\.html|public/daily/[0-9]{4}-[0-9]{2}-[0-9]{2}/(feed|repos|learning)\.json|public/daily/[0-9]{4}-[0-9]{2}-[0-9]{2}/index\.html|public/robots\.txt|public/sitemap\.xml)$' || true)"
           if [ -n "$unexpected" ]; then
             echo "::error::Unexpected files staged for Chronicle feed commit:"
             printf '%s\n' "$unexpected"
