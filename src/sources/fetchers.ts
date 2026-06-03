@@ -735,6 +735,7 @@ function isLearningVideoCandidate(item: RawItem): boolean {
     /\b(?:llms?|agents?|rag|mcp|inference|fine[- ]?tun(?:e|ing)|evals?)\b/,
     /\b(?:embeddings?|vector search|transformers?|tokenizers?|quantiz(?:e|ation))\b/,
     /\b(?:multimodal|vlms?|cuda|pytorch|jax|open source models?)\b/,
+    /\b(?:gemini|ai studio|apis?|sdks?|colab|kaggle)\b/,
   ].some((pattern) => pattern.test(text));
   const isPreReleaseMarketing = /\b(?:coming soon|almost here|trailer|teaser|save your spot|sign up)\b/.test(text);
   const isLaunchOrBrandMarketing = [

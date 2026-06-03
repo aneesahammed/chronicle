@@ -138,9 +138,6 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
   await writeRenderedHomePage(publicDir, mainFeed);
   await writeSyndicationFeeds(publicDir, mainFeed);
   await writeFeedSchema(publicDir);
-  if (mainFeed.refresh_status !== "failed") {
-    await writeArchiveOutputs(publicDir, mainFeed);
-  }
 
   const repoFeed = await buildRoleFeed({
     role: "repo",
@@ -170,6 +167,14 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
     providers,
   });
   await writeFeed(learningFeedOut, learningFeed);
+
+  if (mainFeed.refresh_status !== "failed") {
+    await writeArchiveOutputs(publicDir, {
+      main: mainFeed,
+      repo: repoFeed.refresh_status === "failed" ? undefined : repoFeed,
+      learning: learningFeed.refresh_status === "failed" ? undefined : learningFeed,
+    });
+  }
 }
 
 function freshItems(items: RawItem[], cutoff: number): RawItem[] {
@@ -583,7 +588,11 @@ interface ArchiveDay {
   feed_path: string;
 }
 
-async function writeArchiveOutputs(publicDir: string, feed: FeedFile) {
+async function writeArchiveOutputs(
+  publicDir: string,
+  feeds: { main: FeedFile; repo?: FeedFile; learning?: FeedFile },
+) {
+  const feed = feeds.main;
   const date = feed.generated_at.slice(0, 10);
   const dailyDir = path.join(publicDir, "daily");
   const dayDir = path.join(dailyDir, date);
@@ -591,6 +600,8 @@ async function writeArchiveOutputs(publicDir: string, feed: FeedFile) {
   await fs.mkdir(dayDir, { recursive: true });
   await writeJsonAtomic(dayFeedPath, feed);
   console.log(`[write] ${dayFeedPath}`);
+  await writeArchiveRoleFeed(dayDir, "repos.json", feeds.repo);
+  await writeArchiveRoleFeed(dayDir, "learning.json", feeds.learning);
 
   await writeRenderedDailyPage(publicDir, feed);
 
@@ -616,6 +627,13 @@ async function writeArchiveOutputs(publicDir: string, feed: FeedFile) {
   await writeArchiveIndexPage(publicDir, days, feed.generated_at);
   await pruneArchiveDirs(dailyDir, days);
   await writeRobotsAndSitemap(publicDir, days, feed.generated_at);
+}
+
+async function writeArchiveRoleFeed(dayDir: string, fileName: string, feed: FeedFile | undefined) {
+  if (!feed) return;
+  const feedPath = path.join(dayDir, fileName);
+  await writeJsonAtomic(feedPath, feed);
+  console.log(`[write] ${feedPath}`);
 }
 
 async function readArchiveIndex(indexPath: string): Promise<ArchiveIndex> {

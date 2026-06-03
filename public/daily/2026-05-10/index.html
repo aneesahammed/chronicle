@@ -2749,7 +2749,7 @@ function wireStickyNav() {
 }
 
 async function switchFeedTab(next) {
-  if (!FEEDS[next] || state.activeFeed === next || state.archiveDate) return;
+  if (!FEEDS[next] || state.activeFeed === next) return;
   state.activeFeed = next;
   state.kinds.clear();
   state.highNovelty = false;
@@ -2828,7 +2828,7 @@ async function prefetchSectionCounts() {
   const tasks = Object.keys(FEEDS).map(async (role) => {
     if (role === state.activeFeed) return;
     try {
-      const url = rootUrl(FEEDS[role].path);
+      const url = feedUrlFor(role);
       const data = await fetchFeedData(url);
       if (typeof data?.count === "number") updateSectionCount(role, data.count);
     } catch (_) {
@@ -4573,7 +4573,7 @@ function initFiltersFromUrl() {
   if (kinds.length) state.kinds = new Set(kinds);
   state.archiveDate = DATE_PATH_MATCH?.[1] || params.get("day") || null;
   const requestedTab = params.get("tab");
-  state.activeFeed = state.archiveDate ? "main" : FEEDS[requestedTab] ? requestedTab : "main";
+  state.activeFeed = FEEDS[requestedTab] ? requestedTab : "main";
   state.highNovelty = params.get("novelty") === "high";
   state.discussionOnly = params.get("discussion") === "1";
 }
@@ -4583,7 +4583,7 @@ function syncUrl() {
   if (state.kinds.size) params.set("kind", [...state.kinds].join(","));
   if (state.highNovelty) params.set("novelty", "high");
   if (state.discussionOnly) params.set("discussion", "1");
-  if (!state.archiveDate && state.activeFeed !== "main") params.set("tab", state.activeFeed);
+  if (state.activeFeed !== "main") params.set("tab", state.activeFeed);
   if (document.body.classList.contains("is-detail")) params.set("detail", "1");
   const base = state.archiveDate ? rootUrl(`daily/${state.archiveDate}/`) : rootUrl("");
   const next = new URL(base);
@@ -4592,8 +4592,13 @@ function syncUrl() {
 }
 
 function feedUrl() {
-  if (state.archiveDate) return rootUrl(`daily/${state.archiveDate}/feed.json`);
-  return rootUrl((FEEDS[state.activeFeed] || FEEDS.main).path);
+  return feedUrlFor(state.activeFeed);
+}
+
+function feedUrlFor(role) {
+  const feed = FEEDS[role] || FEEDS.main;
+  if (state.archiveDate) return rootUrl(`daily/${state.archiveDate}/${feed.path}`);
+  return rootUrl(feed.path);
 }
 
 function rootUrl(path) {

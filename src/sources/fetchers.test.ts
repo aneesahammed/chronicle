@@ -670,6 +670,36 @@ test("fetchAll backfills learning YouTube items after filtered promos", async ()
   assert.deepEqual(result.items.map((item) => item.learning?.video_id), ["workshop123"]);
 });
 
+test("fetchAll keeps product tutorial videos from learning YouTube sources", async () => {
+  globalThis.fetch = async () => new Response(`
+    <feed xmlns="http://www.w3.org/2005/Atom">
+      <entry>
+        <title>Gemini API and AI Studio</title>
+        <link href="https://www.youtube.com/watch?v=studio123" />
+        <published>2026-05-01T00:00:00Z</published>
+        <content>Use AI Studio to prototype with Gemini.</content>
+      </entry>
+    </feed>
+  `);
+
+  const result = await fetchAll({
+    sources: [{
+      id: "yt_google_developers",
+      name: "Google for Developers YouTube",
+      type: "youtube_rss",
+      url: "https://www.youtube.com/feeds/videos.xml?channel_id=UC123",
+      trust: 0.72,
+      source_role: "learning",
+      kind_hint: "video",
+      ai_filter: true,
+      limit: 5,
+    }],
+    hn_ai_keywords: ["gemini", "ai"],
+  });
+
+  assert.deepEqual(result.items.map((item) => item.learning?.video_id), ["studio123"]);
+});
+
 test("fetchAll parses selector-backed page lists", async () => {
   globalThis.fetch = async () => new Response(`
     <article>

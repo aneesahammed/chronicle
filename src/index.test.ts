@@ -363,6 +363,89 @@ hn_ai_keywords:
   assert.equal(await fileExists(path.join(publicDir, "daily/2026-04-30/orphan.txt")), true);
 });
 
+test("runPipeline archives repo and learning role feeds for dated tab navigation", async () => {
+  globalThis.fetch = async (input) => {
+    const url = String(input);
+    if (url === "https://source.example.test/models") {
+      return Response.json([{
+        id: "org/model",
+        downloads: 100,
+        likes: 5,
+        lastModified: "2026-05-02T05:00:00.000Z",
+      }]);
+    }
+    if (url === "https://api.github.com/repos/owner/repo/releases?per_page=10") {
+      return Response.json([{
+        tag_name: "v1.0.0",
+        name: "v1.0.0",
+        html_url: "https://github.com/owner/repo/releases/tag/v1.0.0",
+        body: "Adds agent workflow support.",
+        published_at: "2026-05-02T04:00:00.000Z",
+      }]);
+    }
+    return new Response(`
+      <feed xmlns="http://www.w3.org/2005/Atom">
+        <entry>
+          <title>Hands-on AI agents tutorial</title>
+          <link href="https://www.youtube.com/watch?v=learn123" />
+          <published>2026-05-02T03:00:00Z</published>
+        </entry>
+      </feed>
+    `);
+  };
+
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "chronicle-role-archive-"));
+  const publicDir = path.join(root, "public");
+  const dataDir = path.join(root, "data");
+  const registryPath = path.join(root, "registry.yaml");
+  await fs.mkdir(publicDir, { recursive: true });
+  await fs.writeFile(registryPath, `
+sources:
+  - id: hf_models_test
+    name: Models
+    type: hf_models
+    url: https://source.example.test/models
+    trust: 0.5
+    kind_hint: model_release
+    limit: 5
+  - id: repo_test
+    name: Repo Test
+    type: github_releases
+    url: https://api.github.com/repos/owner/repo/releases?per_page=10
+    trust: 0.8
+    source_role: repo
+    kind_hint: repo_release
+    limit: 5
+  - id: yt_test
+    name: YouTube Test
+    type: youtube_rss
+    url: https://www.youtube.com/feeds/videos.xml?channel_id=UC123
+    trust: 0.8
+    source_role: learning
+    kind_hint: video
+    ai_filter: true
+    limit: 5
+hn_ai_keywords:
+  - ai
+  - agent
+`);
+
+  await runPipeline({
+    registryPath,
+    publicDir,
+    dataDir,
+    now: new Date("2026-05-02T06:00:00.000Z"),
+    env: {},
+  });
+
+  const archivedRepo = JSON.parse(await fs.readFile(path.join(publicDir, "daily/2026-05-02/repos.json"), "utf8"));
+  const archivedLearning = JSON.parse(await fs.readFile(path.join(publicDir, "daily/2026-05-02/learning.json"), "utf8"));
+  assert.equal(archivedRepo.clusters[0].primary.source_role, "repo");
+  assert.equal(archivedRepo.clusters[0].primary.repo.full_name, "owner/repo");
+  assert.equal(archivedLearning.clusters[0].primary.source_role, "learning");
+  assert.equal(archivedLearning.clusters[0].primary.learning.video_id, "learn123");
+});
+
 test("runPipeline classifies only preselected main feed candidates", async () => {
   const titles = [
     "Alpha routing benchmark improves agent planning",
