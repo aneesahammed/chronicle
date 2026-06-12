@@ -27,8 +27,9 @@ const STOPWORDS = new Set([
 
 const ANCHOR_TOKENS = new Set([
   "ai21", "amazon", "anthropic", "apple", "bedrock", "claude", "cloudflare", "cohere",
-  "cursor", "deepmind", "gemini", "github", "google", "groq", "huggingface", "langchain",
-  "llama", "mistral", "nvidia", "openai", "perplexity", "qwen", "together", "vllm",
+  "cursor", "deepmind", "deepseek", "gemini", "gemma", "github", "google", "grok", "groq",
+  "huggingface", "kimi", "langchain", "llama", "mistral", "nvidia", "openai", "perplexity",
+  "qwen", "together", "vllm",
 ]);
 
 export function clusterItems(items: RawItem[]): Cluster[] {
@@ -44,27 +45,36 @@ export function clusterItems(items: RawItem[]): Cluster[] {
     stage1.push(makeCluster(list));
   }
 
-  // Stage 2: merge clusters whose primary titles are similar.
-  // O(n^2) — fine at ~300 items/day.
-  const merged: Cluster[] = [];
-  const used = new Set<number>();
+  // Stage 2: merge clusters whose primary titles or claims are similar.
+  // Union-find over every pair so merging is transitive and independent of
+  // input order: a bridge title that matches both a paraphrase and the
+  // official title pulls all three together, even when the paraphrase and
+  // the official title don't match each other. O(n^2) — fine at ~300 items/day.
+  const parent = stage1.map((_, i) => i);
+  const find = (x: number): number => {
+    while (parent[x] !== x) {
+      parent[x] = parent[parent[x]];
+      x = parent[x];
+    }
+    return x;
+  };
   const tris = stage1.map((c) => trigrams(c.primary.title));
   const signatures = stage1.map((c) => claimSignature(c));
   for (let i = 0; i < stage1.length; i++) {
-    if (used.has(i)) continue;
-    let cluster = stage1[i];
     for (let j = i + 1; j < stage1.length; j++) {
-      if (used.has(j)) continue;
       const sim = jaccard(tris[i], tris[j]);
       if (sim >= TITLE_THRESHOLD || shouldMergeClaim(sim, signatures[i], signatures[j])) {
-        cluster = mergeClusters(cluster, stage1[j]);
-        used.add(j);
+        parent[find(j)] = find(i);
       }
     }
-    merged.push(cluster);
-    used.add(i);
   }
-  return merged;
+  const byRoot = new Map<number, RawItem[]>();
+  for (let i = 0; i < stage1.length; i++) {
+    const members = byRoot.get(find(i)) ?? [];
+    members.push(...stage1[i].members);
+    byRoot.set(find(i), members);
+  }
+  return [...byRoot.values()].map(makeCluster);
 }
 
 function makeCluster(members: RawItem[]): Cluster {
@@ -106,13 +116,6 @@ function makeCluster(members: RawItem[]): Cluster {
     })),
     also_seen_on,
   };
-}
-
-function mergeClusters(a: Cluster, b: Cluster): Cluster {
-  // De-dup members by id.
-  const all = new Map<string, RawItem>();
-  for (const m of [...a.members, ...b.members]) all.set(m.id, m);
-  return makeCluster([...all.values()]);
 }
 
 interface ClaimSignature {

@@ -18,6 +18,7 @@ import type {
 } from "../types.ts";
 
 const TIMEOUT_MS = 20_000;
+const MAX_RESPONSE_BYTES = 10_000_000;
 const SITEMAP_PAGE_TIMEOUT_MS = 8_000;
 const USER_AGENT = "Chronicle/0.1 by aneesahammed (+https://github.com/aneesahammed/chronicle)";
 const YOUTUBE_RSS_ATTEMPTS = 4;
@@ -1022,6 +1023,7 @@ async function fetchJson<T>(url: string, headers: Record<string, string> = {}): 
       headers,
     });
     if (!r.ok) throw await fetchHttpError(url, r);
+    assertResponseWithinLimit(url, r);
     return (await r.json()) as T;
   });
 }
@@ -1033,8 +1035,20 @@ async function fetchText(url: string, options: RetryOptions = {}): Promise<strin
       headers: { "user-agent": USER_AGENT },
     });
     if (!r.ok) throw await fetchHttpError(url, r, options.retryStatuses);
-    return await r.text();
+    assertResponseWithinLimit(url, r);
+    const text = await r.text();
+    if (text.length > MAX_RESPONSE_BYTES) {
+      throw new Error(`response too large from ${url}: ${text.length} chars`);
+    }
+    return text;
   }, options);
+}
+
+function assertResponseWithinLimit(url: string, response: Response) {
+  const contentLength = Number(response.headers.get("content-length"));
+  if (Number.isFinite(contentLength) && contentLength > MAX_RESPONSE_BYTES) {
+    throw new Error(`response too large from ${url}: ${contentLength} bytes`);
+  }
 }
 
 interface RetryOptions {

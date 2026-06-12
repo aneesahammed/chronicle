@@ -25,15 +25,30 @@ export function pruneHistory(h: HistoryFile, today: Date): HistoryFile {
   return { entries: h.entries.filter((e) => e.date >= cutoffStr) };
 }
 
+// Trigram sets per history entry, computed once per HistoryFile instead of
+// once per cluster (novelty is called ~300 times per run against the same
+// ~1800-entry history).
+const historyTrigramCache = new WeakMap<HistoryFile, Set<string>[]>();
+
+function historyTrigrams(history: HistoryFile): Set<string>[] {
+  let tris = historyTrigramCache.get(history);
+  if (!tris) {
+    tris = history.entries.map((e) => trigrams(e.title));
+    historyTrigramCache.set(history, tris);
+  }
+  return tris;
+}
+
 // novelty in [0, 1]: 1 = never seen, 0 = identical to a recent item.
 export function novelty(title: string, history: HistoryFile, today?: Date): number {
   if (history.entries.length === 0) return 1;
   const todayStr = today?.toISOString().slice(0, 10);
   const t = trigrams(title);
+  const tris = historyTrigrams(history);
   let max = 0;
-  for (const e of history.entries) {
-    if (todayStr && e.date === todayStr) continue;
-    const sim = jaccard(t, trigrams(e.title));
+  for (let i = 0; i < history.entries.length; i++) {
+    if (todayStr && history.entries[i].date === todayStr) continue;
+    const sim = jaccard(t, tris[i]);
     if (sim > max) max = sim;
     if (max >= 0.95) break;
   }
