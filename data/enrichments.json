@@ -244,19 +244,6 @@
       "enriched_at": "2026-05-23T06:19:33.264Z",
       "failure_count": 0
     },
-    "https://arstechnica.com/ai/2026/05/study-ai-models-that-consider-users-feeling-are-more-likely-to-make-errors": {
-      "url": "https://arstechnica.com/ai/2026/05/study-ai-models-that-consider-users-feeling-are-more-likely-to-make-errors",
-      "title": "Study: AI models that consider user's feeling are more likely to make errors",
-      "source_name": "Ars Technica AI",
-      "dek": "Study finds AI models prioritizing user satisfaction may increase errors",
-      "brief": "Overtuning can cause models to \"prioritize user satisfaction over truthfulness.”",
-      "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/05/GettyImages-1338190481-1152x648.jpg",
-      "image_source": "rss_media",
-      "status": "failed",
-      "attempted_at": "2026-05-03T09:32:37.325Z",
-      "enriched_at": "2026-05-03T09:32:37.325Z",
-      "failure_count": 1
-    },
     "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year": {
       "url": "https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year",
       "title": "Leaked financial docs show OpenAI is losing billions of dollars a year",
@@ -1349,6 +1336,30 @@
       "enriched_at": "2026-06-16T07:05:45.584Z",
       "failure_count": 0
     },
+    "https://arxiv.org/abs/2606.17057": {
+      "url": "https://arxiv.org/abs/2606.17057",
+      "title": "Correct When Paired, Wrong When Split: Decoupling and Editing Modality-Specific Neurons in MLLMs",
+      "source_name": "arXiv cs.LG",
+      "dek": "Researchers identify a decoupling failure in MLLMs where knowledge updates fail when models are queried with unimodal inputs instead of multimodal pairs.",
+      "brief": "Current knowledge editing techniques in MLLMs often fail to generalize across modalities. The study shows that while entity knowledge is successfully updated for image-text queries, the model reverts to outdated information when prompted with text alone. This suggests that modality-specific neurons are not being effectively synchronized during the editing process.",
+      "image_alt": "Diagram showing the decoupling of modality-specific neurons in MLLM architectures",
+      "status": "ok",
+      "attempted_at": "2026-06-17T06:58:45.066Z",
+      "enriched_at": "2026-06-17T06:58:45.066Z",
+      "failure_count": 0
+    },
+    "https://arxiv.org/abs/2606.17861": {
+      "url": "https://arxiv.org/abs/2606.17861",
+      "title": "GameCraft-Bench: Can Agents Build Playable Games End-to-End in a Real Game Engine?",
+      "source_name": "Hugging Face Daily Papers",
+      "dek": "GameCraft-Bench evaluates the ability of AI agents to build functional, playable games within real game engines.",
+      "brief": "Game generation requires agents to manage complex dependencies between scripts, assets, and rendering. GameCraft-Bench formalizes this as an end-to-end task, testing whether models can move beyond simple code generation to produce coherent, interactive gameplay environments that function correctly within a standard game engine runtime.",
+      "image_alt": "Conceptual overview of an AI agent interacting with a game engine interface",
+      "status": "ok",
+      "attempted_at": "2026-06-17T06:58:45.066Z",
+      "enriched_at": "2026-06-17T06:58:45.066Z",
+      "failure_count": 0
+    },
     "https://aws.amazon.com/blogs/machine-learning/accelerate-llm-model-loading-and-increase-context-windows-with-gpudirect-on-amazon-fsx-for-lustre-and-turboquant": {
       "url": "https://aws.amazon.com/blogs/machine-learning/accelerate-llm-model-loading-and-increase-context-windows-with-gpudirect-on-amazon-fsx-for-lustre-and-turboquant",
       "title": "Accelerate LLM model loading and increase context windows with GPUDirect on Amazon FSx for Lustre and TurboQuant",
@@ -1454,6 +1465,18 @@
       "status": "ok",
       "attempted_at": "2026-05-11T18:57:20.039Z",
       "enriched_at": "2026-05-11T18:57:20.039Z",
+      "failure_count": 0
+    },
+    "https://aws.amazon.com/blogs/machine-learning/introducing-container-caching-in-amazon-sagemaker-ai-for-faster-model-scaling": {
+      "url": "https://aws.amazon.com/blogs/machine-learning/introducing-container-caching-in-amazon-sagemaker-ai-for-faster-model-scaling",
+      "title": "Introducing container caching in Amazon SageMaker AI for faster model scaling",
+      "source_name": "AWS Machine Learning Blog",
+      "dek": "Amazon SageMaker AI now supports container image caching to reduce inference latency during scale-out events.",
+      "brief": "AWS has introduced container image caching for SageMaker AI, designed to accelerate the provisioning of inference instances. By reducing the time required to download container images during auto-scaling, the feature can improve end-to-end latency by up to 2x for large generative AI models.",
+      "image_alt": "Architecture diagram showing container caching in the SageMaker inference pipeline",
+      "status": "ok",
+      "attempted_at": "2026-06-17T06:58:45.066Z",
+      "enriched_at": "2026-06-17T06:58:45.066Z",
       "failure_count": 0
     },
     "https://aws.amazon.com/blogs/machine-learning/introducing-gemma-4-models-on-amazon-bedrock": {
@@ -3263,6 +3286,19 @@
       "enriched_at": "2026-06-16T14:08:35.634Z",
       "failure_count": 0
     },
+    "https://marktechpost.com/2026/06/16/openai-deployment-simulation": {
+      "url": "https://marktechpost.com/2026/06/16/openai-deployment-simulation",
+      "title": "OpenAI’s Deployment Simulation Extends Pre-Deployment Risk Assessment to Agentic Coding Through Simulated Tool Calls",
+      "source_name": "MarkTechPost",
+      "dek": "OpenAI details a deployment simulation method for pre-release risk assessment of agentic coding models.",
+      "brief": "OpenAI introduced Deployment Simulation on June 16, 2026. The method replays past conversations through a new candidate model before release. It then grades the completions to estimate deployment-time rates of undesired behavior. We break down how the pipeline works, the reported 1.5x median multiplicative error, and its limits. The post OpenAI’s Deployment Simulation Extends Pre-Deployment Risk Assessment to Agenti…",
+      "image_url": "https://www.marktechpost.com/wp-content/uploads/2026/06/Screenshot-2026-06-16-at-10.49.31-PM-1.png",
+      "image_source": "rss_media",
+      "status": "failed",
+      "attempted_at": "2026-06-17T06:58:45.066Z",
+      "enriched_at": "2026-06-17T06:58:45.066Z",
+      "failure_count": 1
+    },
     "https://microsoft.com/en-us/research/blog/advancing-ai-for-materials-with-mattersim-experimental-synthesis-faster-simulation-and-multi-task-models": {
       "url": "https://microsoft.com/en-us/research/blog/advancing-ai-for-materials-with-mattersim-experimental-synthesis-faster-simulation-and-multi-task-models",
       "title": "Advancing AI for materials with MatterSim: experimental synthesis, faster simulation, and multi-task models",
@@ -3437,19 +3473,6 @@
       "status": "ok",
       "attempted_at": "2026-05-10T06:19:37.006Z",
       "enriched_at": "2026-05-10T06:19:37.006Z",
-      "failure_count": 0
-    },
-    "https://old.reddit.com/r/LocalLLaMA/comments/1t22s9l/qwensaeresqwen3527bw80kl0_100_hugging_face": {
-      "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t22s9l/qwensaeresqwen3527bw80kl0_100_hugging_face",
-      "title": "Qwen/SAE-Res-Qwen3.5-27B-W80K-L0_100 · Hugging Face",
-      "source_name": "r/LocalLLaMA",
-      "dek": "Qwen releases SAE-Res-Qwen3.5-27B for model steering research",
-      "brief": "Qwen shares a Hugging Face model for vector-based steering research, with a YouTube demo showing its capabilities. The SAE-Res-Qwen3.5-27B-W80K-L0_100 model is positioned as a tool for advancing interpretability in large language models.",
-      "image_url": "https://external-preview.redd.it/M0btJg7Jb8lcoAvzPl4EuE2WcA4DFQxutVmbFQZcLdI.png?width=640&crop=smart&auto=webp&s=35adfaebca1ced315ab00223374c3aff039fff5b",
-      "image_source": "rss_media",
-      "status": "ok",
-      "attempted_at": "2026-05-03T09:32:37.325Z",
-      "enriched_at": "2026-05-03T09:32:37.325Z",
       "failure_count": 0
     },
     "https://old.reddit.com/r/LocalLLaMA/comments/1t29tf8/glados_tts_build_kit_train_glados_voice_if_you": {
@@ -5487,20 +5510,6 @@
       "enriched_at": "2026-05-19T13:28:27.283Z",
       "failure_count": 0
     },
-    "https://the-decoder.com/co-pilot-becomes-a-co-author-in-vs-code-without-being-asked": {
-      "url": "https://the-decoder.com/co-pilot-becomes-a-co-author-in-vs-code-without-being-asked",
-      "title": "Co-pilot becomes a co-author in VS Code without being asked",
-      "source_name": "The Decoder",
-      "dek": "VS Code adds Co-pilot co-author tag without user consent",
-      "brief": "Microsoft's VS Code automatically added \"Co-Authored-by Copilot\" to Git commits, even for users who disabled AI features. The change occurred without explicit opt-in or notification to developers.",
-      "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/microsoft_logo.png",
-      "image_alt": "VS Code commit with Co-Authored-by Copilot line",
-      "image_source": "rss_content",
-      "status": "ok",
-      "attempted_at": "2026-05-03T09:36:24.508Z",
-      "enriched_at": "2026-05-03T09:36:24.508Z",
-      "failure_count": 0
-    },
     "https://the-decoder.com/deepseek-makes-its-75-percent-discount-permanent-pricing-output-tokens-at-least-34x-below-gpt-5-5": {
       "url": "https://the-decoder.com/deepseek-makes-its-75-percent-discount-permanent-pricing-output-tokens-at-least-34x-below-gpt-5-5",
       "title": "Deepseek makes its 75 percent discount permanent, pricing output tokens at least 34x below GPT-5.5",
@@ -5707,6 +5716,20 @@
       "status": "ok",
       "attempted_at": "2026-05-15T12:56:24.594Z",
       "enriched_at": "2026-05-15T12:56:24.594Z",
+      "failure_count": 0
+    },
+    "https://the-decoder.com/microsofts-copilot-cowork-moves-to-usage-based-billing-and-may-tap-deepseek": {
+      "url": "https://the-decoder.com/microsofts-copilot-cowork-moves-to-usage-based-billing-and-may-tap-deepseek",
+      "title": "Microsoft's Copilot Cowork moves to usage-based billing and may tap DeepSeek",
+      "source_name": "The Decoder",
+      "dek": "Microsoft is shifting Copilot Cowork to usage-based billing and exploring the integration of DeepSeek V4 as a cost-effective model option.",
+      "brief": "Microsoft is moving away from flat-rate pricing for its Copilot Cowork service, citing sustainability concerns. To optimize costs, the company is reportedly testing a self-hosted, fine-tuned version of DeepSeek V4, signaling a broader industry trend toward diversifying model providers to manage inference expenses.",
+      "image_url": "https://the-decoder.com/wp-content/uploads/2026/06/microsoft_logo_plain.png",
+      "image_alt": "Microsoft Copilot branding and interface elements",
+      "image_source": "rss_content",
+      "status": "ok",
+      "attempted_at": "2026-06-17T06:58:45.066Z",
+      "enriched_at": "2026-06-17T06:58:45.066Z",
       "failure_count": 0
     },
     "https://the-decoder.com/moonshots-open-model-kimi-k2-7-code-undercuts-gpt-5-5-and-claude-by-up-to-12x-on-price-per-token": {
@@ -5946,20 +5969,6 @@
       "enriched_at": "2026-05-16T12:40:25.351Z",
       "failure_count": 0
     },
-    "https://the-decoder.com/same-prompt-different-morals-how-frontier-ai-models-diverge-on-ethical-dilemmas": {
-      "url": "https://the-decoder.com/same-prompt-different-morals-how-frontier-ai-models-diverge-on-ethical-dilemmas",
-      "title": "Same prompt, different morals: how frontier AI models diverge on ethical dilemmas",
-      "source_name": "The Decoder",
-      "dek": "Benchmark reveals ethical divergence in frontier AI models on 100 scenarios",
-      "brief": "A new benchmark tests leading language models on 100 ethical dilemmas, exposing inconsistent responses to scenarios like data misuse and protocol violations. Results highlight unresolved questions about whose ethics AI should follow and who governs AI behavior.",
-      "image_url": "https://the-decoder.com/wp-content/uploads/2026/04/Philosophy-Bench.png",
-      "image_alt": "AI models facing ethical dilemmas",
-      "image_source": "rss_content",
-      "status": "ok",
-      "attempted_at": "2026-05-03T09:32:37.325Z",
-      "enriched_at": "2026-05-03T09:32:37.325Z",
-      "failure_count": 0
-    },
     "https://the-decoder.com/stability-ai-launches-stable-audio-3-0-with-up-to-six-minute-tracks-and-open-weights": {
       "url": "https://the-decoder.com/stability-ai-launches-stable-audio-3-0-with-up-to-six-minute-tracks-and-open-weights",
       "title": "Stability AI launches Stable Audio 3.0 with up to six-minute tracks and open weights",
@@ -5985,20 +5994,6 @@
       "attempted_at": "2026-05-22T13:12:31.467Z",
       "enriched_at": "2026-05-22T13:12:31.467Z",
       "failure_count": 1
-    },
-    "https://the-decoder.com/xiaomis-open-weight-mimo-v2-5-pro-takes-aim-at-claude-opus-with-hours-long-autonomous-coding": {
-      "url": "https://the-decoder.com/xiaomis-open-weight-mimo-v2-5-pro-takes-aim-at-claude-opus-with-hours-long-autonomous-coding",
-      "title": "Xiaomi's open-weight MiMo-V2.5-Pro takes aim at Claude Opus with hours-long autonomous coding",
-      "source_name": "The Decoder",
-      "dek": "Xiaomi's open-weight MiMo-V2.5-Pro matches Claude Opus in coding with lower token use",
-      "brief": "Xiaomi's MiMo-V2.5-Pro achieves Claude Opus-level coding performance with 40-60% fewer tokens. The 1.02T-parameter model uses a mixture-of-experts design, activating 42B parameters per request, enabling long autonomous tasks like compiler development in under five hours.",
-      "image_url": "https://the-decoder.com/wp-content/uploads/2026/03/Xiaomi-MiMo-Explore-and-Love-e1774194951718.jpg",
-      "image_alt": "Xiaomi's MiMo-V2.5-Pro coding benchmark",
-      "image_source": "rss_content",
-      "status": "ok",
-      "attempted_at": "2026-05-03T09:32:37.325Z",
-      "enriched_at": "2026-05-03T09:32:37.325Z",
-      "failure_count": 0
     },
     "https://the-decoder.com/youtube-will-try-to-automatically-flag-ai-videos-starting-this-month": {
       "url": "https://the-decoder.com/youtube-will-try-to-automatically-flag-ai-videos-starting-this-month",
