@@ -1372,6 +1372,30 @@
       "enriched_at": "2026-06-17T06:58:45.066Z",
       "failure_count": 0
     },
+    "https://arxiv.org/abs/2606.18286": {
+      "url": "https://arxiv.org/abs/2606.18286",
+      "title": "CODEBLOCK: Learning to Supervise Code at the Right Granularity",
+      "source_name": "arXiv cs.LG",
+      "dek": "CODEBLOCK introduces a granular approach to supervising code LLMs by selecting high-value tokens rather than applying uniform loss.",
+      "brief": "Standard SFT applies uniform cross-entropy loss to all tokens, which can disrupt code syntax and semantics. CODEBLOCK optimizes training by identifying and supervising only the most informative tokens, improving model performance on code generation tasks while maintaining structural integrity.",
+      "image_alt": "Diagram showing token-level selection process for code training",
+      "status": "ok",
+      "attempted_at": "2026-06-18T06:56:05.027Z",
+      "enriched_at": "2026-06-18T06:56:05.027Z",
+      "failure_count": 0
+    },
+    "https://arxiv.org/abs/2606.18943": {
+      "url": "https://arxiv.org/abs/2606.18943",
+      "title": "Physics-IQ Verified",
+      "source_name": "Hugging Face Daily Papers",
+      "dek": "Researchers audit the Physics-IQ benchmark for video generative models, proposing three improvements to better measure physical understanding.",
+      "brief": "Physics-IQ evaluates how well video generative models grasp physical reality by comparing outputs to real-world experiments. This audit identifies current shortcomings in the benchmark and introduces three solutions to refine how physical reasoning is quantified in generative video models.",
+      "image_alt": "Comparison of model-generated video versus real-world physical experiment",
+      "status": "ok",
+      "attempted_at": "2026-06-18T06:56:05.027Z",
+      "enriched_at": "2026-06-18T06:56:05.027Z",
+      "failure_count": 0
+    },
     "https://aws.amazon.com/blogs/machine-learning/accelerate-llm-model-loading-and-increase-context-windows-with-gpudirect-on-amazon-fsx-for-lustre-and-turboquant": {
       "url": "https://aws.amazon.com/blogs/machine-learning/accelerate-llm-model-loading-and-increase-context-windows-with-gpudirect-on-amazon-fsx-for-lustre-and-turboquant",
       "title": "Accelerate LLM model loading and increase context windows with GPUDirect on Amazon FSx for Lustre and TurboQuant",
@@ -1418,6 +1442,18 @@
       "status": "ok",
       "attempted_at": "2026-05-22T13:12:31.467Z",
       "enriched_at": "2026-05-22T13:12:31.467Z",
+      "failure_count": 0
+    },
+    "https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-ai-async-inference-now-supports-inline-request-payloads": {
+      "url": "https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-ai-async-inference-now-supports-inline-request-payloads",
+      "title": "Amazon SageMaker AI Async Inference now supports inline request payloads",
+      "source_name": "AWS Machine Learning Blog",
+      "dek": "Amazon SageMaker AI Async Inference now supports inline request payloads up to 128 KB.",
+      "brief": "Users can now send inference payloads directly via the InvokeEndpointAsync API, eliminating the requirement to upload input data to S3 first. This update reduces network latency and simplifies client-side architecture for asynchronous inference workloads.",
+      "image_alt": "Architecture diagram showing direct API invocation without S3 intermediate step",
+      "status": "ok",
+      "attempted_at": "2026-06-18T06:56:05.027Z",
+      "enriched_at": "2026-06-18T06:56:05.027Z",
       "failure_count": 0
     },
     "https://aws.amazon.com/blogs/machine-learning/announcing-openai-compatible-api-support-for-amazon-sagemaker-ai-endpoints": {
@@ -3499,18 +3535,6 @@
       "enriched_at": "2026-05-10T06:19:37.006Z",
       "failure_count": 0
     },
-    "https://old.reddit.com/r/LocalLLaMA/comments/1t2t1w4/gemma_4_e2b_runs_surprisingly_well_on_my_8gb": {
-      "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t2t1w4/gemma_4_e2b_runs_surprisingly_well_on_my_8gb",
-      "title": "Gemma 4 E2B runs surprisingly well on my 8GB Android phone, so I built a private voice notes app around it.",
-      "source_name": "r/LocalLLaMA",
-      "dek": "Gemma 4 E2B runs efficiently on 8GB Android phone, enabling private voice notes app.",
-      "brief": "A user successfully runs Google's Gemma 4 E2B model on an 8GB OnePlus phone, achieving clean JSON outputs for task automation. They built a voice notes app that converts spoken commands into structured data, demonstrating the model's practicality for low-end devices.",
-      "image_alt": "Android phone running local AI model for voice notes",
-      "status": "ok",
-      "attempted_at": "2026-05-03T20:27:11.963Z",
-      "enriched_at": "2026-05-03T20:27:11.963Z",
-      "failure_count": 0
-    },
     "https://old.reddit.com/r/LocalLLaMA/comments/1t3fjbw/release_tinymozart_v2_85m": {
       "url": "https://old.reddit.com/r/LocalLLaMA/comments/1t3fjbw/release_tinymozart_v2_85m",
       "title": "[Release] TinyMozart v2 85M 🎶",
@@ -4045,43 +4069,6 @@
       "enriched_at": "2026-06-17T13:32:20.808Z",
       "failure_count": 0
     },
-    "https://old.reddit.com/r/MachineLearning/comments/1t2hd9b/built_a_efficient_and_fast_mri_compression": {
-      "url": "https://old.reddit.com/r/MachineLearning/comments/1t2hd9b/built_a_efficient_and_fast_mri_compression",
-      "title": "Built a efficient and fast MRI compression program called KMRI [P]",
-      "source_name": "r/MachineLearning",
-      "dek": "KMRI compresses MRI data up to 900x using Python/C++ and Zstd.",
-      "brief": "KMRI is a chunk-based compression tool for .nii MRI files that achieves extreme compression ratios (up to 900x) by skipping zero-blocks. Built with Python, Zstd, and C++, it optimizes storage for synthetic MRI data while preserving quality.",
-      "image_alt": "MRI scan data compressed into smaller file size",
-      "status": "ok",
-      "attempted_at": "2026-05-03T20:27:11.963Z",
-      "enriched_at": "2026-05-03T20:27:11.963Z",
-      "failure_count": 0
-    },
-    "https://old.reddit.com/r/MachineLearning/comments/1t2jt4m/evolving_deep_learning_optimizers_r": {
-      "url": "https://old.reddit.com/r/MachineLearning/comments/1t2jt4m/evolving_deep_learning_optimizers_r",
-      "title": "Evolving Deep Learning Optimizers [R]",
-      "source_name": "r/MachineLearning",
-      "dek": "Genetic algorithms evolve new deep learning optimizers",
-      "brief": "Researchers used genetic algorithms to automatically design deep learning optimizers by combining gradient-based update rules. The framework evolved 50 generations of optimization strategies, producing novel combinations of momentum, RMS normalization, and adaptive learning techniques.",
-      "image_alt": "Optimizer evolution workflow",
-      "status": "ok",
-      "attempted_at": "2026-05-03T18:35:36.075Z",
-      "enriched_at": "2026-05-03T18:35:36.075Z",
-      "failure_count": 0
-    },
-    "https://old.reddit.com/r/MachineLearning/comments/1t2zy4h/torchnvenccompress_gpu_nvenc_silicon_as_a_pcie": {
-      "url": "https://old.reddit.com/r/MachineLearning/comments/1t2zy4h/torchnvenccompress_gpu_nvenc_silicon_as_a_pcie",
-      "title": "torch-nvenc-compress: GPU NVENC silicon as a PCIe bandwidth multiplier — PCA + pure-ctypes Video Codec SDK wrapper. Parallel-path overlap measured at 67% of theoretical max on a real GEMM + encode workload. [P]",
-      "source_name": "r/MachineLearning",
-      "dek": "torch-nvenc-compress: PCIe bandwidth optimization using GPU NVENC",
-      "brief": "I've been working on the consumer-multi-GPU PCIe bottleneck — Nvidia removed NVLink from the 4090/5090, and splitting a 70B model across two consumer cards drops you to ~30 GB/s over PCIe peer-to-peer. Spent the last few months building a Python library that uses the GPU's otherwise-idle NVENC/NVDEC silicon to compress activations and KV cache on the fly, then ships the small bitstream across the same wire. Repo: ht…",
-      "image_url": "https://external-preview.redd.it/vqLrMLU0urgSqpiud1c7Ilq7WSsJhRPX63HDDrDRN6M.png?width=640&crop=smart&auto=webp&s=0d43a15121928a0c4b5e3a9730e67ff06df77324",
-      "image_source": "rss_media",
-      "status": "failed",
-      "attempted_at": "2026-05-04T06:21:06.450Z",
-      "enriched_at": "2026-05-04T06:21:06.450Z",
-      "failure_count": 1
-    },
     "https://old.reddit.com/r/MachineLearning/comments/1t3jmdc/parax_v05_parametric_modeling_in_jax_p": {
       "url": "https://old.reddit.com/r/MachineLearning/comments/1t3jmdc/parax_v05_parametric_modeling_in_jax_p",
       "title": "Parax v0.5: Parametric Modeling in JAX [P]",
@@ -4496,6 +4483,18 @@
       "status": "ok",
       "attempted_at": "2026-05-08T05:56:53.039Z",
       "enriched_at": "2026-05-08T05:56:53.039Z",
+      "failure_count": 0
+    },
+    "https://openai.com/index/introducing-life-sci-bench": {
+      "url": "https://openai.com/index/introducing-life-sci-bench",
+      "title": "Introducing LifeSciBench",
+      "source_name": "OpenAI",
+      "dek": "OpenAI releases LifeSciBench to evaluate AI performance on complex, real-world life science research tasks.",
+      "brief": "Existing benchmarks often focus on narrow fact-recall, failing to capture the nuance of scientific research. LifeSciBench provides an expert-reviewed framework to test how AI models handle experimental design, troubleshooting, and decision-making under uncertainty in life sciences.",
+      "image_alt": "Conceptual illustration of AI assisting in a laboratory research environment",
+      "status": "ok",
+      "attempted_at": "2026-06-18T06:56:05.027Z",
+      "enriched_at": "2026-06-18T06:56:05.027Z",
       "failure_count": 0
     },
     "https://openai.com/index/model-disproves-discrete-geometry-conjecture": {
@@ -5142,18 +5141,6 @@
       "status": "ok",
       "attempted_at": "2026-05-26T06:33:47.533Z",
       "enriched_at": "2026-05-26T06:33:47.533Z",
-      "failure_count": 0
-    },
-    "https://techcrunch.com/2026/05/03/this-is-fine-creator-says-ai-startup-stole-his-art": {
-      "url": "https://techcrunch.com/2026/05/03/this-is-fine-creator-says-ai-startup-stole-his-art",
-      "title": "‘This is fine’ creator says AI startup stole his art",
-      "source_name": "TechCrunch AI",
-      "dek": "Artist accuses AI startup of stealing 'This is fine' art for billboards.",
-      "brief": "The creator of the 'This is fine' meme alleges Artisan, an AI startup, used his artwork in controversial billboards promoting AI over human hiring. Artisan's ads, which urge businesses to replace humans with AI, feature the iconic image without credit or compensation.",
-      "image_alt": "AI art theft billboard with 'This is fine' image",
-      "status": "ok",
-      "attempted_at": "2026-05-03T20:27:11.963Z",
-      "enriched_at": "2026-05-03T20:27:11.963Z",
       "failure_count": 0
     },
     "https://techcrunch.com/2026/05/05/sap-bets-1-16b-on-18-month-old-german-ai-lab-and-says-yes-to-nemoclaw": {
@@ -6220,6 +6207,19 @@
       "attempted_at": "2026-06-16T07:05:45.584Z",
       "enriched_at": "2026-06-16T07:05:45.584Z",
       "failure_count": 0
+    },
+    "https://wired.com/story/facial-age-estimate-uk-asylum-seekers": {
+      "url": "https://wired.com/story/facial-age-estimate-uk-asylum-seekers",
+      "title": "The UK Will Scan Asylum-Seekers’ Faces for Age Checks—Despite Knowing the Tech Is Flawed",
+      "source_name": "WIRED AI",
+      "dek": "Reports on the UK government's deployment of facial age-verification technology despite internal evidence of high error rates.",
+      "brief": "Internal Home Office tests of age-verification technology show the risks of life-altering errors. It’s moving forward anyway.",
+      "image_url": "https://media.wired.com/photos/6a32f1cdd9e60209eb61b7f3/master/pass/GettyImages-2151441286.jpg",
+      "image_source": "rss_media",
+      "status": "failed",
+      "attempted_at": "2026-06-18T06:56:05.027Z",
+      "enriched_at": "2026-06-18T06:56:05.027Z",
+      "failure_count": 1
     },
     "https://wired.com/story/google-deepmind-workers-vote-to-unionize-over-military-ai-deals": {
       "url": "https://wired.com/story/google-deepmind-workers-vote-to-unionize-over-military-ai-deals",
