@@ -1434,17 +1434,6 @@
       "enriched_at": "2026-06-08T19:06:38.411Z",
       "failure_count": 0
     },
-    "https://aws.amazon.com/blogs/machine-learning/generate-dashboards-from-natural-language-prompts-in-amazon-quick": {
-      "url": "https://aws.amazon.com/blogs/machine-learning/generate-dashboards-from-natural-language-prompts-in-amazon-quick",
-      "title": "Generate dashboards from natural language prompts in Amazon Quick",
-      "source_name": "AWS Machine Learning Blog",
-      "dek": "AWS Amazon Quick generates dashboards from natural language prompts using datasets.",
-      "brief": "Building meaningful dashboards demands hours of manual setup, even for experienced BI professionals. Amazon Quick now generates complete multi-sheet dashboards from natural language prompts, taking you from one or more datasets to a production-ready analysis in minutes. Data analysts building recurring operations reports, program managers preparing a leadership review, or engineers exploring a new dataset can […]",
-      "status": "failed",
-      "attempted_at": "2026-05-04T18:51:59.281Z",
-      "enriched_at": "2026-05-04T18:51:59.281Z",
-      "failure_count": 1
-    },
     "https://aws.amazon.com/blogs/machine-learning/introducing-claude-platform-on-aws-anthropics-native-platform-through-your-aws-account": {
       "url": "https://aws.amazon.com/blogs/machine-learning/introducing-claude-platform-on-aws-anthropics-native-platform-through-your-aws-account",
       "title": "Introducing Claude Platform on AWS: Anthropic’s native platform, through your AWS account",
@@ -2161,6 +2150,20 @@
       "enriched_at": "2026-06-17T19:08:57.744Z",
       "failure_count": 0
     },
+    "https://developers.cloudflare.com/changelog/post/2026-06-19-outbound-connections-keep-dos-alive": {
+      "url": "https://developers.cloudflare.com/changelog/post/2026-06-19-outbound-connections-keep-dos-alive",
+      "title": "Durable Objects - Outbound connections keep Durable Objects alive",
+      "source_name": "Cloudflare AI Changelog",
+      "dek": "Cloudflare Durable Objects now persist for the duration of active outbound TCP or WebSocket connections.",
+      "brief": "Previously, Durable Objects were evicted after 70-140 seconds of inactivity, regardless of open outbound connections. This update prevents eviction while a connection is active, simplifying patterns like streaming LLM responses. Once all outbound connections close, the standard inactivity timer resumes.",
+      "image_url": "https://developers.cloudflare.com/_astro/outbound-connection-before.DpePflZI_1djzQi.svg",
+      "image_alt": "Diagram showing Durable Object lifecycle with active outbound connections",
+      "image_source": "rss_content",
+      "status": "ok",
+      "attempted_at": "2026-06-19T18:56:23.182Z",
+      "enriched_at": "2026-06-19T18:56:23.182Z",
+      "failure_count": 0
+    },
     "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli": {
       "url": "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli",
       "title": "Gemini CLI will stop working from June 18, 2026",
@@ -2519,20 +2522,6 @@
       "attempted_at": "2026-06-14T12:57:54.916Z",
       "enriched_at": "2026-06-14T12:57:54.916Z",
       "failure_count": 1
-    },
-    "https://infoq.com/articles/micro-batch-streaming-lessons-learned": {
-      "url": "https://infoq.com/articles/micro-batch-streaming-lessons-learned",
-      "title": "Article: From Batch to Micro-Batch Streaming: Lessons Learned the Hard Way in a Delta Index Pipeline",
-      "source_name": "InfoQ AI/ML/Data",
-      "dek": "Delta index pipeline migrates from batch to micro-batch streaming with Spark.",
-      "brief": "A production delta-index pipeline transitioned from scheduled batch to micro-batch Spark Structured Streaming. The shift reduced latency without record-level streaming, using partition-based watermarks and overlap-window logic to handle S3 consistency issues. Restart-as-design strategies improved predictability in object-store systems.",
-      "image_url": "https://res.infoq.com/articles/micro-batch-streaming-lessons-learned/en/headerimage/micro-batch-streaming-lessons-learned-header-1777381781538.jpg",
-      "image_alt": "Spark micro-batch pipeline architecture diagram",
-      "image_source": "rss_content",
-      "status": "ok",
-      "attempted_at": "2026-05-04T18:51:59.281Z",
-      "enriched_at": "2026-05-04T18:51:59.281Z",
-      "failure_count": 0
     },
     "https://infoq.com/news/2026/05/arm-metis-agentic-security": {
       "url": "https://infoq.com/news/2026/05/arm-metis-agentic-security",
@@ -4064,6 +4053,18 @@
       "status": "ok",
       "attempted_at": "2026-06-19T06:58:12.694Z",
       "enriched_at": "2026-06-19T06:58:12.694Z",
+      "failure_count": 0
+    },
+    "https://old.reddit.com/r/LocalLLaMA/comments/1u9mpty/glm52_744b_2bit_at_73_toks_on_43090_192gb_and_why": {
+      "url": "https://old.reddit.com/r/LocalLLaMA/comments/1u9mpty/glm52_744b_2bit_at_73_toks_on_43090_192gb_and_why",
+      "title": "GLM-5.2 (744B, 2-bit) at 7.3 tok/s on 4×3090 + 192GB — and why IQ1_M wasn't any faster",
+      "source_name": "r/LocalLLaMA",
+      "dek": "GLM-5.2 (744B) achieves 7.3 tok/s on a 4x3090 setup using expert offloading.",
+      "brief": "Testing shows that reducing quantization from IQ2_M to IQ1_M provides no speed improvement for this model, suggesting the bottleneck lies elsewhere. Increasing CPU threads for expert offloading yielded a 22% performance gain, highlighting the importance of CPU throughput in memory-constrained multi-GPU inference.",
+      "image_alt": "Hardware setup showing four RTX 3090 GPUs",
+      "status": "ok",
+      "attempted_at": "2026-06-19T18:56:23.182Z",
+      "enriched_at": "2026-06-19T18:56:23.182Z",
       "failure_count": 0
     },
     "https://old.reddit.com/r/MachineLearning/comments/1t5zdg5/meta_superintelligence_lab_presents_programbench": {
