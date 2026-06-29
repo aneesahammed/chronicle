@@ -13,6 +13,20 @@
       "enriched_at": "2026-06-05T18:57:01.379Z",
       "failure_count": 0
     },
+    "https://allenai.org/blog/discoformer": {
+      "url": "https://allenai.org/blog/discoformer",
+      "title": "DiScoFormer: One transformer for density and score, across distributions",
+      "source_name": "Ai2 Blog",
+      "dek": "DiScoFormer estimates density and score in a single forward pass, generalizing KDE for high-dimensional and out-of-distribution tasks.",
+      "brief": "DiScoFormer is a transformer-based estimator that recovers probability distributions from finite samples. By outputting both density and score—the gradient of log-density—in one pass, it avoids the need for retraining across different distributions. This approach improves efficiency in high-dimensional settings where traditional kernel density estimation struggles.",
+      "image_url": "https://www.datocms-assets.com/64837/1782498609-discoformer-one-transformer-for-density-and-score-across-distributions-google-image-1.png?w=200",
+      "image_alt": "Diagram showing DiScoFormer architecture processing data points into density and score outputs",
+      "image_source": "rss_content",
+      "status": "ok",
+      "attempted_at": "2026-06-29T18:58:10.479Z",
+      "enriched_at": "2026-06-29T18:58:10.479Z",
+      "failure_count": 0
+    },
     "https://allenai.org/blog/hybrid-token-prediction": {
       "url": "https://allenai.org/blog/hybrid-token-prediction",
       "title": "Which tokens does a hybrid model predict better?",
@@ -418,18 +432,6 @@
       "status": "ok",
       "attempted_at": "2026-06-23T06:34:17.074Z",
       "enriched_at": "2026-06-23T06:34:17.074Z",
-      "failure_count": 0
-    },
-    "https://arxiv.org/abs/2605.10947": {
-      "url": "https://arxiv.org/abs/2605.10947",
-      "title": "Interpretable EEG Microstate Discovery via Variational Deep Embedding: A Systematic Architecture Search with Multi-Quadrant Evaluation",
-      "source_name": "arXiv cs.LG",
-      "dek": "New method uses variational deep embedding to analyze EEG microstates",
-      "brief": "Researchers propose a variational deep embedding approach to discover interpretable EEG microstates. Traditional methods like Modified K-Means lack generative models and latent representations. This framework introduces a decoder to reconstruct scalp topographies from learned latent states, improving interpretability and functional brain state analysis.",
-      "image_alt": "EEG brain activity visualization with variational model components",
-      "status": "ok",
-      "attempted_at": "2026-05-13T06:26:53.382Z",
-      "enriched_at": "2026-05-13T06:26:53.382Z",
       "failure_count": 0
     },
     "https://arxiv.org/abs/2605.12460": {
@@ -1669,18 +1671,6 @@
       "enriched_at": "2026-06-04T19:05:12.634Z",
       "failure_count": 0
     },
-    "https://deepmind.google/blog/ai-pointer": {
-      "url": "https://deepmind.google/blog/ai-pointer",
-      "title": "Reimagining the mouse pointer for the AI era",
-      "source_name": "Hacker News (AI-filtered)",
-      "dek": "DeepMind rethinks mouse pointers for AI interaction efficiency.",
-      "brief": "DeepMind proposes 'pointer engineering' to optimize AI-human interaction. The approach adapts traditional pointer mechanics for AI systems, aiming to improve task navigation and reduce cognitive load during complex workflows.",
-      "image_alt": "AI interaction pointer design on a digital interface",
-      "status": "ok",
-      "attempted_at": "2026-05-13T13:03:13.906Z",
-      "enriched_at": "2026-05-13T13:03:13.906Z",
-      "failure_count": 0
-    },
     "https://deepmind.google/blog/diffusiongemma-4x-faster-text-generation": {
       "url": "https://deepmind.google/blog/diffusiongemma-4x-faster-text-generation",
       "title": "DiffusionGemma: 4x faster text generation",
@@ -2367,6 +2357,18 @@
       "status": "ok",
       "attempted_at": "2026-05-30T06:25:59.920Z",
       "enriched_at": "2026-05-30T06:25:59.920Z",
+      "failure_count": 0
+    },
+    "https://github.com/JustVugg/nanoeuler": {
+      "url": "https://github.com/JustVugg/nanoeuler",
+      "title": "Show HN: NanoEuler – GPT-2 scale model in pure C/CUDA from scratch",
+      "source_name": "Show HN (AI-filtered)",
+      "dek": "NanoEuler is a GPT-2 scale LLM implemented from scratch in pure C and CUDA without external ML libraries.",
+      "brief": "NanoEuler provides a complete, from-scratch implementation of a 116M-parameter language model. It includes a hand-written BPE tokenizer, custom FlashAttention, and manual backpropagation. The project supports both CPU training via OpenMP and GPU training via a custom CUDA engine, demonstrating a full training pipeline without PyTorch or autograd.",
+      "image_alt": "Code snippet showing custom CUDA kernel implementation for LLM training",
+      "status": "ok",
+      "attempted_at": "2026-06-29T18:58:10.479Z",
+      "enriched_at": "2026-06-29T18:58:10.479Z",
       "failure_count": 0
     },
     "https://github.com/kageroumado/adrafinil": {
@@ -4196,20 +4198,6 @@
       "enriched_at": "2026-06-29T13:47:46.460Z",
       "failure_count": 0
     },
-    "https://old.reddit.com/r/MachineLearning/comments/1tbxbfp/elastic_attention_cores_for_scalable_vision": {
-      "url": "https://old.reddit.com/r/MachineLearning/comments/1tbxbfp/elastic_attention_cores_for_scalable_vision",
-      "title": "Elastic Attention Cores for Scalable Vision Transformers [R]",
-      "source_name": "r/MachineLearning",
-      "dek": "New vision transformer architecture improves scalability and efficiency.",
-      "brief": "Researchers introduce Elastic Attention Cores, a block-sparse attention structure for vision transformers. The design reduces computational costs from O(N²) to O(2NC + C²), enabling high-resolution image processing with dense feature extraction.",
-      "image_url": "https://preview.redd.it/zjea47ez7w0h1.png?width=140&height=140&crop=1:1,smart&auto=webp&s=2017a3d330a172670baae5645ddff3137bbe1df6",
-      "image_alt": "Vision Transformer architecture diagram with attention patterns",
-      "image_source": "rss_media",
-      "status": "ok",
-      "attempted_at": "2026-05-13T13:03:13.906Z",
-      "enriched_at": "2026-05-13T13:03:13.906Z",
-      "failure_count": 0
-    },
     "https://old.reddit.com/r/MachineLearning/comments/1tcl9ud/webharbor_we_dock_the_real_websites_into_local": {
       "url": "https://old.reddit.com/r/MachineLearning/comments/1tcl9ud/webharbor_we_dock_the_real_websites_into_local",
       "title": "WebHarbor - We \"dock\" the real websites into local for web agents! [R]",
@@ -4520,6 +4508,18 @@
       "status": "ok",
       "attempted_at": "2026-06-24T13:05:36.550Z",
       "enriched_at": "2026-06-24T13:05:36.550Z",
+      "failure_count": 0
+    },
+    "https://old.reddit.com/r/MachineLearning/comments/1uipl1t/eml_trees_are_universal_approximators_r": {
+      "url": "https://old.reddit.com/r/MachineLearning/comments/1uipl1t/eml_trees_are_universal_approximators_r",
+      "title": "EML Trees are Universal Approximators [R]",
+      "source_name": "r/MachineLearning",
+      "dek": "A new mathematical proof establishes that EML-type trees function as universal approximators.",
+      "brief": "Recent research demonstrates that EML trees, which represent elementary functions through composition, satisfy the conditions for universal approximation. By proving that these structures can approximate polynomials, the authors show that EML-type trees are dense in function spaces, providing a theoretical foundation for their use in approximation tasks.",
+      "image_alt": "Mathematical visualization of function approximation using tree-based structures",
+      "status": "ok",
+      "attempted_at": "2026-06-29T18:58:10.479Z",
+      "enriched_at": "2026-06-29T18:58:10.479Z",
       "failure_count": 0
     },
     "https://openai.com/index/advancing-content-provenance": {
@@ -5212,18 +5212,6 @@
       "enriched_at": "2026-06-21T18:49:42.783Z",
       "failure_count": 0
     },
-    "https://techcrunch.com/2026/05/13/adaption-aims-big-with-autoscientist-an-ai-tool-that-helps-models-train-themselves": {
-      "url": "https://techcrunch.com/2026/05/13/adaption-aims-big-with-autoscientist-an-ai-tool-that-helps-models-train-themselves",
-      "title": "Adaption aims big with AutoScientist, an AI tool that helps models train themselves",
-      "source_name": "TechCrunch AI",
-      "dek": "Adaption's AutoScientist automates model training for specific tasks.",
-      "brief": "Adaption introduces AutoScientist, an AI tool that streamlines model adaptation through automated fine-tuning. It enables rapid customization of models for niche capabilities without manual intervention, reducing training time and resource use.",
-      "image_alt": "AI model training interface with automated workflows",
-      "status": "ok",
-      "attempted_at": "2026-05-13T13:03:13.906Z",
-      "enriched_at": "2026-05-13T13:03:13.906Z",
-      "failure_count": 0
-    },
     "https://techcrunch.com/2026/05/16/research-repository-arxiv-will-ban-authors-for-a-year-if-they-let-ai-do-all-the-work": {
       "url": "https://techcrunch.com/2026/05/16/research-repository-arxiv-will-ban-authors-for-a-year-if-they-let-ai-do-all-the-work",
       "title": "Research repository ArXiv will ban authors for a year if they let AI do all the work",
@@ -5776,6 +5764,20 @@
       "status": "ok",
       "attempted_at": "2026-05-30T18:40:53.709Z",
       "enriched_at": "2026-05-30T18:40:53.709Z",
+      "failure_count": 0
+    },
+    "https://the-decoder.com/meta-restricts-use-of-claude-code-and-codex-to-keep-rival-ai-out-of-its-training-data": {
+      "url": "https://the-decoder.com/meta-restricts-use-of-claude-code-and-codex-to-keep-rival-ai-out-of-its-training-data",
+      "title": "Meta restricts use of Claude Code and Codex to keep rival AI out of its training data",
+      "source_name": "The Decoder",
+      "dek": "Meta is restricting internal use of Claude Code and Codex to prevent model distillation and data contamination.",
+      "brief": "Meta has limited its engineers' access to third-party coding assistants like Claude Code and Codex. The company aims to prevent the accidental inclusion of rival model outputs in its own training data, a process known as distillation. Meta is currently developing its own internal coding assistant, MetaCode.",
+      "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/Code-Agent-Harness-Nano-Banana-Pro.jpg",
+      "image_alt": "Conceptual graphic representing data security and AI model training boundaries",
+      "image_source": "rss_content",
+      "status": "ok",
+      "attempted_at": "2026-06-29T18:58:10.479Z",
+      "enriched_at": "2026-06-29T18:58:10.479Z",
       "failure_count": 0
     },
     "https://the-decoder.com/microsoft-pulls-claude-code-licenses-and-pushes-developers-back-toward-its-own-ai-tool": {
