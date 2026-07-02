@@ -1,81 +1,112 @@
 {
-  "generated_at": "2026-07-01T18:57:18.034Z",
+  "generated_at": "2026-07-02T06:28:19.665Z",
   "last_successful_generated_at": "2026-07-01T18:57:18.034Z",
-  "refresh_status": "ok",
+  "refresh_status": "failed",
   "classification_mode": "deterministic",
   "window_hours": 720,
   "source_total": 7,
-  "source_ok": 7,
-  "source_failed": 0,
-  "failed_sources": [],
-  "source_health": [
+  "source_ok": 0,
+  "source_failed": 7,
+  "failed_sources": [
     {
       "id": "yt_deeplearning_ai",
       "name": "DeepLearning.AI YouTube",
-      "status": "ok",
-      "fetched_count": 8,
-      "fresh_count": 2,
-      "stale_count": 6,
-      "oldest_published_at": "2026-05-22T16:44:30.000Z",
-      "newest_published_at": "2026-06-17T15:00:38.000Z"
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCcIXc5mJsHVYTZR1maL5l9w"
     },
     {
       "id": "yt_google_deepmind",
       "name": "Google DeepMind YouTube",
-      "status": "ok",
-      "fetched_count": 2,
-      "fresh_count": 1,
-      "stale_count": 1,
-      "oldest_published_at": "2026-04-09T13:27:40.000Z",
-      "newest_published_at": "2026-06-23T15:48:06.000Z"
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCP7jMXSY2xbc3KCAE0MHQ-A"
     },
     {
       "id": "yt_openai",
       "name": "OpenAI YouTube",
-      "status": "ok",
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A"
+    },
+    {
+      "id": "yt_nvidia_developer",
+      "name": "NVIDIA Developer YouTube",
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCBHcMCGaiJhv-ESTcWGJPcw"
+    },
+    {
+      "id": "yt_huggingface",
+      "name": "Hugging Face YouTube",
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCHlNU7kIZhRgSbhHvFoy72w"
+    },
+    {
+      "id": "yt_google_developers",
+      "name": "Google for Developers YouTube",
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UC_x5XG1OV2P6uZZ5FSM9Ttw"
+    },
+    {
+      "id": "yt_microsoft_365_developer",
+      "name": "Microsoft 365 Developer YouTube",
+      "message": "HTTP 500 Internal Server Error - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 500 (Server Error)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,s - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCV_6HOhwxYLXAGd-JOqKPoQ"
+    }
+  ],
+  "source_health": [
+    {
+      "id": "yt_deeplearning_ai",
+      "name": "DeepLearning.AI YouTube",
+      "status": "failed",
       "fetched_count": 0,
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCcIXc5mJsHVYTZR1maL5l9w",
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "yt_google_deepmind",
+      "name": "Google DeepMind YouTube",
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCP7jMXSY2xbc3KCAE0MHQ-A",
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "yt_openai",
+      "name": "OpenAI YouTube",
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A",
       "fresh_count": 0,
       "stale_count": 0
     },
     {
       "id": "yt_nvidia_developer",
       "name": "NVIDIA Developer YouTube",
-      "status": "ok",
-      "fetched_count": 5,
-      "fresh_count": 5,
-      "stale_count": 0,
-      "oldest_published_at": "2026-06-15T22:00:20.000Z",
-      "newest_published_at": "2026-07-01T16:00:06.000Z"
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCBHcMCGaiJhv-ESTcWGJPcw",
+      "fresh_count": 0,
+      "stale_count": 0
     },
     {
       "id": "yt_huggingface",
       "name": "Hugging Face YouTube",
-      "status": "ok",
-      "fetched_count": 4,
-      "fresh_count": 4,
-      "stale_count": 0,
-      "oldest_published_at": "2026-06-02T16:43:34.000Z",
-      "newest_published_at": "2026-06-29T09:00:36.000Z"
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCHlNU7kIZhRgSbhHvFoy72w",
+      "fresh_count": 0,
+      "stale_count": 0
     },
     {
       "id": "yt_google_developers",
       "name": "Google for Developers YouTube",
-      "status": "ok",
-      "fetched_count": 2,
-      "fresh_count": 2,
-      "stale_count": 0,
-      "oldest_published_at": "2026-06-22T23:00:03.000Z",
-      "newest_published_at": "2026-06-25T16:00:16.000Z"
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UC_x5XG1OV2P6uZZ5FSM9Ttw",
+      "fresh_count": 0,
+      "stale_count": 0
     },
     {
       "id": "yt_microsoft_365_developer",
       "name": "Microsoft 365 Developer YouTube",
-      "status": "ok",
-      "fetched_count": 1,
-      "fresh_count": 1,
-      "stale_count": 0,
-      "oldest_published_at": "2026-06-10T22:00:43.000Z",
-      "newest_published_at": "2026-06-10T22:00:43.000Z"
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 500 Internal Server Error - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 500 (Server Error)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,s - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCV_6HOhwxYLXAGd-JOqKPoQ",
+      "fresh_count": 0,
+      "stale_count": 0
     }
   ],
   "count": 15,
