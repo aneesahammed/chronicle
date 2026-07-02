@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-02T14:28:59.026Z",
-  "last_successful_generated_at": "2026-07-02T14:28:59.026Z",
+  "generated_at": "2026-07-02T19:51:39.835Z",
+  "last_successful_generated_at": "2026-07-02T19:51:39.835Z",
   "refresh_status": "ok",
   "classification_mode": "deterministic",
   "window_hours": 720,
@@ -44,16 +44,16 @@
       "fetched_count": 5,
       "fresh_count": 5,
       "stale_count": 0,
-      "oldest_published_at": "2026-06-15T22:00:20.000Z",
-      "newest_published_at": "2026-07-01T16:00:06.000Z"
+      "oldest_published_at": "2026-06-29T23:02:36.000Z",
+      "newest_published_at": "2026-07-02T16:00:15.000Z"
     },
     {
       "id": "yt_huggingface",
       "name": "Hugging Face YouTube",
       "status": "ok",
       "fetched_count": 4,
-      "fresh_count": 4,
-      "stale_count": 0,
+      "fresh_count": 3,
+      "stale_count": 1,
       "oldest_published_at": "2026-06-02T16:43:34.000Z",
       "newest_published_at": "2026-06-29T09:00:36.000Z"
     },
@@ -78,8 +78,80 @@
       "newest_published_at": "2026-06-10T22:00:43.000Z"
     }
   ],
-  "count": 15,
+  "count": 14,
   "clusters": [
+    {
+      "id": "k58228",
+      "primary": {
+        "id": "k58228",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "Securing Long-Running AI Agents: From Setup to Sandboxing",
+        "url": "https://youtube.com/watch?v=rLjQDi-hHk4",
+        "original_url": "https://www.youtube.com/watch?v=rLjQDi-hHk4",
+        "image_url": "https://i.ytimg.com/vi/rLjQDi-hHk4/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-07-02T16:00:15.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "rLjQDi-hHk4"
+        }
+      },
+      "members": [
+        {
+          "id": "k58228",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "Securing Long-Running AI Agents: From Setup to Sandboxing",
+          "url": "https://youtube.com/watch?v=rLjQDi-hHk4",
+          "original_url": "https://www.youtube.com/watch?v=rLjQDi-hHk4",
+          "image_url": "https://i.ytimg.com/vi/rLjQDi-hHk4/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-07-02T16:00:15.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "rLjQDi-hHk4"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "Securing Long-Running AI Agents: From Setup to Sandboxing",
+          "url": "https://youtube.com/watch?v=rLjQDi-hHk4",
+          "published_at": "2026-07-02T16:00:15.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.777,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.769,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
     {
       "id": "hcezvx",
       "primary": {
@@ -144,78 +216,7 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.78,
-      "score": 0.505,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "1o2ivdx",
-      "primary": {
-        "id": "1o2ivdx",
-        "source_id": "yt_nvidia_developer",
-        "source_name": "NVIDIA Developer YouTube",
-        "source_role": "learning",
-        "trust": 0.78,
-        "kind_hint": "video",
-        "title": "Continual Learning for Long-Running Agents: Agents That Keep Getting Better",
-        "url": "https://youtube.com/watch?v=SVWmuJx0hHM",
-        "original_url": "https://www.youtube.com/watch?v=SVWmuJx0hHM",
-        "image_url": "https://i.ytimg.com/vi/SVWmuJx0hHM/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-07-01T00:00:31.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-          "video_id": "SVWmuJx0hHM"
-        }
-      },
-      "members": [
-        {
-          "id": "1o2ivdx",
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "source_role": "learning",
-          "trust": 0.78,
-          "kind_hint": "video",
-          "title": "Continual Learning for Long-Running Agents: Agents That Keep Getting Better",
-          "url": "https://youtube.com/watch?v=SVWmuJx0hHM",
-          "original_url": "https://www.youtube.com/watch?v=SVWmuJx0hHM",
-          "image_url": "https://i.ytimg.com/vi/SVWmuJx0hHM/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-07-01T00:00:31.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-            "video_id": "SVWmuJx0hHM"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "title": "Continual Learning for Long-Running Agents: Agents That Keep Getting Better",
-          "url": "https://youtube.com/watch?v=SVWmuJx0hHM",
-          "published_at": "2026-07-01T00:00:31.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.479,
+      "score": 0.496,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -294,48 +295,48 @@
       "builder_action": "Queue it for focused learning if the topic matches your current work."
     },
     {
-      "id": "1lnpek1",
+      "id": "1o2ivdx",
       "primary": {
-        "id": "1lnpek1",
+        "id": "1o2ivdx",
         "source_id": "yt_nvidia_developer",
         "source_name": "NVIDIA Developer YouTube",
         "source_role": "learning",
         "trust": 0.78,
         "kind_hint": "video",
-        "title": "Long-Running AI Agents: The Next Breakthrough in Enterprise Work",
-        "url": "https://youtube.com/watch?v=NHVtXHUcVXE",
-        "original_url": "https://www.youtube.com/watch?v=NHVtXHUcVXE",
-        "image_url": "https://i.ytimg.com/vi/NHVtXHUcVXE/hqdefault.jpg",
+        "title": "Continual Learning for Long-Running Agents: Agents That Keep Getting Better",
+        "url": "https://youtube.com/watch?v=SVWmuJx0hHM",
+        "original_url": "https://www.youtube.com/watch?v=SVWmuJx0hHM",
+        "image_url": "https://i.ytimg.com/vi/SVWmuJx0hHM/hqdefault.jpg",
         "image_source": "youtube_thumbnail",
-        "published_at": "2026-06-30T19:42:08.000Z",
+        "published_at": "2026-07-01T00:00:31.000Z",
         "published_at_source": "feed",
         "date_confidence": "high",
         "learning": {
           "provider": "YouTube",
           "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-          "video_id": "NHVtXHUcVXE"
+          "video_id": "SVWmuJx0hHM"
         }
       },
       "members": [
         {
-          "id": "1lnpek1",
+          "id": "1o2ivdx",
           "source_id": "yt_nvidia_developer",
           "source_name": "NVIDIA Developer YouTube",
           "source_role": "learning",
           "trust": 0.78,
           "kind_hint": "video",
-          "title": "Long-Running AI Agents: The Next Breakthrough in Enterprise Work",
-          "url": "https://youtube.com/watch?v=NHVtXHUcVXE",
-          "original_url": "https://www.youtube.com/watch?v=NHVtXHUcVXE",
-          "image_url": "https://i.ytimg.com/vi/NHVtXHUcVXE/hqdefault.jpg",
+          "title": "Continual Learning for Long-Running Agents: Agents That Keep Getting Better",
+          "url": "https://youtube.com/watch?v=SVWmuJx0hHM",
+          "original_url": "https://www.youtube.com/watch?v=SVWmuJx0hHM",
+          "image_url": "https://i.ytimg.com/vi/SVWmuJx0hHM/hqdefault.jpg",
           "image_source": "youtube_thumbnail",
-          "published_at": "2026-06-30T19:42:08.000Z",
+          "published_at": "2026-07-01T00:00:31.000Z",
           "published_at_source": "feed",
           "date_confidence": "high",
           "learning": {
             "provider": "YouTube",
             "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-            "video_id": "NHVtXHUcVXE"
+            "video_id": "SVWmuJx0hHM"
           }
         }
       ],
@@ -343,9 +344,9 @@
         {
           "source_id": "yt_nvidia_developer",
           "source_name": "NVIDIA Developer YouTube",
-          "title": "Long-Running AI Agents: The Next Breakthrough in Enterprise Work",
-          "url": "https://youtube.com/watch?v=NHVtXHUcVXE",
-          "published_at": "2026-06-30T19:42:08.000Z",
+          "title": "Continual Learning for Long-Running Agents: Agents That Keep Getting Better",
+          "url": "https://youtube.com/watch?v=SVWmuJx0hHM",
+          "published_at": "2026-07-01T00:00:31.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -357,7 +358,7 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.78,
-      "score": 0.471,
+      "score": 0.47,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -507,6 +508,77 @@
       "builder_action": "Queue it for focused learning if the topic matches your current work."
     },
     {
+      "id": "1lnpek1",
+      "primary": {
+        "id": "1lnpek1",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "Long-Running AI Agents: The Next Breakthrough in Enterprise Work",
+        "url": "https://youtube.com/watch?v=NHVtXHUcVXE",
+        "original_url": "https://www.youtube.com/watch?v=NHVtXHUcVXE",
+        "image_url": "https://i.ytimg.com/vi/NHVtXHUcVXE/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-06-30T19:42:08.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "NHVtXHUcVXE"
+        }
+      },
+      "members": [
+        {
+          "id": "1lnpek1",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "Long-Running AI Agents: The Next Breakthrough in Enterprise Work",
+          "url": "https://youtube.com/watch?v=NHVtXHUcVXE",
+          "original_url": "https://www.youtube.com/watch?v=NHVtXHUcVXE",
+          "image_url": "https://i.ytimg.com/vi/NHVtXHUcVXE/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-06-30T19:42:08.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "NHVtXHUcVXE"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "Long-Running AI Agents: The Next Breakthrough in Enterprise Work",
+          "url": "https://youtube.com/watch?v=NHVtXHUcVXE",
+          "published_at": "2026-06-30T19:42:08.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.463,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
       "id": "1qyxod3",
       "primary": {
         "id": "1qyxod3",
@@ -559,77 +631,6 @@
           "title": "How NVIDIA Blackwell and NVIDIA Dynamo Scale AI Agents for Production",
           "url": "https://youtube.com/watch?v=XIPhod81elg",
           "published_at": "2026-06-29T23:02:36.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.463,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "fu1og4",
-      "primary": {
-        "id": "fu1og4",
-        "source_id": "yt_nvidia_developer",
-        "source_name": "NVIDIA Developer YouTube",
-        "source_role": "learning",
-        "trust": 0.78,
-        "kind_hint": "video",
-        "title": "Local Agents on Jetson: OpenClaw, NemoClaw, and AI You Can Build Into Daily Life",
-        "url": "https://youtube.com/watch?v=dgy7VxTe0ao",
-        "original_url": "https://www.youtube.com/watch?v=dgy7VxTe0ao",
-        "image_url": "https://i.ytimg.com/vi/dgy7VxTe0ao/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-06-15T22:00:20.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-          "video_id": "dgy7VxTe0ao"
-        }
-      },
-      "members": [
-        {
-          "id": "fu1og4",
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "source_role": "learning",
-          "trust": 0.78,
-          "kind_hint": "video",
-          "title": "Local Agents on Jetson: OpenClaw, NemoClaw, and AI You Can Build Into Daily Life",
-          "url": "https://youtube.com/watch?v=dgy7VxTe0ao",
-          "original_url": "https://www.youtube.com/watch?v=dgy7VxTe0ao",
-          "image_url": "https://i.ytimg.com/vi/dgy7VxTe0ao/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-06-15T22:00:20.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-            "video_id": "dgy7VxTe0ao"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "title": "Local Agents on Jetson: OpenClaw, NemoClaw, and AI You Can Build Into Daily Life",
-          "url": "https://youtube.com/watch?v=dgy7VxTe0ao",
-          "published_at": "2026-06-15T22:00:20.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -843,77 +844,6 @@
           "title": "Train AI Robots Without Writing Code! (Introducing LeLab)",
           "url": "https://youtube.com/watch?v=VqyKUuW9V1g",
           "published_at": "2026-06-03T14:30:19.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.463,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "pobacj",
-      "primary": {
-        "id": "pobacj",
-        "source_id": "yt_huggingface",
-        "source_name": "Hugging Face YouTube",
-        "source_role": "learning",
-        "trust": 0.78,
-        "kind_hint": "video",
-        "title": "How to Create an LLM Dataset | FineWeb Overview",
-        "url": "https://youtube.com/watch?v=vB9pHTZKoGQ",
-        "original_url": "https://www.youtube.com/watch?v=vB9pHTZKoGQ",
-        "image_url": "https://i.ytimg.com/vi/vB9pHTZKoGQ/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-06-02T16:43:34.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
-          "video_id": "vB9pHTZKoGQ"
-        }
-      },
-      "members": [
-        {
-          "id": "pobacj",
-          "source_id": "yt_huggingface",
-          "source_name": "Hugging Face YouTube",
-          "source_role": "learning",
-          "trust": 0.78,
-          "kind_hint": "video",
-          "title": "How to Create an LLM Dataset | FineWeb Overview",
-          "url": "https://youtube.com/watch?v=vB9pHTZKoGQ",
-          "original_url": "https://www.youtube.com/watch?v=vB9pHTZKoGQ",
-          "image_url": "https://i.ytimg.com/vi/vB9pHTZKoGQ/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-06-02T16:43:34.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
-            "video_id": "vB9pHTZKoGQ"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_huggingface",
-          "source_name": "Hugging Face YouTube",
-          "title": "How to Create an LLM Dataset | FineWeb Overview",
-          "url": "https://youtube.com/watch?v=vB9pHTZKoGQ",
-          "published_at": "2026-06-02T16:43:34.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
