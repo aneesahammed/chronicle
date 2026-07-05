@@ -1,22 +1,27 @@
 {
-  "generated_at": "2026-07-05T08:17:16.918Z",
-  "last_successful_generated_at": "2026-07-05T08:17:16.918Z",
+  "generated_at": "2026-07-05T14:09:05.802Z",
+  "last_successful_generated_at": "2026-07-05T14:09:05.802Z",
   "refresh_status": "partial",
   "classification_mode": "llm",
   "window_hours": 36,
   "source_total": 53,
-  "source_ok": 50,
-  "source_failed": 3,
+  "source_ok": 49,
+  "source_failed": 4,
   "failed_sources": [
+    {
+      "id": "marktechpost",
+      "name": "MarkTechPost",
+      "message": "Invalid character in entity name\nLine: 0\nColumn: 117\nChar: ="
+    },
     {
       "id": "r_localllama",
       "name": "r/LocalLLaMA",
-      "message": "HTTP 429 Too Many Requests - url=https://old.reddit.com/r/LocalLLaMA/top/.rss?t=day"
+      "message": "HTTP 403 Blocked - <body class=theme-beta><div><style>.theme-light,:root{--rem360:22.5rem;--rem320:20rem;--rem192:12rem;--rem144:9rem;--rem128:8rem;--rem96:6rem;--rem90:5.625rem;--rem88:5.5rem;--rem64:4rem;--rem56:3.5rem;--rem48:3rem;--rem40:2.5rem;--rem36:2. - url=https://old.reddit.com/r/LocalLLaMA/top/.rss?t=day"
     },
     {
       "id": "r_ml",
       "name": "r/MachineLearning",
-      "message": "HTTP 403 Blocked - <body class=theme-beta><div><style>.theme-light,:root{--rem360:22.5rem;--rem320:20rem;--rem192:12rem;--rem144:9rem;--rem128:8rem;--rem96:6rem;--rem90:5.625rem;--rem88:5.5rem;--rem64:4rem;--rem56:3.5rem;--rem48:3rem;--rem40:2.5rem;--rem36:2. - url=https://old.reddit.com/r/MachineLearning/top/.rss?t=day"
+      "message": "HTTP 429 Too Many Requests - url=https://old.reddit.com/r/MachineLearning/top/.rss?t=day"
     },
     {
       "id": "mistral",
@@ -56,8 +61,8 @@
       "name": "Hugging Face trending models",
       "status": "ok",
       "fetched_count": 20,
-      "fresh_count": 1,
-      "stale_count": 19,
+      "fresh_count": 0,
+      "stale_count": 20,
       "oldest_published_at": "2026-03-02T20:05:49.000Z",
       "newest_published_at": "2026-07-03T21:55:50.000Z"
     },
@@ -66,8 +71,8 @@
       "name": "Simon Willison",
       "status": "ok",
       "fetched_count": 7,
-      "fresh_count": 2,
-      "stale_count": 5,
+      "fresh_count": 1,
+      "stale_count": 6,
       "oldest_published_at": "2026-06-30T17:39:23.000Z",
       "newest_published_at": "2026-07-05T01:00:48.000Z"
     },
@@ -206,8 +211,8 @@
       "name": "TechCrunch AI",
       "status": "ok",
       "fetched_count": 12,
-      "fresh_count": 5,
-      "stale_count": 7,
+      "fresh_count": 4,
+      "stale_count": 8,
       "oldest_published_at": "2026-07-02T13:53:00.000Z",
       "newest_published_at": "2026-07-04T20:55:25.000Z"
     },
@@ -216,10 +221,10 @@
       "name": "The Decoder",
       "status": "ok",
       "fetched_count": 10,
-      "fresh_count": 7,
-      "stale_count": 3,
-      "oldest_published_at": "2026-07-03T16:49:47.000Z",
-      "newest_published_at": "2026-07-05T07:52:17.000Z"
+      "fresh_count": 10,
+      "stale_count": 0,
+      "oldest_published_at": "2026-07-04T07:12:47.000Z",
+      "newest_published_at": "2026-07-05T10:45:46.000Z"
     },
     {
       "id": "mit_tech_review_ai",
@@ -246,10 +251,10 @@
       "name": "InfoQ AI/ML/Data",
       "status": "ok",
       "fetched_count": 7,
-      "fresh_count": 0,
-      "stale_count": 7,
-      "oldest_published_at": "2026-06-29T14:26:00.000Z",
-      "newest_published_at": "2026-07-03T14:29:00.000Z"
+      "fresh_count": 1,
+      "stale_count": 6,
+      "oldest_published_at": "2026-06-30T13:00:00.000Z",
+      "newest_published_at": "2026-07-05T08:13:00.000Z"
     },
     {
       "id": "stackoverflow_blog",
@@ -304,22 +309,21 @@
     {
       "id": "marktechpost",
       "name": "MarkTechPost",
-      "status": "ok",
-      "fetched_count": 9,
-      "fresh_count": 7,
-      "stale_count": 2,
-      "oldest_published_at": "2026-07-03T03:24:23.000Z",
-      "newest_published_at": "2026-07-05T07:50:19.000Z"
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "Invalid character in entity name\nLine: 0\nColumn: 117\nChar: =",
+      "fresh_count": 0,
+      "stale_count": 0
     },
     {
       "id": "hn_ai",
       "name": "Hacker News (AI-filtered)",
       "status": "ok",
-      "fetched_count": 1,
-      "fresh_count": 1,
+      "fetched_count": 3,
+      "fresh_count": 3,
       "stale_count": 0,
       "oldest_published_at": "2026-07-04T21:51:09.000Z",
-      "newest_published_at": "2026-07-04T21:51:09.000Z"
+      "newest_published_at": "2026-07-05T08:43:37.000Z"
     },
     {
       "id": "hn_show_ai",
@@ -344,7 +348,7 @@
       "name": "r/LocalLLaMA",
       "status": "failed",
       "fetched_count": 0,
-      "message": "HTTP 429 Too Many Requests - url=https://old.reddit.com/r/LocalLLaMA/top/.rss?t=day",
+      "message": "HTTP 403 Blocked - <body class=theme-beta><div><style>.theme-light,:root{--rem360:22.5rem;--rem320:20rem;--rem192:12rem;--rem144:9rem;--rem128:8rem;--rem96:6rem;--rem90:5.625rem;--rem88:5.5rem;--rem64:4rem;--rem56:3.5rem;--rem48:3rem;--rem40:2.5rem;--rem36:2. - url=https://old.reddit.com/r/LocalLLaMA/top/.rss?t=day",
       "fresh_count": 0,
       "stale_count": 0
     },
@@ -353,7 +357,7 @@
       "name": "r/MachineLearning",
       "status": "failed",
       "fetched_count": 0,
-      "message": "HTTP 403 Blocked - <body class=theme-beta><div><style>.theme-light,:root{--rem360:22.5rem;--rem320:20rem;--rem192:12rem;--rem144:9rem;--rem128:8rem;--rem96:6rem;--rem90:5.625rem;--rem88:5.5rem;--rem64:4rem;--rem56:3.5rem;--rem48:3rem;--rem40:2.5rem;--rem36:2. - url=https://old.reddit.com/r/MachineLearning/top/.rss?t=day",
+      "message": "HTTP 429 Too Many Requests - url=https://old.reddit.com/r/MachineLearning/top/.rss?t=day",
       "fresh_count": 0,
       "stale_count": 0
     },
@@ -440,10 +444,10 @@
       "id": "azure_ai_blog",
       "name": "Azure AI Blog",
       "status": "ok",
-      "fetched_count": 6,
+      "fetched_count": 8,
       "fresh_count": 0,
-      "stale_count": 6,
-      "oldest_published_at": "2026-06-09T17:00:00.000Z",
+      "stale_count": 8,
+      "oldest_published_at": "2026-06-02T18:15:00.000Z",
       "newest_published_at": "2026-06-29T17:00:00.000Z"
     },
     {
@@ -555,26 +559,12 @@
       "source_name": "The Decoder",
       "published_at": "2026-07-05T07:52:17.000Z",
       "kind": "paper",
-      "score": 0.783,
+      "score": 0.773,
       "dek": "AI search agents struggle with ambiguity because they prioritize repeated searching over asking clarifying questions.",
       "brief": "The DiscoBench benchmark reveals that models often fail to identify ambiguous queries, leading to poor research outcomes. Agents that attempt to search repeatedly perform worse than those that guess, with top models achieving only 43 percent accuracy. The findings suggest that agentic workflows need better mechanisms for detecting ambiguity and prompting users for input.",
       "image_url": "https://the-decoder.com/wp-content/uploads/2026/07/discobench-search-agents-have-to-decide-nano-banana-pro.jpg",
       "image_alt": "Diagram showing search agent decision paths",
       "image_source": "rss_content",
-      "enrichment_status": "ok",
-      "enriched_at": "2026-07-05T08:17:16.918Z"
-    },
-    {
-      "cluster_id": "1siosuh",
-      "title": "LlamaIndex ‘legal-kb’: Agentic Retrieval over Index v2 with retrieve, find, read, and grep Tools",
-      "url": "https://marktechpost.com/2026/07/05/llamaindex-legal-kb-agentic-retrieval-over-index-v2-with-retrieve-find-read-and-grep-tools",
-      "source_name": "MarkTechPost",
-      "published_at": "2026-07-05T07:50:19.000Z",
-      "kind": "tool",
-      "score": 0.728,
-      "dek": "LlamaIndex released a reference application demonstrating agentic retrieval over document knowledge bases.",
-      "brief": "The 'legal-kb' project provides agents with filesystem-like tools including retrieve, find, read, and grep. Built on Index v2, the stack utilizes TanStack Start, AI SDK 6, and Prisma to manage document versioning and visual citations for complex retrieval tasks.",
-      "image_alt": "Architecture diagram of LlamaIndex legal-kb agent tools",
       "enrichment_status": "ok",
       "enriched_at": "2026-07-05T08:17:16.918Z"
     },
@@ -585,7 +575,7 @@
       "source_name": "Simon Willison",
       "published_at": "2026-07-05T01:00:48.000Z",
       "kind": "tool",
-      "score": 0.698,
+      "score": 0.688,
       "dek": "Simon Willison utilized Claude Fable to finalize the 4.0 release of sqlite-utils.",
       "brief": "Willison leveraged Claude Fable to perform a final code review and ensure stability for the sqlite-utils 4.0 release. The experiment highlights the utility of advanced LLMs in maintaining complex open-source projects and adhering to strict versioning standards.",
       "image_alt": "Screenshot of sqlite-utils terminal output",
@@ -593,35 +583,21 @@
       "enriched_at": "2026-07-05T08:17:16.918Z"
     },
     {
-      "cluster_id": "1yhqyv7",
-      "title": "GPT-5.5 Codex reasoning-token clustering may be leading to degraded performance",
-      "url": "https://github.com/openai/codex/issues/30364",
+      "cluster_id": "w2ow5s",
+      "title": "Claude Design System Prompt",
+      "url": "https://github.com/Trystan-SA/claude-design-system-prompt",
       "source_name": "Hacker News (AI-filtered)",
-      "published_at": "2026-07-04T21:51:09Z",
-      "kind": "discussion",
-      "score": 0.652,
-      "dek": "Developers report potential performance degradation in GPT-5.5 Codex linked to reasoning-token clustering.",
-      "brief": "Discussions on GitHub suggest that specific patterns in reasoning-token generation may be negatively impacting the model's performance on complex coding tasks. The issue highlights concerns regarding how internal reasoning processes influence final output quality in newer model iterations.",
-      "image_alt": "GitHub issue tracker interface",
+      "published_at": "2026-07-05T08:43:37Z",
+      "kind": "tool",
+      "score": 0.768,
+      "dek": "A new open-source system prompt template forces LLMs to adhere to strict design system standards and accessibility guidelines.",
+      "brief": "This repository provides a reverse-engineered system prompt designed to prevent LLMs from generating generic, low-quality UI components. It enforces opinionated design patterns and accessibility-first practices, making it suitable for use with Claude, GPT, Gemini, or local models to ensure consistent design output.",
+      "image_alt": "Code snippet showing a structured system prompt for UI design consistency.",
       "enrichment_status": "ok",
-      "enriched_at": "2026-07-05T08:17:16.918Z"
-    },
-    {
-      "cluster_id": "r1gnt7",
-      "title": "AliesTaha/fable-traces (277 downloads, 140 likes)",
-      "url": "https://huggingface.co/AliesTaha/fable-traces",
-      "source_name": "Hugging Face trending models",
-      "published_at": "2026-07-03T21:55:50.000Z",
-      "kind": "model_release",
-      "score": 0.587,
-      "dek": "The AliesTaha/fable-traces model is gaining traction on Hugging Face.",
-      "brief": "This Qwen3-based instruct model is designed for conversational text generation. It has recently seen increased interest, currently trending with significant download and like counts on the platform.",
-      "image_alt": "Hugging Face model card for fable-traces",
-      "enrichment_status": "ok",
-      "enriched_at": "2026-07-05T08:17:16.918Z"
+      "enriched_at": "2026-07-05T14:09:05.802Z"
     }
   ],
-  "count": 25,
+  "count": 19,
   "clusters": [
     {
       "id": "11b5c57",
@@ -675,11 +651,11 @@
       "also_seen_on": [],
       "kind": "paper",
       "quality": "signal",
-      "one_liner": "DiscoBench shows AI search agents fail due to lack of clarification on ambiguous queries rather than search capability.",
+      "one_liner": "DiscoBench benchmark shows AI search agents fail by not asking clarifying questions for ambiguous queries.",
       "novelty": 0.834,
       "novelty_label": "high",
       "trust": 0.74,
-      "score": 0.783,
+      "score": 0.773,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal",
@@ -688,64 +664,279 @@
       "builder_action": "Save this for technical review if the method maps to your roadmap."
     },
     {
-      "id": "1siosuh",
+      "id": "w2ow5s",
       "primary": {
-        "id": "1siosuh",
-        "source_id": "marktechpost",
-        "source_name": "MarkTechPost",
+        "id": "w2ow5s",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
         "source_role": "main",
-        "trust": 0.48,
-        "kind_hint": "news",
-        "title": "LlamaIndex ‘legal-kb’: Agentic Retrieval over Index v2 with retrieve, find, read, and grep Tools",
-        "url": "https://marktechpost.com/2026/07/05/llamaindex-legal-kb-agentic-retrieval-over-index-v2-with-retrieve-find-read-and-grep-tools",
-        "original_url": "https://www.marktechpost.com/2026/07/05/llamaindex-legal-kb-agentic-retrieval-over-index-v2-with-retrieve-find-read-and-grep-tools/",
-        "summary": "LlamaIndex’s legal-kb is a public reference app that gives agents filesystem-style access to a document knowledge base on Index v2. It exposes retrieve (hybrid semantic search), find, read, and grep as tools, with automatic per-file versioning and visual citations. The stack is TanStack Start, AI SDK 6 (ToolLoopAgent), Prisma, and WorkOS. The post LlamaIndex ‘legal-kb’: Agentic Retrieval over Index v2 with retrieve, find, read, and grep Tools appeared first on MarkTechPost.",
-        "published_at": "2026-07-05T07:50:19.000Z",
+        "trust": 0.65,
+        "title": "Claude Design System Prompt",
+        "url": "https://github.com/Trystan-SA/claude-design-system-prompt",
+        "original_url": "https://github.com/Trystan-SA/claude-design-system-prompt",
+        "discussion_url": "https://news.ycombinator.com/item?id=48792399",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-07-05T08:43:37Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 75,
+          "comments": 20
+        }
+      },
+      "members": [
+        {
+          "id": "w2ow5s",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "Claude Design System Prompt",
+          "url": "https://github.com/Trystan-SA/claude-design-system-prompt",
+          "original_url": "https://github.com/Trystan-SA/claude-design-system-prompt",
+          "discussion_url": "https://news.ycombinator.com/item?id=48792399",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-07-05T08:43:37Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 75,
+            "comments": 20
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "Claude Design System Prompt",
+          "url": "https://github.com/Trystan-SA/claude-design-system-prompt",
+          "published_at": "2026-07-05T08:43:37Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=48792399",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "A system prompt template designed to enforce consistent design system standards in LLM outputs.",
+      "novelty": 0.797,
+      "novelty_label": "high",
+      "trust": 0.65,
+      "score": 0.768,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "164aeyw",
+      "primary": {
+        "id": "164aeyw",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "Claude Reaches GA on Microsoft Foundry: European Enterprises Cannot Deploy It",
+        "url": "https://infoq.com/news/2026/07/claude-foundry-ga-europe",
+        "original_url": "https://www.infoq.com/news/2026/07/claude-foundry-ga-europe/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Claude models reached GA on Microsoft Foundry with Azure-native billing and governance, but no European data zone exists. Anthropic's own documentation confirms data residency guarantees apply to Bedrock and Vertex AI but not Foundry. European practitioners from banking and healthcare report the offering is unapproved for production. By Steef-Jan Wiggers",
+        "image_url": "https://res.infoq.com/news/2026/07/claude-foundry-ga-europe/en/headerimage/generatedHeaderImage-1783070384778.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-07-05T08:13:00.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "1siosuh",
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
+          "id": "164aeyw",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
           "source_role": "main",
-          "trust": 0.48,
-          "kind_hint": "news",
-          "title": "LlamaIndex ‘legal-kb’: Agentic Retrieval over Index v2 with retrieve, find, read, and grep Tools",
-          "url": "https://marktechpost.com/2026/07/05/llamaindex-legal-kb-agentic-retrieval-over-index-v2-with-retrieve-find-read-and-grep-tools",
-          "original_url": "https://www.marktechpost.com/2026/07/05/llamaindex-legal-kb-agentic-retrieval-over-index-v2-with-retrieve-find-read-and-grep-tools/",
-          "summary": "LlamaIndex’s legal-kb is a public reference app that gives agents filesystem-style access to a document knowledge base on Index v2. It exposes retrieve (hybrid semantic search), find, read, and grep as tools, with automatic per-file versioning and visual citations. The stack is TanStack Start, AI SDK 6 (ToolLoopAgent), Prisma, and WorkOS. The post LlamaIndex ‘legal-kb’: Agentic Retrieval over Index v2 with retrieve, find, read, and grep Tools appeared first on MarkTechPost.",
-          "published_at": "2026-07-05T07:50:19.000Z",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "Claude Reaches GA on Microsoft Foundry: European Enterprises Cannot Deploy It",
+          "url": "https://infoq.com/news/2026/07/claude-foundry-ga-europe",
+          "original_url": "https://www.infoq.com/news/2026/07/claude-foundry-ga-europe/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "Claude models reached GA on Microsoft Foundry with Azure-native billing and governance, but no European data zone exists. Anthropic's own documentation confirms data residency guarantees apply to Bedrock and Vertex AI but not Foundry. European practitioners from banking and healthcare report the offering is unapproved for production. By Steef-Jan Wiggers",
+          "image_url": "https://res.infoq.com/news/2026/07/claude-foundry-ga-europe/en/headerimage/generatedHeaderImage-1783070384778.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-07-05T08:13:00.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "title": "LlamaIndex ‘legal-kb’: Agentic Retrieval over Index v2 with retrieve, find, read, and grep Tools",
-          "url": "https://marktechpost.com/2026/07/05/llamaindex-legal-kb-agentic-retrieval-over-index-v2-with-retrieve-find-read-and-grep-tools",
-          "published_at": "2026-07-05T07:50:19.000Z",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "Claude Reaches GA on Microsoft Foundry: European Enterprises Cannot Deploy It",
+          "url": "https://infoq.com/news/2026/07/claude-foundry-ga-europe",
+          "published_at": "2026-07-05T08:13:00.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "also_seen_on": [],
-      "kind": "tool",
+      "kind": "news",
       "quality": "signal",
-      "one_liner": "LlamaIndex legal-kb reference app demonstrates agentic filesystem-style access to documents using Index v2.",
-      "novelty": 0.849,
+      "one_liner": "Claude on Microsoft Foundry lacks European data residency guarantees, limiting deployment for EU enterprises.",
+      "novelty": 0.757,
       "novelty_label": "high",
-      "trust": 0.48,
-      "score": 0.728,
+      "trust": 0.78,
+      "score": 0.76,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal",
         "fresh within the current refresh window"
       ],
-      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1yhqyv7",
+      "primary": {
+        "id": "1yhqyv7",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "GPT-5.5 Codex reasoning-token clustering may be leading to degraded performance",
+        "url": "https://github.com/openai/codex/issues/30364",
+        "original_url": "https://github.com/openai/codex/issues/30364",
+        "discussion_url": "https://news.ycombinator.com/item?id=48789428",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-07-04T21:51:09Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 324,
+          "comments": 124
+        }
+      },
+      "members": [
+        {
+          "id": "1yhqyv7",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "GPT-5.5 Codex reasoning-token clustering may be leading to degraded performance",
+          "url": "https://github.com/openai/codex/issues/30364",
+          "original_url": "https://github.com/openai/codex/issues/30364",
+          "discussion_url": "https://news.ycombinator.com/item?id=48789428",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-07-04T21:51:09Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 324,
+            "comments": 124
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "GPT-5.5 Codex reasoning-token clustering may be leading to degraded performance",
+          "url": "https://github.com/openai/codex/issues/30364",
+          "published_at": "2026-07-04T21:51:09Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=48789428",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "signal",
+      "one_liner": "GitHub issue discussing potential performance degradation in GPT-5.5 due to reasoning-token clustering.",
+      "novelty": 0.79,
+      "novelty_label": "high",
+      "trust": 0.65,
+      "score": 0.756,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "1bbeikh",
+      "primary": {
+        "id": "1bbeikh",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "The Log is the Agent",
+        "url": "https://arxiv.org/abs/2605.21997",
+        "original_url": "https://arxiv.org/abs/2605.21997",
+        "discussion_url": "https://news.ycombinator.com/item?id=48790912",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-07-05T02:57:38Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 66,
+          "comments": 19
+        }
+      },
+      "members": [
+        {
+          "id": "1bbeikh",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "The Log is the Agent",
+          "url": "https://arxiv.org/abs/2605.21997",
+          "original_url": "https://arxiv.org/abs/2605.21997",
+          "discussion_url": "https://news.ycombinator.com/item?id=48790912",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-07-05T02:57:38Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 66,
+            "comments": 19
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "The Log is the Agent",
+          "url": "https://arxiv.org/abs/2605.21997",
+          "published_at": "2026-07-05T02:57:38Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=48790912",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "Paper proposing a framework where system logs serve as the primary state representation for AI agents.",
+      "novelty": 0.759,
+      "novelty_label": "high",
+      "trust": 0.65,
+      "score": 0.746,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
     },
     {
       "id": "1qvlkdv",
@@ -791,11 +982,11 @@
       "also_seen_on": [],
       "kind": "tool",
       "quality": "mixed",
-      "one_liner": "Simon Willison discusses using Claude Fable to write code for sqlite-utils 4.0rc2.",
+      "one_liner": "Release of sqlite-utils 4.0rc2, noting the use of AI assistance in development.",
       "novelty": 0.84,
       "novelty_label": "high",
       "trust": 0.9,
-      "score": 0.698,
+      "score": 0.688,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal",
@@ -804,74 +995,68 @@
       "builder_action": "Try it in a small sandbox before adding it to production workflow."
     },
     {
-      "id": "1yhqyv7",
+      "id": "p4de3f",
       "primary": {
-        "id": "1yhqyv7",
-        "source_id": "hn_ai",
-        "source_name": "Hacker News (AI-filtered)",
+        "id": "p4de3f",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
         "source_role": "main",
-        "trust": 0.65,
-        "title": "GPT-5.5 Codex reasoning-token clustering may be leading to degraded performance",
-        "url": "https://github.com/openai/codex/issues/30364",
-        "original_url": "https://github.com/openai/codex/issues/30364",
-        "discussion_url": "https://news.ycombinator.com/item?id=48789428",
-        "discussion_source": "Hacker News",
-        "published_at": "2026-07-04T21:51:09Z",
-        "published_at_source": "api",
-        "date_confidence": "high",
-        "engagement": {
-          "score": 254,
-          "comments": 91
-        }
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Mistral CEO Mensch says proprietary AI models give labs a front-row seat to your business processes",
+        "url": "https://the-decoder.com/mistral-ceo-mensch-says-proprietary-ai-models-give-labs-a-front-row-seat-to-your-business-processes",
+        "original_url": "https://the-decoder.com/mistral-ceo-mensch-says-proprietary-ai-models-give-labs-a-front-row-seat-to-your-business-processes/",
+        "summary": "Mistral founder Arthur Mensch warns companies against relying on closed AI models. He claims AI labs are storing more and more customer data and have, in some cases, used it to go after their own customers as competitors. The concern is valid, but Mistral can't really compete with frontier models from OpenAI or Anthropic on performance and is betting heavily on EU sovereignty as its strategic edge. The article Mistral CEO Mensch says proprietary AI models give labs a front-row seat to your business processes appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/07/mistral_europe.png",
+        "image_source": "rss_content",
+        "published_at": "2026-07-05T10:22:06.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
       },
       "members": [
         {
-          "id": "1yhqyv7",
-          "source_id": "hn_ai",
-          "source_name": "Hacker News (AI-filtered)",
+          "id": "p4de3f",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
           "source_role": "main",
-          "trust": 0.65,
-          "title": "GPT-5.5 Codex reasoning-token clustering may be leading to degraded performance",
-          "url": "https://github.com/openai/codex/issues/30364",
-          "original_url": "https://github.com/openai/codex/issues/30364",
-          "discussion_url": "https://news.ycombinator.com/item?id=48789428",
-          "discussion_source": "Hacker News",
-          "published_at": "2026-07-04T21:51:09Z",
-          "published_at_source": "api",
-          "date_confidence": "high",
-          "engagement": {
-            "score": 254,
-            "comments": 91
-          }
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Mistral CEO Mensch says proprietary AI models give labs a front-row seat to your business processes",
+          "url": "https://the-decoder.com/mistral-ceo-mensch-says-proprietary-ai-models-give-labs-a-front-row-seat-to-your-business-processes",
+          "original_url": "https://the-decoder.com/mistral-ceo-mensch-says-proprietary-ai-models-give-labs-a-front-row-seat-to-your-business-processes/",
+          "summary": "Mistral founder Arthur Mensch warns companies against relying on closed AI models. He claims AI labs are storing more and more customer data and have, in some cases, used it to go after their own customers as competitors. The concern is valid, but Mistral can't really compete with frontier models from OpenAI or Anthropic on performance and is betting heavily on EU sovereignty as its strategic edge. The article Mistral CEO Mensch says proprietary AI models give labs a front-row seat to your business processes appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/07/mistral_europe.png",
+          "image_source": "rss_content",
+          "published_at": "2026-07-05T10:22:06.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "hn_ai",
-          "source_name": "Hacker News (AI-filtered)",
-          "title": "GPT-5.5 Codex reasoning-token clustering may be leading to degraded performance",
-          "url": "https://github.com/openai/codex/issues/30364",
-          "published_at": "2026-07-04T21:51:09Z",
-          "published_at_source": "api",
-          "date_confidence": "high",
-          "discussion_url": "https://news.ycombinator.com/item?id=48789428",
-          "discussion_source": "Hacker News"
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Mistral CEO Mensch says proprietary AI models give labs a front-row seat to your business processes",
+          "url": "https://the-decoder.com/mistral-ceo-mensch-says-proprietary-ai-models-give-labs-a-front-row-seat-to-your-business-processes",
+          "published_at": "2026-07-05T10:22:06.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
         }
       ],
       "also_seen_on": [],
-      "kind": "discussion",
+      "kind": "opinion",
       "quality": "mixed",
-      "one_liner": "Hacker News discussion on potential performance degradation in GPT-5.5 Codex due to reasoning-token clustering.",
-      "novelty": 0.79,
+      "one_liner": "Mistral CEO argues that proprietary model providers may exploit customer data for competitive advantage.",
+      "novelty": 0.839,
       "novelty_label": "high",
-      "trust": 0.65,
-      "score": 0.652,
+      "trust": 0.74,
+      "score": 0.666,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal",
-        "source-native discussion or engagement is unusually high"
+        "fresh within the current refresh window"
       ],
-      "builder_action": "Use this as weak signal and verify against primary sources."
+      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "1ba7q7i",
@@ -937,11 +1122,10 @@
       "novelty": 0.835,
       "novelty_label": "high",
       "trust": 0.66,
-      "score": 0.648,
+      "score": 0.638,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal",
-        "fresh within the current refresh window"
+        "classified as useful but lower-confidence signal"
       ],
       "builder_action": "Queue it for focused learning if the topic matches your current work."
     },
@@ -1003,11 +1187,10 @@
       "novelty": 0.8,
       "novelty_label": "high",
       "trust": 0.62,
-      "score": 0.625,
+      "score": 0.615,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal",
-        "fresh within the current refresh window"
+        "classified as useful but lower-confidence signal"
       ],
       "builder_action": "Queue it for focused learning if the topic matches your current work."
     },
@@ -1075,202 +1258,12 @@
       "novelty": 0.773,
       "novelty_label": "high",
       "trust": 0.66,
-      "score": 0.619,
+      "score": 0.609,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal"
       ],
       "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "r1gnt7",
-      "primary": {
-        "id": "r1gnt7",
-        "source_id": "hf_trending_models",
-        "source_name": "Hugging Face trending models",
-        "source_role": "main",
-        "trust": 0.58,
-        "kind_hint": "model_release",
-        "title": "AliesTaha/fable-traces (277 downloads, 140 likes)",
-        "url": "https://huggingface.co/AliesTaha/fable-traces",
-        "original_url": "https://huggingface.co/AliesTaha/fable-traces",
-        "summary": "transformers, safetensors, qwen3, text-generation, instruct, conversational",
-        "published_at": "2026-07-03T21:55:50.000Z",
-        "published_at_source": "api",
-        "date_confidence": "high",
-        "engagement": {
-          "score": 140
-        }
-      },
-      "members": [
-        {
-          "id": "r1gnt7",
-          "source_id": "hf_trending_models",
-          "source_name": "Hugging Face trending models",
-          "source_role": "main",
-          "trust": 0.58,
-          "kind_hint": "model_release",
-          "title": "AliesTaha/fable-traces (277 downloads, 140 likes)",
-          "url": "https://huggingface.co/AliesTaha/fable-traces",
-          "original_url": "https://huggingface.co/AliesTaha/fable-traces",
-          "summary": "transformers, safetensors, qwen3, text-generation, instruct, conversational",
-          "published_at": "2026-07-03T21:55:50.000Z",
-          "published_at_source": "api",
-          "date_confidence": "high",
-          "engagement": {
-            "score": 140
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "hf_trending_models",
-          "source_name": "Hugging Face trending models",
-          "title": "AliesTaha/fable-traces (277 downloads, 140 likes)",
-          "url": "https://huggingface.co/AliesTaha/fable-traces",
-          "published_at": "2026-07-03T21:55:50.000Z",
-          "published_at_source": "api",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "model_release",
-      "quality": "mixed",
-      "one_liner": "Release of AliesTaha/fable-traces, a Qwen3-based instruct model.",
-      "novelty": 0.771,
-      "novelty_label": "high",
-      "trust": 0.58,
-      "score": 0.587,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal",
-        "source-native discussion or engagement is unusually high"
-      ],
-      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
-    },
-    {
-      "id": "1jm3lwa",
-      "primary": {
-        "id": "1jm3lwa",
-        "source_id": "marktechpost",
-        "source_name": "MarkTechPost",
-        "source_role": "main",
-        "trust": 0.48,
-        "kind_hint": "news",
-        "title": "Qwen’s Former Lead on What Hybrid Thinking Got Wrong — and Why He Now Backs Agents",
-        "url": "https://marktechpost.com/2026/07/04/qwens-former-lead-on-what-hybrid-thinking-got-wrong-and-why-he-now-backs-agents",
-        "original_url": "https://www.marktechpost.com/2026/07/04/qwens-former-lead-on-what-hybrid-thinking-got-wrong-and-why-he-now-backs-agents/",
-        "summary": "Junyang Lin, the former technical lead of Alibaba's Qwen, walked through the model family in a talk \"towards a generalist model / agent,\" then expanded it in an essay. We read both for practitioners: Qwen3 hybrid thinking modes and dynamic thinking budgets, where the merge fell short, the shift from reasoning thinking to agentic thinking, why agentic RL infrastructure is harder, and where reward hacking bites. The post Qwen’s Former Lead on What Hybrid Thinking Got Wrong — and Why He Now Backs Agents appeared first on MarkTechPost.",
-        "image_url": "https://www.youtube.com/embed/b0xlsQ_6wUQ",
-        "image_source": "rss_media",
-        "published_at": "2026-07-05T02:31:14.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1jm3lwa",
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "source_role": "main",
-          "trust": 0.48,
-          "kind_hint": "news",
-          "title": "Qwen’s Former Lead on What Hybrid Thinking Got Wrong — and Why He Now Backs Agents",
-          "url": "https://marktechpost.com/2026/07/04/qwens-former-lead-on-what-hybrid-thinking-got-wrong-and-why-he-now-backs-agents",
-          "original_url": "https://www.marktechpost.com/2026/07/04/qwens-former-lead-on-what-hybrid-thinking-got-wrong-and-why-he-now-backs-agents/",
-          "summary": "Junyang Lin, the former technical lead of Alibaba's Qwen, walked through the model family in a talk \"towards a generalist model / agent,\" then expanded it in an essay. We read both for practitioners: Qwen3 hybrid thinking modes and dynamic thinking budgets, where the merge fell short, the shift from reasoning thinking to agentic thinking, why agentic RL infrastructure is harder, and where reward hacking bites. The post Qwen’s Former Lead on What Hybrid Thinking Got Wrong — and Why He Now Backs Agents appeared first on MarkTechPost.",
-          "image_url": "https://www.youtube.com/embed/b0xlsQ_6wUQ",
-          "image_source": "rss_media",
-          "published_at": "2026-07-05T02:31:14.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "title": "Qwen’s Former Lead on What Hybrid Thinking Got Wrong — and Why He Now Backs Agents",
-          "url": "https://marktechpost.com/2026/07/04/qwens-former-lead-on-what-hybrid-thinking-got-wrong-and-why-he-now-backs-agents",
-          "published_at": "2026-07-05T02:31:14.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "opinion",
-      "quality": "mixed",
-      "one_liner": "Former Qwen lead discusses limitations of hybrid thinking models and the shift toward agentic architectures.",
-      "novelty": 0.824,
-      "novelty_label": "high",
-      "trust": 0.48,
-      "score": 0.599,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal",
-        "fresh within the current refresh window"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "1lh8rw8",
-      "primary": {
-        "id": "1lh8rw8",
-        "source_id": "marktechpost",
-        "source_name": "MarkTechPost",
-        "source_role": "main",
-        "trust": 0.48,
-        "kind_hint": "news",
-        "title": "Structured PDF-to-JSON: A Guide to Open-Source Extraction Models in 2026",
-        "url": "https://marktechpost.com/2026/07/04/structured-pdf-to-json-a-guide-to-open-source-extraction-models-in-2026",
-        "original_url": "https://www.marktechpost.com/2026/07/04/structured-pdf-to-json-a-guide-to-open-source-extraction-models-in-2026/",
-        "summary": "Most enterprise data still sits inside PDFs, scans, and slide decks. Large language models and agents cannot use that data until it becomes structured JSON. Open-source document extraction has become the standard way to do that conversion on your own hardware. Two different problems hide under the phrase ‘PDF to JSON.’ The first is schema-driven […] The post Structured PDF-to-JSON: A Guide to Open-Source Extraction Models in 2026 appeared first on MarkTechPost.",
-        "published_at": "2026-07-05T03:02:08.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1lh8rw8",
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "source_role": "main",
-          "trust": 0.48,
-          "kind_hint": "news",
-          "title": "Structured PDF-to-JSON: A Guide to Open-Source Extraction Models in 2026",
-          "url": "https://marktechpost.com/2026/07/04/structured-pdf-to-json-a-guide-to-open-source-extraction-models-in-2026",
-          "original_url": "https://www.marktechpost.com/2026/07/04/structured-pdf-to-json-a-guide-to-open-source-extraction-models-in-2026/",
-          "summary": "Most enterprise data still sits inside PDFs, scans, and slide decks. Large language models and agents cannot use that data until it becomes structured JSON. Open-source document extraction has become the standard way to do that conversion on your own hardware. Two different problems hide under the phrase ‘PDF to JSON.’ The first is schema-driven […] The post Structured PDF-to-JSON: A Guide to Open-Source Extraction Models in 2026 appeared first on MarkTechPost.",
-          "published_at": "2026-07-05T03:02:08.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "title": "Structured PDF-to-JSON: A Guide to Open-Source Extraction Models in 2026",
-          "url": "https://marktechpost.com/2026/07/04/structured-pdf-to-json-a-guide-to-open-source-extraction-models-in-2026",
-          "published_at": "2026-07-05T03:02:08.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "tutorial",
-      "quality": "mixed",
-      "one_liner": "Overview of open-source document extraction models for converting PDFs to structured JSON.",
-      "novelty": 0.792,
-      "novelty_label": "high",
-      "trust": 0.48,
-      "score": 0.59,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal",
-        "fresh within the current refresh window"
-      ],
-      "builder_action": "Use this as implementation reference if it matches your stack."
     },
     {
       "id": "1v6guet",
@@ -1324,11 +1317,11 @@
       "also_seen_on": [],
       "kind": "tool",
       "quality": "signal",
-      "one_liner": "pxpipe tool reduces LLM token costs by encoding text into PNGs, exploiting image-based pricing models.",
+      "one_liner": "pxpipe encodes text into PNGs to reduce token costs for Claude Code by exploiting image-based pricing.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.74,
-      "score": 0.51,
+      "score": 0.5,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -1387,11 +1380,11 @@
       "also_seen_on": [],
       "kind": "tutorial",
       "quality": "signal",
-      "one_liner": "Prompting techniques for Fable 5 focusing on systematic blind spot identification.",
+      "one_liner": "Prompting techniques for Fable 5 focusing on systematic blind spot identification during development.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.74,
-      "score": 0.501,
+      "score": 0.491,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -1450,11 +1443,11 @@
       "also_seen_on": [],
       "kind": "paper",
       "quality": "signal",
-      "one_liner": "Study of 26,000 students suggests AI-assisted learning leads to long-term performance declines.",
+      "one_liner": "Study of 26,000 students suggests AI-assisted learning correlates with long-term performance declines.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.74,
-      "score": 0.495,
+      "score": 0.485,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -1513,417 +1506,16 @@
       "also_seen_on": [],
       "kind": "model_release",
       "quality": "signal",
-      "one_liner": "Mistral released Leanstral 1.5, a model fine-tuned for formal verification in Lean 4, capable of identifying bugs in open-source code.",
+      "one_liner": "Mistral released Leanstral 1.5, a model for formal verification in Lean 4 that identified bugs in open-source code.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.74,
-      "score": 0.492,
+      "score": 0.482,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
       ],
       "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
-    },
-    {
-      "id": "fzmfne",
-      "primary": {
-        "id": "fzmfne",
-        "source_id": "marktechpost",
-        "source_name": "MarkTechPost",
-        "source_role": "main",
-        "trust": 0.48,
-        "kind_hint": "news",
-        "title": "Anthropic Launches Claude Science Beta: A Multi-Agent AI Workbench for Reproducible Genomics, Proteomics, and Cheminformatics Pipelines",
-        "url": "https://marktechpost.com/2026/07/04/anthropic-launches-claude-science-beta",
-        "original_url": "https://www.marktechpost.com/2026/07/04/anthropic-launches-claude-science-beta/",
-        "summary": "Anthropic released Claude Science in beta on June 30, 2026. The app runs on existing Claude models. A coordinating agent delegates to domain specialists, a reviewer agent flags and corrects citations and numbers, and every figure ships with its exact code, environment, and full message history. It manages compute across local machines, HPC over SSH, and Modal, and connects to 60+ databases plus NVIDIA BioNeMo skills. The post Anthropic Launches Claude Science Beta: A Multi-Agent AI Workbench for Reproducible Genomics, Proteomics, and Cheminformatics Pipelines appeared first on MarkTechPost.",
-        "published_at": "2026-07-04T16:21:21.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "fzmfne",
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "source_role": "main",
-          "trust": 0.48,
-          "kind_hint": "news",
-          "title": "Anthropic Launches Claude Science Beta: A Multi-Agent AI Workbench for Reproducible Genomics, Proteomics, and Cheminformatics Pipelines",
-          "url": "https://marktechpost.com/2026/07/04/anthropic-launches-claude-science-beta",
-          "original_url": "https://www.marktechpost.com/2026/07/04/anthropic-launches-claude-science-beta/",
-          "summary": "Anthropic released Claude Science in beta on June 30, 2026. The app runs on existing Claude models. A coordinating agent delegates to domain specialists, a reviewer agent flags and corrects citations and numbers, and every figure ships with its exact code, environment, and full message history. It manages compute across local machines, HPC over SSH, and Modal, and connects to 60+ databases plus NVIDIA BioNeMo skills. The post Anthropic Launches Claude Science Beta: A Multi-Agent AI Workbench for Reproducible Genomics, Proteomics, and Cheminformatics Pipelines appeared first on MarkTechPost.",
-          "published_at": "2026-07-04T16:21:21.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "title": "Anthropic Launches Claude Science Beta: A Multi-Agent AI Workbench for Reproducible Genomics, Proteomics, and Cheminformatics Pipelines",
-          "url": "https://marktechpost.com/2026/07/04/anthropic-launches-claude-science-beta",
-          "published_at": "2026-07-04T16:21:21.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "tool",
-      "quality": "signal",
-      "one_liner": "Anthropic's Claude Science beta provides a multi-agent workbench for reproducible scientific pipelines.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.48,
-      "score": 0.447,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Try it in a small sandbox before adding it to production workflow."
-    },
-    {
-      "id": "mcgz33",
-      "primary": {
-        "id": "mcgz33",
-        "source_id": "simonw",
-        "source_name": "Simon Willison",
-        "source_role": "main",
-        "trust": 0.9,
-        "title": "Open Source AI Gap Map",
-        "url": "https://simonwillison.net/2026/Jul/3/open-source-ai-gap-map",
-        "original_url": "https://simonwillison.net/2026/Jul/3/open-source-ai-gap-map/#atom-everything",
-        "published_at": "2026-07-03T22:04:31.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "mcgz33",
-          "source_id": "simonw",
-          "source_name": "Simon Willison",
-          "source_role": "main",
-          "trust": 0.9,
-          "title": "Open Source AI Gap Map",
-          "url": "https://simonwillison.net/2026/Jul/3/open-source-ai-gap-map",
-          "original_url": "https://simonwillison.net/2026/Jul/3/open-source-ai-gap-map/#atom-everything",
-          "published_at": "2026-07-03T22:04:31.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "simonw",
-          "source_name": "Simon Willison",
-          "title": "Open Source AI Gap Map",
-          "url": "https://simonwillison.net/2026/Jul/3/open-source-ai-gap-map",
-          "published_at": "2026-07-03T22:04:31.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "discussion",
-      "quality": "signal",
-      "one_liner": "A curated overview of the current open-source AI landscape and its limitations.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.9,
-      "score": 0.433,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal",
-        "primary source has high trust weight"
-      ],
-      "builder_action": "Use this as weak signal and verify against primary sources."
-    },
-    {
-      "id": "1sir6ja",
-      "primary": {
-        "id": "1sir6ja",
-        "source_id": "marktechpost",
-        "source_name": "MarkTechPost",
-        "source_role": "main",
-        "trust": 0.48,
-        "kind_hint": "news",
-        "title": "NVIDIA HORIZON: A Hands-Free Agent that Evolves Git Worktrees and Hits 100% RTL Benchmark Completion",
-        "url": "https://marktechpost.com/2026/07/04/nvidia-horizon-a-hands-free-agent-that-evolves-git-worktrees-and-hits-100-rtl-benchmark-completion",
-        "original_url": "https://www.marktechpost.com/2026/07/04/nvidia-horizon-a-hands-free-agent-that-evolves-git-worktrees-and-hits-100-rtl-benchmark-completion/",
-        "summary": "A hands-free NVIDIA agent framework hosts each RTL problem as a versioned repository, reaching 100% completion across benchmarks. The post NVIDIA HORIZON: A Hands-Free Agent that Evolves Git Worktrees and Hits 100% RTL Benchmark Completion appeared first on MarkTechPost.",
-        "image_url": "https://www.marktechpost.com/wp-content/uploads/2026/07/Screenshot-2026-07-04-at-9.03.06-AM-1.png",
-        "image_source": "rss_media",
-        "published_at": "2026-07-04T16:04:29.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1sir6ja",
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "source_role": "main",
-          "trust": 0.48,
-          "kind_hint": "news",
-          "title": "NVIDIA HORIZON: A Hands-Free Agent that Evolves Git Worktrees and Hits 100% RTL Benchmark Completion",
-          "url": "https://marktechpost.com/2026/07/04/nvidia-horizon-a-hands-free-agent-that-evolves-git-worktrees-and-hits-100-rtl-benchmark-completion",
-          "original_url": "https://www.marktechpost.com/2026/07/04/nvidia-horizon-a-hands-free-agent-that-evolves-git-worktrees-and-hits-100-rtl-benchmark-completion/",
-          "summary": "A hands-free NVIDIA agent framework hosts each RTL problem as a versioned repository, reaching 100% completion across benchmarks. The post NVIDIA HORIZON: A Hands-Free Agent that Evolves Git Worktrees and Hits 100% RTL Benchmark Completion appeared first on MarkTechPost.",
-          "image_url": "https://www.marktechpost.com/wp-content/uploads/2026/07/Screenshot-2026-07-04-at-9.03.06-AM-1.png",
-          "image_source": "rss_media",
-          "published_at": "2026-07-04T16:04:29.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "title": "NVIDIA HORIZON: A Hands-Free Agent that Evolves Git Worktrees and Hits 100% RTL Benchmark Completion",
-          "url": "https://marktechpost.com/2026/07/04/nvidia-horizon-a-hands-free-agent-that-evolves-git-worktrees-and-hits-100-rtl-benchmark-completion",
-          "published_at": "2026-07-04T16:04:29.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "paper",
-      "quality": "signal",
-      "one_liner": "NVIDIA HORIZON agent framework uses git worktrees to achieve 100% completion on RTL benchmarks.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.48,
-      "score": 0.447,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Save this for technical review if the method maps to your roadmap."
-    },
-    {
-      "id": "1psf1f",
-      "primary": {
-        "id": "1psf1f",
-        "source_id": "marktechpost",
-        "source_name": "MarkTechPost",
-        "source_role": "main",
-        "trust": 0.48,
-        "kind_hint": "news",
-        "title": "NVIDIA AI Introduces ASPIRE: A Self-Improving Robotics Framework Reaching 31% Zero-Shot on LIBERO-Pro Long Tasks",
-        "url": "https://marktechpost.com/2026/07/03/nvidia-ai-introduces-aspire-a-self-improving-robotics-framework-reaching-31-zero-shot-on-libero-pro-long-tasks",
-        "original_url": "https://www.marktechpost.com/2026/07/03/nvidia-ai-introduces-aspire-a-self-improving-robotics-framework-reaching-31-zero-shot-on-libero-pro-long-tasks/",
-        "summary": "NVIDIA's ASPIRE writes and refines robot control programs, then distills validated repairs into a reusable skill library. It gains up to 77 points on LIBERO-Pro and transfers zero-shot to unseen long-horizon tasks. The post NVIDIA AI Introduces ASPIRE: A Self-Improving Robotics Framework Reaching 31% Zero-Shot on LIBERO-Pro Long Tasks appeared first on MarkTechPost.",
-        "published_at": "2026-07-04T06:32:47.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1psf1f",
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "source_role": "main",
-          "trust": 0.48,
-          "kind_hint": "news",
-          "title": "NVIDIA AI Introduces ASPIRE: A Self-Improving Robotics Framework Reaching 31% Zero-Shot on LIBERO-Pro Long Tasks",
-          "url": "https://marktechpost.com/2026/07/03/nvidia-ai-introduces-aspire-a-self-improving-robotics-framework-reaching-31-zero-shot-on-libero-pro-long-tasks",
-          "original_url": "https://www.marktechpost.com/2026/07/03/nvidia-ai-introduces-aspire-a-self-improving-robotics-framework-reaching-31-zero-shot-on-libero-pro-long-tasks/",
-          "summary": "NVIDIA's ASPIRE writes and refines robot control programs, then distills validated repairs into a reusable skill library. It gains up to 77 points on LIBERO-Pro and transfers zero-shot to unseen long-horizon tasks. The post NVIDIA AI Introduces ASPIRE: A Self-Improving Robotics Framework Reaching 31% Zero-Shot on LIBERO-Pro Long Tasks appeared first on MarkTechPost.",
-          "published_at": "2026-07-04T06:32:47.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "title": "NVIDIA AI Introduces ASPIRE: A Self-Improving Robotics Framework Reaching 31% Zero-Shot on LIBERO-Pro Long Tasks",
-          "url": "https://marktechpost.com/2026/07/03/nvidia-ai-introduces-aspire-a-self-improving-robotics-framework-reaching-31-zero-shot-on-libero-pro-long-tasks",
-          "published_at": "2026-07-04T06:32:47.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "paper",
-      "quality": "signal",
-      "one_liner": "ASPIRE robotics framework uses self-improving control programs to boost zero-shot performance on long tasks.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.48,
-      "score": 0.431,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Save this for technical review if the method maps to your roadmap."
-    },
-    {
-      "id": "15qk0sn",
-      "primary": {
-        "id": "15qk0sn",
-        "source_id": "fahd_mirza",
-        "source_name": "Fahd Mirza YouTube",
-        "source_role": "main",
-        "trust": 0.66,
-        "kind_hint": "video",
-        "title": "Leanstral 1.5 119B A6B: The Free AI That Proves Your Code Is Correct",
-        "url": "https://youtube.com/watch?v=3IXH_ZVLVWQ",
-        "original_url": "https://www.youtube.com/watch?v=3IXH_ZVLVWQ",
-        "image_url": "https://i.ytimg.com/vi/3IXH_ZVLVWQ/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-07-04T07:00:20.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
-          "video_id": "3IXH_ZVLVWQ"
-        }
-      },
-      "members": [
-        {
-          "id": "15qk0sn",
-          "source_id": "fahd_mirza",
-          "source_name": "Fahd Mirza YouTube",
-          "source_role": "main",
-          "trust": 0.66,
-          "kind_hint": "video",
-          "title": "Leanstral 1.5 119B A6B: The Free AI That Proves Your Code Is Correct",
-          "url": "https://youtube.com/watch?v=3IXH_ZVLVWQ",
-          "original_url": "https://www.youtube.com/watch?v=3IXH_ZVLVWQ",
-          "image_url": "https://i.ytimg.com/vi/3IXH_ZVLVWQ/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-07-04T07:00:20.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
-            "video_id": "3IXH_ZVLVWQ"
-          }
-        },
-        {
-          "id": "gcvq4j",
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "source_role": "main",
-          "trust": 0.48,
-          "kind_hint": "news",
-          "title": "Mistral AI Releases Leanstral 1.5: An Apache-2.0 Lean 4 Code Agent Model Solving 587 of 672 PutnamBench Problems",
-          "url": "https://marktechpost.com/2026/07/03/mistral-ai-releases-leanstral-1-5-an-apache-2-0-lean-4-code-agent-model-solving-587-of-672-putnambench-problems",
-          "original_url": "https://www.marktechpost.com/2026/07/03/mistral-ai-releases-leanstral-1-5-an-apache-2-0-lean-4-code-agent-model-solving-587-of-672-putnambench-problems/",
-          "summary": "Mistral AI released Leanstral 1.5, a free Apache-2.0 code agent model for Lean 4. It saturates miniF2F and solves 587 of 672 PutnamBench problems. The 119B mixture-of-experts activates 6.5B parameters per token. We break down its architecture, benchmarks, real bug-finding case studies, and deployment code. The post Mistral AI Releases Leanstral 1.5: An Apache-2.0 Lean 4 Code Agent Model Solving 587 of 672 PutnamBench Problems appeared first on MarkTechPost.",
-          "published_at": "2026-07-03T22:20:26.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "fahd_mirza",
-          "source_name": "Fahd Mirza YouTube",
-          "title": "Leanstral 1.5 119B A6B: The Free AI That Proves Your Code Is Correct",
-          "url": "https://youtube.com/watch?v=3IXH_ZVLVWQ",
-          "published_at": "2026-07-04T07:00:20.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        },
-        {
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "title": "Mistral AI Releases Leanstral 1.5: An Apache-2.0 Lean 4 Code Agent Model Solving 587 of 672 PutnamBench Problems",
-          "url": "https://marktechpost.com/2026/07/03/mistral-ai-releases-leanstral-1-5-an-apache-2-0-lean-4-code-agent-model-solving-587-of-672-putnambench-problems",
-          "published_at": "2026-07-03T22:20:26.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [
-        {
-          "source_name": "MarkTechPost",
-          "title": "Mistral AI Releases Leanstral 1.5: An Apache-2.0 Lean 4 Code Agent Model Solving 587 of 672 PutnamBench Problems",
-          "url": "https://marktechpost.com/2026/07/03/mistral-ai-releases-leanstral-1-5-an-apache-2-0-lean-4-code-agent-model-solving-587-of-672-putnambench-problems",
-          "published_at": "2026-07-03T22:20:26.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "kind": "video",
-      "quality": "mixed",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.66,
-      "score": 0.374,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal",
-        "corroborated by 2 sources"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "19d44ge",
-      "primary": {
-        "id": "19d44ge",
-        "source_id": "techcrunch_ai",
-        "source_name": "TechCrunch AI",
-        "source_role": "main",
-        "trust": 0.72,
-        "kind_hint": "news",
-        "title": "Midjourney wants Hollywood studios to reveal the details of their AI usage",
-        "url": "https://techcrunch.com/2026/07/04/midjourney-wants-hollywood-studios-to-reveal-the-details-of-their-ai-usage",
-        "original_url": "https://techcrunch.com/2026/07/04/midjourney-wants-hollywood-studios-to-reveal-the-details-of-their-ai-usage/",
-        "summary": "As part of an ongoing legal dispute with three Hollywood studios, Midjourney is seeking to compel those studios to reveal how they use AI themselves.",
-        "published_at": "2026-07-04T18:00:05.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "19d44ge",
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "source_role": "main",
-          "trust": 0.72,
-          "kind_hint": "news",
-          "title": "Midjourney wants Hollywood studios to reveal the details of their AI usage",
-          "url": "https://techcrunch.com/2026/07/04/midjourney-wants-hollywood-studios-to-reveal-the-details-of-their-ai-usage",
-          "original_url": "https://techcrunch.com/2026/07/04/midjourney-wants-hollywood-studios-to-reveal-the-details-of-their-ai-usage/",
-          "summary": "As part of an ongoing legal dispute with three Hollywood studios, Midjourney is seeking to compel those studios to reveal how they use AI themselves.",
-          "published_at": "2026-07-04T18:00:05.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "title": "Midjourney wants Hollywood studios to reveal the details of their AI usage",
-          "url": "https://techcrunch.com/2026/07/04/midjourney-wants-hollywood-studios-to-reveal-the-details-of-their-ai-usage",
-          "published_at": "2026-07-04T18:00:05.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "Midjourney seeks discovery of AI usage details from Hollywood studios in ongoing legal dispute.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.72,
-      "score": 0.343,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "11bvg4b",
@@ -1989,12 +1581,142 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.66,
-      "score": 0.329,
+      "score": 0.319,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
       ],
       "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "15qk0sn",
+      "primary": {
+        "id": "15qk0sn",
+        "source_id": "fahd_mirza",
+        "source_name": "Fahd Mirza YouTube",
+        "source_role": "main",
+        "trust": 0.66,
+        "kind_hint": "video",
+        "title": "Leanstral 1.5 119B A6B: The Free AI That Proves Your Code Is Correct",
+        "url": "https://youtube.com/watch?v=3IXH_ZVLVWQ",
+        "original_url": "https://www.youtube.com/watch?v=3IXH_ZVLVWQ",
+        "image_url": "https://i.ytimg.com/vi/3IXH_ZVLVWQ/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-07-04T07:00:20.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+          "video_id": "3IXH_ZVLVWQ"
+        }
+      },
+      "members": [
+        {
+          "id": "15qk0sn",
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "source_role": "main",
+          "trust": 0.66,
+          "kind_hint": "video",
+          "title": "Leanstral 1.5 119B A6B: The Free AI That Proves Your Code Is Correct",
+          "url": "https://youtube.com/watch?v=3IXH_ZVLVWQ",
+          "original_url": "https://www.youtube.com/watch?v=3IXH_ZVLVWQ",
+          "image_url": "https://i.ytimg.com/vi/3IXH_ZVLVWQ/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-07-04T07:00:20.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+            "video_id": "3IXH_ZVLVWQ"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "title": "Leanstral 1.5 119B A6B: The Free AI That Proves Your Code Is Correct",
+          "url": "https://youtube.com/watch?v=3IXH_ZVLVWQ",
+          "published_at": "2026-07-04T07:00:20.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.66,
+      "score": 0.301,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "19d44ge",
+      "primary": {
+        "id": "19d44ge",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "Midjourney wants Hollywood studios to reveal the details of their AI usage",
+        "url": "https://techcrunch.com/2026/07/04/midjourney-wants-hollywood-studios-to-reveal-the-details-of-their-ai-usage",
+        "original_url": "https://techcrunch.com/2026/07/04/midjourney-wants-hollywood-studios-to-reveal-the-details-of-their-ai-usage/",
+        "summary": "As part of an ongoing legal dispute with three Hollywood studios, Midjourney is seeking to compel those studios to reveal how they use AI themselves.",
+        "published_at": "2026-07-04T18:00:05.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "19d44ge",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "Midjourney wants Hollywood studios to reveal the details of their AI usage",
+          "url": "https://techcrunch.com/2026/07/04/midjourney-wants-hollywood-studios-to-reveal-the-details-of-their-ai-usage",
+          "original_url": "https://techcrunch.com/2026/07/04/midjourney-wants-hollywood-studios-to-reveal-the-details-of-their-ai-usage/",
+          "summary": "As part of an ongoing legal dispute with three Hollywood studios, Midjourney is seeking to compel those studios to reveal how they use AI themselves.",
+          "published_at": "2026-07-04T18:00:05.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "Midjourney wants Hollywood studios to reveal the details of their AI usage",
+          "url": "https://techcrunch.com/2026/07/04/midjourney-wants-hollywood-studios-to-reveal-the-details-of-their-ai-usage",
+          "published_at": "2026-07-04T18:00:05.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Midjourney is seeking discovery of AI usage practices from Hollywood studios in ongoing litigation.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.72,
+      "score": 0.333,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "1ji4qzo",
@@ -2044,11 +1766,11 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Alibaba reportedly restricts employee use of Claude Code due to security concerns.",
+      "one_liner": "Alibaba has reportedly restricted employee access to Claude Code, citing security risks.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.72,
-      "score": 0.34,
+      "score": 0.33,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -2107,138 +1829,16 @@
       "also_seen_on": [],
       "kind": "company_announcement",
       "quality": "mixed",
-      "one_liner": "Anthropic initiates internal drug discovery programs targeting neglected diseases.",
+      "one_liner": "Anthropic is initiating internal drug discovery programs targeting neglected diseases.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.74,
-      "score": 0.331,
+      "score": 0.321,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
       ],
       "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
-    },
-    {
-      "id": "1aq7qvi",
-      "primary": {
-        "id": "1aq7qvi",
-        "source_id": "the_verge_ai",
-        "source_name": "The Verge AI",
-        "source_role": "main",
-        "trust": 0.68,
-        "kind_hint": "news",
-        "title": "The fanfiction community is at war with AI — and itself",
-        "url": "https://theverge.com/tech/960854/ai-fanfiction-ao3-claude-detector",
-        "original_url": "https://www.theverge.com/tech/960854/ai-fanfiction-ao3-claude-detector",
-        "summary": "Fanfiction communities are trying to hunt down writers who haven’t written works with their own hands. | Image: Álvaro Bernis / The Verge Over the past week, a new fanworks movement has kicked off, with the aim to root out authors using generative AI. But the detection methods being implemented are questionable, and any fanfic writer could be caught in the crossfire. Broad distaste around the use of Claude, ChatGPT, and other AI tools has long been a thing in creative communities, including the world of fanfiction. Readers and writers have passed around tips for spotting supposedly AI-generate",
-        "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/08/AI_Hands_A_Bernis_02.jpg?quality=90&",
-        "image_source": "rss_content",
-        "published_at": "2026-07-04T12:00:00.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1aq7qvi",
-          "source_id": "the_verge_ai",
-          "source_name": "The Verge AI",
-          "source_role": "main",
-          "trust": 0.68,
-          "kind_hint": "news",
-          "title": "The fanfiction community is at war with AI — and itself",
-          "url": "https://theverge.com/tech/960854/ai-fanfiction-ao3-claude-detector",
-          "original_url": "https://www.theverge.com/tech/960854/ai-fanfiction-ao3-claude-detector",
-          "summary": "Fanfiction communities are trying to hunt down writers who haven’t written works with their own hands. | Image: Álvaro Bernis / The Verge Over the past week, a new fanworks movement has kicked off, with the aim to root out authors using generative AI. But the detection methods being implemented are questionable, and any fanfic writer could be caught in the crossfire. Broad distaste around the use of Claude, ChatGPT, and other AI tools has long been a thing in creative communities, including the world of fanfiction. Readers and writers have passed around tips for spotting supposedly AI-generate",
-          "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/08/AI_Hands_A_Bernis_02.jpg?quality=90&",
-          "image_source": "rss_content",
-          "published_at": "2026-07-04T12:00:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_verge_ai",
-          "source_name": "The Verge AI",
-          "title": "The fanfiction community is at war with AI — and itself",
-          "url": "https://theverge.com/tech/960854/ai-fanfiction-ao3-claude-detector",
-          "published_at": "2026-07-04T12:00:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "Fanfiction communities are implementing manual and automated methods to identify and restrict AI-generated content.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.68,
-      "score": 0.323,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "1q0dqi6",
-      "primary": {
-        "id": "1q0dqi6",
-        "source_id": "techcrunch_ai",
-        "source_name": "TechCrunch AI",
-        "source_role": "main",
-        "trust": 0.72,
-        "kind_hint": "news",
-        "title": "The only AI glossary you’ll need this year",
-        "url": "https://techcrunch.com/2026/07/03/artificial-intelligence-definition-glossary-hallucinations-guide-to-common-ai-terms",
-        "original_url": "https://techcrunch.com/2026/07/03/artificial-intelligence-definition-glossary-hallucinations-guide-to-common-ai-terms/",
-        "summary": "The rise of AI has brought an avalanche of new terms and slang. Here is a glossary with definitions of some of the most important words and phrases you might encounter.",
-        "published_at": "2026-07-03T21:20:00.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1q0dqi6",
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "source_role": "main",
-          "trust": 0.72,
-          "kind_hint": "news",
-          "title": "The only AI glossary you’ll need this year",
-          "url": "https://techcrunch.com/2026/07/03/artificial-intelligence-definition-glossary-hallucinations-guide-to-common-ai-terms",
-          "original_url": "https://techcrunch.com/2026/07/03/artificial-intelligence-definition-glossary-hallucinations-guide-to-common-ai-terms/",
-          "summary": "The rise of AI has brought an avalanche of new terms and slang. Here is a glossary with definitions of some of the most important words and phrases you might encounter.",
-          "published_at": "2026-07-03T21:20:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "title": "The only AI glossary you’ll need this year",
-          "url": "https://techcrunch.com/2026/07/03/artificial-intelligence-definition-glossary-hallucinations-guide-to-common-ai-terms",
-          "published_at": "2026-07-03T21:20:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "tutorial",
-      "quality": "mixed",
-      "one_liner": "A basic glossary defining common terminology used in the artificial intelligence industry.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.72,
-      "score": 0.308,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Use this as implementation reference if it matches your stack."
     }
   ]
 }
