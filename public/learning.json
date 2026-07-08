@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-08T14:40:31.648Z",
-  "last_successful_generated_at": "2026-07-08T14:40:31.648Z",
+  "generated_at": "2026-07-08T19:55:12.075Z",
+  "last_successful_generated_at": "2026-07-08T19:55:12.075Z",
   "refresh_status": "ok",
   "classification_mode": "deterministic",
   "window_hours": 720,
@@ -33,9 +33,11 @@
       "id": "yt_openai",
       "name": "OpenAI YouTube",
       "status": "ok",
-      "fetched_count": 0,
-      "fresh_count": 0,
-      "stale_count": 0
+      "fetched_count": 1,
+      "fresh_count": 1,
+      "stale_count": 0,
+      "oldest_published_at": "2026-07-08T15:25:04.000Z",
+      "newest_published_at": "2026-07-08T15:25:04.000Z"
     },
     {
       "id": "yt_nvidia_developer",
@@ -78,8 +80,80 @@
       "newest_published_at": "2026-06-10T22:00:43.000Z"
     }
   ],
-  "count": 15,
+  "count": 16,
   "clusters": [
+    {
+      "id": "5txep8",
+      "primary": {
+        "id": "5txep8",
+        "source_id": "yt_openai",
+        "source_name": "OpenAI YouTube",
+        "source_role": "learning",
+        "trust": 0.82,
+        "kind_hint": "video",
+        "title": "OpenAI Academy x Veterans Forge | Building with ChatGPT: Practical AI Skills for Veterans",
+        "url": "https://youtube.com/watch?v=J2ZNjSplGd8",
+        "original_url": "https://www.youtube.com/watch?v=J2ZNjSplGd8",
+        "image_url": "https://i.ytimg.com/vi/J2ZNjSplGd8/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-07-08T15:25:04.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
+          "video_id": "J2ZNjSplGd8"
+        }
+      },
+      "members": [
+        {
+          "id": "5txep8",
+          "source_id": "yt_openai",
+          "source_name": "OpenAI YouTube",
+          "source_role": "learning",
+          "trust": 0.82,
+          "kind_hint": "video",
+          "title": "OpenAI Academy x Veterans Forge | Building with ChatGPT: Practical AI Skills for Veterans",
+          "url": "https://youtube.com/watch?v=J2ZNjSplGd8",
+          "original_url": "https://www.youtube.com/watch?v=J2ZNjSplGd8",
+          "image_url": "https://i.ytimg.com/vi/J2ZNjSplGd8/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-07-08T15:25:04.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
+            "video_id": "J2ZNjSplGd8"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_openai",
+          "source_name": "OpenAI YouTube",
+          "title": "OpenAI Academy x Veterans Forge | Building with ChatGPT: Practical AI Skills for Veterans",
+          "url": "https://youtube.com/watch?v=J2ZNjSplGd8",
+          "published_at": "2026-07-08T15:25:04.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.891,
+      "novelty_label": "high",
+      "trust": 0.82,
+      "score": 0.812,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
     {
       "id": "osjfgc",
       "primary": {
@@ -144,7 +218,7 @@
       "novelty": 0.67,
       "novelty_label": "medium",
       "trust": 0.78,
-      "score": 0.727,
+      "score": 0.718,
       "why_this_surfaced": [
         "meaningfully different from recent coverage",
         "classified as concrete builder or research signal"
@@ -854,7 +928,7 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.72,
-      "score": 0.309,
+      "score": 0.3,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -925,7 +999,7 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.72,
-      "score": 0.299,
+      "score": 0.29,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -996,7 +1070,7 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.72,
-      "score": 0.292,
+      "score": 0.286,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
