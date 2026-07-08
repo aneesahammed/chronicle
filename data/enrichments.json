@@ -3118,18 +3118,6 @@
       "enriched_at": "2026-07-03T14:31:58.778Z",
       "failure_count": 0
     },
-    "https://marktechpost.com/2026/05/20/meet-turbovec-a-rust-vector-index-with-python-bindings-and-built-on-googles-turboquant-algorithm": {
-      "url": "https://marktechpost.com/2026/05/20/meet-turbovec-a-rust-vector-index-with-python-bindings-and-built-on-googles-turboquant-algorithm",
-      "title": "Meet Turbovec: A Rust Vector Index with Python Bindings, and Built on Google’s TurboQuant Algorithm",
-      "source_name": "MarkTechPost",
-      "dek": "Turbovec compresses vector indexes 16x using TurboQuant.",
-      "brief": "Turbovec implements Google's TurboQuant algorithm for vector search, reducing memory usage by 16x. The Rust-based library with Python bindings enables efficient RAG pipelines by compressing 10M embeddings to 4GB.",
-      "image_alt": "Turbovec vector index architecture with compression metrics",
-      "status": "ok",
-      "attempted_at": "2026-05-21T06:36:42.463Z",
-      "enriched_at": "2026-05-21T06:36:42.463Z",
-      "failure_count": 0
-    },
     "https://marktechpost.com/2026/05/21/one-model-three-modalities-bytedance-releases-lance-for-image-and-video-understanding-generation-and-editing": {
       "url": "https://marktechpost.com/2026/05/21/one-model-three-modalities-bytedance-releases-lance-for-image-and-video-understanding-generation-and-editing",
       "title": "One Model, Three Modalities: ByteDance Releases Lance for Image and Video Understanding, Generation, and Editing",
@@ -3717,20 +3705,6 @@
       "enriched_at": "2026-06-23T06:34:17.074Z",
       "failure_count": 1
     },
-    "https://old.reddit.com/r/LocalLLaMA/comments/1tivvd4/i_got_qwen3vlembedding2b_working_with_rkllm_on_an": {
-      "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tivvd4/i_got_qwen3vlembedding2b_working_with_rkllm_on_an",
-      "title": "I got Qwen3-VL-Embedding-2B working with rkllm on an Orange Pi 5b",
-      "source_name": "r/LocalLLaMA",
-      "dek": "Qwen3-VL-Embedding-2B runs on Orange Pi 5b with rkllm.",
-      "brief": "A Reddit user successfully deployed Qwen3-VL-Embedding-2B on Orange Pi 5b using rkllm. The model processes webcam images at ~10 seconds per inference, comparing against 1,300+ text phrases for similarity.",
-      "image_url": "https://external-preview.redd.it/AIxQ4FR2L-4I5Ap0LqJXORqjUutkRwwjhU-sG0OhYx8.png?width=640&crop=smart&auto=webp&s=436519c599c92cd52989ae785aaef6fa342c9621",
-      "image_alt": "Orange Pi 5b with Qwen3-VL model inference setup",
-      "image_source": "rss_media",
-      "status": "ok",
-      "attempted_at": "2026-05-21T06:36:42.463Z",
-      "enriched_at": "2026-05-21T06:36:42.463Z",
-      "failure_count": 0
-    },
     "https://old.reddit.com/r/LocalLLaMA/comments/1tjien7/tencent_hy_30b7b18b": {
       "url": "https://old.reddit.com/r/LocalLLaMA/comments/1tjien7/tencent_hy_30b7b18b",
       "title": "Tencent Hy 30B/7B/1.8B",
@@ -4286,6 +4260,18 @@
       "status": "ok",
       "attempted_at": "2026-07-07T15:14:42.058Z",
       "enriched_at": "2026-07-07T15:14:42.058Z",
+      "failure_count": 0
+    },
+    "https://old.reddit.com/r/LocalLLaMA/comments/1uq4oeg/glm52_on_8xb200_the_deployment_math_nobody_spells": {
+      "url": "https://old.reddit.com/r/LocalLLaMA/comments/1uq4oeg/glm52_on_8xb200_the_deployment_math_nobody_spells",
+      "title": "GLM-5.2 on 8xB200: the deployment math nobody spells out - NVFP4 + 2x TP=4 replicas should beat TP=8 by ~2x. Full config guidance inside.",
+      "source_name": "r/LocalLLaMA",
+      "dek": "Optimizing GLM-5.2 deployment on 8xB200 hardware requires specific tensor parallelism configurations to maximize throughput.",
+      "brief": "Engineering analysis suggests that using 4 replicas with 2x Tensor Parallelism (TP=2) significantly outperforms a single TP=8 configuration on 8xB200 nodes. The model, a 750B parameter MoE with 40B active parameters, benefits from this parallelization strategy by balancing memory bandwidth and compute utilization more effectively than monolithic scaling.",
+      "image_alt": "Diagram showing GPU cluster configuration for MoE model inference",
+      "status": "ok",
+      "attempted_at": "2026-07-08T14:40:31.648Z",
+      "enriched_at": "2026-07-08T14:40:31.648Z",
       "failure_count": 0
     },
     "https://old.reddit.com/r/LocalLLaMA/comments/1uq5qqs/i_built_a_tiny_proxy_that_gives_glm_52_vision_or": {
@@ -5872,6 +5858,20 @@
       "status": "ok",
       "attempted_at": "2026-06-13T12:54:52.471Z",
       "enriched_at": "2026-06-13T12:54:52.471Z",
+      "failure_count": 0
+    },
+    "https://the-decoder.com/muse-image-is-technically-impressive-but-metas-use-of-instagram-photos-raises-questions": {
+      "url": "https://the-decoder.com/muse-image-is-technically-impressive-but-metas-use-of-instagram-photos-raises-questions",
+      "title": "Muse Image is technically impressive, but Meta's use of Instagram photos raises questions",
+      "source_name": "The Decoder",
+      "dek": "Meta's new Muse Image model functions as an agentic system, utilizing tool calls to refine image generation outputs.",
+      "brief": "Meta's Superintelligence Labs has released Muse Image, an agent-based model that employs code execution and web search to iteratively improve image generation. Unlike standard diffusion models, it acts as an agent to refine its own results. The release has sparked debate regarding its use of public Instagram photos for generation, raising potential compliance concerns under the EU AI Act.",
+      "image_url": "https://the-decoder.com/wp-content/uploads/2026/07/Meta-Muse-Image-Video-title.png",
+      "image_alt": "Conceptual illustration of an AI agent workflow for image generation",
+      "image_source": "rss_content",
+      "status": "ok",
+      "attempted_at": "2026-07-08T14:40:31.648Z",
+      "enriched_at": "2026-07-08T14:40:31.648Z",
       "failure_count": 0
     },
     "https://the-decoder.com/new-ai-model-called-count-anything-does-exactly-what-it-says-and-thats-harder-than-it-sounds": {
