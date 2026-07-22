@@ -400,30 +400,6 @@
       "enriched_at": "2026-06-05T13:23:38.946Z",
       "failure_count": 0
     },
-    "https://arxiv.org/abs/2606.04095": {
-      "url": "https://arxiv.org/abs/2606.04095",
-      "title": "POLARIS: Guiding Small Models to Write Long Stories",
-      "source_name": "arXiv cs.CL",
-      "dek": "POLARIS improves long-form creative writing in small models using LLM-as-a-judge rewards and human-reference injection.",
-      "brief": "Small models often struggle with coherence and length in creative writing. POLARIS addresses this by using a frontier LLM judge for structured quality feedback and injecting human-written stories as anchors during GRPO training. This approach helps smaller models maintain quality over longer outputs.",
-      "image_alt": "Diagram showing the POLARIS training loop with LLM judge and human-reference injection",
-      "status": "ok",
-      "attempted_at": "2026-06-04T06:53:15.381Z",
-      "enriched_at": "2026-06-04T06:53:15.381Z",
-      "failure_count": 0
-    },
-    "https://arxiv.org/abs/2606.05165": {
-      "url": "https://arxiv.org/abs/2606.05165",
-      "title": "STRIDE: Training Data Attribution via Sparse Recovery from Subset Perturbations",
-      "source_name": "Hugging Face Daily Papers",
-      "dek": "STRIDE offers a new method for training data attribution by using sparse recovery from subset perturbations instead of gradient-based approximations.",
-      "brief": "Current training data attribution methods rely on expensive gradient tracking or repeated retraining. STRIDE shifts the focus to sparse recovery, aiming to trace model predictions back to training data more efficiently without the limitations of local parameter-space approximations.",
-      "image_alt": "Conceptual chart comparing gradient-based attribution vs STRIDE sparse recovery",
-      "status": "ok",
-      "attempted_at": "2026-06-04T06:53:15.381Z",
-      "enriched_at": "2026-06-04T06:53:15.381Z",
-      "failure_count": 0
-    },
     "https://arxiv.org/abs/2606.05168": {
       "url": "https://arxiv.org/abs/2606.05168",
       "title": "Epidemiology of Model Collapse: Modeling Synthetic Data Contamination via Bilayer SIR Dynamics",
@@ -1155,6 +1131,18 @@
       "enriched_at": "2026-07-21T07:42:16.711Z",
       "failure_count": 0
     },
+    "https://arxiv.org/abs/2607.18278": {
+      "url": "https://arxiv.org/abs/2607.18278",
+      "title": "FALCON-Discover: Discovering Concentrated False-Confidence Regions for Calibration",
+      "source_name": "arXiv cs.LG",
+      "dek": "FALCON-Discover identifies localized regions where models remain highly confident despite making incorrect predictions.",
+      "brief": "Standard calibration metrics often overlook local failure modes. FALCON-Discover is a model-agnostic framework that ranks predictions based on discrepancy signals like neighborhood agreement and perturbation stability to isolate these concentrated areas of false confidence.",
+      "image_alt": "Visualization of prediction space showing clusters of high-confidence errors.",
+      "status": "ok",
+      "attempted_at": "2026-07-22T14:21:45.515Z",
+      "enriched_at": "2026-07-22T14:21:45.515Z",
+      "failure_count": 0
+    },
     "https://arxiv.org/abs/2607.18358": {
       "url": "https://arxiv.org/abs/2607.18358",
       "title": "A Classifier That Teaches Itself: Self-Improving, Frozen-gate Training (SIFT) for Dynamic Document Classification",
@@ -1165,6 +1153,18 @@
       "status": "ok",
       "attempted_at": "2026-07-22T07:42:25.967Z",
       "enriched_at": "2026-07-22T07:42:25.967Z",
+      "failure_count": 0
+    },
+    "https://arxiv.org/abs/2607.19191": {
+      "url": "https://arxiv.org/abs/2607.19191",
+      "title": "ABot-World-0: Infinite Interactive World Rollout on a Single Desktop GPU",
+      "source_name": "Hugging Face Daily Papers",
+      "dek": "ABot-World-0 enables real-time, long-horizon interactive world modeling on consumer-grade hardware.",
+      "brief": "This action-conditioned video world model leverages a multi-source data pipeline—including AAA games and simulation engines—to learn controllable dynamics. It uses agent-driven data collection and automated quality checks to maintain performance on a single desktop GPU.",
+      "image_alt": "Diagram of the ABot-World-0 architecture and data pipeline.",
+      "status": "ok",
+      "attempted_at": "2026-07-22T14:21:45.515Z",
+      "enriched_at": "2026-07-22T14:21:45.515Z",
       "failure_count": 0
     },
     "https://arxiv.org/abs/2607.19331": {
@@ -2713,6 +2713,20 @@
       "enriched_at": "2026-07-19T13:53:14.612Z",
       "failure_count": 0
     },
+    "https://infoq.com/news/2026/07/anthropic-claude-containment": {
+      "url": "https://infoq.com/news/2026/07/anthropic-claude-containment",
+      "title": "Anthropic Details How It Contains Claude Across Web, Code, and Cowork",
+      "source_name": "InfoQ AI/ML/Data",
+      "dek": "Anthropic emphasizes deterministic environment constraints over permission prompts for agent security.",
+      "brief": "Anthropic's approach to Claude's containment focuses on hard limits for filesystem, network, and execution access. The strategy prioritizes structural trust boundaries and rigorous egress path management to mitigate risks that traditional permission-based safeguards fail to address.",
+      "image_url": "https://res.infoq.com/news/2026/07/anthropic-claude-containment/en/headerimage/Anthropic-Header-1784707138026.jpeg",
+      "image_alt": "Conceptual diagram of agent containment boundaries.",
+      "image_source": "rss_content",
+      "status": "ok",
+      "attempted_at": "2026-07-22T14:21:45.515Z",
+      "enriched_at": "2026-07-22T14:21:45.515Z",
+      "failure_count": 0
+    },
     "https://infoq.com/news/2026/07/dolt-version-control": {
       "url": "https://infoq.com/news/2026/07/dolt-version-control",
       "title": "Version Controlled SQL Database Dolt Releases 2.0 with Automatic Storage Cleanup and Compression",
@@ -2885,18 +2899,6 @@
       "status": "ok",
       "attempted_at": "2026-07-20T19:55:49.536Z",
       "enriched_at": "2026-07-20T19:55:49.536Z",
-      "failure_count": 0
-    },
-    "https://kasra.blog/blog/i-spent-1500-seeing-if-llms-could-hack-my-app": {
-      "url": "https://kasra.blog/blog/i-spent-1500-seeing-if-llms-could-hack-my-app",
-      "title": "I built a vulnerable app and spent $1,500 seeing if LLMs could hack it",
-      "source_name": "Hacker News (AI-filtered)",
-      "dek": "A security researcher spent $1,500 testing whether current LLMs can effectively exploit vulnerabilities in a custom web application.",
-      "brief": "The experiment involved a custom React Native app and Python backend designed with specific security flaws. The researcher evaluated how well various LLMs could identify and exploit these vulnerabilities, providing a practical look at the current state of AI-assisted penetration testing.",
-      "image_alt": "Three screens of the BookNook app showing home feed, leaderboard, and profile",
-      "status": "ok",
-      "attempted_at": "2026-06-04T06:53:15.381Z",
-      "enriched_at": "2026-06-04T06:53:15.381Z",
       "failure_count": 0
     },
     "https://langchain.com/blog/introducing-smithdb": {
@@ -3658,6 +3660,17 @@
       "attempted_at": "2026-07-08T07:41:24.912Z",
       "enriched_at": "2026-07-08T07:41:24.912Z",
       "failure_count": 0
+    },
+    "https://notion.com/blog/two-years-of-vector-search-at-notion": {
+      "url": "https://notion.com/blog/two-years-of-vector-search-at-notion",
+      "title": "Two years of vector search at Notion: 10x scale, 1/10th cost",
+      "source_name": "Lobsters (AI tag)",
+      "dek": "Notion engineering blog detailing optimizations for vector search at scale.",
+      "brief": "Comments",
+      "status": "failed",
+      "attempted_at": "2026-07-22T14:21:45.515Z",
+      "enriched_at": "2026-07-22T14:21:45.515Z",
+      "failure_count": 1
     },
     "https://oak.space/oak/oak": {
       "url": "https://oak.space/oak/oak",
@@ -5393,20 +5406,6 @@
       "status": "ok",
       "attempted_at": "2026-07-04T13:57:51.499Z",
       "enriched_at": "2026-07-04T13:57:51.499Z",
-      "failure_count": 0
-    },
-    "https://the-decoder.com/ai-can-now-coach-amateur-virologists-and-top-tech-leaders-want-congress-to-act-on-dna-security": {
-      "url": "https://the-decoder.com/ai-can-now-coach-amateur-virologists-and-top-tech-leaders-want-congress-to-act-on-dna-security",
-      "title": "AI can now coach amateur virologists, and top tech leaders want Congress to act on DNA security",
-      "source_name": "The Decoder",
-      "dek": "Tech leaders are calling for mandatory screening of synthetic DNA orders to mitigate the risk of AI-assisted biological weapon development.",
-      "brief": "OpenAI, Anthropic, and Google DeepMind executives, alongside prominent scientists, have signed an open letter urging the US government to mandate DNA synthesis screening. As AI models now exceed PhD-level expertise in lab procedures, the signatories argue that voluntary industry standards are insufficient to prevent the misuse of synthetic biology.",
-      "image_url": "https://the-decoder.com/wp-content/uploads/2023/06/Matthias_a_dangerous_bio_virus_emerging_from_a_computer.png",
-      "image_alt": "DNA double helix structure with digital overlay",
-      "image_source": "rss_content",
-      "status": "ok",
-      "attempted_at": "2026-06-04T13:27:44.995Z",
-      "enriched_at": "2026-06-04T13:27:44.995Z",
       "failure_count": 0
     },
     "https://the-decoder.com/ai-is-inflating-student-grades-and-the-effect-points-to-outsourced-work-not-better-learning": {
