@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-23T14:31:54.989Z",
-  "last_successful_generated_at": "2026-07-23T14:31:54.989Z",
+  "generated_at": "2026-07-23T19:45:39.342Z",
+  "last_successful_generated_at": "2026-07-23T19:45:39.342Z",
   "refresh_status": "ok",
   "classification_mode": "deterministic",
   "window_hours": 720,
@@ -24,8 +24,8 @@
       "name": "Google DeepMind YouTube",
       "status": "ok",
       "fetched_count": 2,
-      "fresh_count": 1,
-      "stale_count": 1,
+      "fresh_count": 0,
+      "stale_count": 2,
       "oldest_published_at": "2026-04-09T13:27:40.000Z",
       "newest_published_at": "2026-06-23T15:48:06.000Z"
     },
@@ -33,21 +33,21 @@
       "id": "yt_openai",
       "name": "OpenAI YouTube",
       "status": "ok",
-      "fetched_count": 3,
-      "fresh_count": 3,
+      "fetched_count": 2,
+      "fresh_count": 2,
       "stale_count": 0,
-      "oldest_published_at": "2026-07-16T15:37:30.000Z",
+      "oldest_published_at": "2026-07-16T22:15:11.000Z",
       "newest_published_at": "2026-07-23T09:33:40.000Z"
     },
     {
       "id": "yt_nvidia_developer",
       "name": "NVIDIA Developer YouTube",
       "status": "ok",
-      "fetched_count": 6,
-      "fresh_count": 6,
+      "fetched_count": 7,
+      "fresh_count": 7,
       "stale_count": 0,
       "oldest_published_at": "2026-07-14T16:00:16.000Z",
-      "newest_published_at": "2026-07-22T18:53:46.000Z"
+      "newest_published_at": "2026-07-23T19:04:46.000Z"
     },
     {
       "id": "yt_huggingface",
@@ -80,7 +80,7 @@
       "newest_published_at": "2026-07-10T04:01:06.000Z"
     }
   ],
-  "count": 16,
+  "count": 15,
   "clusters": [
     {
       "id": "57e7nc",
@@ -146,7 +146,78 @@
       "novelty": 0.827,
       "novelty_label": "high",
       "trust": 0.82,
-      "score": 0.792,
+      "score": 0.783,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1orj7ea",
+      "primary": {
+        "id": "1orj7ea",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "What Is NVFP4? Faster LLM Inference Without Losing Quality",
+        "url": "https://youtube.com/watch?v=UTfg-_EGurw",
+        "original_url": "https://www.youtube.com/watch?v=UTfg-_EGurw",
+        "image_url": "https://i.ytimg.com/vi/UTfg-_EGurw/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-07-23T19:04:46.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "UTfg-_EGurw"
+        }
+      },
+      "members": [
+        {
+          "id": "1orj7ea",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "What Is NVFP4? Faster LLM Inference Without Losing Quality",
+          "url": "https://youtube.com/watch?v=UTfg-_EGurw",
+          "original_url": "https://www.youtube.com/watch?v=UTfg-_EGurw",
+          "image_url": "https://i.ytimg.com/vi/UTfg-_EGurw/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-07-23T19:04:46.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "UTfg-_EGurw"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "What Is NVFP4? Faster LLM Inference Without Losing Quality",
+          "url": "https://youtube.com/watch?v=UTfg-_EGurw",
+          "published_at": "2026-07-23T19:04:46.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.8,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.782,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal",
@@ -218,7 +289,7 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.78,
-      "score": 0.51,
+      "score": 0.501,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -289,7 +360,7 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.78,
-      "score": 0.5,
+      "score": 0.492,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -408,77 +479,6 @@
       "builder_action": "Queue it for focused learning if the topic matches your current work."
     },
     {
-      "id": "e4qgq7",
-      "primary": {
-        "id": "e4qgq7",
-        "source_id": "yt_google_deepmind",
-        "source_name": "Google DeepMind YouTube",
-        "source_role": "learning",
-        "trust": 0.82,
-        "kind_hint": "video",
-        "title": "When millions of AI agents meet",
-        "url": "https://youtube.com/watch?v=V04bm-3d6EQ",
-        "original_url": "https://www.youtube.com/watch?v=V04bm-3d6EQ",
-        "image_url": "https://i.ytimg.com/vi/V04bm-3d6EQ/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-06-23T15:48:06.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCP7jMXSY2xbc3KCAE0MHQ-A",
-          "video_id": "V04bm-3d6EQ"
-        }
-      },
-      "members": [
-        {
-          "id": "e4qgq7",
-          "source_id": "yt_google_deepmind",
-          "source_name": "Google DeepMind YouTube",
-          "source_role": "learning",
-          "trust": 0.82,
-          "kind_hint": "video",
-          "title": "When millions of AI agents meet",
-          "url": "https://youtube.com/watch?v=V04bm-3d6EQ",
-          "original_url": "https://www.youtube.com/watch?v=V04bm-3d6EQ",
-          "image_url": "https://i.ytimg.com/vi/V04bm-3d6EQ/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-06-23T15:48:06.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCP7jMXSY2xbc3KCAE0MHQ-A",
-            "video_id": "V04bm-3d6EQ"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_google_deepmind",
-          "source_name": "Google DeepMind YouTube",
-          "title": "When millions of AI agents meet",
-          "url": "https://youtube.com/watch?v=V04bm-3d6EQ",
-          "published_at": "2026-06-23T15:48:06.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.82,
-      "score": 0.472,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
       "id": "kmj2ms",
       "primary": {
         "id": "kmj2ms",
@@ -543,148 +543,6 @@
       "novelty_label": "familiar",
       "trust": 0.82,
       "score": 0.472,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "1cj4pwn",
-      "primary": {
-        "id": "1cj4pwn",
-        "source_id": "yt_openai",
-        "source_name": "OpenAI YouTube",
-        "source_role": "learning",
-        "trust": 0.82,
-        "kind_hint": "video",
-        "title": "Think AI-First: Emmanuel Marill on Building AI-Native Companies | OpenAI France",
-        "url": "https://youtube.com/watch?v=Fu3WWi-pAv4",
-        "original_url": "https://www.youtube.com/watch?v=Fu3WWi-pAv4",
-        "image_url": "https://i.ytimg.com/vi/Fu3WWi-pAv4/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-07-16T15:37:30.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
-          "video_id": "Fu3WWi-pAv4"
-        }
-      },
-      "members": [
-        {
-          "id": "1cj4pwn",
-          "source_id": "yt_openai",
-          "source_name": "OpenAI YouTube",
-          "source_role": "learning",
-          "trust": 0.82,
-          "kind_hint": "video",
-          "title": "Think AI-First: Emmanuel Marill on Building AI-Native Companies | OpenAI France",
-          "url": "https://youtube.com/watch?v=Fu3WWi-pAv4",
-          "original_url": "https://www.youtube.com/watch?v=Fu3WWi-pAv4",
-          "image_url": "https://i.ytimg.com/vi/Fu3WWi-pAv4/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-07-16T15:37:30.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
-            "video_id": "Fu3WWi-pAv4"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_openai",
-          "source_name": "OpenAI YouTube",
-          "title": "Think AI-First: Emmanuel Marill on Building AI-Native Companies | OpenAI France",
-          "url": "https://youtube.com/watch?v=Fu3WWi-pAv4",
-          "published_at": "2026-07-16T15:37:30.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.82,
-      "score": 0.472,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "157u6lo",
-      "primary": {
-        "id": "157u6lo",
-        "source_id": "yt_huggingface",
-        "source_name": "Hugging Face YouTube",
-        "source_role": "learning",
-        "trust": 0.78,
-        "kind_hint": "video",
-        "title": "Local AI 201: Inference Engines, Hardware Stack",
-        "url": "https://youtube.com/watch?v=90k2HRT8Ito",
-        "original_url": "https://www.youtube.com/watch?v=90k2HRT8Ito",
-        "image_url": "https://i.ytimg.com/vi/90k2HRT8Ito/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-07-21T17:05:30.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
-          "video_id": "90k2HRT8Ito"
-        }
-      },
-      "members": [
-        {
-          "id": "157u6lo",
-          "source_id": "yt_huggingface",
-          "source_name": "Hugging Face YouTube",
-          "source_role": "learning",
-          "trust": 0.78,
-          "kind_hint": "video",
-          "title": "Local AI 201: Inference Engines, Hardware Stack",
-          "url": "https://youtube.com/watch?v=90k2HRT8Ito",
-          "original_url": "https://www.youtube.com/watch?v=90k2HRT8Ito",
-          "image_url": "https://i.ytimg.com/vi/90k2HRT8Ito/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-07-21T17:05:30.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
-            "video_id": "90k2HRT8Ito"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_huggingface",
-          "source_name": "Hugging Face YouTube",
-          "title": "Local AI 201: Inference Engines, Hardware Stack",
-          "url": "https://youtube.com/watch?v=90k2HRT8Ito",
-          "published_at": "2026-07-21T17:05:30.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.467,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -957,6 +815,77 @@
           "title": "How to Run Agent-Led Autoresearch with NVIDIA NeMo RL and NeMo Gym",
           "url": "https://youtube.com/watch?v=qP0uXRbg9hc",
           "published_at": "2026-07-14T16:00:25.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.463,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "157u6lo",
+      "primary": {
+        "id": "157u6lo",
+        "source_id": "yt_huggingface",
+        "source_name": "Hugging Face YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "Local AI 201: Inference Engines, Hardware Stack",
+        "url": "https://youtube.com/watch?v=90k2HRT8Ito",
+        "original_url": "https://www.youtube.com/watch?v=90k2HRT8Ito",
+        "image_url": "https://i.ytimg.com/vi/90k2HRT8Ito/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-07-21T17:05:30.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
+          "video_id": "90k2HRT8Ito"
+        }
+      },
+      "members": [
+        {
+          "id": "157u6lo",
+          "source_id": "yt_huggingface",
+          "source_name": "Hugging Face YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "Local AI 201: Inference Engines, Hardware Stack",
+          "url": "https://youtube.com/watch?v=90k2HRT8Ito",
+          "original_url": "https://www.youtube.com/watch?v=90k2HRT8Ito",
+          "image_url": "https://i.ytimg.com/vi/90k2HRT8Ito/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-07-21T17:05:30.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
+            "video_id": "90k2HRT8Ito"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_huggingface",
+          "source_name": "Hugging Face YouTube",
+          "title": "Local AI 201: Inference Engines, Hardware Stack",
+          "url": "https://youtube.com/watch?v=90k2HRT8Ito",
+          "published_at": "2026-07-21T17:05:30.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
