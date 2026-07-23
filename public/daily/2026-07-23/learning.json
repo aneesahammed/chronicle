@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-23T07:44:17.237Z",
-  "last_successful_generated_at": "2026-07-23T07:44:17.237Z",
+  "generated_at": "2026-07-23T14:31:54.989Z",
+  "last_successful_generated_at": "2026-07-23T14:31:54.989Z",
   "refresh_status": "ok",
   "classification_mode": "deterministic",
   "window_hours": 720,
@@ -33,11 +33,11 @@
       "id": "yt_openai",
       "name": "OpenAI YouTube",
       "status": "ok",
-      "fetched_count": 2,
-      "fresh_count": 2,
+      "fetched_count": 3,
+      "fresh_count": 3,
       "stale_count": 0,
       "oldest_published_at": "2026-07-16T15:37:30.000Z",
-      "newest_published_at": "2026-07-16T22:15:11.000Z"
+      "newest_published_at": "2026-07-23T09:33:40.000Z"
     },
     {
       "id": "yt_nvidia_developer",
@@ -80,8 +80,80 @@
       "newest_published_at": "2026-07-10T04:01:06.000Z"
     }
   ],
-  "count": 15,
+  "count": 16,
   "clusters": [
+    {
+      "id": "57e7nc",
+      "primary": {
+        "id": "57e7nc",
+        "source_id": "yt_openai",
+        "source_name": "OpenAI YouTube",
+        "source_role": "learning",
+        "trust": 0.82,
+        "kind_hint": "video",
+        "title": "How AI Agents Will Redesign Enterprise Work | Barak Kaufman, Wonderful",
+        "url": "https://youtube.com/watch?v=MX95QbxSc9Q",
+        "original_url": "https://www.youtube.com/watch?v=MX95QbxSc9Q",
+        "image_url": "https://i.ytimg.com/vi/MX95QbxSc9Q/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-07-23T09:33:40.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
+          "video_id": "MX95QbxSc9Q"
+        }
+      },
+      "members": [
+        {
+          "id": "57e7nc",
+          "source_id": "yt_openai",
+          "source_name": "OpenAI YouTube",
+          "source_role": "learning",
+          "trust": 0.82,
+          "kind_hint": "video",
+          "title": "How AI Agents Will Redesign Enterprise Work | Barak Kaufman, Wonderful",
+          "url": "https://youtube.com/watch?v=MX95QbxSc9Q",
+          "original_url": "https://www.youtube.com/watch?v=MX95QbxSc9Q",
+          "image_url": "https://i.ytimg.com/vi/MX95QbxSc9Q/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-07-23T09:33:40.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
+            "video_id": "MX95QbxSc9Q"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_openai",
+          "source_name": "OpenAI YouTube",
+          "title": "How AI Agents Will Redesign Enterprise Work | Barak Kaufman, Wonderful",
+          "url": "https://youtube.com/watch?v=MX95QbxSc9Q",
+          "published_at": "2026-07-23T09:33:40.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.827,
+      "novelty_label": "high",
+      "trust": 0.82,
+      "score": 0.792,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
     {
       "id": "1x19s5d",
       "primary": {
@@ -146,7 +218,7 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.78,
-      "score": 0.521,
+      "score": 0.51,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -217,78 +289,7 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.78,
-      "score": 0.512,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "157u6lo",
-      "primary": {
-        "id": "157u6lo",
-        "source_id": "yt_huggingface",
-        "source_name": "Hugging Face YouTube",
-        "source_role": "learning",
-        "trust": 0.78,
-        "kind_hint": "video",
-        "title": "Local AI 201: Inference Engines, Hardware Stack",
-        "url": "https://youtube.com/watch?v=90k2HRT8Ito",
-        "original_url": "https://www.youtube.com/watch?v=90k2HRT8Ito",
-        "image_url": "https://i.ytimg.com/vi/90k2HRT8Ito/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-07-21T17:05:30.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
-          "video_id": "90k2HRT8Ito"
-        }
-      },
-      "members": [
-        {
-          "id": "157u6lo",
-          "source_id": "yt_huggingface",
-          "source_name": "Hugging Face YouTube",
-          "source_role": "learning",
-          "trust": 0.78,
-          "kind_hint": "video",
-          "title": "Local AI 201: Inference Engines, Hardware Stack",
-          "url": "https://youtube.com/watch?v=90k2HRT8Ito",
-          "original_url": "https://www.youtube.com/watch?v=90k2HRT8Ito",
-          "image_url": "https://i.ytimg.com/vi/90k2HRT8Ito/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-07-21T17:05:30.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
-            "video_id": "90k2HRT8Ito"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_huggingface",
-          "source_name": "Hugging Face YouTube",
-          "title": "Local AI 201: Inference Engines, Hardware Stack",
-          "url": "https://youtube.com/watch?v=90k2HRT8Ito",
-          "published_at": "2026-07-21T17:05:30.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.478,
+      "score": 0.5,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -613,6 +614,77 @@
       "novelty_label": "familiar",
       "trust": 0.82,
       "score": 0.472,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "157u6lo",
+      "primary": {
+        "id": "157u6lo",
+        "source_id": "yt_huggingface",
+        "source_name": "Hugging Face YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "Local AI 201: Inference Engines, Hardware Stack",
+        "url": "https://youtube.com/watch?v=90k2HRT8Ito",
+        "original_url": "https://www.youtube.com/watch?v=90k2HRT8Ito",
+        "image_url": "https://i.ytimg.com/vi/90k2HRT8Ito/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-07-21T17:05:30.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
+          "video_id": "90k2HRT8Ito"
+        }
+      },
+      "members": [
+        {
+          "id": "157u6lo",
+          "source_id": "yt_huggingface",
+          "source_name": "Hugging Face YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "Local AI 201: Inference Engines, Hardware Stack",
+          "url": "https://youtube.com/watch?v=90k2HRT8Ito",
+          "original_url": "https://www.youtube.com/watch?v=90k2HRT8Ito",
+          "image_url": "https://i.ytimg.com/vi/90k2HRT8Ito/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-07-21T17:05:30.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
+            "video_id": "90k2HRT8Ito"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_huggingface",
+          "source_name": "Hugging Face YouTube",
+          "title": "Local AI 201: Inference Engines, Hardware Stack",
+          "url": "https://youtube.com/watch?v=90k2HRT8Ito",
+          "published_at": "2026-07-21T17:05:30.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.467,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
