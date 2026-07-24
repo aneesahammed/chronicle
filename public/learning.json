@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-24T07:41:46.066Z",
-  "last_successful_generated_at": "2026-07-24T07:41:46.066Z",
+  "generated_at": "2026-07-24T14:12:33.605Z",
+  "last_successful_generated_at": "2026-07-24T14:12:33.605Z",
   "refresh_status": "ok",
   "classification_mode": "deterministic",
   "window_hours": 720,
@@ -33,11 +33,11 @@
       "id": "yt_openai",
       "name": "OpenAI YouTube",
       "status": "ok",
-      "fetched_count": 2,
-      "fresh_count": 2,
+      "fetched_count": 3,
+      "fresh_count": 3,
       "stale_count": 0,
       "oldest_published_at": "2026-07-23T09:33:40.000Z",
-      "newest_published_at": "2026-07-23T19:40:16.000Z"
+      "newest_published_at": "2026-07-24T09:12:21.000Z"
     },
     {
       "id": "yt_nvidia_developer",
@@ -80,8 +80,80 @@
       "newest_published_at": "2026-07-10T04:01:06.000Z"
     }
   ],
-  "count": 15,
+  "count": 16,
   "clusters": [
+    {
+      "id": "gn678n",
+      "primary": {
+        "id": "gn678n",
+        "source_id": "yt_openai",
+        "source_name": "OpenAI YouTube",
+        "source_role": "learning",
+        "trust": 0.82,
+        "kind_hint": "video",
+        "title": "Building at the pace of AI innovation | Grant Lee, Gamma",
+        "url": "https://youtube.com/watch?v=PB7DBemxl3E",
+        "original_url": "https://www.youtube.com/watch?v=PB7DBemxl3E",
+        "image_url": "https://i.ytimg.com/vi/PB7DBemxl3E/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-07-24T09:12:21.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
+          "video_id": "PB7DBemxl3E"
+        }
+      },
+      "members": [
+        {
+          "id": "gn678n",
+          "source_id": "yt_openai",
+          "source_name": "OpenAI YouTube",
+          "source_role": "learning",
+          "trust": 0.82,
+          "kind_hint": "video",
+          "title": "Building at the pace of AI innovation | Grant Lee, Gamma",
+          "url": "https://youtube.com/watch?v=PB7DBemxl3E",
+          "original_url": "https://www.youtube.com/watch?v=PB7DBemxl3E",
+          "image_url": "https://i.ytimg.com/vi/PB7DBemxl3E/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-07-24T09:12:21.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
+            "video_id": "PB7DBemxl3E"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_openai",
+          "source_name": "OpenAI YouTube",
+          "title": "Building at the pace of AI innovation | Grant Lee, Gamma",
+          "url": "https://youtube.com/watch?v=PB7DBemxl3E",
+          "published_at": "2026-07-24T09:12:21.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.848,
+      "novelty_label": "high",
+      "trust": 0.82,
+      "score": 0.798,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
     {
       "id": "1vkzqvy",
       "primary": {
@@ -143,12 +215,12 @@
       "kind": "video",
       "quality": "signal",
       "one_liner": "",
-      "novelty": 0.805,
-      "novelty_label": "high",
+      "novelty": 0,
+      "novelty_label": "familiar",
       "trust": 0.82,
-      "score": 0.773,
+      "score": 0.521,
       "why_this_surfaced": [
-        "high novelty against the 30-day history",
+        "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
       ],
       "builder_action": "Queue it for focused learning if the topic matches your current work."
@@ -217,7 +289,7 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.78,
-      "score": 0.522,
+      "score": 0.511,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -288,78 +360,7 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.82,
-      "score": 0.515,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "1x19s5d",
-      "primary": {
-        "id": "1x19s5d",
-        "source_id": "yt_nvidia_developer",
-        "source_name": "NVIDIA Developer YouTube",
-        "source_role": "learning",
-        "trust": 0.78,
-        "kind_hint": "video",
-        "title": "Build and Optimize Robotics and Edge AI with the New Jetson Thor T2000 and T3000",
-        "url": "https://youtube.com/watch?v=930DlHopjws",
-        "original_url": "https://www.youtube.com/watch?v=930DlHopjws",
-        "image_url": "https://i.ytimg.com/vi/930DlHopjws/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-07-22T18:53:46.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-          "video_id": "930DlHopjws"
-        }
-      },
-      "members": [
-        {
-          "id": "1x19s5d",
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "source_role": "learning",
-          "trust": 0.78,
-          "kind_hint": "video",
-          "title": "Build and Optimize Robotics and Edge AI with the New Jetson Thor T2000 and T3000",
-          "url": "https://youtube.com/watch?v=930DlHopjws",
-          "original_url": "https://www.youtube.com/watch?v=930DlHopjws",
-          "image_url": "https://i.ytimg.com/vi/930DlHopjws/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-07-22T18:53:46.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-            "video_id": "930DlHopjws"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "title": "Build and Optimize Robotics and Edge AI with the New Jetson Thor T2000 and T3000",
-          "url": "https://youtube.com/watch?v=930DlHopjws",
-          "published_at": "2026-07-22T18:53:46.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.481,
+      "score": 0.504,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -478,58 +479,58 @@
       "builder_action": "Queue it for focused learning if the topic matches your current work."
     },
     {
-      "id": "19gcmen",
+      "id": "1x19s5d",
       "primary": {
-        "id": "19gcmen",
-        "source_id": "yt_huggingface",
-        "source_name": "Hugging Face YouTube",
+        "id": "1x19s5d",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
         "source_role": "learning",
         "trust": 0.78,
         "kind_hint": "video",
-        "title": "Training Agents 3: Reinforcement Learning",
-        "url": "https://youtube.com/watch?v=ztdTed5egrM",
-        "original_url": "https://www.youtube.com/watch?v=ztdTed5egrM",
-        "image_url": "https://i.ytimg.com/vi/ztdTed5egrM/hqdefault.jpg",
+        "title": "Build and Optimize Robotics and Edge AI with the New Jetson Thor T2000 and T3000",
+        "url": "https://youtube.com/watch?v=930DlHopjws",
+        "original_url": "https://www.youtube.com/watch?v=930DlHopjws",
+        "image_url": "https://i.ytimg.com/vi/930DlHopjws/hqdefault.jpg",
         "image_source": "youtube_thumbnail",
-        "published_at": "2026-07-22T13:04:13.000Z",
+        "published_at": "2026-07-22T18:53:46.000Z",
         "published_at_source": "feed",
         "date_confidence": "high",
         "learning": {
           "provider": "YouTube",
-          "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
-          "video_id": "ztdTed5egrM"
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "930DlHopjws"
         }
       },
       "members": [
         {
-          "id": "19gcmen",
-          "source_id": "yt_huggingface",
-          "source_name": "Hugging Face YouTube",
+          "id": "1x19s5d",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
           "source_role": "learning",
           "trust": 0.78,
           "kind_hint": "video",
-          "title": "Training Agents 3: Reinforcement Learning",
-          "url": "https://youtube.com/watch?v=ztdTed5egrM",
-          "original_url": "https://www.youtube.com/watch?v=ztdTed5egrM",
-          "image_url": "https://i.ytimg.com/vi/ztdTed5egrM/hqdefault.jpg",
+          "title": "Build and Optimize Robotics and Edge AI with the New Jetson Thor T2000 and T3000",
+          "url": "https://youtube.com/watch?v=930DlHopjws",
+          "original_url": "https://www.youtube.com/watch?v=930DlHopjws",
+          "image_url": "https://i.ytimg.com/vi/930DlHopjws/hqdefault.jpg",
           "image_source": "youtube_thumbnail",
-          "published_at": "2026-07-22T13:04:13.000Z",
+          "published_at": "2026-07-22T18:53:46.000Z",
           "published_at_source": "feed",
           "date_confidence": "high",
           "learning": {
             "provider": "YouTube",
-            "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
-            "video_id": "ztdTed5egrM"
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "930DlHopjws"
           }
         }
       ],
       "source_trail": [
         {
-          "source_id": "yt_huggingface",
-          "source_name": "Hugging Face YouTube",
-          "title": "Training Agents 3: Reinforcement Learning",
-          "url": "https://youtube.com/watch?v=ztdTed5egrM",
-          "published_at": "2026-07-22T13:04:13.000Z",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "Build and Optimize Robotics and Edge AI with the New Jetson Thor T2000 and T3000",
+          "url": "https://youtube.com/watch?v=930DlHopjws",
+          "published_at": "2026-07-22T18:53:46.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -541,7 +542,7 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.78,
-      "score": 0.472,
+      "score": 0.471,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -814,6 +815,77 @@
           "title": "How to Run Agent-Led Autoresearch with NVIDIA NeMo RL and NeMo Gym",
           "url": "https://youtube.com/watch?v=qP0uXRbg9hc",
           "published_at": "2026-07-14T16:00:25.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.463,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "19gcmen",
+      "primary": {
+        "id": "19gcmen",
+        "source_id": "yt_huggingface",
+        "source_name": "Hugging Face YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "Training Agents 3: Reinforcement Learning",
+        "url": "https://youtube.com/watch?v=ztdTed5egrM",
+        "original_url": "https://www.youtube.com/watch?v=ztdTed5egrM",
+        "image_url": "https://i.ytimg.com/vi/ztdTed5egrM/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-07-22T13:04:13.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
+          "video_id": "ztdTed5egrM"
+        }
+      },
+      "members": [
+        {
+          "id": "19gcmen",
+          "source_id": "yt_huggingface",
+          "source_name": "Hugging Face YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "Training Agents 3: Reinforcement Learning",
+          "url": "https://youtube.com/watch?v=ztdTed5egrM",
+          "original_url": "https://www.youtube.com/watch?v=ztdTed5egrM",
+          "image_url": "https://i.ytimg.com/vi/ztdTed5egrM/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-07-22T13:04:13.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
+            "video_id": "ztdTed5egrM"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_huggingface",
+          "source_name": "Hugging Face YouTube",
+          "title": "Training Agents 3: Reinforcement Learning",
+          "url": "https://youtube.com/watch?v=ztdTed5egrM",
+          "published_at": "2026-07-22T13:04:13.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
