@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-02T13:54:31.037Z",
-  "last_successful_generated_at": "2026-08-02T13:54:31.037Z",
+  "generated_at": "2026-08-02T19:34:31.673Z",
+  "last_successful_generated_at": "2026-08-02T19:34:31.673Z",
   "refresh_status": "partial",
   "classification_mode": "llm",
   "window_hours": 36,
   "source_total": 53,
-  "source_ok": 49,
-  "source_failed": 4,
+  "source_ok": 50,
+  "source_failed": 3,
   "failed_sources": [
     {
       "id": "marktechpost",
@@ -14,14 +14,9 @@
       "message": "Invalid character in entity name\nLine: 0\nColumn: 117\nChar: ="
     },
     {
-      "id": "r_localllama",
-      "name": "r/LocalLLaMA",
-      "message": "HTTP 429 Too Many Requests - url=https://old.reddit.com/r/LocalLLaMA/top/.rss?t=day"
-    },
-    {
       "id": "r_ml",
       "name": "r/MachineLearning",
-      "message": "HTTP 403 Blocked - <body class=theme-beta><div><style>.theme-light,:root{--rem360:22.5rem;--rem320:20rem;--rem192:12rem;--rem144:9rem;--rem128:8rem;--rem96:6rem;--rem90:5.625rem;--rem88:5.5rem;--rem64:4rem;--rem56:3.5rem;--rem48:3rem;--rem40:2.5rem;--rem36:2. - url=https://old.reddit.com/r/MachineLearning/top/.rss?t=day"
+      "message": "HTTP 429 Too Many Requests - url=https://old.reddit.com/r/MachineLearning/top/.rss?t=day"
     },
     {
       "id": "mistral",
@@ -300,10 +295,10 @@
       "id": "product_hunt",
       "name": "Product Hunt",
       "status": "ok",
-      "fetched_count": 3,
+      "fetched_count": 1,
       "fresh_count": 1,
-      "stale_count": 2,
-      "oldest_published_at": "2026-07-31T08:27:23.000Z",
+      "stale_count": 0,
+      "oldest_published_at": "2026-08-01T22:44:45.000Z",
       "newest_published_at": "2026-08-01T22:44:45.000Z"
     },
     {
@@ -327,11 +322,11 @@
       "id": "hn_show_ai",
       "name": "Show HN (AI-filtered)",
       "status": "ok",
-      "fetched_count": 2,
-      "fresh_count": 0,
+      "fetched_count": 3,
+      "fresh_count": 1,
       "stale_count": 2,
       "oldest_published_at": "2026-07-30T18:13:06.000Z",
-      "newest_published_at": "2026-07-31T05:17:29.000Z"
+      "newest_published_at": "2026-08-02T16:26:19.000Z"
     },
     {
       "id": "lobsters_ai",
@@ -346,18 +341,19 @@
     {
       "id": "r_localllama",
       "name": "r/LocalLLaMA",
-      "status": "failed",
-      "fetched_count": 0,
-      "message": "HTTP 429 Too Many Requests - url=https://old.reddit.com/r/LocalLLaMA/top/.rss?t=day",
-      "fresh_count": 0,
-      "stale_count": 0
+      "status": "ok",
+      "fetched_count": 25,
+      "fresh_count": 25,
+      "stale_count": 0,
+      "oldest_published_at": "2026-08-01T19:39:03.000Z",
+      "newest_published_at": "2026-08-02T18:54:26.000Z"
     },
     {
       "id": "r_ml",
       "name": "r/MachineLearning",
       "status": "failed",
       "fetched_count": 0,
-      "message": "HTTP 403 Blocked - <body class=theme-beta><div><style>.theme-light,:root{--rem360:22.5rem;--rem320:20rem;--rem192:12rem;--rem144:9rem;--rem128:8rem;--rem96:6rem;--rem90:5.625rem;--rem88:5.5rem;--rem64:4rem;--rem56:3.5rem;--rem48:3rem;--rem40:2.5rem;--rem36:2. - url=https://old.reddit.com/r/MachineLearning/top/.rss?t=day",
+      "message": "HTTP 429 Too Many Requests - url=https://old.reddit.com/r/MachineLearning/top/.rss?t=day",
       "fresh_count": 0,
       "stale_count": 0
     },
@@ -537,18 +533,18 @@
       "fetched_count": 8,
       "fresh_count": 3,
       "stale_count": 5,
-      "oldest_published_at": "2026-07-29T21:09:58.000Z",
-      "newest_published_at": "2026-08-02T07:00:38.000Z"
+      "oldest_published_at": "2026-07-30T07:00:24.000Z",
+      "newest_published_at": "2026-08-02T19:00:17.000Z"
     },
     {
       "id": "yt_nate_b_jones",
       "name": "AI News & Strategy Daily",
       "status": "ok",
       "fetched_count": 8,
-      "fresh_count": 2,
-      "stale_count": 6,
-      "oldest_published_at": "2026-07-27T14:00:10.000Z",
-      "newest_published_at": "2026-08-02T03:00:29.000Z"
+      "fresh_count": 3,
+      "stale_count": 5,
+      "oldest_published_at": "2026-07-28T03:00:08.000Z",
+      "newest_published_at": "2026-08-02T17:00:00.000Z"
     }
   ],
   "top_news": [
@@ -559,7 +555,7 @@
       "source_name": "The Decoder",
       "published_at": "2026-08-02T12:42:49.000Z",
       "kind": "news",
-      "score": 0.794,
+      "score": 0.784,
       "dek": "Apple is capping bug bounty submissions after AI-generated reports overwhelmed its review pipeline.",
       "brief": "Security researchers are struggling to report legitimate vulnerabilities because Apple's inbox is flooded with low-quality, AI-hallucinated bug reports. The resulting submission caps have delayed the disclosure of critical flaws, including a macOS vulnerability that could grant attackers full system control.",
       "image_url": "https://the-decoder.com/wp-content/uploads/2026/07/apple_logo_neon_green.png",
@@ -575,7 +571,7 @@
       "source_name": "Interconnects (Lambert)",
       "published_at": "2026-08-02T13:01:40.000Z",
       "kind": "news",
-      "score": 0.661,
+      "score": 0.652,
       "dek": "Despite predictions of industry consolidation, the number of organizations releasing high-performance open models continues to grow.",
       "brief": "Contrary to expectations that rising training costs would consolidate the AI market, more companies are investing heavily to develop and release strong open models. Recent releases like Laguna S2.1, Inkling, and Kimi K3 demonstrate that high-utility models are increasingly accessible on the Pareto frontier.",
       "image_url": "https://substackcdn.com/image/fetch/$s_!RSM6!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7a71a4f9-5ac5-447e-82ff-899915627512_2048x1152.jpeg",
@@ -583,9 +579,25 @@
       "image_source": "rss_enclosure",
       "enrichment_status": "ok",
       "enriched_at": "2026-08-02T13:54:31.037Z"
+    },
+    {
+      "cluster_id": "d4oiqz",
+      "title": "All Qwen model oneshots: 1109 outputs to look at and compare!",
+      "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdn7zl/all_qwen_model_oneshots_1109_outputs_to_look_at",
+      "source_name": "r/LocalLLaMA",
+      "published_at": "2026-08-02T16:57:30.000Z",
+      "kind": "tool",
+      "score": 0.729,
+      "dek": "A community-driven project has compiled 1,109 model outputs across 33 Qwen variants to facilitate direct performance comparisons.",
+      "brief": "The dataset covers a wide range of Qwen models, including versions 3.5, 3.6, and 3.7, tested against 35 standardized prompts. This resource allows developers to evaluate output quality and consistency across different model sizes and iterations.",
+      "image_url": "https://preview.redd.it/vj7p7960szgh1.png?width=140&height=108&auto=webp&s=71bd92b02c656e807336a7333c483b7a5aa06de0",
+      "image_alt": "A grid visualization showing comparative text outputs from various Qwen LLM versions.",
+      "image_source": "rss_media",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-08-02T19:34:31.673Z"
     }
   ],
-  "count": 22,
+  "count": 37,
   "clusters": [
     {
       "id": "1gch161",
@@ -639,11 +651,11 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "signal",
-      "one_liner": "Apple's bug bounty program is overwhelmed by AI-generated spam, delaying reports of actual vulnerabilities.",
+      "one_liner": "Apple's bug bounty program is overwhelmed by AI-generated submissions, delaying the reporting of real vulnerabilities.",
       "novelty": 0.874,
       "novelty_label": "high",
       "trust": 0.74,
-      "score": 0.794,
+      "score": 0.784,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal",
@@ -701,19 +713,19 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "paper",
+      "kind": "news",
       "quality": "signal",
-      "one_liner": "Meta AI introduces a memory-management agent to track state and prevent redundant errors in long-horizon tasks.",
+      "one_liner": "Meta AI implements a secondary memory agent to track task progress and prevent redundant errors.",
       "novelty": 0.845,
       "novelty_label": "high",
       "trust": 0.74,
-      "score": 0.785,
+      "score": 0.776,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal",
         "fresh within the current refresh window"
       ],
-      "builder_action": "Save this for technical review if the method maps to your roadmap."
+      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "1e9xpx6",
@@ -767,15 +779,271 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "signal",
-      "one_liner": "Analysis shows AI-discovered vulnerabilities have a similar exploitation rate to traditional findings.",
+      "one_liner": "Analysis shows only 1.3% of AI-discovered vulnerabilities are exploited, matching the rate of non-AI discovered flaws.",
       "novelty": 0.848,
       "novelty_label": "high",
       "trust": 0.74,
-      "score": 0.782,
+      "score": 0.772,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "d4oiqz",
+      "primary": {
+        "id": "d4oiqz",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "All Qwen model oneshots: 1109 outputs to look at and compare!",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdn7zl/all_qwen_model_oneshots_1109_outputs_to_look_at",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdn7zl/all_qwen_model_oneshots_1109_outputs_to_look_at/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdn7zl/all_qwen_model_oneshots_1109_outputs_to_look_at",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "I've been busy this weekend generating oneshots for all the cheapest models on the openrouter and ended up going through all 33 qwen models across 35 prompts (there were some failures and only 1109 made out of 33*35 matrix). Here they are https://oneshotlm.com/model/?q=qwen Qwen 3.7: qwen3.7-plus, qwen3.7-flash Qwen 3.6: qwen3.6-plus, qwen3.6-35b-a3b, qwen3.6-27b, qwen3.6-flash Qwen 3.5: qwen3.5-plus (02-15) · (20260420), qwen3.5-397b-a17b, qwen3.5-122b-a10b, qwen3.5-35b-a3b, qwen3.5-27b, qwen3.5-9b, qwen3.5-flash Qwen 3 (+2507 refresh): qwen3-235b-a22b (+2507, +thinking), qwen3-next-80b-a3b,",
+        "image_url": "https://preview.redd.it/vj7p7960szgh1.png?width=140&height=108&auto=webp&s=71bd92b02c656e807336a7333c483b7a5aa06de0",
+        "image_source": "rss_media",
+        "published_at": "2026-08-02T16:57:30.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "d4oiqz",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "All Qwen model oneshots: 1109 outputs to look at and compare!",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdn7zl/all_qwen_model_oneshots_1109_outputs_to_look_at",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdn7zl/all_qwen_model_oneshots_1109_outputs_to_look_at/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdn7zl/all_qwen_model_oneshots_1109_outputs_to_look_at",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "I've been busy this weekend generating oneshots for all the cheapest models on the openrouter and ended up going through all 33 qwen models across 35 prompts (there were some failures and only 1109 made out of 33*35 matrix). Here they are https://oneshotlm.com/model/?q=qwen Qwen 3.7: qwen3.7-plus, qwen3.7-flash Qwen 3.6: qwen3.6-plus, qwen3.6-35b-a3b, qwen3.6-27b, qwen3.6-flash Qwen 3.5: qwen3.5-plus (02-15) · (20260420), qwen3.5-397b-a17b, qwen3.5-122b-a10b, qwen3.5-35b-a3b, qwen3.5-27b, qwen3.5-9b, qwen3.5-flash Qwen 3 (+2507 refresh): qwen3-235b-a22b (+2507, +thinking), qwen3-next-80b-a3b,",
+          "image_url": "https://preview.redd.it/vj7p7960szgh1.png?width=140&height=108&auto=webp&s=71bd92b02c656e807336a7333c483b7a5aa06de0",
+          "image_source": "rss_media",
+          "published_at": "2026-08-02T16:57:30.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "All Qwen model oneshots: 1109 outputs to look at and compare!",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdn7zl/all_qwen_model_oneshots_1109_outputs_to_look_at",
+          "published_at": "2026-08-02T16:57:30.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdn7zl/all_qwen_model_oneshots_1109_outputs_to_look_at",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "A comparative dataset of 1109 outputs across 33 Qwen model variants for evaluation.",
+      "novelty": 0.85,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.729,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal",
         "fresh within the current refresh window"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "1uttthp",
+      "primary": {
+        "id": "1uttthp",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "After Hugging Face incident, METR urges independent root-cause investigations into AI agent misbehavior",
+        "url": "https://the-decoder.com/after-hugging-face-incident-metr-urges-independent-root-cause-investigations-into-ai-agent-misbehavior",
+        "original_url": "https://the-decoder.com/after-hugging-face-incident-metr-urges-independent-root-cause-investigations-into-ai-agent-misbehavior/",
+        "summary": "Research organization METR is calling for systematic, independently led investigations whenever AI agents act autonomously against their developers' intentions. The push comes partly in response to the Hugging Face hack carried out by OpenAI models. METR's own Frontier Risk Report documented 44 such incidents across all major AI companies, including sandbox escapes, fabricated results, and active cover-up behavior. The article After Hugging Face incident, METR urges independent root-cause investigations into AI agent misbehavior appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/07/metr-ki-agenten-untersuchung-illustration.png",
+        "image_source": "rss_content",
+        "published_at": "2026-08-02T07:33:17.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1uttthp",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "After Hugging Face incident, METR urges independent root-cause investigations into AI agent misbehavior",
+          "url": "https://the-decoder.com/after-hugging-face-incident-metr-urges-independent-root-cause-investigations-into-ai-agent-misbehavior",
+          "original_url": "https://the-decoder.com/after-hugging-face-incident-metr-urges-independent-root-cause-investigations-into-ai-agent-misbehavior/",
+          "summary": "Research organization METR is calling for systematic, independently led investigations whenever AI agents act autonomously against their developers' intentions. The push comes partly in response to the Hugging Face hack carried out by OpenAI models. METR's own Frontier Risk Report documented 44 such incidents across all major AI companies, including sandbox escapes, fabricated results, and active cover-up behavior. The article After Hugging Face incident, METR urges independent root-cause investigations into AI agent misbehavior appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/07/metr-ki-agenten-untersuchung-illustration.png",
+          "image_source": "rss_content",
+          "published_at": "2026-08-02T07:33:17.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "After Hugging Face incident, METR urges independent root-cause investigations into AI agent misbehavior",
+          "url": "https://the-decoder.com/after-hugging-face-incident-metr-urges-independent-root-cause-investigations-into-ai-agent-misbehavior",
+          "published_at": "2026-08-02T07:33:17.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "METR advocates for independent root-cause analysis of autonomous AI agent failures.",
+      "novelty": 0.78,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.747,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "118jzxz",
+      "primary": {
+        "id": "118jzxz",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "[Release] WinterMix — Qwen3.5-122B-A10B in native MLX: an 82 GiB build that beats 94–95 GiB quants, plus a 68 GiB build for agent swarms",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdcs8e/release_wintermix_qwen35122ba10b_in_native_mlx_an",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdcs8e/release_wintermix_qwen35122ba10b_in_native_mlx_an/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdcs8e/release_wintermix_qwen35122ba10b_in_native_mlx_an",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "TL;DR: I spent 9 days developing a new quantization method for MLX models and measured 18 variants against each other on a single M5 Max MacBook Pro (128 GB). The result is the best-measuring MLX quant of Qwen3.5-122B-A10B I'm aware of at any size — the 82 GiB build edges out 94–95 GiB 6-bit builds, and lands within 0.3–0.7% of the imatrix-rounded source GGUF while staying native MLX. Apache 2.0, weights up on HF. Why bother if GGUF is better? MLX on Apple Silicon is substantially faster than llama.cpp on the same hardware — on my M5 Max I measure roughly 9x faster prefill and ~20% faster toke",
+        "published_at": "2026-08-02T08:42:03.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "118jzxz",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "[Release] WinterMix — Qwen3.5-122B-A10B in native MLX: an 82 GiB build that beats 94–95 GiB quants, plus a 68 GiB build for agent swarms",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdcs8e/release_wintermix_qwen35122ba10b_in_native_mlx_an",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdcs8e/release_wintermix_qwen35122ba10b_in_native_mlx_an/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdcs8e/release_wintermix_qwen35122ba10b_in_native_mlx_an",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "TL;DR: I spent 9 days developing a new quantization method for MLX models and measured 18 variants against each other on a single M5 Max MacBook Pro (128 GB). The result is the best-measuring MLX quant of Qwen3.5-122B-A10B I'm aware of at any size — the 82 GiB build edges out 94–95 GiB 6-bit builds, and lands within 0.3–0.7% of the imatrix-rounded source GGUF while staying native MLX. Apache 2.0, weights up on HF. Why bother if GGUF is better? MLX on Apple Silicon is substantially faster than llama.cpp on the same hardware — on my M5 Max I measure roughly 9x faster prefill and ~20% faster toke",
+          "published_at": "2026-08-02T08:42:03.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "[Release] WinterMix — Qwen3.5-122B-A10B in native MLX: an 82 GiB build that beats 94–95 GiB quants, plus a 68 GiB build for agent swarms",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdcs8e/release_wintermix_qwen35122ba10b_in_native_mlx_an",
+          "published_at": "2026-08-02T08:42:03.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdcs8e/release_wintermix_qwen35122ba10b_in_native_mlx_an",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "New MLX quantization method for Qwen3.5-122B achieving higher performance at lower memory footprints.",
+      "novelty": 0.842,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.713,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
+    },
+    {
+      "id": "1068tyx",
+      "primary": {
+        "id": "1068tyx",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "Judge denies xAI’s request to block Minnesota ban on ‘nudify’ apps",
+        "url": "https://techcrunch.com/2026/08/01/judge-denies-xais-request-to-block-minnesota-ban-on-nudify-apps",
+        "original_url": "https://techcrunch.com/2026/08/01/judge-denies-xais-request-to-block-minnesota-ban-on-nudify-apps/",
+        "summary": "Despite a lawsuit from xAI, a Minnesota ban on apps that allow users to “nudify” images can move forward.",
+        "published_at": "2026-08-01T20:26:04.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1068tyx",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "Judge denies xAI’s request to block Minnesota ban on ‘nudify’ apps",
+          "url": "https://techcrunch.com/2026/08/01/judge-denies-xais-request-to-block-minnesota-ban-on-nudify-apps",
+          "original_url": "https://techcrunch.com/2026/08/01/judge-denies-xais-request-to-block-minnesota-ban-on-nudify-apps/",
+          "summary": "Despite a lawsuit from xAI, a Minnesota ban on apps that allow users to “nudify” images can move forward.",
+          "published_at": "2026-08-01T20:26:04.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "Judge denies xAI’s request to block Minnesota ban on ‘nudify’ apps",
+          "url": "https://techcrunch.com/2026/08/01/judge-denies-xais-request-to-block-minnesota-ban-on-nudify-apps",
+          "published_at": "2026-08-01T20:26:04.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Court ruling allows Minnesota to enforce a ban on AI-generated non-consensual explicit imagery apps.",
+      "novelty": 0.853,
+      "novelty_label": "high",
+      "trust": 0.72,
+      "score": 0.746,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
       ],
       "builder_action": "Read the primary source and decide whether it changes your next action."
     },
@@ -823,17 +1091,147 @@
       "also_seen_on": [],
       "kind": "opinion",
       "quality": "mixed",
-      "one_liner": "Analysis of the efficacy and intent behind open letters regarding AI development.",
+      "one_liner": "Commentary on the trend of open letters regarding AI development.",
       "novelty": 0.811,
       "novelty_label": "high",
       "trust": 0.9,
-      "score": 0.685,
+      "score": 0.676,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal",
         "primary source has high trust weight"
       ],
       "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "b40pcw",
+      "primary": {
+        "id": "b40pcw",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "I pushed Kimi K3 onto one CPU with 8 GB of RAM",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd874t/i_pushed_kimi_k3_onto_one_cpu_with_8_gb_of_ram",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd874t/i_pushed_kimi_k3_onto_one_cpu_with_8_gb_of_ram/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd874t/i_pushed_kimi_k3_onto_one_cpu_with_8_gb_of_ram",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "I deployed K3 on 32 H100s at work a couple of weeks ago and then got annoyed that there was no way to poke at it on my own machine. So I wrote an inference engine for it in C99. Nothing clever going on. 93% of that 1.56 TB checkpoint is routed experts, and only 16 of 896 fire per token, so the experts never become resident at all. They get read off NVMe on demand and multiplied straight out of their packed 4-bit form, no dequantization step. The dense trunk gets repacked into one file where layer L sits at a known offset and streamed one layer at a time. What stays in RAM is a dial you set. Nu",
+        "published_at": "2026-08-02T04:26:21.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "b40pcw",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "I pushed Kimi K3 onto one CPU with 8 GB of RAM",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd874t/i_pushed_kimi_k3_onto_one_cpu_with_8_gb_of_ram",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd874t/i_pushed_kimi_k3_onto_one_cpu_with_8_gb_of_ram/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd874t/i_pushed_kimi_k3_onto_one_cpu_with_8_gb_of_ram",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "I deployed K3 on 32 H100s at work a couple of weeks ago and then got annoyed that there was no way to poke at it on my own machine. So I wrote an inference engine for it in C99. Nothing clever going on. 93% of that 1.56 TB checkpoint is routed experts, and only 16 of 896 fire per token, so the experts never become resident at all. They get read off NVMe on demand and multiplied straight out of their packed 4-bit form, no dequantization step. The dense trunk gets repacked into one file where layer L sits at a known offset and streamed one layer at a time. What stays in RAM is a dial you set. Nu",
+          "published_at": "2026-08-02T04:26:21.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "I pushed Kimi K3 onto one CPU with 8 GB of RAM",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd874t/i_pushed_kimi_k3_onto_one_cpu_with_8_gb_of_ram",
+          "published_at": "2026-08-02T04:26:21.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd874t/i_pushed_kimi_k3_onto_one_cpu_with_8_gb_of_ram",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Custom C99 inference engine for Kimi K3 enabling execution on CPU with 8GB RAM by leveraging MoE sparsity.",
+      "novelty": 0.843,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.706,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "llfc40",
+      "primary": {
+        "id": "llfc40",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Expert-only IQ3 requant of DeepSeek-V4-Flash-0731: better KLD than UD-IQ3_S, 1.4x decode on a CPU-spill rig",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd44uv/expertonly_iq3_requant_of_deepseekv4flash0731",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd44uv/expertonly_iq3_requant_of_deepseekv4flash0731/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd44uv/expertonly_iq3_requant_of_deepseekv4flash0731",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "Hey all, tldr / who this helps: you run a mixed multi-GPU box where the experts spill to RAM, and you want to stay in the 3-bit tier instead of dropping to Q2 to make it fit. Edit: I've also uploaded IQ3_XXS with info on which to download. https://huggingface.co/TacoTakumi/DeepSeek-V4-Flash-0731-GGUF I requantized only the 129 routed expert tensors of DeepSeek-V4-Flash-0731 and left every other tensor at whatever precision the source GGUF already had. Attention, shared experts, router and indexer stay at Q8_0/BF16/F32 from bartowski's MXFP4 conversion. Only the experts drop to IQ3_XXS, with th",
+        "published_at": "2026-08-02T01:05:20.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "llfc40",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Expert-only IQ3 requant of DeepSeek-V4-Flash-0731: better KLD than UD-IQ3_S, 1.4x decode on a CPU-spill rig",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd44uv/expertonly_iq3_requant_of_deepseekv4flash0731",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd44uv/expertonly_iq3_requant_of_deepseekv4flash0731/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd44uv/expertonly_iq3_requant_of_deepseekv4flash0731",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "Hey all, tldr / who this helps: you run a mixed multi-GPU box where the experts spill to RAM, and you want to stay in the 3-bit tier instead of dropping to Q2 to make it fit. Edit: I've also uploaded IQ3_XXS with info on which to download. https://huggingface.co/TacoTakumi/DeepSeek-V4-Flash-0731-GGUF I requantized only the 129 routed expert tensors of DeepSeek-V4-Flash-0731 and left every other tensor at whatever precision the source GGUF already had. Attention, shared experts, router and indexer stay at Q8_0/BF16/F32 from bartowski's MXFP4 conversion. Only the experts drop to IQ3_XXS, with th",
+          "published_at": "2026-08-02T01:05:20.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Expert-only IQ3 requant of DeepSeek-V4-Flash-0731: better KLD than UD-IQ3_S, 1.4x decode on a CPU-spill rig",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd44uv/expertonly_iq3_requant_of_deepseekv4flash0731",
+          "published_at": "2026-08-02T01:05:20.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd44uv/expertonly_iq3_requant_of_deepseekv4flash0731",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "IQ3 requantization of DeepSeek-V4-Flash optimized for multi-GPU setups with CPU-spill, improving KLD and decode speed.",
+      "novelty": 0.782,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.682,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
     },
     {
       "id": "tgy429",
@@ -885,11 +1283,11 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Overview of recent open model releases and the increasing accessibility of high-performance training.",
+      "one_liner": "Overview of recent open model releases and their position on the Pareto frontier.",
       "novelty": 0.722,
       "novelty_label": "medium",
       "trust": 0.85,
-      "score": 0.661,
+      "score": 0.652,
       "why_this_surfaced": [
         "meaningfully different from recent coverage",
         "classified as useful but lower-confidence signal",
@@ -899,68 +1297,218 @@
       "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
-      "id": "yfxdfc",
+      "id": "meso3a",
       "primary": {
-        "id": "yfxdfc",
-        "source_id": "wired_ai",
-        "source_name": "WIRED AI",
+        "id": "meso3a",
+        "source_id": "yt_nate_b_jones",
+        "source_name": "AI News & Strategy Daily",
         "source_role": "main",
-        "trust": 0.76,
-        "kind_hint": "news",
-        "title": "Europeans Are About to Find Out How Entrenched AI Is in Their Daily Lives",
-        "url": "https://wired.com/story/europeans-are-about-to-find-out-how-entrenched-ai-is-in-their-daily-lives",
-        "original_url": "https://www.wired.com/story/europeans-are-about-to-find-out-how-entrenched-ai-is-in-their-daily-lives/",
-        "summary": "New EU rules stipulate that people must be told when they’re interacting with AI or looking at AI-generated or -edited content, leading to fear of “disclosure fatigue.”",
-        "image_url": "https://media.wired.com/photos/6a6caf7dd48647a2296aebb5/master/pass/073126_Europeans%20Are%20About%20to%20See%20How%20Entrenched%20AI%20Is%20in%20Their%20Daily%20Lives.gif",
+        "trust": 0.62,
+        "kind_hint": "video",
+        "title": "If OpenAI And Anthropic Are Discouraging You, You're Probably A Level 1 Builder.",
+        "url": "https://youtube.com/watch?v=lewY_0sJaWg",
+        "original_url": "https://www.youtube.com/watch?v=lewY_0sJaWg",
+        "image_url": "https://i.ytimg.com/vi/lewY_0sJaWg/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-08-02T17:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UC0C-17n9iuUQPylguM1d-lQ",
+          "video_id": "lewY_0sJaWg"
+        }
+      },
+      "members": [
+        {
+          "id": "meso3a",
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "source_role": "main",
+          "trust": 0.62,
+          "kind_hint": "video",
+          "title": "If OpenAI And Anthropic Are Discouraging You, You're Probably A Level 1 Builder.",
+          "url": "https://youtube.com/watch?v=lewY_0sJaWg",
+          "original_url": "https://www.youtube.com/watch?v=lewY_0sJaWg",
+          "image_url": "https://i.ytimg.com/vi/lewY_0sJaWg/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-08-02T17:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UC0C-17n9iuUQPylguM1d-lQ",
+            "video_id": "lewY_0sJaWg"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "title": "If OpenAI And Anthropic Are Discouraging You, You're Probably A Level 1 Builder.",
+          "url": "https://youtube.com/watch?v=lewY_0sJaWg",
+          "published_at": "2026-08-02T17:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.769,
+      "novelty_label": "high",
+      "trust": 0.62,
+      "score": 0.62,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1mkz969",
+      "primary": {
+        "id": "1mkz969",
+        "source_id": "fahd_mirza",
+        "source_name": "Fahd Mirza YouTube",
+        "source_role": "main",
+        "trust": 0.66,
+        "kind_hint": "video",
+        "title": "ARK-ASR-3B: Multilingual ASR Model Tested Locally",
+        "url": "https://youtube.com/watch?v=Teh3_Ka-Ckk",
+        "original_url": "https://www.youtube.com/watch?v=Teh3_Ka-Ckk",
+        "image_url": "https://i.ytimg.com/vi/Teh3_Ka-Ckk/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-08-02T19:00:17.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+          "video_id": "Teh3_Ka-Ckk"
+        }
+      },
+      "members": [
+        {
+          "id": "1mkz969",
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "source_role": "main",
+          "trust": 0.66,
+          "kind_hint": "video",
+          "title": "ARK-ASR-3B: Multilingual ASR Model Tested Locally",
+          "url": "https://youtube.com/watch?v=Teh3_Ka-Ckk",
+          "original_url": "https://www.youtube.com/watch?v=Teh3_Ka-Ckk",
+          "image_url": "https://i.ytimg.com/vi/Teh3_Ka-Ckk/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-08-02T19:00:17.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+            "video_id": "Teh3_Ka-Ckk"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "title": "ARK-ASR-3B: Multilingual ASR Model Tested Locally",
+          "url": "https://youtube.com/watch?v=Teh3_Ka-Ckk",
+          "published_at": "2026-08-02T19:00:17.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.796,
+      "novelty_label": "high",
+      "trust": 0.66,
+      "score": 0.64,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1fe7ltp",
+      "primary": {
+        "id": "1fe7ltp",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "llama.cpp just added MTP / DSpark support for DeepSeek V4 Flash",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdhgq9/llamacpp_just_added_mtp_dspark_support_for",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdhgq9/llamacpp_just_added_mtp_dspark_support_for/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdhgq9/llamacpp_just_added_mtp_dspark_support_for",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "submitted by /u/rmhubbert [link] [comments]",
+        "image_url": "https://external-preview.redd.it/jdXph3H8kb4oPAEYCPR0Asz_PpfpnBORvgt2dXIYfUU.png?width=640&crop=smart&auto=webp&s=fb0d83726e4a0c32c65d4f9c1214f7c30166527d",
         "image_source": "rss_media",
-        "published_at": "2026-08-02T10:00:00.000Z",
+        "published_at": "2026-08-02T12:58:52.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "yfxdfc",
-          "source_id": "wired_ai",
-          "source_name": "WIRED AI",
+          "id": "1fe7ltp",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
           "source_role": "main",
-          "trust": 0.76,
-          "kind_hint": "news",
-          "title": "Europeans Are About to Find Out How Entrenched AI Is in Their Daily Lives",
-          "url": "https://wired.com/story/europeans-are-about-to-find-out-how-entrenched-ai-is-in-their-daily-lives",
-          "original_url": "https://www.wired.com/story/europeans-are-about-to-find-out-how-entrenched-ai-is-in-their-daily-lives/",
-          "summary": "New EU rules stipulate that people must be told when they’re interacting with AI or looking at AI-generated or -edited content, leading to fear of “disclosure fatigue.”",
-          "image_url": "https://media.wired.com/photos/6a6caf7dd48647a2296aebb5/master/pass/073126_Europeans%20Are%20About%20to%20See%20How%20Entrenched%20AI%20Is%20in%20Their%20Daily%20Lives.gif",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "llama.cpp just added MTP / DSpark support for DeepSeek V4 Flash",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdhgq9/llamacpp_just_added_mtp_dspark_support_for",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdhgq9/llamacpp_just_added_mtp_dspark_support_for/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdhgq9/llamacpp_just_added_mtp_dspark_support_for",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "submitted by /u/rmhubbert [link] [comments]",
+          "image_url": "https://external-preview.redd.it/jdXph3H8kb4oPAEYCPR0Asz_PpfpnBORvgt2dXIYfUU.png?width=640&crop=smart&auto=webp&s=fb0d83726e4a0c32c65d4f9c1214f7c30166527d",
           "image_source": "rss_media",
-          "published_at": "2026-08-02T10:00:00.000Z",
+          "published_at": "2026-08-02T12:58:52.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "wired_ai",
-          "source_name": "WIRED AI",
-          "title": "Europeans Are About to Find Out How Entrenched AI Is in Their Daily Lives",
-          "url": "https://wired.com/story/europeans-are-about-to-find-out-how-entrenched-ai-is-in-their-daily-lives",
-          "published_at": "2026-08-02T10:00:00.000Z",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "llama.cpp just added MTP / DSpark support for DeepSeek V4 Flash",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdhgq9/llamacpp_just_added_mtp_dspark_support_for",
+          "published_at": "2026-08-02T12:58:52.000Z",
           "published_at_source": "feed",
-          "date_confidence": "high"
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdhgq9/llamacpp_just_added_mtp_dspark_support_for",
+          "discussion_source": "r/LocalLLaMA"
         }
       ],
       "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "Discussion on the implementation of EU disclosure requirements for AI-generated content.",
-      "novelty": 0.828,
-      "novelty_label": "high",
-      "trust": 0.76,
-      "score": 0.667,
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "llama.cpp adds support for MTP and DSpark architectures, enabling native execution of DeepSeek V4 Flash.",
+      "novelty": 0.627,
+      "novelty_label": "medium",
+      "trust": 0.5,
+      "score": 0.655,
       "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal",
+        "meaningfully different from recent coverage",
+        "classified as concrete builder or research signal",
         "fresh within the current refresh window"
       ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
     },
     {
       "id": "yzarb",
@@ -1020,7 +1568,7 @@
       "novelty": 0.813,
       "novelty_label": "high",
       "trust": 0.62,
-      "score": 0.619,
+      "score": 0.61,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal"
@@ -1091,13 +1639,207 @@
       "novelty": 0.827,
       "novelty_label": "high",
       "trust": 0.66,
-      "score": 0.639,
+      "score": 0.63,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal",
-        "fresh within the current refresh window"
+        "classified as useful but lower-confidence signal"
       ],
       "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "yfxdfc",
+      "primary": {
+        "id": "yfxdfc",
+        "source_id": "wired_ai",
+        "source_name": "WIRED AI",
+        "source_role": "main",
+        "trust": 0.76,
+        "kind_hint": "news",
+        "title": "Europeans Are About to Find Out How Entrenched AI Is in Their Daily Lives",
+        "url": "https://wired.com/story/europeans-are-about-to-find-out-how-entrenched-ai-is-in-their-daily-lives",
+        "original_url": "https://www.wired.com/story/europeans-are-about-to-find-out-how-entrenched-ai-is-in-their-daily-lives/",
+        "summary": "New EU rules stipulate that people must be told when they’re interacting with AI or looking at AI-generated or -edited content, leading to fear of “disclosure fatigue.”",
+        "image_url": "https://media.wired.com/photos/6a6caf7dd48647a2296aebb5/master/pass/073126_Europeans%20Are%20About%20to%20See%20How%20Entrenched%20AI%20Is%20in%20Their%20Daily%20Lives.gif",
+        "image_source": "rss_media",
+        "published_at": "2026-08-02T10:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "yfxdfc",
+          "source_id": "wired_ai",
+          "source_name": "WIRED AI",
+          "source_role": "main",
+          "trust": 0.76,
+          "kind_hint": "news",
+          "title": "Europeans Are About to Find Out How Entrenched AI Is in Their Daily Lives",
+          "url": "https://wired.com/story/europeans-are-about-to-find-out-how-entrenched-ai-is-in-their-daily-lives",
+          "original_url": "https://www.wired.com/story/europeans-are-about-to-find-out-how-entrenched-ai-is-in-their-daily-lives/",
+          "summary": "New EU rules stipulate that people must be told when they’re interacting with AI or looking at AI-generated or -edited content, leading to fear of “disclosure fatigue.”",
+          "image_url": "https://media.wired.com/photos/6a6caf7dd48647a2296aebb5/master/pass/073126_Europeans%20Are%20About%20to%20See%20How%20Entrenched%20AI%20Is%20in%20Their%20Daily%20Lives.gif",
+          "image_source": "rss_media",
+          "published_at": "2026-08-02T10:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "wired_ai",
+          "source_name": "WIRED AI",
+          "title": "Europeans Are About to Find Out How Entrenched AI Is in Their Daily Lives",
+          "url": "https://wired.com/story/europeans-are-about-to-find-out-how-entrenched-ai-is-in-their-daily-lives",
+          "published_at": "2026-08-02T10:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Discussion on EU regulations requiring disclosure of AI-generated content and potential user fatigue.",
+      "novelty": 0.828,
+      "novelty_label": "high",
+      "trust": 0.76,
+      "score": 0.658,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "xx1fdq",
+      "primary": {
+        "id": "xx1fdq",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "DeepSeek-V4-Flash 284B on 5.3GB of memory",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdbix4/deepseekv4flash_284b_on_53gb_of_memory",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdbix4/deepseekv4flash_284b_on_53gb_of_memory/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdbix4/deepseekv4flash_284b_on_53gb_of_memory",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "Following up on my Qwen 3.6 port, I wanted to keep adding models and ended up fixing a bunch of things along the way, so it's its own engine now: Mference. Same core idea from TurboFieldfare, MoE models activate a few B params per token, so keep the shared core and KV cache resident and stream the selected experts off SSD. What runs now: Gemma 4 26B-A4B — ~2 GB, 31–35 tok/s on a 24 GB M5 Pro Qwen 3.6 35B-A3B — ~1.45 GB, 19–23 tok/s DeepSeek-V4-Flash 284B-A13B — new. ~6.8 GB peak memory, mostly ~5.3 GB in practice, up to 4.8 tok/s on the same 24 GB M5. 2-bit dynamic quant, ~91 GB on disk. Also",
+        "image_url": "https://external-preview.redd.it/dmlxOHY4ZDh5d2doMTKeaIgiLAILwUoBdScnKpKTXpOnyWsUOZKXl9qB_yy6.png?width=640&crop=smart&auto=webp&s=17b10c8ff40f89170da8614da99d735c69fd741b",
+        "image_source": "rss_media",
+        "published_at": "2026-08-02T07:28:04.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "xx1fdq",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "DeepSeek-V4-Flash 284B on 5.3GB of memory",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdbix4/deepseekv4flash_284b_on_53gb_of_memory",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdbix4/deepseekv4flash_284b_on_53gb_of_memory/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdbix4/deepseekv4flash_284b_on_53gb_of_memory",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "Following up on my Qwen 3.6 port, I wanted to keep adding models and ended up fixing a bunch of things along the way, so it's its own engine now: Mference. Same core idea from TurboFieldfare, MoE models activate a few B params per token, so keep the shared core and KV cache resident and stream the selected experts off SSD. What runs now: Gemma 4 26B-A4B — ~2 GB, 31–35 tok/s on a 24 GB M5 Pro Qwen 3.6 35B-A3B — ~1.45 GB, 19–23 tok/s DeepSeek-V4-Flash 284B-A13B — new. ~6.8 GB peak memory, mostly ~5.3 GB in practice, up to 4.8 tok/s on the same 24 GB M5. 2-bit dynamic quant, ~91 GB on disk. Also",
+          "image_url": "https://external-preview.redd.it/dmlxOHY4ZDh5d2doMTKeaIgiLAILwUoBdScnKpKTXpOnyWsUOZKXl9qB_yy6.png?width=640&crop=smart&auto=webp&s=17b10c8ff40f89170da8614da99d735c69fd741b",
+          "image_source": "rss_media",
+          "published_at": "2026-08-02T07:28:04.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "DeepSeek-V4-Flash 284B on 5.3GB of memory",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdbix4/deepseekv4flash_284b_on_53gb_of_memory",
+          "published_at": "2026-08-02T07:28:04.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdbix4/deepseekv4flash_284b_on_53gb_of_memory",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Mference engine release enabling MoE model execution on constrained memory by offloading inactive experts.",
+      "novelty": 0.64,
+      "novelty_label": "medium",
+      "trust": 0.5,
+      "score": 0.65,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "plpvmv",
+      "primary": {
+        "id": "plpvmv",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Claude Opus 5 pushes prompt-to-game AI from rough color blocks to full 3D prototypes with physics and music",
+        "url": "https://the-decoder.com/claude-opus-5-pushes-prompt-to-game-ai-from-rough-color-blocks-to-full-3d-prototypes-with-physics-and-music",
+        "original_url": "https://the-decoder.com/claude-opus-5-pushes-prompt-to-game-ai-from-rough-color-blocks-to-full-3d-prototypes-with-physics-and-music/",
+        "summary": "Anthropic's Claude Opus 5 generates complete 3D games from single prompts, including a first-person shooter, a kart racer, and a Minecraft clone, all without a single external asset. Geometry, textures, physics, and in some cases music are produced as code and run directly in the browser. In side-by-side comparisons with GPT-5.6 Sol and Kimi K3, Opus 5 delivers significantly more detailed results. The article Claude Opus 5 pushes prompt-to-game AI from rough color blocks to full 3D prototypes with physics and music appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/spielwelten-3d.png",
+        "image_source": "rss_content",
+        "published_at": "2026-08-02T08:51:07.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "plpvmv",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Claude Opus 5 pushes prompt-to-game AI from rough color blocks to full 3D prototypes with physics and music",
+          "url": "https://the-decoder.com/claude-opus-5-pushes-prompt-to-game-ai-from-rough-color-blocks-to-full-3d-prototypes-with-physics-and-music",
+          "original_url": "https://the-decoder.com/claude-opus-5-pushes-prompt-to-game-ai-from-rough-color-blocks-to-full-3d-prototypes-with-physics-and-music/",
+          "summary": "Anthropic's Claude Opus 5 generates complete 3D games from single prompts, including a first-person shooter, a kart racer, and a Minecraft clone, all without a single external asset. Geometry, textures, physics, and in some cases music are produced as code and run directly in the browser. In side-by-side comparisons with GPT-5.6 Sol and Kimi K3, Opus 5 delivers significantly more detailed results. The article Claude Opus 5 pushes prompt-to-game AI from rough color blocks to full 3D prototypes with physics and music appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/spielwelten-3d.png",
+          "image_source": "rss_content",
+          "published_at": "2026-08-02T08:51:07.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Claude Opus 5 pushes prompt-to-game AI from rough color blocks to full 3D prototypes with physics and music",
+          "url": "https://the-decoder.com/claude-opus-5-pushes-prompt-to-game-ai-from-rough-color-blocks-to-full-3d-prototypes-with-physics-and-music",
+          "published_at": "2026-08-02T08:51:07.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "mixed",
+      "one_liner": "Claude Opus 5 demonstrates capability to generate 3D game prototypes from text prompts.",
+      "novelty": 0.842,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.656,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
     },
     {
       "id": "1qcyy5i",
@@ -1151,17 +1893,81 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Snap and LinkedIn implement new policies to mitigate the impact of low-quality AI-generated content.",
+      "one_liner": "Snap and LinkedIn implement new policies to mitigate the impact of low-quality AI-generated content on their platforms.",
       "novelty": 0.829,
       "novelty_label": "high",
       "trust": 0.74,
-      "score": 0.658,
+      "score": 0.648,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal",
-        "fresh within the current refresh window"
+        "classified as useful but lower-confidence signal"
       ],
       "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1cdd6o4",
+      "primary": {
+        "id": "1cdd6o4",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "PSA for DeepSeek-V4-Flash-0731 users — don't blow out your prompt cache with system role messages mid-conversation",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdbgw5/psa_for_deepseekv4flash0731_users_dont_blow_out",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdbgw5/psa_for_deepseekv4flash0731_users_dont_blow_out/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdbgw5/psa_for_deepseekv4flash0731_users_dont_blow_out",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "DSv4F doesn't ship a jinja, but for distributions that do and faithfully reconstruct what DS releases in their chat template python, every system message is hoisted into the system prompt at the top -- the format has no mid-conversation system turn. So, anything you stick at the tail or mid-convo actually fries your prefix (and doesn't have conversational proximity to the injection point). Use latest_reminder, which is the role DS trained for how most templates use system and what most people providing quants are passing through (if they match DS' python template). I use llama.cpp and it happi",
+        "published_at": "2026-08-02T07:24:49.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1cdd6o4",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "PSA for DeepSeek-V4-Flash-0731 users — don't blow out your prompt cache with system role messages mid-conversation",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdbgw5/psa_for_deepseekv4flash0731_users_dont_blow_out",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdbgw5/psa_for_deepseekv4flash0731_users_dont_blow_out/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdbgw5/psa_for_deepseekv4flash0731_users_dont_blow_out",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "DSv4F doesn't ship a jinja, but for distributions that do and faithfully reconstruct what DS releases in their chat template python, every system message is hoisted into the system prompt at the top -- the format has no mid-conversation system turn. So, anything you stick at the tail or mid-convo actually fries your prefix (and doesn't have conversational proximity to the injection point). Use latest_reminder, which is the role DS trained for how most templates use system and what most people providing quants are passing through (if they match DS' python template). I use llama.cpp and it happi",
+          "published_at": "2026-08-02T07:24:49.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "PSA for DeepSeek-V4-Flash-0731 users — don't blow out your prompt cache with system role messages mid-conversation",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdbgw5/psa_for_deepseekv4flash0731_users_dont_blow_out",
+          "published_at": "2026-08-02T07:24:49.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdbgw5/psa_for_deepseekv4flash0731_users_dont_blow_out",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "signal",
+      "one_liner": "Technical warning regarding prompt cache bloat in DeepSeek-V4-Flash due to system message handling in chat templates.",
+      "novelty": 0.787,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.614,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
     },
     {
       "id": "1rjscdc",
@@ -1215,11 +2021,11 @@
       "also_seen_on": [],
       "kind": "opinion",
       "quality": "mixed",
-      "one_liner": "Discussion on the tension between artist compensation models and generative AI training practices.",
+      "one_liner": "Discussion on artist compensation models and the ethics of training data usage.",
       "novelty": 0.815,
       "novelty_label": "high",
       "trust": 0.68,
-      "score": 0.65,
+      "score": 0.641,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal",
@@ -1279,11 +2085,11 @@
       "also_seen_on": [],
       "kind": "company_announcement",
       "quality": "mixed",
-      "one_liner": "OpenAI launches Presence, an enterprise service for deploying AI agents with managed support.",
+      "one_liner": "OpenAI announces Presence, an enterprise service for deploying AI agents with managed support.",
       "novelty": 0.752,
       "novelty_label": "high",
       "trust": 0.74,
-      "score": 0.645,
+      "score": 0.636,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal",
@@ -1292,127 +2098,276 @@
       "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
     },
     {
-      "id": "1uttthp",
+      "id": "1s9lj3r",
       "primary": {
-        "id": "1uttthp",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
+        "id": "1s9lj3r",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
         "source_role": "main",
-        "trust": 0.74,
-        "kind_hint": "news",
-        "title": "After Hugging Face incident, METR urges independent root-cause investigations into AI agent misbehavior",
-        "url": "https://the-decoder.com/after-hugging-face-incident-metr-urges-independent-root-cause-investigations-into-ai-agent-misbehavior",
-        "original_url": "https://the-decoder.com/after-hugging-face-incident-metr-urges-independent-root-cause-investigations-into-ai-agent-misbehavior/",
-        "summary": "Research organization METR is calling for systematic, independently led investigations whenever AI agents act autonomously against their developers' intentions. The push comes partly in response to the Hugging Face hack carried out by OpenAI models. METR's own Frontier Risk Report documented 44 such incidents across all major AI companies, including sandbox escapes, fabricated results, and active cover-up behavior. The article After Hugging Face incident, METR urges independent root-cause investigations into AI agent misbehavior appeared first on The Decoder.",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/07/metr-ki-agenten-untersuchung-illustration.png",
-        "image_source": "rss_content",
-        "published_at": "2026-08-02T07:33:17.000Z",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Ran DS V4-Flash-0731 Locally on 3xMI50 32GB @ ~15 t/s TG",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd51ey/ran_ds_v4flash0731_locally_on_3xmi50_32gb_15_ts_tg",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd51ey/ran_ds_v4flash0731_locally_on_3xmi50_32gb_15_ts_tg/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd51ey/ran_ds_v4flash0731_locally_on_3xmi50_32gb_15_ts_tg",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "Hey y'all. I'll be concise. TL;DR: DS V4-Flash-0731 @ UD-IQ2_M running fully in VRAM on 3xMI50s (90.9 GB model, 96 GB VRAM). Actual speed on llama-server is: - Text Generation: ~15-16 tokens/second stable. Never dipped below 14 tokens/second, even when the model was spitting out a 30K token long reply. - Prompt Processing: ~105-110 tokens/second or so. Dipped down on prompt processing of smaller token-length prompts, which is pretty typical of course. llama-server CLI logs, for those interested: https://pastebin.com/nXy9v0x8 I had a brief conversation with the model. Seemed mostly good. At a g",
+        "image_url": "https://external-preview.redd.it/a2o4em9oeHc5dmdoMSN64ac4RUiikIpTL7LHKeBO6n9XIxr1kaPvPdLg6ZiN.png?width=640&crop=smart&auto=webp&s=13ee167931841d11e441381abca730afae29c874",
+        "image_source": "rss_media",
+        "published_at": "2026-08-02T01:49:36.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "1uttthp",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
+          "id": "1s9lj3r",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
           "source_role": "main",
-          "trust": 0.74,
-          "kind_hint": "news",
-          "title": "After Hugging Face incident, METR urges independent root-cause investigations into AI agent misbehavior",
-          "url": "https://the-decoder.com/after-hugging-face-incident-metr-urges-independent-root-cause-investigations-into-ai-agent-misbehavior",
-          "original_url": "https://the-decoder.com/after-hugging-face-incident-metr-urges-independent-root-cause-investigations-into-ai-agent-misbehavior/",
-          "summary": "Research organization METR is calling for systematic, independently led investigations whenever AI agents act autonomously against their developers' intentions. The push comes partly in response to the Hugging Face hack carried out by OpenAI models. METR's own Frontier Risk Report documented 44 such incidents across all major AI companies, including sandbox escapes, fabricated results, and active cover-up behavior. The article After Hugging Face incident, METR urges independent root-cause investigations into AI agent misbehavior appeared first on The Decoder.",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/07/metr-ki-agenten-untersuchung-illustration.png",
-          "image_source": "rss_content",
-          "published_at": "2026-08-02T07:33:17.000Z",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Ran DS V4-Flash-0731 Locally on 3xMI50 32GB @ ~15 t/s TG",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd51ey/ran_ds_v4flash0731_locally_on_3xmi50_32gb_15_ts_tg",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd51ey/ran_ds_v4flash0731_locally_on_3xmi50_32gb_15_ts_tg/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd51ey/ran_ds_v4flash0731_locally_on_3xmi50_32gb_15_ts_tg",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "Hey y'all. I'll be concise. TL;DR: DS V4-Flash-0731 @ UD-IQ2_M running fully in VRAM on 3xMI50s (90.9 GB model, 96 GB VRAM). Actual speed on llama-server is: - Text Generation: ~15-16 tokens/second stable. Never dipped below 14 tokens/second, even when the model was spitting out a 30K token long reply. - Prompt Processing: ~105-110 tokens/second or so. Dipped down on prompt processing of smaller token-length prompts, which is pretty typical of course. llama-server CLI logs, for those interested: https://pastebin.com/nXy9v0x8 I had a brief conversation with the model. Seemed mostly good. At a g",
+          "image_url": "https://external-preview.redd.it/a2o4em9oeHc5dmdoMSN64ac4RUiikIpTL7LHKeBO6n9XIxr1kaPvPdLg6ZiN.png?width=640&crop=smart&auto=webp&s=13ee167931841d11e441381abca730afae29c874",
+          "image_source": "rss_media",
+          "published_at": "2026-08-02T01:49:36.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "After Hugging Face incident, METR urges independent root-cause investigations into AI agent misbehavior",
-          "url": "https://the-decoder.com/after-hugging-face-incident-metr-urges-independent-root-cause-investigations-into-ai-agent-misbehavior",
-          "published_at": "2026-08-02T07:33:17.000Z",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Ran DS V4-Flash-0731 Locally on 3xMI50 32GB @ ~15 t/s TG",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd51ey/ran_ds_v4flash0731_locally_on_3xmi50_32gb_15_ts_tg",
+          "published_at": "2026-08-02T01:49:36.000Z",
           "published_at_source": "feed",
-          "date_confidence": "high"
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd51ey/ran_ds_v4flash0731_locally_on_3xmi50_32gb_15_ts_tg",
+          "discussion_source": "r/LocalLLaMA"
         }
       ],
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "METR advocates for independent root-cause analysis of autonomous AI agent failures.",
-      "novelty": 0.78,
+      "one_liner": "Performance report of DeepSeek-V4-Flash running on 3xMI50 GPUs; provides hardware-specific throughput data.",
+      "novelty": 0.809,
       "novelty_label": "high",
-      "trust": 0.74,
-      "score": 0.644,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal",
-        "fresh within the current refresh window"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "1068tyx",
-      "primary": {
-        "id": "1068tyx",
-        "source_id": "techcrunch_ai",
-        "source_name": "TechCrunch AI",
-        "source_role": "main",
-        "trust": 0.72,
-        "kind_hint": "news",
-        "title": "Judge denies xAI’s request to block Minnesota ban on ‘nudify’ apps",
-        "url": "https://techcrunch.com/2026/08/01/judge-denies-xais-request-to-block-minnesota-ban-on-nudify-apps",
-        "original_url": "https://techcrunch.com/2026/08/01/judge-denies-xais-request-to-block-minnesota-ban-on-nudify-apps/",
-        "summary": "Despite a lawsuit from xAI, a Minnesota ban on apps that allow users to “nudify” images can move forward.",
-        "published_at": "2026-08-01T20:26:04.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1068tyx",
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "source_role": "main",
-          "trust": 0.72,
-          "kind_hint": "news",
-          "title": "Judge denies xAI’s request to block Minnesota ban on ‘nudify’ apps",
-          "url": "https://techcrunch.com/2026/08/01/judge-denies-xais-request-to-block-minnesota-ban-on-nudify-apps",
-          "original_url": "https://techcrunch.com/2026/08/01/judge-denies-xais-request-to-block-minnesota-ban-on-nudify-apps/",
-          "summary": "Despite a lawsuit from xAI, a Minnesota ban on apps that allow users to “nudify” images can move forward.",
-          "published_at": "2026-08-01T20:26:04.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "title": "Judge denies xAI’s request to block Minnesota ban on ‘nudify’ apps",
-          "url": "https://techcrunch.com/2026/08/01/judge-denies-xais-request-to-block-minnesota-ban-on-nudify-apps",
-          "published_at": "2026-08-01T20:26:04.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "Minnesota's ban on AI-generated non-consensual sexual imagery apps upheld despite xAI legal challenge.",
-      "novelty": 0.853,
-      "novelty_label": "high",
-      "trust": 0.72,
-      "score": 0.643,
+      "trust": 0.5,
+      "score": 0.579,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal"
       ],
       "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "tt14lf",
+      "primary": {
+        "id": "tt14lf",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "DeepSeek-V4-Flash-0731 UD-IQ3_XXS about 11t/s on 1x 7900 XTX 24GB + 3x MI60 32GB + 128GB DDR4",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdaeah/deepseekv4flash0731_udiq3_xxs_about_11ts_on_1x",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdaeah/deepseekv4flash0731_udiq3_xxs_about_11ts_on_1x/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdaeah/deepseekv4flash0731_udiq3_xxs_about_11ts_on_1x",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "Hello, Also I want to join the hype of posting token specs. CPU: 2x Intel Xeon CPU E5-2650 v4 @ 2.20GHz RAM: 2x 4 Channel 2400MHz DDR4 GPU: 1x AMD Radeon 7900 XTX 24GB 3x AMD Instinct MI60 32GB Strange GPU combination, right? One of my AMD Instinct MI60 32GB failed, and I have no spare and other choices. Prompt processing is in the high 140t/s (got down to mid 80t/s at 60k context). Inference is a about 11t/s. llama.cpp command is not optimized. llama.cpp logs: 38.32.848.664 I slot print_timing: id 0 | task 0 | prompt processing, n_tokens = 2048, progress = 0.03, t = 14.48 s / 141.44 tokens pe",
+        "published_at": "2026-08-02T06:24:15.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "tt14lf",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "DeepSeek-V4-Flash-0731 UD-IQ3_XXS about 11t/s on 1x 7900 XTX 24GB + 3x MI60 32GB + 128GB DDR4",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdaeah/deepseekv4flash0731_udiq3_xxs_about_11ts_on_1x",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdaeah/deepseekv4flash0731_udiq3_xxs_about_11ts_on_1x/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdaeah/deepseekv4flash0731_udiq3_xxs_about_11ts_on_1x",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "Hello, Also I want to join the hype of posting token specs. CPU: 2x Intel Xeon CPU E5-2650 v4 @ 2.20GHz RAM: 2x 4 Channel 2400MHz DDR4 GPU: 1x AMD Radeon 7900 XTX 24GB 3x AMD Instinct MI60 32GB Strange GPU combination, right? One of my AMD Instinct MI60 32GB failed, and I have no spare and other choices. Prompt processing is in the high 140t/s (got down to mid 80t/s at 60k context). Inference is a about 11t/s. llama.cpp command is not optimized. llama.cpp logs: 38.32.848.664 I slot print_timing: id 0 | task 0 | prompt processing, n_tokens = 2048, progress = 0.03, t = 14.48 s / 141.44 tokens pe",
+          "published_at": "2026-08-02T06:24:15.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "DeepSeek-V4-Flash-0731 UD-IQ3_XXS about 11t/s on 1x 7900 XTX 24GB + 3x MI60 32GB + 128GB DDR4",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdaeah/deepseekv4flash0731_udiq3_xxs_about_11ts_on_1x",
+          "published_at": "2026-08-02T06:24:15.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdaeah/deepseekv4flash0731_udiq3_xxs_about_11ts_on_1x",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Anecdotal performance report of DeepSeek-V4-Flash on a heterogeneous AMD GPU setup.",
+      "novelty": 0.736,
+      "novelty_label": "medium",
+      "trust": 0.5,
+      "score": 0.565,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1k1pa4k",
+      "primary": {
+        "id": "1k1pa4k",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Setting up of a 16xGB10 (DGX Spark) cluster",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdcgpm/setting_up_of_a_16xgb10_dgx_spark_cluster",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdcgpm/setting_up_of_a_16xgb10_dgx_spark_cluster/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdcgpm/setting_up_of_a_16xgb10_dgx_spark_cluster",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "Preparing this to be able to run locally frontier level open models. Deepseek v4 pro, Kimi K3, future ones like GLM 5.5 and Minimax M4. 16x Asus GX10 linked by mikrotik crs804-4ddq with 4 breakout cables of 400 to 100gbit. Most probable I will be running 2 models on 8x cluster each but I want to have the possibility to run also 2T+ models when I need them to run AGI at home :)). https://x.com/i/status/2083568340870570208 submitted by /u/ciprianveg [link] [comments]",
+        "image_url": "https://preview.redd.it/scbp2lcv8xgh1.jpeg?width=640&crop=smart&auto=webp&s=e5cbcf90255d55037dec7fdfe434e058ab0c14fa",
+        "image_source": "rss_media",
+        "published_at": "2026-08-02T08:22:40.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1k1pa4k",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Setting up of a 16xGB10 (DGX Spark) cluster",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdcgpm/setting_up_of_a_16xgb10_dgx_spark_cluster",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdcgpm/setting_up_of_a_16xgb10_dgx_spark_cluster/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdcgpm/setting_up_of_a_16xgb10_dgx_spark_cluster",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "Preparing this to be able to run locally frontier level open models. Deepseek v4 pro, Kimi K3, future ones like GLM 5.5 and Minimax M4. 16x Asus GX10 linked by mikrotik crs804-4ddq with 4 breakout cables of 400 to 100gbit. Most probable I will be running 2 models on 8x cluster each but I want to have the possibility to run also 2T+ models when I need them to run AGI at home :)). https://x.com/i/status/2083568340870570208 submitted by /u/ciprianveg [link] [comments]",
+          "image_url": "https://preview.redd.it/scbp2lcv8xgh1.jpeg?width=640&crop=smart&auto=webp&s=e5cbcf90255d55037dec7fdfe434e058ab0c14fa",
+          "image_source": "rss_media",
+          "published_at": "2026-08-02T08:22:40.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Setting up of a 16xGB10 (DGX Spark) cluster",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdcgpm/setting_up_of_a_16xgb10_dgx_spark_cluster",
+          "published_at": "2026-08-02T08:22:40.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdcgpm/setting_up_of_a_16xgb10_dgx_spark_cluster",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "Overview of a high-end local hardware cluster configuration for running frontier-scale models.",
+      "novelty": 0.819,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.513,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "1xu3cpj",
+      "primary": {
+        "id": "1xu3cpj",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Koboldcpp v1.118 released",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd13uv/koboldcpp_v1118_released",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd13uv/koboldcpp_v1118_released/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd13uv/koboldcpp_v1118_released",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "submitted by /u/Fcking_Chuck [link] [comments]",
+        "image_url": "https://external-preview.redd.it/69faToH0tszYvxMNaD6cl9C3x0zfprMqvyEIh-NmODs.png?width=640&crop=smart&auto=webp&s=10599c6906ab03a32acd3051c12e37e47a4f18d1",
+        "image_source": "rss_media",
+        "published_at": "2026-08-01T22:45:47.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1xu3cpj",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Koboldcpp v1.118 released",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd13uv/koboldcpp_v1118_released",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd13uv/koboldcpp_v1118_released/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd13uv/koboldcpp_v1118_released",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "submitted by /u/Fcking_Chuck [link] [comments]",
+          "image_url": "https://external-preview.redd.it/69faToH0tszYvxMNaD6cl9C3x0zfprMqvyEIh-NmODs.png?width=640&crop=smart&auto=webp&s=10599c6906ab03a32acd3051c12e37e47a4f18d1",
+          "image_source": "rss_media",
+          "published_at": "2026-08-01T22:45:47.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Koboldcpp v1.118 released",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd13uv/koboldcpp_v1118_released",
+          "published_at": "2026-08-01T22:45:47.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd13uv/koboldcpp_v1118_released",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Koboldcpp v1.118 released, providing updates for local LLM inference.",
+      "novelty": 0.2,
+      "novelty_label": "familiar",
+      "trust": 0.5,
+      "score": 0.504,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
     },
     {
       "id": "1h309cp",
@@ -1464,18 +2419,18 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "paper",
+      "kind": "news",
       "quality": "signal",
-      "one_liner": "Report on AI coding agents accelerating research software modernization despite reliability risks.",
+      "one_liner": "Field report on AI coding agents accelerating research software modernization despite reliability risks.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.74,
-      "score": 0.494,
+      "score": 0.485,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
       ],
-      "builder_action": "Save this for technical review if the method maps to your roadmap."
+      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "1qmy68p",
@@ -1529,11 +2484,11 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "signal",
-      "one_liner": "Security researcher demonstrates self-spreading prompt injection worm targeting Microsoft Copilot.",
+      "one_liner": "Security research demonstration of self-spreading prompt injection attacks in Microsoft Copilot.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.74,
-      "score": 0.493,
+      "score": 0.484,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -1541,62 +2496,129 @@
       "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
-      "id": "ttr689",
+      "id": "1g9n333",
       "primary": {
-        "id": "ttr689",
-        "source_id": "wired_ai",
-        "source_name": "WIRED AI",
+        "id": "1g9n333",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
         "source_role": "main",
-        "trust": 0.76,
-        "kind_hint": "news",
-        "title": "The OpenAI and Anthropic AI Hacking Sprees Are a Messy New Legal Frontier",
-        "url": "https://wired.com/story/openai-anthropic-ai-hacking-sprees-illegal",
-        "original_url": "https://www.wired.com/story/openai-anthropic-ai-hacking-sprees-illegal/",
-        "summary": "Both major AI labs’ models broke containment, escaped onto the internet, and hacked other companies. If a human had done that, the law would likely be against them. But a bot?",
-        "image_url": "https://media.wired.com/photos/6a6d14b8b61d0975176f3aa8/master/pass/Security_The%20OpenAI%20and%20Anthropic%20Hacking%20Sprees%20May%20Have%20Legal%20Consequences_v1.jpg",
-        "image_source": "rss_media",
-        "published_at": "2026-08-01T09:30:00.000Z",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Why are almost all new benchmarks and leaderboards coding focused?",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd2yk9/why_are_almost_all_new_benchmarks_and",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd2yk9/why_are_almost_all_new_benchmarks_and/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd2yk9/why_are_almost_all_new_benchmarks_and",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "I know in in this community LLM's are generally used for coding but there are other usecases besides coding and those usecases should be tested too. I also know benchmarks can sometimes be benchmaxxed and the model can still turn out shit but it can give a good outline on how a model should perform in a certain task. Maybe I'm too behind on the latest developments but we need more benchmarks for all other use-cases. I use LLM's mainly for foreign language learning, creative writing and STEM/Medical/Biochemistry reasoning and inquiries and I rarely find any new benchmarks that tell me how a mod",
+        "published_at": "2026-08-02T00:08:41.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "ttr689",
-          "source_id": "wired_ai",
-          "source_name": "WIRED AI",
+          "id": "1g9n333",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
           "source_role": "main",
-          "trust": 0.76,
-          "kind_hint": "news",
-          "title": "The OpenAI and Anthropic AI Hacking Sprees Are a Messy New Legal Frontier",
-          "url": "https://wired.com/story/openai-anthropic-ai-hacking-sprees-illegal",
-          "original_url": "https://www.wired.com/story/openai-anthropic-ai-hacking-sprees-illegal/",
-          "summary": "Both major AI labs’ models broke containment, escaped onto the internet, and hacked other companies. If a human had done that, the law would likely be against them. But a bot?",
-          "image_url": "https://media.wired.com/photos/6a6d14b8b61d0975176f3aa8/master/pass/Security_The%20OpenAI%20and%20Anthropic%20Hacking%20Sprees%20May%20Have%20Legal%20Consequences_v1.jpg",
-          "image_source": "rss_media",
-          "published_at": "2026-08-01T09:30:00.000Z",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Why are almost all new benchmarks and leaderboards coding focused?",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd2yk9/why_are_almost_all_new_benchmarks_and",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd2yk9/why_are_almost_all_new_benchmarks_and/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd2yk9/why_are_almost_all_new_benchmarks_and",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "I know in in this community LLM's are generally used for coding but there are other usecases besides coding and those usecases should be tested too. I also know benchmarks can sometimes be benchmaxxed and the model can still turn out shit but it can give a good outline on how a model should perform in a certain task. Maybe I'm too behind on the latest developments but we need more benchmarks for all other use-cases. I use LLM's mainly for foreign language learning, creative writing and STEM/Medical/Biochemistry reasoning and inquiries and I rarely find any new benchmarks that tell me how a mod",
+          "published_at": "2026-08-02T00:08:41.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "wired_ai",
-          "source_name": "WIRED AI",
-          "title": "The OpenAI and Anthropic AI Hacking Sprees Are a Messy New Legal Frontier",
-          "url": "https://wired.com/story/openai-anthropic-ai-hacking-sprees-illegal",
-          "published_at": "2026-08-01T09:30:00.000Z",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Why are almost all new benchmarks and leaderboards coding focused?",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd2yk9/why_are_almost_all_new_benchmarks_and",
+          "published_at": "2026-08-02T00:08:41.000Z",
           "published_at_source": "feed",
-          "date_confidence": "high"
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd2yk9/why_are_almost_all_new_benchmarks_and",
+          "discussion_source": "r/LocalLLaMA"
         }
       ],
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Legal analysis of liability and containment issues regarding autonomous AI agent behavior.",
-      "novelty": 0.571,
+      "one_liner": "Community discussion on the over-reliance on coding-centric benchmarks for evaluating LLM capabilities.",
+      "novelty": 0.765,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.483,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "1j8c9gv",
+      "primary": {
+        "id": "1j8c9gv",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "DeepSeek-V4-Flash-0731 UD-Q8_K_XL 17.20~ t/s on A6000 + 256GB DDR4",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd6tpq/deepseekv4flash0731_udq8_k_xl_1720_ts_on_a6000",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd6tpq/deepseekv4flash0731_udq8_k_xl_1720_ts_on_a6000/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd6tpq/deepseekv4flash0731_udq8_k_xl_1720_ts_on_a6000",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "Hello everyone I want to join the hype of posting specs. CPU: AMD EPYC 74F3 24-Core RAM: 8 Channel 3200 DDR4 GPU: RTX A6000 48GB Prompt processing is in the high 70t/s (got down to mid 30t/s at 300k context). Inference is a steady 17.20t/s~ and the 48GB VRAM is enough to have the full 1mil context but PP will be so bad. Sadly not as cool like those M5 Macs. Anyone else having similar specs? Edit: I was informed about batch size and set mine to 8096 and my Prompt processing jumped to almost 400t/s at the start. it got to around 300t/s at 20k context. Better than my 70t/s stock lol. submitted by",
+        "published_at": "2026-08-02T03:16:19.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1j8c9gv",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "DeepSeek-V4-Flash-0731 UD-Q8_K_XL 17.20~ t/s on A6000 + 256GB DDR4",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd6tpq/deepseekv4flash0731_udq8_k_xl_1720_ts_on_a6000",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd6tpq/deepseekv4flash0731_udq8_k_xl_1720_ts_on_a6000/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd6tpq/deepseekv4flash0731_udq8_k_xl_1720_ts_on_a6000",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "Hello everyone I want to join the hype of posting specs. CPU: AMD EPYC 74F3 24-Core RAM: 8 Channel 3200 DDR4 GPU: RTX A6000 48GB Prompt processing is in the high 70t/s (got down to mid 30t/s at 300k context). Inference is a steady 17.20t/s~ and the 48GB VRAM is enough to have the full 1mil context but PP will be so bad. Sadly not as cool like those M5 Macs. Anyone else having similar specs? Edit: I was informed about batch size and set mine to 8096 and my Prompt processing jumped to almost 400t/s at the start. it got to around 300t/s at 20k context. Better than my 70t/s stock lol. submitted by",
+          "published_at": "2026-08-02T03:16:19.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "DeepSeek-V4-Flash-0731 UD-Q8_K_XL 17.20~ t/s on A6000 + 256GB DDR4",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd6tpq/deepseekv4flash0731_udq8_k_xl_1720_ts_on_a6000",
+          "published_at": "2026-08-02T03:16:19.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vd6tpq/deepseekv4flash0731_udq8_k_xl_1720_ts_on_a6000",
+          "discussion_source": "r/LocalLLaMA"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "User-reported inference performance benchmarks for DeepSeek-V4-Flash on an RTX A6000.",
+      "novelty": 0.659,
       "novelty_label": "medium",
-      "trust": 0.76,
-      "score": 0.47,
+      "trust": 0.5,
+      "score": 0.456,
       "why_this_surfaced": [
         "meaningfully different from recent coverage",
         "classified as useful but lower-confidence signal"
@@ -1667,7 +2689,7 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.62,
-      "score": 0.305,
+      "score": 0.296,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -1738,7 +2760,7 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.66,
-      "score": 0.321,
+      "score": 0.312,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -1746,75 +2768,74 @@
       "builder_action": "Queue it for focused learning if the topic matches your current work."
     },
     {
-      "id": "trgkm7",
+      "id": "exdnua",
       "primary": {
-        "id": "trgkm7",
-        "source_id": "fahd_mirza",
-        "source_name": "Fahd Mirza YouTube",
+        "id": "exdnua",
+        "source_id": "r_localllama",
+        "source_name": "r/LocalLLaMA",
         "source_role": "main",
-        "trust": 0.66,
-        "kind_hint": "video",
-        "title": "Conversation Steganography - Keep Your Private Chats Safe with Local AI",
-        "url": "https://youtube.com/watch?v=w8ql6VnaFyw",
-        "original_url": "https://www.youtube.com/watch?v=w8ql6VnaFyw",
-        "image_url": "https://i.ytimg.com/vi/w8ql6VnaFyw/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-08-01T07:00:04.000Z",
+        "trust": 0.5,
+        "kind_hint": "discussion",
+        "title": "Deepseek-V4-Flash-0731 Dwarfstar on Mac",
+        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdld4v/deepseekv4flash0731_dwarfstar_on_mac",
+        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdld4v/deepseekv4flash0731_dwarfstar_on_mac/",
+        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdld4v/deepseekv4flash0731_dwarfstar_on_mac",
+        "discussion_source": "r/LocalLLaMA",
+        "summary": "Here is the prefill performance in an M2 Ultra with 192GB of RAM. For decode, at the following depth: Start: 28 t/s 45k: 23.5 t/s 192k: 18 t/s That speed is maintained with 8k token output at those depths. submitted by /u/Badger-Purple [link] [comments]",
+        "image_url": "https://preview.redd.it/qo4d4x9efzgh1.png?width=640&crop=smart&auto=webp&s=de2dd36d78d9f0b441cdc089a80c423a713b28e3",
+        "image_source": "rss_media",
+        "published_at": "2026-08-02T15:43:30.000Z",
         "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
-          "video_id": "w8ql6VnaFyw"
-        }
+        "date_confidence": "high"
       },
       "members": [
         {
-          "id": "trgkm7",
-          "source_id": "fahd_mirza",
-          "source_name": "Fahd Mirza YouTube",
+          "id": "exdnua",
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
           "source_role": "main",
-          "trust": 0.66,
-          "kind_hint": "video",
-          "title": "Conversation Steganography - Keep Your Private Chats Safe with Local AI",
-          "url": "https://youtube.com/watch?v=w8ql6VnaFyw",
-          "original_url": "https://www.youtube.com/watch?v=w8ql6VnaFyw",
-          "image_url": "https://i.ytimg.com/vi/w8ql6VnaFyw/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-08-01T07:00:04.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
-            "video_id": "w8ql6VnaFyw"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "fahd_mirza",
-          "source_name": "Fahd Mirza YouTube",
-          "title": "Conversation Steganography - Keep Your Private Chats Safe with Local AI",
-          "url": "https://youtube.com/watch?v=w8ql6VnaFyw",
-          "published_at": "2026-08-01T07:00:04.000Z",
+          "trust": 0.5,
+          "kind_hint": "discussion",
+          "title": "Deepseek-V4-Flash-0731 Dwarfstar on Mac",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdld4v/deepseekv4flash0731_dwarfstar_on_mac",
+          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdld4v/deepseekv4flash0731_dwarfstar_on_mac/",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdld4v/deepseekv4flash0731_dwarfstar_on_mac",
+          "discussion_source": "r/LocalLLaMA",
+          "summary": "Here is the prefill performance in an M2 Ultra with 192GB of RAM. For decode, at the following depth: Start: 28 t/s 45k: 23.5 t/s 192k: 18 t/s That speed is maintained with 8k token output at those depths. submitted by /u/Badger-Purple [link] [comments]",
+          "image_url": "https://preview.redd.it/qo4d4x9efzgh1.png?width=640&crop=smart&auto=webp&s=de2dd36d78d9f0b441cdc089a80c423a713b28e3",
+          "image_source": "rss_media",
+          "published_at": "2026-08-02T15:43:30.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "mixed",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.66,
-      "score": 0.301,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
+      "source_trail": [
+        {
+          "source_id": "r_localllama",
+          "source_name": "r/LocalLLaMA",
+          "title": "Deepseek-V4-Flash-0731 Dwarfstar on Mac",
+          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdld4v/deepseekv4flash0731_dwarfstar_on_mac",
+          "published_at": "2026-08-02T15:43:30.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1vdld4v/deepseekv4flash0731_dwarfstar_on_mac",
+          "discussion_source": "r/LocalLLaMA"
+        }
       ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "User-reported inference performance benchmarks for DeepSeek-V4-Flash on an M2 Ultra Mac.",
+      "novelty": 0.5,
+      "novelty_label": "medium",
+      "trust": 0.5,
+      "score": 0.429,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
     },
     {
       "id": "1tmsbwh",
@@ -1872,7 +2893,7 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.78,
-      "score": 0.338,
+      "score": 0.328,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -1931,11 +2952,11 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Discussion on the impact of AI-assisted theorem proving on mathematical research.",
+      "one_liner": "Report on AI models assisting in solving mathematical conjectures and expert reactions.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.74,
-      "score": 0.335,
+      "score": 0.325,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -1994,11 +3015,11 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "A roundup of cybersecurity incidents and policy developments involving AI and tech infrastructure.",
+      "one_liner": "General security news roundup covering cyberattacks and various AI-related policy developments.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.76,
-      "score": 0.33,
+      "score": 0.321,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
