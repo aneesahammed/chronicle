@@ -536,18 +536,6 @@
       "enriched_at": "2026-06-27T18:42:44.817Z",
       "failure_count": 0
     },
-    "https://arxiv.org/abs/2606.23050": {
-      "url": "https://arxiv.org/abs/2606.23050",
-      "title": "Unlimited OCR Works",
-      "source_name": "Hugging Face Daily Papers",
-      "dek": "New OCR research addresses the memory overhead of LLM-based decoders by decoupling language priors from sequence length.",
-      "brief": "While using LLMs as decoders improves OCR performance, it causes memory issues due to accumulated KV cache during long sequences. This paper proposes a method to maintain high accuracy without the linear memory growth associated with standard LLM-based OCR architectures.",
-      "image_alt": "Diagram comparing standard OCR decoder memory usage vs new method",
-      "status": "ok",
-      "attempted_at": "2026-06-23T06:34:17.074Z",
-      "enriched_at": "2026-06-23T06:34:17.074Z",
-      "failure_count": 0
-    },
     "https://arxiv.org/abs/2606.23740": {
       "url": "https://arxiv.org/abs/2606.23740",
       "title": "Weight-Space Geometry of Offline Reasoning Training",
@@ -1464,6 +1452,20 @@
       "enriched_at": "2026-07-17T19:32:32.717Z",
       "failure_count": 0
     },
+    "https://cactuscompute.com/needle": {
+      "url": "https://cactuscompute.com/needle",
+      "title": "Show HN: Needle2: 14MB agentic LLM for phones, wearables, smart home and robots",
+      "source_name": "Hacker News (AI-filtered)",
+      "dek": "Needle 2 is a 14MB agentic LLM optimized for tool calling and structured extraction on resource-constrained hardware.",
+      "brief": "Cactus Compute released Needle 2, a 45M-parameter model compressed to 2-bit precision. It runs in 28MB of RAM and achieves high token speeds on devices like Raspberry Pi 5 and mobile hardware, outperforming larger models on specific tool-use benchmarks.",
+      "image_url": "https://preview.redd.it/j7au03xcykih1.png?width=140&height=101&auto=webp&s=424032412fb64c1b909a34b41674cd93f302a7af",
+      "image_alt": "Needle 2 model performance chart on mobile and edge devices",
+      "image_source": "rss_media",
+      "status": "ok",
+      "attempted_at": "2026-08-11T12:30:41.768Z",
+      "enriched_at": "2026-08-11T12:30:41.768Z",
+      "failure_count": 0
+    },
     "https://cdn.openai.com/pdf/04d1d1e4-bc75-476a-97cf-49055cd98d31/cdc_proof.pdf": {
       "url": "https://cdn.openai.com/pdf/04d1d1e4-bc75-476a-97cf-49055cd98d31/cdc_proof.pdf",
       "title": "GPT-5.6 Sol Ultra produces proof of the Cycle Double Cover Conjecture [pdf]",
@@ -1705,20 +1707,6 @@
       "status": "ok",
       "attempted_at": "2026-07-15T19:36:14.888Z",
       "enriched_at": "2026-07-15T19:36:14.888Z",
-      "failure_count": 0
-    },
-    "https://developer.nvidia.com/blog/cccl-runtime-a-modern-c-runtime-for-cuda": {
-      "url": "https://developer.nvidia.com/blog/cccl-runtime-a-modern-c-runtime-for-cuda",
-      "title": "CCCL Runtime: A Modern C++ Runtime for CUDA",
-      "source_name": "NVIDIA Developer Blog",
-      "dek": "NVIDIA has introduced new functionality to the CUDA Core Compute Libraries (CCCL) to provide modernized C++ abstractions for CUDA development.",
-      "brief": "The update expands CCCL to include more idiomatic C++ abstractions for memory management, resource handling, and hardware-specific operations. These additions aim to simplify kernel development and reduce the need for custom low-level code by providing high-level, efficient interfaces for parallel and cooperative algorithms.",
-      "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/06/featured-image-JB-616-768x432.png",
-      "image_alt": "NVIDIA CCCL library architecture diagram",
-      "image_source": "rss_content",
-      "status": "ok",
-      "attempted_at": "2026-06-22T19:26:45.063Z",
-      "enriched_at": "2026-06-22T19:26:45.063Z",
       "failure_count": 0
     },
     "https://developer.nvidia.com/blog/co-designing-ai-model-attention-for-fast-interactive-long-context-inference": {
@@ -2575,18 +2563,6 @@
       "status": "ok",
       "attempted_at": "2026-07-21T14:21:29.752Z",
       "enriched_at": "2026-07-21T14:21:29.752Z",
-      "failure_count": 0
-    },
-    "https://hustvl.github.io/Moebius": {
-      "url": "https://hustvl.github.io/Moebius",
-      "title": "Moebius: 0.2B image inpainting model with 10B-level performance",
-      "source_name": "Hacker News (AI-filtered)",
-      "dek": "Moebius is a lightweight 0.2B parameter image inpainting model that claims performance parity with 10B parameter foundation models.",
-      "brief": "To address the high computational costs of large-scale inpainting models, Moebius uses structural optimization to overcome representation bottlenecks. The framework demonstrates that specialized, compact models can achieve competitive results, making them more viable for resource-constrained deployment environments.",
-      "image_alt": "Moebius model logo animation",
-      "status": "ok",
-      "attempted_at": "2026-06-22T19:26:45.063Z",
-      "enriched_at": "2026-06-22T19:26:45.063Z",
       "failure_count": 0
     },
     "https://ieeexplore.ieee.org/document/11475847": {
@@ -3716,6 +3692,20 @@
       "enriched_at": "2026-08-10T05:46:46.244Z",
       "failure_count": 0
     },
+    "https://martinfowler.com/articles/exploring-gen-ai/tdd-in-the-agent-loop.html": {
+      "url": "https://martinfowler.com/articles/exploring-gen-ai/tdd-in-the-agent-loop.html",
+      "title": "TDD inside the agent loop - theater or actual value?",
+      "source_name": "Martin Fowler",
+      "dek": "Thoughtworks researchers evaluated whether forcing LLM agents to follow TDD workflows provides genuine value or just performance theater.",
+      "brief": "The study explores three TDD integration methods: human-defined tests, human-reviewed test checkpoints, and fully autonomous agentic loops. The findings suggest that while TDD can structure agent output, its effectiveness depends heavily on the agent's ability to interpret failing tests and iterate correctly.",
+      "image_url": "https://martinfowler.com/articles/exploring-gen-ai/donkey-card.png",
+      "image_alt": "Flowchart comparing human-in-the-loop vs autonomous TDD agent workflows",
+      "image_source": "rss_content",
+      "status": "ok",
+      "attempted_at": "2026-08-11T12:30:41.768Z",
+      "enriched_at": "2026-08-11T12:30:41.768Z",
+      "failure_count": 0
+    },
     "https://microsoft.com/en-us/corporate-responsibility/topics/open-weight": {
       "url": "https://microsoft.com/en-us/corporate-responsibility/topics/open-weight",
       "title": "Open Weights and American AI Leadership",
@@ -3866,17 +3856,6 @@
       "status": "failed",
       "attempted_at": "2026-07-22T14:21:45.515Z",
       "enriched_at": "2026-07-22T14:21:45.515Z",
-      "failure_count": 1
-    },
-    "https://oak.space/oak/oak": {
-      "url": "https://oak.space/oak/oak",
-      "title": "Show HN: Oak – Git alternative designed for agents",
-      "source_name": "Hacker News (AI-filtered)",
-      "dek": "A version control system specifically designed for AI agent workflows.",
-      "brief": "A version control system specifically designed for AI agent workflows.",
-      "status": "failed",
-      "attempted_at": "2026-06-23T06:34:17.074Z",
-      "enriched_at": "2026-06-23T06:34:17.074Z",
       "failure_count": 1
     },
     "https://old.reddit.com/r/LocalLLaMA/comments/1ue51uk/unlimitedocr_is_now_on_modelscope_a_33b": {
@@ -4484,6 +4463,20 @@
       "status": "ok",
       "attempted_at": "2026-08-11T05:37:54.053Z",
       "enriched_at": "2026-08-11T05:37:54.053Z",
+      "failure_count": 0
+    },
+    "https://old.reddit.com/r/LocalLLaMA/comments/1vlbto8/luth2_new_stateoftheart_french_small_language": {
+      "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vlbto8/luth2_new_stateoftheart_french_small_language",
+      "title": "Luth-2: New State-of-the-Art French Small Language Models",
+      "source_name": "r/LocalLLaMA",
+      "dek": "Luth-2 introduces new 0.8B and 2B parameter models optimized for French language tasks.",
+      "brief": "The Luth-2 series claims state-of-the-art performance for French language processing in the sub-3B parameter class. Benchmarks indicate significant improvements over similarly sized models like Gemma-4 and Granite-4 on tasks including instruction following and multilingual math.",
+      "image_url": "https://preview.redd.it/3sgce32djpih1.png?width=640&crop=smart&auto=webp&s=f363ae285fde2512e68162cc793792e86438ebd3",
+      "image_alt": "Bar chart comparing Luth-2 French benchmark scores against competitors",
+      "image_source": "rss_media",
+      "status": "ok",
+      "attempted_at": "2026-08-11T12:30:41.768Z",
+      "enriched_at": "2026-08-11T12:30:41.768Z",
       "failure_count": 0
     },
     "https://old.reddit.com/r/MachineLearning/comments/1ueavxn/i_compiled_llm_inference_pricing_across_7": {
@@ -5520,6 +5513,20 @@
       "status": "ok",
       "attempted_at": "2026-08-07T18:31:57.582Z",
       "enriched_at": "2026-08-07T18:31:57.582Z",
+      "failure_count": 0
+    },
+    "https://the-decoder.com/anthropic-watermarks-all-claude-outputs-globally-with-marks-that-may-persist-through-some-editing": {
+      "url": "https://the-decoder.com/anthropic-watermarks-all-claude-outputs-globally-with-marks-that-may-persist-through-some-editing",
+      "title": "Anthropic watermarks all Claude outputs globally with marks that \"may persist through some editing\"",
+      "source_name": "The Decoder",
+      "dek": "Anthropic will implement global watermarking and C2PA provenance metadata for all Claude outputs starting August 2026.",
+      "brief": "Following the EU AI Act, Anthropic is embedding invisible watermarks in generated text and signing files with C2PA metadata. This policy applies globally across all Claude products, including the API and agentic tools, to ensure transparency in AI-generated content.",
+      "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/anthropic_logo_wall-1.png",
+      "image_alt": "Diagram showing C2PA metadata integration in AI-generated files",
+      "image_source": "rss_content",
+      "status": "ok",
+      "attempted_at": "2026-08-11T12:30:41.768Z",
+      "enriched_at": "2026-08-11T12:30:41.768Z",
       "failure_count": 0
     },
     "https://the-decoder.com/anthropics-opus-5-blows-past-fable-5-and-gpt-5-6-sol-on-the-benchmark-designed-to-measure-real-intelligence": {
