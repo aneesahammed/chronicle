@@ -240,20 +240,6 @@
       "enriched_at": "2026-06-30T18:56:20.039Z",
       "failure_count": 0
     },
-    "https://arstechnica.com/ai/2026/06/oracles-21000-layoffs-help-drive-its-debt-fueled-ai-investments": {
-      "url": "https://arstechnica.com/ai/2026/06/oracles-21000-layoffs-help-drive-its-debt-fueled-ai-investments",
-      "title": "Oracle’s 21,000 layoffs help drive its debt-fueled AI investments",
-      "source_name": "Ars Technica AI",
-      "dek": "Oracle is aggressively funding its AI infrastructure expansion through significant workforce reductions and debt financing.",
-      "brief": "The company has initiated 21,000 layoffs as part of a broader strategy to reallocate capital toward massive data center investments. This shift highlights the intense financial pressure on legacy tech firms to scale AI compute capacity.",
-      "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/06/GettyImages-2212917669-1152x648.jpg",
-      "image_alt": "Oracle data center infrastructure",
-      "image_source": "rss_media",
-      "status": "ok",
-      "attempted_at": "2026-06-24T06:32:12.265Z",
-      "enriched_at": "2026-06-24T06:32:12.265Z",
-      "failure_count": 0
-    },
     "https://arstechnica.com/ai/2026/07/despite-ai-hype-googles-data-shows-workers-arent-automating-themselves-away": {
       "url": "https://arstechnica.com/ai/2026/07/despite-ai-hype-googles-data-shows-workers-arent-automating-themselves-away",
       "title": "Despite AI hype, Google's data shows workers aren't automating themselves away",
@@ -484,30 +470,6 @@
       "status": "ok",
       "attempted_at": "2026-06-27T18:42:44.817Z",
       "enriched_at": "2026-06-27T18:42:44.817Z",
-      "failure_count": 0
-    },
-    "https://arxiv.org/abs/2606.23740": {
-      "url": "https://arxiv.org/abs/2606.23740",
-      "title": "Weight-Space Geometry of Offline Reasoning Training",
-      "source_name": "arXiv cs.LG",
-      "dek": "Researchers analyzed weight updates across six common offline reasoning training methods to determine if they are mechanistically distinct.",
-      "brief": "By training six methods—including SFT, RFT, and DPO—on identical math rollouts using a Qwen3-4B base model, the study used cosine similarity and principal-angle subspace analysis to compare weight deltas. The findings suggest that while these methods are often treated as distinct, they may converge toward similar weight updates.",
-      "image_alt": "Visualization of weight-space geometry and model delta analysis",
-      "status": "ok",
-      "attempted_at": "2026-06-24T06:32:12.265Z",
-      "enriched_at": "2026-06-24T06:32:12.265Z",
-      "failure_count": 0
-    },
-    "https://arxiv.org/abs/2606.24530": {
-      "url": "https://arxiv.org/abs/2606.24530",
-      "title": "NatureBench: Can Coding Agents Match the Published SOTA of Nature-Family Papers?",
-      "source_name": "Hugging Face Daily Papers",
-      "dek": "NatureBench provides a standardized, containerized benchmark of 90 tasks derived from Nature-family papers to evaluate AI coding agents.",
-      "brief": "NatureBench uses the NatureGym pipeline to create reproducible, per-task environments from peer-reviewed scientific literature. It aims to move beyond simple code reproduction by testing whether AI agents can achieve state-of-the-art results on complex, real-world scientific problems.",
-      "image_alt": "Diagram of the NatureGym automated environment pipeline",
-      "status": "ok",
-      "attempted_at": "2026-06-24T06:32:12.265Z",
-      "enriched_at": "2026-06-24T06:32:12.265Z",
       "failure_count": 0
     },
     "https://arxiv.org/abs/2606.24597": {
@@ -1350,6 +1312,18 @@
       "enriched_at": "2026-07-07T08:42:42.486Z",
       "failure_count": 0
     },
+    "https://aws.amazon.com/blogs/machine-learning/tiered-kv-cache-for-large-llms-on-amazon-sagemaker-hyperpod-with-curvine": {
+      "url": "https://aws.amazon.com/blogs/machine-learning/tiered-kv-cache-for-large-llms-on-amazon-sagemaker-hyperpod-with-curvine",
+      "title": "Tiered KV cache for large LLMs on Amazon SageMaker HyperPod with Curvine",
+      "source_name": "AWS Machine Learning Blog",
+      "dek": "A new tiered KV cache implementation on Amazon SageMaker HyperPod uses Curvine to offload cache to distributed NVMe storage.",
+      "brief": "This approach mitigates the trade-off between expensive GPU memory and slow inference times. By extending the KV cache into a shared NVMe pool, replicas can reuse cache data at near-local speeds, reducing infrastructure costs for multi-turn LLM applications.",
+      "image_alt": "Diagram of tiered KV cache architecture on SageMaker",
+      "status": "ok",
+      "attempted_at": "2026-08-12T18:34:39.759Z",
+      "enriched_at": "2026-08-12T18:34:39.759Z",
+      "failure_count": 0
+    },
     "https://ayushtambde.com/blog/matrix-orthogonalization-improves-memory-in-recurrent-models": {
       "url": "https://ayushtambde.com/blog/matrix-orthogonalization-improves-memory-in-recurrent-models",
       "title": "Matrix Orthogonalization Improves Memory in Recurrent Models",
@@ -1889,6 +1863,20 @@
       "status": "ok",
       "attempted_at": "2026-06-25T18:58:49.237Z",
       "enriched_at": "2026-06-25T18:58:49.237Z",
+      "failure_count": 0
+    },
+    "https://developer.nvidia.com/blog/serve-qwen3-8-2-4t-a95b-a-2-4t-parameter-model-with-configurable-reasoning-on-nvidia-gb300-nvl72": {
+      "url": "https://developer.nvidia.com/blog/serve-qwen3-8-2-4t-a95b-a-2-4t-parameter-model-with-configurable-reasoning-on-nvidia-gb300-nvl72",
+      "title": "Serve Qwen3.8-2.4T-A95B, a 2.4T-Parameter Model, with Configurable Reasoning on NVIDIA GB300 NVL72",
+      "source_name": "NVIDIA Developer Blog",
+      "dek": "Alibaba's Qwen3.8-Max is a 2.4T-parameter MoE model featuring a 1M token context window and hybrid attention for complex reasoning.",
+      "brief": "The model utilizes 95B activated parameters per token and supports output lengths up to 128K. Designed for agentic workloads, it requires significant data-center-scale acceleration for deployment.",
+      "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/08/Qwen-Open-Source-768x432.jpg",
+      "image_alt": "Diagram of Qwen3.8-Max MoE architecture",
+      "image_source": "rss_content",
+      "status": "ok",
+      "attempted_at": "2026-08-12T18:34:39.759Z",
+      "enriched_at": "2026-08-12T18:34:39.759Z",
       "failure_count": 0
     },
     "https://developers.cloudflare.com/changelog/post/2026-06-26-agents-sdk-v0170": {
@@ -2922,6 +2910,20 @@
       "status": "ok",
       "attempted_at": "2026-08-05T12:55:32.401Z",
       "enriched_at": "2026-08-05T12:55:32.401Z",
+      "failure_count": 0
+    },
+    "https://infoq.com/news/2026/08/spotify-data-lake-point-queries": {
+      "url": "https://infoq.com/news/2026/08/spotify-data-lake-point-queries",
+      "title": "Spotify Builds External Index to Enable Low Latency Point Queries on Its Data Lake",
+      "source_name": "InfoQ AI/ML/Data",
+      "dek": "Spotify implemented an external indexing architecture for Parquet data lakes to enable low-latency point queries.",
+      "brief": "The system maps lookup keys to specific Parquet files and row locations, allowing targeted reads from cloud object storage. This avoids the need to replicate datasets into operational databases, supporting AI and analytics workloads directly from the data lake.",
+      "image_url": "https://www.infoq.com/styles/static/images/logo/logo_bigger.jpg",
+      "image_alt": "Architecture diagram of Spotify's external index",
+      "image_source": "rss_content",
+      "status": "ok",
+      "attempted_at": "2026-08-12T18:34:39.759Z",
+      "enriched_at": "2026-08-12T18:34:39.759Z",
       "failure_count": 0
     },
     "https://interconnects.ai/p/introducing-our-artifacts-hub-and": {
@@ -4573,18 +4575,6 @@
       "enriched_at": "2026-07-08T19:55:12.075Z",
       "failure_count": 0
     },
-    "https://openai.com/index/openai-broadcom-jalapeno-inference-chip": {
-      "url": "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
-      "title": "OpenAI and Broadcom unveil LLM-optimized inference chip",
-      "source_name": "OpenAI",
-      "dek": "OpenAI and Broadcom have introduced Jalapeño, a custom AI accelerator designed specifically for large-scale LLM inference.",
-      "brief": "The Jalapeño processor is the first in a multi-generation compute platform developed by OpenAI and Broadcom. Early testing indicates significant improvements in performance-per-watt compared to current state-of-the-art hardware. The chip was developed in nine months and is intended for deployment at gigawatt scale across data center partnerships.",
-      "image_alt": "Conceptual diagram of the Jalapeño AI inference processor architecture",
-      "status": "ok",
-      "attempted_at": "2026-06-24T13:05:36.550Z",
-      "enriched_at": "2026-06-24T13:05:36.550Z",
-      "failure_count": 0
-    },
     "https://openai.com/index/safety-alignment-long-horizon-models": {
       "url": "https://openai.com/index/safety-alignment-long-horizon-models",
       "title": "Safety and alignment in an era of long-horizon models",
@@ -4752,6 +4742,20 @@
       "status": "ok",
       "attempted_at": "2026-06-26T18:55:28.673Z",
       "enriched_at": "2026-06-26T18:55:28.673Z",
+      "failure_count": 0
+    },
+    "https://research.google/blog/empty-shelves-or-lost-keys-recall-is-the-bottleneck-for-parametric-factuality": {
+      "url": "https://research.google/blog/empty-shelves-or-lost-keys-recall-is-the-bottleneck-for-parametric-factuality",
+      "title": "Empty shelves or lost keys? Recall is the bottleneck for parametric factuality",
+      "source_name": "Google Research",
+      "dek": "Google Research explores whether LLM factual errors stem from missing knowledge or retrieval failures.",
+      "brief": "Distinguishing between encoding failures (missing data) and recall failures (inaccessible data) is critical for improving LLM reliability. The research suggests that recall issues may be addressed through post-training and inference-time interventions rather than just scaling model size.",
+      "image_url": "https://storage.googleapis.com/gweb-research2023-media/original_images/KnowledgeProfiling1_Overview.png",
+      "image_alt": "Conceptual chart showing encoding vs recall bottlenecks",
+      "image_source": "rss_media",
+      "status": "ok",
+      "attempted_at": "2026-08-12T18:34:39.759Z",
+      "enriched_at": "2026-08-12T18:34:39.759Z",
       "failure_count": 0
     },
     "https://research.google/blog/sensorfm-towards-a-general-intelligence-and-interface-for-wearable-health-data": {
