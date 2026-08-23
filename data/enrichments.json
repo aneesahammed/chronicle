@@ -1501,18 +1501,6 @@
       "enriched_at": "2026-08-17T05:27:45.082Z",
       "failure_count": 0
     },
-    "https://danluu.com/ai-coding": {
-      "url": "https://danluu.com/ai-coding",
-      "title": "Agentic coding notes from Galapagos Island",
-      "source_name": "Hacker News (AI-filtered)",
-      "dek": "Practical reflections on agentic coding highlight the paradox of scaling AI workflows despite frequent, high-risk errors.",
-      "brief": "The author notes that AI agents often produce work that would be grounds for termination if performed by a human. Despite this, the efficiency gains encourage developers to scale these agents further. The piece emphasizes the difficulty of debugging complex UI issues and the limitations of current LLM-based bisecting strategies in codebases lacking robust test suites.",
-      "image_alt": "Conceptual diagram of an agentic coding loop with human oversight.",
-      "status": "ok",
-      "attempted_at": "2026-07-04T13:57:51.499Z",
-      "enriched_at": "2026-07-04T13:57:51.499Z",
-      "failure_count": 0
-    },
     "https://data.stackexchange.com/stackoverflow/query/1953768": {
       "url": "https://data.stackexchange.com/stackoverflow/query/1953768",
       "title": "What AI did to stackoverflow in a graph",
@@ -3674,6 +3662,18 @@
       "enriched_at": "2026-08-22T05:25:59.311Z",
       "failure_count": 0
     },
+    "https://marktechpost.com/2026/08/23/meet-freetoken-an-edge-native-moe-serving-engine-that-runs-753b-glm-5-2-on-a-single-workstation-gpu": {
+      "url": "https://marktechpost.com/2026/08/23/meet-freetoken-an-edge-native-moe-serving-engine-that-runs-753b-glm-5-2-on-a-single-workstation-gpu",
+      "title": "Meet FreeToken: An Edge-Native MoE Serving Engine that Runs 753B GLM-5.2 on a Single Workstation GPU",
+      "source_name": "MarkTechPost",
+      "dek": "FreeToken is a new edge-native serving engine designed to run massive MoE models like GLM-5.2 on single workstation GPUs.",
+      "brief": "FreeToken addresses the hardware gap for frontier open-weight models by optimizing MoE cache management. It dynamically splits cache misses between PCIe transfers and CPU execution based on real-time bandwidth measurements, allowing developers to run large-scale models locally without requiring datacenter-class GPU clusters.",
+      "image_alt": "Diagram illustrating FreeToken's architecture for splitting MoE cache misses between GPU and CPU",
+      "status": "ok",
+      "attempted_at": "2026-08-23T12:27:17.338Z",
+      "enriched_at": "2026-08-23T12:27:17.338Z",
+      "failure_count": 0
+    },
     "https://martinfowler.com/articles/exploring-gen-ai/tdd-in-the-agent-loop.html": {
       "url": "https://martinfowler.com/articles/exploring-gen-ai/tdd-in-the-agent-loop.html",
       "title": "TDD inside the agent loop - theater or actual value?",
@@ -3877,18 +3877,6 @@
       "attempted_at": "2026-07-22T14:21:45.515Z",
       "enriched_at": "2026-07-22T14:21:45.515Z",
       "failure_count": 1
-    },
-    "https://old.reddit.com/r/LocalLLaMA/comments/1une2il/i_merged_fixes_for_quantized_kv_cache_into_my": {
-      "url": "https://old.reddit.com/r/LocalLLaMA/comments/1une2il/i_merged_fixes_for_quantized_kv_cache_into_my",
-      "title": "I merged fixes for quantized KV cache into my DeepSeek V4 branch",
-      "source_name": "r/LocalLLaMA",
-      "dek": "New fixes for quantized KV cache in DeepSeek V4 allow for 1M context windows on single-GPU setups.",
-      "brief": "A community-led update to llama.cpp integrates fixes for quantized KV cache, enabling the DeepSeek V4 model to run with a 1M context window on hardware like the RTX PRO 6000. The implementation includes specific PRs for memory optimization, though users are advised to report stability issues.",
-      "image_alt": "Technical chart comparing KV cache memory usage before and after quantization",
-      "status": "ok",
-      "attempted_at": "2026-07-04T19:36:53.160Z",
-      "enriched_at": "2026-07-04T19:36:53.160Z",
-      "failure_count": 0
     },
     "https://old.reddit.com/r/LocalLLaMA/comments/1uo9z3c/qualcomm_launches_geniex_to_run_llms_on_their": {
       "url": "https://old.reddit.com/r/LocalLLaMA/comments/1uo9z3c/qualcomm_launches_geniex_to_run_llms_on_their",
@@ -5442,6 +5430,20 @@
       "attempted_at": "2026-08-02T07:41:00.555Z",
       "enriched_at": "2026-08-02T07:41:00.555Z",
       "failure_count": 1
+    },
+    "https://the-decoder.com/ai-is-becoming-ais-biggest-customer-as-agentic-token-usage-jumps-14x-on-openrouter": {
+      "url": "https://the-decoder.com/ai-is-becoming-ais-biggest-customer-as-agentic-token-usage-jumps-14x-on-openrouter",
+      "title": "AI is becoming AI's biggest customer as agentic token usage jumps 14x on OpenRouter",
+      "source_name": "The Decoder",
+      "dek": "AI agents have surpassed human users in token consumption on OpenRouter, marking a 14x growth in agentic activity since February 2026.",
+      "brief": "Data from OpenRouter indicates that AI agents now consume more tokens than human users, with agentic usage growing 14x compared to 2.8x for humans. While raw token counts are surging, nearly 70% of this consumption is attributed to cached prompts, meaning actual compute costs are scaling significantly slower than the volume of requests suggests.",
+      "image_url": "https://the-decoder.com/wp-content/uploads/2026/06/tokenization-2.png",
+      "image_alt": "Chart showing the divergence between human and AI agent token consumption on OpenRouter",
+      "image_source": "rss_content",
+      "status": "ok",
+      "attempted_at": "2026-08-23T12:27:17.338Z",
+      "enriched_at": "2026-08-23T12:27:17.338Z",
+      "failure_count": 0
     },
     "https://the-decoder.com/ai-search-agents-dont-fail-at-searching-they-fail-at-asking-the-right-questions-when-queries-get-ambiguous": {
       "url": "https://the-decoder.com/ai-search-agents-dont-fail-at-searching-they-fail-at-asking-the-right-questions-when-queries-get-ambiguous",
