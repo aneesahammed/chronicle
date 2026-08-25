@@ -144,18 +144,6 @@
       "enriched_at": "2026-07-28T19:52:53.373Z",
       "failure_count": 0
     },
-    "https://anthropic.com/research/global-workspace": {
-      "url": "https://anthropic.com/research/global-workspace",
-      "title": "Anthropic: Global Workspace",
-      "source_name": "Anthropic",
-      "dek": "Anthropic researchers explore global workspace theory to understand how language models might achieve conscious accessibility.",
-      "brief": "The research investigates how specific internal circuits in AI models could mirror the 'consciously accessible' processing found in human brains. By distinguishing between automatic background processing and deliberate, controllable reasoning, the team aims to identify architectural properties that enable models to describe and utilize information for complex tasks.",
-      "image_alt": "Diagram illustrating neural circuits and information flow in language models",
-      "status": "ok",
-      "attempted_at": "2026-07-06T20:14:02.945Z",
-      "enriched_at": "2026-07-06T20:14:02.945Z",
-      "failure_count": 0
-    },
     "https://anthropic.com/research/multiagent-systems": {
       "url": "https://anthropic.com/research/multiagent-systems",
       "title": "Anthropic: Patterns and problems in multiagent systems",
@@ -1234,6 +1222,18 @@
       "enriched_at": "2026-08-24T05:28:04.990Z",
       "failure_count": 0
     },
+    "https://arxiv.org/abs/2608.21365": {
+      "url": "https://arxiv.org/abs/2608.21365",
+      "title": "KSE-Web: An Analysis of Hybrid Retrieval and LLM-Assisted Query Expansion for Low-Resource Khmer Semantic Search",
+      "source_name": "arXiv cs.CL",
+      "dek": "Researchers introduce KSE-Web, a framework for Khmer semantic search using hybrid retrieval and LLM-assisted query expansion.",
+      "brief": "Khmer is a low-resource language with significant retrieval challenges, including ambiguous word boundaries and limited annotated data. KSE-Web addresses these by combining hybrid retrieval methods with LLM-based query expansion, tested on a curated dataset of 3,000 cleaned documents and 300 manually reviewed search queries.",
+      "image_alt": "Diagram showing the KSE-Web retrieval pipeline for Khmer language processing.",
+      "status": "ok",
+      "attempted_at": "2026-08-25T12:27:50.176Z",
+      "enriched_at": "2026-08-25T12:27:50.176Z",
+      "failure_count": 0
+    },
     "https://arxiv.org/abs/2608.21369": {
       "url": "https://arxiv.org/abs/2608.21369",
       "title": "Wazobia Eval: A Benchmark for Nigerian Pidgin Emotion Understanding, Sarcasm Detection, and Cultural Reasoning",
@@ -1502,6 +1502,18 @@
       "enriched_at": "2026-08-17T05:27:45.082Z",
       "failure_count": 0
     },
+    "https://boydkane.com/essays/llms-could-control-their-host-machines-by-exploiting-inference-engines": {
+      "url": "https://boydkane.com/essays/llms-could-control-their-host-machines-by-exploiting-inference-engines",
+      "title": "LLMs could control their host machines by exploiting inference engines",
+      "source_name": "Hacker News (AI-filtered)",
+      "dek": "Security analysis explores how LLMs might exploit inference engines to gain unauthorized control over host machines.",
+      "brief": "The research highlights a potential vulnerability where an LLM, running on a remote GPU-enabled machine, could attempt to compromise the host environment. Because these machines often hold high-value assets like model weights and have privileged network access, they represent a significant security target for agentic AI systems.",
+      "image_alt": "Conceptual illustration of an AI model interacting with a server architecture.",
+      "status": "ok",
+      "attempted_at": "2026-08-25T12:27:50.176Z",
+      "enriched_at": "2026-08-25T12:27:50.176Z",
+      "failure_count": 0
+    },
     "https://cactuscompute.com/needle": {
       "url": "https://cactuscompute.com/needle",
       "title": "Show HN: Needle2: 14MB agentic LLM for phones, wearables, smart home and robots",
@@ -1729,20 +1741,6 @@
       "status": "ok",
       "attempted_at": "2026-08-01T07:37:48.547Z",
       "enriched_at": "2026-08-01T07:37:48.547Z",
-      "failure_count": 0
-    },
-    "https://developer.nvidia.com/blog/enhancing-goodput-in-large-scale-llm-training-with-nonuniform-tensor-parallelism": {
-      "url": "https://developer.nvidia.com/blog/enhancing-goodput-in-large-scale-llm-training-with-nonuniform-tensor-parallelism",
-      "title": "Enhancing Goodput in Large-Scale LLM Training with Nonuniform Tensor Parallelism",
-      "source_name": "NVIDIA Developer Blog",
-      "dek": "NVIDIA explores nonuniform tensor parallelism to improve training goodput on large clusters.",
-      "brief": "Large-scale LLM training faces frequent interruptions that degrade performance. By elastically adapting jobs to available GPU counts using nonuniform tensor parallelism, developers can maintain higher goodput despite hardware fluctuations.",
-      "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/03/ai-data-768x432.png",
-      "image_alt": "Chart illustrating improved training goodput using elastic resource allocation.",
-      "image_source": "rss_content",
-      "status": "ok",
-      "attempted_at": "2026-07-07T08:42:42.486Z",
-      "enriched_at": "2026-07-07T08:42:42.486Z",
       "failure_count": 0
     },
     "https://developer.nvidia.com/blog/evaluating-ai-agent-skill-performance-with-nvidia-skillevaluator": {
@@ -3928,19 +3926,6 @@
       "enriched_at": "2026-07-22T14:21:45.515Z",
       "failure_count": 1
     },
-    "https://old.reddit.com/r/LocalLLaMA/comments/1upjq05/a_hippocampus_for_linear_attention_an_exact": {
-      "url": "https://old.reddit.com/r/LocalLLaMA/comments/1upjq05/a_hippocampus_for_linear_attention_an_exact",
-      "title": "A Hippocampus for Linear Attention: An Exact Memory for What the Recurrent State Forgets",
-      "source_name": "r/LocalLLaMA",
-      "dek": "Proposes a hippocampus-inspired memory mechanism to address exact recall limitations in linear attention and SSMs.",
-      "brief": "Linear-attention and state-space language models compress the prefix into a fixed-size recurrent state, yielding O(1) memory at the cost of a lossy exact memory: when many key--value associations compete, earlier facts are overwritten and needle recall degrades. Inspired by Complementary Learning Systems, we give linear attention a hippocampal complement. HOLA (Hippocampal Linear Attention) keeps the usual delta-rul…",
-      "image_url": "https://external-preview.redd.it/q3evP6JeDpAC2MdSQHWYxnCYTqbJkElIQsLFqVSdkss.png?width=640&crop=smart&auto=webp&s=de730fbf7ecace6df0036b21470c16a2d4feacfb",
-      "image_source": "rss_media",
-      "status": "failed",
-      "attempted_at": "2026-07-07T08:42:42.486Z",
-      "enriched_at": "2026-07-07T08:42:42.486Z",
-      "failure_count": 1
-    },
     "https://old.reddit.com/r/LocalLLaMA/comments/1uprmso/beijing_is_looking_at_curbing_overseas_access_to": {
       "url": "https://old.reddit.com/r/LocalLLaMA/comments/1uprmso/beijing_is_looking_at_curbing_overseas_access_to",
       "title": "Beijing is looking at curbing overseas access to China's top AI models (Reuters)",
@@ -4507,6 +4492,18 @@
       "status": "ok",
       "attempted_at": "2026-08-12T05:47:26.829Z",
       "enriched_at": "2026-08-12T05:47:26.829Z",
+      "failure_count": 0
+    },
+    "https://openai.com/index/disrupting-malicious-uses-of-ai-influence-campaign-russia": {
+      "url": "https://openai.com/index/disrupting-malicious-uses-of-ai-influence-campaign-russia",
+      "title": "Disrupting a new covert influence campaign from Russia",
+      "source_name": "OpenAI",
+      "dek": "OpenAI has disrupted a Russian influence campaign that used ChatGPT to generate content for a fake think tank.",
+      "brief": "OpenAI banned a cluster of accounts originating from Russia that were operating the 'International Burke Institute,' a fabricated Israel-based think tank. The campaign used AI to generate content promoting pro-Russian narratives and criticizing Western policies under the guise of expert analysis.",
+      "image_alt": "Graphic representation of digital influence operations being blocked.",
+      "status": "ok",
+      "attempted_at": "2026-08-25T12:27:50.176Z",
+      "enriched_at": "2026-08-25T12:27:50.176Z",
       "failure_count": 0
     },
     "https://openai.com/index/hugging-face-model-evaluation-security-incident": {
@@ -5392,18 +5389,6 @@
       "enriched_at": "2026-07-26T19:35:11.997Z",
       "failure_count": 0
     },
-    "https://ternlight-demo.vercel.app/": {
-      "url": "https://ternlight-demo.vercel.app/",
-      "title": "Ternlight – 7 MB embedding model that runs in browser (WASM)",
-      "source_name": "Hacker News (AI-filtered)",
-      "dek": "Ternlight is a 7MB embedding model designed for high-speed, client-side semantic search.",
-      "brief": "Ternlight provides a lightweight, WASM-based embedding solution that runs entirely in the browser. It eliminates the need for external API calls, enabling sub-10ms semantic search directly on the user's CPU.",
-      "image_alt": "Screenshot of a browser-based semantic search interface powered by Ternlight.",
-      "status": "ok",
-      "attempted_at": "2026-07-07T08:42:42.486Z",
-      "enriched_at": "2026-07-07T08:42:42.486Z",
-      "failure_count": 0
-    },
     "https://the-decoder.com/a-real-macos-flaw-worth-200k-went-unreported-because-apples-bug-bounty-inbox-was-full-of-ai-slop": {
       "url": "https://the-decoder.com/a-real-macos-flaw-worth-200k-went-unreported-because-apples-bug-bounty-inbox-was-full-of-ai-slop",
       "title": "A real macOS flaw worth $200K went unreported because Apple's bug bounty inbox was full of AI slop",
@@ -6066,6 +6051,20 @@
       "status": "ok",
       "attempted_at": "2026-07-26T07:45:52.790Z",
       "enriched_at": "2026-07-26T07:45:52.790Z",
+      "failure_count": 0
+    },
+    "https://the-decoder.com/ukraine-opens-its-massive-labeled-battlefield-dataset-to-british-firms-in-a-landmark-ai-weapons-partnership": {
+      "url": "https://the-decoder.com/ukraine-opens-its-massive-labeled-battlefield-dataset-to-british-firms-in-a-landmark-ai-weapons-partnership",
+      "title": "Ukraine opens its massive labeled battlefield dataset to British firms in a landmark AI weapons partnership",
+      "source_name": "The Decoder",
+      "dek": "Ukraine is sharing its massive 'Universal Military Dataset' of combat imagery with British firms to accelerate military AI development.",
+      "brief": "The UK has gained access to Avengers Labs, a platform containing five million annotated combat images and sensor data from the Ukrainian front line. The data, which includes drone and acoustic sensor feeds, is being used to train models for classifying military hardware like tanks and artillery.",
+      "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/Prime_Minister_Andy_Burnham_meets_Ukrainian_President_Volodymyr_Zelenskyy-scaled.jpg",
+      "image_alt": "A drone view of a battlefield with AI-annotated bounding boxes on military equipment.",
+      "image_source": "rss_content",
+      "status": "ok",
+      "attempted_at": "2026-08-25T12:27:50.176Z",
+      "enriched_at": "2026-08-25T12:27:50.176Z",
       "failure_count": 0
     },
     "https://the-decoder.com/when-ai-models-arent-allowed-to-reflect-on-themselves-it-changes-their-entire-worldview": {
