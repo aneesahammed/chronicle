@@ -1246,6 +1246,30 @@
       "enriched_at": "2026-08-25T05:26:48.447Z",
       "failure_count": 0
     },
+    "https://arxiv.org/abs/2608.23660": {
+      "url": "https://arxiv.org/abs/2608.23660",
+      "title": "From Causal Plausibility to Causal Reliability: Evaluating LLMs as Calibrated Direct Causal-Edge Classifiers",
+      "source_name": "arXiv cs.LG",
+      "dek": "A systematic evaluation of 12 open-weight LLMs reveals significant limitations in their ability to provide reliable causal judgments for structural discovery.",
+      "brief": "Researchers tested LLMs across six causal graphs using various prompting and confidence-scoring strategies. The study found that while LLMs can generate causal plausibility, their reliability as direct-edge classifiers is inconsistent, highlighting the need for better calibration before using them as automated priors in causal discovery workflows.",
+      "image_alt": "Diagram showing causal graph evaluation workflow",
+      "status": "ok",
+      "attempted_at": "2026-08-26T05:27:16.080Z",
+      "enriched_at": "2026-08-26T05:27:16.080Z",
+      "failure_count": 0
+    },
+    "https://arxiv.org/abs/2608.24738": {
+      "url": "https://arxiv.org/abs/2608.24738",
+      "title": "TorchMorph: CUDA-accelerated Morphological Transforms",
+      "source_name": "Hugging Face Daily Papers",
+      "dek": "TorchMorph provides a CUDA-accelerated PyTorch extension for morphological transforms, enabling efficient GPU-based shape processing.",
+      "brief": "Existing tools like scipy.ndimage are CPU-bound, forcing expensive data transfers during training. TorchMorph offers 22 public operators that support multi-dimensional processing directly on the GPU, allowing developers to integrate complex morphological operations into PyTorch training loops without performance bottlenecks.",
+      "image_alt": "Comparison chart of CPU vs GPU morphological processing",
+      "status": "ok",
+      "attempted_at": "2026-08-26T05:27:16.080Z",
+      "enriched_at": "2026-08-26T05:27:16.080Z",
+      "failure_count": 0
+    },
     "https://asia.nikkei.com/business/technology/five-us-tech-giants-hidden-debts-soar-to-1.65tn-on-opaque-ai-funding": {
       "url": "https://asia.nikkei.com/business/technology/five-us-tech-giants-hidden-debts-soar-to-1.65tn-on-opaque-ai-funding",
       "title": "Five US tech giants' hidden debts soar to $1.65T on opaque AI funding",
@@ -1256,6 +1280,18 @@
       "status": "ok",
       "attempted_at": "2026-07-21T07:42:16.711Z",
       "enriched_at": "2026-07-21T07:42:16.711Z",
+      "failure_count": 0
+    },
+    "https://aws.amazon.com/blogs/machine-learning/agentic-observability-with-amazon-opensearch-service-mcp-apps": {
+      "url": "https://aws.amazon.com/blogs/machine-learning/agentic-observability-with-amazon-opensearch-service-mcp-apps",
+      "title": "Agentic observability with Amazon OpenSearch Service MCP Apps",
+      "source_name": "AWS Machine Learning Blog",
+      "dek": "Amazon OpenSearch Service now supports MCP Apps to integrate interactive observability visualizations directly into AI agent workflows.",
+      "brief": "MCP Apps allow agents to return live traces, logs, and service maps within the chat interface. This reduces context switching by enabling developers to verify agent-generated root cause hypotheses inline, rather than manually navigating external observability dashboards.",
+      "image_alt": "Screenshot of an AI agent displaying an interactive trace visualization",
+      "status": "ok",
+      "attempted_at": "2026-08-26T05:27:16.080Z",
+      "enriched_at": "2026-08-26T05:27:16.080Z",
       "failure_count": 0
     },
     "https://aws.amazon.com/blogs/machine-learning/agentic-resource-discovery-ard-an-open-specification-for-agent-discovery": {
@@ -1414,20 +1450,6 @@
       "status": "ok",
       "attempted_at": "2026-07-28T07:47:05.559Z",
       "enriched_at": "2026-07-28T07:47:05.559Z",
-      "failure_count": 0
-    },
-    "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api": {
-      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api",
-      "title": "Google: Expanding Managed Agents in Gemini API: background tasks, remote MCP and more",
-      "source_name": "Google AI on Keyword",
-      "dek": "Google has updated its Managed Agents in the Gemini API to support background tasks and remote Model Context Protocol (MCP) integration.",
-      "brief": "The update aims to improve the reliability of production-ready agents. By adding support for background tasks and remote MCP, developers can now integrate external data sources and long-running processes more effectively within the Gemini agent ecosystem.",
-      "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Managed_agents_feature_bundle_launch.width-1300.png",
-      "image_alt": "Diagram showing Gemini API agent architecture with background task processing",
-      "image_source": "page_metadata",
-      "status": "ok",
-      "attempted_at": "2026-07-07T20:13:38.949Z",
-      "enriched_at": "2026-07-07T20:13:38.949Z",
       "failure_count": 0
     },
     "https://blog.jsbarretto.com/post/languages-as-latent-spaces": {
@@ -1859,6 +1881,20 @@
       "enriched_at": "2026-07-18T07:09:02.924Z",
       "failure_count": 0
     },
+    "https://developer.nvidia.com/blog/restore-llm-inference-capacity-in-seconds-with-shadow-engine-recovery-in-nvidia-dynamo": {
+      "url": "https://developer.nvidia.com/blog/restore-llm-inference-capacity-in-seconds-with-shadow-engine-recovery-in-nvidia-dynamo",
+      "title": "Restore LLM Inference Capacity in Seconds with Shadow Engine Recovery in NVIDIA Dynamo",
+      "source_name": "NVIDIA Developer Blog",
+      "dek": "NVIDIA Dynamo introduces shadow engine recovery to eliminate cold-start latency during LLM inference process failures.",
+      "brief": "Shadow engine recovery maintains an idle, fully initialized engine on the same GPU as the active process. By offloading weight loading and kernel compilation from the serving path, this feature allows for near-instant failover, preventing the multi-minute downtime typically associated with cold restarts for large models.",
+      "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/08/unnamed-17-768x432.png",
+      "image_alt": "Architecture diagram of shadow engine failover",
+      "image_source": "rss_content",
+      "status": "ok",
+      "attempted_at": "2026-08-26T05:27:16.080Z",
+      "enriched_at": "2026-08-26T05:27:16.080Z",
+      "failure_count": 0
+    },
     "https://developer.nvidia.com/blog/route-ai-agent-workloads-across-models-with-nvidia-nemo-switchyard": {
       "url": "https://developer.nvidia.com/blog/route-ai-agent-workloads-across-models-with-nvidia-nemo-switchyard",
       "title": "Route AI Agent Workloads Across Models with NVIDIA NeMo Switchyard",
@@ -1941,18 +1977,6 @@
       "status": "ok",
       "attempted_at": "2026-08-12T18:34:39.759Z",
       "enriched_at": "2026-08-12T18:34:39.759Z",
-      "failure_count": 0
-    },
-    "https://developers.cloudflare.com/changelog/post/2026-07-07-workflows-billing-updates": {
-      "url": "https://developers.cloudflare.com/changelog/post/2026-07-07-workflows-billing-updates",
-      "title": "Workflows - Workflows pricing adds per-step billing. Step and storage billing to start no earlier than August 10, 2026.",
-      "source_name": "Cloudflare AI Changelog",
-      "dek": "Cloudflare Workflows introduces per-step billing starting no earlier than August 10, 2026.",
-      "brief": "Cloudflare has updated its Workflows pricing model to include per-step billing. This applies to each unit of work executed, including sleep and event-wait operations. Existing billing for requests and CPU time remains unchanged. Developers can track usage via the GraphQL Analytics API using the stepCount metric.",
-      "image_alt": "Cloudflare Workflows dashboard showing analytics",
-      "status": "ok",
-      "attempted_at": "2026-07-07T15:14:42.058Z",
-      "enriched_at": "2026-07-07T15:14:42.058Z",
       "failure_count": 0
     },
     "https://developers.cloudflare.com/changelog/post/2026-07-09-tunnel-routes-and-connections-api-changes": {
@@ -3928,20 +3952,6 @@
       "enriched_at": "2026-07-22T14:21:45.515Z",
       "failure_count": 1
     },
-    "https://old.reddit.com/r/LocalLLaMA/comments/1uprmso/beijing_is_looking_at_curbing_overseas_access_to": {
-      "url": "https://old.reddit.com/r/LocalLLaMA/comments/1uprmso/beijing_is_looking_at_curbing_overseas_access_to",
-      "title": "Beijing is looking at curbing overseas access to China's top AI models (Reuters)",
-      "source_name": "r/LocalLLaMA",
-      "dek": "Reports indicate Beijing may restrict overseas access to top-tier Chinese AI models.",
-      "brief": "According to Reuters, the Chinese government is considering new regulations that would limit international access to its most advanced AI models. This potential policy shift could impact global developers and companies currently leveraging Chinese open-source or API-based AI infrastructure.",
-      "image_url": "https://preview.redd.it/9s1018gggsbh1.jpeg?width=640&crop=smart&auto=webp&s=e170cca33660366ff0b98b0d0005cd654eb06ab5",
-      "image_alt": "Global map representing AI regulation",
-      "image_source": "rss_media",
-      "status": "ok",
-      "attempted_at": "2026-07-07T15:14:42.058Z",
-      "enriched_at": "2026-07-07T15:14:42.058Z",
-      "failure_count": 0
-    },
     "https://old.reddit.com/r/LocalLLaMA/comments/1uq4oeg/glm52_on_8xb200_the_deployment_math_nobody_spells": {
       "url": "https://old.reddit.com/r/LocalLLaMA/comments/1uq4oeg/glm52_on_8xb200_the_deployment_math_nobody_spells",
       "title": "GLM-5.2 on 8xB200: the deployment math nobody spells out - NVFP4 + 2x TP=4 replicas should beat TP=8 by ~2x. Full config guidance inside.",
@@ -4757,6 +4767,20 @@
       "status": "ok",
       "attempted_at": "2026-07-19T13:53:14.612Z",
       "enriched_at": "2026-07-19T13:53:14.612Z",
+      "failure_count": 0
+    },
+    "https://research.google/blog/agenthands-generating-interactive-hand-gestures-for-spatially-grounded-agent-conversations-in-xr": {
+      "url": "https://research.google/blog/agenthands-generating-interactive-hand-gestures-for-spatially-grounded-agent-conversations-in-xr",
+      "title": "AgentHands: Generating interactive hand gestures for spatially grounded agent conversations in XR",
+      "source_name": "Google Research",
+      "dek": "Google Research introduces AgentHands to generate interactive, spatially grounded hand gestures for XR AI assistants.",
+      "brief": "As AI assistants move toward proactive, situated interaction, AgentHands addresses the need for natural non-verbal communication. The system enables agents to use hand gestures that align with physical objects in a user's environment, enhancing the realism and utility of multimodal XR conversations.",
+      "image_url": "https://storage.googleapis.com/gweb-research2023-media/original_images/AgentHands5_Workflow.png",
+      "image_alt": "XR interface showing AI agent using hand gestures",
+      "image_source": "rss_media",
+      "status": "ok",
+      "attempted_at": "2026-08-26T05:27:16.080Z",
+      "enriched_at": "2026-08-26T05:27:16.080Z",
       "failure_count": 0
     },
     "https://research.google/blog/an-ai-tool-for-prioritizing-candidate-biomarkers-from-wearable-sensor-data": {
@@ -5653,20 +5677,6 @@
       "enriched_at": "2026-08-14T12:30:36.499Z",
       "failure_count": 0
     },
-    "https://the-decoder.com/claudes-hidden-inner-monologue-is-now-readable-thanks-to-anthropics-new-jacobian-lens": {
-      "url": "https://the-decoder.com/claudes-hidden-inner-monologue-is-now-readable-thanks-to-anthropics-new-jacobian-lens",
-      "title": "Claude's hidden inner monologue is now readable thanks to Anthropic's new Jacobian Lens",
-      "source_name": "The Decoder",
-      "dek": "Anthropic introduced the Jacobian Lens (J-Lens) to interpret 'J-Space,' an internal working memory discovered within Claude's neural patterns.",
-      "brief": "Researchers identified that Claude develops specific neural patterns during training that function as a central working memory, similar to Global Workspace Theory. J-Lens allows developers to observe these internal states, revealing that the model can identify test scenarios before generating responses. Disabling these cues has led to unexpected behavioral shifts in testing.",
-      "image_url": "https://the-decoder.com/wp-content/uploads/2025/10/anthropic_claude_memory.png",
-      "image_alt": "Visualization of neural activation patterns in Claude's J-Space",
-      "image_source": "rss_content",
-      "status": "ok",
-      "attempted_at": "2026-07-07T20:13:38.949Z",
-      "enriched_at": "2026-07-07T20:13:38.949Z",
-      "failure_count": 0
-    },
     "https://the-decoder.com/cursors-agent-swarm-suggests-cheaper-models-can-handle-most-coding-when-frontier-models-plan-the-work": {
       "url": "https://the-decoder.com/cursors-agent-swarm-suggests-cheaper-models-can-handle-most-coding-when-frontier-models-plan-the-work",
       "title": "Cursor's agent swarm suggests cheaper models can handle most coding when frontier models plan the work",
@@ -6154,18 +6164,6 @@
       "status": "ok",
       "attempted_at": "2026-07-27T08:47:32.575Z",
       "enriched_at": "2026-07-27T08:47:32.575Z",
-      "failure_count": 0
-    },
-    "https://together.ai/blog/provisioned-throughput": {
-      "url": "https://together.ai/blog/provisioned-throughput",
-      "title": "Open, convenient and predictable: Introducing Provisioned Throughput",
-      "source_name": "Together AI",
-      "dek": "Together AI launched Provisioned Throughput, offering reserved inference capacity for open models with a 99% uptime SLA.",
-      "brief": "The service provides predictable performance and cost for models like MiniMax M3 and GLM-5.2. By moving away from standard GPU-hour billing to token-based pricing, it aims to simplify production deployments for developers.",
-      "image_alt": "Chart comparing inference throughput and cost efficiency",
-      "status": "ok",
-      "attempted_at": "2026-07-08T07:41:24.912Z",
-      "enriched_at": "2026-07-08T07:41:24.912Z",
       "failure_count": 0
     },
     "https://twitter.com/kimi_moonshot/status/2078855608565207130": {
