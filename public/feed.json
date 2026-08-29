@@ -1,17 +1,22 @@
 {
-  "generated_at": "2026-08-29T12:31:22.215Z",
-  "last_successful_generated_at": "2026-08-29T12:31:22.215Z",
+  "generated_at": "2026-08-29T18:26:56.843Z",
+  "last_successful_generated_at": "2026-08-29T18:26:56.843Z",
   "refresh_status": "partial",
   "classification_mode": "llm",
   "window_hours": 36,
   "source_total": 53,
-  "source_ok": 52,
-  "source_failed": 1,
+  "source_ok": 51,
+  "source_failed": 2,
   "failed_sources": [
+    {
+      "id": "r_localllama",
+      "name": "r/LocalLLaMA",
+      "message": "Feed not recognized as RSS 1 or 2."
+    },
     {
       "id": "r_ml",
       "name": "r/MachineLearning",
-      "message": "HTTP 429 Too Many Requests - url=https://old.reddit.com/r/MachineLearning/top/.rss?t=day"
+      "message": "Invalid character in entity name\nLine: 19\nColumn: 196\nChar: ="
     }
   ],
   "source_health": [
@@ -196,20 +201,20 @@
       "name": "TechCrunch AI",
       "status": "ok",
       "fetched_count": 12,
-      "fresh_count": 5,
-      "stale_count": 7,
-      "oldest_published_at": "2026-08-27T14:01:42.000Z",
-      "newest_published_at": "2026-08-28T20:24:11.000Z"
+      "fresh_count": 7,
+      "stale_count": 5,
+      "oldest_published_at": "2026-08-27T14:56:52.000Z",
+      "newest_published_at": "2026-08-29T17:36:47.000Z"
     },
     {
       "id": "the_decoder",
       "name": "The Decoder",
       "status": "ok",
       "fetched_count": 9,
-      "fresh_count": 7,
-      "stale_count": 2,
-      "oldest_published_at": "2026-08-27T18:15:46.000Z",
-      "newest_published_at": "2026-08-29T09:36:48.000Z"
+      "fresh_count": 9,
+      "stale_count": 0,
+      "oldest_published_at": "2026-08-28T08:03:22.000Z",
+      "newest_published_at": "2026-08-29T13:33:35.000Z"
     },
     {
       "id": "mit_tech_review_ai",
@@ -258,16 +263,16 @@
       "fetched_count": 8,
       "fresh_count": 1,
       "stale_count": 7,
-      "oldest_published_at": "2026-08-26T21:36:06.000Z",
-      "newest_published_at": "2026-08-28T03:14:06.000Z"
+      "oldest_published_at": "2026-08-27T13:00:00.000Z",
+      "newest_published_at": "2026-08-29T12:00:00.000Z"
     },
     {
       "id": "wired_ai",
       "name": "WIRED AI",
       "status": "ok",
       "fetched_count": 10,
-      "fresh_count": 6,
-      "stale_count": 4,
+      "fresh_count": 5,
+      "stale_count": 5,
       "oldest_published_at": "2026-08-27T16:52:42.000Z",
       "newest_published_at": "2026-08-29T10:30:00.000Z"
     },
@@ -296,8 +301,8 @@
       "fetched_count": 10,
       "fresh_count": 4,
       "stale_count": 6,
-      "oldest_published_at": "2026-08-26T15:20:00.000Z",
-      "newest_published_at": "2026-08-29T05:25:16.000Z"
+      "oldest_published_at": "2026-08-26T21:33:23.000Z",
+      "newest_published_at": "2026-08-29T14:30:44.000Z"
     },
     {
       "id": "hn_ai",
@@ -330,19 +335,18 @@
     {
       "id": "r_localllama",
       "name": "r/LocalLLaMA",
-      "status": "ok",
-      "fetched_count": 25,
-      "fresh_count": 25,
-      "stale_count": 0,
-      "oldest_published_at": "2026-08-28T12:31:58.000Z",
-      "newest_published_at": "2026-08-29T10:51:58.000Z"
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "Feed not recognized as RSS 1 or 2.",
+      "fresh_count": 0,
+      "stale_count": 0
     },
     {
       "id": "r_ml",
       "name": "r/MachineLearning",
       "status": "failed",
       "fetched_count": 0,
-      "message": "HTTP 429 Too Many Requests - url=https://old.reddit.com/r/MachineLearning/top/.rss?t=day",
+      "message": "Invalid character in entity name\nLine: 19\nColumn: 196\nChar: =",
       "fresh_count": 0,
       "stale_count": 0
     },
@@ -351,8 +355,8 @@
       "name": "OpenAI",
       "status": "ok",
       "fetched_count": 10,
-      "fresh_count": 2,
-      "stale_count": 8,
+      "fresh_count": 0,
+      "stale_count": 10,
       "oldest_published_at": "2026-08-25T07:00:00.000Z",
       "newest_published_at": "2026-08-28T06:00:00.000Z"
     },
@@ -521,8 +525,8 @@
       "name": "Fahd Mirza YouTube",
       "status": "ok",
       "fetched_count": 8,
-      "fresh_count": 4,
-      "stale_count": 4,
+      "fresh_count": 3,
+      "stale_count": 5,
       "oldest_published_at": "2026-08-26T20:58:03.000Z",
       "newest_published_at": "2026-08-29T09:00:11.000Z"
     },
@@ -539,13 +543,27 @@
   ],
   "top_news": [
     {
+      "cluster_id": "n3di2f",
+      "title": "I accidentally turned LLM memory into program analysis",
+      "url": "https://pwning.systems/posts/llm-memory-program-analysis",
+      "source_name": "Hacker News (AI-filtered)",
+      "published_at": "2026-08-28T23:27:45Z",
+      "kind": "discussion",
+      "score": 0.773,
+      "dek": "A new approach applies LLM memory mechanisms to automate program analysis and vulnerability research.",
+      "brief": "The author explores how to maintain state during long-running LLM agent sessions. By treating model memory as a structured component of program analysis, the system prevents agents from repeating errors or losing track of previously invalidated assumptions during codebase investigations.",
+      "image_alt": "Conceptual flow of LLM memory states applied to code analysis",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-08-29T05:23:54.414Z"
+    },
+    {
       "cluster_id": "1lyc920",
       "title": "FreeToken Unlocks Frontier MoE Inference on Consumer Hardware via Dynamic Co-Execution",
       "url": "https://infoq.com/news/2026/08/freetoken-local-inference",
       "source_name": "InfoQ AI/ML/Data",
       "published_at": "2026-08-29T05:05:00.000Z",
       "kind": "paper",
-      "score": 0.779,
+      "score": 0.769,
       "dek": "FreeToken is an open-source inference engine designed to optimize Mixture-of-Experts (MoE) model performance on consumer-grade hardware.",
       "brief": "Developed by researchers at UC Berkeley and MIT, FreeToken utilizes dynamic scheduling and weight management to improve decoding speeds. The engine aims to lower the barrier for running complex reasoning systems locally on edge devices.",
       "image_url": "https://www.infoq.com/styles/static/images/logo/logo_bigger.jpg",
@@ -555,64 +573,50 @@
       "enriched_at": "2026-08-29T05:23:54.414Z"
     },
     {
-      "cluster_id": "nxip51",
-      "title": "Our decision on Cursor following its acquisition by SpaceX",
-      "url": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
-      "source_name": "OpenAI",
-      "published_at": "2026-08-28T06:00:00.000Z",
-      "kind": "company_announcement",
-      "score": 0.721,
-      "dek": "OpenAI is terminating its contract to provide models to Cursor following the editor's acquisition by SpaceX.",
-      "brief": "OpenAI announced it will stop providing model access to Cursor by November 12, 2026. The company cited concerns regarding contract compliance and the history of Elon Musk's companies as the primary reason for the decision.",
-      "image_alt": "OpenAI logo next to a notice of contract termination",
+      "cluster_id": "1flowo1",
+      "title": "[AINews] OpenAI shuts off Cursor",
+      "url": "https://latent.space/p/ainews-openai-shuts-off-cursor",
+      "source_name": "Latent Space",
+      "published_at": "2026-08-29T05:11:52.000Z",
+      "kind": "news",
+      "score": 0.655,
+      "dek": "OpenAI's decision to cut off Cursor follows the recent acquisition of the AI code editor by SpaceX.",
+      "brief": "This move mirrors previous industry shifts where model providers restrict access to tools acquired by competing entities. The termination highlights the growing tension between major AI labs and the integration of their models into third-party developer environments.",
+      "image_url": "https://substackcdn.com/image/fetch/$s_!DbYa!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F73b0838a-bd14-46a1-801c-b6a2046e5c1e_1130x1130.png",
+      "image_alt": "OpenAI and SpaceX logos representing the corporate conflict",
+      "image_source": "rss_enclosure",
       "enrichment_status": "ok",
       "enriched_at": "2026-08-29T05:23:54.414Z"
     },
     {
-      "cluster_id": "1prkjy7",
-      "title": "StemDeck, a free, open-source and local AI stem separator",
-      "url": "https://github.com/stemdeckapp/stemdeck",
-      "source_name": "Hacker News (AI-filtered)",
-      "published_at": "2026-08-29T01:24:13Z",
-      "kind": "tool",
-      "score": 0.761,
-      "dek": "StemDeck is a new open-source, local-first application for isolating audio stems from various file formats.",
-      "brief": "StemDeck allows users to process audio files locally to extract vocals, drums, bass, guitar, piano, and other instruments. It features a DAW-style interface for mixing, soloing, and exporting individual stems, supporting formats like MP3, WAV, and FLAC.",
-      "image_alt": "StemDeck multitrack mixer interface showing waveform separation",
+      "cluster_id": "zaqhuy",
+      "title": "AI Search - AI Search now supports GLM-5.3 Flash",
+      "url": "https://developers.cloudflare.com/changelog/post/2026-08-30-glm-5.3-flash",
+      "source_name": "Cloudflare AI Changelog",
+      "published_at": "2026-08-30T00:00:00.000Z",
+      "kind": "company_announcement",
+      "score": 0.543,
+      "dek": "Cloudflare's AI Search now supports the GLM-5.3 Flash model on Workers AI.",
+      "brief": "Cloudflare has integrated GLM-5.3 Flash into its AI Search service. The model features a 1,048,576-token context window, allowing for extensive document processing and retrieval tasks within the Workers AI ecosystem.",
+      "image_alt": "Cloudflare Workers AI logo",
       "enrichment_status": "ok",
-      "enriched_at": "2026-08-29T12:31:22.215Z"
+      "enriched_at": "2026-08-28T21:31:50.282Z"
     },
     {
-      "cluster_id": "1lq5o2m",
-      "title": "use llms to auto annotation your dataset locally",
-      "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w18v86/use_llms_to_auto_annotation_your_dataset_locally",
-      "source_name": "r/LocalLLaMA",
-      "published_at": "2026-08-29T01:23:13.000Z",
-      "kind": "tool",
-      "score": 0.688,
-      "dek": "LLMOG is a local framework for automated dataset annotation and reclassification using llama.cpp or vLLM.",
-      "brief": "hi i make tool for this called llmog it's purpose to make llms free to - auto annotation datasets - reclassification existing yolo datasets running totally local using llama cpp or vllm or use external api you'd rather click than code. 🔗 GitHub: mohamed-em2m/llmog: framework for using llms on object grounding You can try it directly online 🔵 Google Colab: https://colab.research.google.com/drive/1YIKlyTVtRjJdRC5IjC…",
-      "image_url": "https://external-preview.redd.it/eG5wNnM0dGp1N21oMXq8CUYhnl8FLuvYZ0rVBwPFaaNb6UQHI2-mYzc4bWD2.png?width=640&crop=smart&auto=webp&s=a4dfc5dd95f22337b23e287cc14714d77aca2f0e",
-      "image_source": "rss_media",
-      "enrichment_status": "metadata_only",
-      "enriched_at": "2026-08-29T12:31:22.215Z"
-    },
-    {
-      "cluster_id": "11spgiq",
-      "title": "GLM-5.3-Flash vs Qwen3.8-Flash-Next: Two Chinese AI Labs Independently Converge on the Same Model Architecture",
-      "url": "https://marktechpost.com/2026/08/28/glm-5-3-flash-vs-qwen3-8-flash-next-two-chinese-ai-labs-independently-converge-on-the-same-model-architecture",
+      "cluster_id": "1kjcurj",
+      "title": "Google AI Releases Gemini Omni 1.1 Flash: 40-Second Scene Extension, First/Last Frame Control, and 4K Upscaling",
+      "url": "https://marktechpost.com/2026/08/29/google-ai-releases-gemini-omni-1-1-flash-40-second-scene-extension-first-last-frame-control-and-4k-upscaling",
       "source_name": "MarkTechPost",
-      "published_at": "2026-08-28T19:12:21.000Z",
-      "kind": "news",
-      "score": 0.683,
-      "dek": "Z.ai and Alibaba's Qwen team have independently released models featuring nearly identical architectural innovations.",
-      "brief": "GLM-5.3-Flash and Qwen3.8-Flash-Next both utilize a 3:1 linear-to-full attention hybrid, gated residuals, and Muon training. Despite being developed by separate labs, the models share core design choices for their respective MoE architectures.",
-      "image_alt": "Comparison chart of GLM-5.3-Flash and Qwen3.8-Flash-Next architectural features",
-      "enrichment_status": "ok",
-      "enriched_at": "2026-08-29T12:31:22.215Z"
+      "published_at": "2026-08-29T14:30:44.000Z",
+      "kind": "model_release",
+      "score": 0.694,
+      "dek": "Gemini Omni 1.1 Flash update adds 40-second scene extension and frame control for video generation.",
+      "brief": "We look at Gemini Omni 1.1 Flash, Google's production update to its native multimodal video generation and editing model. We break down what changed: scene extension now reads up to 10 seconds of prior context instead of a single final frame, first and last frames can be pinned to control camera movement, and video clips can be passed as references for character consistency. The post Google AI Releases Gemini Omni 1…",
+      "enrichment_status": "metadata_only",
+      "enriched_at": "2026-08-29T18:26:56.843Z"
     }
   ],
-  "count": 52,
+  "count": 36,
   "clusters": [
     {
       "id": "n3di2f",
@@ -631,8 +635,8 @@
         "published_at_source": "api",
         "date_confidence": "high",
         "engagement": {
-          "score": 176,
-          "comments": 40
+          "score": 249,
+          "comments": 69
         }
       },
       "members": [
@@ -651,8 +655,8 @@
           "published_at_source": "api",
           "date_confidence": "high",
           "engagement": {
-            "score": 176,
-            "comments": 40
+            "score": 249,
+            "comments": 69
           }
         }
       ],
@@ -670,19 +674,19 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "opinion",
+      "kind": "discussion",
       "quality": "signal",
       "one_liner": "Exploration of using LLM memory mechanisms for program analysis tasks.",
       "novelty": 0.865,
       "novelty_label": "high",
       "trust": 0.65,
-      "score": 0.781,
+      "score": 0.773,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal",
         "source-native discussion or engagement is unusually high"
       ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
+      "builder_action": "Use this as weak signal and verify against primary sources."
     },
     {
       "id": "1lyc920",
@@ -736,14 +740,78 @@
       "also_seen_on": [],
       "kind": "paper",
       "quality": "signal",
-      "one_liner": "FreeToken inference engine optimizes MoE model decoding and weight management for consumer hardware.",
+      "one_liner": "FreeToken inference engine optimizes MoE model execution on consumer hardware via dynamic scheduling.",
       "novelty": 0.828,
       "novelty_label": "high",
       "trust": 0.78,
-      "score": 0.779,
+      "score": 0.769,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "1l29ye2",
+      "primary": {
+        "id": "1l29ye2",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Google's WikiSkill gives AI agents a persistent memory of past mistakes to sharpen future performance",
+        "url": "https://the-decoder.com/google-gives-ai-agents-their-own-wiki-so-they-can-learn-from-mistakes-and-successes",
+        "original_url": "https://the-decoder.com/google-gives-ai-agents-their-own-wiki-so-they-can-learn-from-mistakes-and-successes/",
+        "summary": "Google Research has introduced WikiSkill, a framework that gives AI agents a persistent knowledge base. Instead of discarding what they learned after each run, agents document both failures and successes in a wiki-like structure and use that knowledge to get better over time. Larger models benefit more, but smaller models with WikiSkill can match the performance of larger ones without it. The article Google's WikiSkill gives AI agents a persistent memory of past mistakes to sharpen future performance appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/aigent_skills_generation.png",
+        "image_source": "rss_content",
+        "published_at": "2026-08-29T12:51:24.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1l29ye2",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Google's WikiSkill gives AI agents a persistent memory of past mistakes to sharpen future performance",
+          "url": "https://the-decoder.com/google-gives-ai-agents-their-own-wiki-so-they-can-learn-from-mistakes-and-successes",
+          "original_url": "https://the-decoder.com/google-gives-ai-agents-their-own-wiki-so-they-can-learn-from-mistakes-and-successes/",
+          "summary": "Google Research has introduced WikiSkill, a framework that gives AI agents a persistent knowledge base. Instead of discarding what they learned after each run, agents document both failures and successes in a wiki-like structure and use that knowledge to get better over time. Larger models benefit more, but smaller models with WikiSkill can match the performance of larger ones without it. The article Google's WikiSkill gives AI agents a persistent memory of past mistakes to sharpen future performance appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/aigent_skills_generation.png",
+          "image_source": "rss_content",
+          "published_at": "2026-08-29T12:51:24.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Google's WikiSkill gives AI agents a persistent memory of past mistakes to sharpen future performance",
+          "url": "https://the-decoder.com/google-gives-ai-agents-their-own-wiki-so-they-can-learn-from-mistakes-and-successes",
+          "published_at": "2026-08-29T12:51:24.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "WikiSkill framework enables AI agents to maintain persistent memory of past performance for iterative improvement.",
+      "novelty": 0.814,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.768,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
       ],
       "builder_action": "Save this for technical review if the method maps to your roadmap."
     },
@@ -764,8 +832,8 @@
         "published_at_source": "api",
         "date_confidence": "high",
         "engagement": {
-          "score": 121,
-          "comments": 26
+          "score": 181,
+          "comments": 49
         }
       },
       "members": [
@@ -784,8 +852,8 @@
           "published_at_source": "api",
           "date_confidence": "high",
           "engagement": {
-            "score": 121,
-            "comments": 26
+            "score": 181,
+            "comments": 49
           }
         }
       ],
@@ -809,13 +877,136 @@
       "novelty": 0.797,
       "novelty_label": "high",
       "trust": 0.65,
-      "score": 0.761,
+      "score": 0.754,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal",
         "source-native discussion or engagement is unusually high"
       ],
       "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "1o69gn6",
+      "primary": {
+        "id": "1o69gn6",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Anthropic wants to do for physical hardware what its Model Context Protocol did for software",
+        "url": "https://the-decoder.com/anthropic-wants-to-do-for-physical-hardware-what-its-model-context-protocol-did-for-software",
+        "original_url": "https://the-decoder.com/anthropic-wants-to-do-for-physical-hardware-what-its-model-context-protocol-did-for-software/",
+        "summary": "Anthropic's Model Hardware Standard (MHS) gives AI agents a unified interface to physical devices like robotic arms and lab instruments. In early tests, integration time dropped from weeks to hours. But Claude sometimes failed to grasp physical cause and effect, so human oversight remains essential for now. The article Anthropic wants to do for physical hardware what its Model Context Protocol did for software appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/mhs-ki-hardware-labore-fabriken.png",
+        "image_source": "rss_content",
+        "published_at": "2026-08-29T09:14:30.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1o69gn6",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Anthropic wants to do for physical hardware what its Model Context Protocol did for software",
+          "url": "https://the-decoder.com/anthropic-wants-to-do-for-physical-hardware-what-its-model-context-protocol-did-for-software",
+          "original_url": "https://the-decoder.com/anthropic-wants-to-do-for-physical-hardware-what-its-model-context-protocol-did-for-software/",
+          "summary": "Anthropic's Model Hardware Standard (MHS) gives AI agents a unified interface to physical devices like robotic arms and lab instruments. In early tests, integration time dropped from weeks to hours. But Claude sometimes failed to grasp physical cause and effect, so human oversight remains essential for now. The article Anthropic wants to do for physical hardware what its Model Context Protocol did for software appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/mhs-ki-hardware-labore-fabriken.png",
+          "image_source": "rss_content",
+          "published_at": "2026-08-29T09:14:30.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Anthropic wants to do for physical hardware what its Model Context Protocol did for software",
+          "url": "https://the-decoder.com/anthropic-wants-to-do-for-physical-hardware-what-its-model-context-protocol-did-for-software",
+          "published_at": "2026-08-29T09:14:30.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "signal",
+      "one_liner": "Anthropic introduces Model Hardware Standard to provide a unified interface for AI agents to control physical hardware.",
+      "novelty": 0.752,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.744,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+    },
+    {
+      "id": "1kjcurj",
+      "primary": {
+        "id": "1kjcurj",
+        "source_id": "marktechpost",
+        "source_name": "MarkTechPost",
+        "source_role": "main",
+        "trust": 0.48,
+        "kind_hint": "news",
+        "title": "Google AI Releases Gemini Omni 1.1 Flash: 40-Second Scene Extension, First/Last Frame Control, and 4K Upscaling",
+        "url": "https://marktechpost.com/2026/08/29/google-ai-releases-gemini-omni-1-1-flash-40-second-scene-extension-first-last-frame-control-and-4k-upscaling",
+        "original_url": "https://www.marktechpost.com/2026/08/29/google-ai-releases-gemini-omni-1-1-flash-40-second-scene-extension-first-last-frame-control-and-4k-upscaling/",
+        "summary": "We look at Gemini Omni 1.1 Flash, Google's production update to its native multimodal video generation and editing model. We break down what changed: scene extension now reads up to 10 seconds of prior context instead of a single final frame, first and last frames can be pinned to control camera movement, and video clips can be passed as references for character consistency. The post Google AI Releases Gemini Omni 1.1 Flash: 40-Second Scene Extension, First/Last Frame Control, and 4K Upscaling appeared first on MarkTechPost.",
+        "published_at": "2026-08-29T14:30:44.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1kjcurj",
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "source_role": "main",
+          "trust": 0.48,
+          "kind_hint": "news",
+          "title": "Google AI Releases Gemini Omni 1.1 Flash: 40-Second Scene Extension, First/Last Frame Control, and 4K Upscaling",
+          "url": "https://marktechpost.com/2026/08/29/google-ai-releases-gemini-omni-1-1-flash-40-second-scene-extension-first-last-frame-control-and-4k-upscaling",
+          "original_url": "https://www.marktechpost.com/2026/08/29/google-ai-releases-gemini-omni-1-1-flash-40-second-scene-extension-first-last-frame-control-and-4k-upscaling/",
+          "summary": "We look at Gemini Omni 1.1 Flash, Google's production update to its native multimodal video generation and editing model. We break down what changed: scene extension now reads up to 10 seconds of prior context instead of a single final frame, first and last frames can be pinned to control camera movement, and video clips can be passed as references for character consistency. The post Google AI Releases Gemini Omni 1.1 Flash: 40-Second Scene Extension, First/Last Frame Control, and 4K Upscaling appeared first on MarkTechPost.",
+          "published_at": "2026-08-29T14:30:44.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "title": "Google AI Releases Gemini Omni 1.1 Flash: 40-Second Scene Extension, First/Last Frame Control, and 4K Upscaling",
+          "url": "https://marktechpost.com/2026/08/29/google-ai-releases-gemini-omni-1-1-flash-40-second-scene-extension-first-last-frame-control-and-4k-upscaling",
+          "published_at": "2026-08-29T14:30:44.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "Gemini Omni 1.1 Flash update adds 40-second scene extension and frame control for video generation.",
+      "novelty": 0.755,
+      "novelty_label": "high",
+      "trust": 0.48,
+      "score": 0.694,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
     },
     {
       "id": "1w6kszl",
@@ -869,77 +1060,16 @@
       "also_seen_on": [],
       "kind": "tutorial",
       "quality": "signal",
-      "one_liner": "Architectural patterns for integrating enterprise data with AI agents using data mesh and semantic models.",
+      "one_liner": "Architectural patterns for enterprise data layers supporting AI agents using semantic models and data mesh.",
       "novelty": 0.663,
       "novelty_label": "medium",
       "trust": 0.78,
-      "score": 0.739,
+      "score": 0.729,
       "why_this_surfaced": [
         "meaningfully different from recent coverage",
-        "classified as concrete builder or research signal",
-        "fresh within the current refresh window"
+        "classified as concrete builder or research signal"
       ],
       "builder_action": "Use this as implementation reference if it matches your stack."
-    },
-    {
-      "id": "nxip51",
-      "primary": {
-        "id": "nxip51",
-        "source_id": "openai",
-        "source_name": "OpenAI",
-        "source_role": "main",
-        "trust": 0.9,
-        "kind_hint": "company_announcement",
-        "title": "Our decision on Cursor following its acquisition by SpaceX",
-        "url": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
-        "original_url": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
-        "summary": "Our decision to wind down our contract providing OpenAI models to Cursor following its acquisition by SpaceX.",
-        "published_at": "2026-08-28T06:00:00.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "nxip51",
-          "source_id": "openai",
-          "source_name": "OpenAI",
-          "source_role": "main",
-          "trust": 0.9,
-          "kind_hint": "company_announcement",
-          "title": "Our decision on Cursor following its acquisition by SpaceX",
-          "url": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
-          "original_url": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
-          "summary": "Our decision to wind down our contract providing OpenAI models to Cursor following its acquisition by SpaceX.",
-          "published_at": "2026-08-28T06:00:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "openai",
-          "source_name": "OpenAI",
-          "title": "Our decision on Cursor following its acquisition by SpaceX",
-          "url": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
-          "published_at": "2026-08-28T06:00:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "company_announcement",
-      "quality": "signal",
-      "one_liner": "OpenAI confirms termination of model access for Cursor after SpaceX acquisition.",
-      "novelty": 0.671,
-      "novelty_label": "medium",
-      "trust": 0.9,
-      "score": 0.721,
-      "why_this_surfaced": [
-        "meaningfully different from recent coverage",
-        "classified as concrete builder or research signal",
-        "primary source has high trust weight"
-      ],
-      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
     },
     {
       "id": "19cd8y8",
@@ -991,216 +1121,18 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "tool",
+      "kind": "news",
       "quality": "signal",
-      "one_liner": "LAION released a large-scale open video dataset containing 10 million hours of footage.",
+      "one_liner": "LAION releases a large-scale open video dataset for AI research.",
       "novelty": 0.678,
       "novelty_label": "medium",
       "trust": 0.74,
-      "score": 0.732,
+      "score": 0.722,
       "why_this_surfaced": [
         "meaningfully different from recent coverage",
-        "classified as concrete builder or research signal",
-        "fresh within the current refresh window"
-      ],
-      "builder_action": "Try it in a small sandbox before adding it to production workflow."
-    },
-    {
-      "id": "1lq5o2m",
-      "primary": {
-        "id": "1lq5o2m",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "source_role": "main",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "use llms to auto annotation your dataset locally",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w18v86/use_llms_to_auto_annotation_your_dataset_locally",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w18v86/use_llms_to_auto_annotation_your_dataset_locally/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w18v86/use_llms_to_auto_annotation_your_dataset_locally",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "hi i make tool for this called llmog it's purpose to make llms free to - auto annotation datasets - reclassification existing yolo datasets running totally local using llama cpp or vllm or use external api you'd rather click than code. 🔗 GitHub: mohamed-em2m/llmog: framework for using llms on object grounding You can try it directly online 🔵 Google Colab: https://colab.research.google.com/drive/1YIKlyTVtRjJdRC5IjCZ39i48ydyt_J5D?usp=sharing 🟠 Kaggle: https://www.kaggle.com/code/elemam/auto-annotation-using-llms submitted by /u/SavingsWeather1659 [link] [comments]",
-        "image_url": "https://external-preview.redd.it/eG5wNnM0dGp1N21oMXq8CUYhnl8FLuvYZ0rVBwPFaaNb6UQHI2-mYzc4bWD2.png?width=640&crop=smart&auto=webp&s=a4dfc5dd95f22337b23e287cc14714d77aca2f0e",
-        "image_source": "rss_media",
-        "published_at": "2026-08-29T01:23:13.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1lq5o2m",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "source_role": "main",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "use llms to auto annotation your dataset locally",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w18v86/use_llms_to_auto_annotation_your_dataset_locally",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w18v86/use_llms_to_auto_annotation_your_dataset_locally/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w18v86/use_llms_to_auto_annotation_your_dataset_locally",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "hi i make tool for this called llmog it's purpose to make llms free to - auto annotation datasets - reclassification existing yolo datasets running totally local using llama cpp or vllm or use external api you'd rather click than code. 🔗 GitHub: mohamed-em2m/llmog: framework for using llms on object grounding You can try it directly online 🔵 Google Colab: https://colab.research.google.com/drive/1YIKlyTVtRjJdRC5IjCZ39i48ydyt_J5D?usp=sharing 🟠 Kaggle: https://www.kaggle.com/code/elemam/auto-annotation-using-llms submitted by /u/SavingsWeather1659 [link] [comments]",
-          "image_url": "https://external-preview.redd.it/eG5wNnM0dGp1N21oMXq8CUYhnl8FLuvYZ0rVBwPFaaNb6UQHI2-mYzc4bWD2.png?width=640&crop=smart&auto=webp&s=a4dfc5dd95f22337b23e287cc14714d77aca2f0e",
-          "image_source": "rss_media",
-          "published_at": "2026-08-29T01:23:13.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "use llms to auto annotation your dataset locally",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w18v86/use_llms_to_auto_annotation_your_dataset_locally",
-          "published_at": "2026-08-29T01:23:13.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w18v86/use_llms_to_auto_annotation_your_dataset_locally",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "tool",
-      "quality": "signal",
-      "one_liner": "LLMOG is a local framework for automated dataset annotation and reclassification using llama.cpp or vLLM.",
-      "novelty": 0.761,
-      "novelty_label": "high",
-      "trust": 0.5,
-      "score": 0.688,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Try it in a small sandbox before adding it to production workflow."
-    },
-    {
-      "id": "11spgiq",
-      "primary": {
-        "id": "11spgiq",
-        "source_id": "marktechpost",
-        "source_name": "MarkTechPost",
-        "source_role": "main",
-        "trust": 0.48,
-        "kind_hint": "news",
-        "title": "GLM-5.3-Flash vs Qwen3.8-Flash-Next: Two Chinese AI Labs Independently Converge on the Same Model Architecture",
-        "url": "https://marktechpost.com/2026/08/28/glm-5-3-flash-vs-qwen3-8-flash-next-two-chinese-ai-labs-independently-converge-on-the-same-model-architecture",
-        "original_url": "https://www.marktechpost.com/2026/08/28/glm-5-3-flash-vs-qwen3-8-flash-next-two-chinese-ai-labs-independently-converge-on-the-same-model-architecture/",
-        "summary": "Z.ai and Qwen independently shipped near-identical architectures: 3:1 linear hybrids, compressed indexers, gated residuals, and Muon training. The post GLM-5.3-Flash vs Qwen3.8-Flash-Next: Two Chinese AI Labs Independently Converge on the Same Model Architecture appeared first on MarkTechPost.",
-        "published_at": "2026-08-28T19:12:21.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "11spgiq",
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "source_role": "main",
-          "trust": 0.48,
-          "kind_hint": "news",
-          "title": "GLM-5.3-Flash vs Qwen3.8-Flash-Next: Two Chinese AI Labs Independently Converge on the Same Model Architecture",
-          "url": "https://marktechpost.com/2026/08/28/glm-5-3-flash-vs-qwen3-8-flash-next-two-chinese-ai-labs-independently-converge-on-the-same-model-architecture",
-          "original_url": "https://www.marktechpost.com/2026/08/28/glm-5-3-flash-vs-qwen3-8-flash-next-two-chinese-ai-labs-independently-converge-on-the-same-model-architecture/",
-          "summary": "Z.ai and Qwen independently shipped near-identical architectures: 3:1 linear hybrids, compressed indexers, gated residuals, and Muon training. The post GLM-5.3-Flash vs Qwen3.8-Flash-Next: Two Chinese AI Labs Independently Converge on the Same Model Architecture appeared first on MarkTechPost.",
-          "published_at": "2026-08-28T19:12:21.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "title": "GLM-5.3-Flash vs Qwen3.8-Flash-Next: Two Chinese AI Labs Independently Converge on the Same Model Architecture",
-          "url": "https://marktechpost.com/2026/08/28/glm-5-3-flash-vs-qwen3-8-flash-next-two-chinese-ai-labs-independently-converge-on-the-same-model-architecture",
-          "published_at": "2026-08-28T19:12:21.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "signal",
-      "one_liner": "Analysis of architectural convergence in recent GLM and Qwen flash models.",
-      "novelty": 0.794,
-      "novelty_label": "high",
-      "trust": 0.48,
-      "score": 0.683,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
         "classified as concrete builder or research signal"
       ],
       "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "1pgjhst",
-      "primary": {
-        "id": "1pgjhst",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "source_role": "main",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "[Release] SOTA GGUFs for Qwen3.8-27B: GSQ-RCO at 2.5 to 3.0 bpw",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w13vse/release_sota_ggufs_for_qwen3827b_gsqrco_at_25_to",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w13vse/release_sota_ggufs_for_qwen3827b_gsqrco_at_25_to/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w13vse/release_sota_ggufs_for_qwen3827b_gsqrco_at_25_to",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "We're releasing Qwen3.8-27B quantized with our newest methods, GSQ + RCO. Higher-quality models, same file size, now with the search and the quantizer both learned. What's inside: GSQ (Gumbel-Softmax Quantization): post-training scalar quantization that jointly learns grid assignments and scales, closing most of the scalar-vs-vector gap at 2 to 3 bits while staying fully GGUF-deployable RCO (Riemannian Constrained Optimization): assigns a quantization type to every tensor under a strict size budget by gradient descent directly on the task loss, no per-constraint tuning Three GGUFs (2.50 / 2.75",
-        "image_url": "https://preview.redd.it/e0zubsoj16mh1.png?width=640&crop=smart&auto=webp&s=8686d32db706f4c4501a120c40da4401a949b910",
-        "image_source": "rss_media",
-        "published_at": "2026-08-28T21:46:58.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1pgjhst",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "source_role": "main",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "[Release] SOTA GGUFs for Qwen3.8-27B: GSQ-RCO at 2.5 to 3.0 bpw",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w13vse/release_sota_ggufs_for_qwen3827b_gsqrco_at_25_to",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w13vse/release_sota_ggufs_for_qwen3827b_gsqrco_at_25_to/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w13vse/release_sota_ggufs_for_qwen3827b_gsqrco_at_25_to",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "We're releasing Qwen3.8-27B quantized with our newest methods, GSQ + RCO. Higher-quality models, same file size, now with the search and the quantizer both learned. What's inside: GSQ (Gumbel-Softmax Quantization): post-training scalar quantization that jointly learns grid assignments and scales, closing most of the scalar-vs-vector gap at 2 to 3 bits while staying fully GGUF-deployable RCO (Riemannian Constrained Optimization): assigns a quantization type to every tensor under a strict size budget by gradient descent directly on the task loss, no per-constraint tuning Three GGUFs (2.50 / 2.75",
-          "image_url": "https://preview.redd.it/e0zubsoj16mh1.png?width=640&crop=smart&auto=webp&s=8686d32db706f4c4501a120c40da4401a949b910",
-          "image_source": "rss_media",
-          "published_at": "2026-08-28T21:46:58.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "[Release] SOTA GGUFs for Qwen3.8-27B: GSQ-RCO at 2.5 to 3.0 bpw",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w13vse/release_sota_ggufs_for_qwen3827b_gsqrco_at_25_to",
-          "published_at": "2026-08-28T21:46:58.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w13vse/release_sota_ggufs_for_qwen3827b_gsqrco_at_25_to",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "model_release",
-      "quality": "signal",
-      "one_liner": "Release of Qwen3.8-27B GGUF quants using Gumbel-Softmax Quantization and RCO methods.",
-      "novelty": 0.754,
-      "novelty_label": "high",
-      "trust": 0.5,
-      "score": 0.68,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
     },
     {
       "id": "1flowo1",
@@ -1252,11 +1184,11 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Report on OpenAI terminating model access for Cursor following its acquisition by SpaceX.",
+      "one_liner": "Report on OpenAI restricting access to the Cursor IDE.",
       "novelty": 0.77,
       "novelty_label": "high",
       "trust": 0.85,
-      "score": 0.665,
+      "score": 0.655,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal",
@@ -1312,76 +1244,11 @@
       "also_seen_on": [],
       "kind": "tool",
       "quality": "signal",
-      "one_liner": "Vercel open-sourced vgpu, a WebGPU library for managing shaders as TypeScript modules.",
+      "one_liner": "Vercel open-sources vgpu, a TypeScript library for WebGPU shaders in browser and Node.js.",
       "novelty": 0.78,
       "novelty_label": "high",
       "trust": 0.48,
-      "score": 0.676,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Try it in a small sandbox before adding it to production workflow."
-    },
-    {
-      "id": "gfcc0d",
-      "primary": {
-        "id": "gfcc0d",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "source_role": "main",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "Qwen3.8-Flash on RTX3090 + 64GB RAM (but you only need 12GB VRAM)",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0u24k/qwen38flash_on_rtx3090_64gb_ram_but_you_only_need",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0u24k/qwen38flash_on_rtx3090_64gb_ram_but_you_only_need/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0u24k/qwen38flash_on_rtx3090_64gb_ram_but_you_only_need",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "I've got Qwen3.8-Flash-next running on RTX 3090, Ryzen 9 3950X, a PCIe 3.0 motherboard, and 64GB DDR RAM from 2020. IQ4_XS weights, full kvarn5 context, vision on GPU, experts in host RAM, n-grams on disk. MTP works but actually slows decode down even with 80% draft acceptance, as expected since every rejected token eats into the host RAM bandwidth. I get 160 tok/s prefill 16 tok/s decode, which makes it a decent option whenever I know I'll be AFK for at least a couple of hours, but not usable for interactive work. Variant setups kvarn5 is unrecognizable from q8/q8 on the KLD charts for the Qw",
-        "published_at": "2026-08-28T15:40:53.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "gfcc0d",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "source_role": "main",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "Qwen3.8-Flash on RTX3090 + 64GB RAM (but you only need 12GB VRAM)",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0u24k/qwen38flash_on_rtx3090_64gb_ram_but_you_only_need",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0u24k/qwen38flash_on_rtx3090_64gb_ram_but_you_only_need/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0u24k/qwen38flash_on_rtx3090_64gb_ram_but_you_only_need",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "I've got Qwen3.8-Flash-next running on RTX 3090, Ryzen 9 3950X, a PCIe 3.0 motherboard, and 64GB DDR RAM from 2020. IQ4_XS weights, full kvarn5 context, vision on GPU, experts in host RAM, n-grams on disk. MTP works but actually slows decode down even with 80% draft acceptance, as expected since every rejected token eats into the host RAM bandwidth. I get 160 tok/s prefill 16 tok/s decode, which makes it a decent option whenever I know I'll be AFK for at least a couple of hours, but not usable for interactive work. Variant setups kvarn5 is unrecognizable from q8/q8 on the KLD charts for the Qw",
-          "published_at": "2026-08-28T15:40:53.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "Qwen3.8-Flash on RTX3090 + 64GB RAM (but you only need 12GB VRAM)",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0u24k/qwen38flash_on_rtx3090_64gb_ram_but_you_only_need",
-          "published_at": "2026-08-28T15:40:53.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0u24k/qwen38flash_on_rtx3090_64gb_ram_but_you_only_need",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "tool",
-      "quality": "signal",
-      "one_liner": "Practical report on running Qwen3.8-Flash with offloaded experts on consumer hardware.",
-      "novelty": 0.766,
-      "novelty_label": "high",
-      "trust": 0.5,
-      "score": 0.673,
+      "score": 0.666,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal"
@@ -1434,83 +1301,18 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "model_release",
+      "kind": "tool",
       "quality": "signal",
-      "one_liner": "Pollen Robotics released Microduck, a $399 bipedal robot platform for RL research.",
+      "one_liner": "Pollen Robotics releases Microduck, a $399 bipedal robot designed for RL sim-to-real research.",
       "novelty": 0.697,
       "novelty_label": "medium",
       "trust": 0.48,
-      "score": 0.671,
+      "score": 0.661,
       "why_this_surfaced": [
         "meaningfully different from recent coverage",
-        "classified as concrete builder or research signal",
-        "fresh within the current refresh window"
+        "classified as concrete builder or research signal"
       ],
-      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
-    },
-    {
-      "id": "7x8lw6",
-      "primary": {
-        "id": "7x8lw6",
-        "source_id": "wired_ai",
-        "source_name": "WIRED AI",
-        "source_role": "main",
-        "trust": 0.76,
-        "kind_hint": "news",
-        "title": "How to Run a Chatbot on Your Own Computer",
-        "url": "https://wired.com/story/how-to-run-your-own-local-llm",
-        "original_url": "https://www.wired.com/story/how-to-run-your-own-local-llm/",
-        "summary": "Installing a large language model on your personal computer gives you a handy digital assistant that won’t compromise your data privacy.",
-        "image_url": "https://media.wired.com/photos/6a915ae02fa9a47ca7d480c1/master/pass/RunAChatbot.jpg",
-        "image_source": "rss_media",
-        "published_at": "2026-08-29T10:00:00.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "7x8lw6",
-          "source_id": "wired_ai",
-          "source_name": "WIRED AI",
-          "source_role": "main",
-          "trust": 0.76,
-          "kind_hint": "news",
-          "title": "How to Run a Chatbot on Your Own Computer",
-          "url": "https://wired.com/story/how-to-run-your-own-local-llm",
-          "original_url": "https://www.wired.com/story/how-to-run-your-own-local-llm/",
-          "summary": "Installing a large language model on your personal computer gives you a handy digital assistant that won’t compromise your data privacy.",
-          "image_url": "https://media.wired.com/photos/6a915ae02fa9a47ca7d480c1/master/pass/RunAChatbot.jpg",
-          "image_source": "rss_media",
-          "published_at": "2026-08-29T10:00:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "wired_ai",
-          "source_name": "WIRED AI",
-          "title": "How to Run a Chatbot on Your Own Computer",
-          "url": "https://wired.com/story/how-to-run-your-own-local-llm",
-          "published_at": "2026-08-29T10:00:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "tutorial",
-      "quality": "mixed",
-      "one_liner": "General overview of running local LLMs for data privacy.",
-      "novelty": 0.83,
-      "novelty_label": "high",
-      "trust": 0.76,
-      "score": 0.67,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal",
-        "fresh within the current refresh window"
-      ],
-      "builder_action": "Use this as implementation reference if it matches your stack."
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
     },
     {
       "id": "1jwllu6",
@@ -1576,151 +1378,76 @@
       "novelty": 0.794,
       "novelty_label": "high",
       "trust": 0.66,
-      "score": 0.635,
+      "score": 0.625,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1kd0k4v",
+      "primary": {
+        "id": "1kd0k4v",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "AI-generated videos are already displacing actors and livestreamers across China's entertainment industry",
+        "url": "https://the-decoder.com/ai-generated-videos-are-already-displacing-actors-and-livestreamers-across-chinas-entertainment-industry",
+        "original_url": "https://the-decoder.com/ai-generated-videos-are-already-displacing-actors-and-livestreamers-across-chinas-entertainment-industry/",
+        "summary": "In China, 95 percent of the 128,000 short dramas released in Q1 2026 were AI-generated. Some actors are being forced to hand over their voice and likeness to AI tools before getting fired, the Financial Times reports. AI-related labor disputes are rising fast. The article AI-generated videos are already displacing actors and livestreamers across China's entertainment industry appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/china_flag_visual-1.png",
+        "image_source": "rss_content",
+        "published_at": "2026-08-29T13:25:56.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1kd0k4v",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "AI-generated videos are already displacing actors and livestreamers across China's entertainment industry",
+          "url": "https://the-decoder.com/ai-generated-videos-are-already-displacing-actors-and-livestreamers-across-chinas-entertainment-industry",
+          "original_url": "https://the-decoder.com/ai-generated-videos-are-already-displacing-actors-and-livestreamers-across-chinas-entertainment-industry/",
+          "summary": "In China, 95 percent of the 128,000 short dramas released in Q1 2026 were AI-generated. Some actors are being forced to hand over their voice and likeness to AI tools before getting fired, the Financial Times reports. AI-related labor disputes are rising fast. The article AI-generated videos are already displacing actors and livestreamers across China's entertainment industry appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/china_flag_visual-1.png",
+          "image_source": "rss_content",
+          "published_at": "2026-08-29T13:25:56.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "AI-generated videos are already displacing actors and livestreamers across China's entertainment industry",
+          "url": "https://the-decoder.com/ai-generated-videos-are-already-displacing-actors-and-livestreamers-across-chinas-entertainment-industry",
+          "published_at": "2026-08-29T13:25:56.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Overview of AI-driven labor displacement in the Chinese entertainment industry.",
+      "novelty": 0.831,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.662,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal",
         "fresh within the current refresh window"
       ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "1g74i8e",
-      "primary": {
-        "id": "1g74i8e",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "source_role": "main",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "Local agentic coding Benchmark : Qwen3.8-Flash-Next NVFP4 vs 27B (and the others...)",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0x1r2/local_agentic_coding_benchmark_qwen38flashnext",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0x1r2/local_agentic_coding_benchmark_qwen38flashnext/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0x1r2/local_agentic_coding_benchmark_qwen38flashnext",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "Using https://huggingface.co/RadixArk/Qwen3.8-Flash-Next-NVFP4 and https://old.reddit.com/r/BlackwellPerformance/comments/1w04xb7/qwen38_flashnext_on_1x_rtx_pro_6000_171_ts_c1_428/ As usual, all the details in https://wonderrico.github.io/local_llm_benchmark/benchmark-main.html?filter=3.8 and even more in https://wonderrico.github.io/local_llm_benchmark/benchmark-detail.html?filter=3.8 (the bad score one is a \"random\" uncensored version from HF https://huggingface.co/dealignai/Qwen3.8-Flash-Next-UNCENSORED-NVFP4 ) I shall test other ones Bottom line : almost highest score of all local model I",
-        "image_url": "https://preview.redd.it/8a8qqgrgf5mh1.png?width=640&crop=smart&auto=webp&s=c79f37430713db29794d335f4762fc190694df95",
-        "image_source": "rss_media",
-        "published_at": "2026-08-28T17:30:34.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1g74i8e",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "source_role": "main",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "Local agentic coding Benchmark : Qwen3.8-Flash-Next NVFP4 vs 27B (and the others...)",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0x1r2/local_agentic_coding_benchmark_qwen38flashnext",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0x1r2/local_agentic_coding_benchmark_qwen38flashnext/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0x1r2/local_agentic_coding_benchmark_qwen38flashnext",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "Using https://huggingface.co/RadixArk/Qwen3.8-Flash-Next-NVFP4 and https://old.reddit.com/r/BlackwellPerformance/comments/1w04xb7/qwen38_flashnext_on_1x_rtx_pro_6000_171_ts_c1_428/ As usual, all the details in https://wonderrico.github.io/local_llm_benchmark/benchmark-main.html?filter=3.8 and even more in https://wonderrico.github.io/local_llm_benchmark/benchmark-detail.html?filter=3.8 (the bad score one is a \"random\" uncensored version from HF https://huggingface.co/dealignai/Qwen3.8-Flash-Next-UNCENSORED-NVFP4 ) I shall test other ones Bottom line : almost highest score of all local model I",
-          "image_url": "https://preview.redd.it/8a8qqgrgf5mh1.png?width=640&crop=smart&auto=webp&s=c79f37430713db29794d335f4762fc190694df95",
-          "image_source": "rss_media",
-          "published_at": "2026-08-28T17:30:34.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "Local agentic coding Benchmark : Qwen3.8-Flash-Next NVFP4 vs 27B (and the others...)",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0x1r2/local_agentic_coding_benchmark_qwen38flashnext",
-          "published_at": "2026-08-28T17:30:34.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0x1r2/local_agentic_coding_benchmark_qwen38flashnext",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "tool",
-      "quality": "signal",
-      "one_liner": "Benchmark results comparing Qwen3.8-Flash-Next variants for local agentic coding tasks.",
-      "novelty": 0.723,
-      "novelty_label": "medium",
-      "trust": 0.5,
-      "score": 0.663,
-      "why_this_surfaced": [
-        "meaningfully different from recent coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Try it in a small sandbox before adding it to production workflow."
-    },
-    {
-      "id": "o20ji6",
-      "primary": {
-        "id": "o20ji6",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "source_role": "main",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "zai-org/GLM-5.3 · Hugging Face",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0tgzl/zaiorgglm53_hugging_face",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0tgzl/zaiorgglm53_hugging_face/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0tgzl/zaiorgglm53_hugging_face",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "GLM-5.3 uses the same base model as GLM-5.2 — every gain comes from post-training. Compared with GLM-5.2, it is much better at complex coding and long-horizon tasks: Stronger Coding: GLM-5.3 is the most capable open-weights model for coding, with a 50% improvement over GLM-5.2 on our in-house Z.ai Code Bench. It also achieve open-source SOTA on public benchmarks including Terminal Bench 3.0 and Agents' Last Exam. Emergent Cyber Capability: As we scaled post-training, cyber capability developed faster than we expected. GLM-5.3 is state of the art on CyberGym for vulnerability discovery, and its",
-        "image_url": "https://external-preview.redd.it/BhH_AjL0mdp-2nZPRCiygI2acL0nwkgIh3KfgwJsMEU.png?width=640&crop=smart&auto=webp&s=dea490193213b00bb41f33cf60be19d474c255bb",
-        "image_source": "rss_media",
-        "published_at": "2026-08-28T15:19:04.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "o20ji6",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "source_role": "main",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "zai-org/GLM-5.3 · Hugging Face",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0tgzl/zaiorgglm53_hugging_face",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0tgzl/zaiorgglm53_hugging_face/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0tgzl/zaiorgglm53_hugging_face",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "GLM-5.3 uses the same base model as GLM-5.2 — every gain comes from post-training. Compared with GLM-5.2, it is much better at complex coding and long-horizon tasks: Stronger Coding: GLM-5.3 is the most capable open-weights model for coding, with a 50% improvement over GLM-5.2 on our in-house Z.ai Code Bench. It also achieve open-source SOTA on public benchmarks including Terminal Bench 3.0 and Agents' Last Exam. Emergent Cyber Capability: As we scaled post-training, cyber capability developed faster than we expected. GLM-5.3 is state of the art on CyberGym for vulnerability discovery, and its",
-          "image_url": "https://external-preview.redd.it/BhH_AjL0mdp-2nZPRCiygI2acL0nwkgIh3KfgwJsMEU.png?width=640&crop=smart&auto=webp&s=dea490193213b00bb41f33cf60be19d474c255bb",
-          "image_source": "rss_media",
-          "published_at": "2026-08-28T15:19:04.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "zai-org/GLM-5.3 · Hugging Face",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0tgzl/zaiorgglm53_hugging_face",
-          "published_at": "2026-08-28T15:19:04.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0tgzl/zaiorgglm53_hugging_face",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "model_release",
-      "quality": "signal",
-      "one_liner": "GLM-5.3 released, featuring improved coding and long-horizon task performance via post-training.",
-      "novelty": 0.706,
-      "novelty_label": "medium",
-      "trust": 0.5,
-      "score": 0.655,
-      "why_this_surfaced": [
-        "meaningfully different from recent coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
+      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "kbi6fo",
@@ -1786,7 +1513,7 @@
       "novelty": 0.814,
       "novelty_label": "high",
       "trust": 0.66,
-      "score": 0.625,
+      "score": 0.615,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal"
@@ -1794,270 +1521,186 @@
       "builder_action": "Queue it for focused learning if the topic matches your current work."
     },
     {
-      "id": "1o69gn6",
+      "id": "7x8lw6",
       "primary": {
-        "id": "1o69gn6",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
+        "id": "7x8lw6",
+        "source_id": "wired_ai",
+        "source_name": "WIRED AI",
         "source_role": "main",
-        "trust": 0.74,
+        "trust": 0.76,
         "kind_hint": "news",
-        "title": "Anthropic wants to do for physical hardware what its Model Context Protocol did for software",
-        "url": "https://the-decoder.com/anthropic-wants-to-do-for-physical-hardware-what-its-model-context-protocol-did-for-software",
-        "original_url": "https://the-decoder.com/anthropic-wants-to-do-for-physical-hardware-what-its-model-context-protocol-did-for-software/",
-        "summary": "Anthropic's Model Hardware Standard (MHS) gives AI agents a unified interface to physical devices like robotic arms and lab instruments. In early tests, integration time dropped from weeks to hours. But Claude sometimes failed to grasp physical cause and effect, so human oversight remains essential for now. The article Anthropic wants to do for physical hardware what its Model Context Protocol did for software appeared first on The Decoder.",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/mhs-ki-hardware-labore-fabriken.png",
-        "image_source": "rss_content",
-        "published_at": "2026-08-29T09:14:30.000Z",
+        "title": "How to Run a Chatbot on Your Own Computer",
+        "url": "https://wired.com/story/how-to-run-your-own-local-llm",
+        "original_url": "https://www.wired.com/story/how-to-run-your-own-local-llm/",
+        "summary": "Installing a large language model on your personal computer gives you a handy digital assistant that won’t compromise your data privacy.",
+        "image_url": "https://media.wired.com/photos/6a915ae02fa9a47ca7d480c1/master/pass/RunAChatbot.jpg",
+        "image_source": "rss_media",
+        "published_at": "2026-08-29T10:00:00.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "1o69gn6",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
+          "id": "7x8lw6",
+          "source_id": "wired_ai",
+          "source_name": "WIRED AI",
           "source_role": "main",
-          "trust": 0.74,
+          "trust": 0.76,
           "kind_hint": "news",
-          "title": "Anthropic wants to do for physical hardware what its Model Context Protocol did for software",
-          "url": "https://the-decoder.com/anthropic-wants-to-do-for-physical-hardware-what-its-model-context-protocol-did-for-software",
-          "original_url": "https://the-decoder.com/anthropic-wants-to-do-for-physical-hardware-what-its-model-context-protocol-did-for-software/",
-          "summary": "Anthropic's Model Hardware Standard (MHS) gives AI agents a unified interface to physical devices like robotic arms and lab instruments. In early tests, integration time dropped from weeks to hours. But Claude sometimes failed to grasp physical cause and effect, so human oversight remains essential for now. The article Anthropic wants to do for physical hardware what its Model Context Protocol did for software appeared first on The Decoder.",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/mhs-ki-hardware-labore-fabriken.png",
-          "image_source": "rss_content",
-          "published_at": "2026-08-29T09:14:30.000Z",
+          "title": "How to Run a Chatbot on Your Own Computer",
+          "url": "https://wired.com/story/how-to-run-your-own-local-llm",
+          "original_url": "https://www.wired.com/story/how-to-run-your-own-local-llm/",
+          "summary": "Installing a large language model on your personal computer gives you a handy digital assistant that won’t compromise your data privacy.",
+          "image_url": "https://media.wired.com/photos/6a915ae02fa9a47ca7d480c1/master/pass/RunAChatbot.jpg",
+          "image_source": "rss_media",
+          "published_at": "2026-08-29T10:00:00.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "Anthropic wants to do for physical hardware what its Model Context Protocol did for software",
-          "url": "https://the-decoder.com/anthropic-wants-to-do-for-physical-hardware-what-its-model-context-protocol-did-for-software",
-          "published_at": "2026-08-29T09:14:30.000Z",
+          "source_id": "wired_ai",
+          "source_name": "WIRED AI",
+          "title": "How to Run a Chatbot on Your Own Computer",
+          "url": "https://wired.com/story/how-to-run-your-own-local-llm",
+          "published_at": "2026-08-29T10:00:00.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "also_seen_on": [],
-      "kind": "news",
+      "kind": "tutorial",
       "quality": "mixed",
-      "one_liner": "Anthropic introduces Model Hardware Standard for unified agent control of physical devices.",
-      "novelty": 0.752,
+      "one_liner": "General guide on running local LLMs for data privacy.",
+      "novelty": 0.83,
       "novelty_label": "high",
-      "trust": 0.74,
-      "score": 0.641,
+      "trust": 0.76,
+      "score": 0.66,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal",
-        "fresh within the current refresh window"
+        "classified as useful but lower-confidence signal"
       ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
+      "builder_action": "Use this as implementation reference if it matches your stack."
     },
     {
-      "id": "ke54jj",
+      "id": "11spgiq",
       "primary": {
-        "id": "ke54jj",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
+        "id": "11spgiq",
+        "source_id": "marktechpost",
+        "source_name": "MarkTechPost",
         "source_role": "main",
-        "trust": 0.74,
+        "trust": 0.48,
         "kind_hint": "news",
-        "title": "OpenAI cuts off Cursor after SpaceX acquisition, citing Musk's history of breaking contracts",
-        "url": "https://the-decoder.com/openai-cuts-off-cursor-after-spacex-acquisition-citing-musks-history-of-breaking-contracts",
-        "original_url": "https://the-decoder.com/openai-cuts-off-cursor-after-spacex-acquisition-citing-musks-history-of-breaking-contracts/",
-        "summary": "OpenAI is cutting off the AI coding tool Cursor after SpaceX acquired the company, citing Elon Musk's track record of breaking contracts. Cursor co-founder Michael Truell downplays the move, saying OpenAI models account for just five percent of the tool's AI traffic. The article OpenAI cuts off Cursor after SpaceX acquisition, citing Musk's history of breaking contracts appeared first on The Decoder.",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/06/openai_logo_background_dark.png",
-        "image_source": "rss_content",
-        "published_at": "2026-08-29T08:15:35.000Z",
+        "title": "GLM-5.3-Flash vs Qwen3.8-Flash-Next: Two Chinese AI Labs Independently Converge on the Same Model Architecture",
+        "url": "https://marktechpost.com/2026/08/28/glm-5-3-flash-vs-qwen3-8-flash-next-two-chinese-ai-labs-independently-converge-on-the-same-model-architecture",
+        "original_url": "https://www.marktechpost.com/2026/08/28/glm-5-3-flash-vs-qwen3-8-flash-next-two-chinese-ai-labs-independently-converge-on-the-same-model-architecture/",
+        "summary": "Z.ai and Qwen independently shipped near-identical architectures: 3:1 linear hybrids, compressed indexers, gated residuals, and Muon training. The post GLM-5.3-Flash vs Qwen3.8-Flash-Next: Two Chinese AI Labs Independently Converge on the Same Model Architecture appeared first on MarkTechPost.",
+        "published_at": "2026-08-28T19:12:21.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "ke54jj",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
+          "id": "11spgiq",
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
           "source_role": "main",
-          "trust": 0.74,
+          "trust": 0.48,
           "kind_hint": "news",
-          "title": "OpenAI cuts off Cursor after SpaceX acquisition, citing Musk's history of breaking contracts",
-          "url": "https://the-decoder.com/openai-cuts-off-cursor-after-spacex-acquisition-citing-musks-history-of-breaking-contracts",
-          "original_url": "https://the-decoder.com/openai-cuts-off-cursor-after-spacex-acquisition-citing-musks-history-of-breaking-contracts/",
-          "summary": "OpenAI is cutting off the AI coding tool Cursor after SpaceX acquired the company, citing Elon Musk's track record of breaking contracts. Cursor co-founder Michael Truell downplays the move, saying OpenAI models account for just five percent of the tool's AI traffic. The article OpenAI cuts off Cursor after SpaceX acquisition, citing Musk's history of breaking contracts appeared first on The Decoder.",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/06/openai_logo_background_dark.png",
-          "image_source": "rss_content",
-          "published_at": "2026-08-29T08:15:35.000Z",
+          "title": "GLM-5.3-Flash vs Qwen3.8-Flash-Next: Two Chinese AI Labs Independently Converge on the Same Model Architecture",
+          "url": "https://marktechpost.com/2026/08/28/glm-5-3-flash-vs-qwen3-8-flash-next-two-chinese-ai-labs-independently-converge-on-the-same-model-architecture",
+          "original_url": "https://www.marktechpost.com/2026/08/28/glm-5-3-flash-vs-qwen3-8-flash-next-two-chinese-ai-labs-independently-converge-on-the-same-model-architecture/",
+          "summary": "Z.ai and Qwen independently shipped near-identical architectures: 3:1 linear hybrids, compressed indexers, gated residuals, and Muon training. The post GLM-5.3-Flash vs Qwen3.8-Flash-Next: Two Chinese AI Labs Independently Converge on the Same Model Architecture appeared first on MarkTechPost.",
+          "published_at": "2026-08-28T19:12:21.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "OpenAI cuts off Cursor after SpaceX acquisition, citing Musk's history of breaking contracts",
-          "url": "https://the-decoder.com/openai-cuts-off-cursor-after-spacex-acquisition-citing-musks-history-of-breaking-contracts",
-          "published_at": "2026-08-29T08:15:35.000Z",
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "title": "GLM-5.3-Flash vs Qwen3.8-Flash-Next: Two Chinese AI Labs Independently Converge on the Same Model Architecture",
+          "url": "https://marktechpost.com/2026/08/28/glm-5-3-flash-vs-qwen3-8-flash-next-two-chinese-ai-labs-independently-converge-on-the-same-model-architecture",
+          "published_at": "2026-08-28T19:12:21.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "Coverage of OpenAI cutting off Cursor access and the resulting impact on model traffic.",
-      "novelty": 0.752,
-      "novelty_label": "high",
-      "trust": 0.74,
-      "score": 0.64,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal",
-        "fresh within the current refresh window"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "ofrybg",
-      "primary": {
-        "id": "ofrybg",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "source_role": "main",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "ds4 branch with GLM 5.3 Flash support",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0u82b/ds4_branch_with_glm_53_flash_support",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0u82b/ds4_branch_with_glm_53_flash_support/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0u82b/ds4_branch_with_glm_53_flash_support",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "As a happy user of ds4, I'm very excited about this branch. Ran some prompts and it seems to be working well on my M4 Max 128gb! https://x.com/antirez/status/2093349448445243873 submitted by /u/lakySK [link] [comments]",
-        "image_url": "https://preview.redd.it/je57l3ojz4mh1.png?width=640&crop=smart&auto=webp&s=245d2274ef64ac453ca27f38cd39a68d868c08a3",
-        "image_source": "rss_media",
-        "published_at": "2026-08-28T15:46:55.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "ofrybg",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "source_role": "main",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "ds4 branch with GLM 5.3 Flash support",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0u82b/ds4_branch_with_glm_53_flash_support",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0u82b/ds4_branch_with_glm_53_flash_support/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0u82b/ds4_branch_with_glm_53_flash_support",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "As a happy user of ds4, I'm very excited about this branch. Ran some prompts and it seems to be working well on my M4 Max 128gb! https://x.com/antirez/status/2093349448445243873 submitted by /u/lakySK [link] [comments]",
-          "image_url": "https://preview.redd.it/je57l3ojz4mh1.png?width=640&crop=smart&auto=webp&s=245d2274ef64ac453ca27f38cd39a68d868c08a3",
-          "image_source": "rss_media",
-          "published_at": "2026-08-28T15:46:55.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "ds4 branch with GLM 5.3 Flash support",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0u82b/ds4_branch_with_glm_53_flash_support",
-          "published_at": "2026-08-28T15:46:55.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0u82b/ds4_branch_with_glm_53_flash_support",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "tool",
-      "quality": "signal",
-      "one_liner": "The ds4 library added support for GLM-5.3 Flash inference.",
-      "novelty": 0.655,
-      "novelty_label": "medium",
-      "trust": 0.5,
-      "score": 0.64,
-      "why_this_surfaced": [
-        "meaningfully different from recent coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Try it in a small sandbox before adding it to production workflow."
-    },
-    {
-      "id": "1t7sj2u",
-      "primary": {
-        "id": "1t7sj2u",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "source_role": "main",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "50% tg increase with offloading \"hot\" experts to VRAM",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1996t/50_tg_increase_with_offloading_hot_experts_to_vram",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1996t/50_tg_increase_with_offloading_hot_experts_to_vram/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1996t/50_tg_increase_with_offloading_hot_experts_to_vram",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "I got a 50% performance boost (20 t/s -> 30 t/s) in llama.cpp for MoE models that don’t fit entirely in VRAM—in my case, Qwen 3.8 Flash Next. The idea is simple: instead of offloading entire layers to the GPU, I offload only the “hot” experts. I found that certain groups of experts remain relatively stable across coding, refactoring, and code-review workloads. https://github.com/timadinorth/llama.cpp/pull/1 A couple of important caveats: this llama.cpp fork has been tested only on coding workloads, and it’s useful only when the full model cannot fit in VRAM. Will upstream ever accept it? Proba",
-        "image_url": "https://preview.redd.it/svy9r67yx7mh1.png?width=640&crop=smart&auto=webp&s=e9324d5941fb255b13f58a91a46a1a364454734e",
-        "image_source": "rss_media",
-        "published_at": "2026-08-29T01:42:09.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1t7sj2u",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "source_role": "main",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "50% tg increase with offloading \"hot\" experts to VRAM",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1996t/50_tg_increase_with_offloading_hot_experts_to_vram",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1996t/50_tg_increase_with_offloading_hot_experts_to_vram/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1996t/50_tg_increase_with_offloading_hot_experts_to_vram",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "I got a 50% performance boost (20 t/s -> 30 t/s) in llama.cpp for MoE models that don’t fit entirely in VRAM—in my case, Qwen 3.8 Flash Next. The idea is simple: instead of offloading entire layers to the GPU, I offload only the “hot” experts. I found that certain groups of experts remain relatively stable across coding, refactoring, and code-review workloads. https://github.com/timadinorth/llama.cpp/pull/1 A couple of important caveats: this llama.cpp fork has been tested only on coding workloads, and it’s useful only when the full model cannot fit in VRAM. Will upstream ever accept it? Proba",
-          "image_url": "https://preview.redd.it/svy9r67yx7mh1.png?width=640&crop=smart&auto=webp&s=e9324d5941fb255b13f58a91a46a1a364454734e",
-          "image_source": "rss_media",
-          "published_at": "2026-08-29T01:42:09.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "50% tg increase with offloading \"hot\" experts to VRAM",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1996t/50_tg_increase_with_offloading_hot_experts_to_vram",
-          "published_at": "2026-08-29T01:42:09.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1996t/50_tg_increase_with_offloading_hot_experts_to_vram",
-          "discussion_source": "r/LocalLLaMA"
         }
       ],
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "signal",
-      "one_liner": "Method for improving MoE inference speed by selectively offloading hot experts to VRAM.",
-      "novelty": 0.862,
+      "one_liner": "Analysis of architectural convergence between GLM-5.3-Flash and Qwen3.8-Flash-Next models.",
+      "novelty": 0.794,
       "novelty_label": "high",
-      "trust": 0.5,
-      "score": 0.639,
+      "trust": 0.48,
+      "score": 0.593,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal"
       ],
       "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "1qna98h",
+      "primary": {
+        "id": "1qna98h",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "Nvidia’s AI advantage is moving beyond the GPU",
+        "url": "https://techcrunch.com/2026/08/29/nvidias-ai-advantage-is-moving-beyond-the-gpu",
+        "original_url": "https://techcrunch.com/2026/08/29/nvidias-ai-advantage-is-moving-beyond-the-gpu/",
+        "summary": "The new generation of data center systems is increasing efficiency with smarter traffic control instead of just more processor cycles.",
+        "published_at": "2026-08-29T13:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1qna98h",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "Nvidia’s AI advantage is moving beyond the GPU",
+          "url": "https://techcrunch.com/2026/08/29/nvidias-ai-advantage-is-moving-beyond-the-gpu",
+          "original_url": "https://techcrunch.com/2026/08/29/nvidias-ai-advantage-is-moving-beyond-the-gpu/",
+          "summary": "The new generation of data center systems is increasing efficiency with smarter traffic control instead of just more processor cycles.",
+          "published_at": "2026-08-29T13:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "Nvidia’s AI advantage is moving beyond the GPU",
+          "url": "https://techcrunch.com/2026/08/29/nvidias-ai-advantage-is-moving-beyond-the-gpu",
+          "published_at": "2026-08-29T13:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Nvidia is shifting focus toward data center traffic management to improve AI system efficiency.",
+      "novelty": 0.81,
+      "novelty_label": "high",
+      "trust": 0.72,
+      "score": 0.65,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "zaqhuy",
@@ -2107,7 +1750,7 @@
       "also_seen_on": [],
       "kind": "company_announcement",
       "quality": "signal",
-      "one_liner": "Cloudflare Workers AI adds support for GLM-5.3 Flash with 1M token context window.",
+      "one_liner": "Cloudflare Workers AI adds support for GLM-5.3-Flash with a 1M token context window.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.78,
@@ -2120,73 +1763,68 @@
       "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
     },
     {
-      "id": "nrqo1p",
+      "id": "ke54jj",
       "primary": {
-        "id": "nrqo1p",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
+        "id": "ke54jj",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
         "source_role": "main",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "I audited 443 GGUF quants across 25 repos. 64 of them can't be the quant their filename claims.",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w11ob5/i_audited_443_gguf_quants_across_25_repos_64_of",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w11ob5/i_audited_443_gguf_quants_across_25_repos_64_of/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w11ob5/i_audited_443_gguf_quants_across_25_repos_64_of",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "TL;DR: k-quants need tensor rows divisible by 256. When they aren't, llama-quantize quietly swaps in a ~4.5 bpw type and the file keeps its low-bit name. I audited 443 quants across 25 repos; 64 are affected. On Nemotron-3.5-Lightning all four IQ2 rungs are the same 4.58 bpw file under four different names. Tool and full census linked at the bottom. Your quant's filename tells you what the quantizer was asked to make. It doesn't necessarily tell you what ended up in the file. K-quants and i-quants need the first tensor dimension divisible by 256. When it isn't, llama-quantize substitutes a com",
-        "image_url": "https://preview.redd.it/mx32ahg9c6mh1.png?width=140&height=84&auto=webp&s=66c3deeba602cd39178fa13a340e9b0b3b2453e8",
-        "image_source": "rss_media",
-        "published_at": "2026-08-28T20:20:26.000Z",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "OpenAI cuts off Cursor after SpaceX acquisition, citing Musk's history of breaking contracts",
+        "url": "https://the-decoder.com/openai-cuts-off-cursor-after-spacex-acquisition-citing-musks-history-of-breaking-contracts",
+        "original_url": "https://the-decoder.com/openai-cuts-off-cursor-after-spacex-acquisition-citing-musks-history-of-breaking-contracts/",
+        "summary": "OpenAI is cutting off the AI coding tool Cursor after SpaceX acquired the company, citing Elon Musk's track record of breaking contracts. Cursor co-founder Michael Truell downplays the move, saying OpenAI models account for just five percent of the tool's AI traffic. The article OpenAI cuts off Cursor after SpaceX acquisition, citing Musk's history of breaking contracts appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/06/openai_logo_background_dark.png",
+        "image_source": "rss_content",
+        "published_at": "2026-08-29T13:33:35.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "nrqo1p",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
+          "id": "ke54jj",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
           "source_role": "main",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "I audited 443 GGUF quants across 25 repos. 64 of them can't be the quant their filename claims.",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w11ob5/i_audited_443_gguf_quants_across_25_repos_64_of",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w11ob5/i_audited_443_gguf_quants_across_25_repos_64_of/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w11ob5/i_audited_443_gguf_quants_across_25_repos_64_of",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "TL;DR: k-quants need tensor rows divisible by 256. When they aren't, llama-quantize quietly swaps in a ~4.5 bpw type and the file keeps its low-bit name. I audited 443 quants across 25 repos; 64 are affected. On Nemotron-3.5-Lightning all four IQ2 rungs are the same 4.58 bpw file under four different names. Tool and full census linked at the bottom. Your quant's filename tells you what the quantizer was asked to make. It doesn't necessarily tell you what ended up in the file. K-quants and i-quants need the first tensor dimension divisible by 256. When it isn't, llama-quantize substitutes a com",
-          "image_url": "https://preview.redd.it/mx32ahg9c6mh1.png?width=140&height=84&auto=webp&s=66c3deeba602cd39178fa13a340e9b0b3b2453e8",
-          "image_source": "rss_media",
-          "published_at": "2026-08-28T20:20:26.000Z",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "OpenAI cuts off Cursor after SpaceX acquisition, citing Musk's history of breaking contracts",
+          "url": "https://the-decoder.com/openai-cuts-off-cursor-after-spacex-acquisition-citing-musks-history-of-breaking-contracts",
+          "original_url": "https://the-decoder.com/openai-cuts-off-cursor-after-spacex-acquisition-citing-musks-history-of-breaking-contracts/",
+          "summary": "OpenAI is cutting off the AI coding tool Cursor after SpaceX acquired the company, citing Elon Musk's track record of breaking contracts. Cursor co-founder Michael Truell downplays the move, saying OpenAI models account for just five percent of the tool's AI traffic. The article OpenAI cuts off Cursor after SpaceX acquisition, citing Musk's history of breaking contracts appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/06/openai_logo_background_dark.png",
+          "image_source": "rss_content",
+          "published_at": "2026-08-29T13:33:35.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "I audited 443 GGUF quants across 25 repos. 64 of them can't be the quant their filename claims.",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w11ob5/i_audited_443_gguf_quants_across_25_repos_64_of",
-          "published_at": "2026-08-28T20:20:26.000Z",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "OpenAI cuts off Cursor after SpaceX acquisition, citing Musk's history of breaking contracts",
+          "url": "https://the-decoder.com/openai-cuts-off-cursor-after-spacex-acquisition-citing-musks-history-of-breaking-contracts",
+          "published_at": "2026-08-29T13:33:35.000Z",
           "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w11ob5/i_audited_443_gguf_quants_across_25_repos_64_of",
-          "discussion_source": "r/LocalLLaMA"
+          "date_confidence": "high"
         }
       ],
       "also_seen_on": [],
-      "kind": "discussion",
-      "quality": "signal",
-      "one_liner": "Audit reveals many GGUF quant files fail to meet specified bit-per-weight targets due to tensor row alignment requirements.",
-      "novelty": 0.877,
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "OpenAI restricts Cursor access following SpaceX acquisition of the company.",
+      "novelty": 0.752,
       "novelty_label": "high",
-      "trust": 0.5,
-      "score": 0.634,
+      "trust": 0.74,
+      "score": 0.639,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
-        "classified as concrete builder or research signal"
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
       ],
-      "builder_action": "Use this as weak signal and verify against primary sources."
+      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "1d078ts",
@@ -2240,11 +1878,11 @@
       "also_seen_on": [],
       "kind": "tool",
       "quality": "signal",
-      "one_liner": "NVIDIA introduced TensorRT Model Connect to simplify model checkpoint deployment.",
+      "one_liner": "NVIDIA introduces TensorRT Model Connect to simplify model conversion and deployment.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.82,
-      "score": 0.52,
+      "score": 0.51,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -2299,11 +1937,11 @@
       "also_seen_on": [],
       "kind": "tutorial",
       "quality": "signal",
-      "one_liner": "Case study on using Chronos-2 for demand forecasting at scale on AWS.",
+      "one_liner": "Case study on deploying Chronos-2 for demand forecasting at Decathlon, showing 11-15% accuracy gains.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.8,
-      "score": 0.514,
+      "score": 0.504,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -2356,349 +1994,18 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "company_announcement",
+      "kind": "tutorial",
       "quality": "signal",
-      "one_liner": "Salesforce details using SageMaker SchedulingConfig to distribute model inference across multiple Availability Zones for high availability.",
+      "one_liner": "Technical guide on using SageMaker Inference Components for Multi-AZ high availability.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.8,
-      "score": 0.514,
+      "score": 0.504,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
-    },
-    {
-      "id": "1yx3vp7",
-      "primary": {
-        "id": "1yx3vp7",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "source_role": "main",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "Breeze-TTS-2 initial impressions: genuinely 'frontier' TTS",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1002h/breezetts2_initial_impressions_genuinely_frontier",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1002h/breezetts2_initial_impressions_genuinely_frontier/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1002h/breezetts2_initial_impressions_genuinely_frontier",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "You can test it out on breezblue's playground or use it locally, its only ~7GB. submitted by /u/Gohab2001 [link] [comments]",
-        "image_url": "https://external-preview.redd.it/-pj3EaAZl0w-hakP8gLse10DPkyDfPZoaca3Z85ka24.png?width=640&crop=smart&auto=webp&s=066dca6b173a6a80f0fb74f3b5bcb67b270f9476",
-        "image_source": "rss_media",
-        "published_at": "2026-08-28T19:18:12.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1yx3vp7",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "source_role": "main",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "Breeze-TTS-2 initial impressions: genuinely 'frontier' TTS",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1002h/breezetts2_initial_impressions_genuinely_frontier",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1002h/breezetts2_initial_impressions_genuinely_frontier/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1002h/breezetts2_initial_impressions_genuinely_frontier",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "You can test it out on breezblue's playground or use it locally, its only ~7GB. submitted by /u/Gohab2001 [link] [comments]",
-          "image_url": "https://external-preview.redd.it/-pj3EaAZl0w-hakP8gLse10DPkyDfPZoaca3Z85ka24.png?width=640&crop=smart&auto=webp&s=066dca6b173a6a80f0fb74f3b5bcb67b270f9476",
-          "image_source": "rss_media",
-          "published_at": "2026-08-28T19:18:12.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "Breeze-TTS-2 initial impressions: genuinely 'frontier' TTS",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1002h/breezetts2_initial_impressions_genuinely_frontier",
-          "published_at": "2026-08-28T19:18:12.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1002h/breezetts2_initial_impressions_genuinely_frontier",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "model_release",
-      "quality": "mixed",
-      "one_liner": "Initial user impressions of Breeze-TTS-2, a 7GB text-to-speech model.",
-      "novelty": 0.879,
-      "novelty_label": "high",
-      "trust": 0.5,
-      "score": 0.601,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
-    },
-    {
-      "id": "1ots7w",
-      "primary": {
-        "id": "1ots7w",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "source_role": "main",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "Qwen3.8-27b q8 KV cache does seem to actually hurt model performance",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0pscn/qwen3827b_q8_kv_cache_does_seem_to_actually_hurt",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0pscn/qwen3827b_q8_kv_cache_does_seem_to_actually_hurt/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0pscn/qwen3827b_q8_kv_cache_does_seem_to_actually_hurt",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "EDIT: Though the issue with q8 kv cache seems to arise from when and how often we run the quantize step, not that kv quantizing can't ever work - see comments --- One of the things I see debated a lot is whether to use kv cache quantization. The idea I see a lot is that q8 should be free / nearly lossless (which for model weights it usually is). But from some experiments I've been running, it actually isn't, but the reason is slightly weirder than just Basically it's because most backends, e.g. llama.cpp, do kv-quantization on-write. When KV is quantized on write, every subsequent prefill step",
-        "published_at": "2026-08-28T12:54:01.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1ots7w",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "source_role": "main",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "Qwen3.8-27b q8 KV cache does seem to actually hurt model performance",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0pscn/qwen3827b_q8_kv_cache_does_seem_to_actually_hurt",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0pscn/qwen3827b_q8_kv_cache_does_seem_to_actually_hurt/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0pscn/qwen3827b_q8_kv_cache_does_seem_to_actually_hurt",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "EDIT: Though the issue with q8 kv cache seems to arise from when and how often we run the quantize step, not that kv quantizing can't ever work - see comments --- One of the things I see debated a lot is whether to use kv cache quantization. The idea I see a lot is that q8 should be free / nearly lossless (which for model weights it usually is). But from some experiments I've been running, it actually isn't, but the reason is slightly weirder than just Basically it's because most backends, e.g. llama.cpp, do kv-quantization on-write. When KV is quantized on write, every subsequent prefill step",
-          "published_at": "2026-08-28T12:54:01.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "Qwen3.8-27b q8 KV cache does seem to actually hurt model performance",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0pscn/qwen3827b_q8_kv_cache_does_seem_to_actually_hurt",
-          "published_at": "2026-08-28T12:54:01.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0pscn/qwen3827b_q8_kv_cache_does_seem_to_actually_hurt",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "discussion",
-      "quality": "signal",
-      "one_liner": "Analysis of performance degradation when using 8-bit KV cache quantization in LLM inference.",
-      "novelty": 0.76,
-      "novelty_label": "high",
-      "trust": 0.5,
-      "score": 0.587,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Use this as weak signal and verify against primary sources."
-    },
-    {
-      "id": "1gduppt",
-      "primary": {
-        "id": "1gduppt",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "source_role": "main",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "how to setup llama.cpp and blender to make lovely 3d stuff together",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0r66e/how_to_setup_llamacpp_and_blender_to_make_lovely",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0r66e/how_to_setup_llamacpp_and_blender_to_make_lovely/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0r66e/how_to_setup_llamacpp_and_blender_to_make_lovely",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "see here or read the following: ### I've found this workaround/complete setup: - git clone https://projects.blender.org/lab/blender_mcp.git - cd blender_mcp - uv --directory ./mcp/ run blender-mcp --transport http --port 9191 (this last command raise the error relative to this issue because mcp v2 is installed) - uv --directory ./mcp/ pip uninstall mcp - uv --directory ./mcp/ add mcp==1.29.1 - uv --directory ./mcp/ run blender-mcp --transport http --port 9191 (now the mcp server works again) ### Into llama-server webui, i.e. usually browser url http://localhost:8080 or http://localhost:9931 (l",
-        "image_url": "https://preview.redd.it/d8rnim1we4mh1.jpeg?width=640&crop=smart&auto=webp&s=0e315d9686abd39938ab4be9b5e3387a9cf6cf20",
-        "image_source": "rss_media",
-        "published_at": "2026-08-28T13:51:19.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1gduppt",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "source_role": "main",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "how to setup llama.cpp and blender to make lovely 3d stuff together",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0r66e/how_to_setup_llamacpp_and_blender_to_make_lovely",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0r66e/how_to_setup_llamacpp_and_blender_to_make_lovely/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0r66e/how_to_setup_llamacpp_and_blender_to_make_lovely",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "see here or read the following: ### I've found this workaround/complete setup: - git clone https://projects.blender.org/lab/blender_mcp.git - cd blender_mcp - uv --directory ./mcp/ run blender-mcp --transport http --port 9191 (this last command raise the error relative to this issue because mcp v2 is installed) - uv --directory ./mcp/ pip uninstall mcp - uv --directory ./mcp/ add mcp==1.29.1 - uv --directory ./mcp/ run blender-mcp --transport http --port 9191 (now the mcp server works again) ### Into llama-server webui, i.e. usually browser url http://localhost:8080 or http://localhost:9931 (l",
-          "image_url": "https://preview.redd.it/d8rnim1we4mh1.jpeg?width=640&crop=smart&auto=webp&s=0e315d9686abd39938ab4be9b5e3387a9cf6cf20",
-          "image_source": "rss_media",
-          "published_at": "2026-08-28T13:51:19.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "how to setup llama.cpp and blender to make lovely 3d stuff together",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0r66e/how_to_setup_llamacpp_and_blender_to_make_lovely",
-          "published_at": "2026-08-28T13:51:19.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0r66e/how_to_setup_llamacpp_and_blender_to_make_lovely",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "tutorial",
-      "quality": "mixed",
-      "one_liner": "Guide for integrating llama.cpp with Blender using a custom MCP transport setup.",
-      "novelty": 0.833,
-      "novelty_label": "high",
-      "trust": 0.5,
-      "score": 0.578,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal"
       ],
       "builder_action": "Use this as implementation reference if it matches your stack."
-    },
-    {
-      "id": "upq51h",
-      "primary": {
-        "id": "upq51h",
-        "source_id": "techcrunch_ai",
-        "source_name": "TechCrunch AI",
-        "source_role": "main",
-        "trust": 0.72,
-        "kind_hint": "news",
-        "title": "An Anthropic researcher just gave us a peek at self-improving AI",
-        "url": "https://techcrunch.com/2026/08/28/an-anthropic-researcher-just-gave-us-a-peek-at-self-improving-ai",
-        "original_url": "https://techcrunch.com/2026/08/28/an-anthropic-researcher-just-gave-us-a-peek-at-self-improving-ai/",
-        "summary": "Given 10 benchmarks for specific misaligned behaviors, the automated systems were able to improve performance on every single one without degrading overall performance.",
-        "published_at": "2026-08-28T19:30:38.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "upq51h",
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "source_role": "main",
-          "trust": 0.72,
-          "kind_hint": "news",
-          "title": "An Anthropic researcher just gave us a peek at self-improving AI",
-          "url": "https://techcrunch.com/2026/08/28/an-anthropic-researcher-just-gave-us-a-peek-at-self-improving-ai",
-          "original_url": "https://techcrunch.com/2026/08/28/an-anthropic-researcher-just-gave-us-a-peek-at-self-improving-ai/",
-          "summary": "Given 10 benchmarks for specific misaligned behaviors, the automated systems were able to improve performance on every single one without degrading overall performance.",
-          "published_at": "2026-08-28T19:30:38.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "title": "An Anthropic researcher just gave us a peek at self-improving AI",
-          "url": "https://techcrunch.com/2026/08/28/an-anthropic-researcher-just-gave-us-a-peek-at-self-improving-ai",
-          "published_at": "2026-08-28T19:30:38.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "paper",
-      "quality": "signal",
-      "one_liner": "Anthropic research demonstrates automated systems improving performance on specific alignment benchmarks.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.72,
-      "score": 0.501,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Save this for technical review if the method maps to your roadmap."
-    },
-    {
-      "id": "iwf2k1",
-      "primary": {
-        "id": "iwf2k1",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "source_role": "main",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "ROCm 10.0: A Decade of Open Compute, Built for the Age of Agentic AI",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0yfmn/rocm_100_a_decade_of_open_compute_built_for_the",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0yfmn/rocm_100_a_decade_of_open_compute_built_for_the/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0yfmn/rocm_100_a_decade_of_open_compute_built_for_the",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "Their last version 7.14 was released just a month ago. llama.cpp PR(waiting for approval) for Version 10.0 https://github.com/ggml-org/llama.cpp/pull/27803 Hope this version comes with more boost & improvements. EDIT : Compatibility matrix(Check it out, if your old GPUs are in the list) https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html https://rocm.docs.amd.com/en/docs-10.0.0/reference/gpu-specs.html submitted by /u/pmttyji [link] [comments]",
-        "image_url": "https://external-preview.redd.it/IqBqDZLIfJiqYVEfoGTdXcNqrlQw6vgzhzKpMfyunVs.jpeg?width=640&crop=smart&auto=webp&s=a268e747b2809413fd459df554ee75bc4fde2966",
-        "image_source": "rss_media",
-        "published_at": "2026-08-28T18:20:40.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "iwf2k1",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "source_role": "main",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "ROCm 10.0: A Decade of Open Compute, Built for the Age of Agentic AI",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0yfmn/rocm_100_a_decade_of_open_compute_built_for_the",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0yfmn/rocm_100_a_decade_of_open_compute_built_for_the/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0yfmn/rocm_100_a_decade_of_open_compute_built_for_the",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "Their last version 7.14 was released just a month ago. llama.cpp PR(waiting for approval) for Version 10.0 https://github.com/ggml-org/llama.cpp/pull/27803 Hope this version comes with more boost & improvements. EDIT : Compatibility matrix(Check it out, if your old GPUs are in the list) https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html https://rocm.docs.amd.com/en/docs-10.0.0/reference/gpu-specs.html submitted by /u/pmttyji [link] [comments]",
-          "image_url": "https://external-preview.redd.it/IqBqDZLIfJiqYVEfoGTdXcNqrlQw6vgzhzKpMfyunVs.jpeg?width=640&crop=smart&auto=webp&s=a268e747b2809413fd459df554ee75bc4fde2966",
-          "image_source": "rss_media",
-          "published_at": "2026-08-28T18:20:40.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "ROCm 10.0: A Decade of Open Compute, Built for the Age of Agentic AI",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0yfmn/rocm_100_a_decade_of_open_compute_built_for_the",
-          "published_at": "2026-08-28T18:20:40.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w0yfmn/rocm_100_a_decade_of_open_compute_built_for_the",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "Announcement of ROCm 10.0 with associated llama.cpp pull request for hardware compatibility.",
-      "novelty": 0.771,
-      "novelty_label": "high",
-      "trust": 0.5,
-      "score": 0.567,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "1hesvvo",
@@ -2748,11 +2055,11 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "signal",
-      "one_liner": "Interview with Leo de Moura on using the Lean language for formal verification of AI agent reasoning.",
+      "one_liner": "Interview on using the Lean language for formal verification of AI agents.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.72,
-      "score": 0.401,
+      "score": 0.391,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -2760,39 +2067,39 @@
       "builder_action": "Use this as weak signal and verify against primary sources."
     },
     {
-      "id": "1r8slsz",
+      "id": "1hry9xi",
       "primary": {
-        "id": "1r8slsz",
+        "id": "1hry9xi",
         "source_id": "the_decoder",
         "source_name": "The Decoder",
         "source_role": "main",
         "trust": 0.74,
         "kind_hint": "news",
-        "title": "AI benchmarks have a trust problem and Google wants to fix it",
-        "url": "https://the-decoder.com/ai-benchmarks-have-a-trust-problem-and-google-wants-to-fix-it",
-        "original_url": "https://the-decoder.com/ai-benchmarks-have-a-trust-problem-and-google-wants-to-fix-it/",
-        "summary": "Google Deepmind is testing a double-blind evaluation of a frontier AI model for the first time. Cryptographic protection through Confidential Space is meant to keep Google from seeing the test questions and keep evaluators from seeing the model weights. The pilot project with the Singapore AI Safety Institute uses a Gemini Flash Lite and could set a new standard for tamper-proof AI benchmarks. The article AI benchmarks have a trust problem and Google wants to fix it appeared first on The Decoder.",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/07/google_gemini-2.png",
+        "title": "Google Deepmind's AI Co-Scientist now plans experiments, runs lab equipment, and writes scientific papers",
+        "url": "https://the-decoder.com/google-deepminds-ai-co-scientist-now-plans-experiments-runs-lab-equipment-and-writes-scientific-papers",
+        "original_url": "https://the-decoder.com/google-deepminds-ai-co-scientist-now-plans-experiments-runs-lab-equipment-and-writes-scientific-papers/",
+        "summary": "Google Deepmind has expanded Co-Scientist from a hypothesis generator into a research system that's integrated into the lab. Across three disciplines, from materials synthesis to the autonomous development of a medical AI architecture, the Gemini-based multi-agent system delivered experimentally validated results. The article Google Deepmind's AI Co-Scientist now plans experiments, runs lab equipment, and writes scientific papers appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/gemini_ai_scientist.png",
         "image_source": "rss_content",
-        "published_at": "2026-08-28T13:15:10.000Z",
+        "published_at": "2026-08-28T18:46:27.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "1r8slsz",
+          "id": "1hry9xi",
           "source_id": "the_decoder",
           "source_name": "The Decoder",
           "source_role": "main",
           "trust": 0.74,
           "kind_hint": "news",
-          "title": "AI benchmarks have a trust problem and Google wants to fix it",
-          "url": "https://the-decoder.com/ai-benchmarks-have-a-trust-problem-and-google-wants-to-fix-it",
-          "original_url": "https://the-decoder.com/ai-benchmarks-have-a-trust-problem-and-google-wants-to-fix-it/",
-          "summary": "Google Deepmind is testing a double-blind evaluation of a frontier AI model for the first time. Cryptographic protection through Confidential Space is meant to keep Google from seeing the test questions and keep evaluators from seeing the model weights. The pilot project with the Singapore AI Safety Institute uses a Gemini Flash Lite and could set a new standard for tamper-proof AI benchmarks. The article AI benchmarks have a trust problem and Google wants to fix it appeared first on The Decoder.",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/07/google_gemini-2.png",
+          "title": "Google Deepmind's AI Co-Scientist now plans experiments, runs lab equipment, and writes scientific papers",
+          "url": "https://the-decoder.com/google-deepminds-ai-co-scientist-now-plans-experiments-runs-lab-equipment-and-writes-scientific-papers",
+          "original_url": "https://the-decoder.com/google-deepminds-ai-co-scientist-now-plans-experiments-runs-lab-equipment-and-writes-scientific-papers/",
+          "summary": "Google Deepmind has expanded Co-Scientist from a hypothesis generator into a research system that's integrated into the lab. Across three disciplines, from materials synthesis to the autonomous development of a medical AI architecture, the Gemini-based multi-agent system delivered experimentally validated results. The article Google Deepmind's AI Co-Scientist now plans experiments, runs lab equipment, and writes scientific papers appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/gemini_ai_scientist.png",
           "image_source": "rss_content",
-          "published_at": "2026-08-28T13:15:10.000Z",
+          "published_at": "2026-08-28T18:46:27.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -2801,9 +2108,9 @@
         {
           "source_id": "the_decoder",
           "source_name": "The Decoder",
-          "title": "AI benchmarks have a trust problem and Google wants to fix it",
-          "url": "https://the-decoder.com/ai-benchmarks-have-a-trust-problem-and-google-wants-to-fix-it",
-          "published_at": "2026-08-28T13:15:10.000Z",
+          "title": "Google Deepmind's AI Co-Scientist now plans experiments, runs lab equipment, and writes scientific papers",
+          "url": "https://the-decoder.com/google-deepminds-ai-co-scientist-now-plans-experiments-runs-lab-equipment-and-writes-scientific-papers",
+          "published_at": "2026-08-28T18:46:27.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -2811,213 +2118,16 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "signal",
-      "one_liner": "Google DeepMind is piloting a double-blind, cryptographically secured evaluation framework for frontier AI models.",
+      "one_liner": "Overview of Google DeepMind's multi-agent system for autonomous laboratory experimentation.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.74,
-      "score": 0.495,
+      "score": 0.494,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
       ],
       "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "1o96urq",
-      "primary": {
-        "id": "1o96urq",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "source_role": "main",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "GLM-5.3 on HF Viewer",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w11epf/glm53_on_hf_viewer",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w11epf/glm53_on_hf_viewer/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w11epf/glm53_on_hf_viewer",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "GLM-5.3 is now ready to visualize in HF Viewer! Note again that the architecture is unchanged since GLM-5.2! Crazy improvements just from improved training! The graph visualization becomes quite complex at the expanded levels, with sparse attention, MoE routing, shared indexers, and multi-token prediction! https://hfviewer.com/zai-org/GLM-5.3 submitted by /u/Course_Latter [link] [comments]",
-        "image_url": "https://preview.redd.it/dsakie2ta6mh1.gif?width=320&crop=smart&s=ba1307ef8fa454620e824bd8cac0b57200303261",
-        "image_source": "rss_media",
-        "published_at": "2026-08-28T20:10:20.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1o96urq",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "source_role": "main",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "GLM-5.3 on HF Viewer",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w11epf/glm53_on_hf_viewer",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w11epf/glm53_on_hf_viewer/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w11epf/glm53_on_hf_viewer",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "GLM-5.3 is now ready to visualize in HF Viewer! Note again that the architecture is unchanged since GLM-5.2! Crazy improvements just from improved training! The graph visualization becomes quite complex at the expanded levels, with sparse attention, MoE routing, shared indexers, and multi-token prediction! https://hfviewer.com/zai-org/GLM-5.3 submitted by /u/Course_Latter [link] [comments]",
-          "image_url": "https://preview.redd.it/dsakie2ta6mh1.gif?width=320&crop=smart&s=ba1307ef8fa454620e824bd8cac0b57200303261",
-          "image_source": "rss_media",
-          "published_at": "2026-08-28T20:10:20.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "GLM-5.3 on HF Viewer",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w11epf/glm53_on_hf_viewer",
-          "published_at": "2026-08-28T20:10:20.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w11epf/glm53_on_hf_viewer",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "GLM-5.3 architecture visualization update on Hugging Face.",
-      "novelty": 0.742,
-      "novelty_label": "medium",
-      "trust": 0.5,
-      "score": 0.561,
-      "why_this_surfaced": [
-        "meaningfully different from recent coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "10ee50p",
-      "primary": {
-        "id": "10ee50p",
-        "source_id": "marktechpost",
-        "source_name": "MarkTechPost",
-        "source_role": "main",
-        "trust": 0.48,
-        "kind_hint": "news",
-        "title": "Google AI Releases Gemini 3.5 Transcribe: A Speech-to-Text Model Reporting 2.6% Average WER Across 85+ Languages",
-        "url": "https://marktechpost.com/2026/08/27/google-ai-releases-gemini-3-5-transcribe-a-speech-to-text-model-reporting-2-6-average-wer-across-85-languages",
-        "original_url": "https://www.marktechpost.com/2026/08/27/google-ai-releases-gemini-3-5-transcribe-a-speech-to-text-model-reporting-2-6-average-wer-across-85-languages/",
-        "summary": "Google has released Gemini 3.5 Transcribe, a speech-to-text model that ships as two separate endpoints rather than one. The streaming endpoint delivers sub-second transcription but drops speaker diarization and word timestamps. The batch endpoint keeps both, at half the cost. Google reports 4.0% word error rate streaming and 2.6% non-streaming, with 70% faster finalization than Chirp 3. Here is what the split means for anyone building voice agents or transcription pipelines. The post Google AI Releases Gemini 3.5 Transcribe: A Speech-to-Text Model Reporting 2.6% Average WER Across 85+ Language",
-        "published_at": "2026-08-28T05:00:38.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "10ee50p",
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "source_role": "main",
-          "trust": 0.48,
-          "kind_hint": "news",
-          "title": "Google AI Releases Gemini 3.5 Transcribe: A Speech-to-Text Model Reporting 2.6% Average WER Across 85+ Languages",
-          "url": "https://marktechpost.com/2026/08/27/google-ai-releases-gemini-3-5-transcribe-a-speech-to-text-model-reporting-2-6-average-wer-across-85-languages",
-          "original_url": "https://www.marktechpost.com/2026/08/27/google-ai-releases-gemini-3-5-transcribe-a-speech-to-text-model-reporting-2-6-average-wer-across-85-languages/",
-          "summary": "Google has released Gemini 3.5 Transcribe, a speech-to-text model that ships as two separate endpoints rather than one. The streaming endpoint delivers sub-second transcription but drops speaker diarization and word timestamps. The batch endpoint keeps both, at half the cost. Google reports 4.0% word error rate streaming and 2.6% non-streaming, with 70% faster finalization than Chirp 3. Here is what the split means for anyone building voice agents or transcription pipelines. The post Google AI Releases Gemini 3.5 Transcribe: A Speech-to-Text Model Reporting 2.6% Average WER Across 85+ Language",
-          "published_at": "2026-08-28T05:00:38.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "title": "Google AI Releases Gemini 3.5 Transcribe: A Speech-to-Text Model Reporting 2.6% Average WER Across 85+ Languages",
-          "url": "https://marktechpost.com/2026/08/27/google-ai-releases-gemini-3-5-transcribe-a-speech-to-text-model-reporting-2-6-average-wer-across-85-languages",
-          "published_at": "2026-08-28T05:00:38.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "model_release",
-      "quality": "signal",
-      "one_liner": "Google released Gemini 3.5 Transcribe, a speech-to-text model with 2.6% WER across 85+ languages.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.48,
-      "score": 0.421,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
-    },
-    {
-      "id": "1twk3q9",
-      "primary": {
-        "id": "1twk3q9",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "source_role": "main",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "Tenstorrent Quietbox 2 Arrived!",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w18pu9/tenstorrent_quietbox_2_arrived",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w18pu9/tenstorrent_quietbox_2_arrived/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w18pu9/tenstorrent_quietbox_2_arrived",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "Super excited to start dev on this. I've already deployed a number of galaxy systems and want to really figure out the ideal models on this architecture that I haven't discovered. It's actually quite a system for the price. 256G system mem, 128G of interconnected GDDR over the accelerators... The interconnect and scalability on these is seriously neat! Looking forward to requests or questions! submitted by /u/SashaUsesReddit [link] [comments]",
-        "image_url": "https://preview.redd.it/kuevesset7mh1.jpeg?width=640&crop=smart&auto=webp&s=ad9136b8200d9b22078f7355160030e31a8e3b46",
-        "image_source": "rss_media",
-        "published_at": "2026-08-29T01:16:18.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1twk3q9",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "source_role": "main",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "Tenstorrent Quietbox 2 Arrived!",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w18pu9/tenstorrent_quietbox_2_arrived",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w18pu9/tenstorrent_quietbox_2_arrived/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w18pu9/tenstorrent_quietbox_2_arrived",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "Super excited to start dev on this. I've already deployed a number of galaxy systems and want to really figure out the ideal models on this architecture that I haven't discovered. It's actually quite a system for the price. 256G system mem, 128G of interconnected GDDR over the accelerators... The interconnect and scalability on these is seriously neat! Looking forward to requests or questions! submitted by /u/SashaUsesReddit [link] [comments]",
-          "image_url": "https://preview.redd.it/kuevesset7mh1.jpeg?width=640&crop=smart&auto=webp&s=ad9136b8200d9b22078f7355160030e31a8e3b46",
-          "image_source": "rss_media",
-          "published_at": "2026-08-29T01:16:18.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "Tenstorrent Quietbox 2 Arrived!",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w18pu9/tenstorrent_quietbox_2_arrived",
-          "published_at": "2026-08-29T01:16:18.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w18pu9/tenstorrent_quietbox_2_arrived",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "discussion",
-      "quality": "mixed",
-      "one_liner": "User impressions of the Tenstorrent Quietbox 2 hardware for local LLM development.",
-      "novelty": 0.923,
-      "novelty_label": "high",
-      "trust": 0.5,
-      "score": 0.544,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Use this as weak signal and verify against primary sources."
     },
     {
       "id": "28xs9l",
@@ -3071,11 +2181,11 @@
       "also_seen_on": [],
       "kind": "company_announcement",
       "quality": "mixed",
-      "one_liner": "Google introduces new compute-specific usage limits for Gemini Notebook.",
+      "one_liner": "Google updates usage limits for Gemini Notebook.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.82,
-      "score": 0.357,
+      "score": 0.347,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -3083,73 +2193,126 @@
       "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
     },
     {
-      "id": "psz1rm",
+      "id": "upq51h",
       "primary": {
-        "id": "psz1rm",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
+        "id": "upq51h",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
         "source_role": "main",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "AtomicChat/Qwen3.8-Flash-Next-GGUF is Really Good",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w17zbg/atomicchatqwen38flashnextgguf_is_really_good",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w17zbg/atomicchatqwen38flashnextgguf_is_really_good/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w17zbg/atomicchatqwen38flashnextgguf_is_really_good",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "specs hardware: M4 Max 128GB Studio inference engine: llama.cpp (qwen4exp branch) judge: claude-opus-4-6 AtomicChat/Qwen3.8-Flash-Next-GGUF Qwen3.8-Flash-Next is a great model I benched in my previous post, but it is very tight, since all n-grams / PLE are loaded along with the experts, taking 106GB, leaving very little room for K/V, context, etc. Offloading PLE to SSD currently slows down prefill from 600 t/s to 180 t/s on oMLX. u/erikdhoward suggested to try the Atomic Chat quant which I did not know anything about. I tried it, and it is... really good. AtomicChat's quant uses llama.cpp mmap",
-        "image_url": "https://preview.redd.it/zbnyc5jif7mh1.png?width=640&crop=smart&auto=webp&s=d4b48a8b6ff78ba4e9361638201f9c580695f721",
-        "image_source": "rss_media",
-        "published_at": "2026-08-29T00:41:27.000Z",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "An Anthropic researcher just gave us a peek at self-improving AI",
+        "url": "https://techcrunch.com/2026/08/28/an-anthropic-researcher-just-gave-us-a-peek-at-self-improving-ai",
+        "original_url": "https://techcrunch.com/2026/08/28/an-anthropic-researcher-just-gave-us-a-peek-at-self-improving-ai/",
+        "summary": "Given 10 benchmarks for specific misaligned behaviors, the automated systems were able to improve performance on every single one without degrading overall performance.",
+        "published_at": "2026-08-28T19:30:38.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "psz1rm",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
+          "id": "upq51h",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
           "source_role": "main",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "AtomicChat/Qwen3.8-Flash-Next-GGUF is Really Good",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w17zbg/atomicchatqwen38flashnextgguf_is_really_good",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w17zbg/atomicchatqwen38flashnextgguf_is_really_good/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w17zbg/atomicchatqwen38flashnextgguf_is_really_good",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "specs hardware: M4 Max 128GB Studio inference engine: llama.cpp (qwen4exp branch) judge: claude-opus-4-6 AtomicChat/Qwen3.8-Flash-Next-GGUF Qwen3.8-Flash-Next is a great model I benched in my previous post, but it is very tight, since all n-grams / PLE are loaded along with the experts, taking 106GB, leaving very little room for K/V, context, etc. Offloading PLE to SSD currently slows down prefill from 600 t/s to 180 t/s on oMLX. u/erikdhoward suggested to try the Atomic Chat quant which I did not know anything about. I tried it, and it is... really good. AtomicChat's quant uses llama.cpp mmap",
-          "image_url": "https://preview.redd.it/zbnyc5jif7mh1.png?width=640&crop=smart&auto=webp&s=d4b48a8b6ff78ba4e9361638201f9c580695f721",
-          "image_source": "rss_media",
-          "published_at": "2026-08-29T00:41:27.000Z",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "An Anthropic researcher just gave us a peek at self-improving AI",
+          "url": "https://techcrunch.com/2026/08/28/an-anthropic-researcher-just-gave-us-a-peek-at-self-improving-ai",
+          "original_url": "https://techcrunch.com/2026/08/28/an-anthropic-researcher-just-gave-us-a-peek-at-self-improving-ai/",
+          "summary": "Given 10 benchmarks for specific misaligned behaviors, the automated systems were able to improve performance on every single one without degrading overall performance.",
+          "published_at": "2026-08-28T19:30:38.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "AtomicChat/Qwen3.8-Flash-Next-GGUF is Really Good",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w17zbg/atomicchatqwen38flashnextgguf_is_really_good",
-          "published_at": "2026-08-29T00:41:27.000Z",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "An Anthropic researcher just gave us a peek at self-improving AI",
+          "url": "https://techcrunch.com/2026/08/28/an-anthropic-researcher-just-gave-us-a-peek-at-self-improving-ai",
+          "published_at": "2026-08-28T19:30:38.000Z",
           "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w17zbg/atomicchatqwen38flashnextgguf_is_really_good",
-          "discussion_source": "r/LocalLLaMA"
+          "date_confidence": "high"
         }
       ],
       "also_seen_on": [],
-      "kind": "tool",
-      "quality": "mixed",
-      "one_liner": "User report on running Qwen3.8-Flash-Next GGUF on Apple M4 hardware.",
-      "novelty": 0.66,
-      "novelty_label": "medium",
-      "trust": 0.5,
-      "score": 0.544,
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "Anthropic research demonstrates automated systems improving performance on alignment benchmarks without regression.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.72,
+      "score": 0.491,
       "why_this_surfaced": [
-        "meaningfully different from recent coverage",
-        "classified as useful but lower-confidence signal"
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
       ],
-      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "1r8slsz",
+      "primary": {
+        "id": "1r8slsz",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "AI benchmarks have a trust problem and Google wants to fix it",
+        "url": "https://the-decoder.com/ai-benchmarks-have-a-trust-problem-and-google-wants-to-fix-it",
+        "original_url": "https://the-decoder.com/ai-benchmarks-have-a-trust-problem-and-google-wants-to-fix-it/",
+        "summary": "Google Deepmind is testing a double-blind evaluation of a frontier AI model for the first time. Cryptographic protection through Confidential Space is meant to keep Google from seeing the test questions and keep evaluators from seeing the model weights. The pilot project with the Singapore AI Safety Institute uses a Gemini Flash Lite and could set a new standard for tamper-proof AI benchmarks. The article AI benchmarks have a trust problem and Google wants to fix it appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/07/google_gemini-2.png",
+        "image_source": "rss_content",
+        "published_at": "2026-08-28T13:15:10.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1r8slsz",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "AI benchmarks have a trust problem and Google wants to fix it",
+          "url": "https://the-decoder.com/ai-benchmarks-have-a-trust-problem-and-google-wants-to-fix-it",
+          "original_url": "https://the-decoder.com/ai-benchmarks-have-a-trust-problem-and-google-wants-to-fix-it/",
+          "summary": "Google Deepmind is testing a double-blind evaluation of a frontier AI model for the first time. Cryptographic protection through Confidential Space is meant to keep Google from seeing the test questions and keep evaluators from seeing the model weights. The pilot project with the Singapore AI Safety Institute uses a Gemini Flash Lite and could set a new standard for tamper-proof AI benchmarks. The article AI benchmarks have a trust problem and Google wants to fix it appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/07/google_gemini-2.png",
+          "image_source": "rss_content",
+          "published_at": "2026-08-28T13:15:10.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "AI benchmarks have a trust problem and Google wants to fix it",
+          "url": "https://the-decoder.com/ai-benchmarks-have-a-trust-problem-and-google-wants-to-fix-it",
+          "published_at": "2026-08-28T13:15:10.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Google DeepMind pilots double-blind model evaluation using Confidential Space to secure test integrity.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.485,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "13s7c7h",
@@ -3215,78 +2378,12 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.62,
-      "score": 0.306,
+      "score": 0.296,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
       ],
       "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "3vbj9r",
-      "primary": {
-        "id": "3vbj9r",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "source_role": "main",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "If your t/s is low enough, you can see speculative decoding with your own eyes",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1je5d/if_your_ts_is_low_enough_you_can_see_speculative",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1je5d/if_your_ts_is_low_enough_you_can_see_speculative/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1je5d/if_your_ts_is_low_enough_you_can_see_speculative",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "The other day I was trying out a distillation of DS4 Pro, and it came with MTP. It was slow as hell on my hardware, barely 2-3 t/s, BUT the speed got bumps every once in a while, and I noticed it was in moments like: United States of America First law of thermodynamics The enshittification of the internet Basically, every time a very predictable phrase came up, it was instantly written. A fun thing to see. But it also has me wondering - would MTP work together with n-grams? Since n-grams are Markov chains, the same engine behind autosuggest, how much sense would it make to combine them with sp",
-        "published_at": "2026-08-29T10:51:58.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "3vbj9r",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "source_role": "main",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "If your t/s is low enough, you can see speculative decoding with your own eyes",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1je5d/if_your_ts_is_low_enough_you_can_see_speculative",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1je5d/if_your_ts_is_low_enough_you_can_see_speculative/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1je5d/if_your_ts_is_low_enough_you_can_see_speculative",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "The other day I was trying out a distillation of DS4 Pro, and it came with MTP. It was slow as hell on my hardware, barely 2-3 t/s, BUT the speed got bumps every once in a while, and I noticed it was in moments like: United States of America First law of thermodynamics The enshittification of the internet Basically, every time a very predictable phrase came up, it was instantly written. A fun thing to see. But it also has me wondering - would MTP work together with n-grams? Since n-grams are Markov chains, the same engine behind autosuggest, how much sense would it make to combine them with sp",
-          "published_at": "2026-08-29T10:51:58.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "If your t/s is low enough, you can see speculative decoding with your own eyes",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1je5d/if_your_ts_is_low_enough_you_can_see_speculative",
-          "published_at": "2026-08-29T10:51:58.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1je5d/if_your_ts_is_low_enough_you_can_see_speculative",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "discussion",
-      "quality": "mixed",
-      "one_liner": "Anecdotal observation of speculative decoding behavior in low-throughput LLM inference.",
-      "novelty": 0.784,
-      "novelty_label": "high",
-      "trust": 0.5,
-      "score": 0.518,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal",
-        "fresh within the current refresh window"
-      ],
-      "builder_action": "Use this as weak signal and verify against primary sources."
     },
     {
       "id": "7yl3pa",
@@ -3352,147 +2449,7 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.66,
-      "score": 0.32,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "znij2l",
-      "primary": {
-        "id": "znij2l",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "source_role": "main",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "Today I hit 181 toks/s (aggregate) on Qwen3.8-Flash-Next on 2x DGX Sparks",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1486l/today_i_hit_181_tokss_aggregate_on",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1486l/today_i_hit_181_tokss_aggregate_on/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1486l/today_i_hit_181_tokss_aggregate_on",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "Hey all, and hello fellow DGX Spark-ers! Today I managed some pretty crazy numbers: 181 tok/s aggregate on 2× DGX Spark on Qwen3.8-Flash-Next at 512Kcontext (2.8M kvc) I hit 181 tok/s aggregate today across a multi-agent fleet on a 2-node DGX Spark cluster. Single-stream decode is 30–50 tok/s — the 181 is total throughput with ~9 concurrent agent sessions sharing the engine. I actually peaked to 195 while writing this. Quick rundown of how it's served: Hardware 2× NVIDIA DGX Spark (GB10 Grace Blackwell, 128 GB unified memory each, 20-core ARM) Nodes linked with a direct ConnectX-7 cable — NCCL",
-        "image_url": "https://preview.redd.it/8ymtyifut6mh1.png?width=640&crop=smart&auto=webp&s=6bf7624bc7f4da8ac5252110726a98422f09ea73",
-        "image_source": "rss_media",
-        "published_at": "2026-08-28T22:00:36.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "znij2l",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "source_role": "main",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "Today I hit 181 toks/s (aggregate) on Qwen3.8-Flash-Next on 2x DGX Sparks",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1486l/today_i_hit_181_tokss_aggregate_on",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1486l/today_i_hit_181_tokss_aggregate_on/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1486l/today_i_hit_181_tokss_aggregate_on",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "Hey all, and hello fellow DGX Spark-ers! Today I managed some pretty crazy numbers: 181 tok/s aggregate on 2× DGX Spark on Qwen3.8-Flash-Next at 512Kcontext (2.8M kvc) I hit 181 tok/s aggregate today across a multi-agent fleet on a 2-node DGX Spark cluster. Single-stream decode is 30–50 tok/s — the 181 is total throughput with ~9 concurrent agent sessions sharing the engine. I actually peaked to 195 while writing this. Quick rundown of how it's served: Hardware 2× NVIDIA DGX Spark (GB10 Grace Blackwell, 128 GB unified memory each, 20-core ARM) Nodes linked with a direct ConnectX-7 cable — NCCL",
-          "image_url": "https://preview.redd.it/8ymtyifut6mh1.png?width=640&crop=smart&auto=webp&s=6bf7624bc7f4da8ac5252110726a98422f09ea73",
-          "image_source": "rss_media",
-          "published_at": "2026-08-28T22:00:36.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "Today I hit 181 toks/s (aggregate) on Qwen3.8-Flash-Next on 2x DGX Sparks",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1486l/today_i_hit_181_tokss_aggregate_on",
-          "published_at": "2026-08-28T22:00:36.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1486l/today_i_hit_181_tokss_aggregate_on",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "discussion",
-      "quality": "mixed",
-      "one_liner": "User report on achieving 181 tokens/s aggregate throughput using a multi-node DGX Spark cluster.",
-      "novelty": 0.737,
-      "novelty_label": "medium",
-      "trust": 0.5,
-      "score": 0.483,
-      "why_this_surfaced": [
-        "meaningfully different from recent coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Use this as weak signal and verify against primary sources."
-    },
-    {
-      "id": "d8xp1c",
-      "primary": {
-        "id": "d8xp1c",
-        "source_id": "fahd_mirza",
-        "source_name": "Fahd Mirza YouTube",
-        "source_role": "main",
-        "trust": 0.66,
-        "kind_hint": "video",
-        "title": "Run GLM-5.3 Flash Locally on CPU + RAM",
-        "url": "https://youtube.com/watch?v=AVjAjwckEaI",
-        "original_url": "https://www.youtube.com/watch?v=AVjAjwckEaI",
-        "image_url": "https://i.ytimg.com/vi/AVjAjwckEaI/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-08-28T04:08:01.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
-          "video_id": "AVjAjwckEaI"
-        }
-      },
-      "members": [
-        {
-          "id": "d8xp1c",
-          "source_id": "fahd_mirza",
-          "source_name": "Fahd Mirza YouTube",
-          "source_role": "main",
-          "trust": 0.66,
-          "kind_hint": "video",
-          "title": "Run GLM-5.3 Flash Locally on CPU + RAM",
-          "url": "https://youtube.com/watch?v=AVjAjwckEaI",
-          "original_url": "https://www.youtube.com/watch?v=AVjAjwckEaI",
-          "image_url": "https://i.ytimg.com/vi/AVjAjwckEaI/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-08-28T04:08:01.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
-            "video_id": "AVjAjwckEaI"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "fahd_mirza",
-          "source_name": "Fahd Mirza YouTube",
-          "title": "Run GLM-5.3 Flash Locally on CPU + RAM",
-          "url": "https://youtube.com/watch?v=AVjAjwckEaI",
-          "published_at": "2026-08-28T04:08:01.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "mixed",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.66,
-      "score": 0.299,
+      "score": 0.31,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -3551,11 +2508,11 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Federal court ruling regarding government blacklisting of Anthropic.",
+      "one_liner": "Legal update regarding federal policy and Anthropic.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.78,
-      "score": 0.35,
+      "score": 0.34,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -3614,74 +2571,11 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Meta updated AI glasses firmware to prevent recording when the privacy light is obstructed.",
+      "one_liner": "Meta updates AI glasses software to address privacy concerns regarding recording lights.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.78,
-      "score": 0.346,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "1hry9xi",
-      "primary": {
-        "id": "1hry9xi",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
-        "source_role": "main",
-        "trust": 0.74,
-        "kind_hint": "news",
-        "title": "Google Deepmind's AI Co-Scientist now plans experiments, runs lab equipment, and writes scientific papers",
-        "url": "https://the-decoder.com/google-deepminds-ai-co-scientist-now-plans-experiments-runs-lab-equipment-and-writes-scientific-papers",
-        "original_url": "https://the-decoder.com/google-deepminds-ai-co-scientist-now-plans-experiments-runs-lab-equipment-and-writes-scientific-papers/",
-        "summary": "Google Deepmind has expanded Co-Scientist from a hypothesis generator into a research system that's integrated into the lab. Across three disciplines, from materials synthesis to the autonomous development of a medical AI architecture, the Gemini-based multi-agent system delivered experimentally validated results. The article Google Deepmind's AI Co-Scientist now plans experiments, runs lab equipment, and writes scientific papers appeared first on The Decoder.",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/gemini_ai_scientist.png",
-        "image_source": "rss_content",
-        "published_at": "2026-08-28T18:46:27.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1hry9xi",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "source_role": "main",
-          "trust": 0.74,
-          "kind_hint": "news",
-          "title": "Google Deepmind's AI Co-Scientist now plans experiments, runs lab equipment, and writes scientific papers",
-          "url": "https://the-decoder.com/google-deepminds-ai-co-scientist-now-plans-experiments-runs-lab-equipment-and-writes-scientific-papers",
-          "original_url": "https://the-decoder.com/google-deepminds-ai-co-scientist-now-plans-experiments-runs-lab-equipment-and-writes-scientific-papers/",
-          "summary": "Google Deepmind has expanded Co-Scientist from a hypothesis generator into a research system that's integrated into the lab. Across three disciplines, from materials synthesis to the autonomous development of a medical AI architecture, the Gemini-based multi-agent system delivered experimentally validated results. The article Google Deepmind's AI Co-Scientist now plans experiments, runs lab equipment, and writes scientific papers appeared first on The Decoder.",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/gemini_ai_scientist.png",
-          "image_source": "rss_content",
-          "published_at": "2026-08-28T18:46:27.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "Google Deepmind's AI Co-Scientist now plans experiments, runs lab equipment, and writes scientific papers",
-          "url": "https://the-decoder.com/google-deepminds-ai-co-scientist-now-plans-experiments-runs-lab-equipment-and-writes-scientific-papers",
-          "published_at": "2026-08-28T18:46:27.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "Google DeepMind's Co-Scientist system integrates Gemini agents into laboratory workflows for autonomous research.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.74,
-      "score": 0.341,
+      "score": 0.336,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -3734,18 +2628,81 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "company_announcement",
+      "kind": "news",
       "quality": "mixed",
-      "one_liner": "Neocloud Lambda secured $1B in debt financing to expand GPU infrastructure.",
+      "one_liner": "Neocloud Lambda raised $1B in debt financing to purchase Nvidia GPUs for leasing to Microsoft.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.72,
-      "score": 0.34,
+      "score": 0.33,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
       ],
-      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "me38h5",
+      "primary": {
+        "id": "me38h5",
+        "source_id": "wired_ai",
+        "source_name": "WIRED AI",
+        "source_role": "main",
+        "trust": 0.76,
+        "kind_hint": "news",
+        "title": "He Scraped All of Their Art for AI. Now He’s Collaborating on a Tool to Help Them",
+        "url": "https://wired.com/story/he-scraped-art-from-cara-for-ai-now-he-is-collaborating-on-a-tool-to-help-them",
+        "original_url": "https://www.wired.com/story/he-scraped-art-from-cara-for-ai-now-he-is-collaborating-on-a-tool-to-help-them/",
+        "summary": "The art portfolio platform Cara, designed for creators who don’t want their work used to train AI, has been under assault by trolls seizing and publishing its data.",
+        "image_url": "https://media.wired.com/photos/6a8f719f1780b42ea22395f3/master/pass/Anti-AI-Artists-Gathered-to-Share-Their-Handmade-Work-Culture.jpg",
+        "image_source": "rss_media",
+        "published_at": "2026-08-28T11:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "me38h5",
+          "source_id": "wired_ai",
+          "source_name": "WIRED AI",
+          "source_role": "main",
+          "trust": 0.76,
+          "kind_hint": "news",
+          "title": "He Scraped All of Their Art for AI. Now He’s Collaborating on a Tool to Help Them",
+          "url": "https://wired.com/story/he-scraped-art-from-cara-for-ai-now-he-is-collaborating-on-a-tool-to-help-them",
+          "original_url": "https://www.wired.com/story/he-scraped-art-from-cara-for-ai-now-he-is-collaborating-on-a-tool-to-help-them/",
+          "summary": "The art portfolio platform Cara, designed for creators who don’t want their work used to train AI, has been under assault by trolls seizing and publishing its data.",
+          "image_url": "https://media.wired.com/photos/6a8f719f1780b42ea22395f3/master/pass/Anti-AI-Artists-Gathered-to-Share-Their-Handmade-Work-Culture.jpg",
+          "image_source": "rss_media",
+          "published_at": "2026-08-28T11:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "wired_ai",
+          "source_name": "WIRED AI",
+          "title": "He Scraped All of Their Art for AI. Now He’s Collaborating on a Tool to Help Them",
+          "url": "https://wired.com/story/he-scraped-art-from-cara-for-ai-now-he-is-collaborating-on-a-tool-to-help-them",
+          "published_at": "2026-08-28T11:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Report on data scraping issues and security challenges faced by the art platform Cara.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.76,
+      "score": 0.323,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "1j5x4xx",
@@ -3799,11 +2756,11 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Meta is testing robotics for automated data center maintenance tasks like cable management and server resets.",
+      "one_liner": "Meta is testing robotics for automated data center maintenance tasks like cable swapping and server resets.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.76,
-      "score": 0.333,
+      "score": 0.323,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -3862,11 +2819,11 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "A federal court ruled that the Pentagon's classification of Anthropic as a supply chain risk was unlawful.",
+      "one_liner": "Federal court rules the Pentagon's classification of Anthropic as a supply chain risk was unlawful.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.74,
-      "score": 0.33,
+      "score": 0.32,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -3921,86 +2878,16 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "A federal judge ruled that the Trump administration's supply-chain risk designation for Anthropic was illegal.",
+      "one_liner": "Legal update regarding Anthropic's challenge against the Pentagon's supply-chain risk designation.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.72,
-      "score": 0.327,
+      "score": 0.317,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
       ],
       "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "1fexs9f",
-      "primary": {
-        "id": "1fexs9f",
-        "source_id": "r_localllama",
-        "source_name": "r/LocalLLaMA",
-        "source_role": "main",
-        "trust": 0.5,
-        "kind_hint": "discussion",
-        "title": "Different Qwen thinking levels",
-        "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1gm8y/different_qwen_thinking_levels",
-        "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1gm8y/different_qwen_thinking_levels/",
-        "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1gm8y/different_qwen_thinking_levels",
-        "discussion_source": "r/LocalLLaMA",
-        "summary": "submitted by /u/Tall_Abrocoma_3533 [link] [comments]",
-        "image_url": "https://preview.redd.it/ygxscjf5v9mh1.png?width=640&crop=smart&auto=webp&s=f54ae16b21d5ef4afe2ebbbd68f07c45d68428a4",
-        "image_source": "rss_media",
-        "published_at": "2026-08-29T08:09:36.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1fexs9f",
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "source_role": "main",
-          "trust": 0.5,
-          "kind_hint": "discussion",
-          "title": "Different Qwen thinking levels",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1gm8y/different_qwen_thinking_levels",
-          "original_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1gm8y/different_qwen_thinking_levels/",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1gm8y/different_qwen_thinking_levels",
-          "discussion_source": "r/LocalLLaMA",
-          "summary": "submitted by /u/Tall_Abrocoma_3533 [link] [comments]",
-          "image_url": "https://preview.redd.it/ygxscjf5v9mh1.png?width=640&crop=smart&auto=webp&s=f54ae16b21d5ef4afe2ebbbd68f07c45d68428a4",
-          "image_source": "rss_media",
-          "published_at": "2026-08-29T08:09:36.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "r_localllama",
-          "source_name": "r/LocalLLaMA",
-          "title": "Different Qwen thinking levels",
-          "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1gm8y/different_qwen_thinking_levels",
-          "published_at": "2026-08-29T08:09:36.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://old.reddit.com/r/LocalLLaMA/comments/1w1gm8y/different_qwen_thinking_levels",
-          "discussion_source": "r/LocalLLaMA"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "discussion",
-      "quality": "mixed",
-      "one_liner": "A community discussion regarding the performance and behavior of different Qwen model reasoning configurations.",
-      "novelty": 0.349,
-      "novelty_label": "familiar",
-      "trust": 0.5,
-      "score": 0.333,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal",
-        "fresh within the current refresh window"
-      ],
-      "builder_action": "Use this as weak signal and verify against primary sources."
     }
   ]
 }
