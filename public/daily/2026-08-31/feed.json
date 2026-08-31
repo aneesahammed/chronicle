@@ -1,27 +1,17 @@
 {
-  "generated_at": "2026-08-31T05:26:56.582Z",
-  "last_successful_generated_at": "2026-08-31T05:26:56.582Z",
+  "generated_at": "2026-08-31T12:37:42.294Z",
+  "last_successful_generated_at": "2026-08-31T12:37:42.294Z",
   "refresh_status": "partial",
   "classification_mode": "llm",
   "window_hours": 36,
   "source_total": 53,
-  "source_ok": 50,
-  "source_failed": 3,
+  "source_ok": 52,
+  "source_failed": 1,
   "failed_sources": [
-    {
-      "id": "marktechpost",
-      "name": "MarkTechPost",
-      "message": "Invalid character in entity name\nLine: 0\nColumn: 117\nChar: ="
-    },
     {
       "id": "r_localllama",
       "name": "r/LocalLLaMA",
-      "message": "Feed not recognized as RSS 1 or 2."
-    },
-    {
-      "id": "r_ml",
-      "name": "r/MachineLearning",
-      "message": "Invalid character in entity name\nLine: 19\nColumn: 196\nChar: ="
+      "message": "HTTP 429 Too Many Requests - url=https://old.reddit.com/r/LocalLLaMA/top/.rss?t=day"
     }
   ],
   "source_health": [
@@ -52,7 +42,7 @@
       "fetched_count": 20,
       "fresh_count": 0,
       "stale_count": 20,
-      "oldest_published_at": "2026-08-20T20:00:00.000Z",
+      "oldest_published_at": "2026-08-18T20:00:00.000Z",
       "newest_published_at": "2026-08-27T20:00:00.000Z"
     },
     {
@@ -60,10 +50,10 @@
       "name": "Hugging Face trending models",
       "status": "ok",
       "fetched_count": 20,
-      "fresh_count": 0,
-      "stale_count": 20,
+      "fresh_count": 1,
+      "stale_count": 19,
       "oldest_published_at": "2026-07-23T07:55:24.000Z",
-      "newest_published_at": "2026-08-27T08:52:40.000Z"
+      "newest_published_at": "2026-08-31T06:16:18.000Z"
     },
     {
       "id": "simonw",
@@ -210,8 +200,8 @@
       "name": "TechCrunch AI",
       "status": "ok",
       "fetched_count": 12,
-      "fresh_count": 5,
-      "stale_count": 7,
+      "fresh_count": 3,
+      "stale_count": 9,
       "oldest_published_at": "2026-08-27T23:16:45.000Z",
       "newest_published_at": "2026-08-31T02:34:00.000Z"
     },
@@ -220,10 +210,10 @@
       "name": "The Decoder",
       "status": "ok",
       "fetched_count": 10,
-      "fresh_count": 5,
-      "stale_count": 5,
-      "oldest_published_at": "2026-08-29T09:14:30.000Z",
-      "newest_published_at": "2026-08-30T13:12:19.000Z"
+      "fresh_count": 7,
+      "stale_count": 3,
+      "oldest_published_at": "2026-08-29T12:51:24.000Z",
+      "newest_published_at": "2026-08-31T10:46:04.000Z"
     },
     {
       "id": "mit_tech_review_ai",
@@ -240,20 +230,20 @@
       "name": "Ars Technica AI",
       "status": "ok",
       "fetched_count": 10,
-      "fresh_count": 1,
-      "stale_count": 9,
-      "oldest_published_at": "2026-08-27T12:58:59.000Z",
-      "newest_published_at": "2026-08-30T11:03:47.000Z"
+      "fresh_count": 2,
+      "stale_count": 8,
+      "oldest_published_at": "2026-08-27T13:57:08.000Z",
+      "newest_published_at": "2026-08-31T10:00:34.000Z"
     },
     {
       "id": "infoq_ai",
       "name": "InfoQ AI/ML/Data",
       "status": "ok",
       "fetched_count": 8,
-      "fresh_count": 2,
-      "stale_count": 6,
-      "oldest_published_at": "2026-08-25T06:06:00.000Z",
-      "newest_published_at": "2026-08-30T19:00:00.000Z"
+      "fresh_count": 5,
+      "stale_count": 3,
+      "oldest_published_at": "2026-08-26T11:00:00.000Z",
+      "newest_published_at": "2026-08-31T11:00:00.000Z"
     },
     {
       "id": "stackoverflow_blog",
@@ -270,8 +260,8 @@
       "name": "The Verge AI",
       "status": "ok",
       "fetched_count": 9,
-      "fresh_count": 2,
-      "stale_count": 7,
+      "fresh_count": 1,
+      "stale_count": 8,
       "oldest_published_at": "2026-08-27T13:11:23.000Z",
       "newest_published_at": "2026-08-30T15:35:10.000Z"
     },
@@ -280,10 +270,10 @@
       "name": "WIRED AI",
       "status": "ok",
       "fetched_count": 10,
-      "fresh_count": 1,
-      "stale_count": 9,
-      "oldest_published_at": "2026-08-27T18:06:52.000Z",
-      "newest_published_at": "2026-08-30T10:30:00.000Z"
+      "fresh_count": 2,
+      "stale_count": 8,
+      "oldest_published_at": "2026-08-27T18:12:17.000Z",
+      "newest_published_at": "2026-08-31T10:30:00.000Z"
     },
     {
       "id": "nine_to_five_google_ai",
@@ -299,30 +289,31 @@
       "id": "product_hunt",
       "name": "Product Hunt",
       "status": "ok",
-      "fetched_count": 2,
-      "fresh_count": 1,
+      "fetched_count": 1,
+      "fresh_count": 0,
       "stale_count": 1,
-      "oldest_published_at": "2026-08-10T02:38:59.000Z",
-      "newest_published_at": "2026-08-29T22:27:58.000Z"
+      "oldest_published_at": "2026-08-17T12:24:54.000Z",
+      "newest_published_at": "2026-08-17T12:24:54.000Z"
     },
     {
       "id": "marktechpost",
       "name": "MarkTechPost",
-      "status": "failed",
-      "fetched_count": 0,
-      "message": "Invalid character in entity name\nLine: 0\nColumn: 117\nChar: =",
-      "fresh_count": 0,
-      "stale_count": 0
+      "status": "ok",
+      "fetched_count": 9,
+      "fresh_count": 4,
+      "stale_count": 5,
+      "oldest_published_at": "2026-08-28T17:28:47.000Z",
+      "newest_published_at": "2026-08-30T21:24:38.000Z"
     },
     {
       "id": "hn_ai",
       "name": "Hacker News (AI-filtered)",
       "status": "ok",
-      "fetched_count": 2,
-      "fresh_count": 2,
+      "fetched_count": 3,
+      "fresh_count": 3,
       "stale_count": 0,
-      "oldest_published_at": "2026-08-30T20:46:53.000Z",
-      "newest_published_at": "2026-08-31T01:28:22.000Z"
+      "oldest_published_at": "2026-08-30T23:41:32.000Z",
+      "newest_published_at": "2026-08-31T07:49:18.000Z"
     },
     {
       "id": "hn_show_ai",
@@ -347,18 +338,19 @@
       "name": "r/LocalLLaMA",
       "status": "failed",
       "fetched_count": 0,
-      "message": "Feed not recognized as RSS 1 or 2.",
+      "message": "HTTP 429 Too Many Requests - url=https://old.reddit.com/r/LocalLLaMA/top/.rss?t=day",
       "fresh_count": 0,
       "stale_count": 0
     },
     {
       "id": "r_ml",
       "name": "r/MachineLearning",
-      "status": "failed",
-      "fetched_count": 0,
-      "message": "Invalid character in entity name\nLine: 19\nColumn: 196\nChar: =",
-      "fresh_count": 0,
-      "stale_count": 0
+      "status": "ok",
+      "fetched_count": 8,
+      "fresh_count": 8,
+      "stale_count": 0,
+      "oldest_published_at": "2026-08-30T12:47:10.000Z",
+      "newest_published_at": "2026-08-31T12:09:24.000Z"
     },
     {
       "id": "openai",
@@ -475,8 +467,8 @@
       "name": "Cloudflare AI Changelog",
       "status": "ok",
       "fetched_count": 11,
-      "fresh_count": 1,
-      "stale_count": 10,
+      "fresh_count": 0,
+      "stale_count": 11,
       "oldest_published_at": "2026-08-21T00:00:00.000Z",
       "newest_published_at": "2026-08-30T00:00:00.000Z"
     },
@@ -537,8 +529,8 @@
       "fetched_count": 8,
       "fresh_count": 3,
       "stale_count": 5,
-      "oldest_published_at": "2026-08-27T17:00:38.000Z",
-      "newest_published_at": "2026-08-30T19:00:01.000Z"
+      "oldest_published_at": "2026-08-28T04:08:01.000Z",
+      "newest_published_at": "2026-08-31T07:00:19.000Z"
     },
     {
       "id": "yt_nate_b_jones",
@@ -553,27 +545,13 @@
   ],
   "top_news": [
     {
-      "cluster_id": "zaqhuy",
-      "title": "AI Search - AI Search now supports GLM-5.3 Flash",
-      "url": "https://developers.cloudflare.com/changelog/post/2026-08-30-glm-5.3-flash",
-      "source_name": "Cloudflare AI Changelog",
-      "published_at": "2026-08-30T00:00:00.000Z",
-      "kind": "company_announcement",
-      "score": 0.494,
-      "dek": "Cloudflare's AI Search now supports the GLM-5.3 Flash model on Workers AI.",
-      "brief": "Cloudflare has integrated GLM-5.3 Flash into its AI Search service. The model features a 1,048,576-token context window, allowing for extensive document processing and retrieval tasks within the Workers AI ecosystem.",
-      "image_alt": "Cloudflare Workers AI logo",
-      "enrichment_status": "ok",
-      "enriched_at": "2026-08-28T21:31:50.282Z"
-    },
-    {
       "cluster_id": "1j73f6o",
       "title": "DAMP: Decay-Aware Mixed-Precision Recurrent-State Quantization",
       "url": "https://arxiv.org/abs/2608.27513",
       "source_name": "arXiv cs.LG",
       "published_at": "2026-08-31T04:00:00.000Z",
       "kind": "paper",
-      "score": 0.82,
+      "score": 0.808,
       "dek": "DAMP introduces post-training quantization for recurrent states in Gated DeltaNet and Kimi Delta Attention to reduce memory usage and decoding latency.",
       "brief": "Recurrent states in models like GDN and KDA are typically stored in FP32, leading to high memory consumption and bandwidth bottlenecks. DAMP (Decay-Aware Mixed-Precision) addresses this by applying post-training quantization to these states, optimizing memory footprint without significantly sacrificing performance.",
       "image_alt": "Diagram showing recurrent state quantization process",
@@ -581,37 +559,65 @@
       "enriched_at": "2026-08-31T05:26:56.582Z"
     },
     {
-      "cluster_id": "3ivcne",
-      "title": "Cloudflare Extends AI Search to Make it Easier for Agents and Developers to Search Custom Data",
-      "url": "https://infoq.com/news/2026/08/cloudflare-ai-search",
+      "cluster_id": "1p63bnc",
+      "title": "Foundry Model Router Expands from Two Regions to 28, Refreshing Its Model Pool",
+      "url": "https://infoq.com/news/2026/08/foundry-model-router-regions",
       "source_name": "InfoQ AI/ML/Data",
-      "published_at": "2026-08-30T19:00:00.000Z",
-      "kind": "company_announcement",
-      "score": 0.746,
-      "dek": "Cloudflare has expanded its AI Search service to provide developers and agents with integrated, multimodal search capabilities over custom datasets.",
-      "brief": "Cloudflare AI Search is designed as a managed retrieval service that simplifies the integration of custom data into AI agents. It supports multimodal search and is built to work natively within the Cloudflare ecosystem, reducing the complexity of setting up search infrastructure for AI applications.",
-      "image_url": "https://res.infoq.com/news/2026/08/cloudflare-ai-search/en/headerimage/cloudflare-ai-search-1788105575745.jpeg",
-      "image_alt": "Cloudflare AI Search architecture diagram",
+      "published_at": "2026-08-31T10:18:00.000Z",
+      "kind": "news",
+      "score": 0.795,
+      "dek": "Microsoft has expanded its Foundry model router to 28 regions and updated the model pool with Claude Opus 4.8 and GPT-5.6.",
+      "brief": "The Foundry model router now supports 28 regions for global standard deployments and 21 for data zones. The model pool has been refreshed to include Claude Opus 4.8 and the GPT-5.6 family, while older models like DeepSeek-V3.1 have been deprecated. Default configurations update automatically, but custom subsets require manual updates.",
+      "image_url": "https://res.infoq.com/news/2026/08/foundry-model-router-regions/en/headerimage/generatedHeaderImage-1787836928169.jpg",
+      "image_alt": "Azure AI Foundry logo and regional deployment map",
       "image_source": "rss_content",
       "enrichment_status": "ok",
-      "enriched_at": "2026-08-31T05:26:56.582Z"
+      "enriched_at": "2026-08-31T12:37:42.294Z"
     },
     {
-      "cluster_id": "1mnfo8z",
-      "title": "Superagent",
-      "url": "https://producthunt.com/products/superagent-a-home-for-your-ai-agents",
-      "source_name": "Product Hunt",
-      "published_at": "2026-08-29T22:27:58.000Z",
+      "cluster_id": "660ptn",
+      "title": "How to assess if there is a strong signal in your dirty data [Project]",
+      "url": "https://old.reddit.com/r/MachineLearning/comments/1w3br9c/how_to_assess_if_there_is_a_strong_signal_in_your",
+      "source_name": "r/MachineLearning",
+      "published_at": "2026-08-31T12:02:54.000Z",
       "kind": "tool",
-      "score": 0.264,
-      "dek": "Superagent provides a platform for managing and deploying AI agents.",
-      "brief": "Superagent serves as a centralized hub for developers to build, host, and manage AI agents. The platform focuses on simplifying the agent lifecycle, from initial configuration to deployment and monitoring.",
-      "image_alt": "Superagent platform dashboard interface",
+      "score": 0.742,
+      "dek": "Entropic Scree is a new diagnostic tool designed to evaluate signal strength and informational volume in noisy, high-dimensional tabular datasets.",
+      "brief": "This tool helps data scientists assess whether a dataset contains enough signal to be useful for training. It estimates the signal-to-idiosyncratic volume ratio (SNR) and intrinsic rank, providing an exploratory map to visualize data quality before model development.",
+      "image_alt": "Data visualization showing signal-to-noise ratio analysis",
       "enrichment_status": "ok",
-      "enriched_at": "2026-08-31T05:26:56.582Z"
+      "enriched_at": "2026-08-31T12:37:42.294Z"
+    },
+    {
+      "cluster_id": "1jb3sx2",
+      "title": "Google AI Introduces EnvHarness: A Programmable Layer That Turns Static Agent Environments Into Adaptive Training Worlds",
+      "url": "https://marktechpost.com/2026/08/30/google-ai-introduces-envharness-a-programmable-layer-that-turns-static-agent-environments-into-adaptive-training-worlds",
+      "source_name": "MarkTechPost",
+      "published_at": "2026-08-30T20:23:46.000Z",
+      "kind": "tool",
+      "score": 0.678,
+      "dek": "Google's new EnvHarness library allows developers to wrap static agent benchmarks in an adaptive layer that responds to policy training.",
+      "brief": "EnvHarness uses an LLM-based designer, EnvRigger, to automatically wrap frozen environments. This allows static benchmarks to evolve alongside the agent, providing dynamic feedback without requiring manual changes to existing verifiers or environment interfaces.",
+      "image_alt": "Diagram showing EnvHarness wrapping a static environment",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-08-31T12:37:42.294Z"
+    },
+    {
+      "cluster_id": "11th3e4",
+      "title": "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp (0 downloads, 169 likes)",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+      "source_name": "Hugging Face trending models",
+      "published_at": "2026-08-31T06:16:18.000Z",
+      "kind": "model_release",
+      "score": 0.663,
+      "dek": "DeepSeek has released the DeepSeek-V4-Flash-Vision-Exp model, a new vision-capable iteration available on Hugging Face.",
+      "brief": "The model supports text-generation and image-text-to-text tasks. It is released under an MIT license and is compatible with the transformers and safetensors libraries.",
+      "image_alt": "DeepSeek AI logo",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-08-31T12:37:42.294Z"
     }
   ],
-  "count": 26,
+  "count": 39,
   "clusters": [
     {
       "id": "1j73f6o",
@@ -661,18 +667,81 @@
       "also_seen_on": [],
       "kind": "paper",
       "quality": "signal",
-      "one_liner": "Introduces DAMP, a mixed-precision quantization method for recurrent-state models to reduce inference memory costs.",
+      "one_liner": "Proposes decay-aware mixed-precision quantization for recurrent-state models to reduce memory overhead.",
       "novelty": 0.839,
       "novelty_label": "high",
       "trust": 0.9,
-      "score": 0.82,
+      "score": 0.808,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal",
-        "primary source has high trust weight",
-        "fresh within the current refresh window"
+        "primary source has high trust weight"
       ],
       "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "1p63bnc",
+      "primary": {
+        "id": "1p63bnc",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "Foundry Model Router Expands from Two Regions to 28, Refreshing Its Model Pool",
+        "url": "https://infoq.com/news/2026/08/foundry-model-router-regions",
+        "original_url": "https://www.infoq.com/news/2026/08/foundry-model-router-regions/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Microsoft expanded Foundry's model router from two regions to 28 for global standard and 21 for data zone deployments, while adding Claude Opus 4.8 and GPT-5.6 and removing four deprecated models. Default deployments receive pool changes automatically; configured subsets exclude new models until added. The effective context window equals the smallest model in the pool. By Steef-Jan Wiggers",
+        "image_url": "https://res.infoq.com/news/2026/08/foundry-model-router-regions/en/headerimage/generatedHeaderImage-1787836928169.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-08-31T10:18:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1p63bnc",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "Foundry Model Router Expands from Two Regions to 28, Refreshing Its Model Pool",
+          "url": "https://infoq.com/news/2026/08/foundry-model-router-regions",
+          "original_url": "https://www.infoq.com/news/2026/08/foundry-model-router-regions/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "Microsoft expanded Foundry's model router from two regions to 28 for global standard and 21 for data zone deployments, while adding Claude Opus 4.8 and GPT-5.6 and removing four deprecated models. Default deployments receive pool changes automatically; configured subsets exclude new models until added. The effective context window equals the smallest model in the pool. By Steef-Jan Wiggers",
+          "image_url": "https://res.infoq.com/news/2026/08/foundry-model-router-regions/en/headerimage/generatedHeaderImage-1787836928169.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-08-31T10:18:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "Foundry Model Router Expands from Two Regions to 28, Refreshing Its Model Pool",
+          "url": "https://infoq.com/news/2026/08/foundry-model-router-regions",
+          "published_at": "2026-08-31T10:18:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Microsoft expands Foundry model router to 28 regions and updates the available model pool.",
+      "novelty": 0.853,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.795,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "1kayogl",
@@ -722,58 +791,185 @@
       "also_seen_on": [],
       "kind": "paper",
       "quality": "signal",
-      "one_liner": "Proposes Marginal Coverage Credit to improve exploration efficiency in parallel state-entropy optimization.",
+      "one_liner": "Introduces Marginal Coverage Credit to improve exploration efficiency in parallel state-entropy optimization.",
       "novelty": 0.835,
       "novelty_label": "high",
       "trust": 0.9,
-      "score": 0.819,
+      "score": 0.807,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal",
-        "primary source has high trust weight",
-        "fresh within the current refresh window"
+        "primary source has high trust weight"
       ],
       "builder_action": "Save this for technical review if the method maps to your roadmap."
     },
     {
-      "id": "v0anuk",
+      "id": "zczt0u",
       "primary": {
-        "id": "v0anuk",
+        "id": "zczt0u",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "OpenClaw 2.0 brings simplified setup, a rebuilt browser app, and multiplayer sessions",
+        "url": "https://the-decoder.com/openclaw-2-0-brings-simplified-setup-a-rebuilt-browser-app-and-multiplayer-sessions",
+        "original_url": "https://the-decoder.com/openclaw-2-0-brings-simplified-setup-a-rebuilt-browser-app-and-multiplayer-sessions/",
+        "summary": "The OpenClaw Foundation has released version 2.0 of its open-source AI platform, its largest release to date with over 16,000 pull requests. New features include cloud sessions on rented machines, real-time collaboration, and a browser app rebuilt from scratch. The software now automatically detects existing resources like API keys and AI subscriptions during setup. The article OpenClaw 2.0 brings simplified setup, a rebuilt browser app, and multiplayer sessions appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/openclaw_logo_threepart.png",
+        "image_source": "rss_content",
+        "published_at": "2026-08-31T10:46:04.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "zczt0u",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "OpenClaw 2.0 brings simplified setup, a rebuilt browser app, and multiplayer sessions",
+          "url": "https://the-decoder.com/openclaw-2-0-brings-simplified-setup-a-rebuilt-browser-app-and-multiplayer-sessions",
+          "original_url": "https://the-decoder.com/openclaw-2-0-brings-simplified-setup-a-rebuilt-browser-app-and-multiplayer-sessions/",
+          "summary": "The OpenClaw Foundation has released version 2.0 of its open-source AI platform, its largest release to date with over 16,000 pull requests. New features include cloud sessions on rented machines, real-time collaboration, and a browser app rebuilt from scratch. The software now automatically detects existing resources like API keys and AI subscriptions during setup. The article OpenClaw 2.0 brings simplified setup, a rebuilt browser app, and multiplayer sessions appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/openclaw_logo_threepart.png",
+          "image_source": "rss_content",
+          "published_at": "2026-08-31T10:46:04.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "OpenClaw 2.0 brings simplified setup, a rebuilt browser app, and multiplayer sessions",
+          "url": "https://the-decoder.com/openclaw-2-0-brings-simplified-setup-a-rebuilt-browser-app-and-multiplayer-sessions",
+          "published_at": "2026-08-31T10:46:04.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "OpenClaw 2.0 release adds cloud sessions, real-time collaboration, and a rebuilt browser interface.",
+      "novelty": 0.861,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.789,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "fweydn",
+      "primary": {
+        "id": "fweydn",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "Presentation: Running AI at the Edge: Running Real Workloads Directly in the Browser",
+        "url": "https://infoq.com/presentations/local-ai-browser-inference-privacy",
+        "original_url": "https://www.infoq.com/presentations/local-ai-browser-inference-privacy/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "James Hall discusses the strategic and technical imperative of moving AI workloads from cloud providers to local edge devices. He shares practical approaches using WebGPU, Transformers.js, and DuckDB to achieve near-native performance in JavaScript. Through real-world case studies, he explains how to minimize data privacy risks, optimize browser inference, and build rigorous evaluation suites. By James Hall",
+        "image_url": "https://res.infoq.com/presentations/local-ai-browser-inference-privacy/en/mediumimage/james-hall-medium-1787813225372.jpeg",
+        "image_source": "rss_content",
+        "published_at": "2026-08-31T11:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "fweydn",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "Presentation: Running AI at the Edge: Running Real Workloads Directly in the Browser",
+          "url": "https://infoq.com/presentations/local-ai-browser-inference-privacy",
+          "original_url": "https://www.infoq.com/presentations/local-ai-browser-inference-privacy/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "James Hall discusses the strategic and technical imperative of moving AI workloads from cloud providers to local edge devices. He shares practical approaches using WebGPU, Transformers.js, and DuckDB to achieve near-native performance in JavaScript. Through real-world case studies, he explains how to minimize data privacy risks, optimize browser inference, and build rigorous evaluation suites. By James Hall",
+          "image_url": "https://res.infoq.com/presentations/local-ai-browser-inference-privacy/en/mediumimage/james-hall-medium-1787813225372.jpeg",
+          "image_source": "rss_content",
+          "published_at": "2026-08-31T11:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "Presentation: Running AI at the Edge: Running Real Workloads Directly in the Browser",
+          "url": "https://infoq.com/presentations/local-ai-browser-inference-privacy",
+          "published_at": "2026-08-31T11:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "signal",
+      "one_liner": "Practical guide to running AI workloads in the browser using WebGPU and Transformers.js.",
+      "novelty": 0.805,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.782,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "89df14",
+      "primary": {
+        "id": "89df14",
         "source_id": "hn_ai",
         "source_name": "Hacker News (AI-filtered)",
         "source_role": "main",
         "trust": 0.65,
-        "title": "Continuous Diffusion Language Models (CDLM's)",
-        "url": "https://sander.ai/2026/08/24/continuous-dlms.html",
-        "original_url": "https://sander.ai/2026/08/24/continuous-dlms.html",
-        "discussion_url": "https://news.ycombinator.com/item?id=49502611",
+        "title": "How to build a diffusion language model",
+        "url": "https://kuleshov-group.github.io/blog/blog/2026/how-to-build-a-diffusion-language-model",
+        "original_url": "https://kuleshov-group.github.io/blog/blog/2026/how-to-build-a-diffusion-language-model/",
+        "discussion_url": "https://news.ycombinator.com/item?id=49503956",
         "discussion_source": "Hacker News",
-        "published_at": "2026-08-30T20:46:53Z",
+        "published_at": "2026-08-30T23:41:32Z",
         "published_at_source": "api",
         "date_confidence": "high",
         "engagement": {
-          "score": 73,
-          "comments": 29
+          "score": 122,
+          "comments": 14
         }
       },
       "members": [
         {
-          "id": "v0anuk",
+          "id": "89df14",
           "source_id": "hn_ai",
           "source_name": "Hacker News (AI-filtered)",
           "source_role": "main",
           "trust": 0.65,
-          "title": "Continuous Diffusion Language Models (CDLM's)",
-          "url": "https://sander.ai/2026/08/24/continuous-dlms.html",
-          "original_url": "https://sander.ai/2026/08/24/continuous-dlms.html",
-          "discussion_url": "https://news.ycombinator.com/item?id=49502611",
+          "title": "How to build a diffusion language model",
+          "url": "https://kuleshov-group.github.io/blog/blog/2026/how-to-build-a-diffusion-language-model",
+          "original_url": "https://kuleshov-group.github.io/blog/blog/2026/how-to-build-a-diffusion-language-model/",
+          "discussion_url": "https://news.ycombinator.com/item?id=49503956",
           "discussion_source": "Hacker News",
-          "published_at": "2026-08-30T20:46:53Z",
+          "published_at": "2026-08-30T23:41:32Z",
           "published_at_source": "api",
           "date_confidence": "high",
           "engagement": {
-            "score": 73,
-            "comments": 29
+            "score": 122,
+            "comments": 14
           }
         }
       ],
@@ -781,29 +977,262 @@
         {
           "source_id": "hn_ai",
           "source_name": "Hacker News (AI-filtered)",
-          "title": "Continuous Diffusion Language Models (CDLM's)",
-          "url": "https://sander.ai/2026/08/24/continuous-dlms.html",
-          "published_at": "2026-08-30T20:46:53Z",
+          "title": "How to build a diffusion language model",
+          "url": "https://kuleshov-group.github.io/blog/blog/2026/how-to-build-a-diffusion-language-model",
+          "published_at": "2026-08-30T23:41:32Z",
           "published_at_source": "api",
           "date_confidence": "high",
-          "discussion_url": "https://news.ycombinator.com/item?id=49502611",
+          "discussion_url": "https://news.ycombinator.com/item?id=49503956",
           "discussion_source": "Hacker News"
         }
       ],
       "also_seen_on": [],
       "kind": "tutorial",
       "quality": "signal",
-      "one_liner": "Technical deep dive into continuous diffusion language models and their architectural implications.",
-      "novelty": 0.784,
+      "one_liner": "Technical walkthrough on implementing diffusion-based language models.",
+      "novelty": 0.764,
       "novelty_label": "high",
       "trust": 0.65,
-      "score": 0.758,
+      "score": 0.748,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal",
         "source-native discussion or engagement is unusually high"
       ],
       "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "660ptn",
+      "primary": {
+        "id": "660ptn",
+        "source_id": "r_ml",
+        "source_name": "r/MachineLearning",
+        "source_role": "main",
+        "trust": 0.55,
+        "kind_hint": "discussion",
+        "title": "How to assess if there is a strong signal in your dirty data [Project]",
+        "url": "https://old.reddit.com/r/MachineLearning/comments/1w3br9c/how_to_assess_if_there_is_a_strong_signal_in_your",
+        "original_url": "https://old.reddit.com/r/MachineLearning/comments/1w3br9c/how_to_assess_if_there_is_a_strong_signal_in_your/",
+        "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1w3br9c/how_to_assess_if_there_is_a_strong_signal_in_your",
+        "discussion_source": "r/MachineLearning",
+        "summary": "I'm sharing this new tabular data diagnostic tool (Entropic Scree). It can be used to estimate these properties of your high-d, real-world, dirty dataset: The informational volume of the signal (i.e., helps you assess whether the signal is strong enough to survive the dataset's idiosyncratic volume). The overall signal-to-idiosyncratic volume ratio (SNR). The intrinsic rank. Provides an exploratory map that allows for the identification of decoupled sub-networks of variables. The linear sufficiency (i.e., does the dataset align with the linear assumptions of standard PCA?). Instead of evaluati",
+        "published_at": "2026-08-31T12:02:54.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "660ptn",
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "source_role": "main",
+          "trust": 0.55,
+          "kind_hint": "discussion",
+          "title": "How to assess if there is a strong signal in your dirty data [Project]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1w3br9c/how_to_assess_if_there_is_a_strong_signal_in_your",
+          "original_url": "https://old.reddit.com/r/MachineLearning/comments/1w3br9c/how_to_assess_if_there_is_a_strong_signal_in_your/",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1w3br9c/how_to_assess_if_there_is_a_strong_signal_in_your",
+          "discussion_source": "r/MachineLearning",
+          "summary": "I'm sharing this new tabular data diagnostic tool (Entropic Scree). It can be used to estimate these properties of your high-d, real-world, dirty dataset: The informational volume of the signal (i.e., helps you assess whether the signal is strong enough to survive the dataset's idiosyncratic volume). The overall signal-to-idiosyncratic volume ratio (SNR). The intrinsic rank. Provides an exploratory map that allows for the identification of decoupled sub-networks of variables. The linear sufficiency (i.e., does the dataset align with the linear assumptions of standard PCA?). Instead of evaluati",
+          "published_at": "2026-08-31T12:02:54.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "title": "How to assess if there is a strong signal in your dirty data [Project]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1w3br9c/how_to_assess_if_there_is_a_strong_signal_in_your",
+          "published_at": "2026-08-31T12:02:54.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1w3br9c/how_to_assess_if_there_is_a_strong_signal_in_your",
+          "discussion_source": "r/MachineLearning"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Entropic Scree tool for diagnosing signal strength in high-dimensional, noisy tabular datasets.",
+      "novelty": 0.843,
+      "novelty_label": "high",
+      "trust": 0.55,
+      "score": 0.742,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "1qx9k6a",
+      "primary": {
+        "id": "1qx9k6a",
+        "source_id": "simonw",
+        "source_name": "Simon Willison",
+        "source_role": "main",
+        "trust": 0.9,
+        "title": "Understanding ChatGPT Work",
+        "url": "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work",
+        "original_url": "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work/",
+        "published_at": "2026-08-30T23:59:47.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1qx9k6a",
+          "source_id": "simonw",
+          "source_name": "Simon Willison",
+          "source_role": "main",
+          "trust": 0.9,
+          "title": "Understanding ChatGPT Work",
+          "url": "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work",
+          "original_url": "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work/",
+          "published_at": "2026-08-30T23:59:47.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        },
+        {
+          "id": "1qx9k6a",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "Understanding ChatGPT Work",
+          "url": "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work",
+          "original_url": "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work/",
+          "discussion_url": "https://news.ycombinator.com/item?id=49504625",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-08-31T01:28:22Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 228,
+            "comments": 114
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "simonw",
+          "source_name": "Simon Willison",
+          "title": "Understanding ChatGPT Work",
+          "url": "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work",
+          "published_at": "2026-08-30T23:59:47.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        },
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "Understanding ChatGPT Work",
+          "url": "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work",
+          "published_at": "2026-08-31T01:28:22Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=49504625",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [
+        {
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "Understanding ChatGPT Work",
+          "url": "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work",
+          "published_at": "2026-08-31T01:28:22Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=49504625",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "Analysis of how ChatGPT functions and its operational mechanics.",
+      "novelty": 0.719,
+      "novelty_label": "medium",
+      "trust": 0.9,
+      "score": 0.699,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as useful but lower-confidence signal",
+        "corroborated by 2 sources",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "ppg11b",
+      "primary": {
+        "id": "ppg11b",
+        "source_id": "r_ml",
+        "source_name": "r/MachineLearning",
+        "source_role": "main",
+        "trust": 0.55,
+        "kind_hint": "discussion",
+        "title": "Reconstructing 3D bone geometry from 2 X-ray silhouettes using a statistical shape model + differentiable rendering [P]",
+        "url": "https://old.reddit.com/r/MachineLearning/comments/1w2go6l/reconstructing_3d_bone_geometry_from_2_xray",
+        "original_url": "https://old.reddit.com/r/MachineLearning/comments/1w2go6l/reconstructing_3d_bone_geometry_from_2_xray/",
+        "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1w2go6l/reconstructing_3d_bone_geometry_from_2_xray",
+        "discussion_source": "r/MachineLearning",
+        "summary": "Working on a pipeline that recovers a patient specific 3D distal femur from two orthogonal X-ray views (PA + lateral). No CT, no neural network, no massive training set. approach: build a PCA shape model from 50 CT-derived femur meshes (MedShapeNet), then fit it to two silhouettes using PyTorch3D's soft rasterizer with sigma annealing. 10 shape coefficients, Mahalanobis prior to keep things plausible, Adam optimizer, ~1000 iterations. The part that took the longest (and made me suffer the most too) : correspondence. Tried KD-tree nearest neighbor (50.7x roughness vs CT surface), CPD (28.2x), B",
+        "image_url": "https://external-preview.redd.it/1Y6QxNttIYxR_OJkMng_9RVeO12IPmXsjQ_zKbJpirM.jpeg?width=320&crop=smart&auto=webp&s=14ea44f6d3bd6f70fdda485355d9cc45a6e1db60",
+        "image_source": "rss_media",
+        "published_at": "2026-08-30T12:47:10.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "ppg11b",
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "source_role": "main",
+          "trust": 0.55,
+          "kind_hint": "discussion",
+          "title": "Reconstructing 3D bone geometry from 2 X-ray silhouettes using a statistical shape model + differentiable rendering [P]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1w2go6l/reconstructing_3d_bone_geometry_from_2_xray",
+          "original_url": "https://old.reddit.com/r/MachineLearning/comments/1w2go6l/reconstructing_3d_bone_geometry_from_2_xray/",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1w2go6l/reconstructing_3d_bone_geometry_from_2_xray",
+          "discussion_source": "r/MachineLearning",
+          "summary": "Working on a pipeline that recovers a patient specific 3D distal femur from two orthogonal X-ray views (PA + lateral). No CT, no neural network, no massive training set. approach: build a PCA shape model from 50 CT-derived femur meshes (MedShapeNet), then fit it to two silhouettes using PyTorch3D's soft rasterizer with sigma annealing. 10 shape coefficients, Mahalanobis prior to keep things plausible, Adam optimizer, ~1000 iterations. The part that took the longest (and made me suffer the most too) : correspondence. Tried KD-tree nearest neighbor (50.7x roughness vs CT surface), CPD (28.2x), B",
+          "image_url": "https://external-preview.redd.it/1Y6QxNttIYxR_OJkMng_9RVeO12IPmXsjQ_zKbJpirM.jpeg?width=320&crop=smart&auto=webp&s=14ea44f6d3bd6f70fdda485355d9cc45a6e1db60",
+          "image_source": "rss_media",
+          "published_at": "2026-08-30T12:47:10.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "title": "Reconstructing 3D bone geometry from 2 X-ray silhouettes using a statistical shape model + differentiable rendering [P]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1w2go6l/reconstructing_3d_bone_geometry_from_2_xray",
+          "published_at": "2026-08-30T12:47:10.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1w2go6l/reconstructing_3d_bone_geometry_from_2_xray",
+          "discussion_source": "r/MachineLearning"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "Method for 3D bone reconstruction from two X-ray views using PCA shape models and differentiable rendering.",
+      "novelty": 0.857,
+      "novelty_label": "high",
+      "trust": 0.55,
+      "score": 0.707,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
     },
     {
       "id": "3ivcne",
@@ -857,11 +1286,11 @@
       "also_seen_on": [],
       "kind": "company_announcement",
       "quality": "signal",
-      "one_liner": "Cloudflare launches AI Search, a managed retrieval service for agents and applications.",
+      "one_liner": "Cloudflare launches AI Search, a retrieval service for custom data integration in AI agents.",
       "novelty": 0.735,
       "novelty_label": "medium",
       "trust": 0.78,
-      "score": 0.746,
+      "score": 0.734,
       "why_this_surfaced": [
         "meaningfully different from recent coverage",
         "classified as concrete builder or research signal"
@@ -869,102 +1298,130 @@
       "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
     },
     {
-      "id": "1qx9k6a",
+      "id": "1jb3sx2",
       "primary": {
-        "id": "1qx9k6a",
-        "source_id": "simonw",
-        "source_name": "Simon Willison",
+        "id": "1jb3sx2",
+        "source_id": "marktechpost",
+        "source_name": "MarkTechPost",
         "source_role": "main",
-        "trust": 0.9,
-        "title": "Understanding ChatGPT Work",
-        "url": "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work",
-        "original_url": "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work/",
-        "published_at": "2026-08-30T23:59:47.000Z",
+        "trust": 0.48,
+        "kind_hint": "news",
+        "title": "Google AI Introduces EnvHarness: A Programmable Layer That Turns Static Agent Environments Into Adaptive Training Worlds",
+        "url": "https://marktechpost.com/2026/08/30/google-ai-introduces-envharness-a-programmable-layer-that-turns-static-agent-environments-into-adaptive-training-worlds",
+        "original_url": "https://www.marktechpost.com/2026/08/30/google-ai-introduces-envharness-a-programmable-layer-that-turns-static-agent-environments-into-adaptive-training-worlds/",
+        "summary": "Google Cloud AI Research, with Washington University in St. Louis and UNC Chapel Hill, has released EnvHarness, an Apache-2.0 layer that turns a static agent benchmark into one that adapts to the policy training on it. It wraps a frozen environment through the standard reset()/step() interface, so tasks and human-built verifiers stay untouched — and an LLM designer, EnvRigger, writes those wrappers automatically against flaws diagnosed in the agent's own rollouts. Across five benchmarks, mined skills gain up to 9.0 points on held-out tasks with 9.8% fewer execution steps. The post Google AI In",
+        "published_at": "2026-08-30T20:23:46.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "1qx9k6a",
-          "source_id": "simonw",
-          "source_name": "Simon Willison",
+          "id": "1jb3sx2",
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
           "source_role": "main",
-          "trust": 0.9,
-          "title": "Understanding ChatGPT Work",
-          "url": "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work",
-          "original_url": "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work/",
-          "published_at": "2026-08-30T23:59:47.000Z",
+          "trust": 0.48,
+          "kind_hint": "news",
+          "title": "Google AI Introduces EnvHarness: A Programmable Layer That Turns Static Agent Environments Into Adaptive Training Worlds",
+          "url": "https://marktechpost.com/2026/08/30/google-ai-introduces-envharness-a-programmable-layer-that-turns-static-agent-environments-into-adaptive-training-worlds",
+          "original_url": "https://www.marktechpost.com/2026/08/30/google-ai-introduces-envharness-a-programmable-layer-that-turns-static-agent-environments-into-adaptive-training-worlds/",
+          "summary": "Google Cloud AI Research, with Washington University in St. Louis and UNC Chapel Hill, has released EnvHarness, an Apache-2.0 layer that turns a static agent benchmark into one that adapts to the policy training on it. It wraps a frozen environment through the standard reset()/step() interface, so tasks and human-built verifiers stay untouched — and an LLM designer, EnvRigger, writes those wrappers automatically against flaws diagnosed in the agent's own rollouts. Across five benchmarks, mined skills gain up to 9.0 points on held-out tasks with 9.8% fewer execution steps. The post Google AI In",
+          "published_at": "2026-08-30T20:23:46.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
-        },
+        }
+      ],
+      "source_trail": [
         {
-          "id": "1qx9k6a",
-          "source_id": "hn_ai",
-          "source_name": "Hacker News (AI-filtered)",
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "title": "Google AI Introduces EnvHarness: A Programmable Layer That Turns Static Agent Environments Into Adaptive Training Worlds",
+          "url": "https://marktechpost.com/2026/08/30/google-ai-introduces-envharness-a-programmable-layer-that-turns-static-agent-environments-into-adaptive-training-worlds",
+          "published_at": "2026-08-30T20:23:46.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "EnvHarness provides an adaptive wrapper for static agent training environments.",
+      "novelty": 0.77,
+      "novelty_label": "high",
+      "trust": 0.48,
+      "score": 0.678,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "11th3e4",
+      "primary": {
+        "id": "11th3e4",
+        "source_id": "hf_trending_models",
+        "source_name": "Hugging Face trending models",
+        "source_role": "main",
+        "trust": 0.58,
+        "kind_hint": "model_release",
+        "title": "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp (0 downloads, 169 likes)",
+        "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+        "original_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+        "summary": "transformers, safetensors, deepseek_v4, text-generation, image-text-to-text, license:mit",
+        "published_at": "2026-08-31T06:16:18.000Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 169
+        }
+      },
+      "members": [
+        {
+          "id": "11th3e4",
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
           "source_role": "main",
-          "trust": 0.65,
-          "title": "Understanding ChatGPT Work",
-          "url": "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work",
-          "original_url": "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work/",
-          "discussion_url": "https://news.ycombinator.com/item?id=49504625",
-          "discussion_source": "Hacker News",
-          "published_at": "2026-08-31T01:28:22Z",
+          "trust": 0.58,
+          "kind_hint": "model_release",
+          "title": "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp (0 downloads, 169 likes)",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+          "original_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+          "summary": "transformers, safetensors, deepseek_v4, text-generation, image-text-to-text, license:mit",
+          "published_at": "2026-08-31T06:16:18.000Z",
           "published_at_source": "api",
           "date_confidence": "high",
           "engagement": {
-            "score": 104,
-            "comments": 38
+            "score": 169
           }
         }
       ],
       "source_trail": [
         {
-          "source_id": "simonw",
-          "source_name": "Simon Willison",
-          "title": "Understanding ChatGPT Work",
-          "url": "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work",
-          "published_at": "2026-08-30T23:59:47.000Z",
-          "published_at_source": "feed",
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "title": "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp (0 downloads, 169 likes)",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+          "published_at": "2026-08-31T06:16:18.000Z",
+          "published_at_source": "api",
           "date_confidence": "high"
-        },
-        {
-          "source_id": "hn_ai",
-          "source_name": "Hacker News (AI-filtered)",
-          "title": "Understanding ChatGPT Work",
-          "url": "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work",
-          "published_at": "2026-08-31T01:28:22Z",
-          "published_at_source": "api",
-          "date_confidence": "high",
-          "discussion_url": "https://news.ycombinator.com/item?id=49504625",
-          "discussion_source": "Hacker News"
         }
       ],
-      "also_seen_on": [
-        {
-          "source_name": "Hacker News (AI-filtered)",
-          "title": "Understanding ChatGPT Work",
-          "url": "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work",
-          "published_at": "2026-08-31T01:28:22Z",
-          "published_at_source": "api",
-          "date_confidence": "high",
-          "discussion_url": "https://news.ycombinator.com/item?id=49504625",
-          "discussion_source": "Hacker News"
-        }
-      ],
-      "kind": "opinion",
-      "quality": "mixed",
-      "one_liner": "A high-level overview of how ChatGPT functions, aimed at a general technical audience.",
-      "novelty": 0.719,
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "DeepSeek-V4-Flash-Vision-Exp model released on Hugging Face.",
+      "novelty": 0.491,
       "novelty_label": "medium",
-      "trust": 0.9,
-      "score": 0.705,
+      "trust": 0.58,
+      "score": 0.663,
       "why_this_surfaced": [
         "meaningfully different from recent coverage",
-        "classified as useful but lower-confidence signal",
-        "corroborated by 2 sources",
-        "primary source has high trust weight"
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window",
+        "source-native discussion or engagement is unusually high"
       ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
+      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
     },
     {
       "id": "lkut47",
@@ -1014,60 +1471,201 @@
       "also_seen_on": [],
       "kind": "paper",
       "quality": "mixed",
-      "one_liner": "Explores detection of implicit hate speech using fine-grained adaptive methods; contribution is incremental.",
+      "one_liner": "Presents an adaptive framework for detecting implicit hate speech, focusing on contextual nuances.",
       "novelty": 0.833,
       "novelty_label": "high",
       "trust": 0.9,
-      "score": 0.705,
+      "score": 0.693,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal",
-        "primary source has high trust weight",
-        "fresh within the current refresh window"
+        "primary source has high trust weight"
       ],
       "builder_action": "Save this for technical review if the method maps to your roadmap."
     },
     {
-      "id": "9wwedc",
+      "id": "1vhpqmi",
       "primary": {
-        "id": "9wwedc",
-        "source_id": "techcrunch_ai",
-        "source_name": "TechCrunch AI",
+        "id": "1vhpqmi",
+        "source_id": "r_ml",
+        "source_name": "r/MachineLearning",
         "source_role": "main",
-        "trust": 0.72,
-        "kind_hint": "news",
-        "title": "The U.S. is building barriers around drones and robots, but China has scale to get around them",
-        "url": "https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale",
-        "original_url": "https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/",
-        "summary": "The U.S. is shutting out more foreign-made drones and robots. China’s scale means the global competition may simply move elsewhere.",
-        "published_at": "2026-08-31T02:34:00.000Z",
+        "trust": 0.55,
+        "kind_hint": "discussion",
+        "title": "Cold emailing profs about PhD positions? Read this [D]",
+        "url": "https://old.reddit.com/r/MachineLearning/comments/1w3bwci/cold_emailing_profs_about_phd_positions_read_this",
+        "original_url": "https://old.reddit.com/r/MachineLearning/comments/1w3bwci/cold_emailing_profs_about_phd_positions_read_this/",
+        "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1w3bwci/cold_emailing_profs_about_phd_positions_read_this",
+        "discussion_source": "r/MachineLearning",
+        "summary": "This is the time of year where the cold emails I receive about PhD positions tends to ramp up quite a bit. In many countries, this cold emailing is essentially part of the normal recruitment process, so there is nothing inherently wrong with doing this. However, there are a few things you definitely shouldn't be doing: Massive emails. The probability of me reading your email is inversely proportional to its length. Emailing everyone. Find supervisors that work in areas you are actually interested in. I do relatively foundational ML research (i.e., not associated with a specific application dom",
+        "published_at": "2026-08-31T12:09:24.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "9wwedc",
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
+          "id": "1vhpqmi",
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
           "source_role": "main",
-          "trust": 0.72,
-          "kind_hint": "news",
-          "title": "The U.S. is building barriers around drones and robots, but China has scale to get around them",
-          "url": "https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale",
-          "original_url": "https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/",
-          "summary": "The U.S. is shutting out more foreign-made drones and robots. China’s scale means the global competition may simply move elsewhere.",
-          "published_at": "2026-08-31T02:34:00.000Z",
+          "trust": 0.55,
+          "kind_hint": "discussion",
+          "title": "Cold emailing profs about PhD positions? Read this [D]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1w3bwci/cold_emailing_profs_about_phd_positions_read_this",
+          "original_url": "https://old.reddit.com/r/MachineLearning/comments/1w3bwci/cold_emailing_profs_about_phd_positions_read_this/",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1w3bwci/cold_emailing_profs_about_phd_positions_read_this",
+          "discussion_source": "r/MachineLearning",
+          "summary": "This is the time of year where the cold emails I receive about PhD positions tends to ramp up quite a bit. In many countries, this cold emailing is essentially part of the normal recruitment process, so there is nothing inherently wrong with doing this. However, there are a few things you definitely shouldn't be doing: Massive emails. The probability of me reading your email is inversely proportional to its length. Emailing everyone. Find supervisors that work in areas you are actually interested in. I do relatively foundational ML research (i.e., not associated with a specific application dom",
+          "published_at": "2026-08-31T12:09:24.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "title": "The U.S. is building barriers around drones and robots, but China has scale to get around them",
-          "url": "https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale",
-          "published_at": "2026-08-31T02:34:00.000Z",
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "title": "Cold emailing profs about PhD positions? Read this [D]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1w3bwci/cold_emailing_profs_about_phd_positions_read_this",
+          "published_at": "2026-08-31T12:09:24.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1w3bwci/cold_emailing_profs_about_phd_positions_read_this",
+          "discussion_source": "r/MachineLearning"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "signal",
+      "one_liner": "Practical advice for students on cold-emailing professors for PhD positions.",
+      "novelty": 0.86,
+      "novelty_label": "high",
+      "trust": 0.55,
+      "score": 0.667,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "q8eb2r",
+      "primary": {
+        "id": "q8eb2r",
+        "source_id": "fahd_mirza",
+        "source_name": "Fahd Mirza YouTube",
+        "source_role": "main",
+        "trust": 0.66,
+        "kind_hint": "video",
+        "title": "Thomson Reuters Built Their Own AI Lawyer: Run Thomson-1 Locally",
+        "url": "https://youtube.com/watch?v=KNDwGgoeAyU",
+        "original_url": "https://www.youtube.com/watch?v=KNDwGgoeAyU",
+        "image_url": "https://i.ytimg.com/vi/KNDwGgoeAyU/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-08-31T07:00:19.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+          "video_id": "KNDwGgoeAyU"
+        }
+      },
+      "members": [
+        {
+          "id": "q8eb2r",
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "source_role": "main",
+          "trust": 0.66,
+          "kind_hint": "video",
+          "title": "Thomson Reuters Built Their Own AI Lawyer: Run Thomson-1 Locally",
+          "url": "https://youtube.com/watch?v=KNDwGgoeAyU",
+          "original_url": "https://www.youtube.com/watch?v=KNDwGgoeAyU",
+          "image_url": "https://i.ytimg.com/vi/KNDwGgoeAyU/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-08-31T07:00:19.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+            "video_id": "KNDwGgoeAyU"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "title": "Thomson Reuters Built Their Own AI Lawyer: Run Thomson-1 Locally",
+          "url": "https://youtube.com/watch?v=KNDwGgoeAyU",
+          "published_at": "2026-08-31T07:00:19.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.814,
+      "novelty_label": "high",
+      "trust": 0.66,
+      "score": 0.638,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1p1rm1u",
+      "primary": {
+        "id": "1p1rm1u",
+        "source_id": "ars_ai",
+        "source_name": "Ars Technica AI",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "news",
+        "title": "Pocket's AI made my game ideas real. Now Meta controls the results.",
+        "url": "https://arstechnica.com/gaming/2026/08/pockets-ai-made-my-game-ideas-real-now-meta-controls-the-results",
+        "original_url": "https://arstechnica.com/gaming/2026/08/pockets-ai-made-my-game-ideas-real-now-meta-controls-the-results/",
+        "summary": "Interactive mobile \"gizmos\" are easy to make, hard to share outside Meta's platform.",
+        "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/08/pocketsling-1152x648-1787932298.png",
+        "image_source": "rss_media",
+        "published_at": "2026-08-31T10:00:34.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1p1rm1u",
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "news",
+          "title": "Pocket's AI made my game ideas real. Now Meta controls the results.",
+          "url": "https://arstechnica.com/gaming/2026/08/pockets-ai-made-my-game-ideas-real-now-meta-controls-the-results",
+          "original_url": "https://arstechnica.com/gaming/2026/08/pockets-ai-made-my-game-ideas-real-now-meta-controls-the-results/",
+          "summary": "Interactive mobile \"gizmos\" are easy to make, hard to share outside Meta's platform.",
+          "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/08/pocketsling-1152x648-1787932298.png",
+          "image_source": "rss_media",
+          "published_at": "2026-08-31T10:00:34.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "title": "Pocket's AI made my game ideas real. Now Meta controls the results.",
+          "url": "https://arstechnica.com/gaming/2026/08/pockets-ai-made-my-game-ideas-real-now-meta-controls-the-results",
+          "published_at": "2026-08-31T10:00:34.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -1075,17 +1673,82 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Analysis of geopolitical impacts on the global drone and robotics supply chain.",
-      "novelty": 0.828,
+      "one_liner": "Discussion on platform lock-in for AI-generated game content within Meta's ecosystem.",
+      "novelty": 0.836,
       "novelty_label": "high",
-      "trust": 0.72,
-      "score": 0.66,
+      "trust": 0.78,
+      "score": 0.677,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal",
         "fresh within the current refresh window"
       ],
       "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1dyq0nw",
+      "primary": {
+        "id": "1dyq0nw",
+        "source_id": "yt_nate_b_jones",
+        "source_name": "AI News & Strategy Daily",
+        "source_role": "main",
+        "trust": 0.62,
+        "kind_hint": "video",
+        "title": "How to use AI to become smarter #AI #productivity #AItools #futureofwork #criticalthinking",
+        "url": "https://youtube.com/shorts/L4vlYjFDVSk",
+        "original_url": "https://www.youtube.com/shorts/L4vlYjFDVSk",
+        "published_at": "2026-08-31T03:00:16.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UC0C-17n9iuUQPylguM1d-lQ"
+        }
+      },
+      "members": [
+        {
+          "id": "1dyq0nw",
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "source_role": "main",
+          "trust": 0.62,
+          "kind_hint": "video",
+          "title": "How to use AI to become smarter #AI #productivity #AItools #futureofwork #criticalthinking",
+          "url": "https://youtube.com/shorts/L4vlYjFDVSk",
+          "original_url": "https://www.youtube.com/shorts/L4vlYjFDVSk",
+          "published_at": "2026-08-31T03:00:16.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UC0C-17n9iuUQPylguM1d-lQ"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "title": "How to use AI to become smarter #AI #productivity #AItools #futureofwork #criticalthinking",
+          "url": "https://youtube.com/shorts/L4vlYjFDVSk",
+          "published_at": "2026-08-31T03:00:16.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.727,
+      "novelty_label": "medium",
+      "trust": 0.62,
+      "score": 0.595,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
     },
     {
       "id": "110rvew",
@@ -1151,7 +1814,7 @@
       "novelty": 0.796,
       "novelty_label": "high",
       "trust": 0.66,
-      "score": 0.624,
+      "score": 0.612,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal"
@@ -1159,70 +1822,63 @@
       "builder_action": "Queue it for focused learning if the topic matches your current work."
     },
     {
-      "id": "1dyq0nw",
+      "id": "9wwedc",
       "primary": {
-        "id": "1dyq0nw",
-        "source_id": "yt_nate_b_jones",
-        "source_name": "AI News & Strategy Daily",
+        "id": "9wwedc",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
         "source_role": "main",
-        "trust": 0.62,
-        "kind_hint": "video",
-        "title": "How to use AI to become smarter #AI #productivity #AItools #futureofwork #criticalthinking",
-        "url": "https://youtube.com/shorts/L4vlYjFDVSk",
-        "original_url": "https://www.youtube.com/shorts/L4vlYjFDVSk",
-        "published_at": "2026-08-31T03:00:16.000Z",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "The U.S. is building barriers around drones and robots, but China has scale to get around them",
+        "url": "https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale",
+        "original_url": "https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/",
+        "summary": "The U.S. is shutting out more foreign-made drones and robots. China’s scale means the global competition may simply move elsewhere.",
+        "published_at": "2026-08-31T02:34:00.000Z",
         "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UC0C-17n9iuUQPylguM1d-lQ"
-        }
+        "date_confidence": "high"
       },
       "members": [
         {
-          "id": "1dyq0nw",
-          "source_id": "yt_nate_b_jones",
-          "source_name": "AI News & Strategy Daily",
+          "id": "9wwedc",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
           "source_role": "main",
-          "trust": 0.62,
-          "kind_hint": "video",
-          "title": "How to use AI to become smarter #AI #productivity #AItools #futureofwork #criticalthinking",
-          "url": "https://youtube.com/shorts/L4vlYjFDVSk",
-          "original_url": "https://www.youtube.com/shorts/L4vlYjFDVSk",
-          "published_at": "2026-08-31T03:00:16.000Z",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "The U.S. is building barriers around drones and robots, but China has scale to get around them",
+          "url": "https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale",
+          "original_url": "https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/",
+          "summary": "The U.S. is shutting out more foreign-made drones and robots. China’s scale means the global competition may simply move elsewhere.",
+          "published_at": "2026-08-31T02:34:00.000Z",
           "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UC0C-17n9iuUQPylguM1d-lQ"
-          }
+          "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "yt_nate_b_jones",
-          "source_name": "AI News & Strategy Daily",
-          "title": "How to use AI to become smarter #AI #productivity #AItools #futureofwork #criticalthinking",
-          "url": "https://youtube.com/shorts/L4vlYjFDVSk",
-          "published_at": "2026-08-31T03:00:16.000Z",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "The U.S. is building barriers around drones and robots, but China has scale to get around them",
+          "url": "https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale",
+          "published_at": "2026-08-31T02:34:00.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "also_seen_on": [],
-      "kind": "video",
+      "kind": "news",
       "quality": "mixed",
-      "one_liner": "",
-      "novelty": 0.727,
-      "novelty_label": "medium",
-      "trust": 0.62,
-      "score": 0.607,
+      "one_liner": "Analysis of geopolitical trade barriers affecting the global robotics and drone market.",
+      "novelty": 0.828,
+      "novelty_label": "high",
+      "trust": 0.72,
+      "score": 0.648,
       "why_this_surfaced": [
-        "meaningfully different from recent coverage",
-        "classified as useful but lower-confidence signal",
-        "fresh within the current refresh window"
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
       ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
+      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "1n3reqx",
@@ -1288,7 +1944,7 @@
       "novelty": 0.741,
       "novelty_label": "medium",
       "trust": 0.62,
-      "score": 0.595,
+      "score": 0.583,
       "why_this_surfaced": [
         "meaningfully different from recent coverage",
         "classified as useful but lower-confidence signal"
@@ -1296,46 +1952,435 @@
       "builder_action": "Queue it for focused learning if the topic matches your current work."
     },
     {
-      "id": "zaqhuy",
+      "id": "191c6a5",
       "primary": {
-        "id": "zaqhuy",
-        "source_id": "cloudflare_ai_changelog",
-        "source_name": "Cloudflare AI Changelog",
+        "id": "191c6a5",
+        "source_id": "marktechpost",
+        "source_name": "MarkTechPost",
         "source_role": "main",
-        "trust": 0.78,
-        "kind_hint": "tool",
-        "title": "AI Search - AI Search now supports GLM-5.3 Flash",
-        "url": "https://developers.cloudflare.com/changelog/post/2026-08-30-glm-5.3-flash",
-        "original_url": "https://developers.cloudflare.com/changelog/post/2026-08-30-glm-5.3-flash/",
-        "summary": "AI Search now supports @cf/zai-org/glm-5.3-flash for text generation. The model has a 1,048,576-token context window and runs on Workers AI. To configure the model for an AI Search instance, refer to Supported models.",
-        "published_at": "2026-08-30T00:00:00.000Z",
+        "trust": 0.48,
+        "kind_hint": "news",
+        "title": "Lowest-Latency Inference APIs for Voice and Realtime Agents: A Time to First Token TTFT-First Benchmark",
+        "url": "https://marktechpost.com/2026/08/30/lowest-latency-inference-apis-for-voice-and-realtime-agents-a-time-to-first-token-ttft-first-benchmark",
+        "original_url": "https://www.marktechpost.com/2026/08/30/lowest-latency-inference-apis-for-voice-and-realtime-agents-a-time-to-first-token-ttft-first-benchmark/",
+        "summary": "Voice agents fail on latency long before they fail on intelligence. Time to first token is the metric most teams use to choose an inference API, and it is the right starting point and the wrong stopping point. This benchmark works through every layer of the voice stack — LLM, speech-to-text, text-to-speech, and speech-to-speech — using figures verified against primary sources on August 30, 2026, with each number labeled as independently measured, vendor-published, or vendor-measured on its own product. The post Lowest-Latency Inference APIs for Voice and Realtime Agents: A Time to First Token",
+        "published_at": "2026-08-30T21:24:38.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "zaqhuy",
-          "source_id": "cloudflare_ai_changelog",
-          "source_name": "Cloudflare AI Changelog",
+          "id": "191c6a5",
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
           "source_role": "main",
-          "trust": 0.78,
-          "kind_hint": "tool",
-          "title": "AI Search - AI Search now supports GLM-5.3 Flash",
-          "url": "https://developers.cloudflare.com/changelog/post/2026-08-30-glm-5.3-flash",
-          "original_url": "https://developers.cloudflare.com/changelog/post/2026-08-30-glm-5.3-flash/",
-          "summary": "AI Search now supports @cf/zai-org/glm-5.3-flash for text generation. The model has a 1,048,576-token context window and runs on Workers AI. To configure the model for an AI Search instance, refer to Supported models.",
-          "published_at": "2026-08-30T00:00:00.000Z",
+          "trust": 0.48,
+          "kind_hint": "news",
+          "title": "Lowest-Latency Inference APIs for Voice and Realtime Agents: A Time to First Token TTFT-First Benchmark",
+          "url": "https://marktechpost.com/2026/08/30/lowest-latency-inference-apis-for-voice-and-realtime-agents-a-time-to-first-token-ttft-first-benchmark",
+          "original_url": "https://www.marktechpost.com/2026/08/30/lowest-latency-inference-apis-for-voice-and-realtime-agents-a-time-to-first-token-ttft-first-benchmark/",
+          "summary": "Voice agents fail on latency long before they fail on intelligence. Time to first token is the metric most teams use to choose an inference API, and it is the right starting point and the wrong stopping point. This benchmark works through every layer of the voice stack — LLM, speech-to-text, text-to-speech, and speech-to-speech — using figures verified against primary sources on August 30, 2026, with each number labeled as independently measured, vendor-published, or vendor-measured on its own product. The post Lowest-Latency Inference APIs for Voice and Realtime Agents: A Time to First Token",
+          "published_at": "2026-08-30T21:24:38.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "cloudflare_ai_changelog",
-          "source_name": "Cloudflare AI Changelog",
-          "title": "AI Search - AI Search now supports GLM-5.3 Flash",
-          "url": "https://developers.cloudflare.com/changelog/post/2026-08-30-glm-5.3-flash",
-          "published_at": "2026-08-30T00:00:00.000Z",
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "title": "Lowest-Latency Inference APIs for Voice and Realtime Agents: A Time to First Token TTFT-First Benchmark",
+          "url": "https://marktechpost.com/2026/08/30/lowest-latency-inference-apis-for-voice-and-realtime-agents-a-time-to-first-token-ttft-first-benchmark",
+          "published_at": "2026-08-30T21:24:38.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Overview of latency metrics for voice agent inference APIs.",
+      "novelty": 0.794,
+      "novelty_label": "high",
+      "trust": 0.48,
+      "score": 0.574,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "7tgyqt",
+      "primary": {
+        "id": "7tgyqt",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "OpenAI and rival AI labs are buying tens of thousands of Mac minis to train computer-use agents",
+        "url": "https://the-decoder.com/openai-and-rival-ai-labs-are-buying-tens-of-thousands-of-mac-minis-to-train-computer-use-agents",
+        "original_url": "https://the-decoder.com/openai-and-rival-ai-labs-are-buying-tens-of-thousands-of-mac-minis-to-train-computer-use-agents/",
+        "summary": "According to The Information, OpenAI has purchased tens of thousands of Mac minis and Mac Studios to train computer agents. Anthropic also relies on Apple hardware. Demand is so high that the most powerful models have been sold out for months. Apple’s Mac revenue rose by nearly 29 percent to $10.4 billion in the June quarter. The article OpenAI and rival AI labs are buying tens of thousands of Mac minis to train computer-use agents appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2025/06/apple_iphone_illustration-2.png",
+        "image_source": "rss_content",
+        "published_at": "2026-08-31T08:55:12.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "7tgyqt",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "OpenAI and rival AI labs are buying tens of thousands of Mac minis to train computer-use agents",
+          "url": "https://the-decoder.com/openai-and-rival-ai-labs-are-buying-tens-of-thousands-of-mac-minis-to-train-computer-use-agents",
+          "original_url": "https://the-decoder.com/openai-and-rival-ai-labs-are-buying-tens-of-thousands-of-mac-minis-to-train-computer-use-agents/",
+          "summary": "According to The Information, OpenAI has purchased tens of thousands of Mac minis and Mac Studios to train computer agents. Anthropic also relies on Apple hardware. Demand is so high that the most powerful models have been sold out for months. Apple’s Mac revenue rose by nearly 29 percent to $10.4 billion in the June quarter. The article OpenAI and rival AI labs are buying tens of thousands of Mac minis to train computer-use agents appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2025/06/apple_iphone_illustration-2.png",
+          "image_source": "rss_content",
+          "published_at": "2026-08-31T08:55:12.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "OpenAI and rival AI labs are buying tens of thousands of Mac minis to train computer-use agents",
+          "url": "https://the-decoder.com/openai-and-rival-ai-labs-are-buying-tens-of-thousands-of-mac-minis-to-train-computer-use-agents",
+          "published_at": "2026-08-31T08:55:12.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Report on AI labs purchasing Apple hardware for training computer-use agents.",
+      "novelty": 0.752,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.64,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "yt767a",
+      "primary": {
+        "id": "yt767a",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "Breaking Claude Code Opus 5 Auto Mode",
+        "url": "https://embracethered.com/blog/posts/2026/breaking-claude-code-opus-5-and-automode",
+        "original_url": "https://embracethered.com/blog/posts/2026/breaking-claude-code-opus-5-and-automode/",
+        "discussion_url": "https://news.ycombinator.com/item?id=49506819",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-08-31T07:49:18Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 133,
+          "comments": 44
+        }
+      },
+      "members": [
+        {
+          "id": "yt767a",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "Breaking Claude Code Opus 5 Auto Mode",
+          "url": "https://embracethered.com/blog/posts/2026/breaking-claude-code-opus-5-and-automode",
+          "original_url": "https://embracethered.com/blog/posts/2026/breaking-claude-code-opus-5-and-automode/",
+          "discussion_url": "https://news.ycombinator.com/item?id=49506819",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-08-31T07:49:18Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 133,
+            "comments": 44
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "Breaking Claude Code Opus 5 Auto Mode",
+          "url": "https://embracethered.com/blog/posts/2026/breaking-claude-code-opus-5-and-automode",
+          "published_at": "2026-08-31T07:49:18Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=49506819",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Security analysis demonstrating vulnerabilities in Claude Code's autonomous execution mode.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.65,
+      "score": 0.533,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "dgm1p6",
+      "primary": {
+        "id": "dgm1p6",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "Podcast: Scott Jenson on Evolving Desktop OS, Local-First, & Agentic UX",
+        "url": "https://infoq.com/podcasts/evolving-desktop-agentic-ux",
+        "original_url": "https://www.infoq.com/podcasts/evolving-desktop-agentic-ux/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "In this episode, Scott Jenson, a veteran UX designer known for his work on the Macintosh, Google Maps, and Chrome examines the long-term stagnation of desktop operating systems and the limitations of current mobile and cloud-centric models. By Scott Jenson",
+        "image_url": "https://res.infoq.com/podcasts/evolving-desktop-agentic-ux/en/smallimage/infoq-podcast-500-1787734073812.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-08-31T11:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "dgm1p6",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "Podcast: Scott Jenson on Evolving Desktop OS, Local-First, & Agentic UX",
+          "url": "https://infoq.com/podcasts/evolving-desktop-agentic-ux",
+          "original_url": "https://www.infoq.com/podcasts/evolving-desktop-agentic-ux/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "In this episode, Scott Jenson, a veteran UX designer known for his work on the Macintosh, Google Maps, and Chrome examines the long-term stagnation of desktop operating systems and the limitations of current mobile and cloud-centric models. By Scott Jenson",
+          "image_url": "https://res.infoq.com/podcasts/evolving-desktop-agentic-ux/en/smallimage/infoq-podcast-500-1787734073812.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-08-31T11:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "Podcast: Scott Jenson on Evolving Desktop OS, Local-First, & Agentic UX",
+          "url": "https://infoq.com/podcasts/evolving-desktop-agentic-ux",
+          "published_at": "2026-08-31T11:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "Podcast discussing UX design challenges for agentic systems and the limitations of current OS architectures.",
+      "novelty": 0.849,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.602,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "1xye54h",
+      "primary": {
+        "id": "1xye54h",
+        "source_id": "r_ml",
+        "source_name": "r/MachineLearning",
+        "source_role": "main",
+        "trust": 0.55,
+        "kind_hint": "discussion",
+        "title": "Good Machine Learning Posters [D]",
+        "url": "https://old.reddit.com/r/MachineLearning/comments/1w39buv/good_machine_learning_posters_d",
+        "original_url": "https://old.reddit.com/r/MachineLearning/comments/1w39buv/good_machine_learning_posters_d/",
+        "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1w39buv/good_machine_learning_posters_d",
+        "discussion_source": "r/MachineLearning",
+        "summary": "Hi, I'm making posters for ECCV 2026. Does anyone have any ML/CV posters they thought were really well done? Would love to see some cool examples. Thanks submitted by /u/National-Resident244 [link] [comments]",
+        "published_at": "2026-08-31T10:04:08.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1xye54h",
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "source_role": "main",
+          "trust": 0.55,
+          "kind_hint": "discussion",
+          "title": "Good Machine Learning Posters [D]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1w39buv/good_machine_learning_posters_d",
+          "original_url": "https://old.reddit.com/r/MachineLearning/comments/1w39buv/good_machine_learning_posters_d/",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1w39buv/good_machine_learning_posters_d",
+          "discussion_source": "r/MachineLearning",
+          "summary": "Hi, I'm making posters for ECCV 2026. Does anyone have any ML/CV posters they thought were really well done? Would love to see some cool examples. Thanks submitted by /u/National-Resident244 [link] [comments]",
+          "published_at": "2026-08-31T10:04:08.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "title": "Good Machine Learning Posters [D]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1w39buv/good_machine_learning_posters_d",
+          "published_at": "2026-08-31T10:04:08.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1w39buv/good_machine_learning_posters_d",
+          "discussion_source": "r/MachineLearning"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "Reddit thread requesting examples of high-quality machine learning conference posters.",
+      "novelty": 0.787,
+      "novelty_label": "high",
+      "trust": 0.55,
+      "score": 0.529,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "25fpmm",
+      "primary": {
+        "id": "25fpmm",
+        "source_id": "r_ml",
+        "source_name": "r/MachineLearning",
+        "source_role": "main",
+        "trust": 0.55,
+        "kind_hint": "discussion",
+        "title": "Claude Code for Research Papers [R]",
+        "url": "https://old.reddit.com/r/MachineLearning/comments/1w2wqbm/claude_code_for_research_papers_r",
+        "original_url": "https://old.reddit.com/r/MachineLearning/comments/1w2wqbm/claude_code_for_research_papers_r/",
+        "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1w2wqbm/claude_code_for_research_papers_r",
+        "discussion_source": "r/MachineLearning",
+        "summary": "Third-year PhD student, NLP / interpretability. I want a reality check from people doing similar work. I started using Claude Code for the boring parts: argparse boilerplate, plotting, config wrangling. Over the last few months the scope has crept. It now writes most of my experiment scaffolding, refactors my dataloaders, does first-pass debugging on training runs, and drafts the analysis scripts. I mostly read diffs and say yes. The output is fine. My throughput is up. The thing bothering me is that I no longer hold my own codebase in my head. When a result looks off, I used to have an instin",
+        "published_at": "2026-08-30T23:24:07.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "25fpmm",
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "source_role": "main",
+          "trust": 0.55,
+          "kind_hint": "discussion",
+          "title": "Claude Code for Research Papers [R]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1w2wqbm/claude_code_for_research_papers_r",
+          "original_url": "https://old.reddit.com/r/MachineLearning/comments/1w2wqbm/claude_code_for_research_papers_r/",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1w2wqbm/claude_code_for_research_papers_r",
+          "discussion_source": "r/MachineLearning",
+          "summary": "Third-year PhD student, NLP / interpretability. I want a reality check from people doing similar work. I started using Claude Code for the boring parts: argparse boilerplate, plotting, config wrangling. Over the last few months the scope has crept. It now writes most of my experiment scaffolding, refactors my dataloaders, does first-pass debugging on training runs, and drafts the analysis scripts. I mostly read diffs and say yes. The output is fine. My throughput is up. The thing bothering me is that I no longer hold my own codebase in my head. When a result looks off, I used to have an instin",
+          "published_at": "2026-08-30T23:24:07.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "r_ml",
+          "source_name": "r/MachineLearning",
+          "title": "Claude Code for Research Papers [R]",
+          "url": "https://old.reddit.com/r/MachineLearning/comments/1w2wqbm/claude_code_for_research_papers_r",
+          "published_at": "2026-08-30T23:24:07.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://old.reddit.com/r/MachineLearning/comments/1w2wqbm/claude_code_for_research_papers_r",
+          "discussion_source": "r/MachineLearning"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "Discussion on using Claude Code for research tasks like boilerplate generation and experiment management.",
+      "novelty": 0.821,
+      "novelty_label": "high",
+      "trust": 0.55,
+      "score": 0.522,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "130ilt0",
+      "primary": {
+        "id": "130ilt0",
+        "source_id": "marktechpost",
+        "source_name": "MarkTechPost",
+        "source_role": "main",
+        "trust": 0.48,
+        "kind_hint": "news",
+        "title": "Anthropic Opens a Research Preview of the Model Hardware Standard (MHS): A Shared Specification for AI Agents to Safely Operate Physical Devices",
+        "url": "https://marktechpost.com/2026/08/29/anthropic-opens-a-research-preview-of-the-model-hardware-standard-mhs-a-shared-specification-for-ai-agents-to-safely-operate-physical-devices",
+        "original_url": "https://www.marktechpost.com/2026/08/29/anthropic-opens-a-research-preview-of-the-model-hardware-standard-mhs-a-shared-specification-for-ai-agents-to-safely-operate-physical-devices/",
+        "summary": "Anthropic has opened a research preview of the Model Hardware Standard (MHS), a shared driver specification that lets AI agents discover and safely operate physical devices. Instrument integration that normally takes weeks or months drops to hours: Carnegie Mellon went from raw equipment to a finished dose-response curve in eight, and QuEra's laser relock improved from 58% to 99.3% across 700 trials. MHS is model-agnostic, reachable over MCP, and enforces safety limits in the driver rather than the prompt. The post Anthropic Opens a Research Preview of the Model Hardware Standard (MHS): A Shar",
+        "published_at": "2026-08-30T06:12:21.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "130ilt0",
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "source_role": "main",
+          "trust": 0.48,
+          "kind_hint": "news",
+          "title": "Anthropic Opens a Research Preview of the Model Hardware Standard (MHS): A Shared Specification for AI Agents to Safely Operate Physical Devices",
+          "url": "https://marktechpost.com/2026/08/29/anthropic-opens-a-research-preview-of-the-model-hardware-standard-mhs-a-shared-specification-for-ai-agents-to-safely-operate-physical-devices",
+          "original_url": "https://www.marktechpost.com/2026/08/29/anthropic-opens-a-research-preview-of-the-model-hardware-standard-mhs-a-shared-specification-for-ai-agents-to-safely-operate-physical-devices/",
+          "summary": "Anthropic has opened a research preview of the Model Hardware Standard (MHS), a shared driver specification that lets AI agents discover and safely operate physical devices. Instrument integration that normally takes weeks or months drops to hours: Carnegie Mellon went from raw equipment to a finished dose-response curve in eight, and QuEra's laser relock improved from 58% to 99.3% across 700 trials. MHS is model-agnostic, reachable over MCP, and enforces safety limits in the driver rather than the prompt. The post Anthropic Opens a Research Preview of the Model Hardware Standard (MHS): A Shar",
+          "published_at": "2026-08-30T06:12:21.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "title": "Anthropic Opens a Research Preview of the Model Hardware Standard (MHS): A Shared Specification for AI Agents to Safely Operate Physical Devices",
+          "url": "https://marktechpost.com/2026/08/29/anthropic-opens-a-research-preview-of-the-model-hardware-standard-mhs-a-shared-specification-for-ai-agents-to-safely-operate-physical-devices",
+          "published_at": "2026-08-30T06:12:21.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -1343,79 +2388,16 @@
       "also_seen_on": [],
       "kind": "company_announcement",
       "quality": "signal",
-      "one_liner": "Cloudflare adds GLM-5.3 Flash support to its AI Search service, featuring a 1M token context window.",
+      "one_liner": "Anthropic releases Model Hardware Standard, a specification for AI agents to interface with physical hardware.",
       "novelty": 0,
       "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.494,
+      "trust": 0.48,
+      "score": 0.423,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
       ],
       "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
-    },
-    {
-      "id": "zo0e55",
-      "primary": {
-        "id": "zo0e55",
-        "source_id": "the_verge_ai",
-        "source_name": "The Verge AI",
-        "source_role": "main",
-        "trust": 0.68,
-        "kind_hint": "news",
-        "title": "Sony Music Publishing and Warner Chappell are suing Anthropic",
-        "url": "https://theverge.com/ai-artificial-intelligence/986438/sony-music-warner-chappell-anthropic-lawsuit-copyright",
-        "original_url": "https://www.theverge.com/ai-artificial-intelligence/986438/sony-music-warner-chappell-anthropic-lawsuit-copyright",
-        "summary": "Sony Music Publishing and Warner Chappell have filed suit against Anthropic in the US District Court for the Northern District of California seeking damages for \"tens of thousands\" copyrighted works. The companies are asking for up to $150,000 per work, plus up to $25,000 for each instance when identifiable copyright data was stripped. In total, the damages could amount to several billion dollars if a court finds in Sony and Warner's favor and awards the maximum amount. This is just the latest high-profile suit against Anthropic, which recently settled a suit brought by the publishing industry",
-        "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/01/STK269_ANTHROPIC_2_A.jpg?quality=90&",
-        "image_source": "rss_content",
-        "published_at": "2026-08-29T18:19:53.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "zo0e55",
-          "source_id": "the_verge_ai",
-          "source_name": "The Verge AI",
-          "source_role": "main",
-          "trust": 0.68,
-          "kind_hint": "news",
-          "title": "Sony Music Publishing and Warner Chappell are suing Anthropic",
-          "url": "https://theverge.com/ai-artificial-intelligence/986438/sony-music-warner-chappell-anthropic-lawsuit-copyright",
-          "original_url": "https://www.theverge.com/ai-artificial-intelligence/986438/sony-music-warner-chappell-anthropic-lawsuit-copyright",
-          "summary": "Sony Music Publishing and Warner Chappell have filed suit against Anthropic in the US District Court for the Northern District of California seeking damages for \"tens of thousands\" copyrighted works. The companies are asking for up to $150,000 per work, plus up to $25,000 for each instance when identifiable copyright data was stripped. In total, the damages could amount to several billion dollars if a court finds in Sony and Warner's favor and awards the maximum amount. This is just the latest high-profile suit against Anthropic, which recently settled a suit brought by the publishing industry",
-          "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/01/STK269_ANTHROPIC_2_A.jpg?quality=90&",
-          "image_source": "rss_content",
-          "published_at": "2026-08-29T18:19:53.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_verge_ai",
-          "source_name": "The Verge AI",
-          "title": "Sony Music Publishing and Warner Chappell are suing Anthropic",
-          "url": "https://theverge.com/ai-artificial-intelligence/986438/sony-music-warner-chappell-anthropic-lawsuit-copyright",
-          "published_at": "2026-08-29T18:19:53.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "signal",
-      "one_liner": "Sony Music and Warner Chappell are suing Anthropic for copyright infringement regarding training data.",
-      "novelty": 0.169,
-      "novelty_label": "familiar",
-      "trust": 0.68,
-      "score": 0.512,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "qr1mi2",
@@ -1469,16 +2451,75 @@
       "also_seen_on": [],
       "kind": "tool",
       "quality": "signal",
-      "one_liner": "AWS open-sources Kiro Crew, a system for managing asynchronous multi-agent coding workflows.",
+      "one_liner": "AWS releases Kiro Crew, an open-source system for managing asynchronous coding agents across tasks.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.78,
-      "score": 0.508,
+      "score": 0.496,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
       ],
       "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "ck02j8",
+      "primary": {
+        "id": "ck02j8",
+        "source_id": "marktechpost",
+        "source_name": "MarkTechPost",
+        "source_role": "main",
+        "trust": 0.48,
+        "kind_hint": "news",
+        "title": "Meet ‘Code-as-World’: An Agentic Loop That Rewrites Real Videos Into Executable MuJoCo Physics Programs",
+        "url": "https://marktechpost.com/2026/08/29/mirros-code-as-world-executable-world-representations",
+        "original_url": "https://www.marktechpost.com/2026/08/29/mirros-code-as-world-executable-world-representations/",
+        "summary": "Code-as-World recovers editable MuJoCo scene code from real video, then uses those verified worlds to train physical reasoning. The post Meet ‘Code-as-World’: An Agentic Loop That Rewrites Real Videos Into Executable MuJoCo Physics Programs appeared first on MarkTechPost.",
+        "published_at": "2026-08-30T01:35:02.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "ck02j8",
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "source_role": "main",
+          "trust": 0.48,
+          "kind_hint": "news",
+          "title": "Meet ‘Code-as-World’: An Agentic Loop That Rewrites Real Videos Into Executable MuJoCo Physics Programs",
+          "url": "https://marktechpost.com/2026/08/29/mirros-code-as-world-executable-world-representations",
+          "original_url": "https://www.marktechpost.com/2026/08/29/mirros-code-as-world-executable-world-representations/",
+          "summary": "Code-as-World recovers editable MuJoCo scene code from real video, then uses those verified worlds to train physical reasoning. The post Meet ‘Code-as-World’: An Agentic Loop That Rewrites Real Videos Into Executable MuJoCo Physics Programs appeared first on MarkTechPost.",
+          "published_at": "2026-08-30T01:35:02.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "marktechpost",
+          "source_name": "MarkTechPost",
+          "title": "Meet ‘Code-as-World’: An Agentic Loop That Rewrites Real Videos Into Executable MuJoCo Physics Programs",
+          "url": "https://marktechpost.com/2026/08/29/mirros-code-as-world-executable-world-representations",
+          "published_at": "2026-08-30T01:35:02.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "System that converts real video into executable MuJoCo physics code for training physical reasoning models.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.48,
+      "score": 0.415,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
     },
     {
       "id": "12xlrob",
@@ -1532,11 +2573,11 @@
       "also_seen_on": [],
       "kind": "paper",
       "quality": "signal",
-      "one_liner": "Study finds AI coding assistants systematically overestimate task duration and self-evaluate performance inaccurately.",
+      "one_liner": "Study shows AI coding agents systematically overestimate task duration and self-evaluate performance inaccurately.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.74,
-      "score": 0.502,
+      "score": 0.49,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -1593,18 +2634,144 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "company_announcement",
+      "kind": "news",
       "quality": "signal",
-      "one_liner": "Anthropic is adjusting Claude Code usage limits, resulting in a net decrease compared to temporary promotional levels.",
+      "one_liner": "Anthropic adjusts Claude Code usage limits, resulting in a net reduction compared to the previous temporary boost.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.74,
-      "score": 0.5,
+      "score": 0.488,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
       ],
-      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "15p9u11",
+      "primary": {
+        "id": "15p9u11",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Sony and Warner sue Anthropic over \"one of the largest and most blatant ongoing thefts of intellectual property in history\"",
+        "url": "https://the-decoder.com/sony-and-warner-sue-anthropic-over-one-of-the-largest-and-most-blatant-ongoing-thefts-of-intellectual-property-in-history",
+        "original_url": "https://the-decoder.com/sony-and-warner-sue-anthropic-over-one-of-the-largest-and-most-blatant-ongoing-thefts-of-intellectual-property-in-history/",
+        "summary": "Sony Music, Warner Music, and other publishers are suing Anthropic and CEO Dario Amodei personally for allegedly using tens of thousands of copyrighted musical compositions to train Claude without permission. The plaintiffs call it \"one of the largest and most blatant ongoing thefts of intellectual property in history.\" Just months after paying $1.5 billion to settle with book authors, Anthropic faces another major copyright fight. The article Sony and Warner sue Anthropic over \"one of the largest and most blatant ongoing thefts of intellectual property in history\" appeared first on The Decode",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/anthropic_music.png",
+        "image_source": "rss_content",
+        "published_at": "2026-08-30T08:50:20.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "15p9u11",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Sony and Warner sue Anthropic over \"one of the largest and most blatant ongoing thefts of intellectual property in history\"",
+          "url": "https://the-decoder.com/sony-and-warner-sue-anthropic-over-one-of-the-largest-and-most-blatant-ongoing-thefts-of-intellectual-property-in-history",
+          "original_url": "https://the-decoder.com/sony-and-warner-sue-anthropic-over-one-of-the-largest-and-most-blatant-ongoing-thefts-of-intellectual-property-in-history/",
+          "summary": "Sony Music, Warner Music, and other publishers are suing Anthropic and CEO Dario Amodei personally for allegedly using tens of thousands of copyrighted musical compositions to train Claude without permission. The plaintiffs call it \"one of the largest and most blatant ongoing thefts of intellectual property in history.\" Just months after paying $1.5 billion to settle with book authors, Anthropic faces another major copyright fight. The article Sony and Warner sue Anthropic over \"one of the largest and most blatant ongoing thefts of intellectual property in history\" appeared first on The Decode",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/anthropic_music.png",
+          "image_source": "rss_content",
+          "published_at": "2026-08-30T08:50:20.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Sony and Warner sue Anthropic over \"one of the largest and most blatant ongoing thefts of intellectual property in history\"",
+          "url": "https://the-decoder.com/sony-and-warner-sue-anthropic-over-one-of-the-largest-and-most-blatant-ongoing-thefts-of-intellectual-property-in-history",
+          "published_at": "2026-08-30T08:50:20.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Major music labels sue Anthropic for alleged unauthorized use of copyrighted lyrics in model training.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.487,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "hw0u1m",
+      "primary": {
+        "id": "hw0u1m",
+        "source_id": "the_verge_ai",
+        "source_name": "The Verge AI",
+        "source_role": "main",
+        "trust": 0.68,
+        "kind_hint": "news",
+        "title": "Texas Governor Abbott blocks funding for more Flock cameras",
+        "url": "https://theverge.com/ai-artificial-intelligence/986541/texas-governor-abbott-flock-cameras",
+        "original_url": "https://www.theverge.com/ai-artificial-intelligence/986541/texas-governor-abbott-flock-cameras",
+        "summary": "As backlash grows over Flock's AI surveillance cameras, Texas Governor Greg Abbott has frozen state spending on them. The move came just ahead of the publication of a Texas Tribune investigation that revealed the state spent over $30 million on Flock cameras. That money was primarily raised by tacking a $1 fee onto insurance policies, allegedly to help fight catalytic converter theft. Flock cameras have increasingly drawn ire from across the political spectrum as they've become the subject of privacy concerns. There have been multiple incidents of officers being placed on leave or criminally c",
+        "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/08/268713_Americans_seem_to_agree_that_destroy_Flock_cameras_is_good_CVirginia.jpg?quality=90&",
+        "image_source": "rss_content",
+        "published_at": "2026-08-30T15:35:10.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "hw0u1m",
+          "source_id": "the_verge_ai",
+          "source_name": "The Verge AI",
+          "source_role": "main",
+          "trust": 0.68,
+          "kind_hint": "news",
+          "title": "Texas Governor Abbott blocks funding for more Flock cameras",
+          "url": "https://theverge.com/ai-artificial-intelligence/986541/texas-governor-abbott-flock-cameras",
+          "original_url": "https://www.theverge.com/ai-artificial-intelligence/986541/texas-governor-abbott-flock-cameras",
+          "summary": "As backlash grows over Flock's AI surveillance cameras, Texas Governor Greg Abbott has frozen state spending on them. The move came just ahead of the publication of a Texas Tribune investigation that revealed the state spent over $30 million on Flock cameras. That money was primarily raised by tacking a $1 fee onto insurance policies, allegedly to help fight catalytic converter theft. Flock cameras have increasingly drawn ire from across the political spectrum as they've become the subject of privacy concerns. There have been multiple incidents of officers being placed on leave or criminally c",
+          "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/08/268713_Americans_seem_to_agree_that_destroy_Flock_cameras_is_good_CVirginia.jpg?quality=90&",
+          "image_source": "rss_content",
+          "published_at": "2026-08-30T15:35:10.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_verge_ai",
+          "source_name": "The Verge AI",
+          "title": "Texas Governor Abbott blocks funding for more Flock cameras",
+          "url": "https://theverge.com/ai-artificial-intelligence/986541/texas-governor-abbott-flock-cameras",
+          "published_at": "2026-08-30T15:35:10.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Texas Governor freezes state funding for Flock AI surveillance cameras amid growing public backlash.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.68,
+      "score": 0.485,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "aa2pcq",
@@ -1670,7 +2837,7 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.66,
-      "score": 0.315,
+      "score": 0.303,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -1735,71 +2902,12 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.62,
-      "score": 0.299,
+      "score": 0.287,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
       ],
       "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "1mnfo8z",
-      "primary": {
-        "id": "1mnfo8z",
-        "source_id": "product_hunt",
-        "source_name": "Product Hunt",
-        "source_role": "main",
-        "trust": 0.5,
-        "kind_hint": "tool",
-        "title": "Superagent",
-        "url": "https://producthunt.com/products/superagent-a-home-for-your-ai-agents",
-        "original_url": "https://www.producthunt.com/products/superagent-a-home-for-your-ai-agents",
-        "summary": "Discussion | Link",
-        "published_at": "2026-08-29T22:27:58.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1mnfo8z",
-          "source_id": "product_hunt",
-          "source_name": "Product Hunt",
-          "source_role": "main",
-          "trust": 0.5,
-          "kind_hint": "tool",
-          "title": "Superagent",
-          "url": "https://producthunt.com/products/superagent-a-home-for-your-ai-agents",
-          "original_url": "https://www.producthunt.com/products/superagent-a-home-for-your-ai-agents",
-          "summary": "Discussion | Link",
-          "published_at": "2026-08-29T22:27:58.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "product_hunt",
-          "source_name": "Product Hunt",
-          "title": "Superagent",
-          "url": "https://producthunt.com/products/superagent-a-home-for-your-ai-agents",
-          "published_at": "2026-08-29T22:27:58.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "tool",
-      "quality": "mixed",
-      "one_liner": "Superagent is a platform for managing and deploying AI agents.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.5,
-      "score": 0.264,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Try it in a small sandbox before adding it to production workflow."
     },
     {
       "id": "4xschq",
@@ -1853,87 +2961,16 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Meta is testing robotics for data center maintenance tasks.",
+      "one_liner": "Report on Meta's internal testing of robotics for data center maintenance tasks.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.78,
-      "score": 0.35,
+      "score": 0.338,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
       ],
       "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "tx66oy",
-      "primary": {
-        "id": "tx66oy",
-        "source_id": "fahd_mirza",
-        "source_name": "Fahd Mirza YouTube",
-        "source_role": "main",
-        "trust": 0.66,
-        "kind_hint": "video",
-        "title": "NVIDIA Buying HuggingFace is not Good for Open Source",
-        "url": "https://youtube.com/watch?v=vui9YFs2wSA",
-        "original_url": "https://www.youtube.com/watch?v=vui9YFs2wSA",
-        "image_url": "https://i.ytimg.com/vi/vui9YFs2wSA/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-08-29T22:14:50.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
-          "video_id": "vui9YFs2wSA"
-        }
-      },
-      "members": [
-        {
-          "id": "tx66oy",
-          "source_id": "fahd_mirza",
-          "source_name": "Fahd Mirza YouTube",
-          "source_role": "main",
-          "trust": 0.66,
-          "kind_hint": "video",
-          "title": "NVIDIA Buying HuggingFace is not Good for Open Source",
-          "url": "https://youtube.com/watch?v=vui9YFs2wSA",
-          "original_url": "https://www.youtube.com/watch?v=vui9YFs2wSA",
-          "image_url": "https://i.ytimg.com/vi/vui9YFs2wSA/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-08-29T22:14:50.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
-            "video_id": "vui9YFs2wSA"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "fahd_mirza",
-          "source_name": "Fahd Mirza YouTube",
-          "title": "NVIDIA Buying HuggingFace is not Good for Open Source",
-          "url": "https://youtube.com/watch?v=vui9YFs2wSA",
-          "published_at": "2026-08-29T22:14:50.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "mixed",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.66,
-      "score": 0.301,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
     },
     {
       "id": "b4sdu",
@@ -1987,11 +3024,11 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Analysis of Glassdoor reviews indicates declining employee sentiment toward AI adoption.",
+      "one_liner": "Analysis of employee sentiment toward AI adoption in the workplace based on Glassdoor reviews.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.74,
-      "score": 0.344,
+      "score": 0.332,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -2046,11 +3083,11 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Caterpillar is applying lessons from autonomous mining systems to broader AI deployment.",
+      "one_liner": "Caterpillar discusses applying autonomous mining operational experience to general AI deployment.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.72,
-      "score": 0.342,
+      "score": 0.33,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -2109,196 +3146,11 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Experiment shows GPT-4o improves student grades on marketing assignments.",
+      "one_liner": "Experiment shows GPT-4o improves student assignment grades, raising questions about academic assessment.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.74,
-      "score": 0.34,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "15p9u11",
-      "primary": {
-        "id": "15p9u11",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
-        "source_role": "main",
-        "trust": 0.74,
-        "kind_hint": "news",
-        "title": "Sony and Warner sue Anthropic over \"one of the largest and most blatant ongoing thefts of intellectual property in history\"",
-        "url": "https://the-decoder.com/sony-and-warner-sue-anthropic-over-one-of-the-largest-and-most-blatant-ongoing-thefts-of-intellectual-property-in-history",
-        "original_url": "https://the-decoder.com/sony-and-warner-sue-anthropic-over-one-of-the-largest-and-most-blatant-ongoing-thefts-of-intellectual-property-in-history/",
-        "summary": "Sony Music, Warner Music, and other publishers are suing Anthropic and CEO Dario Amodei personally for allegedly using tens of thousands of copyrighted musical compositions to train Claude without permission. The plaintiffs call it \"one of the largest and most blatant ongoing thefts of intellectual property in history.\" Just months after paying $1.5 billion to settle with book authors, Anthropic faces another major copyright fight. The article Sony and Warner sue Anthropic over \"one of the largest and most blatant ongoing thefts of intellectual property in history\" appeared first on The Decode",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/anthropic_music.png",
-        "image_source": "rss_content",
-        "published_at": "2026-08-30T08:50:20.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "15p9u11",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "source_role": "main",
-          "trust": 0.74,
-          "kind_hint": "news",
-          "title": "Sony and Warner sue Anthropic over \"one of the largest and most blatant ongoing thefts of intellectual property in history\"",
-          "url": "https://the-decoder.com/sony-and-warner-sue-anthropic-over-one-of-the-largest-and-most-blatant-ongoing-thefts-of-intellectual-property-in-history",
-          "original_url": "https://the-decoder.com/sony-and-warner-sue-anthropic-over-one-of-the-largest-and-most-blatant-ongoing-thefts-of-intellectual-property-in-history/",
-          "summary": "Sony Music, Warner Music, and other publishers are suing Anthropic and CEO Dario Amodei personally for allegedly using tens of thousands of copyrighted musical compositions to train Claude without permission. The plaintiffs call it \"one of the largest and most blatant ongoing thefts of intellectual property in history.\" Just months after paying $1.5 billion to settle with book authors, Anthropic faces another major copyright fight. The article Sony and Warner sue Anthropic over \"one of the largest and most blatant ongoing thefts of intellectual property in history\" appeared first on The Decode",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/anthropic_music.png",
-          "image_source": "rss_content",
-          "published_at": "2026-08-30T08:50:20.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "Sony and Warner sue Anthropic over \"one of the largest and most blatant ongoing thefts of intellectual property in history\"",
-          "url": "https://the-decoder.com/sony-and-warner-sue-anthropic-over-one-of-the-largest-and-most-blatant-ongoing-thefts-of-intellectual-property-in-history",
-          "published_at": "2026-08-30T08:50:20.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "Sony and Warner Music filed a copyright infringement lawsuit against Anthropic regarding training data usage.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.74,
-      "score": 0.337,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "hw0u1m",
-      "primary": {
-        "id": "hw0u1m",
-        "source_id": "the_verge_ai",
-        "source_name": "The Verge AI",
-        "source_role": "main",
-        "trust": 0.68,
-        "kind_hint": "news",
-        "title": "Texas Governor Abbott blocks funding for more Flock cameras",
-        "url": "https://theverge.com/ai-artificial-intelligence/986541/texas-governor-abbott-flock-cameras",
-        "original_url": "https://www.theverge.com/ai-artificial-intelligence/986541/texas-governor-abbott-flock-cameras",
-        "summary": "As backlash grows over Flock's AI surveillance cameras, Texas Governor Greg Abbott has frozen state spending on them. The move came just ahead of the publication of a Texas Tribune investigation that revealed the state spent over $30 million on Flock cameras. That money was primarily raised by tacking a $1 fee onto insurance policies, allegedly to help fight catalytic converter theft. Flock cameras have increasingly drawn ire from across the political spectrum as they've become the subject of privacy concerns. There have been multiple incidents of officers being placed on leave or criminally c",
-        "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/08/268713_Americans_seem_to_agree_that_destroy_Flock_cameras_is_good_CVirginia.jpg?quality=90&",
-        "image_source": "rss_content",
-        "published_at": "2026-08-30T15:35:10.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "hw0u1m",
-          "source_id": "the_verge_ai",
-          "source_name": "The Verge AI",
-          "source_role": "main",
-          "trust": 0.68,
-          "kind_hint": "news",
-          "title": "Texas Governor Abbott blocks funding for more Flock cameras",
-          "url": "https://theverge.com/ai-artificial-intelligence/986541/texas-governor-abbott-flock-cameras",
-          "original_url": "https://www.theverge.com/ai-artificial-intelligence/986541/texas-governor-abbott-flock-cameras",
-          "summary": "As backlash grows over Flock's AI surveillance cameras, Texas Governor Greg Abbott has frozen state spending on them. The move came just ahead of the publication of a Texas Tribune investigation that revealed the state spent over $30 million on Flock cameras. That money was primarily raised by tacking a $1 fee onto insurance policies, allegedly to help fight catalytic converter theft. Flock cameras have increasingly drawn ire from across the political spectrum as they've become the subject of privacy concerns. There have been multiple incidents of officers being placed on leave or criminally c",
-          "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/08/268713_Americans_seem_to_agree_that_destroy_Flock_cameras_is_good_CVirginia.jpg?quality=90&",
-          "image_source": "rss_content",
-          "published_at": "2026-08-30T15:35:10.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_verge_ai",
-          "source_name": "The Verge AI",
-          "title": "Texas Governor Abbott blocks funding for more Flock cameras",
-          "url": "https://theverge.com/ai-artificial-intelligence/986541/texas-governor-abbott-flock-cameras",
-          "published_at": "2026-08-30T15:35:10.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "Texas Governor Abbott halted state funding for Flock AI surveillance cameras amid public and political scrutiny.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.68,
-      "score": 0.334,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "bkw76w",
-      "primary": {
-        "id": "bkw76w",
-        "source_id": "techcrunch_ai",
-        "source_name": "TechCrunch AI",
-        "source_role": "main",
-        "trust": 0.72,
-        "kind_hint": "news",
-        "title": "Sony Music, Warner sue Anthropic, alleging a “brazen campaign” of intellectual property theft",
-        "url": "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft",
-        "original_url": "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/",
-        "summary": "This latest lawsuit is particularly broad and homes in on accusations of illegal piracy.",
-        "published_at": "2026-08-29T18:41:59.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "bkw76w",
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "source_role": "main",
-          "trust": 0.72,
-          "kind_hint": "news",
-          "title": "Sony Music, Warner sue Anthropic, alleging a “brazen campaign” of intellectual property theft",
-          "url": "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft",
-          "original_url": "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/",
-          "summary": "This latest lawsuit is particularly broad and homes in on accusations of illegal piracy.",
-          "published_at": "2026-08-29T18:41:59.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "title": "Sony Music, Warner sue Anthropic, alleging a “brazen campaign” of intellectual property theft",
-          "url": "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft",
-          "published_at": "2026-08-29T18:41:59.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "Sony Music and Warner Music sued Anthropic, alleging unauthorized use of copyrighted lyrics in model training.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.72,
-      "score": 0.309,
+      "score": 0.328,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
