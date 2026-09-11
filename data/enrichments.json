@@ -79,18 +79,6 @@
       "enriched_at": "2026-07-23T19:45:39.342Z",
       "failure_count": 1
     },
-    "https://anthropic.com/news/claude-opus-4-8": {
-      "url": "https://anthropic.com/news/claude-opus-4-8",
-      "title": "Anthropic: Claude Opus 4 8",
-      "source_name": "Anthropic",
-      "dek": "Anthropic released Claude Opus 4.8, featuring improved reasoning, dynamic workflows, and faster, cheaper inference modes.",
-      "brief": "The update introduces user-controlled effort levels and enhanced agentic capabilities via Claude Code. Fast mode for Opus 4.8 is now three times cheaper, aiming to improve efficiency for large-scale coding and reasoning tasks.",
-      "image_alt": "Claude Opus 4.8 performance benchmark chart",
-      "status": "ok",
-      "attempted_at": "2026-07-23T07:44:17.237Z",
-      "enriched_at": "2026-07-23T07:44:17.237Z",
-      "failure_count": 0
-    },
     "https://anthropic.com/news/claude-opus-5": {
       "url": "https://anthropic.com/news/claude-opus-5",
       "title": "Claude Opus 5",
@@ -506,30 +494,6 @@
       "status": "ok",
       "attempted_at": "2026-07-24T07:41:46.066Z",
       "enriched_at": "2026-07-24T07:41:46.066Z",
-      "failure_count": 0
-    },
-    "https://arxiv.org/abs/2607.19361": {
-      "url": "https://arxiv.org/abs/2607.19361",
-      "title": "Stateful Guardrails for Multi-Turn LLM Systems: A Conversational Risk Accumulation Framework",
-      "source_name": "arXiv cs.CL",
-      "dek": "A new framework addresses Conversational Risk Accumulation (CRA) by tracking stateful signals across multi-turn LLM dialogues.",
-      "brief": "Standard guardrails often fail because they evaluate prompts in isolation. The proposed CRA framework monitors semantic drift, sensitivity-weighted information graphs, and compliance trajectories to detect risks that emerge only through cumulative interaction.",
-      "image_alt": "Diagram showing a multi-turn dialogue flow with risk accumulation nodes",
-      "status": "ok",
-      "attempted_at": "2026-07-23T07:44:17.237Z",
-      "enriched_at": "2026-07-23T07:44:17.237Z",
-      "failure_count": 0
-    },
-    "https://arxiv.org/abs/2607.20145": {
-      "url": "https://arxiv.org/abs/2607.20145",
-      "title": "SLAI T-Rex: Full-Parameter Post-training of the DeepSeek-V4 Family on Ascend SuperPOD",
-      "source_name": "Hugging Face Daily Papers",
-      "dek": "Researchers detail full-parameter post-training optimizations for trillion-parameter MoE models on Ascend NPU clusters.",
-      "brief": "The SLAI T-Rex report addresses memory pressure and communication bottlenecks inherent in large-scale distributed training. It provides an end-to-end optimization strategy for DeepSeek-V4 models on Ascend SuperPOD hardware.",
-      "image_alt": "Technical architecture diagram of the Ascend SuperPOD training cluster",
-      "status": "ok",
-      "attempted_at": "2026-07-23T07:44:17.237Z",
-      "enriched_at": "2026-07-23T07:44:17.237Z",
       "failure_count": 0
     },
     "https://arxiv.org/abs/2607.20425": {
@@ -1321,6 +1285,18 @@
       "enriched_at": "2026-09-10T09:44:19.813Z",
       "failure_count": 1
     },
+    "https://arxiv.org/abs/2609.10715": {
+      "url": "https://arxiv.org/abs/2609.10715",
+      "title": "NCP-ArchPreview Technical Report: Moving towards Latent Space Language Models through Next Concept Prediction",
+      "source_name": "arXiv cs.CL",
+      "dek": "NCP-ArchPreview introduces Next Concept Prediction to improve language model pretraining by learning discrete concepts alongside standard token prediction.",
+      "brief": "The Intern-NCP team released a technical report on NCP-ArchPreview, a latent-space language model. It combines standard next-token prediction with a concept-level objective, forcing the model to learn discrete concepts that span multiple tokens. This approach aims to enhance structural understanding while maintaining autoregressive generation capabilities.",
+      "image_alt": "Conceptual diagram of latent space language model architecture",
+      "status": "ok",
+      "attempted_at": "2026-09-11T09:41:24.504Z",
+      "enriched_at": "2026-09-11T09:41:24.504Z",
+      "failure_count": 0
+    },
     "https://aws.amazon.com/blogs/machine-learning/agentic-observability-with-amazon-opensearch-service-mcp-apps": {
       "url": "https://aws.amazon.com/blogs/machine-learning/agentic-observability-with-amazon-opensearch-service-mcp-apps",
       "title": "Agentic observability with Amazon OpenSearch Service MCP Apps",
@@ -1451,6 +1427,18 @@
       "status": "ok",
       "attempted_at": "2026-09-10T16:24:23.891Z",
       "enriched_at": "2026-09-10T16:24:23.891Z",
+      "failure_count": 0
+    },
+    "https://aws.amazon.com/blogs/machine-learning/reduce-llm-latency-with-prefix-aware-routing-on-amazon-sagemaker-inference": {
+      "url": "https://aws.amazon.com/blogs/machine-learning/reduce-llm-latency-with-prefix-aware-routing-on-amazon-sagemaker-inference",
+      "title": "Reduce LLM latency with prefix-aware routing on Amazon SageMaker Inference",
+      "source_name": "AWS Machine Learning Blog",
+      "dek": "Amazon SageMaker Inference now supports prefix-aware routing to reduce LLM latency by keeping KV caches warm for requests with shared prompt prefixes.",
+      "brief": "By routing requests with identical prompt prefixes to the same instance, SageMaker improves KV cache hit rates. Benchmarks on Llama 3.1 70B show a 77% reduction in P50 time-to-first-token and a significant increase in cache efficiency, making it ideal for applications with heavy system prompts or shared context.",
+      "image_alt": "Diagram showing prefix-aware routing architecture on AWS",
+      "status": "ok",
+      "attempted_at": "2026-09-11T09:41:24.504Z",
+      "enriched_at": "2026-09-11T09:41:24.504Z",
       "failure_count": 0
     },
     "https://aws.amazon.com/blogs/machine-learning/run-agent-driven-amazon-sagemaker-hyperpod-operations-with-instantstart": {
@@ -2342,6 +2330,18 @@
       "enriched_at": "2026-09-10T20:52:35.682Z",
       "failure_count": 0
     },
+    "https://developers.openai.com/api/docs/guides/agents-api/overview": {
+      "url": "https://developers.openai.com/api/docs/guides/agents-api/overview",
+      "title": "OpenAI Agents API",
+      "source_name": "Hacker News (AI-filtered)",
+      "dek": "OpenAI has launched an Agents API, enabling developers to build autonomous agents with native code execution and sub-agent orchestration.",
+      "brief": "The new API provides a framework for creating agents capable of executing code and managing sub-tasks. This release aims to standardize the development of autonomous workflows, allowing for more complex, multi-step reasoning and tool interaction within the OpenAI ecosystem.",
+      "image_alt": "OpenAI Agents API documentation interface",
+      "status": "ok",
+      "attempted_at": "2026-09-11T09:41:24.504Z",
+      "enriched_at": "2026-09-11T09:41:24.504Z",
+      "failure_count": 0
+    },
     "https://docker.com/products/docker-sandboxes": {
       "url": "https://docker.com/products/docker-sandboxes",
       "title": "Docker Sandboxes – Disposable, isolated sandboxes for AI agents",
@@ -2698,6 +2698,18 @@
       "status": "ok",
       "attempted_at": "2026-08-31T12:37:42.294Z",
       "enriched_at": "2026-08-31T12:37:42.294Z",
+      "failure_count": 0
+    },
+    "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash": {
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "title": "deepseek-ai/DeepSeek-V4.1-Flash (6 downloads, 1592 likes)",
+      "source_name": "Hugging Face trending models",
+      "dek": "DeepSeek-V4.1-Flash is a new model focused on pushing the boundaries of KV cache compression for efficient text and image-to-text generation.",
+      "brief": "DeepSeek-V4.1-Flash has gained traction on Hugging Face, emphasizing advanced KV cache compression techniques. The model supports both text and image-to-text generation, offering a high-performance option for developers looking to optimize memory usage during inference.",
+      "image_alt": "DeepSeek-V4.1-Flash model logo and branding",
+      "status": "ok",
+      "attempted_at": "2026-09-11T09:41:24.504Z",
+      "enriched_at": "2026-09-11T09:41:24.504Z",
       "failure_count": 0
     },
     "https://huggingface.co/Kijai/MiniMax-H3_comfy": {
@@ -3139,6 +3151,20 @@
       "enriched_at": "2026-09-05T15:13:56.486Z",
       "failure_count": 0
     },
+    "https://infoq.com/news/2026/09/observability-ai-agents": {
+      "url": "https://infoq.com/news/2026/09/observability-ai-agents",
+      "title": "Session Traces and Cost Controls Help Diagnose AI Agent Failures",
+      "source_name": "InfoQ AI/ML/Data",
+      "dek": "Session traces and cost controls are becoming essential observability tools for managing AI agent reliability and runaway resource consumption.",
+      "brief": "As AI agents become more complex, developers are adopting session-based tracing to debug tool-call loops and unexpected behaviors. Integrating granular cost controls allows teams to monitor and limit runaway spend, providing the necessary context for post-incident analysis in agentic workflows.",
+      "image_url": "https://res.infoq.com/news/2026/09/observability-ai-agents/en/headerimage/header-1788722438219.jpeg",
+      "image_alt": "Dashboard showing AI agent execution traces and cost metrics",
+      "image_source": "rss_content",
+      "status": "ok",
+      "attempted_at": "2026-09-11T09:41:24.504Z",
+      "enriched_at": "2026-09-11T09:41:24.504Z",
+      "failure_count": 0
+    },
     "https://infoq.com/news/2026/09/spotify-gisting-llm-performance": {
       "url": "https://infoq.com/news/2026/09/spotify-gisting-llm-performance",
       "title": "Shopify Introduces Gisting: Compressing LLM System Prompts into Learned Tokens",
@@ -3396,18 +3422,6 @@
       "status": "ok",
       "attempted_at": "2026-08-27T15:57:54.264Z",
       "enriched_at": "2026-08-27T15:57:54.264Z",
-      "failure_count": 0
-    },
-    "https://marktechpost.com/2026/07/23/meet-gigatoken-a-rust-bpe-tokenizer-that-encodes-text-at-24-53-gb-s-up-to-989x-faster-than-huggingface-tokenizers": {
-      "url": "https://marktechpost.com/2026/07/23/meet-gigatoken-a-rust-bpe-tokenizer-that-encodes-text-at-24-53-gb-s-up-to-989x-faster-than-huggingface-tokenizers",
-      "title": "Meet Gigatoken: A Rust BPE Tokenizer that Encodes Text at 24.53 GB/s, up to 989x Faster than HuggingFace Tokenizers",
-      "source_name": "MarkTechPost",
-      "dek": "Gigatoken is a new high-performance Rust BPE tokenizer capable of encoding text at speeds up to 24.53 GB/s.",
-      "brief": "The MIT-licensed library achieves significant speedups over existing Rust-based tokenizers by utilizing a hand-written SWAR pretokenizer and pretoken caching. Benchmarks on a 144-core AMD EPYC system show it is nearly 1,000x faster than standard HuggingFace implementations.",
-      "image_alt": "Performance comparison chart showing Gigatoken speed versus HuggingFace and tiktoken.",
-      "status": "ok",
-      "attempted_at": "2026-07-23T14:31:54.989Z",
-      "enriched_at": "2026-07-23T14:31:54.989Z",
       "failure_count": 0
     },
     "https://marktechpost.com/2026/07/24/meet-the-new-claude-opus-5-frontier-class-agentic-coding-and-computer-use-at-unchanged-opus-pricing": {
@@ -4785,20 +4799,6 @@
       "status": "ok",
       "attempted_at": "2026-08-27T21:27:26.898Z",
       "enriched_at": "2026-08-27T21:27:26.898Z",
-      "failure_count": 0
-    },
-    "https://research.google/blog/symptomai-towards-a-conversational-ai-agent-for-everyday-symptom-assessment": {
-      "url": "https://research.google/blog/symptomai-towards-a-conversational-ai-agent-for-everyday-symptom-assessment",
-      "title": "SymptomAI: Towards a conversational AI agent for everyday symptom assessment",
-      "source_name": "Google Research",
-      "dek": "Google Research explores the potential of conversational AI agents to conduct diagnostic interviews for symptom assessment.",
-      "brief": "The research investigates using large language models to replicate the diagnostic capabilities of clinical interviews. The goal is to address accessibility barriers in healthcare by providing reliable, language-based symptom assessment tools that can function in remote or underserved environments.",
-      "image_url": "https://storage.googleapis.com/gweb-research2023-media/original_images/SymptomAI1_Overview.png",
-      "image_alt": "Conceptual illustration of a patient interacting with a conversational AI health assistant.",
-      "image_source": "rss_media",
-      "status": "ok",
-      "attempted_at": "2026-07-23T14:31:54.989Z",
-      "enriched_at": "2026-07-23T14:31:54.989Z",
       "failure_count": 0
     },
     "https://research.jfrog.com/post/sqlite-critical-cves-or-llm-slops": {
