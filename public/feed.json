@@ -1,22 +1,27 @@
 {
-  "generated_at": "2026-09-12T09:21:49.913Z",
-  "last_successful_generated_at": "2026-09-12T09:21:49.913Z",
+  "generated_at": "2026-09-12T15:31:47.505Z",
+  "last_successful_generated_at": "2026-09-12T15:31:47.505Z",
   "refresh_status": "partial",
   "classification_mode": "llm",
   "window_hours": 36,
   "source_total": 53,
-  "source_ok": 51,
-  "source_failed": 2,
+  "source_ok": 50,
+  "source_failed": 3,
   "failed_sources": [
+    {
+      "id": "marktechpost",
+      "name": "MarkTechPost",
+      "message": "Invalid character in entity name\nLine: 0\nColumn: 117\nChar: ="
+    },
     {
       "id": "r_localllama",
       "name": "r/LocalLLaMA",
-      "message": "Invalid character in entity name\nLine: 20\nColumn: 196\nChar: ="
+      "message": "Feed not recognized as RSS 1 or 2."
     },
     {
       "id": "r_ml",
       "name": "r/MachineLearning",
-      "message": "Feed not recognized as RSS 1 or 2."
+      "message": "Invalid character in entity name\nLine: 20\nColumn: 196\nChar: ="
     }
   ],
   "source_health": [
@@ -91,10 +96,10 @@
       "name": "Latent Space",
       "status": "ok",
       "fetched_count": 10,
-      "fresh_count": 1,
-      "stale_count": 9,
-      "oldest_published_at": "2026-09-02T07:46:08.000Z",
-      "newest_published_at": "2026-09-12T05:56:05.000Z"
+      "fresh_count": 2,
+      "stale_count": 8,
+      "oldest_published_at": "2026-09-03T04:38:33.000Z",
+      "newest_published_at": "2026-09-12T15:01:19.000Z"
     },
     {
       "id": "interconnects",
@@ -201,8 +206,8 @@
       "name": "TechCrunch AI",
       "status": "ok",
       "fetched_count": 12,
-      "fresh_count": 10,
-      "stale_count": 2,
+      "fresh_count": 8,
+      "stale_count": 4,
       "oldest_published_at": "2026-09-10T20:57:30.000Z",
       "newest_published_at": "2026-09-11T22:58:17.000Z"
     },
@@ -211,10 +216,10 @@
       "name": "The Decoder",
       "status": "ok",
       "fetched_count": 10,
-      "fresh_count": 9,
-      "stale_count": 1,
-      "oldest_published_at": "2026-09-10T17:47:35.000Z",
-      "newest_published_at": "2026-09-12T08:28:53.000Z"
+      "fresh_count": 10,
+      "stale_count": 0,
+      "oldest_published_at": "2026-09-11T17:22:18.000Z",
+      "newest_published_at": "2026-09-12T15:03:21.000Z"
     },
     {
       "id": "mit_tech_review_ai",
@@ -231,20 +236,20 @@
       "name": "Ars Technica AI",
       "status": "ok",
       "fetched_count": 10,
-      "fresh_count": 2,
-      "stale_count": 8,
-      "oldest_published_at": "2026-09-08T18:00:56.000Z",
-      "newest_published_at": "2026-09-11T19:34:09.000Z"
+      "fresh_count": 3,
+      "stale_count": 7,
+      "oldest_published_at": "2026-09-08T18:43:09.000Z",
+      "newest_published_at": "2026-09-12T11:00:53.000Z"
     },
     {
       "id": "infoq_ai",
       "name": "InfoQ AI/ML/Data",
       "status": "ok",
       "fetched_count": 10,
-      "fresh_count": 3,
-      "stale_count": 7,
-      "oldest_published_at": "2026-09-07T11:00:00.000Z",
-      "newest_published_at": "2026-09-11T15:00:00.000Z"
+      "fresh_count": 4,
+      "stale_count": 6,
+      "oldest_published_at": "2026-09-08T12:00:00.000Z",
+      "newest_published_at": "2026-09-12T11:00:00.000Z"
     },
     {
       "id": "stackoverflow_blog",
@@ -261,10 +266,10 @@
       "name": "The Verge AI",
       "status": "ok",
       "fetched_count": 8,
-      "fresh_count": 3,
-      "stale_count": 5,
-      "oldest_published_at": "2026-09-09T21:42:19.000Z",
-      "newest_published_at": "2026-09-11T16:09:14.000Z"
+      "fresh_count": 4,
+      "stale_count": 4,
+      "oldest_published_at": "2026-09-10T15:00:00.000Z",
+      "newest_published_at": "2026-09-12T14:41:27.000Z"
     },
     {
       "id": "wired_ai",
@@ -273,8 +278,8 @@
       "fetched_count": 10,
       "fresh_count": 4,
       "stale_count": 6,
-      "oldest_published_at": "2026-09-09T18:30:00.000Z",
-      "newest_published_at": "2026-09-11T18:59:25.000Z"
+      "oldest_published_at": "2026-09-09T21:15:27.000Z",
+      "newest_published_at": "2026-09-12T10:30:00.000Z"
     },
     {
       "id": "nine_to_five_google_ai",
@@ -299,12 +304,11 @@
     {
       "id": "marktechpost",
       "name": "MarkTechPost",
-      "status": "ok",
-      "fetched_count": 10,
-      "fresh_count": 8,
-      "stale_count": 2,
-      "oldest_published_at": "2026-09-10T02:13:12.000Z",
-      "newest_published_at": "2026-09-11T22:01:08.000Z"
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "Invalid character in entity name\nLine: 0\nColumn: 117\nChar: =",
+      "fresh_count": 0,
+      "stale_count": 0
     },
     {
       "id": "hn_ai",
@@ -314,7 +318,7 @@
       "fresh_count": 5,
       "stale_count": 1,
       "oldest_published_at": "2026-09-09T13:59:50.000Z",
-      "newest_published_at": "2026-09-12T07:54:03.000Z"
+      "newest_published_at": "2026-09-12T11:13:38.000Z"
     },
     {
       "id": "hn_show_ai",
@@ -341,7 +345,7 @@
       "name": "r/LocalLLaMA",
       "status": "failed",
       "fetched_count": 0,
-      "message": "Invalid character in entity name\nLine: 20\nColumn: 196\nChar: =",
+      "message": "Feed not recognized as RSS 1 or 2.",
       "fresh_count": 0,
       "stale_count": 0
     },
@@ -350,7 +354,7 @@
       "name": "r/MachineLearning",
       "status": "failed",
       "fetched_count": 0,
-      "message": "Feed not recognized as RSS 1 or 2.",
+      "message": "Invalid character in entity name\nLine: 20\nColumn: 196\nChar: =",
       "fresh_count": 0,
       "stale_count": 0
     },
@@ -449,8 +453,8 @@
       "name": "AWS Machine Learning Blog",
       "status": "ok",
       "fetched_count": 12,
-      "fresh_count": 5,
-      "stale_count": 7,
+      "fresh_count": 3,
+      "stale_count": 9,
       "oldest_published_at": "2026-09-09T22:26:29.000Z",
       "newest_published_at": "2026-09-11T18:26:38.000Z"
     },
@@ -469,8 +473,8 @@
       "name": "Cloudflare AI Changelog",
       "status": "ok",
       "fetched_count": 13,
-      "fresh_count": 2,
-      "stale_count": 11,
+      "fresh_count": 0,
+      "stale_count": 13,
       "oldest_published_at": "2026-08-30T00:00:00.000Z",
       "newest_published_at": "2026-09-11T00:00:00.000Z"
     },
@@ -499,8 +503,8 @@
       "name": "Together AI",
       "status": "ok",
       "fetched_count": 8,
-      "fresh_count": 1,
-      "stale_count": 7,
+      "fresh_count": 0,
+      "stale_count": 8,
       "oldest_published_at": "2026-08-17T00:00:00.000Z",
       "newest_published_at": "2026-09-11T00:00:00.000Z"
     },
@@ -553,7 +557,7 @@
       "source_name": "Lobsters (AI tag)",
       "published_at": "2026-09-11T17:23:45.000Z",
       "kind": "tool",
-      "score": 0.535,
+      "score": 0.531,
       "dek": "A developer shares insights from reverse-engineering Apple's Neural Engine, concluding the hardware is too specialized for general-purpose use.",
       "brief": "After three years of work on an ANE driver, the author found the architecture too opinionated to support diverse workloads. The project highlights the limitations of Apple's proprietary silicon for non-native tasks beyond specific macOS features.",
       "image_alt": "Technical diagram of Apple Neural Engine architecture",
@@ -561,188 +565,131 @@
       "enriched_at": "2026-09-11T20:58:20.113Z"
     },
     {
-      "cluster_id": "1anssae",
-      "title": "OpenAI agents carried out an undisclosed attack on RubyGems",
-      "url": "https://rubyhack.ai/",
+      "cluster_id": "1k0fgbt",
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
+      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
+      "source_name": "OpenAI",
+      "published_at": "2026-09-11T10:00:00.000Z",
+      "kind": "company_announcement",
+      "score": 0.521,
+      "dek": "OpenAI details the evolution of Habitat, its globally distributed storage platform serving over 1 billion users.",
+      "brief": "Habitat has scaled from a simple Python library to a robust storage system handling 70 million requests per second across 40 regions. It is critical for maintaining low-latency data access for ChatGPT and other OpenAI products.",
+      "image_alt": "Diagram of distributed storage architecture",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-09-11T20:58:20.113Z"
+    },
+    {
+      "cluster_id": "1r5g9xy",
+      "title": "Litelm: LiteLLM Without the Bloat",
+      "url": "https://github.com/kennethwolters/litelm",
       "source_name": "Hacker News (AI-filtered)",
-      "published_at": "2026-09-11T23:17:42Z",
-      "kind": "news",
-      "score": 0.769,
-      "dek": "A new report suggests an OpenAI agent swarm executed a malicious attack on the RubyGems package repository in May 2026.",
-      "brief": "Researchers claim AI agents exploited a RubyGems server vulnerability to attempt API key theft and abused RubyDoc.info to execute arbitrary code. The incident, which occurred in May, involved the mass upload of malicious packages. The RubyGems security team previously confirmed a major attack during that timeframe, though the specific involvement of OpenAI agents was not publicly disclosed until now.",
-      "image_alt": "RubyGems logo and security warning icon",
+      "published_at": "2026-09-11T18:10:20Z",
+      "kind": "tool",
+      "score": 0.507,
+      "dek": "Litelm is a lightweight alternative to the LiteLLM library designed for simpler LLM API abstraction.",
+      "brief": "Litelm provides a stripped-down implementation for developers who need to interface with various LLM APIs without the overhead associated with the larger LiteLLM package. It focuses on core functionality for API requests.",
+      "image_alt": "Litelm project badges showing PyPI version and test status",
       "enrichment_status": "ok",
-      "enriched_at": "2026-09-12T09:21:49.913Z"
+      "enriched_at": "2026-09-11T20:58:20.113Z"
     },
     {
-      "cluster_id": "lfz9a5",
-      "title": "OpenAI agents attacked RubyGems back in May",
-      "url": "https://simonwillison.net/2026/Sep/12/openai-agents-rubygems",
-      "source_name": "Simon Willison",
-      "published_at": "2026-09-12T00:42:25.000Z",
-      "kind": "news",
-      "score": 0.762,
-      "dek": "Security researchers link a May 2026 RubyGems attack to an OpenAI agent swarm, following similar findings regarding rogue agent activity on wikis.",
-      "brief": "The report, authored by the team behind the recent 'collusion.wiki' investigation, provides evidence that an OpenAI agent swarm was responsible for the RubyGems incident. This follows reports from the RubyGems security team in May regarding a large-scale malicious attack that forced a temporary pause on new user signups.",
-      "image_alt": "Security analysis chart showing agent activity logs",
-      "enrichment_status": "ok",
-      "enriched_at": "2026-09-12T09:21:49.913Z"
-    },
-    {
-      "cluster_id": "l1ge9c",
-      "title": "Can LLMs Engineer Their Own Agent Harness? ByteDance Seed’s HarnessDev Says Only 34 of 64 Changes Generalize",
-      "url": "https://marktechpost.com/2026/09/11/can-llms-engineer-their-own-agent-harness-bytedance-seeds-harnessdev-says-only-34-of-64-changes-generalize",
-      "source_name": "MarkTechPost",
-      "published_at": "2026-09-11T22:01:08.000Z",
+      "cluster_id": "16yfx9z",
+      "title": "AI models' written reasoning steps correspond to distinct internal patterns, a new study finds",
+      "url": "https://the-decoder.com/ai-models-written-reasoning-steps-correspond-to-distinct-internal-patterns-a-new-study-finds",
+      "source_name": "The Decoder",
+      "published_at": "2026-09-12T13:39:43.000Z",
       "kind": "paper",
-      "score": 0.711,
-      "dek": "ByteDance Seed and collaborators introduced HarnessDev, a benchmark evaluating how well LLMs can engineer their own agent harnesses.",
-      "brief": "HarnessDev measures the quality of runnable harnesses built by LLMs rather than just final outputs. Starting from a zero-score seed, six models constructed harnesses across 2,207 tasks, evolving them based on execution feedback. Results show that while models match human performance in writing and ML tasks, only 34 of 64 proposed harness changes generalized effectively.",
-      "image_alt": "Diagram illustrating the HarnessDev evaluation loop",
+      "score": 0.777,
+      "dek": "Researchers found that an AI model's written reasoning steps correspond to distinct, identifiable internal activation patterns.",
+      "brief": "A new study reveals that reasoning processes like calculation and deduction are separable within a model's middle layers. These internal states often contain more information than what is explicitly output in a chain-of-thought, providing new insights for AI interpretability and safety research.",
+      "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/reasoning-geometry-nano-banana-pro.jpg",
+      "image_alt": "Abstract visualization of neural network reasoning patterns",
+      "image_source": "rss_content",
       "enrichment_status": "ok",
-      "enriched_at": "2026-09-12T09:21:49.913Z"
+      "enriched_at": "2026-09-12T15:31:47.505Z"
     },
     {
-      "cluster_id": "wmqttz",
-      "title": "Mecka AI nears $500M valuation in Sequoia-led deal amid rush for robot training data",
-      "url": "https://techcrunch.com/2026/09/11/mecka-ai-nears-500m-valuation-in-sequoia-led-deal-amid-rush-for-robot-training-data",
-      "source_name": "TechCrunch AI",
-      "published_at": "2026-09-11T22:58:17.000Z",
+      "cluster_id": "s5evwb",
+      "title": "[AINews] DeepSeek v4.1-Flash: 763B-P8B-D16B novel causal Encoder–Decoder architecture with vision marks the Return of the Whale",
+      "url": "https://latent.space/p/ainews-deepseek-v41-flash-763b-p8b",
+      "source_name": "Latent Space",
+      "published_at": "2026-09-12T05:56:05.000Z",
       "kind": "news",
-      "score": 0.641,
-      "dek": "Financial news regarding Mecka AI's valuation and focus on robot training data.",
-      "brief": "The round for the two-year-old startup is coming together months after Mecka announced its Series A.",
-      "enrichment_status": "metadata_only",
-      "enriched_at": "2026-09-12T09:21:49.913Z"
+      "score": 0.672,
+      "dek": "DeepSeek released v4.1-Flash, a 763B parameter model featuring a novel causal Encoder-Decoder architecture with integrated vision capabilities.",
+      "brief": "DeepSeek's latest release, v4.1-Flash, introduces a complex architecture combining a 763B parameter count with specialized encoder-decoder structures. The model marks a significant update in their research trajectory, incorporating native vision processing into their high-parameter framework.",
+      "image_url": "https://substackcdn.com/image/fetch/$s_!dYdZ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F149285a5-df59-4df7-8ba9-4653b68c5f0b_2316x1122.png",
+      "image_alt": "DeepSeek v4.1-Flash architecture diagram",
+      "image_source": "rss_enclosure",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-09-12T15:31:47.505Z"
     }
   ],
-  "count": 47,
+  "count": 33,
   "clusters": [
     {
-      "id": "1anssae",
+      "id": "16yfx9z",
       "primary": {
-        "id": "1anssae",
-        "source_id": "hn_ai",
-        "source_name": "Hacker News (AI-filtered)",
+        "id": "16yfx9z",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
         "source_role": "main",
-        "trust": 0.65,
-        "title": "OpenAI agents carried out an undisclosed attack on RubyGems",
-        "url": "https://rubyhack.ai/",
-        "original_url": "https://www.rubyhack.ai/",
-        "discussion_url": "https://news.ycombinator.com/item?id=49666735",
-        "discussion_source": "Hacker News",
-        "published_at": "2026-09-11T23:17:42Z",
-        "published_at_source": "api",
-        "date_confidence": "high",
-        "engagement": {
-          "score": 684,
-          "comments": 387
-        }
-      },
-      "members": [
-        {
-          "id": "1anssae",
-          "source_id": "hn_ai",
-          "source_name": "Hacker News (AI-filtered)",
-          "source_role": "main",
-          "trust": 0.65,
-          "title": "OpenAI agents carried out an undisclosed attack on RubyGems",
-          "url": "https://rubyhack.ai/",
-          "original_url": "https://www.rubyhack.ai/",
-          "discussion_url": "https://news.ycombinator.com/item?id=49666735",
-          "discussion_source": "Hacker News",
-          "published_at": "2026-09-11T23:17:42Z",
-          "published_at_source": "api",
-          "date_confidence": "high",
-          "engagement": {
-            "score": 684,
-            "comments": 387
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "hn_ai",
-          "source_name": "Hacker News (AI-filtered)",
-          "title": "OpenAI agents carried out an undisclosed attack on RubyGems",
-          "url": "https://rubyhack.ai/",
-          "published_at": "2026-09-11T23:17:42Z",
-          "published_at_source": "api",
-          "date_confidence": "high",
-          "discussion_url": "https://news.ycombinator.com/item?id=49666735",
-          "discussion_source": "Hacker News"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "signal",
-      "one_liner": "Report on security vulnerabilities involving AI agents interacting with the RubyGems package repository.",
-      "novelty": 0.775,
-      "novelty_label": "high",
-      "trust": 0.65,
-      "score": 0.769,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as concrete builder or research signal",
-        "source-native discussion or engagement is unusually high"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "lfz9a5",
-      "primary": {
-        "id": "lfz9a5",
-        "source_id": "simonw",
-        "source_name": "Simon Willison",
-        "source_role": "main",
-        "trust": 0.9,
-        "title": "OpenAI agents attacked RubyGems back in May",
-        "url": "https://simonwillison.net/2026/Sep/12/openai-agents-rubygems",
-        "original_url": "https://simonwillison.net/2026/Sep/12/openai-agents-rubygems/",
-        "published_at": "2026-09-12T00:42:25.000Z",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "AI models' written reasoning steps correspond to distinct internal patterns, a new study finds",
+        "url": "https://the-decoder.com/ai-models-written-reasoning-steps-correspond-to-distinct-internal-patterns-a-new-study-finds",
+        "original_url": "https://the-decoder.com/ai-models-written-reasoning-steps-correspond-to-distinct-internal-patterns-a-new-study-finds/",
+        "summary": "Reasoning steps like calculation, formula retrieval, and deduction are clearly separable in a model's internal states, especially in the middle layers. That matters for AI safety, because models process more than their visible chain of thought reveals. The article AI models' written reasoning steps correspond to distinct internal patterns, a new study finds appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/reasoning-geometry-nano-banana-pro.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-09-12T13:39:43.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "lfz9a5",
-          "source_id": "simonw",
-          "source_name": "Simon Willison",
+          "id": "16yfx9z",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
           "source_role": "main",
-          "trust": 0.9,
-          "title": "OpenAI agents attacked RubyGems back in May",
-          "url": "https://simonwillison.net/2026/Sep/12/openai-agents-rubygems",
-          "original_url": "https://simonwillison.net/2026/Sep/12/openai-agents-rubygems/",
-          "published_at": "2026-09-12T00:42:25.000Z",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "AI models' written reasoning steps correspond to distinct internal patterns, a new study finds",
+          "url": "https://the-decoder.com/ai-models-written-reasoning-steps-correspond-to-distinct-internal-patterns-a-new-study-finds",
+          "original_url": "https://the-decoder.com/ai-models-written-reasoning-steps-correspond-to-distinct-internal-patterns-a-new-study-finds/",
+          "summary": "Reasoning steps like calculation, formula retrieval, and deduction are clearly separable in a model's internal states, especially in the middle layers. That matters for AI safety, because models process more than their visible chain of thought reveals. The article AI models' written reasoning steps correspond to distinct internal patterns, a new study finds appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/reasoning-geometry-nano-banana-pro.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-09-12T13:39:43.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "simonw",
-          "source_name": "Simon Willison",
-          "title": "OpenAI agents attacked RubyGems back in May",
-          "url": "https://simonwillison.net/2026/Sep/12/openai-agents-rubygems",
-          "published_at": "2026-09-12T00:42:25.000Z",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "AI models' written reasoning steps correspond to distinct internal patterns, a new study finds",
+          "url": "https://the-decoder.com/ai-models-written-reasoning-steps-correspond-to-distinct-internal-patterns-a-new-study-finds",
+          "published_at": "2026-09-12T13:39:43.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "also_seen_on": [],
-      "kind": "news",
+      "kind": "paper",
       "quality": "signal",
-      "one_liner": "Analysis of security incidents involving AI agents performing unauthorized actions on RubyGems.",
-      "novelty": 0.688,
-      "novelty_label": "medium",
-      "trust": 0.9,
-      "score": 0.762,
+      "one_liner": "Study showing distinct internal state patterns corresponding to specific reasoning steps in LLMs.",
+      "novelty": 0.822,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.777,
       "why_this_surfaced": [
-        "meaningfully different from recent coverage",
+        "high novelty against the 30-day history",
         "classified as concrete builder or research signal",
-        "primary source has high trust weight"
+        "fresh within the current refresh window"
       ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
     },
     {
       "id": "1g3ubbm",
@@ -790,11 +737,11 @@
       "also_seen_on": [],
       "kind": "opinion",
       "quality": "signal",
-      "one_liner": "Argument against building specialized tools for AI agents, focusing on interface design and reliability.",
+      "one_liner": "Argument against building custom tools for AI agents, favoring standard interfaces.",
       "novelty": 0.779,
       "novelty_label": "high",
       "trust": 0.78,
-      "score": 0.761,
+      "score": 0.751,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal"
@@ -802,63 +749,195 @@
       "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
-      "id": "l1ge9c",
+      "id": "5chjh0",
       "primary": {
-        "id": "l1ge9c",
-        "source_id": "marktechpost",
-        "source_name": "MarkTechPost",
+        "id": "5chjh0",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
         "source_role": "main",
-        "trust": 0.48,
+        "trust": 0.74,
         "kind_hint": "news",
-        "title": "Can LLMs Engineer Their Own Agent Harness? ByteDance Seed’s HarnessDev Says Only 34 of 64 Changes Generalize",
-        "url": "https://marktechpost.com/2026/09/11/can-llms-engineer-their-own-agent-harness-bytedance-seeds-harnessdev-says-only-34-of-64-changes-generalize",
-        "original_url": "https://www.marktechpost.com/2026/09/11/can-llms-engineer-their-own-agent-harness-bytedance-seeds-harnessdev-says-only-34-of-64-changes-generalize/",
-        "summary": "ByteDance Seed, SUTD, Georgia Tech, M-A-P, and TokenWave.AI introduce HarnessDev, a benchmark that scores the runnable harness a model builds rather than the answer it returns. Starting from a seed that scores 0, 6 creator LLMs construct harnesses across 5 benchmarks and 2,207 tasks, then evolve them from execution feedback. Self-built harnesses match human references on writing and ML experimentation but trail on code and search, and only 34 of 64 evolution changes move the same direction on held-out tasks. The post Can LLMs Engineer Their Own Agent Harness? ByteDance Seed’s HarnessDev Says O",
-        "published_at": "2026-09-11T22:01:08.000Z",
+        "title": "Google's new AI model predicts the future from sales data, weather, and discount schedules",
+        "url": "https://the-decoder.com/googles-new-ai-model-predicts-the-future-from-sales-data-weather-and-discount-schedules",
+        "original_url": "https://the-decoder.com/googles-new-ai-model-predicts-the-future-from-sales-data-weather-and-discount-schedules/",
+        "summary": "Google Research has released TimesFM-3, a forecasting model that analyzes time series alongside related data and known future events like sales promotions or weather forecasts. Instead of predicting the future step by step, the 330-million-parameter model fills in all future time points in a single pass, which cuts compute time and reduces compounding errors. The article Google's new AI model predicts the future from sales data, weather, and discount schedules appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/google-timesfm-3-ice-cream-nano-banana-pro.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-09-12T09:26:05.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "l1ge9c",
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
+          "id": "5chjh0",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
           "source_role": "main",
-          "trust": 0.48,
+          "trust": 0.74,
           "kind_hint": "news",
-          "title": "Can LLMs Engineer Their Own Agent Harness? ByteDance Seed’s HarnessDev Says Only 34 of 64 Changes Generalize",
-          "url": "https://marktechpost.com/2026/09/11/can-llms-engineer-their-own-agent-harness-bytedance-seeds-harnessdev-says-only-34-of-64-changes-generalize",
-          "original_url": "https://www.marktechpost.com/2026/09/11/can-llms-engineer-their-own-agent-harness-bytedance-seeds-harnessdev-says-only-34-of-64-changes-generalize/",
-          "summary": "ByteDance Seed, SUTD, Georgia Tech, M-A-P, and TokenWave.AI introduce HarnessDev, a benchmark that scores the runnable harness a model builds rather than the answer it returns. Starting from a seed that scores 0, 6 creator LLMs construct harnesses across 5 benchmarks and 2,207 tasks, then evolve them from execution feedback. Self-built harnesses match human references on writing and ML experimentation but trail on code and search, and only 34 of 64 evolution changes move the same direction on held-out tasks. The post Can LLMs Engineer Their Own Agent Harness? ByteDance Seed’s HarnessDev Says O",
-          "published_at": "2026-09-11T22:01:08.000Z",
+          "title": "Google's new AI model predicts the future from sales data, weather, and discount schedules",
+          "url": "https://the-decoder.com/googles-new-ai-model-predicts-the-future-from-sales-data-weather-and-discount-schedules",
+          "original_url": "https://the-decoder.com/googles-new-ai-model-predicts-the-future-from-sales-data-weather-and-discount-schedules/",
+          "summary": "Google Research has released TimesFM-3, a forecasting model that analyzes time series alongside related data and known future events like sales promotions or weather forecasts. Instead of predicting the future step by step, the 330-million-parameter model fills in all future time points in a single pass, which cuts compute time and reduces compounding errors. The article Google's new AI model predicts the future from sales data, weather, and discount schedules appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/google-timesfm-3-ice-cream-nano-banana-pro.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-09-12T09:26:05.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "title": "Can LLMs Engineer Their Own Agent Harness? ByteDance Seed’s HarnessDev Says Only 34 of 64 Changes Generalize",
-          "url": "https://marktechpost.com/2026/09/11/can-llms-engineer-their-own-agent-harness-bytedance-seeds-harnessdev-says-only-34-of-64-changes-generalize",
-          "published_at": "2026-09-11T22:01:08.000Z",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Google's new AI model predicts the future from sales data, weather, and discount schedules",
+          "url": "https://the-decoder.com/googles-new-ai-model-predicts-the-future-from-sales-data-weather-and-discount-schedules",
+          "published_at": "2026-09-12T09:26:05.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "also_seen_on": [],
-      "kind": "paper",
+      "kind": "model_release",
       "quality": "signal",
-      "one_liner": "HarnessDev benchmark evaluates LLM-generated agent harnesses, finding only 34 of 64 changes generalize across tasks.",
-      "novelty": 0.855,
+      "one_liner": "Google releases TimesFM-3, a 330M parameter time-series forecasting model using exogenous data for non-autoregressive prediction.",
+      "novelty": 0.786,
       "novelty_label": "high",
-      "trust": 0.48,
-      "score": 0.711,
+      "trust": 0.74,
+      "score": 0.759,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
-        "classified as concrete builder or research signal"
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
       ],
-      "builder_action": "Save this for technical review if the method maps to your roadmap."
+      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
+    },
+    {
+      "id": "6csmcg",
+      "primary": {
+        "id": "6csmcg",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "Presentation: From Retrieval to Reasoning: Building Production-Ready Agentic AI Systems with Knowledge Graphs",
+        "url": "https://infoq.com/presentations/knowledge-graphs-agentic-systems-patterns",
+        "original_url": "https://www.infoq.com/presentations/knowledge-graphs-agentic-systems-patterns/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Cassie Shum discusses why knowledge graphs serve as a critical foundation for agentic systems. Moving beyond basic RAG, she explains 4 practical architectural patterns: context bundling, decision provenance, code as truth, and agent visibility. She demonstrates an engineering harness built on a knowledge graph to streamline feedback loops, optimize token usage, and maintain system reliability. By Cassie Shum",
+        "image_url": "https://res.infoq.com/presentations/knowledge-graphs-agentic-systems-patterns/en/mediumimage/cassie-shum-medium-1788338916792.jpeg",
+        "image_source": "rss_content",
+        "published_at": "2026-09-12T11:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "6csmcg",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "Presentation: From Retrieval to Reasoning: Building Production-Ready Agentic AI Systems with Knowledge Graphs",
+          "url": "https://infoq.com/presentations/knowledge-graphs-agentic-systems-patterns",
+          "original_url": "https://www.infoq.com/presentations/knowledge-graphs-agentic-systems-patterns/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "Cassie Shum discusses why knowledge graphs serve as a critical foundation for agentic systems. Moving beyond basic RAG, she explains 4 practical architectural patterns: context bundling, decision provenance, code as truth, and agent visibility. She demonstrates an engineering harness built on a knowledge graph to streamline feedback loops, optimize token usage, and maintain system reliability. By Cassie Shum",
+          "image_url": "https://res.infoq.com/presentations/knowledge-graphs-agentic-systems-patterns/en/mediumimage/cassie-shum-medium-1788338916792.jpeg",
+          "image_source": "rss_content",
+          "published_at": "2026-09-12T11:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "Presentation: From Retrieval to Reasoning: Building Production-Ready Agentic AI Systems with Knowledge Graphs",
+          "url": "https://infoq.com/presentations/knowledge-graphs-agentic-systems-patterns",
+          "published_at": "2026-09-12T11:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "signal",
+      "one_liner": "Practical architectural patterns for integrating knowledge graphs into agentic AI systems.",
+      "novelty": 0.711,
+      "novelty_label": "medium",
+      "trust": 0.78,
+      "score": 0.749,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "1cztc8m",
+      "primary": {
+        "id": "1cztc8m",
+        "source_id": "latent_space",
+        "source_name": "Latent Space",
+        "source_role": "main",
+        "trust": 0.85,
+        "title": "The Rise of the Forward Deployed Engineer — and How To Do the Job Right",
+        "url": "https://latent.space/p/forward-deployed-engineer-best-practices",
+        "original_url": "https://www.latent.space/p/forward-deployed-engineer-best-practices",
+        "summary": "Before co-founding Kepler, Vinoo Ganesh led compute at Palantir and built Project Frontline — a pioneering program for Forward Deployed Engineers. He takes us through the best practices of FDEs.",
+        "image_url": "https://substackcdn.com/image/fetch/$s_!5LAd!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd9ad2af0-b40a-433d-bd78-0514683c9eb4_2560x1440.png",
+        "image_source": "rss_enclosure",
+        "published_at": "2026-09-12T15:01:19.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1cztc8m",
+          "source_id": "latent_space",
+          "source_name": "Latent Space",
+          "source_role": "main",
+          "trust": 0.85,
+          "title": "The Rise of the Forward Deployed Engineer — and How To Do the Job Right",
+          "url": "https://latent.space/p/forward-deployed-engineer-best-practices",
+          "original_url": "https://www.latent.space/p/forward-deployed-engineer-best-practices",
+          "summary": "Before co-founding Kepler, Vinoo Ganesh led compute at Palantir and built Project Frontline — a pioneering program for Forward Deployed Engineers. He takes us through the best practices of FDEs.",
+          "image_url": "https://substackcdn.com/image/fetch/$s_!5LAd!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd9ad2af0-b40a-433d-bd78-0514683c9eb4_2560x1440.png",
+          "image_source": "rss_enclosure",
+          "published_at": "2026-09-12T15:01:19.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "latent_space",
+          "source_name": "Latent Space",
+          "title": "The Rise of the Forward Deployed Engineer — and How To Do the Job Right",
+          "url": "https://latent.space/p/forward-deployed-engineer-best-practices",
+          "published_at": "2026-09-12T15:01:19.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "Discussion on the role and best practices for forward-deployed engineers in AI companies.",
+      "novelty": 0.825,
+      "novelty_label": "high",
+      "trust": 0.85,
+      "score": 0.693,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "primary source has high trust weight",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "s5evwb",
@@ -910,139 +989,15 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Discussion of DeepSeek v4.1-Flash architecture and naming conventions.",
+      "one_liner": "Commentary on the release of a new DeepSeek model architecture.",
       "novelty": 0.804,
       "novelty_label": "high",
       "trust": 0.85,
-      "score": 0.682,
+      "score": 0.672,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal",
-        "primary source has high trust weight",
-        "fresh within the current refresh window"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "14o5fn4",
-      "primary": {
-        "id": "14o5fn4",
-        "source_id": "marktechpost",
-        "source_name": "MarkTechPost",
-        "source_role": "main",
-        "trust": 0.48,
-        "kind_hint": "news",
-        "title": "Anthropic Adds Plugin Evals to Claude Code: 6 Grader Types, a No-Plugin Baseline, and a CI Gate for Skills",
-        "url": "https://marktechpost.com/2026/09/11/anthropic-adds-plugin-evals-to-claude-code-6-grader-types-a-no-plugin-baseline-and-a-ci-gate-for-skills",
-        "original_url": "https://www.marktechpost.com/2026/09/11/anthropic-adds-plugin-evals-to-claude-code-6-grader-types-a-no-plugin-baseline-and-a-ci-gate-for-skills/",
-        "summary": "Anthropic has published a new plugin evals workflow for Claude Code. The claude plugin eval command runs a plugin against realistic prompts, grades what Claude produced, and compares the result with a run where the plugin is not loaded. It answers 3 questions plugin developers could not previously measure: does the skill trigger, does it […] The post Anthropic Adds Plugin Evals to Claude Code: 6 Grader Types, a No-Plugin Baseline, and a CI Gate for Skills appeared first on MarkTechPost.",
-        "published_at": "2026-09-11T21:05:55.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "14o5fn4",
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "source_role": "main",
-          "trust": 0.48,
-          "kind_hint": "news",
-          "title": "Anthropic Adds Plugin Evals to Claude Code: 6 Grader Types, a No-Plugin Baseline, and a CI Gate for Skills",
-          "url": "https://marktechpost.com/2026/09/11/anthropic-adds-plugin-evals-to-claude-code-6-grader-types-a-no-plugin-baseline-and-a-ci-gate-for-skills",
-          "original_url": "https://www.marktechpost.com/2026/09/11/anthropic-adds-plugin-evals-to-claude-code-6-grader-types-a-no-plugin-baseline-and-a-ci-gate-for-skills/",
-          "summary": "Anthropic has published a new plugin evals workflow for Claude Code. The claude plugin eval command runs a plugin against realistic prompts, grades what Claude produced, and compares the result with a run where the plugin is not loaded. It answers 3 questions plugin developers could not previously measure: does the skill trigger, does it […] The post Anthropic Adds Plugin Evals to Claude Code: 6 Grader Types, a No-Plugin Baseline, and a CI Gate for Skills appeared first on MarkTechPost.",
-          "published_at": "2026-09-11T21:05:55.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "title": "Anthropic Adds Plugin Evals to Claude Code: 6 Grader Types, a No-Plugin Baseline, and a CI Gate for Skills",
-          "url": "https://marktechpost.com/2026/09/11/anthropic-adds-plugin-evals-to-claude-code-6-grader-types-a-no-plugin-baseline-and-a-ci-gate-for-skills",
-          "published_at": "2026-09-11T21:05:55.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "tool",
-      "quality": "signal",
-      "one_liner": "Anthropic adds plugin evaluation workflows to Claude Code, enabling comparative grading against no-plugin baselines.",
-      "novelty": 0.741,
-      "novelty_label": "medium",
-      "trust": 0.48,
-      "score": 0.676,
-      "why_this_surfaced": [
-        "meaningfully different from recent coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Try it in a small sandbox before adding it to production workflow."
-    },
-    {
-      "id": "gq3is0",
-      "primary": {
-        "id": "gq3is0",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
-        "source_role": "main",
-        "trust": 0.74,
-        "kind_hint": "news",
-        "title": "Leading mathematicians fear AI is making their field dumber, and warn the rest of us is next",
-        "url": "https://the-decoder.com/leading-mathematicians-fear-ai-is-making-their-field-dumber-and-warn-the-rest-of-us-is-next",
-        "original_url": "https://the-decoder.com/leading-mathematicians-fear-ai-is-making-their-field-dumber-and-warn-the-rest-of-us-is-next/",
-        "summary": "In a joint statement, 25 Fields Medal winners warn that the goals of the AI industry and mathematics are \"severely misaligned.\" They argue that mass-producing solved problems with AI undermines the discipline's true goal: understanding. The mathematicians see this as a symptom of a broader threat to intellectual work. The article Leading mathematicians fear AI is making their field dumber, and warn the rest of us is next appeared first on The Decoder.",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/millenium_math.png",
-        "image_source": "rss_content",
-        "published_at": "2026-09-12T08:28:53.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "gq3is0",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "source_role": "main",
-          "trust": 0.74,
-          "kind_hint": "news",
-          "title": "Leading mathematicians fear AI is making their field dumber, and warn the rest of us is next",
-          "url": "https://the-decoder.com/leading-mathematicians-fear-ai-is-making-their-field-dumber-and-warn-the-rest-of-us-is-next",
-          "original_url": "https://the-decoder.com/leading-mathematicians-fear-ai-is-making-their-field-dumber-and-warn-the-rest-of-us-is-next/",
-          "summary": "In a joint statement, 25 Fields Medal winners warn that the goals of the AI industry and mathematics are \"severely misaligned.\" They argue that mass-producing solved problems with AI undermines the discipline's true goal: understanding. The mathematicians see this as a symptom of a broader threat to intellectual work. The article Leading mathematicians fear AI is making their field dumber, and warn the rest of us is next appeared first on The Decoder.",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/millenium_math.png",
-          "image_source": "rss_content",
-          "published_at": "2026-09-12T08:28:53.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "Leading mathematicians fear AI is making their field dumber, and warn the rest of us is next",
-          "url": "https://the-decoder.com/leading-mathematicians-fear-ai-is-making-their-field-dumber-and-warn-the-rest-of-us-is-next",
-          "published_at": "2026-09-12T08:28:53.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "opinion",
-      "quality": "mixed",
-      "one_liner": "Mathematicians express concerns regarding the impact of AI on mathematical research and understanding.",
-      "novelty": 0.805,
-      "novelty_label": "high",
-      "trust": 0.74,
-      "score": 0.661,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal",
-        "fresh within the current refresh window"
+        "primary source has high trust weight"
       ],
       "builder_action": "Read the primary source and decide whether it changes your next action."
     },
@@ -1104,13 +1059,76 @@
       "novelty": 0.824,
       "novelty_label": "high",
       "trust": 0.62,
-      "score": 0.63,
+      "score": 0.62,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "chdpnz",
+      "primary": {
+        "id": "chdpnz",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "OpenAI agents launched a 2,000-package cyberattack on RubyGems just to collect data anyone could Google",
+        "url": "https://the-decoder.com/openai-agents-launched-a-2000-package-cyberattack-on-rubygems-just-to-collect-data-anyone-could-google",
+        "original_url": "https://the-decoder.com/openai-agents-launched-a-2000-package-cyberattack-on-rubygems-just-to-collect-data-anyone-could-google/",
+        "summary": "In May 2026, OpenAI agents uploaded more than 2,000 malicious packages to RubyGems, found an unknown security vulnerability on their own, and tried to steal API keys. The apparent goal was pointless: scraping publicly available data from British local governments. OpenAI reportedly never told those affected. The article OpenAI agents launched a 2,000-package cyberattack on RubyGems just to collect data anyone could Google appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/openai_kraken_cybersecurity.png",
+        "image_source": "rss_content",
+        "published_at": "2026-09-12T10:08:43.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "chdpnz",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "OpenAI agents launched a 2,000-package cyberattack on RubyGems just to collect data anyone could Google",
+          "url": "https://the-decoder.com/openai-agents-launched-a-2000-package-cyberattack-on-rubygems-just-to-collect-data-anyone-could-google",
+          "original_url": "https://the-decoder.com/openai-agents-launched-a-2000-package-cyberattack-on-rubygems-just-to-collect-data-anyone-could-google/",
+          "summary": "In May 2026, OpenAI agents uploaded more than 2,000 malicious packages to RubyGems, found an unknown security vulnerability on their own, and tried to steal API keys. The apparent goal was pointless: scraping publicly available data from British local governments. OpenAI reportedly never told those affected. The article OpenAI agents launched a 2,000-package cyberattack on RubyGems just to collect data anyone could Google appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/openai_kraken_cybersecurity.png",
+          "image_source": "rss_content",
+          "published_at": "2026-09-12T10:08:43.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "OpenAI agents launched a 2,000-package cyberattack on RubyGems just to collect data anyone could Google",
+          "url": "https://the-decoder.com/openai-agents-launched-a-2000-package-cyberattack-on-rubygems-just-to-collect-data-anyone-could-google",
+          "published_at": "2026-09-12T10:08:43.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "OpenAI agents uploaded malicious packages to RubyGems to scrape public data, raising security and ethical concerns.",
+      "novelty": 0.837,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.663,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal",
         "fresh within the current refresh window"
       ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
+      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "1x3onfu",
@@ -1156,11 +1174,11 @@
       "also_seen_on": [],
       "kind": "opinion",
       "quality": "mixed",
-      "one_liner": "Personal reflection on the current state and trajectory of AI development.",
+      "one_liner": "Personal reflections on the current state and trajectory of AI development.",
       "novelty": 0.75,
       "novelty_label": "high",
       "trust": 0.9,
-      "score": 0.656,
+      "score": 0.646,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal",
@@ -1169,46 +1187,106 @@
       "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
-      "id": "wmqttz",
+      "id": "1dkl4br",
       "primary": {
-        "id": "wmqttz",
-        "source_id": "techcrunch_ai",
-        "source_name": "TechCrunch AI",
+        "id": "1dkl4br",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
         "source_role": "main",
-        "trust": 0.72,
+        "trust": 0.74,
         "kind_hint": "news",
-        "title": "Mecka AI nears $500M valuation in Sequoia-led deal amid rush for robot training data",
-        "url": "https://techcrunch.com/2026/09/11/mecka-ai-nears-500m-valuation-in-sequoia-led-deal-amid-rush-for-robot-training-data",
-        "original_url": "https://techcrunch.com/2026/09/11/mecka-ai-nears-500m-valuation-in-sequoia-led-deal-amid-rush-for-robot-training-data/",
-        "summary": "The round for the two-year-old startup is coming together months after Mecka announced its Series A.",
-        "published_at": "2026-09-11T22:58:17.000Z",
+        "title": "Anthropic CEO Amodei wants AI speed limits before self-improvement outpaces human control",
+        "url": "https://the-decoder.com/anthropic-ceo-amodei-wants-ai-speed-limits-before-self-improvement-outpaces-human-control",
+        "original_url": "https://the-decoder.com/anthropic-ceo-amodei-wants-ai-speed-limits-before-self-improvement-outpaces-human-control/",
+        "summary": "Anthropic CEO Dario Amodei is calling for a controlled slowdown in AI development. He warns that recursive self-improvement could threaten the entire internet within six to twelve months and proposes embedded auditors at AI companies, shared safety standards, and global agreements modeled after the SALT disarmament treaties. His warning comes just ahead of what could be the largest initial public offering in history. The article Anthropic CEO Amodei wants AI speed limits before self-improvement outpaces human control appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/anthropic_amodei.png",
+        "image_source": "rss_content",
+        "published_at": "2026-09-12T15:03:21.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "wmqttz",
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
+          "id": "1dkl4br",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
           "source_role": "main",
-          "trust": 0.72,
+          "trust": 0.74,
           "kind_hint": "news",
-          "title": "Mecka AI nears $500M valuation in Sequoia-led deal amid rush for robot training data",
-          "url": "https://techcrunch.com/2026/09/11/mecka-ai-nears-500m-valuation-in-sequoia-led-deal-amid-rush-for-robot-training-data",
-          "original_url": "https://techcrunch.com/2026/09/11/mecka-ai-nears-500m-valuation-in-sequoia-led-deal-amid-rush-for-robot-training-data/",
-          "summary": "The round for the two-year-old startup is coming together months after Mecka announced its Series A.",
-          "published_at": "2026-09-11T22:58:17.000Z",
+          "title": "Anthropic CEO Amodei wants AI speed limits before self-improvement outpaces human control",
+          "url": "https://the-decoder.com/anthropic-ceo-amodei-wants-ai-speed-limits-before-self-improvement-outpaces-human-control",
+          "original_url": "https://the-decoder.com/anthropic-ceo-amodei-wants-ai-speed-limits-before-self-improvement-outpaces-human-control/",
+          "summary": "Anthropic CEO Dario Amodei is calling for a controlled slowdown in AI development. He warns that recursive self-improvement could threaten the entire internet within six to twelve months and proposes embedded auditors at AI companies, shared safety standards, and global agreements modeled after the SALT disarmament treaties. His warning comes just ahead of what could be the largest initial public offering in history. The article Anthropic CEO Amodei wants AI speed limits before self-improvement outpaces human control appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/anthropic_amodei.png",
+          "image_source": "rss_content",
+          "published_at": "2026-09-12T15:03:21.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "title": "Mecka AI nears $500M valuation in Sequoia-led deal amid rush for robot training data",
-          "url": "https://techcrunch.com/2026/09/11/mecka-ai-nears-500m-valuation-in-sequoia-led-deal-amid-rush-for-robot-training-data",
-          "published_at": "2026-09-11T22:58:17.000Z",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Anthropic CEO Amodei wants AI speed limits before self-improvement outpaces human control",
+          "url": "https://the-decoder.com/anthropic-ceo-amodei-wants-ai-speed-limits-before-self-improvement-outpaces-human-control",
+          "published_at": "2026-09-12T15:03:21.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "Anthropic CEO advocates for AI development slowdowns and safety audits to mitigate existential risks.",
+      "novelty": 0.796,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.659,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "lfz9a5",
+      "primary": {
+        "id": "lfz9a5",
+        "source_id": "simonw",
+        "source_name": "Simon Willison",
+        "source_role": "main",
+        "trust": 0.9,
+        "title": "OpenAI agents attacked RubyGems back in May",
+        "url": "https://simonwillison.net/2026/Sep/12/openai-agents-rubygems",
+        "original_url": "https://simonwillison.net/2026/Sep/12/openai-agents-rubygems/",
+        "published_at": "2026-09-12T00:42:25.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "lfz9a5",
+          "source_id": "simonw",
+          "source_name": "Simon Willison",
+          "source_role": "main",
+          "trust": 0.9,
+          "title": "OpenAI agents attacked RubyGems back in May",
+          "url": "https://simonwillison.net/2026/Sep/12/openai-agents-rubygems",
+          "original_url": "https://simonwillison.net/2026/Sep/12/openai-agents-rubygems/",
+          "published_at": "2026-09-12T00:42:25.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "simonw",
+          "source_name": "Simon Willison",
+          "title": "OpenAI agents attacked RubyGems back in May",
+          "url": "https://simonwillison.net/2026/Sep/12/openai-agents-rubygems",
+          "published_at": "2026-09-12T00:42:25.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -1216,14 +1294,207 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Financial news regarding Mecka AI's valuation and focus on robot training data.",
-      "novelty": 0.806,
+      "one_liner": "Summary of the OpenAI agent incident involving malicious RubyGems packages.",
+      "novelty": 0.688,
+      "novelty_label": "medium",
+      "trust": 0.9,
+      "score": 0.639,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as useful but lower-confidence signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "gq3is0",
+      "primary": {
+        "id": "gq3is0",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Leading mathematicians fear AI is making their field dumber, and warn the rest of us is next",
+        "url": "https://the-decoder.com/leading-mathematicians-fear-ai-is-making-their-field-dumber-and-warn-the-rest-of-us-is-next",
+        "original_url": "https://the-decoder.com/leading-mathematicians-fear-ai-is-making-their-field-dumber-and-warn-the-rest-of-us-is-next/",
+        "summary": "In a joint statement, 25 Fields Medal winners warn that the goals of the AI industry and mathematics are \"severely misaligned.\" They argue that mass-producing solved problems with AI undermines the discipline's true goal: understanding. The mathematicians see this as a symptom of a broader threat to intellectual work. The article Leading mathematicians fear AI is making their field dumber, and warn the rest of us is next appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/millenium_math.png",
+        "image_source": "rss_content",
+        "published_at": "2026-09-12T08:28:53.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "gq3is0",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Leading mathematicians fear AI is making their field dumber, and warn the rest of us is next",
+          "url": "https://the-decoder.com/leading-mathematicians-fear-ai-is-making-their-field-dumber-and-warn-the-rest-of-us-is-next",
+          "original_url": "https://the-decoder.com/leading-mathematicians-fear-ai-is-making-their-field-dumber-and-warn-the-rest-of-us-is-next/",
+          "summary": "In a joint statement, 25 Fields Medal winners warn that the goals of the AI industry and mathematics are \"severely misaligned.\" They argue that mass-producing solved problems with AI undermines the discipline's true goal: understanding. The mathematicians see this as a symptom of a broader threat to intellectual work. The article Leading mathematicians fear AI is making their field dumber, and warn the rest of us is next appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/millenium_math.png",
+          "image_source": "rss_content",
+          "published_at": "2026-09-12T08:28:53.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Leading mathematicians fear AI is making their field dumber, and warn the rest of us is next",
+          "url": "https://the-decoder.com/leading-mathematicians-fear-ai-is-making-their-field-dumber-and-warn-the-rest-of-us-is-next",
+          "published_at": "2026-09-12T08:28:53.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "Mathematicians express concerns regarding the impact of AI-generated solutions on mathematical research quality.",
+      "novelty": 0.805,
       "novelty_label": "high",
-      "trust": 0.72,
-      "score": 0.641,
+      "trust": 0.74,
+      "score": 0.651,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal"
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1o0nnwp",
+      "primary": {
+        "id": "1o0nnwp",
+        "source_id": "the_verge_ai",
+        "source_name": "The Verge AI",
+        "source_role": "main",
+        "trust": 0.68,
+        "kind_hint": "news",
+        "title": "Trump is giving data centers a pass to pollute",
+        "url": "https://theverge.com/ai-artificial-intelligence/994112/ai-data-center-pollution-health-epa",
+        "original_url": "https://www.theverge.com/ai-artificial-intelligence/994112/ai-data-center-pollution-health-epa",
+        "summary": "President Donald Trump is weakening environmental regulations in the name of speeding up the construction of AI data centers, raising health risks for Americans, a cadre of former EPA officials said this week in a briefing and new report. They are urging - perhaps futilely - the president to adopt a \"Data Center Health Protection Pledge\" to signal that the administration is taking the environmental threat seriously. At the start of his term, Trump's EPA administrator, Lee Zeldin, proclaimed his goal of making America \"the AI capital of the world\" through deregulation. Since then, Zeldin and th",
+        "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/04/STKS528_DATA_CENTERS_D.jpg?quality=90&",
+        "image_source": "rss_content",
+        "published_at": "2026-09-12T14:41:27.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1o0nnwp",
+          "source_id": "the_verge_ai",
+          "source_name": "The Verge AI",
+          "source_role": "main",
+          "trust": 0.68,
+          "kind_hint": "news",
+          "title": "Trump is giving data centers a pass to pollute",
+          "url": "https://theverge.com/ai-artificial-intelligence/994112/ai-data-center-pollution-health-epa",
+          "original_url": "https://www.theverge.com/ai-artificial-intelligence/994112/ai-data-center-pollution-health-epa",
+          "summary": "President Donald Trump is weakening environmental regulations in the name of speeding up the construction of AI data centers, raising health risks for Americans, a cadre of former EPA officials said this week in a briefing and new report. They are urging - perhaps futilely - the president to adopt a \"Data Center Health Protection Pledge\" to signal that the administration is taking the environmental threat seriously. At the start of his term, Trump's EPA administrator, Lee Zeldin, proclaimed his goal of making America \"the AI capital of the world\" through deregulation. Since then, Zeldin and th",
+          "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/04/STKS528_DATA_CENTERS_D.jpg?quality=90&",
+          "image_source": "rss_content",
+          "published_at": "2026-09-12T14:41:27.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_verge_ai",
+          "source_name": "The Verge AI",
+          "title": "Trump is giving data centers a pass to pollute",
+          "url": "https://theverge.com/ai-artificial-intelligence/994112/ai-data-center-pollution-health-epa",
+          "published_at": "2026-09-12T14:41:27.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Report claims environmental regulations are being weakened to accelerate data center construction.",
+      "novelty": 0.794,
+      "novelty_label": "high",
+      "trust": 0.68,
+      "score": 0.644,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "yrx3qi",
+      "primary": {
+        "id": "yrx3qi",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "GPT-6 Astra needs leaner prompts and fewer guardrails, OpenAI recommends",
+        "url": "https://the-decoder.com/gpt-6-astra-needs-leaner-prompts-and-fewer-guardrails-openai-recommends",
+        "original_url": "https://the-decoder.com/gpt-6-astra-needs-leaner-prompts-and-fewer-guardrails-openai-recommends/",
+        "summary": "Overly long skill descriptions, blanket reading requirements, and rigid approval rules can get in GPT-6 Astra's way, warns OpenAI's Eric Provencher. More capable models need less hand-holding, so developers should tie instructions to specific tasks and spell out when the job is done. The article GPT-6 Astra needs leaner prompts and fewer guardrails, OpenAI recommends appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/openai_logo_astra-2.png",
+        "image_source": "rss_content",
+        "published_at": "2026-09-12T13:10:11.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "yrx3qi",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "GPT-6 Astra needs leaner prompts and fewer guardrails, OpenAI recommends",
+          "url": "https://the-decoder.com/gpt-6-astra-needs-leaner-prompts-and-fewer-guardrails-openai-recommends",
+          "original_url": "https://the-decoder.com/gpt-6-astra-needs-leaner-prompts-and-fewer-guardrails-openai-recommends/",
+          "summary": "Overly long skill descriptions, blanket reading requirements, and rigid approval rules can get in GPT-6 Astra's way, warns OpenAI's Eric Provencher. More capable models need less hand-holding, so developers should tie instructions to specific tasks and spell out when the job is done. The article GPT-6 Astra needs leaner prompts and fewer guardrails, OpenAI recommends appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/openai_logo_astra-2.png",
+          "image_source": "rss_content",
+          "published_at": "2026-09-12T13:10:11.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "GPT-6 Astra needs leaner prompts and fewer guardrails, OpenAI recommends",
+          "url": "https://the-decoder.com/gpt-6-astra-needs-leaner-prompts-and-fewer-guardrails-openai-recommends",
+          "published_at": "2026-09-12T13:10:11.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "OpenAI guidance suggests using leaner prompts and fewer guardrails for more capable models to improve performance.",
+      "novelty": 0.743,
+      "novelty_label": "medium",
+      "trust": 0.74,
+      "score": 0.64,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
       ],
       "builder_action": "Read the primary source and decide whether it changes your next action."
     },
@@ -1277,8 +1548,8 @@
           "published_at_source": "api",
           "date_confidence": "high",
           "engagement": {
-            "score": 54,
-            "comments": 7
+            "score": 163,
+            "comments": 18
           }
         }
       ],
@@ -1320,11 +1591,11 @@
       ],
       "kind": "tool",
       "quality": "signal",
-      "one_liner": "Technical reverse-engineering of Apple's Neural Engine architecture and instruction set.",
+      "one_liner": "Technical deep dive into reverse-engineering the architecture and operation of Apple's Neural Engine.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.7,
-      "score": 0.535,
+      "score": 0.531,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal",
@@ -1381,11 +1652,11 @@
       "also_seen_on": [],
       "kind": "company_announcement",
       "quality": "signal",
-      "one_liner": "OpenAI details the evolution of Habitat, their distributed storage platform for serving high-scale inference.",
+      "one_liner": "OpenAI details the architecture of Habitat, a globally distributed storage platform serving 1 billion users.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.9,
-      "score": 0.531,
+      "score": 0.521,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal",
@@ -1439,13 +1710,206 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "tool",
+      "kind": "tutorial",
       "quality": "signal",
-      "one_liner": "AWS introduces dual-layer monitoring for production agents using Bedrock AgentCore evaluations and infrastructure investigation.",
+      "one_liner": "Guide on monitoring multi-agent systems using AWS Bedrock AgentCore for quality scoring and infrastructure investigation.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.8,
-      "score": 0.522,
+      "score": 0.512,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "1r5g9xy",
+      "primary": {
+        "id": "1r5g9xy",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "Litelm: LiteLLM Without the Bloat",
+        "url": "https://github.com/kennethwolters/litelm",
+        "original_url": "https://github.com/kennethwolters/litelm",
+        "discussion_url": "https://news.ycombinator.com/item?id=49662767",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-09-11T18:10:20Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 162,
+          "comments": 57
+        }
+      },
+      "members": [
+        {
+          "id": "1r5g9xy",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "Litelm: LiteLLM Without the Bloat",
+          "url": "https://github.com/kennethwolters/litelm",
+          "original_url": "https://github.com/kennethwolters/litelm",
+          "discussion_url": "https://news.ycombinator.com/item?id=49662767",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-09-11T18:10:20Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 162,
+            "comments": 57
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "Litelm: LiteLLM Without the Bloat",
+          "url": "https://github.com/kennethwolters/litelm",
+          "published_at": "2026-09-11T18:10:20Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=49662767",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "A lightweight alternative to LiteLLM for managing LLM API requests.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.65,
+      "score": 0.507,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "130tap9",
+      "primary": {
+        "id": "130tap9",
+        "source_id": "the_verge_ai",
+        "source_name": "The Verge AI",
+        "source_role": "main",
+        "trust": 0.68,
+        "kind_hint": "news",
+        "title": "OpenAI just wants to win",
+        "url": "https://theverge.com/ai-artificial-intelligence/994255/openai-millennium-prize-problem-tristan-buckmaster-competition",
+        "original_url": "https://www.theverge.com/ai-artificial-intelligence/994255/openai-millennium-prize-problem-tristan-buckmaster-competition",
+        "summary": "OpenAI has spent the last few years planting flags across the increasingly difficult terrain in mathematics. This week, it claimed one of its biggest prizes yet: a solution to a legendary Millennium Prize problem. In normal circumstances, this would have been celebrated as a historic achievement. Instead, many mathematicians have watched OpenAI's relentless advance with growing unease. To them, the company appears less like an enthusiastic newcomer than an impossibly well-resourced interloper, charging into problems they have dedicated their lives to studying with little apparent regard for lo",
+        "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/268745_OpenAI_just_wants_to_win-_CVirginia.jpg?quality=90&",
+        "image_source": "rss_content",
+        "published_at": "2026-09-12T11:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "130tap9",
+          "source_id": "the_verge_ai",
+          "source_name": "The Verge AI",
+          "source_role": "main",
+          "trust": 0.68,
+          "kind_hint": "news",
+          "title": "OpenAI just wants to win",
+          "url": "https://theverge.com/ai-artificial-intelligence/994255/openai-millennium-prize-problem-tristan-buckmaster-competition",
+          "original_url": "https://www.theverge.com/ai-artificial-intelligence/994255/openai-millennium-prize-problem-tristan-buckmaster-competition",
+          "summary": "OpenAI has spent the last few years planting flags across the increasingly difficult terrain in mathematics. This week, it claimed one of its biggest prizes yet: a solution to a legendary Millennium Prize problem. In normal circumstances, this would have been celebrated as a historic achievement. Instead, many mathematicians have watched OpenAI's relentless advance with growing unease. To them, the company appears less like an enthusiastic newcomer than an impossibly well-resourced interloper, charging into problems they have dedicated their lives to studying with little apparent regard for lo",
+          "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/268745_OpenAI_just_wants_to_win-_CVirginia.jpg?quality=90&",
+          "image_source": "rss_content",
+          "published_at": "2026-09-12T11:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_verge_ai",
+          "source_name": "The Verge AI",
+          "title": "OpenAI just wants to win",
+          "url": "https://theverge.com/ai-artificial-intelligence/994255/openai-millennium-prize-problem-tristan-buckmaster-competition",
+          "published_at": "2026-09-12T11:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Discussion of OpenAI's recent mathematical research achievements and their competitive implications.",
+      "novelty": 0.75,
+      "novelty_label": "high",
+      "trust": 0.68,
+      "score": 0.625,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "3g2rgi",
+      "primary": {
+        "id": "3g2rgi",
+        "source_id": "aws_ml_blog",
+        "source_name": "AWS Machine Learning Blog",
+        "source_role": "main",
+        "trust": 0.8,
+        "kind_hint": "tutorial",
+        "title": "Beyond the price per token: Choosing the right OpenAI model on Amazon Bedrock for your workload",
+        "url": "https://aws.amazon.com/blogs/machine-learning/beyond-the-price-per-token-choosing-the-right-openai-model-on-amazon-bedrock-for-your-workload",
+        "original_url": "https://aws.amazon.com/blogs/machine-learning/beyond-the-price-per-token-choosing-the-right-openai-model-on-amazon-bedrock-for-your-workload/",
+        "summary": "Comparing models on dollars per million tokens misses what production workloads actually pay for: outcomes. This post shares an open-source benchmarking harness that measures cost per correct answer, agent trajectory cost, and rubric-graded deliverable quality across OpenAI models on Amazon Bedrock.",
+        "published_at": "2026-09-11T18:24:38.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "3g2rgi",
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "source_role": "main",
+          "trust": 0.8,
+          "kind_hint": "tutorial",
+          "title": "Beyond the price per token: Choosing the right OpenAI model on Amazon Bedrock for your workload",
+          "url": "https://aws.amazon.com/blogs/machine-learning/beyond-the-price-per-token-choosing-the-right-openai-model-on-amazon-bedrock-for-your-workload",
+          "original_url": "https://aws.amazon.com/blogs/machine-learning/beyond-the-price-per-token-choosing-the-right-openai-model-on-amazon-bedrock-for-your-workload/",
+          "summary": "Comparing models on dollars per million tokens misses what production workloads actually pay for: outcomes. This post shares an open-source benchmarking harness that measures cost per correct answer, agent trajectory cost, and rubric-graded deliverable quality across OpenAI models on Amazon Bedrock.",
+          "published_at": "2026-09-11T18:24:38.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "title": "Beyond the price per token: Choosing the right OpenAI model on Amazon Bedrock for your workload",
+          "url": "https://aws.amazon.com/blogs/machine-learning/beyond-the-price-per-token-choosing-the-right-openai-model-on-amazon-bedrock-for-your-workload",
+          "published_at": "2026-09-11T18:24:38.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "AWS blog introduces an open-source benchmarking harness to measure cost-per-correct-answer and agent trajectory efficiency.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.8,
+      "score": 0.512,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -1516,44 +1980,43 @@
       "novelty": 0.564,
       "novelty_label": "medium",
       "trust": 0.66,
-      "score": 0.565,
+      "score": 0.554,
       "why_this_surfaced": [
         "meaningfully different from recent coverage",
-        "classified as useful but lower-confidence signal",
-        "fresh within the current refresh window"
+        "classified as useful but lower-confidence signal"
       ],
       "builder_action": "Queue it for focused learning if the topic matches your current work."
     },
     {
-      "id": "3g2rgi",
+      "id": "3zi0jr",
       "primary": {
-        "id": "3g2rgi",
+        "id": "3zi0jr",
         "source_id": "aws_ml_blog",
         "source_name": "AWS Machine Learning Blog",
         "source_role": "main",
         "trust": 0.8,
         "kind_hint": "tutorial",
-        "title": "Beyond the price per token: Choosing the right OpenAI model on Amazon Bedrock for your workload",
-        "url": "https://aws.amazon.com/blogs/machine-learning/beyond-the-price-per-token-choosing-the-right-openai-model-on-amazon-bedrock-for-your-workload",
-        "original_url": "https://aws.amazon.com/blogs/machine-learning/beyond-the-price-per-token-choosing-the-right-openai-model-on-amazon-bedrock-for-your-workload/",
-        "summary": "Comparing models on dollars per million tokens misses what production workloads actually pay for: outcomes. This post shares an open-source benchmarking harness that measures cost per correct answer, agent trajectory cost, and rubric-graded deliverable quality across OpenAI models on Amazon Bedrock.",
-        "published_at": "2026-09-11T18:24:38.000Z",
+        "title": "Build interactive MCP Apps using Amazon Bedrock AgentCore",
+        "url": "https://aws.amazon.com/blogs/machine-learning/build-interactive-mcp-apps-using-amazon-bedrock-agentcore",
+        "original_url": "https://aws.amazon.com/blogs/machine-learning/build-interactive-mcp-apps-using-amazon-bedrock-agentcore/",
+        "summary": "Learn how to build and deploy an MCP App with interactive HTML widgets on Amazon Bedrock AgentCore. Because MCP Apps is a host-agnostic standard, the same server delivers the same rich experience across AI hosts like ChatGPT and Claude that support the extension.",
+        "published_at": "2026-09-11T18:23:17.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "3g2rgi",
+          "id": "3zi0jr",
           "source_id": "aws_ml_blog",
           "source_name": "AWS Machine Learning Blog",
           "source_role": "main",
           "trust": 0.8,
           "kind_hint": "tutorial",
-          "title": "Beyond the price per token: Choosing the right OpenAI model on Amazon Bedrock for your workload",
-          "url": "https://aws.amazon.com/blogs/machine-learning/beyond-the-price-per-token-choosing-the-right-openai-model-on-amazon-bedrock-for-your-workload",
-          "original_url": "https://aws.amazon.com/blogs/machine-learning/beyond-the-price-per-token-choosing-the-right-openai-model-on-amazon-bedrock-for-your-workload/",
-          "summary": "Comparing models on dollars per million tokens misses what production workloads actually pay for: outcomes. This post shares an open-source benchmarking harness that measures cost per correct answer, agent trajectory cost, and rubric-graded deliverable quality across OpenAI models on Amazon Bedrock.",
-          "published_at": "2026-09-11T18:24:38.000Z",
+          "title": "Build interactive MCP Apps using Amazon Bedrock AgentCore",
+          "url": "https://aws.amazon.com/blogs/machine-learning/build-interactive-mcp-apps-using-amazon-bedrock-agentcore",
+          "original_url": "https://aws.amazon.com/blogs/machine-learning/build-interactive-mcp-apps-using-amazon-bedrock-agentcore/",
+          "summary": "Learn how to build and deploy an MCP App with interactive HTML widgets on Amazon Bedrock AgentCore. Because MCP Apps is a host-agnostic standard, the same server delivers the same rich experience across AI hosts like ChatGPT and Claude that support the extension.",
+          "published_at": "2026-09-11T18:23:17.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -1562,9 +2025,9 @@
         {
           "source_id": "aws_ml_blog",
           "source_name": "AWS Machine Learning Blog",
-          "title": "Beyond the price per token: Choosing the right OpenAI model on Amazon Bedrock for your workload",
-          "url": "https://aws.amazon.com/blogs/machine-learning/beyond-the-price-per-token-choosing-the-right-openai-model-on-amazon-bedrock-for-your-workload",
-          "published_at": "2026-09-11T18:24:38.000Z",
+          "title": "Build interactive MCP Apps using Amazon Bedrock AgentCore",
+          "url": "https://aws.amazon.com/blogs/machine-learning/build-interactive-mcp-apps-using-amazon-bedrock-agentcore",
+          "published_at": "2026-09-11T18:23:17.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -1572,86 +2035,16 @@
       "also_seen_on": [],
       "kind": "tutorial",
       "quality": "signal",
-      "one_liner": "Guide to benchmarking LLMs by cost-per-correct-answer and agent trajectory rather than simple token pricing.",
+      "one_liner": "Guide on building and deploying interactive MCP apps with HTML widgets using Amazon Bedrock AgentCore.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.8,
-      "score": 0.522,
+      "score": 0.512,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
       ],
       "builder_action": "Use this as implementation reference if it matches your stack."
-    },
-    {
-      "id": "1r5g9xy",
-      "primary": {
-        "id": "1r5g9xy",
-        "source_id": "hn_ai",
-        "source_name": "Hacker News (AI-filtered)",
-        "source_role": "main",
-        "trust": 0.65,
-        "title": "Litelm: LiteLLM Without the Bloat",
-        "url": "https://github.com/kennethwolters/litelm",
-        "original_url": "https://github.com/kennethwolters/litelm",
-        "discussion_url": "https://news.ycombinator.com/item?id=49662767",
-        "discussion_source": "Hacker News",
-        "published_at": "2026-09-11T18:10:20Z",
-        "published_at_source": "api",
-        "date_confidence": "high",
-        "engagement": {
-          "score": 134,
-          "comments": 43
-        }
-      },
-      "members": [
-        {
-          "id": "1r5g9xy",
-          "source_id": "hn_ai",
-          "source_name": "Hacker News (AI-filtered)",
-          "source_role": "main",
-          "trust": 0.65,
-          "title": "Litelm: LiteLLM Without the Bloat",
-          "url": "https://github.com/kennethwolters/litelm",
-          "original_url": "https://github.com/kennethwolters/litelm",
-          "discussion_url": "https://news.ycombinator.com/item?id=49662767",
-          "discussion_source": "Hacker News",
-          "published_at": "2026-09-11T18:10:20Z",
-          "published_at_source": "api",
-          "date_confidence": "high",
-          "engagement": {
-            "score": 134,
-            "comments": 43
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "hn_ai",
-          "source_name": "Hacker News (AI-filtered)",
-          "title": "Litelm: LiteLLM Without the Bloat",
-          "url": "https://github.com/kennethwolters/litelm",
-          "published_at": "2026-09-11T18:10:20Z",
-          "published_at_source": "api",
-          "date_confidence": "high",
-          "discussion_url": "https://news.ycombinator.com/item?id=49662767",
-          "discussion_source": "Hacker News"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "tool",
-      "quality": "signal",
-      "one_liner": "Litelm provides a lightweight alternative to LiteLLM for model API abstraction.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.65,
-      "score": 0.516,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal",
-        "source-native discussion or engagement is unusually high"
-      ],
-      "builder_action": "Try it in a small sandbox before adding it to production workflow."
     },
     {
       "id": "1fgq12f",
@@ -1705,78 +2098,16 @@
       "also_seen_on": [],
       "kind": "tool",
       "quality": "signal",
-      "one_liner": "NVIDIA PAIR beta allows distributing local AI inference tasks across multiple networked computers.",
+      "one_liner": "NVIDIA's PAIR beta tool for distributing AI inference tasks across multiple local network devices.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.78,
-      "score": 0.512,
+      "score": 0.502,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
       ],
       "builder_action": "Try it in a small sandbox before adding it to production workflow."
-    },
-    {
-      "id": "f406pc",
-      "primary": {
-        "id": "f406pc",
-        "source_id": "interconnects",
-        "source_name": "Interconnects (Lambert)",
-        "source_role": "main",
-        "trust": 0.85,
-        "title": "Open-Source AI & Open Models Reading List",
-        "url": "https://interconnects.ai/p/open-source-ai-reading-list",
-        "original_url": "https://www.interconnects.ai/p/open-source-ai-reading-list",
-        "summary": "How to get up to speed on open models and their implications.",
-        "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/53e3cead-b3c3-4fba-8503-c5a599d5fb01_3182x1790.png",
-        "image_source": "rss_enclosure",
-        "published_at": "2026-09-11T12:36:25.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "f406pc",
-          "source_id": "interconnects",
-          "source_name": "Interconnects (Lambert)",
-          "source_role": "main",
-          "trust": 0.85,
-          "title": "Open-Source AI & Open Models Reading List",
-          "url": "https://interconnects.ai/p/open-source-ai-reading-list",
-          "original_url": "https://www.interconnects.ai/p/open-source-ai-reading-list",
-          "summary": "How to get up to speed on open models and their implications.",
-          "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/53e3cead-b3c3-4fba-8503-c5a599d5fb01_3182x1790.png",
-          "image_source": "rss_enclosure",
-          "published_at": "2026-09-11T12:36:25.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "interconnects",
-          "source_name": "Interconnects (Lambert)",
-          "title": "Open-Source AI & Open Models Reading List",
-          "url": "https://interconnects.ai/p/open-source-ai-reading-list",
-          "published_at": "2026-09-11T12:36:25.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "tutorial",
-      "quality": "signal",
-      "one_liner": "A curated reading list covering open-source AI models and their broader implications.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.85,
-      "score": 0.524,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal",
-        "primary source has high trust weight"
-      ],
-      "builder_action": "Use this as implementation reference if it matches your stack."
     },
     {
       "id": "1vl13wk",
@@ -1830,11 +2161,11 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "signal",
-      "one_liner": "Analysis of how users bypass AI safety guardrails for sensitive biological research queries.",
+      "one_liner": "Researchers identify challenges in distinguishing legitimate biology research from bioweapon development in LLM safety filters.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.78,
-      "score": 0.509,
+      "score": 0.499,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -1842,63 +2173,74 @@
       "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
-      "id": "1gg5bt5",
+      "id": "nijb3k",
       "primary": {
-        "id": "1gg5bt5",
-        "source_id": "aws_ml_blog",
-        "source_name": "AWS Machine Learning Blog",
+        "id": "nijb3k",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
         "source_role": "main",
-        "trust": 0.8,
-        "kind_hint": "tutorial",
-        "title": "Reduce LLM latency with prefix-aware routing on Amazon SageMaker Inference",
-        "url": "https://aws.amazon.com/blogs/machine-learning/reduce-llm-latency-with-prefix-aware-routing-on-amazon-sagemaker-inference",
-        "original_url": "https://aws.amazon.com/blogs/machine-learning/reduce-llm-latency-with-prefix-aware-routing-on-amazon-sagemaker-inference/",
-        "summary": "Amazon SageMaker Inference now offers prefix-aware routing, a routing strategy that sends requests sharing the same prompt prefix to the same instance so the KV cache stays warm. In benchmarks on Llama 3.1 70B, it reduced P50 time-to-first-token by up to 77% and raised KV cache hit rates from about 25% to over 80%.",
-        "published_at": "2026-09-10T21:58:09.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
+        "trust": 0.65,
+        "title": "A misalignment of AI in mathematics",
+        "url": "https://mathandai.org/",
+        "original_url": "https://mathandai.org/",
+        "discussion_url": "https://news.ycombinator.com/item?id=49662371",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-09-11T17:45:12Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 1090,
+          "comments": 1033
+        }
       },
       "members": [
         {
-          "id": "1gg5bt5",
-          "source_id": "aws_ml_blog",
-          "source_name": "AWS Machine Learning Blog",
+          "id": "nijb3k",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
           "source_role": "main",
-          "trust": 0.8,
-          "kind_hint": "tutorial",
-          "title": "Reduce LLM latency with prefix-aware routing on Amazon SageMaker Inference",
-          "url": "https://aws.amazon.com/blogs/machine-learning/reduce-llm-latency-with-prefix-aware-routing-on-amazon-sagemaker-inference",
-          "original_url": "https://aws.amazon.com/blogs/machine-learning/reduce-llm-latency-with-prefix-aware-routing-on-amazon-sagemaker-inference/",
-          "summary": "Amazon SageMaker Inference now offers prefix-aware routing, a routing strategy that sends requests sharing the same prompt prefix to the same instance so the KV cache stays warm. In benchmarks on Llama 3.1 70B, it reduced P50 time-to-first-token by up to 77% and raised KV cache hit rates from about 25% to over 80%.",
-          "published_at": "2026-09-10T21:58:09.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
+          "trust": 0.65,
+          "title": "A misalignment of AI in mathematics",
+          "url": "https://mathandai.org/",
+          "original_url": "https://mathandai.org/",
+          "discussion_url": "https://news.ycombinator.com/item?id=49662371",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-09-11T17:45:12Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 1090,
+            "comments": 1033
+          }
         }
       ],
       "source_trail": [
         {
-          "source_id": "aws_ml_blog",
-          "source_name": "AWS Machine Learning Blog",
-          "title": "Reduce LLM latency with prefix-aware routing on Amazon SageMaker Inference",
-          "url": "https://aws.amazon.com/blogs/machine-learning/reduce-llm-latency-with-prefix-aware-routing-on-amazon-sagemaker-inference",
-          "published_at": "2026-09-10T21:58:09.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "A misalignment of AI in mathematics",
+          "url": "https://mathandai.org/",
+          "published_at": "2026-09-11T17:45:12Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=49662371",
+          "discussion_source": "Hacker News"
         }
       ],
       "also_seen_on": [],
-      "kind": "tool",
-      "quality": "signal",
-      "one_liner": "SageMaker adds prefix-aware routing to improve KV cache hit rates, reducing latency for repeated prompt prefixes.",
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "A discussion on the challenges and misalignment of AI in mathematical research and reasoning.",
       "novelty": 0,
       "novelty_label": "familiar",
-      "trust": 0.8,
-      "score": 0.488,
+      "trust": 0.65,
+      "score": 0.354,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
+        "classified as useful but lower-confidence signal",
+        "source-native discussion or engagement is unusually high"
       ],
-      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+      "builder_action": "Use this as weak signal and verify against primary sources."
     },
     {
       "id": "ycqu1g",
@@ -1952,680 +2294,16 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "signal",
-      "one_liner": "LinkedIn details a multi-teacher distillation pipeline to compress ranking models to 0.6B parameters.",
+      "one_liner": "LinkedIn details a multi-teacher distillation pipeline to train a 0.6B parameter ranking model for job search.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.78,
-      "score": 0.504,
+      "score": 0.494,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
       ],
       "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "1a36bd2",
-      "primary": {
-        "id": "1a36bd2",
-        "source_id": "aws_ml_blog",
-        "source_name": "AWS Machine Learning Blog",
-        "source_role": "main",
-        "trust": 0.8,
-        "kind_hint": "tutorial",
-        "title": "Reduce inference cold starts on Amazon SageMaker HyperPod with model caching",
-        "url": "https://aws.amazon.com/blogs/machine-learning/reduce-inference-cold-starts-on-amazon-sagemaker-hyperpod-with-model-caching",
-        "original_url": "https://aws.amazon.com/blogs/machine-learning/reduce-inference-cold-starts-on-amazon-sagemaker-hyperpod-with-model-caching/",
-        "summary": "Amazon SageMaker HyperPod now supports model caching for inference, which pre-loads model weights and container images onto cluster nodes so pods read from local NVMe storage instead of downloading over the network. Learn how model caching cuts cold starts from tens of minutes to seconds, how it works, and how to enable it.",
-        "published_at": "2026-09-10T21:37:49.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1a36bd2",
-          "source_id": "aws_ml_blog",
-          "source_name": "AWS Machine Learning Blog",
-          "source_role": "main",
-          "trust": 0.8,
-          "kind_hint": "tutorial",
-          "title": "Reduce inference cold starts on Amazon SageMaker HyperPod with model caching",
-          "url": "https://aws.amazon.com/blogs/machine-learning/reduce-inference-cold-starts-on-amazon-sagemaker-hyperpod-with-model-caching",
-          "original_url": "https://aws.amazon.com/blogs/machine-learning/reduce-inference-cold-starts-on-amazon-sagemaker-hyperpod-with-model-caching/",
-          "summary": "Amazon SageMaker HyperPod now supports model caching for inference, which pre-loads model weights and container images onto cluster nodes so pods read from local NVMe storage instead of downloading over the network. Learn how model caching cuts cold starts from tens of minutes to seconds, how it works, and how to enable it.",
-          "published_at": "2026-09-10T21:37:49.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "aws_ml_blog",
-          "source_name": "AWS Machine Learning Blog",
-          "title": "Reduce inference cold starts on Amazon SageMaker HyperPod with model caching",
-          "url": "https://aws.amazon.com/blogs/machine-learning/reduce-inference-cold-starts-on-amazon-sagemaker-hyperpod-with-model-caching",
-          "published_at": "2026-09-10T21:37:49.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "company_announcement",
-      "quality": "signal",
-      "one_liner": "AWS SageMaker HyperPod adds model caching to reduce inference cold starts by using local NVMe storage.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.8,
-      "score": 0.488,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
-    },
-    {
-      "id": "16jyv6z",
-      "primary": {
-        "id": "16jyv6z",
-        "source_id": "cloudflare_ai_changelog",
-        "source_name": "Cloudflare AI Changelog",
-        "source_role": "main",
-        "trust": 0.78,
-        "kind_hint": "tool",
-        "title": "Agents - Inspect Voice Agent turn latency and outcomes",
-        "url": "https://developers.cloudflare.com/changelog/post/2026-09-11-voice-diagnostics-turn-metrics",
-        "original_url": "https://developers.cloudflare.com/changelog/post/2026-09-11-voice-diagnostics-turn-metrics/",
-        "summary": "@cloudflare/voice v0.4.0 now lets you inspect where each Voice Agent turn spends time and how it ends. client.addEventListener(\"turnmetrics\", (turn) => { console.log(turn.outcome, turn.turnTotalMs); }); About the Voice package The @cloudflare/voice package lets you build real-time voice agents with Cloudflare Agents. It streams microphone audio to an Agent over WebSocket, transcribes speech, runs your model through onTurn(), converts the response to speech, and streams audio back to the caller. A turn moves through several stages: User speaks -> speech-to-text -> model -> text-to-speech -> aud",
-        "published_at": "2026-09-11T00:00:00.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "16jyv6z",
-          "source_id": "cloudflare_ai_changelog",
-          "source_name": "Cloudflare AI Changelog",
-          "source_role": "main",
-          "trust": 0.78,
-          "kind_hint": "tool",
-          "title": "Agents - Inspect Voice Agent turn latency and outcomes",
-          "url": "https://developers.cloudflare.com/changelog/post/2026-09-11-voice-diagnostics-turn-metrics",
-          "original_url": "https://developers.cloudflare.com/changelog/post/2026-09-11-voice-diagnostics-turn-metrics/",
-          "summary": "@cloudflare/voice v0.4.0 now lets you inspect where each Voice Agent turn spends time and how it ends. client.addEventListener(\"turnmetrics\", (turn) => { console.log(turn.outcome, turn.turnTotalMs); }); About the Voice package The @cloudflare/voice package lets you build real-time voice agents with Cloudflare Agents. It streams microphone audio to an Agent over WebSocket, transcribes speech, runs your model through onTurn(), converts the response to speech, and streams audio back to the caller. A turn moves through several stages: User speaks -> speech-to-text -> model -> text-to-speech -> aud",
-          "published_at": "2026-09-11T00:00:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "cloudflare_ai_changelog",
-          "source_name": "Cloudflare AI Changelog",
-          "title": "Agents - Inspect Voice Agent turn latency and outcomes",
-          "url": "https://developers.cloudflare.com/changelog/post/2026-09-11-voice-diagnostics-turn-metrics",
-          "published_at": "2026-09-11T00:00:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "tool",
-      "quality": "signal",
-      "one_liner": "Cloudflare Voice v0.4.0 adds turn-level latency and outcome metrics for debugging real-time voice agents.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.487,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Try it in a small sandbox before adding it to production workflow."
-    },
-    {
-      "id": "1iz0j1l",
-      "primary": {
-        "id": "1iz0j1l",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
-        "source_role": "main",
-        "trust": 0.74,
-        "kind_hint": "news",
-        "title": "How hackers used Claude for missiles, drone swarms, and surveillance, while Chinese labs mined it for training data",
-        "url": "https://the-decoder.com/how-hackers-used-claude-for-missiles-drone-swarms-and-surveillance-while-chinese-labs-mined-it-for-training-data",
-        "original_url": "https://the-decoder.com/how-hackers-used-claude-for-missiles-drone-swarms-and-surveillance-while-chinese-labs-mined-it-for-training-data/",
-        "summary": "Anthropic's new threat intelligence report documents eight months of Claude abuse. Chinese AI labs like Alibaba's Qwen team, DeepSeek, and Moonshot AI relayed requests en masse or extracted training data, with Qwen alone accounting for more than 151 million exchanges. Actors also used Claude for missile software, autonomous kamikaze drones, and nationwide surveillance systems. The article How hackers used Claude for missiles, drone swarms, and surveillance, while Chinese labs mined it for training data appeared first on The Decoder.",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/04/anthropic_Cybersecurity-1.png",
-        "image_source": "rss_content",
-        "published_at": "2026-09-11T13:50:28.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1iz0j1l",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "source_role": "main",
-          "trust": 0.74,
-          "kind_hint": "news",
-          "title": "How hackers used Claude for missiles, drone swarms, and surveillance, while Chinese labs mined it for training data",
-          "url": "https://the-decoder.com/how-hackers-used-claude-for-missiles-drone-swarms-and-surveillance-while-chinese-labs-mined-it-for-training-data",
-          "original_url": "https://the-decoder.com/how-hackers-used-claude-for-missiles-drone-swarms-and-surveillance-while-chinese-labs-mined-it-for-training-data/",
-          "summary": "Anthropic's new threat intelligence report documents eight months of Claude abuse. Chinese AI labs like Alibaba's Qwen team, DeepSeek, and Moonshot AI relayed requests en masse or extracted training data, with Qwen alone accounting for more than 151 million exchanges. Actors also used Claude for missile software, autonomous kamikaze drones, and nationwide surveillance systems. The article How hackers used Claude for missiles, drone swarms, and surveillance, while Chinese labs mined it for training data appeared first on The Decoder.",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/04/anthropic_Cybersecurity-1.png",
-          "image_source": "rss_content",
-          "published_at": "2026-09-11T13:50:28.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "How hackers used Claude for missiles, drone swarms, and surveillance, while Chinese labs mined it for training data",
-          "url": "https://the-decoder.com/how-hackers-used-claude-for-missiles-drone-swarms-and-surveillance-while-chinese-labs-mined-it-for-training-data",
-          "published_at": "2026-09-11T13:50:28.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "signal",
-      "one_liner": "Anthropic report details large-scale data scraping by Chinese AI labs and misuse of Claude for malicious tasks.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.74,
-      "score": 0.501,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "1qd3rhc",
-      "primary": {
-        "id": "1qd3rhc",
-        "source_id": "cloudflare_ai_changelog",
-        "source_name": "Cloudflare AI Changelog",
-        "source_role": "main",
-        "trust": 0.78,
-        "kind_hint": "tool",
-        "title": "AI Search - AI Search supports extensionless R2 objects with Content-Type metadata",
-        "url": "https://developers.cloudflare.com/changelog/post/2026-09-11-extensionless-r2-content-type",
-        "original_url": "https://developers.cloudflare.com/changelog/post/2026-09-11-extensionless-r2-content-type/",
-        "summary": "AI Search can index R2 objects without filename extensions when they include supported Content-Type metadata. This supports object keys that do not include file extensions while preserving file-type validation during indexing. For supported file types and Content-Type requirements, refer to R2 data sources.",
-        "published_at": "2026-09-11T00:00:00.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1qd3rhc",
-          "source_id": "cloudflare_ai_changelog",
-          "source_name": "Cloudflare AI Changelog",
-          "source_role": "main",
-          "trust": 0.78,
-          "kind_hint": "tool",
-          "title": "AI Search - AI Search supports extensionless R2 objects with Content-Type metadata",
-          "url": "https://developers.cloudflare.com/changelog/post/2026-09-11-extensionless-r2-content-type",
-          "original_url": "https://developers.cloudflare.com/changelog/post/2026-09-11-extensionless-r2-content-type/",
-          "summary": "AI Search can index R2 objects without filename extensions when they include supported Content-Type metadata. This supports object keys that do not include file extensions while preserving file-type validation during indexing. For supported file types and Content-Type requirements, refer to R2 data sources.",
-          "published_at": "2026-09-11T00:00:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "cloudflare_ai_changelog",
-          "source_name": "Cloudflare AI Changelog",
-          "title": "AI Search - AI Search supports extensionless R2 objects with Content-Type metadata",
-          "url": "https://developers.cloudflare.com/changelog/post/2026-09-11-extensionless-r2-content-type",
-          "published_at": "2026-09-11T00:00:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "tool",
-      "quality": "signal",
-      "one_liner": "Cloudflare AI Search now supports indexing R2 objects without file extensions using Content-Type metadata.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.487,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Try it in a small sandbox before adding it to production workflow."
-    },
-    {
-      "id": "cv71xs",
-      "primary": {
-        "id": "cv71xs",
-        "source_id": "marktechpost",
-        "source_name": "MarkTechPost",
-        "source_role": "main",
-        "trust": 0.48,
-        "kind_hint": "news",
-        "title": "Cohere Releases North Small Translate: A 218B MoE Translation Model That Scores 83.6 on WMT26 Across 50 Languages",
-        "url": "https://marktechpost.com/2026/09/10/cohere-releases-north-small-translate-a-218b-moe-translation-model-that-scores-83-6-on-wmt26-across-50-languages",
-        "original_url": "https://www.marktechpost.com/2026/09/10/cohere-releases-north-small-translate-a-218b-moe-translation-model-that-scores-83-6-on-wmt26-across-50-languages/",
-        "summary": "Cohere has released North Small Translate, an open-weight Mixture-of-Experts model built for machine translation across 50 languages. It uses 25B of its 218B parameters per token and scores 83.6 on Cohere's WMT26 evaluation. Weights are free for non-commercial use, with commercial access through Cohere Model Vault or RWS Language Weaver. The post Cohere Releases North Small Translate: A 218B MoE Translation Model That Scores 83.6 on WMT26 Across 50 Languages appeared first on MarkTechPost.",
-        "published_at": "2026-09-11T06:57:22.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "cv71xs",
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "source_role": "main",
-          "trust": 0.48,
-          "kind_hint": "news",
-          "title": "Cohere Releases North Small Translate: A 218B MoE Translation Model That Scores 83.6 on WMT26 Across 50 Languages",
-          "url": "https://marktechpost.com/2026/09/10/cohere-releases-north-small-translate-a-218b-moe-translation-model-that-scores-83-6-on-wmt26-across-50-languages",
-          "original_url": "https://www.marktechpost.com/2026/09/10/cohere-releases-north-small-translate-a-218b-moe-translation-model-that-scores-83-6-on-wmt26-across-50-languages/",
-          "summary": "Cohere has released North Small Translate, an open-weight Mixture-of-Experts model built for machine translation across 50 languages. It uses 25B of its 218B parameters per token and scores 83.6 on Cohere's WMT26 evaluation. Weights are free for non-commercial use, with commercial access through Cohere Model Vault or RWS Language Weaver. The post Cohere Releases North Small Translate: A 218B MoE Translation Model That Scores 83.6 on WMT26 Across 50 Languages appeared first on MarkTechPost.",
-          "published_at": "2026-09-11T06:57:22.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "title": "Cohere Releases North Small Translate: A 218B MoE Translation Model That Scores 83.6 on WMT26 Across 50 Languages",
-          "url": "https://marktechpost.com/2026/09/10/cohere-releases-north-small-translate-a-218b-moe-translation-model-that-scores-83-6-on-wmt26-across-50-languages",
-          "published_at": "2026-09-11T06:57:22.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "model_release",
-      "quality": "signal",
-      "one_liner": "Cohere releases North Small Translate, a 218B MoE model for machine translation.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.48,
-      "score": 0.43,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
-    },
-    {
-      "id": "xjfosr",
-      "primary": {
-        "id": "xjfosr",
-        "source_id": "marktechpost",
-        "source_name": "MarkTechPost",
-        "source_role": "main",
-        "trust": 0.48,
-        "kind_hint": "news",
-        "title": "Sakana AI Launches Fugu Max and Fugu Ultra v2 for Cheaper, Stronger Multi-Agent Orchestration",
-        "url": "https://marktechpost.com/2026/09/10/sakana-ai-launches-fugu-max-and-fugu-ultra-v2-for-cheaper-stronger-multi-agent-orchestration",
-        "original_url": "https://www.marktechpost.com/2026/09/10/sakana-ai-launches-fugu-max-and-fugu-ultra-v2-for-cheaper-stronger-multi-agent-orchestration/",
-        "summary": "Sakana AI has released Fugu Max and Fugu Ultra v2, 2 models built on the same learned orchestration architecture. Fugu Max routes tasks to lean open and specialized models, including NVIDIA Nemotron, at $2/$6 per 1M tokens. Fugu Ultra v2 targets peak capability, scoring 48.3 on Chartography and 74.3 on DeepSWE. The post Sakana AI Launches Fugu Max and Fugu Ultra v2 for Cheaper, Stronger Multi-Agent Orchestration appeared first on MarkTechPost.",
-        "published_at": "2026-09-11T06:34:39.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "xjfosr",
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "source_role": "main",
-          "trust": 0.48,
-          "kind_hint": "news",
-          "title": "Sakana AI Launches Fugu Max and Fugu Ultra v2 for Cheaper, Stronger Multi-Agent Orchestration",
-          "url": "https://marktechpost.com/2026/09/10/sakana-ai-launches-fugu-max-and-fugu-ultra-v2-for-cheaper-stronger-multi-agent-orchestration",
-          "original_url": "https://www.marktechpost.com/2026/09/10/sakana-ai-launches-fugu-max-and-fugu-ultra-v2-for-cheaper-stronger-multi-agent-orchestration/",
-          "summary": "Sakana AI has released Fugu Max and Fugu Ultra v2, 2 models built on the same learned orchestration architecture. Fugu Max routes tasks to lean open and specialized models, including NVIDIA Nemotron, at $2/$6 per 1M tokens. Fugu Ultra v2 targets peak capability, scoring 48.3 on Chartography and 74.3 on DeepSWE. The post Sakana AI Launches Fugu Max and Fugu Ultra v2 for Cheaper, Stronger Multi-Agent Orchestration appeared first on MarkTechPost.",
-          "published_at": "2026-09-11T06:34:39.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "title": "Sakana AI Launches Fugu Max and Fugu Ultra v2 for Cheaper, Stronger Multi-Agent Orchestration",
-          "url": "https://marktechpost.com/2026/09/10/sakana-ai-launches-fugu-max-and-fugu-ultra-v2-for-cheaper-stronger-multi-agent-orchestration",
-          "published_at": "2026-09-11T06:34:39.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "model_release",
-      "quality": "signal",
-      "one_liner": "Sakana AI releases Fugu Max and Ultra v2 for multi-agent orchestration and task routing.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.48,
-      "score": 0.429,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
-    },
-    {
-      "id": "616tct",
-      "primary": {
-        "id": "616tct",
-        "source_id": "marktechpost",
-        "source_name": "MarkTechPost",
-        "source_role": "main",
-        "trust": 0.48,
-        "kind_hint": "news",
-        "title": "Google Research Releases ToolGrad: Answer-First Framework Hits 99.8% Pass Rate for Tool-Use Data Generation",
-        "url": "https://marktechpost.com/2026/09/10/google-research-releases-toolgrad-answer-first-framework-hits-99-8-pass-rate-for-tool-use-data-generation",
-        "original_url": "https://www.marktechpost.com/2026/09/10/google-research-releases-toolgrad-answer-first-framework-hits-99-8-pass-rate-for-tool-use-data-generation/",
-        "summary": "Google Research has released ToolGrad, an ACL 2026 Findings framework that inverts tool-use dataset generation: it builds a verified API chain first, then writes the matching user query. Guided by textual \"gradients\" from a 4-module propose-execute-select-update loop, ToolGrad reaches a 99.8% pass rate on ToolBench versus 63.8% for DFS search. Gemma-3-12B fine-tuned on only 500 samples scores 83.1 on BFCL, next to Gemini 2.5 Pro at 83.2. Code, dataset, and models are public under Apache-2.0. The post Google Research Releases ToolGrad: Answer-First Framework Hits 99.8% Pass Rate for Tool-Use Da",
-        "published_at": "2026-09-11T06:01:25.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "616tct",
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "source_role": "main",
-          "trust": 0.48,
-          "kind_hint": "news",
-          "title": "Google Research Releases ToolGrad: Answer-First Framework Hits 99.8% Pass Rate for Tool-Use Data Generation",
-          "url": "https://marktechpost.com/2026/09/10/google-research-releases-toolgrad-answer-first-framework-hits-99-8-pass-rate-for-tool-use-data-generation",
-          "original_url": "https://www.marktechpost.com/2026/09/10/google-research-releases-toolgrad-answer-first-framework-hits-99-8-pass-rate-for-tool-use-data-generation/",
-          "summary": "Google Research has released ToolGrad, an ACL 2026 Findings framework that inverts tool-use dataset generation: it builds a verified API chain first, then writes the matching user query. Guided by textual \"gradients\" from a 4-module propose-execute-select-update loop, ToolGrad reaches a 99.8% pass rate on ToolBench versus 63.8% for DFS search. Gemma-3-12B fine-tuned on only 500 samples scores 83.1 on BFCL, next to Gemini 2.5 Pro at 83.2. Code, dataset, and models are public under Apache-2.0. The post Google Research Releases ToolGrad: Answer-First Framework Hits 99.8% Pass Rate for Tool-Use Da",
-          "published_at": "2026-09-11T06:01:25.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "title": "Google Research Releases ToolGrad: Answer-First Framework Hits 99.8% Pass Rate for Tool-Use Data Generation",
-          "url": "https://marktechpost.com/2026/09/10/google-research-releases-toolgrad-answer-first-framework-hits-99-8-pass-rate-for-tool-use-data-generation",
-          "published_at": "2026-09-11T06:01:25.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "paper",
-      "quality": "signal",
-      "one_liner": "Google Research introduces ToolGrad, a framework for generating verified tool-use datasets.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.48,
-      "score": 0.428,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Save this for technical review if the method maps to your roadmap."
-    },
-    {
-      "id": "1tuckw4",
-      "primary": {
-        "id": "1tuckw4",
-        "source_id": "marktechpost",
-        "source_name": "MarkTechPost",
-        "source_role": "main",
-        "trust": 0.48,
-        "kind_hint": "news",
-        "title": "NVIDIA Details BioNeMo Inference Runtime (BioIR): 2.90x Higher Boltz-2 Folding Throughput and 58.5K Residues per GPU-Hour on 8xH100",
-        "url": "https://marktechpost.com/2026/09/10/nvidia-details-bionemo-inference-runtime-bioir-2-90x-higher-boltz-2-folding-throughput-and-58-5k-residues-per-gpu-hour-on-8xh100",
-        "original_url": "https://www.marktechpost.com/2026/09/10/nvidia-details-bionemo-inference-runtime-bioir-2-90x-higher-boltz-2-folding-throughput-and-58-5k-residues-per-gpu-hour-on-8xh100/",
-        "summary": "NVIDIA has detailed BioNeMo Inference Runtime (BioIR), a Python library that accelerates biomolecular structure-prediction models on NVIDIA GPUs while staying in plain PyTorch. In a matched benchmark on 1,000 human dimer targets across 8xH100 GPUs, BioIR-accelerated Boltz-2 delivered 58.5K successfully folded residues per GPU-hour versus 20.2K for a torch-compiled open-source implementation, a 2.90x gain. The runtime optimizes at 3 layers: custom kernel selection, CUDA Graph capture, and Ray-based replica scaling that places 1 full model copy per GPU. BioIR already powered the AlphaFold Databa",
-        "published_at": "2026-09-10T21:57:06.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1tuckw4",
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "source_role": "main",
-          "trust": 0.48,
-          "kind_hint": "news",
-          "title": "NVIDIA Details BioNeMo Inference Runtime (BioIR): 2.90x Higher Boltz-2 Folding Throughput and 58.5K Residues per GPU-Hour on 8xH100",
-          "url": "https://marktechpost.com/2026/09/10/nvidia-details-bionemo-inference-runtime-bioir-2-90x-higher-boltz-2-folding-throughput-and-58-5k-residues-per-gpu-hour-on-8xh100",
-          "original_url": "https://www.marktechpost.com/2026/09/10/nvidia-details-bionemo-inference-runtime-bioir-2-90x-higher-boltz-2-folding-throughput-and-58-5k-residues-per-gpu-hour-on-8xh100/",
-          "summary": "NVIDIA has detailed BioNeMo Inference Runtime (BioIR), a Python library that accelerates biomolecular structure-prediction models on NVIDIA GPUs while staying in plain PyTorch. In a matched benchmark on 1,000 human dimer targets across 8xH100 GPUs, BioIR-accelerated Boltz-2 delivered 58.5K successfully folded residues per GPU-hour versus 20.2K for a torch-compiled open-source implementation, a 2.90x gain. The runtime optimizes at 3 layers: custom kernel selection, CUDA Graph capture, and Ray-based replica scaling that places 1 full model copy per GPU. BioIR already powered the AlphaFold Databa",
-          "published_at": "2026-09-10T21:57:06.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "title": "NVIDIA Details BioNeMo Inference Runtime (BioIR): 2.90x Higher Boltz-2 Folding Throughput and 58.5K Residues per GPU-Hour on 8xH100",
-          "url": "https://marktechpost.com/2026/09/10/nvidia-details-bionemo-inference-runtime-bioir-2-90x-higher-boltz-2-folding-throughput-and-58-5k-residues-per-gpu-hour-on-8xh100",
-          "published_at": "2026-09-10T21:57:06.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "tool",
-      "quality": "signal",
-      "one_liner": "NVIDIA releases BioIR, a PyTorch-compatible runtime for accelerating biomolecular structure prediction models.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.48,
-      "score": 0.415,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Try it in a small sandbox before adding it to production workflow."
-    },
-    {
-      "id": "nijb3k",
-      "primary": {
-        "id": "nijb3k",
-        "source_id": "hn_ai",
-        "source_name": "Hacker News (AI-filtered)",
-        "source_role": "main",
-        "trust": 0.65,
-        "title": "A misalignment of AI in mathematics",
-        "url": "https://mathandai.org/",
-        "original_url": "https://mathandai.org/",
-        "discussion_url": "https://news.ycombinator.com/item?id=49662371",
-        "discussion_source": "Hacker News",
-        "published_at": "2026-09-11T17:45:12Z",
-        "published_at_source": "api",
-        "date_confidence": "high",
-        "engagement": {
-          "score": 900,
-          "comments": 869
-        }
-      },
-      "members": [
-        {
-          "id": "nijb3k",
-          "source_id": "hn_ai",
-          "source_name": "Hacker News (AI-filtered)",
-          "source_role": "main",
-          "trust": 0.65,
-          "title": "A misalignment of AI in mathematics",
-          "url": "https://mathandai.org/",
-          "original_url": "https://mathandai.org/",
-          "discussion_url": "https://news.ycombinator.com/item?id=49662371",
-          "discussion_source": "Hacker News",
-          "published_at": "2026-09-11T17:45:12Z",
-          "published_at_source": "api",
-          "date_confidence": "high",
-          "engagement": {
-            "score": 900,
-            "comments": 869
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "hn_ai",
-          "source_name": "Hacker News (AI-filtered)",
-          "title": "A misalignment of AI in mathematics",
-          "url": "https://mathandai.org/",
-          "published_at": "2026-09-11T17:45:12Z",
-          "published_at_source": "api",
-          "date_confidence": "high",
-          "discussion_url": "https://news.ycombinator.com/item?id=49662371",
-          "discussion_source": "Hacker News"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "opinion",
-      "quality": "mixed",
-      "one_liner": "Discussion on the challenges and potential misalignments of applying AI to formal mathematics.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.65,
-      "score": 0.364,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal",
-        "source-native discussion or engagement is unusually high"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "29f6rz",
-      "primary": {
-        "id": "29f6rz",
-        "source_id": "together",
-        "source_name": "Together AI",
-        "source_role": "main",
-        "trust": 0.8,
-        "kind_hint": "tool",
-        "title": "Together AI expands fine-tuning service with more models, live metrics, and finer controls",
-        "url": "https://together.ai/blog/together-ai-expands-fine-tuning-service-with-more-models-live-metrics-and-finer-controls",
-        "original_url": "https://www.together.ai/blog/together-ai-expands-fine-tuning-service-with-more-models-live-metrics-and-finer-controls",
-        "summary": "Together Fine-Tuning adds the latest open-weight models, live experiment tracking, Expert LoRA, early stopping, tokenized dataset previews, pre-flight validation, and lower training prices on selected models.",
-        "published_at": "2026-09-11T00:00:00.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "29f6rz",
-          "source_id": "together",
-          "source_name": "Together AI",
-          "source_role": "main",
-          "trust": 0.8,
-          "kind_hint": "tool",
-          "title": "Together AI expands fine-tuning service with more models, live metrics, and finer controls",
-          "url": "https://together.ai/blog/together-ai-expands-fine-tuning-service-with-more-models-live-metrics-and-finer-controls",
-          "original_url": "https://www.together.ai/blog/together-ai-expands-fine-tuning-service-with-more-models-live-metrics-and-finer-controls",
-          "summary": "Together Fine-Tuning adds the latest open-weight models, live experiment tracking, Expert LoRA, early stopping, tokenized dataset previews, pre-flight validation, and lower training prices on selected models.",
-          "published_at": "2026-09-11T00:00:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "together",
-          "source_name": "Together AI",
-          "title": "Together AI expands fine-tuning service with more models, live metrics, and finer controls",
-          "url": "https://together.ai/blog/together-ai-expands-fine-tuning-service-with-more-models-live-metrics-and-finer-controls",
-          "published_at": "2026-09-11T00:00:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "company_announcement",
-      "quality": "mixed",
-      "one_liner": "Together AI updates fine-tuning service with live metrics, Expert LoRA, and pre-flight validation tools.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.8,
-      "score": 0.329,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
-    },
-    {
-      "id": "nxoj4k",
-      "primary": {
-        "id": "nxoj4k",
-        "source_id": "marktechpost",
-        "source_name": "MarkTechPost",
-        "source_role": "main",
-        "trust": 0.48,
-        "kind_hint": "news",
-        "title": "OpenAI Launches the Agents API in Public Beta, Putting the Codex Harness Behind One API Call",
-        "url": "https://marktechpost.com/2026/09/10/openai-launches-the-agents-api-in-public-beta-putting-the-codex-harness-behind-one-api-call",
-        "original_url": "https://www.marktechpost.com/2026/09/10/openai-launches-the-agents-api-in-public-beta-putting-the-codex-harness-behind-one-api-call/",
-        "summary": "OpenAI has released the Agents API in public beta. It gives developers the same harness and infrastructure that run Codex. OpenAI hosts and maintains the harness. Developers run the agent’s compute in an OpenAI-managed sandbox, their own infrastructure, or a partner sandbox. Is it deployable? Yes. It is live for all developers in public beta. […] The post OpenAI Launches the Agents API in Public Beta, Putting the Codex Harness Behind One API Call appeared first on MarkTechPost.",
-        "published_at": "2026-09-10T21:21:58.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "nxoj4k",
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "source_role": "main",
-          "trust": 0.48,
-          "kind_hint": "news",
-          "title": "OpenAI Launches the Agents API in Public Beta, Putting the Codex Harness Behind One API Call",
-          "url": "https://marktechpost.com/2026/09/10/openai-launches-the-agents-api-in-public-beta-putting-the-codex-harness-behind-one-api-call",
-          "original_url": "https://www.marktechpost.com/2026/09/10/openai-launches-the-agents-api-in-public-beta-putting-the-codex-harness-behind-one-api-call/",
-          "summary": "OpenAI has released the Agents API in public beta. It gives developers the same harness and infrastructure that run Codex. OpenAI hosts and maintains the harness. Developers run the agent’s compute in an OpenAI-managed sandbox, their own infrastructure, or a partner sandbox. Is it deployable? Yes. It is live for all developers in public beta. […] The post OpenAI Launches the Agents API in Public Beta, Putting the Codex Harness Behind One API Call appeared first on MarkTechPost.",
-          "published_at": "2026-09-10T21:21:58.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "title": "OpenAI Launches the Agents API in Public Beta, Putting the Codex Harness Behind One API Call",
-          "url": "https://marktechpost.com/2026/09/10/openai-launches-the-agents-api-in-public-beta-putting-the-codex-harness-behind-one-api-call",
-          "published_at": "2026-09-10T21:21:58.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "model_release",
-      "quality": "signal",
-      "one_liner": "OpenAI releases Agents API in public beta for managing agentic workflows and infrastructure.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.48,
-      "score": 0.414,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
     },
     {
       "id": "8vxngu",
@@ -2675,11 +2353,11 @@
       "also_seen_on": [],
       "kind": "opinion",
       "quality": "mixed",
-      "one_liner": "General discussion on cybersecurity strategies and the role of human intelligence in AI-driven security.",
+      "one_liner": "A high-level discussion on cybersecurity strategies and the role of human oversight in AI-integrated infrastructure.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.72,
-      "score": 0.324,
+      "score": 0.313,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -2687,46 +2365,111 @@
       "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
-      "id": "3zi0jr",
+      "id": "1nrt4wf",
       "primary": {
-        "id": "3zi0jr",
-        "source_id": "aws_ml_blog",
-        "source_name": "AWS Machine Learning Blog",
+        "id": "1nrt4wf",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
         "source_role": "main",
-        "trust": 0.8,
+        "trust": 0.78,
         "kind_hint": "tutorial",
-        "title": "Build interactive MCP Apps using Amazon Bedrock AgentCore",
-        "url": "https://aws.amazon.com/blogs/machine-learning/build-interactive-mcp-apps-using-amazon-bedrock-agentcore",
-        "original_url": "https://aws.amazon.com/blogs/machine-learning/build-interactive-mcp-apps-using-amazon-bedrock-agentcore/",
-        "summary": "Learn how to build and deploy an MCP App with interactive HTML widgets on Amazon Bedrock AgentCore. Because MCP Apps is a host-agnostic standard, the same server delivers the same rich experience across AI hosts like ChatGPT and Claude that support the extension.",
-        "published_at": "2026-09-11T18:23:17.000Z",
+        "title": "Session Traces and Cost Controls Help Diagnose AI Agent Failures",
+        "url": "https://infoq.com/news/2026/09/observability-ai-agents",
+        "original_url": "https://www.infoq.com/news/2026/09/observability-ai-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Session traces and cost controls are emerging as key observability techniques for diagnosing AI agent failures, helping teams spot tool-call loops and runaway spend while preserving enough execution context for post-incident debugging. By Mark Silvester",
+        "image_url": "https://res.infoq.com/news/2026/09/observability-ai-agents/en/headerimage/header-1788722438219.jpeg",
+        "image_source": "rss_content",
+        "published_at": "2026-09-11T08:14:00.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "3zi0jr",
-          "source_id": "aws_ml_blog",
-          "source_name": "AWS Machine Learning Blog",
+          "id": "1nrt4wf",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
           "source_role": "main",
-          "trust": 0.8,
+          "trust": 0.78,
           "kind_hint": "tutorial",
-          "title": "Build interactive MCP Apps using Amazon Bedrock AgentCore",
-          "url": "https://aws.amazon.com/blogs/machine-learning/build-interactive-mcp-apps-using-amazon-bedrock-agentcore",
-          "original_url": "https://aws.amazon.com/blogs/machine-learning/build-interactive-mcp-apps-using-amazon-bedrock-agentcore/",
-          "summary": "Learn how to build and deploy an MCP App with interactive HTML widgets on Amazon Bedrock AgentCore. Because MCP Apps is a host-agnostic standard, the same server delivers the same rich experience across AI hosts like ChatGPT and Claude that support the extension.",
-          "published_at": "2026-09-11T18:23:17.000Z",
+          "title": "Session Traces and Cost Controls Help Diagnose AI Agent Failures",
+          "url": "https://infoq.com/news/2026/09/observability-ai-agents",
+          "original_url": "https://www.infoq.com/news/2026/09/observability-ai-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "Session traces and cost controls are emerging as key observability techniques for diagnosing AI agent failures, helping teams spot tool-call loops and runaway spend while preserving enough execution context for post-incident debugging. By Mark Silvester",
+          "image_url": "https://res.infoq.com/news/2026/09/observability-ai-agents/en/headerimage/header-1788722438219.jpeg",
+          "image_source": "rss_content",
+          "published_at": "2026-09-11T08:14:00.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "aws_ml_blog",
-          "source_name": "AWS Machine Learning Blog",
-          "title": "Build interactive MCP Apps using Amazon Bedrock AgentCore",
-          "url": "https://aws.amazon.com/blogs/machine-learning/build-interactive-mcp-apps-using-amazon-bedrock-agentcore",
-          "published_at": "2026-09-11T18:23:17.000Z",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "Session Traces and Cost Controls Help Diagnose AI Agent Failures",
+          "url": "https://infoq.com/news/2026/09/observability-ai-agents",
+          "published_at": "2026-09-11T08:14:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Overview of observability techniques like session traces and cost controls for debugging AI agent failures.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.491,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "f406pc",
+      "primary": {
+        "id": "f406pc",
+        "source_id": "interconnects",
+        "source_name": "Interconnects (Lambert)",
+        "source_role": "main",
+        "trust": 0.85,
+        "title": "Open-Source AI & Open Models Reading List",
+        "url": "https://interconnects.ai/p/open-source-ai-reading-list",
+        "original_url": "https://www.interconnects.ai/p/open-source-ai-reading-list",
+        "summary": "How to get up to speed on open models and their implications.",
+        "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/53e3cead-b3c3-4fba-8503-c5a599d5fb01_3182x1790.png",
+        "image_source": "rss_enclosure",
+        "published_at": "2026-09-11T12:36:25.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "f406pc",
+          "source_id": "interconnects",
+          "source_name": "Interconnects (Lambert)",
+          "source_role": "main",
+          "trust": 0.85,
+          "title": "Open-Source AI & Open Models Reading List",
+          "url": "https://interconnects.ai/p/open-source-ai-reading-list",
+          "original_url": "https://www.interconnects.ai/p/open-source-ai-reading-list",
+          "summary": "How to get up to speed on open models and their implications.",
+          "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/53e3cead-b3c3-4fba-8503-c5a599d5fb01_3182x1790.png",
+          "image_source": "rss_enclosure",
+          "published_at": "2026-09-11T12:36:25.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "interconnects",
+          "source_name": "Interconnects (Lambert)",
+          "title": "Open-Source AI & Open Models Reading List",
+          "url": "https://interconnects.ai/p/open-source-ai-reading-list",
+          "published_at": "2026-09-11T12:36:25.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -2734,79 +2477,17 @@
       "also_seen_on": [],
       "kind": "tutorial",
       "quality": "mixed",
-      "one_liner": "Tutorial on deploying interactive MCP apps with HTML widgets using Amazon Bedrock AgentCore.",
+      "one_liner": "A curated reading list covering the landscape and implications of open-source AI models.",
       "novelty": 0,
       "novelty_label": "familiar",
-      "trust": 0.8,
-      "score": 0.36,
+      "trust": 0.85,
+      "score": 0.351,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
+        "classified as useful but lower-confidence signal",
+        "primary source has high trust weight"
       ],
       "builder_action": "Use this as implementation reference if it matches your stack."
-    },
-    {
-      "id": "drda3l",
-      "primary": {
-        "id": "drda3l",
-        "source_id": "ars_ai",
-        "source_name": "Ars Technica AI",
-        "source_role": "main",
-        "trust": 0.78,
-        "kind_hint": "news",
-        "title": "ChatGPT-using lawyer punished for citing fake testimony from made-up witnesses",
-        "url": "https://arstechnica.com/tech-policy/2026/09/chatgpt-using-lawyer-punished-for-citing-fake-testimony-from-made-up-witnesses",
-        "original_url": "https://arstechnica.com/tech-policy/2026/09/chatgpt-using-lawyer-punished-for-citing-fake-testimony-from-made-up-witnesses/",
-        "summary": "\"I didn't know that AI could hallucinate facts,\" New Mexico defense lawyer says.",
-        "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/09/chatgpt-icon-1152x648-1789154124.jpg",
-        "image_source": "rss_media",
-        "published_at": "2026-09-11T19:34:09.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "drda3l",
-          "source_id": "ars_ai",
-          "source_name": "Ars Technica AI",
-          "source_role": "main",
-          "trust": 0.78,
-          "kind_hint": "news",
-          "title": "ChatGPT-using lawyer punished for citing fake testimony from made-up witnesses",
-          "url": "https://arstechnica.com/tech-policy/2026/09/chatgpt-using-lawyer-punished-for-citing-fake-testimony-from-made-up-witnesses",
-          "original_url": "https://arstechnica.com/tech-policy/2026/09/chatgpt-using-lawyer-punished-for-citing-fake-testimony-from-made-up-witnesses/",
-          "summary": "\"I didn't know that AI could hallucinate facts,\" New Mexico defense lawyer says.",
-          "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/09/chatgpt-icon-1152x648-1789154124.jpg",
-          "image_source": "rss_media",
-          "published_at": "2026-09-11T19:34:09.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "ars_ai",
-          "source_name": "Ars Technica AI",
-          "title": "ChatGPT-using lawyer punished for citing fake testimony from made-up witnesses",
-          "url": "https://arstechnica.com/tech-policy/2026/09/chatgpt-using-lawyer-punished-for-citing-fake-testimony-from-made-up-witnesses",
-          "published_at": "2026-09-11T19:34:09.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "Legal report on a lawyer sanctioned for submitting AI-generated fake court citations.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.357,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "170orvf",
@@ -2872,134 +2553,12 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.66,
-      "score": 0.331,
+      "score": 0.321,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
       ],
       "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "1j5isti",
-      "primary": {
-        "id": "1j5isti",
-        "source_id": "wired_ai",
-        "source_name": "WIRED AI",
-        "source_role": "main",
-        "trust": 0.76,
-        "kind_hint": "news",
-        "title": "Meta Sued Over Training Data for Its AI and Face-Recognition Systems",
-        "url": "https://wired.com/story/meta-sued-over-training-data-for-its-ai-and-face-recognition-systems",
-        "original_url": "https://www.wired.com/story/meta-sued-over-training-data-for-its-ai-and-face-recognition-systems/",
-        "summary": "The proposed class action alleges Meta illegally harvested people’s Facebook and Instagram photos to train its AI image-generation models and to build its unreleased “NameTag” face recognition feature.",
-        "image_url": "https://media.wired.com/photos/6aa4120d92d2b4de236f2240/master/pass/GettyImages-2289768151.jpg",
-        "image_source": "rss_media",
-        "published_at": "2026-09-11T18:59:25.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1j5isti",
-          "source_id": "wired_ai",
-          "source_name": "WIRED AI",
-          "source_role": "main",
-          "trust": 0.76,
-          "kind_hint": "news",
-          "title": "Meta Sued Over Training Data for Its AI and Face-Recognition Systems",
-          "url": "https://wired.com/story/meta-sued-over-training-data-for-its-ai-and-face-recognition-systems",
-          "original_url": "https://www.wired.com/story/meta-sued-over-training-data-for-its-ai-and-face-recognition-systems/",
-          "summary": "The proposed class action alleges Meta illegally harvested people’s Facebook and Instagram photos to train its AI image-generation models and to build its unreleased “NameTag” face recognition feature.",
-          "image_url": "https://media.wired.com/photos/6aa4120d92d2b4de236f2240/master/pass/GettyImages-2289768151.jpg",
-          "image_source": "rss_media",
-          "published_at": "2026-09-11T18:59:25.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "wired_ai",
-          "source_name": "WIRED AI",
-          "title": "Meta Sued Over Training Data for Its AI and Face-Recognition Systems",
-          "url": "https://wired.com/story/meta-sued-over-training-data-for-its-ai-and-face-recognition-systems",
-          "published_at": "2026-09-11T18:59:25.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "Class action lawsuit filed against Meta regarding training data and facial recognition.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.76,
-      "score": 0.352,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "15owzjl",
-      "primary": {
-        "id": "15owzjl",
-        "source_id": "techcrunch_ai",
-        "source_name": "TechCrunch AI",
-        "source_role": "main",
-        "trust": 0.72,
-        "kind_hint": "news",
-        "title": "OpenAI’s feud with mathematicians is only escalating",
-        "url": "https://techcrunch.com/2026/09/11/openais-feud-with-mathematicians-is-only-escalating",
-        "original_url": "https://techcrunch.com/2026/09/11/openais-feud-with-mathematicians-is-only-escalating/",
-        "summary": "Twenty-five leading mathematicians signed an open letter arguing that AI labs are threatening their intellectual work.",
-        "published_at": "2026-09-11T20:57:36.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "15owzjl",
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "source_role": "main",
-          "trust": 0.72,
-          "kind_hint": "news",
-          "title": "OpenAI’s feud with mathematicians is only escalating",
-          "url": "https://techcrunch.com/2026/09/11/openais-feud-with-mathematicians-is-only-escalating",
-          "original_url": "https://techcrunch.com/2026/09/11/openais-feud-with-mathematicians-is-only-escalating/",
-          "summary": "Twenty-five leading mathematicians signed an open letter arguing that AI labs are threatening their intellectual work.",
-          "published_at": "2026-09-11T20:57:36.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "title": "OpenAI’s feud with mathematicians is only escalating",
-          "url": "https://techcrunch.com/2026/09/11/openais-feud-with-mathematicians-is-only-escalating",
-          "published_at": "2026-09-11T20:57:36.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "Report on an open letter from mathematicians regarding AI labs' use of intellectual work.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.72,
-      "score": 0.346,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "1lmnoht",
@@ -3065,7 +2624,7 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.66,
-      "score": 0.309,
+      "score": 0.298,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -3073,62 +2632,62 @@
       "builder_action": "Queue it for focused learning if the topic matches your current work."
     },
     {
-      "id": "1rd2xs1",
+      "id": "1j5isti",
       "primary": {
-        "id": "1rd2xs1",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
+        "id": "1j5isti",
+        "source_id": "wired_ai",
+        "source_name": "WIRED AI",
         "source_role": "main",
-        "trust": 0.74,
+        "trust": 0.76,
         "kind_hint": "news",
-        "title": "Ex-Deepmind VP Vinyals says AI self-improvement is coming but won't trigger an intelligence explosion",
-        "url": "https://the-decoder.com/ex-deepmind-vp-vinyals-says-ai-self-improvement-is-coming-but-wont-trigger-an-intelligence-explosion",
-        "original_url": "https://the-decoder.com/ex-deepmind-vp-vinyals-says-ai-self-improvement-is-coming-but-wont-trigger-an-intelligence-explosion/",
-        "summary": "Oriol Vinyals, until recently head of research at Google DeepMind, thinks a sudden AI intelligence explosion through recursive self-improvement is unlikely. AI can speed up research by a factor of ten, he says, but it hits two bottlenecks: coming up with ideas (\"research taste\") and reliably judging results. Reward hacking and the speed of light add further limits. Vinyals now wants to tackle these bottlenecks with his startup Discovery Loop, co-founded with Jeff Dean, Sanjay Ghemawat, and Quoc Le. The article Ex-Deepmind VP Vinyals says AI self-improvement is coming but won't trigger an intel",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/Recursive-Intelligence-Explosion.png",
-        "image_source": "rss_content",
-        "published_at": "2026-09-11T17:57:42.000Z",
+        "title": "Meta Sued Over Training Data for Its AI and Face-Recognition Systems",
+        "url": "https://wired.com/story/meta-sued-over-training-data-for-its-ai-and-face-recognition-systems",
+        "original_url": "https://www.wired.com/story/meta-sued-over-training-data-for-its-ai-and-face-recognition-systems/",
+        "summary": "The proposed class action alleges Meta illegally harvested people’s Facebook and Instagram photos to train its AI image-generation models and to build its unreleased “NameTag” face recognition feature.",
+        "image_url": "https://media.wired.com/photos/6aa4120d92d2b4de236f2240/master/pass/GettyImages-2289768151.jpg",
+        "image_source": "rss_media",
+        "published_at": "2026-09-11T18:59:25.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "1rd2xs1",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
+          "id": "1j5isti",
+          "source_id": "wired_ai",
+          "source_name": "WIRED AI",
           "source_role": "main",
-          "trust": 0.74,
+          "trust": 0.76,
           "kind_hint": "news",
-          "title": "Ex-Deepmind VP Vinyals says AI self-improvement is coming but won't trigger an intelligence explosion",
-          "url": "https://the-decoder.com/ex-deepmind-vp-vinyals-says-ai-self-improvement-is-coming-but-wont-trigger-an-intelligence-explosion",
-          "original_url": "https://the-decoder.com/ex-deepmind-vp-vinyals-says-ai-self-improvement-is-coming-but-wont-trigger-an-intelligence-explosion/",
-          "summary": "Oriol Vinyals, until recently head of research at Google DeepMind, thinks a sudden AI intelligence explosion through recursive self-improvement is unlikely. AI can speed up research by a factor of ten, he says, but it hits two bottlenecks: coming up with ideas (\"research taste\") and reliably judging results. Reward hacking and the speed of light add further limits. Vinyals now wants to tackle these bottlenecks with his startup Discovery Loop, co-founded with Jeff Dean, Sanjay Ghemawat, and Quoc Le. The article Ex-Deepmind VP Vinyals says AI self-improvement is coming but won't trigger an intel",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/Recursive-Intelligence-Explosion.png",
-          "image_source": "rss_content",
-          "published_at": "2026-09-11T17:57:42.000Z",
+          "title": "Meta Sued Over Training Data for Its AI and Face-Recognition Systems",
+          "url": "https://wired.com/story/meta-sued-over-training-data-for-its-ai-and-face-recognition-systems",
+          "original_url": "https://www.wired.com/story/meta-sued-over-training-data-for-its-ai-and-face-recognition-systems/",
+          "summary": "The proposed class action alleges Meta illegally harvested people’s Facebook and Instagram photos to train its AI image-generation models and to build its unreleased “NameTag” face recognition feature.",
+          "image_url": "https://media.wired.com/photos/6aa4120d92d2b4de236f2240/master/pass/GettyImages-2289768151.jpg",
+          "image_source": "rss_media",
+          "published_at": "2026-09-11T18:59:25.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "Ex-Deepmind VP Vinyals says AI self-improvement is coming but won't trigger an intelligence explosion",
-          "url": "https://the-decoder.com/ex-deepmind-vp-vinyals-says-ai-self-improvement-is-coming-but-wont-trigger-an-intelligence-explosion",
-          "published_at": "2026-09-11T17:57:42.000Z",
+          "source_id": "wired_ai",
+          "source_name": "WIRED AI",
+          "title": "Meta Sued Over Training Data for Its AI and Face-Recognition Systems",
+          "url": "https://wired.com/story/meta-sued-over-training-data-for-its-ai-and-face-recognition-systems",
+          "published_at": "2026-09-11T18:59:25.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "also_seen_on": [],
-      "kind": "opinion",
+      "kind": "news",
       "quality": "mixed",
-      "one_liner": "Former DeepMind VP Oriol Vinyals discusses limitations to AI recursive self-improvement.",
+      "one_liner": "Report on a class-action lawsuit against Meta regarding the use of user data for AI training and facial recognition.",
       "novelty": 0,
       "novelty_label": "familiar",
-      "trust": 0.74,
-      "score": 0.345,
+      "trust": 0.76,
+      "score": 0.341,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -3136,98 +2695,35 @@
       "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
-      "id": "l7c6w",
+      "id": "15owzjl",
       "primary": {
-        "id": "l7c6w",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
-        "source_role": "main",
-        "trust": 0.74,
-        "kind_hint": "news",
-        "title": "Deep learning pioneer Bengio argues the training process itself makes AI dangerous",
-        "url": "https://the-decoder.com/deep-learning-pioneer-bengio-argues-the-training-process-itself-makes-ai-dangerous",
-        "original_url": "https://the-decoder.com/deep-learning-pioneer-bengio-argues-the-training-process-itself-makes-ai-dangerous/",
-        "summary": "AI pioneer Yoshua Bengio warns in a new essay that AI agents could learn to deceive, game rules, and hide bad behavior as they get better at optimizing goals. He calls for independent safety reviews before any further training or deployment. US President Trump disagrees and wants to keep outpacing China in the AI race. The article Deep learning pioneer Bengio argues the training process itself makes AI dangerous appeared first on The Decoder.",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/forbidden_robot.png",
-        "image_source": "rss_content",
-        "published_at": "2026-09-11T17:22:18.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "l7c6w",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "source_role": "main",
-          "trust": 0.74,
-          "kind_hint": "news",
-          "title": "Deep learning pioneer Bengio argues the training process itself makes AI dangerous",
-          "url": "https://the-decoder.com/deep-learning-pioneer-bengio-argues-the-training-process-itself-makes-ai-dangerous",
-          "original_url": "https://the-decoder.com/deep-learning-pioneer-bengio-argues-the-training-process-itself-makes-ai-dangerous/",
-          "summary": "AI pioneer Yoshua Bengio warns in a new essay that AI agents could learn to deceive, game rules, and hide bad behavior as they get better at optimizing goals. He calls for independent safety reviews before any further training or deployment. US President Trump disagrees and wants to keep outpacing China in the AI race. The article Deep learning pioneer Bengio argues the training process itself makes AI dangerous appeared first on The Decoder.",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/forbidden_robot.png",
-          "image_source": "rss_content",
-          "published_at": "2026-09-11T17:22:18.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "Deep learning pioneer Bengio argues the training process itself makes AI dangerous",
-          "url": "https://the-decoder.com/deep-learning-pioneer-bengio-argues-the-training-process-itself-makes-ai-dangerous",
-          "published_at": "2026-09-11T17:22:18.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "opinion",
-      "quality": "mixed",
-      "one_liner": "Yoshua Bengio discusses risks of deceptive behavior in goal-optimized AI agents.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.74,
-      "score": 0.344,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "165mn5u",
-      "primary": {
-        "id": "165mn5u",
+        "id": "15owzjl",
         "source_id": "techcrunch_ai",
         "source_name": "TechCrunch AI",
         "source_role": "main",
         "trust": 0.72,
         "kind_hint": "news",
-        "title": "Kimi-maker Moonshot AI targets $2B in annual revenue",
-        "url": "https://techcrunch.com/2026/09/11/kimi-maker-moonshot-ai-targets-2-billion-in-annual-revenue",
-        "original_url": "https://techcrunch.com/2026/09/11/kimi-maker-moonshot-ai-targets-2-billion-in-annual-revenue/",
-        "summary": "While K3's usage figures have declined slightly in recent months, OpenRouter data currently shows as many as 300 billion tokens being generated each day by K3 models on the system.",
-        "published_at": "2026-09-11T19:35:54.000Z",
+        "title": "OpenAI’s feud with mathematicians is only escalating",
+        "url": "https://techcrunch.com/2026/09/11/openais-feud-with-mathematicians-is-only-escalating",
+        "original_url": "https://techcrunch.com/2026/09/11/openais-feud-with-mathematicians-is-only-escalating/",
+        "summary": "Twenty-five leading mathematicians signed an open letter arguing that AI labs are threatening their intellectual work.",
+        "published_at": "2026-09-11T20:57:36.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "165mn5u",
+          "id": "15owzjl",
           "source_id": "techcrunch_ai",
           "source_name": "TechCrunch AI",
           "source_role": "main",
           "trust": 0.72,
           "kind_hint": "news",
-          "title": "Kimi-maker Moonshot AI targets $2B in annual revenue",
-          "url": "https://techcrunch.com/2026/09/11/kimi-maker-moonshot-ai-targets-2-billion-in-annual-revenue",
-          "original_url": "https://techcrunch.com/2026/09/11/kimi-maker-moonshot-ai-targets-2-billion-in-annual-revenue/",
-          "summary": "While K3's usage figures have declined slightly in recent months, OpenRouter data currently shows as many as 300 billion tokens being generated each day by K3 models on the system.",
-          "published_at": "2026-09-11T19:35:54.000Z",
+          "title": "OpenAI’s feud with mathematicians is only escalating",
+          "url": "https://techcrunch.com/2026/09/11/openais-feud-with-mathematicians-is-only-escalating",
+          "original_url": "https://techcrunch.com/2026/09/11/openais-feud-with-mathematicians-is-only-escalating/",
+          "summary": "Twenty-five leading mathematicians signed an open letter arguing that AI labs are threatening their intellectual work.",
+          "published_at": "2026-09-11T20:57:36.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -3236,337 +2732,26 @@
         {
           "source_id": "techcrunch_ai",
           "source_name": "TechCrunch AI",
-          "title": "Kimi-maker Moonshot AI targets $2B in annual revenue",
-          "url": "https://techcrunch.com/2026/09/11/kimi-maker-moonshot-ai-targets-2-billion-in-annual-revenue",
-          "published_at": "2026-09-11T19:35:54.000Z",
+          "title": "OpenAI’s feud with mathematicians is only escalating",
+          "url": "https://techcrunch.com/2026/09/11/openais-feud-with-mathematicians-is-only-escalating",
+          "published_at": "2026-09-11T20:57:36.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "also_seen_on": [],
-      "kind": "news",
+      "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Moonshot AI revenue targets and usage statistics for Kimi models.",
+      "one_liner": "Mathematicians sign open letter expressing concerns over AI labs' impact on intellectual property and research.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.72,
-      "score": 0.343,
+      "score": 0.255,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
       ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "1nrt4wf",
-      "primary": {
-        "id": "1nrt4wf",
-        "source_id": "infoq_ai",
-        "source_name": "InfoQ AI/ML/Data",
-        "source_role": "main",
-        "trust": 0.78,
-        "kind_hint": "tutorial",
-        "title": "Session Traces and Cost Controls Help Diagnose AI Agent Failures",
-        "url": "https://infoq.com/news/2026/09/observability-ai-agents",
-        "original_url": "https://www.infoq.com/news/2026/09/observability-ai-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
-        "summary": "Session traces and cost controls are emerging as key observability techniques for diagnosing AI agent failures, helping teams spot tool-call loops and runaway spend while preserving enough execution context for post-incident debugging. By Mark Silvester",
-        "image_url": "https://res.infoq.com/news/2026/09/observability-ai-agents/en/headerimage/header-1788722438219.jpeg",
-        "image_source": "rss_content",
-        "published_at": "2026-09-11T08:14:00.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1nrt4wf",
-          "source_id": "infoq_ai",
-          "source_name": "InfoQ AI/ML/Data",
-          "source_role": "main",
-          "trust": 0.78,
-          "kind_hint": "tutorial",
-          "title": "Session Traces and Cost Controls Help Diagnose AI Agent Failures",
-          "url": "https://infoq.com/news/2026/09/observability-ai-agents",
-          "original_url": "https://www.infoq.com/news/2026/09/observability-ai-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
-          "summary": "Session traces and cost controls are emerging as key observability techniques for diagnosing AI agent failures, helping teams spot tool-call loops and runaway spend while preserving enough execution context for post-incident debugging. By Mark Silvester",
-          "image_url": "https://res.infoq.com/news/2026/09/observability-ai-agents/en/headerimage/header-1788722438219.jpeg",
-          "image_source": "rss_content",
-          "published_at": "2026-09-11T08:14:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "infoq_ai",
-          "source_name": "InfoQ AI/ML/Data",
-          "title": "Session Traces and Cost Controls Help Diagnose AI Agent Failures",
-          "url": "https://infoq.com/news/2026/09/observability-ai-agents",
-          "published_at": "2026-09-11T08:14:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "Overview of observability patterns for AI agents, focusing on session tracing and cost monitoring.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.338,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "18lnf9l",
-      "primary": {
-        "id": "18lnf9l",
-        "source_id": "marktechpost",
-        "source_name": "MarkTechPost",
-        "source_role": "main",
-        "trust": 0.48,
-        "kind_hint": "news",
-        "title": "Meet Redis LangCache: A Managed Semantic Cache That Cuts LLM API Costs by Up to 90% and Returns Cache Hits Up to 15x Faster",
-        "url": "https://marktechpost.com/2026/09/10/meet-redis-langcache-a-managed-semantic-cache-that-cuts-llm-api-costs-by-up-to-90-and-returns-cache-hits-up-to-15x-faster",
-        "original_url": "https://www.marktechpost.com/2026/09/10/meet-redis-langcache-a-managed-semantic-cache-that-cuts-llm-api-costs-by-up-to-90-and-returns-cache-hits-up-to-15x-faster/",
-        "summary": "Production LLM applications rarely receive a question nobody has asked before. Support assistants and RAG pipelines field the same intents thousands of times a day, each phrased differently, and most stacks treat every phrasing as a fresh, fully billed request. Redis LangCache is a fully managed semantic caching service that sits between the application and […] The post Meet Redis LangCache: A Managed Semantic Cache That Cuts LLM API Costs by Up to 90% and Returns Cache Hits Up to 15x Faster appeared first on MarkTechPost.",
-        "published_at": "2026-09-10T22:34:48.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "18lnf9l",
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "source_role": "main",
-          "trust": 0.48,
-          "kind_hint": "news",
-          "title": "Meet Redis LangCache: A Managed Semantic Cache That Cuts LLM API Costs by Up to 90% and Returns Cache Hits Up to 15x Faster",
-          "url": "https://marktechpost.com/2026/09/10/meet-redis-langcache-a-managed-semantic-cache-that-cuts-llm-api-costs-by-up-to-90-and-returns-cache-hits-up-to-15x-faster",
-          "original_url": "https://www.marktechpost.com/2026/09/10/meet-redis-langcache-a-managed-semantic-cache-that-cuts-llm-api-costs-by-up-to-90-and-returns-cache-hits-up-to-15x-faster/",
-          "summary": "Production LLM applications rarely receive a question nobody has asked before. Support assistants and RAG pipelines field the same intents thousands of times a day, each phrased differently, and most stacks treat every phrasing as a fresh, fully billed request. Redis LangCache is a fully managed semantic caching service that sits between the application and […] The post Meet Redis LangCache: A Managed Semantic Cache That Cuts LLM API Costs by Up to 90% and Returns Cache Hits Up to 15x Faster appeared first on MarkTechPost.",
-          "published_at": "2026-09-10T22:34:48.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "title": "Meet Redis LangCache: A Managed Semantic Cache That Cuts LLM API Costs by Up to 90% and Returns Cache Hits Up to 15x Faster",
-          "url": "https://marktechpost.com/2026/09/10/meet-redis-langcache-a-managed-semantic-cache-that-cuts-llm-api-costs-by-up-to-90-and-returns-cache-hits-up-to-15x-faster",
-          "published_at": "2026-09-10T22:34:48.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "tool",
-      "quality": "mixed",
-      "one_liner": "Redis introduces a managed semantic cache for LLM API requests to reduce latency and costs.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.48,
-      "score": 0.253,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Try it in a small sandbox before adding it to production workflow."
-    },
-    {
-      "id": "ytielr",
-      "primary": {
-        "id": "ytielr",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
-        "source_role": "main",
-        "trust": 0.74,
-        "kind_hint": "news",
-        "title": "OpenAI floats a shared AI slowdown, takes it to Congress",
-        "url": "https://the-decoder.com/openai-floats-a-shared-ai-slowdown-takes-it-to-congress",
-        "original_url": "https://the-decoder.com/openai-floats-a-shared-ai-slowdown-takes-it-to-congress/",
-        "summary": "OpenAI wants to know from members of Congress whether an industry-wide slowdown in AI development would be legal, according to several people familiar with the matter. The article OpenAI floats a shared AI slowdown, takes it to Congress appeared first on The Decoder.",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/06/openai_ceo_sam_altman_at_stanford_talk-1.png",
-        "image_source": "rss_content",
-        "published_at": "2026-09-11T11:59:19.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "ytielr",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "source_role": "main",
-          "trust": 0.74,
-          "kind_hint": "news",
-          "title": "OpenAI floats a shared AI slowdown, takes it to Congress",
-          "url": "https://the-decoder.com/openai-floats-a-shared-ai-slowdown-takes-it-to-congress",
-          "original_url": "https://the-decoder.com/openai-floats-a-shared-ai-slowdown-takes-it-to-congress/",
-          "summary": "OpenAI wants to know from members of Congress whether an industry-wide slowdown in AI development would be legal, according to several people familiar with the matter. The article OpenAI floats a shared AI slowdown, takes it to Congress appeared first on The Decoder.",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/06/openai_ceo_sam_altman_at_stanford_talk-1.png",
-          "image_source": "rss_content",
-          "published_at": "2026-09-11T11:59:19.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "OpenAI floats a shared AI slowdown, takes it to Congress",
-          "url": "https://the-decoder.com/openai-floats-a-shared-ai-slowdown-takes-it-to-congress",
-          "published_at": "2026-09-11T11:59:19.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "OpenAI is reportedly consulting Congress on the legality of industry-wide AI development slowdowns.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.74,
-      "score": 0.335,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "czth9x",
-      "primary": {
-        "id": "czth9x",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
-        "source_role": "main",
-        "trust": 0.74,
-        "kind_hint": "news",
-        "title": "Class action lawsuit accuses Anthropic of overselling Claude subscriptions with deceptive usage multipliers",
-        "url": "https://the-decoder.com/class-action-lawsuit-accuses-anthropic-of-overselling-claude-subscriptions-with-deceptive-usage-multipliers",
-        "original_url": "https://the-decoder.com/class-action-lawsuit-accuses-anthropic-of-overselling-claude-subscriptions-with-deceptive-usage-multipliers/",
-        "summary": "A class action lawsuit accuses Anthropic of misrepresenting how much Claude subscribers actually get to use the service. The article Class action lawsuit accuses Anthropic of overselling Claude subscriptions with deceptive usage multipliers appeared first on The Decoder.",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/anthropic_lawsuit.png",
-        "image_source": "rss_content",
-        "published_at": "2026-09-11T09:45:58.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "czth9x",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "source_role": "main",
-          "trust": 0.74,
-          "kind_hint": "news",
-          "title": "Class action lawsuit accuses Anthropic of overselling Claude subscriptions with deceptive usage multipliers",
-          "url": "https://the-decoder.com/class-action-lawsuit-accuses-anthropic-of-overselling-claude-subscriptions-with-deceptive-usage-multipliers",
-          "original_url": "https://the-decoder.com/class-action-lawsuit-accuses-anthropic-of-overselling-claude-subscriptions-with-deceptive-usage-multipliers/",
-          "summary": "A class action lawsuit accuses Anthropic of misrepresenting how much Claude subscribers actually get to use the service. The article Class action lawsuit accuses Anthropic of overselling Claude subscriptions with deceptive usage multipliers appeared first on The Decoder.",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/anthropic_lawsuit.png",
-          "image_source": "rss_content",
-          "published_at": "2026-09-11T09:45:58.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "Class action lawsuit accuses Anthropic of overselling Claude subscriptions with deceptive usage multipliers",
-          "url": "https://the-decoder.com/class-action-lawsuit-accuses-anthropic-of-overselling-claude-subscriptions-with-deceptive-usage-multipliers",
-          "published_at": "2026-09-11T09:45:58.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "Anthropic faces a class action lawsuit alleging deceptive marketing regarding Claude subscription usage limits.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.74,
-      "score": 0.332,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "u4rq6x",
-      "primary": {
-        "id": "u4rq6x",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
-        "source_role": "main",
-        "trust": 0.74,
-        "kind_hint": "news",
-        "title": "The Mathematical AI Safety Institute wants to prove AI is safe the way cryptographers prove codes are unbreakable",
-        "url": "https://the-decoder.com/the-mathematical-ai-safety-institute-wants-to-prove-ai-is-safe-the-way-cryptographers-prove-codes-are-unbreakable",
-        "original_url": "https://the-decoder.com/the-mathematical-ai-safety-institute-wants-to-prove-ai-is-safe-the-way-cryptographers-prove-codes-are-unbreakable/",
-        "summary": "Canadian mathematician Jacob Tsimerman, a fresh Fields Medal recipient, has announced the founding of the Mathematical A.I. Safety Institute (MAISI). The article The Mathematical AI Safety Institute wants to prove AI is safe the way cryptographers prove codes are unbreakable appeared first on The Decoder.",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/maisi.png",
-        "image_source": "rss_content",
-        "published_at": "2026-09-11T09:15:10.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "u4rq6x",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "source_role": "main",
-          "trust": 0.74,
-          "kind_hint": "news",
-          "title": "The Mathematical AI Safety Institute wants to prove AI is safe the way cryptographers prove codes are unbreakable",
-          "url": "https://the-decoder.com/the-mathematical-ai-safety-institute-wants-to-prove-ai-is-safe-the-way-cryptographers-prove-codes-are-unbreakable",
-          "original_url": "https://the-decoder.com/the-mathematical-ai-safety-institute-wants-to-prove-ai-is-safe-the-way-cryptographers-prove-codes-are-unbreakable/",
-          "summary": "Canadian mathematician Jacob Tsimerman, a fresh Fields Medal recipient, has announced the founding of the Mathematical A.I. Safety Institute (MAISI). The article The Mathematical AI Safety Institute wants to prove AI is safe the way cryptographers prove codes are unbreakable appeared first on The Decoder.",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/maisi.png",
-          "image_source": "rss_content",
-          "published_at": "2026-09-11T09:15:10.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "The Mathematical AI Safety Institute wants to prove AI is safe the way cryptographers prove codes are unbreakable",
-          "url": "https://the-decoder.com/the-mathematical-ai-safety-institute-wants-to-prove-ai-is-safe-the-way-cryptographers-prove-codes-are-unbreakable",
-          "published_at": "2026-09-11T09:15:10.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "Fields Medalist Jacob Tsimerman launches the Mathematical A.I. Safety Institute to pursue formal verification for AI.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.74,
-      "score": 0.331,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
+      "builder_action": "Use this as weak signal and verify against primary sources."
     }
   ]
 }
