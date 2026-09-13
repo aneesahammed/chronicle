@@ -403,18 +403,6 @@
       "enriched_at": "2026-09-02T16:34:37.702Z",
       "failure_count": 0
     },
-    "https://arxiv.org/abs/2607.20425": {
-      "url": "https://arxiv.org/abs/2607.20425",
-      "title": "What is Good? Extracting and Testing Implicit Theories of Literary Quality from LLM Reasoning Traces",
-      "source_name": "arXiv cs.CL",
-      "dek": "Researchers analyzed how LLMs evaluate literary quality, finding they prioritize intentionality over technical correctness.",
-      "brief": "A study using DeepSeek models on a 30-text benchmark achieved 79.3% accuracy in classifying literary quality tiers. The model's reasoning traces revealed a consistent preference for intentionality, providing insight into how current LLMs implicitly define \"good\" writing.",
-      "image_alt": "Diagram showing LLM reasoning traces for literary analysis",
-      "status": "ok",
-      "attempted_at": "2026-07-25T07:28:19.140Z",
-      "enriched_at": "2026-07-25T07:28:19.140Z",
-      "failure_count": 0
-    },
     "https://arxiv.org/abs/2607.21503": {
       "url": "https://arxiv.org/abs/2607.21503",
       "title": "Agentic Context Management: Memory and Cost as Architecture Problems",
@@ -1808,20 +1796,6 @@
       "enriched_at": "2026-09-08T16:38:18.822Z",
       "failure_count": 0
     },
-    "https://developer.nvidia.com/blog/modelexpress-distributing-model-artifacts-at-the-speed-of-light": {
-      "url": "https://developer.nvidia.com/blog/modelexpress-distributing-model-artifacts-at-the-speed-of-light",
-      "title": "ModelExpress: Distributing Model Artifacts at the Speed of Light",
-      "source_name": "NVIDIA Developer Blog",
-      "dek": "NVIDIA introduced ModelExpress to reduce the latency and costs associated with distributing large model checkpoints across GPU clusters.",
-      "brief": "As model weights reach hundreds of gigabytes, moving data for cold starts and autoscaling creates significant bottlenecks. ModelExpress aims to optimize the weight lifecycle, minimizing the time spent transferring artifacts before compute can begin.",
-      "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/07/image5-11-768x432.jpg",
-      "image_alt": "NVIDIA ModelExpress architecture diagram",
-      "image_source": "rss_content",
-      "status": "ok",
-      "attempted_at": "2026-07-25T07:28:19.140Z",
-      "enriched_at": "2026-07-25T07:28:19.140Z",
-      "failure_count": 0
-    },
     "https://developer.nvidia.com/blog/nvidia-exemplar-cloud-lessons-for-unlocking-full-performance-on-ai-infrastructure": {
       "url": "https://developer.nvidia.com/blog/nvidia-exemplar-cloud-lessons-for-unlocking-full-performance-on-ai-infrastructure",
       "title": "NVIDIA Exemplar Cloud: Lessons for Unlocking Full Performance on AI Infrastructure",
@@ -2521,6 +2495,18 @@
       "status": "ok",
       "attempted_at": "2026-07-28T19:52:53.373Z",
       "enriched_at": "2026-07-28T19:52:53.373Z",
+      "failure_count": 0
+    },
+    "https://github.com/Speedstu/CUDA-for-AMD-Windows": {
+      "url": "https://github.com/Speedstu/CUDA-for-AMD-Windows",
+      "title": "CUDA for AMD on Windows",
+      "source_name": "Hacker News (AI-filtered)",
+      "dek": "A new project enables CUDA-targeted Windows applications to run on AMD GPUs using ZLUDA and ROCm/HIP.",
+      "brief": "The Speedstu/CUDA-for-AMD-Windows repository provides a reproducible stack for executing CUDA-based workloads on AMD hardware. By leveraging ZLUDA and the ROCm/HIP stack, the project aims to bridge the compatibility gap for Windows users running CUDA-dependent software on non-NVIDIA GPUs.",
+      "image_alt": "Windows and AMD GPU compatibility badges",
+      "status": "ok",
+      "attempted_at": "2026-09-13T20:50:24.892Z",
+      "enriched_at": "2026-09-13T20:50:24.892Z",
       "failure_count": 0
     },
     "https://github.com/stemdeckapp/stemdeck": {
@@ -3835,6 +3821,18 @@
       "status": "ok",
       "attempted_at": "2026-09-13T10:17:46.030Z",
       "enriched_at": "2026-09-13T10:17:46.030Z",
+      "failure_count": 0
+    },
+    "https://marktechpost.com/2026/09/13/a-princeton-researcher-proposes-recurrent-looped-transformer-rlt": {
+      "url": "https://marktechpost.com/2026/09/13/a-princeton-researcher-proposes-recurrent-looped-transformer-rlt",
+      "title": "A Princeton Researcher Proposes Recurrent Looped Transformer (RLT) that Carries Decoder State across Every Token, Fixing 96 Blocks per Token with Unbounded Temporal Depth",
+      "source_name": "MarkTechPost",
+      "dek": "The Recurrent Looped Transformer (RLT) architecture introduces unbounded temporal depth by carrying decoder state across every token.",
+      "brief": "Proposed by Yifan Zhang, the RLT architecture pairs a causal encoder with a recurrent decoder. It maintains hidden states and layerwise sliding-window attention caches across prompt and response tokens without resetting at serving boundaries. The configuration utilizes 96 logical blocks per token to enable persistent state management.",
+      "image_alt": "Diagram illustrating the Recurrent Looped Transformer architecture",
+      "status": "ok",
+      "attempted_at": "2026-09-13T20:50:24.892Z",
+      "enriched_at": "2026-09-13T20:50:24.892Z",
       "failure_count": 0
     },
     "https://martinfowler.com/articles/exploring-gen-ai/tdd-in-the-agent-loop.html": {
