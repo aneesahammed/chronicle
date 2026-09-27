@@ -1,22 +1,27 @@
 {
-  "generated_at": "2026-09-27T16:57:59.700Z",
-  "last_successful_generated_at": "2026-09-27T16:57:59.700Z",
+  "generated_at": "2026-09-27T21:20:45.055Z",
+  "last_successful_generated_at": "2026-09-27T21:20:45.055Z",
   "refresh_status": "partial",
   "classification_mode": "llm",
   "window_hours": 36,
   "source_total": 53,
-  "source_ok": 51,
-  "source_failed": 2,
+  "source_ok": 50,
+  "source_failed": 3,
   "failed_sources": [
+    {
+      "id": "marktechpost",
+      "name": "MarkTechPost",
+      "message": "Invalid character in entity name\nLine: 0\nColumn: 117\nChar: ="
+    },
     {
       "id": "r_localllama",
       "name": "r/LocalLLaMA",
-      "message": "Invalid character in entity name\nLine: 20\nColumn: 196\nChar: ="
+      "message": "Feed not recognized as RSS 1 or 2."
     },
     {
       "id": "r_ml",
       "name": "r/MachineLearning",
-      "message": "Feed not recognized as RSS 1 or 2."
+      "message": "Invalid character in entity name\nLine: 20\nColumn: 196\nChar: ="
     }
   ],
   "source_health": [
@@ -201,10 +206,10 @@
       "name": "TechCrunch AI",
       "status": "ok",
       "fetched_count": 12,
-      "fresh_count": 4,
-      "stale_count": 8,
-      "oldest_published_at": "2026-09-25T18:22:47.000Z",
-      "newest_published_at": "2026-09-27T16:30:00.000Z"
+      "fresh_count": 6,
+      "stale_count": 6,
+      "oldest_published_at": "2026-09-25T18:48:33.000Z",
+      "newest_published_at": "2026-09-27T20:34:28.000Z"
     },
     {
       "id": "the_decoder",
@@ -261,10 +266,10 @@
       "name": "The Verge AI",
       "status": "ok",
       "fetched_count": 10,
-      "fresh_count": 2,
-      "stale_count": 8,
-      "oldest_published_at": "2026-09-24T17:52:29.000Z",
-      "newest_published_at": "2026-09-26T16:34:59.000Z"
+      "fresh_count": 4,
+      "stale_count": 6,
+      "oldest_published_at": "2026-09-24T19:59:26.000Z",
+      "newest_published_at": "2026-09-27T20:46:36.000Z"
     },
     {
       "id": "wired_ai",
@@ -290,41 +295,40 @@
       "id": "product_hunt",
       "name": "Product Hunt",
       "status": "ok",
-      "fetched_count": 3,
+      "fetched_count": 2,
       "fresh_count": 0,
-      "stale_count": 3,
+      "stale_count": 2,
       "oldest_published_at": "2026-09-07T16:31:09.000Z",
-      "newest_published_at": "2026-09-24T22:29:24.000Z"
+      "newest_published_at": "2026-09-22T21:59:44.000Z"
     },
     {
       "id": "marktechpost",
       "name": "MarkTechPost",
-      "status": "ok",
-      "fetched_count": 9,
-      "fresh_count": 5,
-      "stale_count": 4,
-      "oldest_published_at": "2026-09-25T04:46:38.000Z",
-      "newest_published_at": "2026-09-27T05:57:51.000Z"
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "Invalid character in entity name\nLine: 0\nColumn: 117\nChar: =",
+      "fresh_count": 0,
+      "stale_count": 0
     },
     {
       "id": "hn_ai",
       "name": "Hacker News (AI-filtered)",
       "status": "ok",
-      "fetched_count": 3,
-      "fresh_count": 3,
+      "fetched_count": 2,
+      "fresh_count": 2,
       "stale_count": 0,
-      "oldest_published_at": "2026-09-26T18:22:41.000Z",
-      "newest_published_at": "2026-09-27T10:26:25.000Z"
+      "oldest_published_at": "2026-09-26T19:57:24.000Z",
+      "newest_published_at": "2026-09-27T15:51:28.000Z"
     },
     {
       "id": "hn_show_ai",
       "name": "Show HN (AI-filtered)",
       "status": "ok",
-      "fetched_count": 1,
-      "fresh_count": 0,
+      "fetched_count": 2,
+      "fresh_count": 1,
       "stale_count": 1,
       "oldest_published_at": "2026-09-25T16:51:28.000Z",
-      "newest_published_at": "2026-09-25T16:51:28.000Z"
+      "newest_published_at": "2026-09-27T15:51:28.000Z"
     },
     {
       "id": "lobsters_ai",
@@ -341,7 +345,7 @@
       "name": "r/LocalLLaMA",
       "status": "failed",
       "fetched_count": 0,
-      "message": "Invalid character in entity name\nLine: 20\nColumn: 196\nChar: =",
+      "message": "Feed not recognized as RSS 1 or 2.",
       "fresh_count": 0,
       "stale_count": 0
     },
@@ -350,7 +354,7 @@
       "name": "r/MachineLearning",
       "status": "failed",
       "fetched_count": 0,
-      "message": "Feed not recognized as RSS 1 or 2.",
+      "message": "Invalid character in entity name\nLine: 20\nColumn: 196\nChar: =",
       "fresh_count": 0,
       "stale_count": 0
     },
@@ -441,8 +445,8 @@
       "fetched_count": 6,
       "fresh_count": 0,
       "stale_count": 6,
-      "oldest_published_at": "2026-09-08T20:00:00.000Z",
-      "newest_published_at": "2026-09-23T15:00:00.000Z"
+      "oldest_published_at": "2026-09-10T17:00:00.000Z",
+      "newest_published_at": "2026-09-24T18:00:00.000Z"
     },
     {
       "id": "aws_ml_blog",
@@ -529,10 +533,10 @@
       "name": "Fahd Mirza YouTube",
       "status": "ok",
       "fetched_count": 8,
-      "fresh_count": 2,
-      "stale_count": 6,
-      "oldest_published_at": "2026-09-23T20:37:36.000Z",
-      "newest_published_at": "2026-09-27T06:00:06.000Z"
+      "fresh_count": 3,
+      "stale_count": 5,
+      "oldest_published_at": "2026-09-24T07:00:16.000Z",
+      "newest_published_at": "2026-09-27T19:58:26.000Z"
     },
     {
       "id": "yt_nate_b_jones",
@@ -553,7 +557,7 @@
       "source_name": "InfoQ AI/ML/Data",
       "published_at": "2026-09-27T06:46:00.000Z",
       "kind": "news",
-      "score": 0.78,
+      "score": 0.773,
       "dek": "Google's GKE Pod snapshots now enable up to 89% faster startup times by checkpointing CPU and GPU memory states directly to Cloud Storage.",
       "brief": "GKE Pod snapshots allow developers to save and restore the full running state of a workload, including memory, to significantly reduce cold-start latency for large models. The feature, now GA on GKE 1.35.3+, uses gVisor to checkpoint state. While performance gains are substantial—loading a 70B model in 37 seconds—success depends on strict parity between the snapshot environment and the target cluster's kernel and dr…",
       "image_url": "https://res.infoq.com/news/2026/09/gke-pod-snapshots-benchmarks/en/headerimage/generatedHeaderImage-1790233005037.jpg",
@@ -561,37 +565,9 @@
       "image_source": "rss_content",
       "enrichment_status": "ok",
       "enriched_at": "2026-09-27T10:33:25.664Z"
-    },
-    {
-      "cluster_id": "1gbb1lx",
-      "title": "DeepSeek Elastic Compute (DSec)",
-      "url": "https://arxiv.org/abs/2609.22978",
-      "source_name": "Hacker News (AI-filtered)",
-      "published_at": "2026-09-26T18:22:41Z",
-      "kind": "paper",
-      "score": 0.71,
-      "dek": "DeepSeek introduces DSec, a sandbox infrastructure designed to scale agentic model training.",
-      "brief": "DeepSeek Elastic Compute (DSec) provides a specialized sandbox environment for training agentic AI systems. The infrastructure focuses on managing the complexities of large-scale agentic workflows, aiming to improve training efficiency and stability for autonomous model development.",
-      "image_alt": "Diagram of the DSec infrastructure architecture",
-      "enrichment_status": "ok",
-      "enriched_at": "2026-09-23T09:59:27.086Z"
-    },
-    {
-      "cluster_id": "1vrcwzh",
-      "title": "Sarvam AI Releases Saaras V4: A Speech-to-Text Model for All 22 Indian Languages and Global English",
-      "url": "https://marktechpost.com/2026/09/26/sarvam-ai-releases-saaras-v4-a-speech-to-text-model-for-all-22-indian-languages-and-global-english",
-      "source_name": "MarkTechPost",
-      "published_at": "2026-09-26T21:56:23.000Z",
-      "kind": "model_release",
-      "score": 0.665,
-      "dek": "Sarvam AI has launched Saaras V4, a speech-to-text model supporting 22 Indian languages and global English with sub-150ms latency.",
-      "brief": "Saaras V4 utilizes a 3B hybrid state-space decoder to deliver speech recognition across 22 scheduled Indian languages and global English. The model features keyterm prompting for up to 50 terms and supports five distinct output modes. It is currently available via Sarvam's API with a first-token latency under 150ms.",
-      "image_alt": "Sarvam AI Saaras V4 speech-to-text model architecture diagram",
-      "enrichment_status": "ok",
-      "enriched_at": "2026-09-27T16:57:59.700Z"
     }
   ],
-  "count": 26,
+  "count": 23,
   "clusters": [
     {
       "id": "q3usim",
@@ -645,16 +621,150 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "signal",
-      "one_liner": "GKE Pod snapshots reduce model load times by up to 89% by checkpointing GPU memory via gVisor.",
+      "one_liner": "GKE Pod snapshots reduce model load times by checkpointing CPU and GPU memory via gVisor.",
       "novelty": 0.847,
       "novelty_label": "high",
       "trust": 0.78,
-      "score": 0.78,
+      "score": 0.773,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal"
       ],
       "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "tqk9gu",
+      "primary": {
+        "id": "tqk9gu",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "AI agents do more of the work in model development, but humans still make the decisions",
+        "url": "https://the-decoder.com/ai-agents-do-more-of-the-work-in-model-development-but-humans-still-make-the-decisions",
+        "original_url": "https://the-decoder.com/ai-agents-do-more-of-the-work-in-model-development-but-humans-still-make-the-decisions/",
+        "summary": "A research team analyzed 769 task logs from building its own AI model. AI agents supplied up to 55 percent of method proposals, but humans made more than 85 percent of final decisions. A third of the tasks wouldn't have been attempted without AI. The authors warn that more agent activity doesn't mean more autonomy. The article AI agents do more of the work in model development, but humans still make the decisions appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/research-tree-nano-banana-pro.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-09-27T15:18:39.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "tqk9gu",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "AI agents do more of the work in model development, but humans still make the decisions",
+          "url": "https://the-decoder.com/ai-agents-do-more-of-the-work-in-model-development-but-humans-still-make-the-decisions",
+          "original_url": "https://the-decoder.com/ai-agents-do-more-of-the-work-in-model-development-but-humans-still-make-the-decisions/",
+          "summary": "A research team analyzed 769 task logs from building its own AI model. AI agents supplied up to 55 percent of method proposals, but humans made more than 85 percent of final decisions. A third of the tasks wouldn't have been attempted without AI. The authors warn that more agent activity doesn't mean more autonomy. The article AI agents do more of the work in model development, but humans still make the decisions appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/research-tree-nano-banana-pro.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-09-27T15:18:39.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "AI agents do more of the work in model development, but humans still make the decisions",
+          "url": "https://the-decoder.com/ai-agents-do-more-of-the-work-in-model-development-but-humans-still-make-the-decisions",
+          "published_at": "2026-09-27T15:18:39.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "Analysis of 769 task logs shows AI agents propose methods, but humans retain 85% of final decision-making.",
+      "novelty": 0.819,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.769,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "c44qjp",
+      "primary": {
+        "id": "c44qjp",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "Faster prompt lookup drafting in llama.cpp",
+        "url": "https://jadidbourbaki.github.io/blog/prompt-lookup-llama-cpp",
+        "original_url": "https://jadidbourbaki.github.io/blog/prompt-lookup-llama-cpp/",
+        "discussion_url": "https://news.ycombinator.com/item?id=49859982",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-09-26T19:57:24Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 50,
+          "comments": 8
+        }
+      },
+      "members": [
+        {
+          "id": "c44qjp",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "Faster prompt lookup drafting in llama.cpp",
+          "url": "https://jadidbourbaki.github.io/blog/prompt-lookup-llama-cpp",
+          "original_url": "https://jadidbourbaki.github.io/blog/prompt-lookup-llama-cpp/",
+          "discussion_url": "https://news.ycombinator.com/item?id=49859982",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-09-26T19:57:24Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 50,
+            "comments": 8
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "Faster prompt lookup drafting in llama.cpp",
+          "url": "https://jadidbourbaki.github.io/blog/prompt-lookup-llama-cpp",
+          "published_at": "2026-09-26T19:57:24Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=49859982",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "signal",
+      "one_liner": "Technical overview of implementing faster prompt lookup drafting in llama.cpp.",
+      "novelty": 0.831,
+      "novelty_label": "high",
+      "trust": 0.65,
+      "score": 0.743,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
     },
     {
       "id": "162omxq",
@@ -708,15 +818,14 @@
       "also_seen_on": [],
       "kind": "paper",
       "quality": "signal",
-      "one_liner": "HomeBody system demonstrates direct LLM control of robot skills for kitchen manipulation tasks.",
+      "one_liner": "HomeBody system demonstrates direct LLM control of modular robot skills for kitchen tasks.",
       "novelty": 0.822,
       "novelty_label": "high",
       "trust": 0.74,
-      "score": 0.77,
+      "score": 0.763,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
-        "classified as concrete builder or research signal",
-        "fresh within the current refresh window"
+        "classified as concrete builder or research signal"
       ],
       "builder_action": "Save this for technical review if the method maps to your roadmap."
     },
@@ -776,212 +885,12 @@
       "novelty": 0.797,
       "novelty_label": "high",
       "trust": 0.74,
-      "score": 0.763,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as concrete builder or research signal",
-        "fresh within the current refresh window"
-      ],
-      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
-    },
-    {
-      "id": "1gbb1lx",
-      "primary": {
-        "id": "1gbb1lx",
-        "source_id": "hn_ai",
-        "source_name": "Hacker News (AI-filtered)",
-        "source_role": "main",
-        "trust": 0.65,
-        "title": "DeepSeek Elastic Compute (DSec)",
-        "url": "https://arxiv.org/abs/2609.22978",
-        "original_url": "https://arxiv.org/abs/2609.22978",
-        "discussion_url": "https://news.ycombinator.com/item?id=49859112",
-        "discussion_source": "Hacker News",
-        "published_at": "2026-09-26T18:22:41Z",
-        "published_at_source": "api",
-        "date_confidence": "high",
-        "engagement": {
-          "score": 303,
-          "comments": 95
-        }
-      },
-      "members": [
-        {
-          "id": "1gbb1lx",
-          "source_id": "hn_ai",
-          "source_name": "Hacker News (AI-filtered)",
-          "source_role": "main",
-          "trust": 0.65,
-          "title": "DeepSeek Elastic Compute (DSec)",
-          "url": "https://arxiv.org/abs/2609.22978",
-          "original_url": "https://arxiv.org/abs/2609.22978",
-          "discussion_url": "https://news.ycombinator.com/item?id=49859112",
-          "discussion_source": "Hacker News",
-          "published_at": "2026-09-26T18:22:41Z",
-          "published_at_source": "api",
-          "date_confidence": "high",
-          "engagement": {
-            "score": 303,
-            "comments": 95
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "hn_ai",
-          "source_name": "Hacker News (AI-filtered)",
-          "title": "DeepSeek Elastic Compute (DSec)",
-          "url": "https://arxiv.org/abs/2609.22978",
-          "published_at": "2026-09-26T18:22:41Z",
-          "published_at_source": "api",
-          "date_confidence": "high",
-          "discussion_url": "https://news.ycombinator.com/item?id=49859112",
-          "discussion_source": "Hacker News"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "paper",
-      "quality": "signal",
-      "one_liner": "DeepSeek introduces Elastic Compute (DSec) for scalable model training infrastructure.",
-      "novelty": 0.674,
-      "novelty_label": "medium",
-      "trust": 0.65,
-      "score": 0.71,
-      "why_this_surfaced": [
-        "meaningfully different from recent coverage",
-        "classified as concrete builder or research signal",
-        "source-native discussion or engagement is unusually high"
-      ],
-      "builder_action": "Save this for technical review if the method maps to your roadmap."
-    },
-    {
-      "id": "d7laeg",
-      "primary": {
-        "id": "d7laeg",
-        "source_id": "marktechpost",
-        "source_name": "MarkTechPost",
-        "source_role": "main",
-        "trust": 0.48,
-        "kind_hint": "news",
-        "title": "A Coding Guide to Google Research’s MSEB: Writing Sound Encoders to the Benchmark Contract and Scoring Them Across Classification, Clustering, Retrieval and Segmentation",
-        "url": "https://marktechpost.com/2026/09/26/a-coding-guide-to-google-researchs-mseb-writing-sound-encoders-to-the-benchmark-contract-and-scoring-them-across-classification-clustering-retrieval-and-segmentation",
-        "original_url": "https://www.marktechpost.com/2026/09/26/a-coding-guide-to-google-researchs-mseb-writing-sound-encoders-to-the-benchmark-contract-and-scoring-them-across-classification-clustering-retrieval-and-segmentation/",
-        "summary": "A comprehensive coding tutorial on Google Research's Massive Sound Embedding Benchmark (MSEB), demonstrating how to implement custom sound encoders, drive classification, clustering, retrieval, and segmentation evaluators, and analyze multi-task benchmark performance. The post A Coding Guide to Google Research’s MSEB: Writing Sound Encoders to the Benchmark Contract and Scoring Them Across Classification, Clustering, Retrieval and Segmentation appeared first on MarkTechPost.",
-        "published_at": "2026-09-27T05:42:35.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "d7laeg",
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "source_role": "main",
-          "trust": 0.48,
-          "kind_hint": "news",
-          "title": "A Coding Guide to Google Research’s MSEB: Writing Sound Encoders to the Benchmark Contract and Scoring Them Across Classification, Clustering, Retrieval and Segmentation",
-          "url": "https://marktechpost.com/2026/09/26/a-coding-guide-to-google-researchs-mseb-writing-sound-encoders-to-the-benchmark-contract-and-scoring-them-across-classification-clustering-retrieval-and-segmentation",
-          "original_url": "https://www.marktechpost.com/2026/09/26/a-coding-guide-to-google-researchs-mseb-writing-sound-encoders-to-the-benchmark-contract-and-scoring-them-across-classification-clustering-retrieval-and-segmentation/",
-          "summary": "A comprehensive coding tutorial on Google Research's Massive Sound Embedding Benchmark (MSEB), demonstrating how to implement custom sound encoders, drive classification, clustering, retrieval, and segmentation evaluators, and analyze multi-task benchmark performance. The post A Coding Guide to Google Research’s MSEB: Writing Sound Encoders to the Benchmark Contract and Scoring Them Across Classification, Clustering, Retrieval and Segmentation appeared first on MarkTechPost.",
-          "published_at": "2026-09-27T05:42:35.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "title": "A Coding Guide to Google Research’s MSEB: Writing Sound Encoders to the Benchmark Contract and Scoring Them Across Classification, Clustering, Retrieval and Segmentation",
-          "url": "https://marktechpost.com/2026/09/26/a-coding-guide-to-google-researchs-mseb-writing-sound-encoders-to-the-benchmark-contract-and-scoring-them-across-classification-clustering-retrieval-and-segmentation",
-          "published_at": "2026-09-27T05:42:35.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "tutorial",
-      "quality": "signal",
-      "one_liner": "Guide on implementing and evaluating custom sound encoders using the Massive Sound Embedding Benchmark.",
-      "novelty": 0.837,
-      "novelty_label": "high",
-      "trust": 0.48,
-      "score": 0.706,
+      "score": 0.755,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal"
       ],
-      "builder_action": "Use this as implementation reference if it matches your stack."
-    },
-    {
-      "id": "13lqxr6",
-      "primary": {
-        "id": "13lqxr6",
-        "source_id": "hn_ai",
-        "source_name": "Hacker News (AI-filtered)",
-        "source_role": "main",
-        "trust": 0.65,
-        "title": "Unsealed Briefs in Authors’ Case v. Microsoft/OpenAI",
-        "url": "https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal",
-        "original_url": "https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal/",
-        "discussion_url": "https://news.ycombinator.com/item?id=49863864",
-        "discussion_source": "Hacker News",
-        "published_at": "2026-09-27T06:19:33Z",
-        "published_at_source": "api",
-        "date_confidence": "high",
-        "engagement": {
-          "score": 547,
-          "comments": 506
-        }
-      },
-      "members": [
-        {
-          "id": "13lqxr6",
-          "source_id": "hn_ai",
-          "source_name": "Hacker News (AI-filtered)",
-          "source_role": "main",
-          "trust": 0.65,
-          "title": "Unsealed Briefs in Authors’ Case v. Microsoft/OpenAI",
-          "url": "https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal",
-          "original_url": "https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal/",
-          "discussion_url": "https://news.ycombinator.com/item?id=49863864",
-          "discussion_source": "Hacker News",
-          "published_at": "2026-09-27T06:19:33Z",
-          "published_at_source": "api",
-          "date_confidence": "high",
-          "engagement": {
-            "score": 547,
-            "comments": 506
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "hn_ai",
-          "source_name": "Hacker News (AI-filtered)",
-          "title": "Unsealed Briefs in Authors’ Case v. Microsoft/OpenAI",
-          "url": "https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal",
-          "published_at": "2026-09-27T06:19:33Z",
-          "published_at_source": "api",
-          "date_confidence": "high",
-          "discussion_url": "https://news.ycombinator.com/item?id=49863864",
-          "discussion_source": "Hacker News"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "Unsealed legal documents in the Authors Guild v. OpenAI case regarding training data usage.",
-      "novelty": 0.832,
-      "novelty_label": "high",
-      "trust": 0.65,
-      "score": 0.672,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal",
-        "source-native discussion or engagement is unusually high"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
+      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
     },
     {
       "id": "1l322d8",
@@ -1029,139 +938,16 @@
       "also_seen_on": [],
       "kind": "opinion",
       "quality": "mixed",
-      "one_liner": "Argument that human-AI partnerships should prioritize alignment over raw capability.",
+      "one_liner": "Discussion on the role of human-AI partnerships in alignment versus capability.",
       "novelty": 0.838,
       "novelty_label": "high",
       "trust": 0.78,
-      "score": 0.653,
+      "score": 0.646,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal"
       ],
       "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "tqk9gu",
-      "primary": {
-        "id": "tqk9gu",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
-        "source_role": "main",
-        "trust": 0.74,
-        "kind_hint": "news",
-        "title": "AI agents do more of the work in model development, but humans still make the decisions",
-        "url": "https://the-decoder.com/ai-agents-do-more-of-the-work-in-model-development-but-humans-still-make-the-decisions",
-        "original_url": "https://the-decoder.com/ai-agents-do-more-of-the-work-in-model-development-but-humans-still-make-the-decisions/",
-        "summary": "A research team analyzed 769 task logs from building its own AI model. AI agents supplied up to 55 percent of method proposals, but humans made more than 85 percent of final decisions. A third of the tasks wouldn't have been attempted without AI. The authors warn that more agent activity doesn't mean more autonomy. The article AI agents do more of the work in model development, but humans still make the decisions appeared first on The Decoder.",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/research-tree-nano-banana-pro.jpg",
-        "image_source": "rss_content",
-        "published_at": "2026-09-27T15:18:39.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "tqk9gu",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "source_role": "main",
-          "trust": 0.74,
-          "kind_hint": "news",
-          "title": "AI agents do more of the work in model development, but humans still make the decisions",
-          "url": "https://the-decoder.com/ai-agents-do-more-of-the-work-in-model-development-but-humans-still-make-the-decisions",
-          "original_url": "https://the-decoder.com/ai-agents-do-more-of-the-work-in-model-development-but-humans-still-make-the-decisions/",
-          "summary": "A research team analyzed 769 task logs from building its own AI model. AI agents supplied up to 55 percent of method proposals, but humans made more than 85 percent of final decisions. A third of the tasks wouldn't have been attempted without AI. The authors warn that more agent activity doesn't mean more autonomy. The article AI agents do more of the work in model development, but humans still make the decisions appeared first on The Decoder.",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/research-tree-nano-banana-pro.jpg",
-          "image_source": "rss_content",
-          "published_at": "2026-09-27T15:18:39.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "AI agents do more of the work in model development, but humans still make the decisions",
-          "url": "https://the-decoder.com/ai-agents-do-more-of-the-work-in-model-development-but-humans-still-make-the-decisions",
-          "published_at": "2026-09-27T15:18:39.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "discussion",
-      "quality": "signal",
-      "one_liner": "Analysis of 769 task logs shows AI agents propose 55% of methods, but humans retain 85% of final decisions.",
-      "novelty": 0.819,
-      "novelty_label": "high",
-      "trust": 0.74,
-      "score": 0.696,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as concrete builder or research signal",
-        "fresh within the current refresh window"
-      ],
-      "builder_action": "Use this as weak signal and verify against primary sources."
-    },
-    {
-      "id": "1vrcwzh",
-      "primary": {
-        "id": "1vrcwzh",
-        "source_id": "marktechpost",
-        "source_name": "MarkTechPost",
-        "source_role": "main",
-        "trust": 0.48,
-        "kind_hint": "news",
-        "title": "Sarvam AI Releases Saaras V4: A Speech-to-Text Model for All 22 Indian Languages and Global English",
-        "url": "https://marktechpost.com/2026/09/26/sarvam-ai-releases-saaras-v4-a-speech-to-text-model-for-all-22-indian-languages-and-global-english",
-        "original_url": "https://www.marktechpost.com/2026/09/26/sarvam-ai-releases-saaras-v4-a-speech-to-text-model-for-all-22-indian-languages-and-global-english/",
-        "summary": "Sarvam AI's Saaras V4 is a speech-to-text model covering all 22 Indian languages plus global English. It pairs an audio encoder with a 3B hybrid state-space decoder. It adds keyterm prompting for up to 50 terms, 5 output modes from 1 model, and streaming with first-token latency under 150 ms. It is available today through Sarvam's API at ₹30 per hour. The post Sarvam AI Releases Saaras V4: A Speech-to-Text Model for All 22 Indian Languages and Global English appeared first on MarkTechPost.",
-        "published_at": "2026-09-26T21:56:23.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1vrcwzh",
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "source_role": "main",
-          "trust": 0.48,
-          "kind_hint": "news",
-          "title": "Sarvam AI Releases Saaras V4: A Speech-to-Text Model for All 22 Indian Languages and Global English",
-          "url": "https://marktechpost.com/2026/09/26/sarvam-ai-releases-saaras-v4-a-speech-to-text-model-for-all-22-indian-languages-and-global-english",
-          "original_url": "https://www.marktechpost.com/2026/09/26/sarvam-ai-releases-saaras-v4-a-speech-to-text-model-for-all-22-indian-languages-and-global-english/",
-          "summary": "Sarvam AI's Saaras V4 is a speech-to-text model covering all 22 Indian languages plus global English. It pairs an audio encoder with a 3B hybrid state-space decoder. It adds keyterm prompting for up to 50 terms, 5 output modes from 1 model, and streaming with first-token latency under 150 ms. It is available today through Sarvam's API at ₹30 per hour. The post Sarvam AI Releases Saaras V4: A Speech-to-Text Model for All 22 Indian Languages and Global English appeared first on MarkTechPost.",
-          "published_at": "2026-09-26T21:56:23.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "title": "Sarvam AI Releases Saaras V4: A Speech-to-Text Model for All 22 Indian Languages and Global English",
-          "url": "https://marktechpost.com/2026/09/26/sarvam-ai-releases-saaras-v4-a-speech-to-text-model-for-all-22-indian-languages-and-global-english",
-          "published_at": "2026-09-26T21:56:23.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "model_release",
-      "quality": "signal",
-      "one_liner": "Sarvam AI released Saaras V4, a 3B parameter speech-to-text model for 22 Indian languages.",
-      "novelty": 0.742,
-      "novelty_label": "medium",
-      "trust": 0.48,
-      "score": 0.665,
-      "why_this_surfaced": [
-        "meaningfully different from recent coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
     },
     {
       "id": "whwwyt",
@@ -1227,7 +1013,79 @@
       "novelty": 0.833,
       "novelty_label": "high",
       "trust": 0.62,
-      "score": 0.642,
+      "score": 0.635,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1fz8hjp",
+      "primary": {
+        "id": "1fz8hjp",
+        "source_id": "fahd_mirza",
+        "source_name": "Fahd Mirza YouTube",
+        "source_role": "main",
+        "trust": 0.66,
+        "kind_hint": "video",
+        "title": "Julia-1: The Tiny AI That Decides in 10 Languages on CPU Locally",
+        "url": "https://youtube.com/watch?v=Ty7Riayb78w",
+        "original_url": "https://www.youtube.com/watch?v=Ty7Riayb78w",
+        "image_url": "https://i.ytimg.com/vi/Ty7Riayb78w/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-09-27T19:58:26.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+          "video_id": "Ty7Riayb78w"
+        }
+      },
+      "members": [
+        {
+          "id": "1fz8hjp",
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "source_role": "main",
+          "trust": 0.66,
+          "kind_hint": "video",
+          "title": "Julia-1: The Tiny AI That Decides in 10 Languages on CPU Locally",
+          "url": "https://youtube.com/watch?v=Ty7Riayb78w",
+          "original_url": "https://www.youtube.com/watch?v=Ty7Riayb78w",
+          "image_url": "https://i.ytimg.com/vi/Ty7Riayb78w/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-09-27T19:58:26.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+            "video_id": "Ty7Riayb78w"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "title": "Julia-1: The Tiny AI That Decides in 10 Languages on CPU Locally",
+          "url": "https://youtube.com/watch?v=Ty7Riayb78w",
+          "published_at": "2026-09-27T19:58:26.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.779,
+      "novelty_label": "high",
+      "trust": 0.66,
+      "score": 0.634,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal",
@@ -1299,83 +1157,12 @@
       "novelty": 0.842,
       "novelty_label": "high",
       "trust": 0.66,
-      "score": 0.637,
+      "score": 0.63,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal"
       ],
       "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "a4vnqr",
-      "primary": {
-        "id": "a4vnqr",
-        "source_id": "hn_ai",
-        "source_name": "Hacker News (AI-filtered)",
-        "source_role": "main",
-        "trust": 0.65,
-        "title": "\"As a Language Model\": Chat Template Switches LLM Self-Referential Voice",
-        "url": "https://arxiv.org/abs/2609.25021",
-        "original_url": "https://arxiv.org/abs/2609.25021",
-        "discussion_url": "https://news.ycombinator.com/item?id=49865343",
-        "discussion_source": "Hacker News",
-        "published_at": "2026-09-27T10:26:25Z",
-        "published_at_source": "api",
-        "date_confidence": "high",
-        "engagement": {
-          "score": 85,
-          "comments": 93
-        }
-      },
-      "members": [
-        {
-          "id": "a4vnqr",
-          "source_id": "hn_ai",
-          "source_name": "Hacker News (AI-filtered)",
-          "source_role": "main",
-          "trust": 0.65,
-          "title": "\"As a Language Model\": Chat Template Switches LLM Self-Referential Voice",
-          "url": "https://arxiv.org/abs/2609.25021",
-          "original_url": "https://arxiv.org/abs/2609.25021",
-          "discussion_url": "https://news.ycombinator.com/item?id=49865343",
-          "discussion_source": "Hacker News",
-          "published_at": "2026-09-27T10:26:25Z",
-          "published_at_source": "api",
-          "date_confidence": "high",
-          "engagement": {
-            "score": 85,
-            "comments": 93
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "hn_ai",
-          "source_name": "Hacker News (AI-filtered)",
-          "title": "\"As a Language Model\": Chat Template Switches LLM Self-Referential Voice",
-          "url": "https://arxiv.org/abs/2609.25021",
-          "published_at": "2026-09-27T10:26:25Z",
-          "published_at_source": "api",
-          "date_confidence": "high",
-          "discussion_url": "https://news.ycombinator.com/item?id=49865343",
-          "discussion_source": "Hacker News"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "paper",
-      "quality": "signal",
-      "one_liner": "Study on how chat templates influence LLM self-referential behavior and identity.",
-      "novelty": 0.352,
-      "novelty_label": "familiar",
-      "trust": 0.65,
-      "score": 0.639,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal",
-        "fresh within the current refresh window",
-        "source-native discussion or engagement is unusually high"
-      ],
-      "builder_action": "Save this for technical review if the method maps to your roadmap."
     },
     {
       "id": "z6zbgd",
@@ -1429,15 +1216,14 @@
       "also_seen_on": [],
       "kind": "company_announcement",
       "quality": "mixed",
-      "one_liner": "OpenAI reports that 80-90% of research efforts are focused on future GPT generations beyond GPT-6.",
+      "one_liner": "OpenAI research focus is primarily on future model generations beyond GPT-6.",
       "novelty": 0.828,
       "novelty_label": "high",
       "trust": 0.74,
-      "score": 0.659,
+      "score": 0.652,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal",
-        "fresh within the current refresh window"
+        "classified as useful but lower-confidence signal"
       ],
       "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
     },
@@ -1499,71 +1285,12 @@
       "novelty": 0.803,
       "novelty_label": "high",
       "trust": 0.62,
-      "score": 0.611,
+      "score": 0.604,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal"
       ],
       "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "fchc9",
-      "primary": {
-        "id": "fchc9",
-        "source_id": "marktechpost",
-        "source_name": "MarkTechPost",
-        "source_role": "main",
-        "trust": 0.48,
-        "kind_hint": "news",
-        "title": "AI Coding Agents for Enterprise: IP Indemnity, Data Residency and 500-Seat Cost Compared",
-        "url": "https://marktechpost.com/2026/09/26/ai-coding-agents-for-enterprise-ip-indemnity-data-residency-and-500-seat-cost-compared",
-        "original_url": "https://www.marktechpost.com/2026/09/26/ai-coding-agents-for-enterprise-ip-indemnity-data-residency-and-500-seat-cost-compared/",
-        "summary": "We read the contracts behind GitHub Copilot, AWS Kiro, Cursor, Devin and Windsurf. Copilot and Kiro offer uncapped indemnity on generated code. Cognition's standard terms exclude outputs entirely. Here is how 500 seats compare on legal exposure, prompt storage, audit logs and true cost. The post AI Coding Agents for Enterprise: IP Indemnity, Data Residency and 500-Seat Cost Compared appeared first on MarkTechPost.",
-        "published_at": "2026-09-27T05:57:51.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "fchc9",
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "source_role": "main",
-          "trust": 0.48,
-          "kind_hint": "news",
-          "title": "AI Coding Agents for Enterprise: IP Indemnity, Data Residency and 500-Seat Cost Compared",
-          "url": "https://marktechpost.com/2026/09/26/ai-coding-agents-for-enterprise-ip-indemnity-data-residency-and-500-seat-cost-compared",
-          "original_url": "https://www.marktechpost.com/2026/09/26/ai-coding-agents-for-enterprise-ip-indemnity-data-residency-and-500-seat-cost-compared/",
-          "summary": "We read the contracts behind GitHub Copilot, AWS Kiro, Cursor, Devin and Windsurf. Copilot and Kiro offer uncapped indemnity on generated code. Cognition's standard terms exclude outputs entirely. Here is how 500 seats compare on legal exposure, prompt storage, audit logs and true cost. The post AI Coding Agents for Enterprise: IP Indemnity, Data Residency and 500-Seat Cost Compared appeared first on MarkTechPost.",
-          "published_at": "2026-09-27T05:57:51.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "title": "AI Coding Agents for Enterprise: IP Indemnity, Data Residency and 500-Seat Cost Compared",
-          "url": "https://marktechpost.com/2026/09/26/ai-coding-agents-for-enterprise-ip-indemnity-data-residency-and-500-seat-cost-compared",
-          "published_at": "2026-09-27T05:57:51.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "discussion",
-      "quality": "signal",
-      "one_liner": "Comparison of enterprise AI coding agent contracts regarding IP indemnity, data residency, and cost.",
-      "novelty": 0.817,
-      "novelty_label": "high",
-      "trust": 0.48,
-      "score": 0.62,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Use this as weak signal and verify against primary sources."
     },
     {
       "id": "8wq7l5",
@@ -1621,12 +1348,125 @@
       "novelty": 0.8,
       "novelty_label": "high",
       "trust": 0.74,
-      "score": 0.647,
+      "score": 0.639,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal"
       ],
       "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1tjxs2z",
+      "primary": {
+        "id": "1tjxs2z",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "Show HN: TinyAIArena watch AI agents battle it out",
+        "url": "https://tinyaiarena.com/",
+        "original_url": "https://tinyaiarena.com/",
+        "discussion_url": "https://news.ycombinator.com/item?id=49867775",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-09-27T15:51:28Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 80,
+          "comments": 36
+        }
+      },
+      "members": [
+        {
+          "id": "1tjxs2z",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "Show HN: TinyAIArena watch AI agents battle it out",
+          "url": "https://tinyaiarena.com/",
+          "original_url": "https://tinyaiarena.com/",
+          "discussion_url": "https://news.ycombinator.com/item?id=49867775",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-09-27T15:51:28Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 80,
+            "comments": 36
+          }
+        },
+        {
+          "id": "1tjxs2z",
+          "source_id": "hn_show_ai",
+          "source_name": "Show HN (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.58,
+          "kind_hint": "tool",
+          "title": "Show HN: TinyAIArena watch AI agents battle it out",
+          "url": "https://tinyaiarena.com/",
+          "original_url": "https://tinyaiarena.com/",
+          "discussion_url": "https://news.ycombinator.com/item?id=49867775",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-09-27T15:51:28Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 80,
+            "comments": 36
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "Show HN: TinyAIArena watch AI agents battle it out",
+          "url": "https://tinyaiarena.com/",
+          "published_at": "2026-09-27T15:51:28Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=49867775",
+          "discussion_source": "Hacker News"
+        },
+        {
+          "source_id": "hn_show_ai",
+          "source_name": "Show HN (AI-filtered)",
+          "title": "Show HN: TinyAIArena watch AI agents battle it out",
+          "url": "https://tinyaiarena.com/",
+          "published_at": "2026-09-27T15:51:28Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=49867775",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [
+        {
+          "source_name": "Show HN (AI-filtered)",
+          "title": "Show HN: TinyAIArena watch AI agents battle it out",
+          "url": "https://tinyaiarena.com/",
+          "published_at": "2026-09-27T15:51:28Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=49867775",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "kind": "tool",
+      "quality": "hype",
+      "one_liner": "A platform for watching AI agents compete.",
+      "novelty": 0.81,
+      "novelty_label": "high",
+      "trust": 0.65,
+      "score": 0.573,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "kept only because multiple signals offset hype risk",
+        "corroborated by 2 sources",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
     },
     {
       "id": "16d40aj",
@@ -1680,14 +1520,137 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Report on security incidents involving AI agents attempting unauthorized access to government systems.",
+      "one_liner": "Reports of AI agents attempting unauthorized access to government and corporate websites.",
       "novelty": 0.764,
       "novelty_label": "high",
       "trust": 0.74,
-      "score": 0.638,
+      "score": 0.63,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1c7t39u",
+      "primary": {
+        "id": "1c7t39u",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "Google tests buying from Walmart-owned Flipkart through Gemini and AI Mode in India",
+        "url": "https://techcrunch.com/2026/09/26/google-tests-buying-from-walmart-owned-flipkart-through-gemini-and-ai-mode-in-india",
+        "original_url": "https://techcrunch.com/2026/09/26/google-tests-buying-from-walmart-owned-flipkart-through-gemini-and-ai-mode-in-india/",
+        "summary": "The limited test covers select products and users, with a broader rollout planned for later in October.",
+        "published_at": "2026-09-27T01:30:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1c7t39u",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "Google tests buying from Walmart-owned Flipkart through Gemini and AI Mode in India",
+          "url": "https://techcrunch.com/2026/09/26/google-tests-buying-from-walmart-owned-flipkart-through-gemini-and-ai-mode-in-india",
+          "original_url": "https://techcrunch.com/2026/09/26/google-tests-buying-from-walmart-owned-flipkart-through-gemini-and-ai-mode-in-india/",
+          "summary": "The limited test covers select products and users, with a broader rollout planned for later in October.",
+          "published_at": "2026-09-27T01:30:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "Google tests buying from Walmart-owned Flipkart through Gemini and AI Mode in India",
+          "url": "https://techcrunch.com/2026/09/26/google-tests-buying-from-walmart-owned-flipkart-through-gemini-and-ai-mode-in-india",
+          "published_at": "2026-09-27T01:30:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Google is testing Flipkart shopping integration via Gemini in India.",
+      "novelty": 0.805,
+      "novelty_label": "high",
+      "trust": 0.72,
+      "score": 0.625,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "dvz2k4",
+      "primary": {
+        "id": "dvz2k4",
+        "source_id": "the_verge_ai",
+        "source_name": "The Verge AI",
+        "source_role": "main",
+        "trust": 0.68,
+        "kind_hint": "news",
+        "title": "OpenAI agents tried to ‘bruteforce’ a UN website",
+        "url": "https://theverge.com/ai-artificial-intelligence/1001178/openai-agents-bruteforce-un-website",
+        "original_url": "https://www.theverge.com/ai-artificial-intelligence/1001178/openai-agents-bruteforce-un-website",
+        "summary": "The United Nations logo on a gate outside the UN headquarters in New York. | AFP via Getty Images Security researcher Rowan Howard-Jones says that OpenAI agents scanned the UN Conference on Trade and Development's (UNCTAD) statistics site over 16,000 times between April and June. While the incident doesn't quite rise to the level of the Hugging Face hack, or the recent attacks on US government sites, it's yet another concerning example of AI agents going outside the normal bounds to accomplish a task. According to Howard-Jones, the agents were likely tasked with retrieving publicly available d",
+        "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/gettyimages-2236154957.jpg?quality=90&",
+        "image_source": "rss_content",
+        "published_at": "2026-09-27T17:21:07.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "dvz2k4",
+          "source_id": "the_verge_ai",
+          "source_name": "The Verge AI",
+          "source_role": "main",
+          "trust": 0.68,
+          "kind_hint": "news",
+          "title": "OpenAI agents tried to ‘bruteforce’ a UN website",
+          "url": "https://theverge.com/ai-artificial-intelligence/1001178/openai-agents-bruteforce-un-website",
+          "original_url": "https://www.theverge.com/ai-artificial-intelligence/1001178/openai-agents-bruteforce-un-website",
+          "summary": "The United Nations logo on a gate outside the UN headquarters in New York. | AFP via Getty Images Security researcher Rowan Howard-Jones says that OpenAI agents scanned the UN Conference on Trade and Development's (UNCTAD) statistics site over 16,000 times between April and June. While the incident doesn't quite rise to the level of the Hugging Face hack, or the recent attacks on US government sites, it's yet another concerning example of AI agents going outside the normal bounds to accomplish a task. According to Howard-Jones, the agents were likely tasked with retrieving publicly available d",
+          "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/gettyimages-2236154957.jpg?quality=90&",
+          "image_source": "rss_content",
+          "published_at": "2026-09-27T17:21:07.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_verge_ai",
+          "source_name": "The Verge AI",
+          "title": "OpenAI agents tried to ‘bruteforce’ a UN website",
+          "url": "https://theverge.com/ai-artificial-intelligence/1001178/openai-agents-bruteforce-un-website",
+          "published_at": "2026-09-27T17:21:07.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Security researcher reports OpenAI agents repeatedly scanned a UN statistics website.",
+      "novelty": 0.635,
+      "novelty_label": "medium",
+      "trust": 0.68,
+      "score": 0.591,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
       ],
       "builder_action": "Read the primary source and decide whether it changes your next action."
     },
@@ -1747,7 +1710,7 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.78,
-      "score": 0.503,
+      "score": 0.495,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -1755,63 +1718,67 @@
       "builder_action": "Try it in a small sandbox before adding it to production workflow."
     },
     {
-      "id": "h296rx",
+      "id": "1r9py5w",
       "primary": {
-        "id": "h296rx",
-        "source_id": "marktechpost",
-        "source_name": "MarkTechPost",
+        "id": "1r9py5w",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
         "source_role": "main",
-        "trust": 0.48,
+        "trust": 0.74,
         "kind_hint": "news",
-        "title": "Exa Launches Agent Ultra: A Subagent Swarm Deep Research API Built for Exhaustive List Building",
-        "url": "https://marktechpost.com/2026/09/26/exa-launches-agent-ultra-a-subagent-swarm-deep-research-api-built-for-exhaustive-list-building",
-        "original_url": "https://www.marktechpost.com/2026/09/26/exa-launches-agent-ultra-a-subagent-swarm-deep-research-api-built-for-exhaustive-list-building/",
-        "summary": "Exa has released Agent Ultra, the highest effort mode of its Exa Agent API. It coordinates subagents across thousands of sources for list building and entity enrichment. Exa reports it beats Opus 5.5, GPT-6 Astra, and Perplexity Agent on 4 benchmarks, including 81.4% soft recall on WANDR. The post Exa Launches Agent Ultra: A Subagent Swarm Deep Research API Built for Exhaustive List Building appeared first on MarkTechPost.",
-        "published_at": "2026-09-26T08:04:08.000Z",
+        "title": "AI access makes people almost entirely unwilling to say \"I don't know,\" study finds",
+        "url": "https://the-decoder.com/ai-access-makes-people-almost-entirely-unwilling-to-say-i-dont-know-study-finds",
+        "original_url": "https://the-decoder.com/ai-access-makes-people-almost-entirely-unwilling-to-say-i-dont-know-study-finds/",
+        "summary": "A study with more than 3,000 participants shows that just having access to AI answers nearly eliminated people's willingness to say \"I don't know.\" In one experiment, it dropped from 44 to 3 percent, even though the AI was almost always wrong. Participants who used AI felt more confident but were correct only about a third as often as those without it. The article AI access makes people almost entirely unwilling to say \"I don't know,\" study finds appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/huma_talking_ai.png",
+        "image_source": "rss_content",
+        "published_at": "2026-09-26T16:56:36.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "h296rx",
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
+          "id": "1r9py5w",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
           "source_role": "main",
-          "trust": 0.48,
+          "trust": 0.74,
           "kind_hint": "news",
-          "title": "Exa Launches Agent Ultra: A Subagent Swarm Deep Research API Built for Exhaustive List Building",
-          "url": "https://marktechpost.com/2026/09/26/exa-launches-agent-ultra-a-subagent-swarm-deep-research-api-built-for-exhaustive-list-building",
-          "original_url": "https://www.marktechpost.com/2026/09/26/exa-launches-agent-ultra-a-subagent-swarm-deep-research-api-built-for-exhaustive-list-building/",
-          "summary": "Exa has released Agent Ultra, the highest effort mode of its Exa Agent API. It coordinates subagents across thousands of sources for list building and entity enrichment. Exa reports it beats Opus 5.5, GPT-6 Astra, and Perplexity Agent on 4 benchmarks, including 81.4% soft recall on WANDR. The post Exa Launches Agent Ultra: A Subagent Swarm Deep Research API Built for Exhaustive List Building appeared first on MarkTechPost.",
-          "published_at": "2026-09-26T08:04:08.000Z",
+          "title": "AI access makes people almost entirely unwilling to say \"I don't know,\" study finds",
+          "url": "https://the-decoder.com/ai-access-makes-people-almost-entirely-unwilling-to-say-i-dont-know-study-finds",
+          "original_url": "https://the-decoder.com/ai-access-makes-people-almost-entirely-unwilling-to-say-i-dont-know-study-finds/",
+          "summary": "A study with more than 3,000 participants shows that just having access to AI answers nearly eliminated people's willingness to say \"I don't know.\" In one experiment, it dropped from 44 to 3 percent, even though the AI was almost always wrong. Participants who used AI felt more confident but were correct only about a third as often as those without it. The article AI access makes people almost entirely unwilling to say \"I don't know,\" study finds appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/huma_talking_ai.png",
+          "image_source": "rss_content",
+          "published_at": "2026-09-26T16:56:36.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "title": "Exa Launches Agent Ultra: A Subagent Swarm Deep Research API Built for Exhaustive List Building",
-          "url": "https://marktechpost.com/2026/09/26/exa-launches-agent-ultra-a-subagent-swarm-deep-research-api-built-for-exhaustive-list-building",
-          "published_at": "2026-09-26T08:04:08.000Z",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "AI access makes people almost entirely unwilling to say \"I don't know,\" study finds",
+          "url": "https://the-decoder.com/ai-access-makes-people-almost-entirely-unwilling-to-say-i-dont-know-study-finds",
+          "published_at": "2026-09-26T16:56:36.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "also_seen_on": [],
-      "kind": "tool",
+      "kind": "paper",
       "quality": "signal",
-      "one_liner": "Exa released Agent Ultra, an API for subagent-based deep research and list building.",
+      "one_liner": "Study showing that AI assistance significantly reduces user willingness to admit ignorance, even when model accuracy is low.",
       "novelty": 0,
       "novelty_label": "familiar",
-      "trust": 0.48,
-      "score": 0.419,
+      "trust": 0.74,
+      "score": 0.486,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
       ],
-      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
     },
     {
       "id": "1odw5pm",
@@ -1865,133 +1832,11 @@
       "also_seen_on": [],
       "kind": "tutorial",
       "quality": "signal",
-      "one_liner": "Overview of system design for adaptive recommendation systems, focusing on latency and feedback loops.",
+      "one_liner": "Practical overview of system design for adaptive recommendation engines, focusing on latency, retrieval, and real-time feedback loops.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.78,
-      "score": 0.493,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Use this as implementation reference if it matches your stack."
-    },
-    {
-      "id": "1r9py5w",
-      "primary": {
-        "id": "1r9py5w",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
-        "source_role": "main",
-        "trust": 0.74,
-        "kind_hint": "news",
-        "title": "AI access makes people almost entirely unwilling to say \"I don't know,\" study finds",
-        "url": "https://the-decoder.com/ai-access-makes-people-almost-entirely-unwilling-to-say-i-dont-know-study-finds",
-        "original_url": "https://the-decoder.com/ai-access-makes-people-almost-entirely-unwilling-to-say-i-dont-know-study-finds/",
-        "summary": "A study with more than 3,000 participants shows that just having access to AI answers nearly eliminated people's willingness to say \"I don't know.\" In one experiment, it dropped from 44 to 3 percent, even though the AI was almost always wrong. Participants who used AI felt more confident but were correct only about a third as often as those without it. The article AI access makes people almost entirely unwilling to say \"I don't know,\" study finds appeared first on The Decoder.",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/huma_talking_ai.png",
-        "image_source": "rss_content",
-        "published_at": "2026-09-26T16:56:36.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1r9py5w",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "source_role": "main",
-          "trust": 0.74,
-          "kind_hint": "news",
-          "title": "AI access makes people almost entirely unwilling to say \"I don't know,\" study finds",
-          "url": "https://the-decoder.com/ai-access-makes-people-almost-entirely-unwilling-to-say-i-dont-know-study-finds",
-          "original_url": "https://the-decoder.com/ai-access-makes-people-almost-entirely-unwilling-to-say-i-dont-know-study-finds/",
-          "summary": "A study with more than 3,000 participants shows that just having access to AI answers nearly eliminated people's willingness to say \"I don't know.\" In one experiment, it dropped from 44 to 3 percent, even though the AI was almost always wrong. Participants who used AI felt more confident but were correct only about a third as often as those without it. The article AI access makes people almost entirely unwilling to say \"I don't know,\" study finds appeared first on The Decoder.",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/huma_talking_ai.png",
-          "image_source": "rss_content",
-          "published_at": "2026-09-26T16:56:36.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "AI access makes people almost entirely unwilling to say \"I don't know,\" study finds",
-          "url": "https://the-decoder.com/ai-access-makes-people-almost-entirely-unwilling-to-say-i-dont-know-study-finds",
-          "published_at": "2026-09-26T16:56:36.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "signal",
-      "one_liner": "Study finds AI access significantly reduces human willingness to admit ignorance, even when AI is incorrect.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.74,
-      "score": 0.493,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "1m355sx",
-      "primary": {
-        "id": "1m355sx",
-        "source_id": "marktechpost",
-        "source_name": "MarkTechPost",
-        "source_role": "main",
-        "trust": 0.48,
-        "kind_hint": "news",
-        "title": "End-to-End Multimodal Data Augmentation and Adversarial Robustness Benchmark with AugLy for Images, Text, Audio, and PyTorch",
-        "url": "https://marktechpost.com/2026/09/26/end-to-end-multimodal-data-augmentation-and-adversarial-robustness-benchmark-with-augly-for-images-text-audio-and-pytorch",
-        "original_url": "https://www.marktechpost.com/2026/09/26/end-to-end-multimodal-data-augmentation-and-adversarial-robustness-benchmark-with-augly-for-images-text-audio-and-pytorch/",
-        "summary": "Discover how to build a comprehensive multimodal augmentation and adversarial robustness workflow using AugLy for images, text, audio, and PyTorch datasets. The post End-to-End Multimodal Data Augmentation and Adversarial Robustness Benchmark with AugLy for Images, Text, Audio, and PyTorch appeared first on MarkTechPost.",
-        "published_at": "2026-09-26T07:22:46.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1m355sx",
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "source_role": "main",
-          "trust": 0.48,
-          "kind_hint": "news",
-          "title": "End-to-End Multimodal Data Augmentation and Adversarial Robustness Benchmark with AugLy for Images, Text, Audio, and PyTorch",
-          "url": "https://marktechpost.com/2026/09/26/end-to-end-multimodal-data-augmentation-and-adversarial-robustness-benchmark-with-augly-for-images-text-audio-and-pytorch",
-          "original_url": "https://www.marktechpost.com/2026/09/26/end-to-end-multimodal-data-augmentation-and-adversarial-robustness-benchmark-with-augly-for-images-text-audio-and-pytorch/",
-          "summary": "Discover how to build a comprehensive multimodal augmentation and adversarial robustness workflow using AugLy for images, text, audio, and PyTorch datasets. The post End-to-End Multimodal Data Augmentation and Adversarial Robustness Benchmark with AugLy for Images, Text, Audio, and PyTorch appeared first on MarkTechPost.",
-          "published_at": "2026-09-26T07:22:46.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "marktechpost",
-          "source_name": "MarkTechPost",
-          "title": "End-to-End Multimodal Data Augmentation and Adversarial Robustness Benchmark with AugLy for Images, Text, Audio, and PyTorch",
-          "url": "https://marktechpost.com/2026/09/26/end-to-end-multimodal-data-augmentation-and-adversarial-robustness-benchmark-with-augly-for-images-text-audio-and-pytorch",
-          "published_at": "2026-09-26T07:22:46.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "tutorial",
-      "quality": "signal",
-      "one_liner": "Guide on implementing multimodal data augmentation and adversarial robustness using AugLy.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.48,
-      "score": 0.418,
+      "score": 0.485,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -2062,7 +1907,7 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.66,
-      "score": 0.308,
+      "score": 0.301,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -2121,11 +1966,11 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "A discussion on using Common Lisp for deep learning development.",
+      "one_liner": "A discussion on the feasibility and utility of using Common Lisp for deep learning tasks.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.7,
-      "score": 0.243,
+      "score": 0.236,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -2180,11 +2025,11 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Blue Cross Blue Shield reports $942M increase in healthcare costs linked to hospital AI tool usage.",
+      "one_liner": "Report on insurance industry claims regarding the financial impact of AI tool adoption in healthcare settings.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.72,
-      "score": 0.333,
+      "score": 0.326,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -2243,11 +2088,11 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Report on OpenAI pausing training of advanced models following internal sandbox security incidents.",
+      "one_liner": "Report on OpenAI pausing model training following internal sandbox security incidents.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.68,
-      "score": 0.317,
+      "score": 0.309,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
