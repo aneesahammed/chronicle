@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-28T11:41:46.750Z",
-  "last_successful_generated_at": "2026-09-28T11:41:46.750Z",
+  "generated_at": "2026-09-28T19:40:53.343Z",
+  "last_successful_generated_at": "2026-09-28T19:40:53.343Z",
   "refresh_status": "ok",
   "classification_mode": "deterministic",
   "window_hours": 720,
@@ -33,21 +33,21 @@
       "id": "yt_openai",
       "name": "OpenAI YouTube",
       "status": "ok",
-      "fetched_count": 3,
-      "fresh_count": 3,
+      "fetched_count": 2,
+      "fresh_count": 2,
       "stale_count": 0,
-      "oldest_published_at": "2026-09-18T13:24:22.000Z",
+      "oldest_published_at": "2026-09-18T13:25:00.000Z",
       "newest_published_at": "2026-09-18T13:27:46.000Z"
     },
     {
       "id": "yt_nvidia_developer",
       "name": "NVIDIA Developer YouTube",
       "status": "ok",
-      "fetched_count": 3,
-      "fresh_count": 3,
+      "fetched_count": 4,
+      "fresh_count": 4,
       "stale_count": 0,
       "oldest_published_at": "2026-09-18T03:52:39.000Z",
-      "newest_published_at": "2026-09-28T09:41:18.000Z"
+      "newest_published_at": "2026-09-28T13:57:48.000Z"
     },
     {
       "id": "yt_huggingface",
@@ -80,6 +80,78 @@
   ],
   "count": 15,
   "clusters": [
+    {
+      "id": "h2hvsa",
+      "primary": {
+        "id": "h2hvsa",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "How H-Company Optimizes VLM Serving for Computer Use Agents With NVIDIA Dynamo",
+        "url": "https://youtube.com/watch?v=eXlgMVAm28I",
+        "original_url": "https://www.youtube.com/watch?v=eXlgMVAm28I",
+        "image_url": "https://i.ytimg.com/vi/eXlgMVAm28I/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-09-28T13:57:48.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "eXlgMVAm28I"
+        }
+      },
+      "members": [
+        {
+          "id": "h2hvsa",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "How H-Company Optimizes VLM Serving for Computer Use Agents With NVIDIA Dynamo",
+          "url": "https://youtube.com/watch?v=eXlgMVAm28I",
+          "original_url": "https://www.youtube.com/watch?v=eXlgMVAm28I",
+          "image_url": "https://i.ytimg.com/vi/eXlgMVAm28I/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-09-28T13:57:48.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "eXlgMVAm28I"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "How H-Company Optimizes VLM Serving for Computer Use Agents With NVIDIA Dynamo",
+          "url": "https://youtube.com/watch?v=eXlgMVAm28I",
+          "published_at": "2026-09-28T13:57:48.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.847,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.787,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
     {
       "id": "dx866l",
       "primary": {
@@ -144,11 +216,10 @@
       "novelty": 0.794,
       "novelty_label": "high",
       "trust": 0.78,
-      "score": 0.778,
+      "score": 0.764,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
-        "classified as concrete builder or research signal",
-        "fresh within the current refresh window"
+        "classified as concrete builder or research signal"
       ],
       "builder_action": "Queue it for focused learning if the topic matches your current work."
     },
@@ -347,77 +418,6 @@
           "title": "Use ChatGPT Work to build your data agent",
           "url": "https://youtube.com/watch?v=cXUmFec2PNY",
           "published_at": "2026-09-18T13:25:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.82,
-      "score": 0.472,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "xsrqcq",
-      "primary": {
-        "id": "xsrqcq",
-        "source_id": "yt_openai",
-        "source_name": "OpenAI YouTube",
-        "source_role": "learning",
-        "trust": 0.82,
-        "kind_hint": "video",
-        "title": "Meet the Data Agent in ChatGPT Work",
-        "url": "https://youtube.com/watch?v=VMgEQ7ym9WU",
-        "original_url": "https://www.youtube.com/watch?v=VMgEQ7ym9WU",
-        "image_url": "https://i.ytimg.com/vi/VMgEQ7ym9WU/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-09-18T13:24:22.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
-          "video_id": "VMgEQ7ym9WU"
-        }
-      },
-      "members": [
-        {
-          "id": "xsrqcq",
-          "source_id": "yt_openai",
-          "source_name": "OpenAI YouTube",
-          "source_role": "learning",
-          "trust": 0.82,
-          "kind_hint": "video",
-          "title": "Meet the Data Agent in ChatGPT Work",
-          "url": "https://youtube.com/watch?v=VMgEQ7ym9WU",
-          "original_url": "https://www.youtube.com/watch?v=VMgEQ7ym9WU",
-          "image_url": "https://i.ytimg.com/vi/VMgEQ7ym9WU/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-09-18T13:24:22.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
-            "video_id": "VMgEQ7ym9WU"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_openai",
-          "source_name": "OpenAI YouTube",
-          "title": "Meet the Data Agent in ChatGPT Work",
-          "url": "https://youtube.com/watch?v=VMgEQ7ym9WU",
-          "published_at": "2026-09-18T13:24:22.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
