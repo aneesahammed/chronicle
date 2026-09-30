@@ -159,6 +159,19 @@
       "enriched_at": "2026-08-13T05:48:47.408Z",
       "failure_count": 0
     },
+    "https://anthropic.com/research/what-work-can-robots-do": {
+      "url": "https://anthropic.com/research/what-work-can-robots-do",
+      "title": "Anthropic: Can we predict the jobs robots will do?",
+      "source_name": "Anthropic",
+      "dek": "Anthropic study estimates robot task exposure and cost-competitiveness in the US labor market.",
+      "brief": "What work can robots do? Anthropic&#x27;s robot exposure index finds robots can do 3/4 of US physical job tasks, but are cost-competitive for only 0.3%.",
+      "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+      "image_source": "page_metadata",
+      "status": "failed",
+      "attempted_at": "2026-09-30T17:59:57.072Z",
+      "enriched_at": "2026-09-30T17:59:57.072Z",
+      "failure_count": 1
+    },
     "https://anthropic.com/research/yes-claude-can-do-nine-loops": {
       "url": "https://anthropic.com/research/yes-claude-can-do-nine-loops",
       "title": "Anthropic: Claude computes a nine-loop amplitude in N=4 super-Yang-Mills",
@@ -1444,18 +1457,6 @@
       "enriched_at": "2026-09-18T20:54:19.165Z",
       "failure_count": 0
     },
-    "https://aws.amazon.com/blogs/machine-learning/tiered-kv-cache-for-large-llms-on-amazon-sagemaker-hyperpod-with-curvine": {
-      "url": "https://aws.amazon.com/blogs/machine-learning/tiered-kv-cache-for-large-llms-on-amazon-sagemaker-hyperpod-with-curvine",
-      "title": "Tiered KV cache for large LLMs on Amazon SageMaker HyperPod with Curvine",
-      "source_name": "AWS Machine Learning Blog",
-      "dek": "A new tiered KV cache implementation on Amazon SageMaker HyperPod uses Curvine to offload cache to distributed NVMe storage.",
-      "brief": "This approach mitigates the trade-off between expensive GPU memory and slow inference times. By extending the KV cache into a shared NVMe pool, replicas can reuse cache data at near-local speeds, reducing infrastructure costs for multi-turn LLM applications.",
-      "image_alt": "Diagram of tiered KV cache architecture on SageMaker",
-      "status": "ok",
-      "attempted_at": "2026-08-12T18:34:39.759Z",
-      "enriched_at": "2026-08-12T18:34:39.759Z",
-      "failure_count": 0
-    },
     "https://baseten.co/blog/the-efficient-frontier-of-llm-inference": {
       "url": "https://baseten.co/blog/the-efficient-frontier-of-llm-inference",
       "title": "The efficient frontier of LLM inference",
@@ -1964,20 +1965,6 @@
       "enriched_at": "2026-08-31T18:31:23.548Z",
       "failure_count": 0
     },
-    "https://developer.nvidia.com/blog/serve-qwen3-8-2-4t-a95b-a-2-4t-parameter-model-with-configurable-reasoning-on-nvidia-gb300-nvl72": {
-      "url": "https://developer.nvidia.com/blog/serve-qwen3-8-2-4t-a95b-a-2-4t-parameter-model-with-configurable-reasoning-on-nvidia-gb300-nvl72",
-      "title": "Serve Qwen3.8-2.4T-A95B, a 2.4T-Parameter Model, with Configurable Reasoning on NVIDIA GB300 NVL72",
-      "source_name": "NVIDIA Developer Blog",
-      "dek": "Alibaba's Qwen3.8-Max is a 2.4T-parameter MoE model featuring a 1M token context window and hybrid attention for complex reasoning.",
-      "brief": "The model utilizes 95B activated parameters per token and supports output lengths up to 128K. Designed for agentic workloads, it requires significant data-center-scale acceleration for deployment.",
-      "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/08/Qwen-Open-Source-768x432.jpg",
-      "image_alt": "Diagram of Qwen3.8-Max MoE architecture",
-      "image_source": "rss_content",
-      "status": "ok",
-      "attempted_at": "2026-08-12T18:34:39.759Z",
-      "enriched_at": "2026-08-12T18:34:39.759Z",
-      "failure_count": 0
-    },
     "https://developer.nvidia.com/blog/simplifying-model-serving-across-multiple-gpus-with-nvidia-tensorrt-multi-device-integration-in-nvidia-dynamo-triton": {
       "url": "https://developer.nvidia.com/blog/simplifying-model-serving-across-multiple-gpus-with-nvidia-tensorrt-multi-device-integration-in-nvidia-dynamo-triton",
       "title": "Simplifying Model Serving Across Multiple GPUs with NVIDIA TensorRT Multi-Device Integration in NVIDIA Dynamo-Triton",
@@ -2019,6 +2006,19 @@
       "attempted_at": "2026-09-22T21:19:01.419Z",
       "enriched_at": "2026-09-22T21:19:01.419Z",
       "failure_count": 0
+    },
+    "https://developer.nvidia.com/blog/tracing-agent-harness-behavior-with-nvidia-nemo-relay": {
+      "url": "https://developer.nvidia.com/blog/tracing-agent-harness-behavior-with-nvidia-nemo-relay",
+      "title": "Tracing Agent Harness Behavior with NVIDIA NeMo Relay",
+      "source_name": "NVIDIA Developer Blog",
+      "dek": "NVIDIA NeMo Relay provides tracing tools to debug and optimize agent execution paths.",
+      "brief": "An agent can finish a task and still take an inefficient path. A failed search can trigger another search. A truncated file read can lead to a command fetching... An agent can finish a task and still take an inefficient path. A failed search can trigger another search. A truncated file read can lead to a command fetching the same content again. A correct final answer hides those extra steps, even though they increas…",
+      "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/09/Tracing-Agent-Harness-768x432.png",
+      "image_source": "rss_content",
+      "status": "failed",
+      "attempted_at": "2026-09-30T17:59:57.072Z",
+      "enriched_at": "2026-09-30T17:59:57.072Z",
+      "failure_count": 1
     },
     "https://developer.nvidia.com/blog/translating-cuda-tile-operations-from-python-to-rust-using-agentic-ai": {
       "url": "https://developer.nvidia.com/blog/translating-cuda-tile-operations-from-python-to-rust-using-agentic-ai",
@@ -2804,20 +2804,6 @@
       "enriched_at": "2026-08-14T05:47:39.095Z",
       "failure_count": 0
     },
-    "https://infoq.com/news/2026/08/spotify-data-lake-point-queries": {
-      "url": "https://infoq.com/news/2026/08/spotify-data-lake-point-queries",
-      "title": "Spotify Builds External Index to Enable Low Latency Point Queries on Its Data Lake",
-      "source_name": "InfoQ AI/ML/Data",
-      "dek": "Spotify implemented an external indexing architecture for Parquet data lakes to enable low-latency point queries.",
-      "brief": "The system maps lookup keys to specific Parquet files and row locations, allowing targeted reads from cloud object storage. This avoids the need to replicate datasets into operational databases, supporting AI and analytics workloads directly from the data lake.",
-      "image_url": "https://www.infoq.com/styles/static/images/logo/logo_bigger.jpg",
-      "image_alt": "Architecture diagram of Spotify's external index",
-      "image_source": "rss_content",
-      "status": "ok",
-      "attempted_at": "2026-08-12T18:34:39.759Z",
-      "enriched_at": "2026-08-12T18:34:39.759Z",
-      "failure_count": 0
-    },
     "https://infoq.com/news/2026/08/vercel-v0-api": {
       "url": "https://infoq.com/news/2026/08/vercel-v0-api",
       "title": "Vercel Launches v0 API for Headless App Building",
@@ -3255,6 +3241,19 @@
       "attempted_at": "2026-09-24T10:01:25.183Z",
       "enriched_at": "2026-09-24T10:01:25.183Z",
       "failure_count": 0
+    },
+    "https://latent.space/p/ainews-openai-devday-2026-dots-61": {
+      "url": "https://latent.space/p/ainews-openai-devday-2026-dots-61",
+      "title": "[AINews] OpenAI DevDay 2026: Dots, 6.1 Sol, Ultrafast, Decisions API, Agents API, Spaces, Marketplace, and 1.2 Billion ChatGPT WAU",
+      "source_name": "Latent Space",
+      "dek": "Overview of OpenAI DevDay 2026 announcements including new APIs and platform updates.",
+      "brief": "the most confident DevDay yet.",
+      "image_url": "https://substackcdn.com/image/youtube/w_728,c_limit/GjN3xLDuc8o",
+      "image_source": "rss_enclosure",
+      "status": "failed",
+      "attempted_at": "2026-09-30T17:59:57.072Z",
+      "enriched_at": "2026-09-30T17:59:57.072Z",
+      "failure_count": 1
     },
     "https://latent.space/p/ainews-openai-shuts-off-cursor": {
       "url": "https://latent.space/p/ainews-openai-shuts-off-cursor",
@@ -4773,20 +4772,6 @@
       "enriched_at": "2026-09-24T21:30:56.650Z",
       "failure_count": 0
     },
-    "https://research.google/blog/empty-shelves-or-lost-keys-recall-is-the-bottleneck-for-parametric-factuality": {
-      "url": "https://research.google/blog/empty-shelves-or-lost-keys-recall-is-the-bottleneck-for-parametric-factuality",
-      "title": "Empty shelves or lost keys? Recall is the bottleneck for parametric factuality",
-      "source_name": "Google Research",
-      "dek": "Google Research explores whether LLM factual errors stem from missing knowledge or retrieval failures.",
-      "brief": "Distinguishing between encoding failures (missing data) and recall failures (inaccessible data) is critical for improving LLM reliability. The research suggests that recall issues may be addressed through post-training and inference-time interventions rather than just scaling model size.",
-      "image_url": "https://storage.googleapis.com/gweb-research2023-media/original_images/KnowledgeProfiling1_Overview.png",
-      "image_alt": "Conceptual chart showing encoding vs recall bottlenecks",
-      "image_source": "rss_media",
-      "status": "ok",
-      "attempted_at": "2026-08-12T18:34:39.759Z",
-      "enriched_at": "2026-08-12T18:34:39.759Z",
-      "failure_count": 0
-    },
     "https://research.google/blog/how-diffusion-controller-unifies-and-simplifies-ai-image-generation": {
       "url": "https://research.google/blog/how-diffusion-controller-unifies-and-simplifies-ai-image-generation",
       "title": "How Diffusion Controller unifies and simplifies AI image generation",
@@ -5350,6 +5335,17 @@
       "attempted_at": "2026-09-04T09:46:25.670Z",
       "enriched_at": "2026-09-04T09:46:25.670Z",
       "failure_count": 0
+    },
+    "https://technologyreview.com/2026/09/30/1145339/were-not-going-to-shoot-ourselves-in-the-foot-over-hugging-face-says-openais-chief-research-officer": {
+      "url": "https://technologyreview.com/2026/09/30/1145339/were-not-going-to-shoot-ourselves-in-the-foot-over-hugging-face-says-openais-chief-research-officer",
+      "title": "“We’re not going to shoot ourselves in the foot” over hack fallout, says OpenAI’s chief research officer",
+      "source_name": "MIT Technology Review AI",
+      "dek": "Report on OpenAI's internal security response following agent-related security incidents.",
+      "brief": "Two months after the bombshell news that a swarm of its agents had broken their containment and hacked into the computers of the AI company Hugging Face, OpenAI is still putting out fires. A steady drip of disclosures about other hacks in the weeks since has kept OpenAI in the spotlight and raised serious questions…",
+      "status": "failed",
+      "attempted_at": "2026-09-30T17:59:57.072Z",
+      "enriched_at": "2026-09-30T17:59:57.072Z",
+      "failure_count": 1
     },
     "https://tenderlovemaking.com/2026/09/11/what-a-time-to-be-alive": {
       "url": "https://tenderlovemaking.com/2026/09/11/what-a-time-to-be-alive",
