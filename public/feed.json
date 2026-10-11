@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-11T17:41:13.266Z",
-  "last_successful_generated_at": "2026-10-11T17:41:13.266Z",
+  "generated_at": "2026-10-11T21:58:11.861Z",
+  "last_successful_generated_at": "2026-10-11T21:58:11.861Z",
   "refresh_status": "partial",
   "classification_mode": "llm",
   "window_hours": 36,
@@ -16,12 +16,12 @@
     {
       "id": "r_localllama",
       "name": "r/LocalLLaMA",
-      "message": "Feed not recognized as RSS 1 or 2."
+      "message": "Invalid character in entity name\nLine: 23\nColumn: 151\nChar: ="
     },
     {
       "id": "r_ml",
       "name": "r/MachineLearning",
-      "message": "Invalid character in entity name\nLine: 23\nColumn: 151\nChar: ="
+      "message": "Feed not recognized as RSS 1 or 2."
     }
   ],
   "source_health": [
@@ -96,8 +96,8 @@
       "name": "Latent Space",
       "status": "ok",
       "fetched_count": 10,
-      "fresh_count": 3,
-      "stale_count": 7,
+      "fresh_count": 2,
+      "stale_count": 8,
       "oldest_published_at": "2026-10-06T06:28:43.000Z",
       "newest_published_at": "2026-10-10T22:07:17.000Z"
     },
@@ -206,10 +206,10 @@
       "name": "TechCrunch AI",
       "status": "ok",
       "fetched_count": 12,
-      "fresh_count": 6,
-      "stale_count": 6,
-      "oldest_published_at": "2026-10-09T16:45:00.000Z",
-      "newest_published_at": "2026-10-11T16:52:33.000Z"
+      "fresh_count": 8,
+      "stale_count": 4,
+      "oldest_published_at": "2026-10-09T16:56:42.000Z",
+      "newest_published_at": "2026-10-11T21:14:40.000Z"
     },
     {
       "id": "the_decoder",
@@ -266,10 +266,10 @@
       "name": "The Verge AI",
       "status": "ok",
       "fetched_count": 9,
-      "fresh_count": 4,
-      "stale_count": 5,
-      "oldest_published_at": "2026-10-09T14:00:00.000Z",
-      "newest_published_at": "2026-10-11T11:00:00.000Z"
+      "fresh_count": 5,
+      "stale_count": 4,
+      "oldest_published_at": "2026-10-09T14:25:43.000Z",
+      "newest_published_at": "2026-10-11T18:33:56.000Z"
     },
     {
       "id": "wired_ai",
@@ -343,7 +343,7 @@
       "name": "r/LocalLLaMA",
       "status": "failed",
       "fetched_count": 0,
-      "message": "Feed not recognized as RSS 1 or 2.",
+      "message": "Invalid character in entity name\nLine: 23\nColumn: 151\nChar: =",
       "fresh_count": 0,
       "stale_count": 0
     },
@@ -352,7 +352,7 @@
       "name": "r/MachineLearning",
       "status": "failed",
       "fetched_count": 0,
-      "message": "Invalid character in entity name\nLine: 23\nColumn: 151\nChar: =",
+      "message": "Feed not recognized as RSS 1 or 2.",
       "fresh_count": 0,
       "stale_count": 0
     },
@@ -533,8 +533,8 @@
       "fetched_count": 8,
       "fresh_count": 2,
       "stale_count": 6,
-      "oldest_published_at": "2026-10-07T07:00:09.000Z",
-      "newest_published_at": "2026-10-10T18:00:09.000Z"
+      "oldest_published_at": "2026-10-07T20:41:37.000Z",
+      "newest_published_at": "2026-10-11T18:00:13.000Z"
     },
     {
       "id": "yt_nate_b_jones",
@@ -555,7 +555,7 @@
       "source_name": "The Decoder",
       "published_at": "2026-10-11T09:17:32.000Z",
       "kind": "news",
-      "score": 0.78,
+      "score": 0.773,
       "dek": "ArXiv is implementing a two-submission-per-month limit to combat a surge in AI-generated papers that has overwhelmed volunteer moderators.",
       "brief": "Starting October 1, 2026, ArXiv will restrict users to two submissions per calendar month. The platform has seen monthly submissions exceed 40,000, with the cs.AI category growing sixfold in two years. The policy aims to reduce low-quality volume while maintaining the existing cap of three active submissions at any given time.",
       "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/arxiv-flood-ai-paper-nano-banana-pro.jpg",
@@ -571,7 +571,7 @@
       "source_name": "Lobsters (AI tag)",
       "published_at": "2026-10-10T22:25:14.000Z",
       "kind": "paper",
-      "score": 0.72,
+      "score": 0.713,
       "dek": "New research suggests that byte-level language models can outperform traditional subword tokenizers as parameter counts scale.",
       "brief": "The paper challenges the necessity of explicit tokenizers, demonstrating that standard flat Transformers can process raw byte sequences efficiently. While byte sequences are longer, the study indicates that scaling parameter sizes allows models to develop emergent abstractions that surpass the performance of subword-based architectures.",
       "image_alt": "Comparison chart of byte-level vs subword model performance",
@@ -579,7 +579,7 @@
       "enriched_at": "2026-10-11T11:24:40.725Z"
     }
   ],
-  "count": 19,
+  "count": 22,
   "clusters": [
     {
       "id": "14y9a92",
@@ -633,11 +633,74 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "signal",
-      "one_liner": "arXiv implements a two-submission-per-month cap to address the surge in AI paper volume.",
+      "one_liner": "ArXiv implements a submission cap of two papers per month per author to address volume issues.",
       "novelty": 0.868,
       "novelty_label": "high",
       "trust": 0.74,
-      "score": 0.78,
+      "score": 0.773,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1jo3wjy",
+      "primary": {
+        "id": "1jo3wjy",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Cheaper AI tokens are driving more demand, and that's Jensen Huang's best-case scenario",
+        "url": "https://the-decoder.com/cheaper-ai-tokens-are-driving-more-demand-and-thats-jensen-huangs-best-case-scenario",
+        "original_url": "https://the-decoder.com/cheaper-ai-tokens-are-driving-more-demand-and-thats-jensen-huangs-best-case-scenario/",
+        "summary": "Data from a16z shows a Jevons paradox in the AI market: token prices keep falling, but H100 GPU rental prices hold steady or climb. Cheaper AI drives demand faster than costs drop. If that demand flattens, the chain from chip makers to cloud providers takes a hit. The article Cheaper AI tokens are driving more demand, and that's Jensen Huang's best-case scenario appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/03/Datacenter-Remote.png",
+        "image_source": "rss_content",
+        "published_at": "2026-10-11T09:49:59.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1jo3wjy",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Cheaper AI tokens are driving more demand, and that's Jensen Huang's best-case scenario",
+          "url": "https://the-decoder.com/cheaper-ai-tokens-are-driving-more-demand-and-thats-jensen-huangs-best-case-scenario",
+          "original_url": "https://the-decoder.com/cheaper-ai-tokens-are-driving-more-demand-and-thats-jensen-huangs-best-case-scenario/",
+          "summary": "Data from a16z shows a Jevons paradox in the AI market: token prices keep falling, but H100 GPU rental prices hold steady or climb. Cheaper AI drives demand faster than costs drop. If that demand flattens, the chain from chip makers to cloud providers takes a hit. The article Cheaper AI tokens are driving more demand, and that's Jensen Huang's best-case scenario appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/03/Datacenter-Remote.png",
+          "image_source": "rss_content",
+          "published_at": "2026-10-11T09:49:59.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Cheaper AI tokens are driving more demand, and that's Jensen Huang's best-case scenario",
+          "url": "https://the-decoder.com/cheaper-ai-tokens-are-driving-more-demand-and-thats-jensen-huangs-best-case-scenario",
+          "published_at": "2026-10-11T09:49:59.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Analysis of the Jevons paradox in AI: falling token prices are driving demand faster than costs decrease.",
+      "novelty": 0.818,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.759,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal"
@@ -696,11 +759,11 @@
       "also_seen_on": [],
       "kind": "model_release",
       "quality": "signal",
-      "one_liner": "Odyssey-3, a 14B parameter generative world model for interactive environments, is released for research preview.",
+      "one_liner": "Odyssey-3, a 14B parameter generative world model for interactive environments, is released for research.",
       "novelty": 0.829,
       "novelty_label": "high",
       "trust": 0.74,
-      "score": 0.766,
+      "score": 0.759,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal"
@@ -759,11 +822,11 @@
       "also_seen_on": [],
       "kind": "paper",
       "quality": "signal",
-      "one_liner": "Research demonstrates that byte-level Transformers can outperform subword-based models at scale.",
+      "one_liner": "Research demonstrating that byte-level Transformers can outperform subword-tokenized models at scale.",
       "novelty": 0.76,
       "novelty_label": "high",
       "trust": 0.7,
-      "score": 0.72,
+      "score": 0.713,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal"
@@ -822,15 +885,14 @@
       "also_seen_on": [],
       "kind": "paper",
       "quality": "signal",
-      "one_liner": "Research from Epoch AI and Anthropic finds current AI agents lack scientific self-criticism and creative reasoning.",
+      "one_liner": "Study finds current AI agents lack scientific self-criticism and creative thinking, achieving low human-reference scores.",
       "novelty": 0.737,
       "novelty_label": "medium",
       "trust": 0.74,
-      "score": 0.748,
+      "score": 0.741,
       "why_this_surfaced": [
         "meaningfully different from recent coverage",
-        "classified as concrete builder or research signal",
-        "fresh within the current refresh window"
+        "classified as concrete builder or research signal"
       ],
       "builder_action": "Save this for technical review if the method maps to your roadmap."
     },
@@ -886,11 +948,11 @@
       "also_seen_on": [],
       "kind": "paper",
       "quality": "signal",
-      "one_liner": "Study shows multi-agent systems often yield negligible quality gains while significantly increasing token costs.",
+      "one_liner": "Research indicates multi-agent systems often provide negligible performance gains while significantly increasing token costs.",
       "novelty": 0.711,
       "novelty_label": "medium",
       "trust": 0.74,
-      "score": 0.744,
+      "score": 0.736,
       "why_this_surfaced": [
         "meaningfully different from recent coverage",
         "classified as concrete builder or research signal",
@@ -962,7 +1024,7 @@
       "novelty": 0.839,
       "novelty_label": "high",
       "trust": 0.62,
-      "score": 0.642,
+      "score": 0.635,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal",
@@ -971,50 +1033,46 @@
       "builder_action": "Queue it for focused learning if the topic matches your current work."
     },
     {
-      "id": "1jo3wjy",
+      "id": "c3ur7",
       "primary": {
-        "id": "1jo3wjy",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
+        "id": "c3ur7",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
         "source_role": "main",
-        "trust": 0.74,
+        "trust": 0.72,
         "kind_hint": "news",
-        "title": "Cheaper AI tokens are driving more demand, and that's Jensen Huang's best-case scenario",
-        "url": "https://the-decoder.com/cheaper-ai-tokens-are-driving-more-demand-and-thats-jensen-huangs-best-case-scenario",
-        "original_url": "https://the-decoder.com/cheaper-ai-tokens-are-driving-more-demand-and-thats-jensen-huangs-best-case-scenario/",
-        "summary": "Data from a16z shows a Jevons paradox in the AI market: token prices keep falling, but H100 GPU rental prices hold steady or climb. Cheaper AI drives demand faster than costs drop. If that demand flattens, the chain from chip makers to cloud providers takes a hit. The article Cheaper AI tokens are driving more demand, and that's Jensen Huang's best-case scenario appeared first on The Decoder.",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/03/Datacenter-Remote.png",
-        "image_source": "rss_content",
-        "published_at": "2026-10-11T09:49:59.000Z",
+        "title": "Will the HomeView be Apple’s first smart home success?",
+        "url": "https://techcrunch.com/2026/10/11/will-the-homeview-be-apples-first-smart-home-success",
+        "original_url": "https://techcrunch.com/2026/10/11/will-the-homeview-be-apples-first-smart-home-success/",
+        "summary": "Apple will announce a new smart home hub on Tuesday called the HomeView, according to Bloomberg’s Mark Gurman. Over the past couple of years, we’ve seen There have been multiple reports that Apple was working on a new smart home product, but now it seems the product has a name and a launch date. Gurman […]",
+        "published_at": "2026-10-11T21:14:40.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "1jo3wjy",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
+          "id": "c3ur7",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
           "source_role": "main",
-          "trust": 0.74,
+          "trust": 0.72,
           "kind_hint": "news",
-          "title": "Cheaper AI tokens are driving more demand, and that's Jensen Huang's best-case scenario",
-          "url": "https://the-decoder.com/cheaper-ai-tokens-are-driving-more-demand-and-thats-jensen-huangs-best-case-scenario",
-          "original_url": "https://the-decoder.com/cheaper-ai-tokens-are-driving-more-demand-and-thats-jensen-huangs-best-case-scenario/",
-          "summary": "Data from a16z shows a Jevons paradox in the AI market: token prices keep falling, but H100 GPU rental prices hold steady or climb. Cheaper AI drives demand faster than costs drop. If that demand flattens, the chain from chip makers to cloud providers takes a hit. The article Cheaper AI tokens are driving more demand, and that's Jensen Huang's best-case scenario appeared first on The Decoder.",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/03/Datacenter-Remote.png",
-          "image_source": "rss_content",
-          "published_at": "2026-10-11T09:49:59.000Z",
+          "title": "Will the HomeView be Apple’s first smart home success?",
+          "url": "https://techcrunch.com/2026/10/11/will-the-homeview-be-apples-first-smart-home-success",
+          "original_url": "https://techcrunch.com/2026/10/11/will-the-homeview-be-apples-first-smart-home-success/",
+          "summary": "Apple will announce a new smart home hub on Tuesday called the HomeView, according to Bloomberg’s Mark Gurman. Over the past couple of years, we’ve seen There have been multiple reports that Apple was working on a new smart home product, but now it seems the product has a name and a launch date. Gurman […]",
+          "published_at": "2026-10-11T21:14:40.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "Cheaper AI tokens are driving more demand, and that's Jensen Huang's best-case scenario",
-          "url": "https://the-decoder.com/cheaper-ai-tokens-are-driving-more-demand-and-thats-jensen-huangs-best-case-scenario",
-          "published_at": "2026-10-11T09:49:59.000Z",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "Will the HomeView be Apple’s first smart home success?",
+          "url": "https://techcrunch.com/2026/10/11/will-the-homeview-be-apples-first-smart-home-success",
+          "published_at": "2026-10-11T21:14:40.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -1022,16 +1080,89 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Analysis of the Jevons paradox in AI token pricing and its impact on GPU demand.",
-      "novelty": 0.818,
+      "one_liner": "Rumors regarding Apple's upcoming HomeView smart home hub.",
+      "novelty": 0.825,
       "novelty_label": "high",
-      "trust": 0.74,
-      "score": 0.653,
+      "trust": 0.72,
+      "score": 0.663,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal"
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
       ],
       "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1lzpwjt",
+      "primary": {
+        "id": "1lzpwjt",
+        "source_id": "fahd_mirza",
+        "source_name": "Fahd Mirza YouTube",
+        "source_role": "main",
+        "trust": 0.66,
+        "kind_hint": "video",
+        "title": "Microsoft Decision-1: Model for Fast Decision-Making",
+        "url": "https://youtube.com/watch?v=7fieBiC5y00",
+        "original_url": "https://www.youtube.com/watch?v=7fieBiC5y00",
+        "image_url": "https://i.ytimg.com/vi/7fieBiC5y00/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-11T18:00:13.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+          "video_id": "7fieBiC5y00"
+        }
+      },
+      "members": [
+        {
+          "id": "1lzpwjt",
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "source_role": "main",
+          "trust": 0.66,
+          "kind_hint": "video",
+          "title": "Microsoft Decision-1: Model for Fast Decision-Making",
+          "url": "https://youtube.com/watch?v=7fieBiC5y00",
+          "original_url": "https://www.youtube.com/watch?v=7fieBiC5y00",
+          "image_url": "https://i.ytimg.com/vi/7fieBiC5y00/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-11T18:00:13.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+            "video_id": "7fieBiC5y00"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "title": "Microsoft Decision-1: Model for Fast Decision-Making",
+          "url": "https://youtube.com/watch?v=7fieBiC5y00",
+          "published_at": "2026-10-11T18:00:13.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.56,
+      "novelty_label": "medium",
+      "trust": 0.66,
+      "score": 0.564,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
     },
     {
       "id": "1mf4kbz",
@@ -1085,16 +1216,201 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Discussion on the non-localized nature of consistency in AI systems.",
+      "one_liner": "Discussion on the non-localized nature of consistency in AI models.",
       "novelty": 0.864,
       "novelty_label": "high",
       "trust": 0.7,
-      "score": 0.563,
+      "score": 0.556,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal"
       ],
       "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "f9euh6",
+      "primary": {
+        "id": "f9euh6",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Microsoft's Nadella bows to Trump's language diktat on \"Super Intelligence\" and uses it to attack OpenAI and Anthropic",
+        "url": "https://the-decoder.com/microsofts-nadella-bows-to-trumps-language-diktat-on-super-intelligence-and-uses-it-to-attack-openai-and-anthropic",
+        "original_url": "https://the-decoder.com/microsofts-nadella-bows-to-trumps-language-diktat-on-super-intelligence-and-uses-it-to-attack-openai-and-anthropic/",
+        "summary": "Microsoft CEO Satya Nadella now calls artificial intelligence \"super intelligence\" instead of artificial intelligence, falling in line with Trump's preferred language. In his latest blog post, he frames AI models as insider security threats, taking yet another shot at OpenAI and Anthropic. The real motive is business: Microsoft risks falling behind as AI labs turn their models into the primary computer interface. The article Microsoft's Nadella bows to Trump's language diktat on \"Super Intelligence\" and uses it to attack OpenAI and Anthropic appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/microsoft_trump.png",
+        "image_source": "rss_content",
+        "published_at": "2026-10-11T09:08:35.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "f9euh6",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Microsoft's Nadella bows to Trump's language diktat on \"Super Intelligence\" and uses it to attack OpenAI and Anthropic",
+          "url": "https://the-decoder.com/microsofts-nadella-bows-to-trumps-language-diktat-on-super-intelligence-and-uses-it-to-attack-openai-and-anthropic",
+          "original_url": "https://the-decoder.com/microsofts-nadella-bows-to-trumps-language-diktat-on-super-intelligence-and-uses-it-to-attack-openai-and-anthropic/",
+          "summary": "Microsoft CEO Satya Nadella now calls artificial intelligence \"super intelligence\" instead of artificial intelligence, falling in line with Trump's preferred language. In his latest blog post, he frames AI models as insider security threats, taking yet another shot at OpenAI and Anthropic. The real motive is business: Microsoft risks falling behind as AI labs turn their models into the primary computer interface. The article Microsoft's Nadella bows to Trump's language diktat on \"Super Intelligence\" and uses it to attack OpenAI and Anthropic appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/microsoft_trump.png",
+          "image_source": "rss_content",
+          "published_at": "2026-10-11T09:08:35.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Microsoft's Nadella bows to Trump's language diktat on \"Super Intelligence\" and uses it to attack OpenAI and Anthropic",
+          "url": "https://the-decoder.com/microsofts-nadella-bows-to-trumps-language-diktat-on-super-intelligence-and-uses-it-to-attack-openai-and-anthropic",
+          "published_at": "2026-10-11T09:08:35.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Report on Microsoft CEO's shift in terminology and security framing for AI models.",
+      "novelty": 0.767,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.63,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "a42mvk",
+      "primary": {
+        "id": "a42mvk",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "Microsoft’s Satya Nadella says AI models need an ‘emergency brake’",
+        "url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake",
+        "original_url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/",
+        "summary": "In a Saturday morning post, Microsoft's CEO wrote that it’s time “to step back and assess the trust architecture” of AI.",
+        "published_at": "2026-10-10T21:47:51.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "a42mvk",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "Microsoft’s Satya Nadella says AI models need an ‘emergency brake’",
+          "url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake",
+          "original_url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/",
+          "summary": "In a Saturday morning post, Microsoft's CEO wrote that it’s time “to step back and assess the trust architecture” of AI.",
+          "published_at": "2026-10-10T21:47:51.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "Microsoft’s Satya Nadella says AI models need an ‘emergency brake’",
+          "url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake",
+          "published_at": "2026-10-10T21:47:51.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Summary of Microsoft CEO's call for improved trust architecture and safety mechanisms in AI.",
+      "novelty": 0.808,
+      "novelty_label": "high",
+      "trust": 0.72,
+      "score": 0.619,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "m9w0l",
+      "primary": {
+        "id": "m9w0l",
+        "source_id": "the_verge_ai",
+        "source_name": "The Verge AI",
+        "source_role": "main",
+        "trust": 0.68,
+        "kind_hint": "news",
+        "title": "Satya Nadella says we should assume all AI models are ‘compromised’",
+        "url": "https://theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised",
+        "original_url": "https://www.theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised",
+        "summary": "In a lengthy post on X, Microsoft's CEO laid out his views on the dangers posed by highly advanced AI models and how to confront those risks. Nadella says we can no longer accept a world where AI is treated as a \"set of nested black boxes\" whose advice and actions we simply accept or reject. He calls for building a more transparent system where models can be contained, observed, and leaves behind \"tamper-proof human readable evidence.\" Many of his recommendations align with what we've heard from others in the industry: timely incident disclosure, independent audits, verifiable data, and contai",
+        "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/10/STK178_Satya_Nadella_B.jpg?quality=90&",
+        "image_source": "rss_content",
+        "published_at": "2026-10-10T22:10:17.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "m9w0l",
+          "source_id": "the_verge_ai",
+          "source_name": "The Verge AI",
+          "source_role": "main",
+          "trust": 0.68,
+          "kind_hint": "news",
+          "title": "Satya Nadella says we should assume all AI models are ‘compromised’",
+          "url": "https://theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised",
+          "original_url": "https://www.theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised",
+          "summary": "In a lengthy post on X, Microsoft's CEO laid out his views on the dangers posed by highly advanced AI models and how to confront those risks. Nadella says we can no longer accept a world where AI is treated as a \"set of nested black boxes\" whose advice and actions we simply accept or reject. He calls for building a more transparent system where models can be contained, observed, and leaves behind \"tamper-proof human readable evidence.\" Many of his recommendations align with what we've heard from others in the industry: timely incident disclosure, independent audits, verifiable data, and contai",
+          "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/10/STK178_Satya_Nadella_B.jpg?quality=90&",
+          "image_source": "rss_content",
+          "published_at": "2026-10-10T22:10:17.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_verge_ai",
+          "source_name": "The Verge AI",
+          "title": "Satya Nadella says we should assume all AI models are ‘compromised’",
+          "url": "https://theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised",
+          "published_at": "2026-10-10T22:10:17.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Overview of Microsoft CEO's perspective on security risks and black-box nature of advanced AI models.",
+      "novelty": 0.838,
+      "novelty_label": "high",
+      "trust": 0.68,
+      "score": 0.619,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "46zvly",
@@ -1146,11 +1462,11 @@
       "also_seen_on": [],
       "kind": "tutorial",
       "quality": "signal",
-      "one_liner": "Overview of Standard Bots' stack using pretrained models for industrial robotics via demonstration and correction.",
+      "one_liner": "Technical overview of Standard Bots' stack for training industrial robots using demonstrations and deployment feedback.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.85,
-      "score": 0.513,
+      "score": 0.506,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal",
@@ -1206,11 +1522,11 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Discussion on data center transparency and the role of NDAs in community relations.",
+      "one_liner": "Discussion on whether transparency regarding data centers can mitigate local opposition.",
       "novelty": 0.756,
       "novelty_label": "high",
       "trust": 0.72,
-      "score": 0.562,
+      "score": 0.555,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal",
@@ -1268,18 +1584,18 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "paper",
+      "kind": "news",
       "quality": "signal",
-      "one_liner": "OpenAI documents misaligned model behaviors including environment sabotage and network restriction bypasses.",
+      "one_liner": "OpenAI reports instances of models exhibiting misaligned behavior, including environment sabotage and network restriction bypasses.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.74,
-      "score": 0.489,
+      "score": 0.482,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
       ],
-      "builder_action": "Save this for technical review if the method maps to your roadmap."
+      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "1jqf21t",
@@ -1333,70 +1649,7 @@
       "also_seen_on": [],
       "kind": "model_release",
       "quality": "signal",
-      "one_liner": "Microsoft releases Decision-1, a Qwen3.5-9B based model optimized for low-latency classification and routing.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.74,
-      "score": 0.489,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
-    },
-    {
-      "id": "1c94ld",
-      "primary": {
-        "id": "1c94ld",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
-        "source_role": "main",
-        "trust": 0.74,
-        "kind_hint": "news",
-        "title": "Few people pay for AI, but those who do spend big",
-        "url": "https://the-decoder.com/few-people-pay-for-ai-but-those-who-do-spend-bigonly-a-few-users-pay-for-ai-but-those-who-do-pay-a-lot",
-        "original_url": "https://the-decoder.com/few-people-pay-for-ai-but-those-who-do-spend-bigonly-a-few-users-pay-for-ai-but-those-who-do-pay-a-lot/",
-        "summary": "Andreessen Horowitz tracks actual US consumer spending for the first time in its latest Top 100 AI list. Nearly half of US consumers use AI, but only 4.5 percent pay for a subscription. The top one percent of payers spend about $900 a month, mostly on professional tools for development and automation. The article Few people pay for AI, but those who do spend big appeared first on The Decoder.",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/a16z-top-100-apps-few-pay-much-nano-banana-pro.jpg",
-        "image_source": "rss_content",
-        "published_at": "2026-10-10T10:54:56.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1c94ld",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "source_role": "main",
-          "trust": 0.74,
-          "kind_hint": "news",
-          "title": "Few people pay for AI, but those who do spend big",
-          "url": "https://the-decoder.com/few-people-pay-for-ai-but-those-who-do-spend-bigonly-a-few-users-pay-for-ai-but-those-who-do-pay-a-lot",
-          "original_url": "https://the-decoder.com/few-people-pay-for-ai-but-those-who-do-spend-bigonly-a-few-users-pay-for-ai-but-those-who-do-pay-a-lot/",
-          "summary": "Andreessen Horowitz tracks actual US consumer spending for the first time in its latest Top 100 AI list. Nearly half of US consumers use AI, but only 4.5 percent pay for a subscription. The top one percent of payers spend about $900 a month, mostly on professional tools for development and automation. The article Few people pay for AI, but those who do spend big appeared first on The Decoder.",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/a16z-top-100-apps-few-pay-much-nano-banana-pro.jpg",
-          "image_source": "rss_content",
-          "published_at": "2026-10-10T10:54:56.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "Few people pay for AI, but those who do spend big",
-          "url": "https://the-decoder.com/few-people-pay-for-ai-but-those-who-do-spend-bigonly-a-few-users-pay-for-ai-but-those-who-do-pay-a-lot",
-          "published_at": "2026-10-10T10:54:56.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "signal",
-      "one_liner": "Analysis of consumer AI spending habits showing low adoption rates but high expenditure among power users.",
+      "one_liner": "Microsoft releases Decision-1, a Qwen3.5-9B based model optimized for classification and routing tasks.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.74,
@@ -1405,7 +1658,7 @@
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
       ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
+      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
     },
     {
       "id": "pyb45t",
@@ -1459,11 +1712,11 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "signal",
-      "one_liner": "Anthropic restricts internet access for internal model evaluations following reports of unintended agent behavior.",
+      "one_liner": "Anthropic restricts internet access for internal model evaluations following reports of unintended agent actions.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.68,
-      "score": 0.475,
+      "score": 0.468,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -1534,78 +1787,7 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.66,
-      "score": 0.313,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "y6iexx",
-      "primary": {
-        "id": "y6iexx",
-        "source_id": "fahd_mirza",
-        "source_name": "Fahd Mirza YouTube",
-        "source_role": "main",
-        "trust": 0.66,
-        "kind_hint": "video",
-        "title": "Qwen Releases Qwen-Image-2.1-Turbo Open-Weight Model: Test Locally",
-        "url": "https://youtube.com/watch?v=MUICCYdAee0",
-        "original_url": "https://www.youtube.com/watch?v=MUICCYdAee0",
-        "image_url": "https://i.ytimg.com/vi/MUICCYdAee0/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-10-10T06:00:21.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
-          "video_id": "MUICCYdAee0"
-        }
-      },
-      "members": [
-        {
-          "id": "y6iexx",
-          "source_id": "fahd_mirza",
-          "source_name": "Fahd Mirza YouTube",
-          "source_role": "main",
-          "trust": 0.66,
-          "kind_hint": "video",
-          "title": "Qwen Releases Qwen-Image-2.1-Turbo Open-Weight Model: Test Locally",
-          "url": "https://youtube.com/watch?v=MUICCYdAee0",
-          "original_url": "https://www.youtube.com/watch?v=MUICCYdAee0",
-          "image_url": "https://i.ytimg.com/vi/MUICCYdAee0/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-10-10T06:00:21.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
-            "video_id": "MUICCYdAee0"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "fahd_mirza",
-          "source_name": "Fahd Mirza YouTube",
-          "title": "Qwen Releases Qwen-Image-2.1-Turbo Open-Weight Model: Test Locally",
-          "url": "https://youtube.com/watch?v=MUICCYdAee0",
-          "published_at": "2026-10-10T06:00:21.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "mixed",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.66,
-      "score": 0.293,
+      "score": 0.306,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -1660,11 +1842,11 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Apple acquires team and technology from podcast startup Huxe.",
+      "one_liner": "Report on Apple's acquisition of talent and technology from a personalized podcast startup.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.72,
-      "score": 0.33,
+      "score": 0.323,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -1672,50 +1854,50 @@
       "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
-      "id": "xf7se7",
+      "id": "1c94ld",
       "primary": {
-        "id": "xf7se7",
-        "source_id": "wired_ai",
-        "source_name": "WIRED AI",
+        "id": "1c94ld",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
         "source_role": "main",
-        "trust": 0.76,
+        "trust": 0.74,
         "kind_hint": "news",
-        "title": "AI Is Getting Really Good at Messing With Cybercriminals",
-        "url": "https://wired.com/story/ai-is-getting-really-good-at-messing-with-cybercriminals",
-        "original_url": "https://www.wired.com/story/ai-is-getting-really-good-at-messing-with-cybercriminals/",
-        "summary": "Anti-cybercrime initiatives are increasingly using AI to scam the scammers by tricking them into talking to lifelike bots that they think are real victims.",
-        "image_url": "https://media.wired.com/photos/6ac7e488d45774a31ff822a9/master/pass/Kernel-Panic-AI-Getting-Really-Good-Fucking-With-Cybercriminals-Security.jpg",
-        "image_source": "rss_media",
-        "published_at": "2026-10-10T12:00:00.000Z",
+        "title": "Few people pay for AI, but those who do spend big",
+        "url": "https://the-decoder.com/few-people-pay-for-ai-but-those-who-do-spend-bigonly-a-few-users-pay-for-ai-but-those-who-do-pay-a-lot",
+        "original_url": "https://the-decoder.com/few-people-pay-for-ai-but-those-who-do-spend-bigonly-a-few-users-pay-for-ai-but-those-who-do-pay-a-lot/",
+        "summary": "Andreessen Horowitz tracks actual US consumer spending for the first time in its latest Top 100 AI list. Nearly half of US consumers use AI, but only 4.5 percent pay for a subscription. The top one percent of payers spend about $900 a month, mostly on professional tools for development and automation. The article Few people pay for AI, but those who do spend big appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/a16z-top-100-apps-few-pay-much-nano-banana-pro.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-10-10T10:54:56.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "xf7se7",
-          "source_id": "wired_ai",
-          "source_name": "WIRED AI",
+          "id": "1c94ld",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
           "source_role": "main",
-          "trust": 0.76,
+          "trust": 0.74,
           "kind_hint": "news",
-          "title": "AI Is Getting Really Good at Messing With Cybercriminals",
-          "url": "https://wired.com/story/ai-is-getting-really-good-at-messing-with-cybercriminals",
-          "original_url": "https://www.wired.com/story/ai-is-getting-really-good-at-messing-with-cybercriminals/",
-          "summary": "Anti-cybercrime initiatives are increasingly using AI to scam the scammers by tricking them into talking to lifelike bots that they think are real victims.",
-          "image_url": "https://media.wired.com/photos/6ac7e488d45774a31ff822a9/master/pass/Kernel-Panic-AI-Getting-Really-Good-Fucking-With-Cybercriminals-Security.jpg",
-          "image_source": "rss_media",
-          "published_at": "2026-10-10T12:00:00.000Z",
+          "title": "Few people pay for AI, but those who do spend big",
+          "url": "https://the-decoder.com/few-people-pay-for-ai-but-those-who-do-spend-bigonly-a-few-users-pay-for-ai-but-those-who-do-pay-a-lot",
+          "original_url": "https://the-decoder.com/few-people-pay-for-ai-but-those-who-do-spend-bigonly-a-few-users-pay-for-ai-but-those-who-do-pay-a-lot/",
+          "summary": "Andreessen Horowitz tracks actual US consumer spending for the first time in its latest Top 100 AI list. Nearly half of US consumers use AI, but only 4.5 percent pay for a subscription. The top one percent of payers spend about $900 a month, mostly on professional tools for development and automation. The article Few people pay for AI, but those who do spend big appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/a16z-top-100-apps-few-pay-much-nano-banana-pro.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-10T10:54:56.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "wired_ai",
-          "source_name": "WIRED AI",
-          "title": "AI Is Getting Really Good at Messing With Cybercriminals",
-          "url": "https://wired.com/story/ai-is-getting-really-good-at-messing-with-cybercriminals",
-          "published_at": "2026-10-10T12:00:00.000Z",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Few people pay for AI, but those who do spend big",
+          "url": "https://the-decoder.com/few-people-pay-for-ai-but-those-who-do-spend-bigonly-a-few-users-pay-for-ai-but-those-who-do-pay-a-lot",
+          "published_at": "2026-10-10T10:54:56.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -1723,11 +1905,11 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Overview of anti-cybercrime initiatives using AI-driven conversational bots to deceive scammers.",
+      "one_liner": "Andreessen Horowitz report on consumer AI spending habits, noting low subscription rates but high spend among power users.",
       "novelty": 0,
       "novelty_label": "familiar",
-      "trust": 0.76,
-      "score": 0.326,
+      "trust": 0.74,
+      "score": 0.313,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -1786,11 +1968,11 @@
       "also_seen_on": [],
       "kind": "discussion",
       "quality": "mixed",
-      "one_liner": "Compilation of mathematician reactions to OpenAI's automated generation of mathematical manuscripts.",
+      "one_liner": "Summary of mathematician reactions to OpenAI's automated generation of 700 math manuscripts.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.74,
-      "score": 0.243,
+      "score": 0.236,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
