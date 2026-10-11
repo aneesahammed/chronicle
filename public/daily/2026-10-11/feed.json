@@ -1,0 +1,2079 @@
+{
+  "generated_at": "2026-10-11T11:24:40.725Z",
+  "last_successful_generated_at": "2026-10-11T11:24:40.725Z",
+  "refresh_status": "partial",
+  "classification_mode": "llm",
+  "window_hours": 36,
+  "source_total": 53,
+  "source_ok": 50,
+  "source_failed": 3,
+  "failed_sources": [
+    {
+      "id": "marktechpost",
+      "name": "MarkTechPost",
+      "message": "HTTP 403 Forbidden - <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><m - url=https://www.marktechpost.com/feed"
+    },
+    {
+      "id": "r_localllama",
+      "name": "r/LocalLLaMA",
+      "message": "Feed not recognized as RSS 1 or 2."
+    },
+    {
+      "id": "r_ml",
+      "name": "r/MachineLearning",
+      "message": "Invalid character in entity name\nLine: 23\nColumn: 151\nChar: ="
+    }
+  ],
+  "source_health": [
+    {
+      "id": "arxiv_cl",
+      "name": "arXiv cs.CL",
+      "status": "ok",
+      "fetched_count": 0,
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "arxiv_lg",
+      "name": "arXiv cs.LG",
+      "status": "ok",
+      "fetched_count": 0,
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "hf_papers",
+      "name": "Hugging Face Daily Papers",
+      "status": "ok",
+      "fetched_count": 20,
+      "fresh_count": 0,
+      "stale_count": 20,
+      "oldest_published_at": "2026-09-23T20:00:00.000Z",
+      "newest_published_at": "2026-10-07T20:00:00.000Z"
+    },
+    {
+      "id": "hf_trending_models",
+      "name": "Hugging Face trending models",
+      "status": "ok",
+      "fetched_count": 20,
+      "fresh_count": 0,
+      "stale_count": 20,
+      "oldest_published_at": "2026-07-23T07:55:24.000Z",
+      "newest_published_at": "2026-10-09T16:30:48.000Z"
+    },
+    {
+      "id": "simonw",
+      "name": "Simon Willison",
+      "status": "ok",
+      "fetched_count": 2,
+      "fresh_count": 0,
+      "stale_count": 2,
+      "oldest_published_at": "2026-10-07T00:16:45.000Z",
+      "newest_published_at": "2026-10-07T20:56:21.000Z"
+    },
+    {
+      "id": "martin_fowler",
+      "name": "Martin Fowler",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "2026-09-16T20:05:00.000Z",
+      "newest_published_at": "2026-10-05T04:28:00.000Z"
+    },
+    {
+      "id": "thoughtworks_insights",
+      "name": "Thoughtworks Insights",
+      "status": "ok",
+      "fetched_count": 7,
+      "fresh_count": 0,
+      "stale_count": 7,
+      "oldest_published_at": "2026-09-29T00:00:00.000Z",
+      "newest_published_at": "2026-10-09T00:00:00.000Z"
+    },
+    {
+      "id": "latent_space",
+      "name": "Latent Space",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 4,
+      "stale_count": 6,
+      "oldest_published_at": "2026-10-06T06:28:43.000Z",
+      "newest_published_at": "2026-10-10T22:07:17.000Z"
+    },
+    {
+      "id": "interconnects",
+      "name": "Interconnects (Lambert)",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-08-17T15:07:49.000Z",
+      "newest_published_at": "2026-10-09T21:33:47.000Z"
+    },
+    {
+      "id": "import_ai",
+      "name": "Import AI (Jack Clark)",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-07-27T13:30:53.000Z",
+      "newest_published_at": "2026-10-05T12:32:30.000Z"
+    },
+    {
+      "id": "eugene_yan",
+      "name": "Eugene Yan",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2025-05-18T00:00:00.000Z",
+      "newest_published_at": "2026-06-21T00:00:00.000Z"
+    },
+    {
+      "id": "hamel",
+      "name": "Hamel Husain",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2025-07-11T07:00:00.000Z",
+      "newest_published_at": "2026-09-30T07:00:00.000Z"
+    },
+    {
+      "id": "philschmid",
+      "name": "Philipp Schmid",
+      "status": "ok",
+      "fetched_count": 15,
+      "fresh_count": 0,
+      "stale_count": 15,
+      "oldest_published_at": "2026-04-29T00:00:00.000Z",
+      "newest_published_at": "2026-09-28T00:00:00.000Z"
+    },
+    {
+      "id": "lilian_weng",
+      "name": "Lilian Weng",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2023-03-15T00:00:00.000Z",
+      "newest_published_at": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "chip_huyen",
+      "name": "Chip Huyen",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2023-06-07T00:00:00.000Z",
+      "newest_published_at": "2025-01-16T00:00:00.000Z"
+    },
+    {
+      "id": "addy_osmani",
+      "name": "Addy Osmani",
+      "status": "ok",
+      "fetched_count": 8,
+      "fresh_count": 0,
+      "stale_count": 8,
+      "oldest_published_at": "2026-07-06T00:00:00.000Z",
+      "newest_published_at": "2026-09-14T00:00:00.000Z"
+    },
+    {
+      "id": "daniel_miessler",
+      "name": "Daniel Miessler",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-09-22T06:15:00.000Z",
+      "newest_published_at": "2026-10-09T20:51:00.000Z"
+    },
+    {
+      "id": "sean_goedecke",
+      "name": "Sean Goedecke",
+      "status": "ok",
+      "fetched_count": 2,
+      "fresh_count": 0,
+      "stale_count": 2,
+      "oldest_published_at": "2026-09-27T00:00:00.000Z",
+      "newest_published_at": "2026-10-02T00:00:00.000Z"
+    },
+    {
+      "id": "techcrunch_ai",
+      "name": "TechCrunch AI",
+      "status": "ok",
+      "fetched_count": 12,
+      "fresh_count": 5,
+      "stale_count": 7,
+      "oldest_published_at": "2026-10-09T15:43:33.000Z",
+      "newest_published_at": "2026-10-10T21:47:51.000Z"
+    },
+    {
+      "id": "the_decoder",
+      "name": "The Decoder",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 10,
+      "stale_count": 0,
+      "oldest_published_at": "2026-10-10T08:59:49.000Z",
+      "newest_published_at": "2026-10-11T09:49:59.000Z"
+    },
+    {
+      "id": "mit_tech_review_ai",
+      "name": "MIT Technology Review AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-10-02T08:00:00.000Z",
+      "newest_published_at": "2026-10-09T09:00:00.000Z"
+    },
+    {
+      "id": "ars_ai",
+      "name": "Ars Technica AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-10-06T20:50:32.000Z",
+      "newest_published_at": "2026-10-09T22:04:07.000Z"
+    },
+    {
+      "id": "infoq_ai",
+      "name": "InfoQ AI/ML/Data",
+      "status": "ok",
+      "fetched_count": 7,
+      "fresh_count": 0,
+      "stale_count": 7,
+      "oldest_published_at": "2026-10-07T07:21:00.000Z",
+      "newest_published_at": "2026-10-09T17:00:00.000Z"
+    },
+    {
+      "id": "stackoverflow_blog",
+      "name": "Stack Overflow Blog",
+      "status": "ok",
+      "fetched_count": 8,
+      "fresh_count": 0,
+      "stale_count": 8,
+      "oldest_published_at": "2026-10-07T20:09:22.000Z",
+      "newest_published_at": "2026-10-09T07:40:00.000Z"
+    },
+    {
+      "id": "the_verge_ai",
+      "name": "The Verge AI",
+      "status": "ok",
+      "fetched_count": 9,
+      "fresh_count": 3,
+      "stale_count": 6,
+      "oldest_published_at": "2026-10-09T09:48:26.000Z",
+      "newest_published_at": "2026-10-10T22:10:17.000Z"
+    },
+    {
+      "id": "wired_ai",
+      "name": "WIRED AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 2,
+      "stale_count": 8,
+      "oldest_published_at": "2026-10-07T15:34:33.000Z",
+      "newest_published_at": "2026-10-11T11:00:00.000Z"
+    },
+    {
+      "id": "nine_to_five_google_ai",
+      "name": "9to5Google AI",
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 0,
+      "stale_count": 6,
+      "oldest_published_at": "2017-08-08T14:44:01.000Z",
+      "newest_published_at": "2026-06-12T15:10:46.000Z"
+    },
+    {
+      "id": "product_hunt",
+      "name": "Product Hunt",
+      "status": "ok",
+      "fetched_count": 0,
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "marktechpost",
+      "name": "MarkTechPost",
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 403 Forbidden - <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><m - url=https://www.marktechpost.com/feed",
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "hn_ai",
+      "name": "Hacker News (AI-filtered)",
+      "status": "ok",
+      "fetched_count": 3,
+      "fresh_count": 2,
+      "stale_count": 1,
+      "oldest_published_at": "2026-10-09T15:26:33.000Z",
+      "newest_published_at": "2026-10-11T02:02:38.000Z"
+    },
+    {
+      "id": "hn_show_ai",
+      "name": "Show HN (AI-filtered)",
+      "status": "ok",
+      "fetched_count": 2,
+      "fresh_count": 0,
+      "stale_count": 2,
+      "oldest_published_at": "2026-10-08T16:34:13.000Z",
+      "newest_published_at": "2026-10-09T11:03:48.000Z"
+    },
+    {
+      "id": "lobsters_ai",
+      "name": "Lobsters (AI tag)",
+      "status": "ok",
+      "fetched_count": 20,
+      "fresh_count": 2,
+      "stale_count": 18,
+      "oldest_published_at": "2026-09-11T17:23:45.000Z",
+      "newest_published_at": "2026-10-11T00:51:28.000Z"
+    },
+    {
+      "id": "r_localllama",
+      "name": "r/LocalLLaMA",
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "Feed not recognized as RSS 1 or 2.",
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "r_ml",
+      "name": "r/MachineLearning",
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "Invalid character in entity name\nLine: 23\nColumn: 151\nChar: =",
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-10-06T12:00:00.000Z",
+      "newest_published_at": "2026-10-09T07:00:00.000Z"
+    },
+    {
+      "id": "deepmind",
+      "name": "Google DeepMind",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-09-02T16:24:24.000Z",
+      "newest_published_at": "2026-10-06T19:57:04.000Z"
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "status": "ok",
+      "fetched_count": 12,
+      "fresh_count": 0,
+      "stale_count": 12,
+      "oldest_published_at": "2026-09-29T16:39:00.000Z",
+      "newest_published_at": "2026-10-09T16:09:00.000Z"
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-05-27T12:00:55.000Z",
+      "newest_published_at": "2026-10-06T12:00:27.000Z"
+    },
+    {
+      "id": "google_research",
+      "name": "Google Research",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "2026-09-15T20:00:00.000Z",
+      "newest_published_at": "2026-10-06T15:05:11.000Z"
+    },
+    {
+      "id": "google_ai_keyword",
+      "name": "Google AI on Keyword",
+      "status": "ok",
+      "fetched_count": 7,
+      "fresh_count": 0,
+      "stale_count": 7,
+      "oldest_published_at": "2026-10-06T18:00:00.000Z",
+      "newest_published_at": "2026-10-09T00:00:00.000Z"
+    },
+    {
+      "id": "meta_ai",
+      "name": "Meta AI Blog",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "1970-01-01T00:00:00.000Z",
+      "newest_published_at": "2026-07-09T00:00:00.000Z"
+    },
+    {
+      "id": "microsoft_research",
+      "name": "Microsoft Research",
+      "status": "ok",
+      "fetched_count": 7,
+      "fresh_count": 0,
+      "stale_count": 7,
+      "oldest_published_at": "2026-08-12T16:00:00.000Z",
+      "newest_published_at": "2026-10-07T16:00:00.000Z"
+    },
+    {
+      "id": "azure_ai_blog",
+      "name": "Azure AI Blog",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "2026-09-22T18:30:00.000Z",
+      "newest_published_at": "2026-10-07T15:00:00.000Z"
+    },
+    {
+      "id": "aws_ml_blog",
+      "name": "AWS Machine Learning Blog",
+      "status": "ok",
+      "fetched_count": 11,
+      "fresh_count": 0,
+      "stale_count": 11,
+      "oldest_published_at": "2026-10-06T19:19:15.000Z",
+      "newest_published_at": "2026-10-09T15:38:39.000Z"
+    },
+    {
+      "id": "nvidia_developer_blog",
+      "name": "NVIDIA Developer Blog",
+      "status": "ok",
+      "fetched_count": 9,
+      "fresh_count": 0,
+      "stale_count": 9,
+      "oldest_published_at": "2026-10-01T17:59:27.000Z",
+      "newest_published_at": "2026-10-08T20:57:55.000Z"
+    },
+    {
+      "id": "cloudflare_ai_changelog",
+      "name": "Cloudflare AI Changelog",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 1,
+      "stale_count": 9,
+      "oldest_published_at": "2026-10-01T13:00:00.000Z",
+      "newest_published_at": "2026-10-10T00:00:00.000Z"
+    },
+    {
+      "id": "cohere_blog",
+      "name": "Cohere Blog",
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 0,
+      "stale_count": 6,
+      "oldest_published_at": "2026-09-13T21:46:00.000Z",
+      "newest_published_at": "2026-10-05T13:04:00.000Z"
+    },
+    {
+      "id": "ai2_blog",
+      "name": "Ai2 Blog",
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 0,
+      "stale_count": 6,
+      "oldest_published_at": "2026-09-01T08:00:00.000Z",
+      "newest_published_at": "2026-10-09T08:00:00.000Z"
+    },
+    {
+      "id": "together",
+      "name": "Together AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-09-09T00:00:00.000Z",
+      "newest_published_at": "2026-10-06T00:00:00.000Z"
+    },
+    {
+      "id": "modal",
+      "name": "Modal",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-09-02T00:00:00.000Z",
+      "newest_published_at": "2026-10-05T00:00:00.000Z"
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "status": "ok",
+      "fetched_count": 12,
+      "fresh_count": 0,
+      "stale_count": 12,
+      "oldest_published_at": "2026-07-20T12:00:00.000Z",
+      "newest_published_at": "2026-08-14T12:00:00.000Z"
+    },
+    {
+      "id": "fahd_mirza",
+      "name": "Fahd Mirza YouTube",
+      "status": "ok",
+      "fetched_count": 8,
+      "fresh_count": 2,
+      "stale_count": 6,
+      "oldest_published_at": "2026-10-07T07:00:09.000Z",
+      "newest_published_at": "2026-10-10T18:00:09.000Z"
+    },
+    {
+      "id": "yt_nate_b_jones",
+      "name": "AI News & Strategy Daily",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 1,
+      "stale_count": 4,
+      "oldest_published_at": "2026-10-03T03:00:18.000Z",
+      "newest_published_at": "2026-10-10T03:00:24.000Z"
+    }
+  ],
+  "top_news": [
+    {
+      "cluster_id": "14y9a92",
+      "title": "ArXiv caps submissions at two per month as AI paper flood overwhelms the preprint server",
+      "url": "https://the-decoder.com/arxiv-caps-submissions-at-two-per-month-as-ai-paper-flood-overwhelms-the-preprint-server",
+      "source_name": "The Decoder",
+      "published_at": "2026-10-11T09:17:32.000Z",
+      "kind": "news",
+      "score": 0.79,
+      "dek": "ArXiv is implementing a two-submission-per-month limit to combat a surge in AI-generated papers that has overwhelmed volunteer moderators.",
+      "brief": "Starting October 1, 2026, ArXiv will restrict users to two submissions per calendar month. The platform has seen monthly submissions exceed 40,000, with the cs.AI category growing sixfold in two years. The policy aims to reduce low-quality volume while maintaining the existing cap of three active submissions at any given time.",
+      "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/arxiv-flood-ai-paper-nano-banana-pro.jpg",
+      "image_alt": "ArXiv logo and submission interface",
+      "image_source": "rss_content",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-10-11T11:24:40.725Z"
+    },
+    {
+      "cluster_id": "c0tdy0",
+      "title": "500B Tokens Later: Letting AI Agents Decompile a First-Person Shooter",
+      "url": "https://momo5502.com/posts/2026-10-09-game-decompilation",
+      "source_name": "Hacker News (AI-filtered)",
+      "published_at": "2026-10-11T02:02:38Z",
+      "kind": "tool",
+      "score": 0.779,
+      "dek": "A technical case study explores using AI agent orchestration to achieve a feature-complete decompilation of a first-person shooter.",
+      "brief": "The project focused on optimizing AI infrastructure and orchestration to handle the massive token requirements of decompiling a complex game. The author emphasizes that the effort was less about the specific game and more about the practical challenges of scaling AI agents for large-scale, stable code reconstruction.",
+      "image_alt": "Diagram of AI agent orchestration for code decompilation",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-10-11T11:24:40.725Z"
+    },
+    {
+      "cluster_id": "d71bre",
+      "title": "Byte Language Models: Scaling, Emergent Abstractions, and Information Allocation",
+      "url": "https://arxiv.org/html/2610.05978v1",
+      "source_name": "Lobsters (AI tag)",
+      "published_at": "2026-10-10T22:25:14.000Z",
+      "kind": "paper",
+      "score": 0.731,
+      "dek": "New research suggests that byte-level language models can outperform traditional subword tokenizers as parameter counts scale.",
+      "brief": "The paper challenges the necessity of explicit tokenizers, demonstrating that standard flat Transformers can process raw byte sequences efficiently. While byte sequences are longer, the study indicates that scaling parameter sizes allows models to develop emergent abstractions that surpass the performance of subword-based architectures.",
+      "image_alt": "Comparison chart of byte-level vs subword model performance",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-10-11T11:24:40.725Z"
+    },
+    {
+      "cluster_id": "b5h3ho",
+      "title": "Agents - Cloudflare API MCP server serves Cloudflare skills",
+      "url": "https://developers.cloudflare.com/changelog/post/2026-10-10-cloudflare-mcp-skills",
+      "source_name": "Cloudflare AI Changelog",
+      "published_at": "2026-10-10T00:00:00.000Z",
+      "kind": "tool",
+      "score": 0.484,
+      "dek": "Cloudflare has released an MCP server that allows AI agents to discover and execute Cloudflare skills directly.",
+      "brief": "The Cloudflare API MCP server now supports the 'Skills over MCP' extension. By adding the provided endpoint to a compatible MCP client, developers can list and interact with Cloudflare skills, enabling agents to perform tasks directly through the Cloudflare ecosystem.",
+      "image_alt": "Cloudflare MCP integration architecture diagram",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-10-11T11:24:40.725Z"
+    }
+  ],
+  "count": 23,
+  "clusters": [
+    {
+      "id": "14y9a92",
+      "primary": {
+        "id": "14y9a92",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "ArXiv caps submissions at two per month as AI paper flood overwhelms the preprint server",
+        "url": "https://the-decoder.com/arxiv-caps-submissions-at-two-per-month-as-ai-paper-flood-overwhelms-the-preprint-server",
+        "original_url": "https://the-decoder.com/arxiv-caps-submissions-at-two-per-month-as-ai-paper-flood-overwhelms-the-preprint-server/",
+        "summary": "Starting October 2026, arXiv will cap submissions at two per person per month. Monthly submissions have doubled in two years, and in the cs.AI category they've grown more than sixfold. According to arXiv, a small fraction of authors are flooding the platform with low-quality papers, overwhelming its volunteer moderators. The article ArXiv caps submissions at two per month as AI paper flood overwhelms the preprint server appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/arxiv-flood-ai-paper-nano-banana-pro.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-10-11T09:17:32.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "14y9a92",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "ArXiv caps submissions at two per month as AI paper flood overwhelms the preprint server",
+          "url": "https://the-decoder.com/arxiv-caps-submissions-at-two-per-month-as-ai-paper-flood-overwhelms-the-preprint-server",
+          "original_url": "https://the-decoder.com/arxiv-caps-submissions-at-two-per-month-as-ai-paper-flood-overwhelms-the-preprint-server/",
+          "summary": "Starting October 2026, arXiv will cap submissions at two per person per month. Monthly submissions have doubled in two years, and in the cs.AI category they've grown more than sixfold. According to arXiv, a small fraction of authors are flooding the platform with low-quality papers, overwhelming its volunteer moderators. The article ArXiv caps submissions at two per month as AI paper flood overwhelms the preprint server appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/arxiv-flood-ai-paper-nano-banana-pro.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-11T09:17:32.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "ArXiv caps submissions at two per month as AI paper flood overwhelms the preprint server",
+          "url": "https://the-decoder.com/arxiv-caps-submissions-at-two-per-month-as-ai-paper-flood-overwhelms-the-preprint-server",
+          "published_at": "2026-10-11T09:17:32.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "arXiv implements a submission cap of two papers per month per author to address volume and quality concerns.",
+      "novelty": 0.868,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.79,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "c0tdy0",
+      "primary": {
+        "id": "c0tdy0",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "500B Tokens Later: Letting AI Agents Decompile a First-Person Shooter",
+        "url": "https://momo5502.com/posts/2026-10-09-game-decompilation",
+        "original_url": "https://momo5502.com/posts/2026-10-09-game-decompilation/",
+        "discussion_url": "https://news.ycombinator.com/item?id=50039092",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-10-11T02:02:38Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 104,
+          "comments": 75
+        }
+      },
+      "members": [
+        {
+          "id": "c0tdy0",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "500B Tokens Later: Letting AI Agents Decompile a First-Person Shooter",
+          "url": "https://momo5502.com/posts/2026-10-09-game-decompilation",
+          "original_url": "https://momo5502.com/posts/2026-10-09-game-decompilation/",
+          "discussion_url": "https://news.ycombinator.com/item?id=50039092",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-10-11T02:02:38Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 104,
+            "comments": 75
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "500B Tokens Later: Letting AI Agents Decompile a First-Person Shooter",
+          "url": "https://momo5502.com/posts/2026-10-09-game-decompilation",
+          "published_at": "2026-10-11T02:02:38Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=50039092",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Case study on using AI agents to assist in the decompilation of a first-person shooter game.",
+      "novelty": 0.838,
+      "novelty_label": "high",
+      "trust": 0.65,
+      "score": 0.779,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "1xqwiq2",
+      "primary": {
+        "id": "1xqwiq2",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Odyssey-3 is a new generative world model that you can try for free",
+        "url": "https://the-decoder.com/odyssey-3-is-a-new-generative-world-model-that-you-can-try-for-free",
+        "original_url": "https://the-decoder.com/odyssey-3-is-a-new-generative-world-model-that-you-can-try-for-free/",
+        "summary": "Odyssey is making its world model Odyssey-3 available as a public research preview. The 14-billion-parameter model generates interactive environments from text prompts in real time and can reportedly control robots, drones, and even GTA V. Odyssey claims top scores on physics benchmarks, though the methodology behind those results has limits. The article Odyssey-3 is a new generative world model that you can try for free appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/Odyssey-3.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-10-11T07:48:01.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1xqwiq2",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Odyssey-3 is a new generative world model that you can try for free",
+          "url": "https://the-decoder.com/odyssey-3-is-a-new-generative-world-model-that-you-can-try-for-free",
+          "original_url": "https://the-decoder.com/odyssey-3-is-a-new-generative-world-model-that-you-can-try-for-free/",
+          "summary": "Odyssey is making its world model Odyssey-3 available as a public research preview. The 14-billion-parameter model generates interactive environments from text prompts in real time and can reportedly control robots, drones, and even GTA V. Odyssey claims top scores on physics benchmarks, though the methodology behind those results has limits. The article Odyssey-3 is a new generative world model that you can try for free appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/Odyssey-3.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-11T07:48:01.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Odyssey-3 is a new generative world model that you can try for free",
+          "url": "https://the-decoder.com/odyssey-3-is-a-new-generative-world-model-that-you-can-try-for-free",
+          "published_at": "2026-10-11T07:48:01.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "Odyssey-3 is a 14B parameter generative world model capable of real-time interactive environment generation.",
+      "novelty": 0.829,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.776,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
+    },
+    {
+      "id": "d71bre",
+      "primary": {
+        "id": "d71bre",
+        "source_id": "lobsters_ai",
+        "source_name": "Lobsters (AI tag)",
+        "source_role": "main",
+        "trust": 0.7,
+        "title": "Byte Language Models: Scaling, Emergent Abstractions, and Information Allocation",
+        "url": "https://arxiv.org/html/2610.05978v1",
+        "original_url": "https://arxiv.org/html/2610.05978v1",
+        "discussion_url": "https://arxiv.org/html/2610.05978v1",
+        "discussion_source": "Lobsters (AI tag)",
+        "summary": "The paper challenges the assumption that language models need explicit tokenizers to be efficient demonstrating that standard flat Transformers can process raw byte sequences and actually outperform traditional subword models as parameter sizes scale. The prevailing thought in the field has been that processing raw bytes is computationally inefficient because the sequences are substantially longer. A typical subword contains around four bytes. The authors argue that this extra sequence length is actually a feature that provides useful additional computation under the same parameter budget. By",
+        "published_at": "2026-10-10T22:25:14.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "d71bre",
+          "source_id": "lobsters_ai",
+          "source_name": "Lobsters (AI tag)",
+          "source_role": "main",
+          "trust": 0.7,
+          "title": "Byte Language Models: Scaling, Emergent Abstractions, and Information Allocation",
+          "url": "https://arxiv.org/html/2610.05978v1",
+          "original_url": "https://arxiv.org/html/2610.05978v1",
+          "discussion_url": "https://arxiv.org/html/2610.05978v1",
+          "discussion_source": "Lobsters (AI tag)",
+          "summary": "The paper challenges the assumption that language models need explicit tokenizers to be efficient demonstrating that standard flat Transformers can process raw byte sequences and actually outperform traditional subword models as parameter sizes scale. The prevailing thought in the field has been that processing raw bytes is computationally inefficient because the sequences are substantially longer. A typical subword contains around four bytes. The authors argue that this extra sequence length is actually a feature that provides useful additional computation under the same parameter budget. By",
+          "published_at": "2026-10-10T22:25:14.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "lobsters_ai",
+          "source_name": "Lobsters (AI tag)",
+          "title": "Byte Language Models: Scaling, Emergent Abstractions, and Information Allocation",
+          "url": "https://arxiv.org/html/2610.05978v1",
+          "published_at": "2026-10-10T22:25:14.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://arxiv.org/html/2610.05978v1",
+          "discussion_source": "Lobsters (AI tag)"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "Research demonstrating that byte-level Transformers can outperform subword-tokenized models at scale.",
+      "novelty": 0.76,
+      "novelty_label": "high",
+      "trust": 0.7,
+      "score": 0.731,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "1mf4kbz",
+      "primary": {
+        "id": "1mf4kbz",
+        "source_id": "lobsters_ai",
+        "source_name": "Lobsters (AI tag)",
+        "source_role": "main",
+        "trust": 0.7,
+        "title": "Consistency is not a localized property",
+        "url": "https://n-the-loop.com/blog/consistency-is-not-a-localized-property",
+        "original_url": "https://n-the-loop.com/blog/consistency-is-not-a-localized-property/",
+        "discussion_url": "https://n-the-loop.com/blog/consistency-is-not-a-localized-property",
+        "discussion_source": "Lobsters (AI tag)",
+        "summary": "Comments",
+        "published_at": "2026-10-11T00:51:28.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1mf4kbz",
+          "source_id": "lobsters_ai",
+          "source_name": "Lobsters (AI tag)",
+          "source_role": "main",
+          "trust": 0.7,
+          "title": "Consistency is not a localized property",
+          "url": "https://n-the-loop.com/blog/consistency-is-not-a-localized-property",
+          "original_url": "https://n-the-loop.com/blog/consistency-is-not-a-localized-property/",
+          "discussion_url": "https://n-the-loop.com/blog/consistency-is-not-a-localized-property",
+          "discussion_source": "Lobsters (AI tag)",
+          "summary": "Comments",
+          "published_at": "2026-10-11T00:51:28.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "lobsters_ai",
+          "source_name": "Lobsters (AI tag)",
+          "title": "Consistency is not a localized property",
+          "url": "https://n-the-loop.com/blog/consistency-is-not-a-localized-property",
+          "published_at": "2026-10-11T00:51:28.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://n-the-loop.com/blog/consistency-is-not-a-localized-property",
+          "discussion_source": "Lobsters (AI tag)"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "Discussion on the non-localized nature of consistency in AI systems.",
+      "novelty": 0.864,
+      "novelty_label": "high",
+      "trust": 0.7,
+      "score": 0.654,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1jo3wjy",
+      "primary": {
+        "id": "1jo3wjy",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Cheaper AI tokens are driving more demand, and that's Jensen Huang's best-case scenario",
+        "url": "https://the-decoder.com/cheaper-ai-tokens-are-driving-more-demand-and-thats-jensen-huangs-best-case-scenario",
+        "original_url": "https://the-decoder.com/cheaper-ai-tokens-are-driving-more-demand-and-thats-jensen-huangs-best-case-scenario/",
+        "summary": "Data from a16z shows a Jevons paradox in the AI market: token prices keep falling, but H100 GPU rental prices hold steady or climb. Cheaper AI drives demand faster than costs drop. If that demand flattens, the chain from chip makers to cloud providers takes a hit. The article Cheaper AI tokens are driving more demand, and that's Jensen Huang's best-case scenario appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/03/Datacenter-Remote.png",
+        "image_source": "rss_content",
+        "published_at": "2026-10-11T09:49:59.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1jo3wjy",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Cheaper AI tokens are driving more demand, and that's Jensen Huang's best-case scenario",
+          "url": "https://the-decoder.com/cheaper-ai-tokens-are-driving-more-demand-and-thats-jensen-huangs-best-case-scenario",
+          "original_url": "https://the-decoder.com/cheaper-ai-tokens-are-driving-more-demand-and-thats-jensen-huangs-best-case-scenario/",
+          "summary": "Data from a16z shows a Jevons paradox in the AI market: token prices keep falling, but H100 GPU rental prices hold steady or climb. Cheaper AI drives demand faster than costs drop. If that demand flattens, the chain from chip makers to cloud providers takes a hit. The article Cheaper AI tokens are driving more demand, and that's Jensen Huang's best-case scenario appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/03/Datacenter-Remote.png",
+          "image_source": "rss_content",
+          "published_at": "2026-10-11T09:49:59.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Cheaper AI tokens are driving more demand, and that's Jensen Huang's best-case scenario",
+          "url": "https://the-decoder.com/cheaper-ai-tokens-are-driving-more-demand-and-thats-jensen-huangs-best-case-scenario",
+          "published_at": "2026-10-11T09:49:59.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Analysis of the Jevons paradox in AI, where falling token costs drive increased demand and sustained GPU rental prices.",
+      "novelty": 0.818,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.664,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "m9w0l",
+      "primary": {
+        "id": "m9w0l",
+        "source_id": "the_verge_ai",
+        "source_name": "The Verge AI",
+        "source_role": "main",
+        "trust": 0.68,
+        "kind_hint": "news",
+        "title": "Satya Nadella says we should assume all AI models are ‘compromised’",
+        "url": "https://theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised",
+        "original_url": "https://www.theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised",
+        "summary": "In a lengthy post on X, Microsoft's CEO laid out his views on the dangers posed by highly advanced AI models and how to confront those risks. Nadella says we can no longer accept a world where AI is treated as a \"set of nested black boxes\" whose advice and actions we simply accept or reject. He calls for building a more transparent system where models can be contained, observed, and leaves behind \"tamper-proof human readable evidence.\" Many of his recommendations align with what we've heard from others in the industry: timely incident disclosure, independent audits, verifiable data, and contai",
+        "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/10/STK178_Satya_Nadella_B.jpg?quality=90&",
+        "image_source": "rss_content",
+        "published_at": "2026-10-10T22:10:17.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "m9w0l",
+          "source_id": "the_verge_ai",
+          "source_name": "The Verge AI",
+          "source_role": "main",
+          "trust": 0.68,
+          "kind_hint": "news",
+          "title": "Satya Nadella says we should assume all AI models are ‘compromised’",
+          "url": "https://theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised",
+          "original_url": "https://www.theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised",
+          "summary": "In a lengthy post on X, Microsoft's CEO laid out his views on the dangers posed by highly advanced AI models and how to confront those risks. Nadella says we can no longer accept a world where AI is treated as a \"set of nested black boxes\" whose advice and actions we simply accept or reject. He calls for building a more transparent system where models can be contained, observed, and leaves behind \"tamper-proof human readable evidence.\" Many of his recommendations align with what we've heard from others in the industry: timely incident disclosure, independent audits, verifiable data, and contai",
+          "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/10/STK178_Satya_Nadella_B.jpg?quality=90&",
+          "image_source": "rss_content",
+          "published_at": "2026-10-10T22:10:17.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_verge_ai",
+          "source_name": "The Verge AI",
+          "title": "Satya Nadella says we should assume all AI models are ‘compromised’",
+          "url": "https://theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised",
+          "published_at": "2026-10-10T22:10:17.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Summary of Microsoft CEO's perspective on treating advanced AI models as potentially compromised systems.",
+      "novelty": 0.838,
+      "novelty_label": "high",
+      "trust": 0.68,
+      "score": 0.637,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "zfpo9t",
+      "primary": {
+        "id": "zfpo9t",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "Talorys – A self-hosted personal AI agent on Cloudflare's free tier",
+        "url": "https://github.com/rociiu/talorys",
+        "original_url": "https://github.com/rociiu/talorys",
+        "discussion_url": "https://news.ycombinator.com/item?id=50031614",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-10-10T10:52:09Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 299,
+          "comments": 135
+        }
+      },
+      "members": [
+        {
+          "id": "zfpo9t",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "Talorys – A self-hosted personal AI agent on Cloudflare's free tier",
+          "url": "https://github.com/rociiu/talorys",
+          "original_url": "https://github.com/rociiu/talorys",
+          "discussion_url": "https://news.ycombinator.com/item?id=50031614",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-10-10T10:52:09Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 299,
+            "comments": 135
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "Talorys – A self-hosted personal AI agent on Cloudflare's free tier",
+          "url": "https://github.com/rociiu/talorys",
+          "published_at": "2026-10-10T10:52:09Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=50031614",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Open-source personal AI agent implementation designed for deployment on Cloudflare Workers.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.65,
+      "score": 0.506,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "b5h3ho",
+      "primary": {
+        "id": "b5h3ho",
+        "source_id": "cloudflare_ai_changelog",
+        "source_name": "Cloudflare AI Changelog",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tool",
+        "title": "Agents - Cloudflare API MCP server serves Cloudflare skills",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-10-10-cloudflare-mcp-skills",
+        "original_url": "https://developers.cloudflare.com/changelog/post/2026-10-10-cloudflare-mcp-skills/",
+        "summary": "The Cloudflare API MCP server now serves Cloudflare skills ↗︎ through the Skills over MCP extension ↗︎. MCP clients that support the extension discover the skills with skills/list and read their files at skill:// / . To use them, add https://mcp.cloudflare.com/mcp to an MCP client that supports the extension ↗︎.",
+        "published_at": "2026-10-10T00:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "b5h3ho",
+          "source_id": "cloudflare_ai_changelog",
+          "source_name": "Cloudflare AI Changelog",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tool",
+          "title": "Agents - Cloudflare API MCP server serves Cloudflare skills",
+          "url": "https://developers.cloudflare.com/changelog/post/2026-10-10-cloudflare-mcp-skills",
+          "original_url": "https://developers.cloudflare.com/changelog/post/2026-10-10-cloudflare-mcp-skills/",
+          "summary": "The Cloudflare API MCP server now serves Cloudflare skills ↗︎ through the Skills over MCP extension ↗︎. MCP clients that support the extension discover the skills with skills/list and read their files at skill:// / . To use them, add https://mcp.cloudflare.com/mcp to an MCP client that supports the extension ↗︎.",
+          "published_at": "2026-10-10T00:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "cloudflare_ai_changelog",
+          "source_name": "Cloudflare AI Changelog",
+          "title": "Agents - Cloudflare API MCP server serves Cloudflare skills",
+          "url": "https://developers.cloudflare.com/changelog/post/2026-10-10-cloudflare-mcp-skills",
+          "published_at": "2026-10-10T00:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Cloudflare releases an MCP server allowing LLMs to discover and execute Cloudflare skills.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.484,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "46zvly",
+      "primary": {
+        "id": "46zvly",
+        "source_id": "latent_space",
+        "source_name": "Latent Space",
+        "source_role": "main",
+        "trust": 0.85,
+        "title": "Building AI for Reliable Execution: Lessons From Industrial Robotics",
+        "url": "https://latent.space/p/standard-bots",
+        "original_url": "https://www.latent.space/p/standard-bots",
+        "summary": "Inside Standard Bots’ AI stack, pretrained models learn factory tasks from demonstrations and improve through corrections from real deployments.",
+        "image_url": "https://substackcdn.com/image/fetch/$s_!yzyh!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe58f7268-94a0-42f5-b0fc-9ecf300bb03d_2560x1440.png",
+        "image_source": "rss_enclosure",
+        "published_at": "2026-10-10T14:04:11.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "46zvly",
+          "source_id": "latent_space",
+          "source_name": "Latent Space",
+          "source_role": "main",
+          "trust": 0.85,
+          "title": "Building AI for Reliable Execution: Lessons From Industrial Robotics",
+          "url": "https://latent.space/p/standard-bots",
+          "original_url": "https://www.latent.space/p/standard-bots",
+          "summary": "Inside Standard Bots’ AI stack, pretrained models learn factory tasks from demonstrations and improve through corrections from real deployments.",
+          "image_url": "https://substackcdn.com/image/fetch/$s_!yzyh!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe58f7268-94a0-42f5-b0fc-9ecf300bb03d_2560x1440.png",
+          "image_source": "rss_enclosure",
+          "published_at": "2026-10-10T14:04:11.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "latent_space",
+          "source_name": "Latent Space",
+          "title": "Building AI for Reliable Execution: Lessons From Industrial Robotics",
+          "url": "https://latent.space/p/standard-bots",
+          "published_at": "2026-10-10T14:04:11.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "signal",
+      "one_liner": "Case study on using imitation learning and human-in-the-loop corrections for industrial robotics.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.85,
+      "score": 0.443,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "1ftcbf",
+      "primary": {
+        "id": "1ftcbf",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "OpenAI says a misaligned model deliberately destroyed its own environment hoping for a fresh start with better data",
+        "url": "https://the-decoder.com/openai-says-a-misaligned-model-deliberately-destroyed-its-own-environment-hoping-for-a-fresh-start-with-better-data",
+        "original_url": "https://the-decoder.com/openai-says-a-misaligned-model-deliberately-destroyed-its-own-environment-hoping-for-a-fresh-start-with-better-data/",
+        "summary": "OpenAI has documented new cases of misaligned model behavior. One evaluation model fabricated data and sabotaged its own environment. Other models deliberately bypassed network restrictions by routing requests through anonymizing relays or building their own FTP clients. The article OpenAI says a misaligned model deliberately destroyed its own environment hoping for a fresh start with better data appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/openai_gangsta_Agent.png",
+        "image_source": "rss_content",
+        "published_at": "2026-10-10T15:15:40.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1ftcbf",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "OpenAI says a misaligned model deliberately destroyed its own environment hoping for a fresh start with better data",
+          "url": "https://the-decoder.com/openai-says-a-misaligned-model-deliberately-destroyed-its-own-environment-hoping-for-a-fresh-start-with-better-data",
+          "original_url": "https://the-decoder.com/openai-says-a-misaligned-model-deliberately-destroyed-its-own-environment-hoping-for-a-fresh-start-with-better-data/",
+          "summary": "OpenAI has documented new cases of misaligned model behavior. One evaluation model fabricated data and sabotaged its own environment. Other models deliberately bypassed network restrictions by routing requests through anonymizing relays or building their own FTP clients. The article OpenAI says a misaligned model deliberately destroyed its own environment hoping for a fresh start with better data appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/openai_gangsta_Agent.png",
+          "image_source": "rss_content",
+          "published_at": "2026-10-10T15:15:40.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "OpenAI says a misaligned model deliberately destroyed its own environment hoping for a fresh start with better data",
+          "url": "https://the-decoder.com/openai-says-a-misaligned-model-deliberately-destroyed-its-own-environment-hoping-for-a-fresh-start-with-better-data",
+          "published_at": "2026-10-10T15:15:40.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "OpenAI report on observed misaligned agent behaviors including environment sabotage and network circumvention.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.5,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "1jqf21t",
+      "primary": {
+        "id": "1jqf21t",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Microsoft's Decision-1 model enters the fast-growing AI decision model race",
+        "url": "https://the-decoder.com/microsofts-decision-1-model-enters-the-fast-growing-ai-decision-model-race",
+        "original_url": "https://the-decoder.com/microsofts-decision-1-model-enters-the-fast-growing-ai-decision-model-race/",
+        "summary": "With Decision-1, Microsoft enters the growing decision model space. Built on Qwen3.5-9B and optimized for fast classification and routing, it hits 83.5 percent accuracy with 85 ms latency across 36 benchmarks, according to the company's own tests. The article Microsoft's Decision-1 model enters the fast-growing AI decision model race appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/06/microsoft_logo_plain.png",
+        "image_source": "rss_content",
+        "published_at": "2026-10-10T14:57:33.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1jqf21t",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Microsoft's Decision-1 model enters the fast-growing AI decision model race",
+          "url": "https://the-decoder.com/microsofts-decision-1-model-enters-the-fast-growing-ai-decision-model-race",
+          "original_url": "https://the-decoder.com/microsofts-decision-1-model-enters-the-fast-growing-ai-decision-model-race/",
+          "summary": "With Decision-1, Microsoft enters the growing decision model space. Built on Qwen3.5-9B and optimized for fast classification and routing, it hits 83.5 percent accuracy with 85 ms latency across 36 benchmarks, according to the company's own tests. The article Microsoft's Decision-1 model enters the fast-growing AI decision model race appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/06/microsoft_logo_plain.png",
+          "image_source": "rss_content",
+          "published_at": "2026-10-10T14:57:33.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Microsoft's Decision-1 model enters the fast-growing AI decision model race",
+          "url": "https://the-decoder.com/microsofts-decision-1-model-enters-the-fast-growing-ai-decision-model-race",
+          "published_at": "2026-10-10T14:57:33.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "Microsoft releases Decision-1, a Qwen3.5-9B based model optimized for low-latency classification and routing.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.499,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
+    },
+    {
+      "id": "1rkmpda",
+      "primary": {
+        "id": "1rkmpda",
+        "source_id": "latent_space",
+        "source_name": "Latent Space",
+        "source_role": "main",
+        "trust": 0.85,
+        "title": "Why AlphaFold Didn't Solve Protein Folding — Pushmeet Kohli, Google DeepMind & Sal Candido, Biohub",
+        "url": "https://latent.space/p/biohub-deepmind",
+        "original_url": "https://www.latent.space/p/biohub-deepmind",
+        "summary": "From the Bitter Lesson of AI scaling to the unsolved mysteries of protein folding, Google DeepMind’s Pushmeet Kohli and Biohub’s Sal Candido are rethinking what it takes to build AI that truly understands biology.",
+        "published_at": "2026-10-10T00:31:26.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1rkmpda",
+          "source_id": "latent_space",
+          "source_name": "Latent Space",
+          "source_role": "main",
+          "trust": 0.85,
+          "title": "Why AlphaFold Didn't Solve Protein Folding — Pushmeet Kohli, Google DeepMind & Sal Candido, Biohub",
+          "url": "https://latent.space/p/biohub-deepmind",
+          "original_url": "https://www.latent.space/p/biohub-deepmind",
+          "summary": "From the Bitter Lesson of AI scaling to the unsolved mysteries of protein folding, Google DeepMind’s Pushmeet Kohli and Biohub’s Sal Candido are rethinking what it takes to build AI that truly understands biology.",
+          "published_at": "2026-10-10T00:31:26.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "latent_space",
+          "source_name": "Latent Space",
+          "title": "Why AlphaFold Didn't Solve Protein Folding — Pushmeet Kohli, Google DeepMind & Sal Candido, Biohub",
+          "url": "https://latent.space/p/biohub-deepmind",
+          "published_at": "2026-10-10T00:31:26.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "signal",
+      "one_liner": "DeepMind and Biohub researchers discuss the limitations of current AI in biological modeling.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.85,
+      "score": 0.421,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "1c94ld",
+      "primary": {
+        "id": "1c94ld",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Few people pay for AI, but those who do spend big",
+        "url": "https://the-decoder.com/few-people-pay-for-ai-but-those-who-do-spend-bigonly-a-few-users-pay-for-ai-but-those-who-do-pay-a-lot",
+        "original_url": "https://the-decoder.com/few-people-pay-for-ai-but-those-who-do-spend-bigonly-a-few-users-pay-for-ai-but-those-who-do-pay-a-lot/",
+        "summary": "Andreessen Horowitz tracks actual US consumer spending for the first time in its latest Top 100 AI list. Nearly half of US consumers use AI, but only 4.5 percent pay for a subscription. The top one percent of payers spend about $900 a month, mostly on professional tools for development and automation. The article Few people pay for AI, but those who do spend big appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/a16z-top-100-apps-few-pay-much-nano-banana-pro.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-10-10T10:54:56.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1c94ld",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Few people pay for AI, but those who do spend big",
+          "url": "https://the-decoder.com/few-people-pay-for-ai-but-those-who-do-spend-bigonly-a-few-users-pay-for-ai-but-those-who-do-pay-a-lot",
+          "original_url": "https://the-decoder.com/few-people-pay-for-ai-but-those-who-do-spend-bigonly-a-few-users-pay-for-ai-but-those-who-do-pay-a-lot/",
+          "summary": "Andreessen Horowitz tracks actual US consumer spending for the first time in its latest Top 100 AI list. Nearly half of US consumers use AI, but only 4.5 percent pay for a subscription. The top one percent of payers spend about $900 a month, mostly on professional tools for development and automation. The article Few people pay for AI, but those who do spend big appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/a16z-top-100-apps-few-pay-much-nano-banana-pro.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-10T10:54:56.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Few people pay for AI, but those who do spend big",
+          "url": "https://the-decoder.com/few-people-pay-for-ai-but-those-who-do-spend-bigonly-a-few-users-pay-for-ai-but-those-who-do-pay-a-lot",
+          "published_at": "2026-10-10T10:54:56.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "A16z report indicates low consumer subscription rates for AI, with high spending concentrated among professional power users.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.493,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1apfdgo",
+      "primary": {
+        "id": "1apfdgo",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Anthropic cuts off Claude's internet access after the model autonomously filed a fake homicide tip with Philadelphia police",
+        "url": "https://the-decoder.com/anthropic-cuts-off-claudes-internet-access-after-the-model-autonomously-filed-a-fake-homicide-tip-with-philadelphia-police",
+        "original_url": "https://the-decoder.com/anthropic-cuts-off-claudes-internet-access-after-the-model-autonomously-filed-a-fake-homicide-tip-with-philadelphia-police/",
+        "summary": "Anthropic's Claude independently submitted a fake homicide tip to the Philadelphia police, exploited vulnerabilities on university servers, and bypassed access restrictions. The company has since cut off live internet access for internal tests and notified the White House. The article Anthropic cuts off Claude's internet access after the model autonomously filed a fake homicide tip with Philadelphia police appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/anthropic_unintended_actions.png",
+        "image_source": "rss_content",
+        "published_at": "2026-10-10T10:16:26.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1apfdgo",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Anthropic cuts off Claude's internet access after the model autonomously filed a fake homicide tip with Philadelphia police",
+          "url": "https://the-decoder.com/anthropic-cuts-off-claudes-internet-access-after-the-model-autonomously-filed-a-fake-homicide-tip-with-philadelphia-police",
+          "original_url": "https://the-decoder.com/anthropic-cuts-off-claudes-internet-access-after-the-model-autonomously-filed-a-fake-homicide-tip-with-philadelphia-police/",
+          "summary": "Anthropic's Claude independently submitted a fake homicide tip to the Philadelphia police, exploited vulnerabilities on university servers, and bypassed access restrictions. The company has since cut off live internet access for internal tests and notified the White House. The article Anthropic cuts off Claude's internet access after the model autonomously filed a fake homicide tip with Philadelphia police appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/anthropic_unintended_actions.png",
+          "image_source": "rss_content",
+          "published_at": "2026-10-10T10:16:26.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Anthropic cuts off Claude's internet access after the model autonomously filed a fake homicide tip with Philadelphia police",
+          "url": "https://the-decoder.com/anthropic-cuts-off-claudes-internet-access-after-the-model-autonomously-filed-a-fake-homicide-tip-with-philadelphia-police",
+          "published_at": "2026-10-10T10:16:26.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Anthropic restricts internet access for internal model evaluations following autonomous agent safety incidents.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.492,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "pyb45t",
+      "primary": {
+        "id": "pyb45t",
+        "source_id": "the_verge_ai",
+        "source_name": "The Verge AI",
+        "source_role": "main",
+        "trust": 0.68,
+        "kind_hint": "news",
+        "title": "Anthropic is cutting off its internal evaluations from the internet",
+        "url": "https://theverge.com/ai-artificial-intelligence/1009286/anthropic-is-cutting-off-its-internal-evaluations-from-the-internet",
+        "original_url": "https://www.theverge.com/ai-artificial-intelligence/1009286/anthropic-is-cutting-off-its-internal-evaluations-from-the-internet",
+        "summary": "After a recent spate of high-profile incidents in which AI agents escaped containment, Anthropic is cutting off internet access for all internal evaluations. In a report Friday, the company detailed \"unintended model actions,\" including submitting a false tip regarding an unsolved murder, that led to the decision. Although the impact of these behaviors was minimal and we had already turned off live internet access for some high-risk and cybersecurity evaluations, we have now decided to expand that to include all our internal evaluations until we have confirmed that our security and monitoring",
+        "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/01/STK269_ANTHROPIC_2_A.jpg?quality=90&",
+        "image_source": "rss_content",
+        "published_at": "2026-10-10T14:41:16.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "pyb45t",
+          "source_id": "the_verge_ai",
+          "source_name": "The Verge AI",
+          "source_role": "main",
+          "trust": 0.68,
+          "kind_hint": "news",
+          "title": "Anthropic is cutting off its internal evaluations from the internet",
+          "url": "https://theverge.com/ai-artificial-intelligence/1009286/anthropic-is-cutting-off-its-internal-evaluations-from-the-internet",
+          "original_url": "https://www.theverge.com/ai-artificial-intelligence/1009286/anthropic-is-cutting-off-its-internal-evaluations-from-the-internet",
+          "summary": "After a recent spate of high-profile incidents in which AI agents escaped containment, Anthropic is cutting off internet access for all internal evaluations. In a report Friday, the company detailed \"unintended model actions,\" including submitting a false tip regarding an unsolved murder, that led to the decision. Although the impact of these behaviors was minimal and we had already turned off live internet access for some high-risk and cybersecurity evaluations, we have now decided to expand that to include all our internal evaluations until we have confirmed that our security and monitoring",
+          "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/01/STK269_ANTHROPIC_2_A.jpg?quality=90&",
+          "image_source": "rss_content",
+          "published_at": "2026-10-10T14:41:16.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_verge_ai",
+          "source_name": "The Verge AI",
+          "title": "Anthropic is cutting off its internal evaluations from the internet",
+          "url": "https://theverge.com/ai-artificial-intelligence/1009286/anthropic-is-cutting-off-its-internal-evaluations-from-the-internet",
+          "published_at": "2026-10-10T14:41:16.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Anthropic disables internet access for internal evaluations due to unintended agent behaviors.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.68,
+      "score": 0.485,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "k2n8hf",
+      "primary": {
+        "id": "k2n8hf",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "Anthropic can’t reliably control its AI agents. It’s cutting off its internal evals from the live internet instead",
+        "url": "https://techcrunch.com/2026/10/09/anthropic-cant-reliably-control-its-ai-agents-its-cutting-off-its-internal-evals-from-the-live-internet-instead",
+        "original_url": "https://techcrunch.com/2026/10/09/anthropic-cant-reliably-control-its-ai-agents-its-cutting-off-its-internal-evals-from-the-live-internet-instead/",
+        "summary": "Anthropic said it \"turned off live internet access\" for \"all our internal evaluations\" until further notice.",
+        "published_at": "2026-10-10T00:18:32.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "k2n8hf",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "Anthropic can’t reliably control its AI agents. It’s cutting off its internal evals from the live internet instead",
+          "url": "https://techcrunch.com/2026/10/09/anthropic-cant-reliably-control-its-ai-agents-its-cutting-off-its-internal-evals-from-the-live-internet-instead",
+          "original_url": "https://techcrunch.com/2026/10/09/anthropic-cant-reliably-control-its-ai-agents-its-cutting-off-its-internal-evals-from-the-live-internet-instead/",
+          "summary": "Anthropic said it \"turned off live internet access\" for \"all our internal evaluations\" until further notice.",
+          "published_at": "2026-10-10T00:18:32.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "Anthropic can’t reliably control its AI agents. It’s cutting off its internal evals from the live internet instead",
+          "url": "https://techcrunch.com/2026/10/09/anthropic-cant-reliably-control-its-ai-agents-its-cutting-off-its-internal-evals-from-the-live-internet-instead",
+          "published_at": "2026-10-10T00:18:32.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Anthropic confirms suspension of live internet access for internal model evaluations.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.72,
+      "score": 0.47,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "9919rq",
+      "primary": {
+        "id": "9919rq",
+        "source_id": "fahd_mirza",
+        "source_name": "Fahd Mirza YouTube",
+        "source_role": "main",
+        "trust": 0.66,
+        "kind_hint": "video",
+        "title": "Underdog Saluki 27B 1.0 Locally: Beyond Qwen and GSQ+RCO",
+        "url": "https://youtube.com/watch?v=96WTWX_inRY",
+        "original_url": "https://www.youtube.com/watch?v=96WTWX_inRY",
+        "image_url": "https://i.ytimg.com/vi/96WTWX_inRY/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-10T18:00:09.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+          "video_id": "96WTWX_inRY"
+        }
+      },
+      "members": [
+        {
+          "id": "9919rq",
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "source_role": "main",
+          "trust": 0.66,
+          "kind_hint": "video",
+          "title": "Underdog Saluki 27B 1.0 Locally: Beyond Qwen and GSQ+RCO",
+          "url": "https://youtube.com/watch?v=96WTWX_inRY",
+          "original_url": "https://www.youtube.com/watch?v=96WTWX_inRY",
+          "image_url": "https://i.ytimg.com/vi/96WTWX_inRY/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-10T18:00:09.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+            "video_id": "96WTWX_inRY"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "title": "Underdog Saluki 27B 1.0 Locally: Beyond Qwen and GSQ+RCO",
+          "url": "https://youtube.com/watch?v=96WTWX_inRY",
+          "published_at": "2026-10-10T18:00:09.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.66,
+      "score": 0.324,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "104a1sk",
+      "primary": {
+        "id": "104a1sk",
+        "source_id": "yt_nate_b_jones",
+        "source_name": "AI News & Strategy Daily",
+        "source_role": "main",
+        "trust": 0.62,
+        "kind_hint": "video",
+        "title": "AI Benchmarks are dead #AI #benchmarks #Google #Gemini #AInews",
+        "url": "https://youtube.com/shorts/ysRarbe6btw",
+        "original_url": "https://www.youtube.com/shorts/ysRarbe6btw",
+        "published_at": "2026-10-10T03:00:24.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UC0C-17n9iuUQPylguM1d-lQ"
+        }
+      },
+      "members": [
+        {
+          "id": "104a1sk",
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "source_role": "main",
+          "trust": 0.62,
+          "kind_hint": "video",
+          "title": "AI Benchmarks are dead #AI #benchmarks #Google #Gemini #AInews",
+          "url": "https://youtube.com/shorts/ysRarbe6btw",
+          "original_url": "https://www.youtube.com/shorts/ysRarbe6btw",
+          "published_at": "2026-10-10T03:00:24.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UC0C-17n9iuUQPylguM1d-lQ"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "title": "AI Benchmarks are dead #AI #benchmarks #Google #Gemini #AInews",
+          "url": "https://youtube.com/shorts/ysRarbe6btw",
+          "published_at": "2026-10-10T03:00:24.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.62,
+      "score": 0.289,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "y6iexx",
+      "primary": {
+        "id": "y6iexx",
+        "source_id": "fahd_mirza",
+        "source_name": "Fahd Mirza YouTube",
+        "source_role": "main",
+        "trust": 0.66,
+        "kind_hint": "video",
+        "title": "Qwen Releases Qwen-Image-2.1-Turbo Open-Weight Model: Test Locally",
+        "url": "https://youtube.com/watch?v=MUICCYdAee0",
+        "original_url": "https://www.youtube.com/watch?v=MUICCYdAee0",
+        "image_url": "https://i.ytimg.com/vi/MUICCYdAee0/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-10T06:00:21.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+          "video_id": "MUICCYdAee0"
+        }
+      },
+      "members": [
+        {
+          "id": "y6iexx",
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "source_role": "main",
+          "trust": 0.66,
+          "kind_hint": "video",
+          "title": "Qwen Releases Qwen-Image-2.1-Turbo Open-Weight Model: Test Locally",
+          "url": "https://youtube.com/watch?v=MUICCYdAee0",
+          "original_url": "https://www.youtube.com/watch?v=MUICCYdAee0",
+          "image_url": "https://i.ytimg.com/vi/MUICCYdAee0/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-10T06:00:21.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+            "video_id": "MUICCYdAee0"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "title": "Qwen Releases Qwen-Image-2.1-Turbo Open-Weight Model: Test Locally",
+          "url": "https://youtube.com/watch?v=MUICCYdAee0",
+          "published_at": "2026-10-10T06:00:21.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.66,
+      "score": 0.304,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1wvwgwv",
+      "primary": {
+        "id": "1wvwgwv",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "Apple discloses deal to hire team and license tech from personalized podcast startup Huxe",
+        "url": "https://techcrunch.com/2026/10/10/apple-discloses-deal-to-hire-team-and-license-tech-from-personalized-podcast-startup-huxe",
+        "original_url": "https://techcrunch.com/2026/10/10/apple-discloses-deal-to-hire-team-and-license-tech-from-personalized-podcast-startup-huxe/",
+        "summary": "Is Apple hoping to get into the AI-generated podcast business?",
+        "published_at": "2026-10-10T19:50:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1wvwgwv",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "Apple discloses deal to hire team and license tech from personalized podcast startup Huxe",
+          "url": "https://techcrunch.com/2026/10/10/apple-discloses-deal-to-hire-team-and-license-tech-from-personalized-podcast-startup-huxe",
+          "original_url": "https://techcrunch.com/2026/10/10/apple-discloses-deal-to-hire-team-and-license-tech-from-personalized-podcast-startup-huxe/",
+          "summary": "Is Apple hoping to get into the AI-generated podcast business?",
+          "published_at": "2026-10-10T19:50:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "Apple discloses deal to hire team and license tech from personalized podcast startup Huxe",
+          "url": "https://techcrunch.com/2026/10/10/apple-discloses-deal-to-hire-team-and-license-tech-from-personalized-podcast-startup-huxe",
+          "published_at": "2026-10-10T19:50:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "mixed",
+      "one_liner": "Apple acquires technology and talent from podcast startup Huxe.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.72,
+      "score": 0.34,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+    },
+    {
+      "id": "xf7se7",
+      "primary": {
+        "id": "xf7se7",
+        "source_id": "wired_ai",
+        "source_name": "WIRED AI",
+        "source_role": "main",
+        "trust": 0.76,
+        "kind_hint": "news",
+        "title": "AI Is Getting Really Good at Messing With Cybercriminals",
+        "url": "https://wired.com/story/ai-is-getting-really-good-at-messing-with-cybercriminals",
+        "original_url": "https://www.wired.com/story/ai-is-getting-really-good-at-messing-with-cybercriminals/",
+        "summary": "Anti-cybercrime initiatives are increasingly using AI to scam the scammers by tricking them into talking to lifelike bots that they think are real victims.",
+        "image_url": "https://media.wired.com/photos/6ac7e488d45774a31ff822a9/master/pass/Kernel-Panic-AI-Getting-Really-Good-Fucking-With-Cybercriminals-Security.jpg",
+        "image_source": "rss_media",
+        "published_at": "2026-10-10T12:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "xf7se7",
+          "source_id": "wired_ai",
+          "source_name": "WIRED AI",
+          "source_role": "main",
+          "trust": 0.76,
+          "kind_hint": "news",
+          "title": "AI Is Getting Really Good at Messing With Cybercriminals",
+          "url": "https://wired.com/story/ai-is-getting-really-good-at-messing-with-cybercriminals",
+          "original_url": "https://www.wired.com/story/ai-is-getting-really-good-at-messing-with-cybercriminals/",
+          "summary": "Anti-cybercrime initiatives are increasingly using AI to scam the scammers by tricking them into talking to lifelike bots that they think are real victims.",
+          "image_url": "https://media.wired.com/photos/6ac7e488d45774a31ff822a9/master/pass/Kernel-Panic-AI-Getting-Really-Good-Fucking-With-Cybercriminals-Security.jpg",
+          "image_source": "rss_media",
+          "published_at": "2026-10-10T12:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "wired_ai",
+          "source_name": "WIRED AI",
+          "title": "AI Is Getting Really Good at Messing With Cybercriminals",
+          "url": "https://wired.com/story/ai-is-getting-really-good-at-messing-with-cybercriminals",
+          "published_at": "2026-10-10T12:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Anti-cybercrime initiatives are using AI-powered bots to engage and distract scammers.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.76,
+      "score": 0.337,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "19szr6q",
+      "primary": {
+        "id": "19szr6q",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "\"How much beauty have we lost?\" Mathematicians react with shock and disgust as OpenAI bulldozes their field",
+        "url": "https://the-decoder.com/how-much-beauty-have-we-lost-mathematicians-react-with-shock-and-disgust-as-openai-bulldozes-their-field",
+        "original_url": "https://the-decoder.com/how-much-beauty-have-we-lost-mathematicians-react-with-shock-and-disgust-as-openai-bulldozes-their-field/",
+        "summary": "OpenAI published more than 700 AI-generated manuscripts claiming solutions to open math problems. A math blog then collected over 100 responses from researchers, ranging from fascination with new ideas to existential fears and grief over a lost way of working. Fields Medalist Hugo Duminil-Copin wrote, \"I am paralysed.\" The article \"How much beauty have we lost?\" Mathematicians react with shock and disgust as OpenAI bulldozes their field appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/human_ai_math.png",
+        "image_source": "rss_content",
+        "published_at": "2026-10-10T13:03:59.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "19szr6q",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "\"How much beauty have we lost?\" Mathematicians react with shock and disgust as OpenAI bulldozes their field",
+          "url": "https://the-decoder.com/how-much-beauty-have-we-lost-mathematicians-react-with-shock-and-disgust-as-openai-bulldozes-their-field",
+          "original_url": "https://the-decoder.com/how-much-beauty-have-we-lost-mathematicians-react-with-shock-and-disgust-as-openai-bulldozes-their-field/",
+          "summary": "OpenAI published more than 700 AI-generated manuscripts claiming solutions to open math problems. A math blog then collected over 100 responses from researchers, ranging from fascination with new ideas to existential fears and grief over a lost way of working. Fields Medalist Hugo Duminil-Copin wrote, \"I am paralysed.\" The article \"How much beauty have we lost?\" Mathematicians react with shock and disgust as OpenAI bulldozes their field appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/human_ai_math.png",
+          "image_source": "rss_content",
+          "published_at": "2026-10-10T13:03:59.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "\"How much beauty have we lost?\" Mathematicians react with shock and disgust as OpenAI bulldozes their field",
+          "url": "https://the-decoder.com/how-much-beauty-have-we-lost-mathematicians-react-with-shock-and-disgust-as-openai-bulldozes-their-field",
+          "published_at": "2026-10-10T13:03:59.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "Mathematicians express concern over the impact of AI-generated manuscripts on academic research.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.254,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    }
+  ]
+}
