@@ -1,0 +1,675 @@
+{
+  "generated_at": "2026-10-13T00:39:38.623Z",
+  "last_successful_generated_at": "2026-10-13T00:39:38.623Z",
+  "refresh_status": "partial",
+  "classification_mode": "deterministic",
+  "window_hours": 720,
+  "source_total": 7,
+  "source_ok": 2,
+  "source_failed": 5,
+  "failed_sources": [
+    {
+      "id": "yt_deeplearning_ai",
+      "name": "DeepLearning.AI YouTube",
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCcIXc5mJsHVYTZR1maL5l9w"
+    },
+    {
+      "id": "yt_google_deepmind",
+      "name": "Google DeepMind YouTube",
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCP7jMXSY2xbc3KCAE0MHQ-A"
+    },
+    {
+      "id": "yt_openai",
+      "name": "OpenAI YouTube",
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A"
+    },
+    {
+      "id": "yt_google_developers",
+      "name": "Google for Developers YouTube",
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UC_x5XG1OV2P6uZZ5FSM9Ttw"
+    },
+    {
+      "id": "yt_microsoft_365_developer",
+      "name": "Microsoft 365 Developer YouTube",
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCV_6HOhwxYLXAGd-JOqKPoQ"
+    }
+  ],
+  "source_health": [
+    {
+      "id": "yt_deeplearning_ai",
+      "name": "DeepLearning.AI YouTube",
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCcIXc5mJsHVYTZR1maL5l9w",
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "yt_google_deepmind",
+      "name": "Google DeepMind YouTube",
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCP7jMXSY2xbc3KCAE0MHQ-A",
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "yt_openai",
+      "name": "OpenAI YouTube",
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A",
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "yt_nvidia_developer",
+      "name": "NVIDIA Developer YouTube",
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 6,
+      "stale_count": 0,
+      "oldest_published_at": "2026-10-01T17:10:41.000Z",
+      "newest_published_at": "2026-10-08T23:43:42.000Z"
+    },
+    {
+      "id": "yt_huggingface",
+      "name": "Hugging Face YouTube",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 2,
+      "stale_count": 3,
+      "oldest_published_at": "2026-08-17T03:15:35.000Z",
+      "newest_published_at": "2026-10-12T04:31:24.000Z"
+    },
+    {
+      "id": "yt_google_developers",
+      "name": "Google for Developers YouTube",
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UC_x5XG1OV2P6uZZ5FSM9Ttw",
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "yt_microsoft_365_developer",
+      "name": "Microsoft 365 Developer YouTube",
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCV_6HOhwxYLXAGd-JOqKPoQ",
+      "fresh_count": 0,
+      "stale_count": 0
+    }
+  ],
+  "count": 8,
+  "clusters": [
+    {
+      "id": "6o3ee",
+      "primary": {
+        "id": "6o3ee",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "Customizing Vertical Voice Agents with ASR and LLM Fine-Tuning | Nemotron Labs",
+        "url": "https://youtube.com/watch?v=F_glNmFP_5M",
+        "original_url": "https://www.youtube.com/watch?v=F_glNmFP_5M",
+        "image_url": "https://i.ytimg.com/vi/F_glNmFP_5M/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-08T21:41:49.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "F_glNmFP_5M"
+        }
+      },
+      "members": [
+        {
+          "id": "6o3ee",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "Customizing Vertical Voice Agents with ASR and LLM Fine-Tuning | Nemotron Labs",
+          "url": "https://youtube.com/watch?v=F_glNmFP_5M",
+          "original_url": "https://www.youtube.com/watch?v=F_glNmFP_5M",
+          "image_url": "https://i.ytimg.com/vi/F_glNmFP_5M/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-08T21:41:49.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "F_glNmFP_5M"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "Customizing Vertical Voice Agents with ASR and LLM Fine-Tuning | Nemotron Labs",
+          "url": "https://youtube.com/watch?v=F_glNmFP_5M",
+          "published_at": "2026-10-08T21:41:49.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.208,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.525,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "h2mjrd",
+      "primary": {
+        "id": "h2mjrd",
+        "source_id": "yt_huggingface",
+        "source_name": "Hugging Face YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "Build a Business Dashboard with AI in MINUTES (for dummies...)",
+        "url": "https://youtube.com/watch?v=44RXU8Cxoas",
+        "original_url": "https://www.youtube.com/watch?v=44RXU8Cxoas",
+        "image_url": "https://i.ytimg.com/vi/44RXU8Cxoas/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-12T04:31:24.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
+          "video_id": "44RXU8Cxoas"
+        }
+      },
+      "members": [
+        {
+          "id": "h2mjrd",
+          "source_id": "yt_huggingface",
+          "source_name": "Hugging Face YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "Build a Business Dashboard with AI in MINUTES (for dummies...)",
+          "url": "https://youtube.com/watch?v=44RXU8Cxoas",
+          "original_url": "https://www.youtube.com/watch?v=44RXU8Cxoas",
+          "image_url": "https://i.ytimg.com/vi/44RXU8Cxoas/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-12T04:31:24.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
+            "video_id": "44RXU8Cxoas"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_huggingface",
+          "source_name": "Hugging Face YouTube",
+          "title": "Build a Business Dashboard with AI in MINUTES (for dummies...)",
+          "url": "https://youtube.com/watch?v=44RXU8Cxoas",
+          "published_at": "2026-10-12T04:31:24.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.509,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "h2hvsa",
+      "primary": {
+        "id": "h2hvsa",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "How H-Company Optimizes VLM Serving for Computer Use Agents With NVIDIA Dynamo",
+        "url": "https://youtube.com/watch?v=eXlgMVAm28I",
+        "original_url": "https://www.youtube.com/watch?v=eXlgMVAm28I",
+        "image_url": "https://i.ytimg.com/vi/eXlgMVAm28I/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-08T23:43:42.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "eXlgMVAm28I"
+        }
+      },
+      "members": [
+        {
+          "id": "h2hvsa",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "How H-Company Optimizes VLM Serving for Computer Use Agents With NVIDIA Dynamo",
+          "url": "https://youtube.com/watch?v=eXlgMVAm28I",
+          "original_url": "https://www.youtube.com/watch?v=eXlgMVAm28I",
+          "image_url": "https://i.ytimg.com/vi/eXlgMVAm28I/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-08T23:43:42.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "eXlgMVAm28I"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "How H-Company Optimizes VLM Serving for Computer Use Agents With NVIDIA Dynamo",
+          "url": "https://youtube.com/watch?v=eXlgMVAm28I",
+          "published_at": "2026-10-08T23:43:42.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.463,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1wjp1wx",
+      "primary": {
+        "id": "1wjp1wx",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "What's New in CUDA 13.4",
+        "url": "https://youtube.com/watch?v=HP7KfbFlcOY",
+        "original_url": "https://www.youtube.com/watch?v=HP7KfbFlcOY",
+        "image_url": "https://i.ytimg.com/vi/HP7KfbFlcOY/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-08T07:33:49.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "HP7KfbFlcOY"
+        }
+      },
+      "members": [
+        {
+          "id": "1wjp1wx",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "What's New in CUDA 13.4",
+          "url": "https://youtube.com/watch?v=HP7KfbFlcOY",
+          "original_url": "https://www.youtube.com/watch?v=HP7KfbFlcOY",
+          "image_url": "https://i.ytimg.com/vi/HP7KfbFlcOY/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-08T07:33:49.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "HP7KfbFlcOY"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "What's New in CUDA 13.4",
+          "url": "https://youtube.com/watch?v=HP7KfbFlcOY",
+          "published_at": "2026-10-08T07:33:49.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.463,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1uatb9b",
+      "primary": {
+        "id": "1uatb9b",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "How to Deploy a Standalone VLM Kiosk on NVIDIA Jetson with Codex",
+        "url": "https://youtube.com/watch?v=r_VP4E_Y3as",
+        "original_url": "https://www.youtube.com/watch?v=r_VP4E_Y3as",
+        "image_url": "https://i.ytimg.com/vi/r_VP4E_Y3as/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-07T19:32:24.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "r_VP4E_Y3as"
+        }
+      },
+      "members": [
+        {
+          "id": "1uatb9b",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "How to Deploy a Standalone VLM Kiosk on NVIDIA Jetson with Codex",
+          "url": "https://youtube.com/watch?v=r_VP4E_Y3as",
+          "original_url": "https://www.youtube.com/watch?v=r_VP4E_Y3as",
+          "image_url": "https://i.ytimg.com/vi/r_VP4E_Y3as/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-07T19:32:24.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "r_VP4E_Y3as"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "How to Deploy a Standalone VLM Kiosk on NVIDIA Jetson with Codex",
+          "url": "https://youtube.com/watch?v=r_VP4E_Y3as",
+          "published_at": "2026-10-07T19:32:24.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.463,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "10fuc05",
+      "primary": {
+        "id": "10fuc05",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "How to Set Up NVIDIA Jetson for Remote AI Development with Codex",
+        "url": "https://youtube.com/watch?v=CLGaG0JeUBI",
+        "original_url": "https://www.youtube.com/watch?v=CLGaG0JeUBI",
+        "image_url": "https://i.ytimg.com/vi/CLGaG0JeUBI/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-02T18:56:52.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "CLGaG0JeUBI"
+        }
+      },
+      "members": [
+        {
+          "id": "10fuc05",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "How to Set Up NVIDIA Jetson for Remote AI Development with Codex",
+          "url": "https://youtube.com/watch?v=CLGaG0JeUBI",
+          "original_url": "https://www.youtube.com/watch?v=CLGaG0JeUBI",
+          "image_url": "https://i.ytimg.com/vi/CLGaG0JeUBI/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-02T18:56:52.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "CLGaG0JeUBI"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "How to Set Up NVIDIA Jetson for Remote AI Development with Codex",
+          "url": "https://youtube.com/watch?v=CLGaG0JeUBI",
+          "published_at": "2026-10-02T18:56:52.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.463,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "r0s3fc",
+      "primary": {
+        "id": "r0s3fc",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "Build Visual AI Agents From a Prompt With NVIDIA Cosmos and VSS 3.3",
+        "url": "https://youtube.com/watch?v=PQJKs1dyK7I",
+        "original_url": "https://www.youtube.com/watch?v=PQJKs1dyK7I",
+        "image_url": "https://i.ytimg.com/vi/PQJKs1dyK7I/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-01T17:10:41.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "PQJKs1dyK7I"
+        }
+      },
+      "members": [
+        {
+          "id": "r0s3fc",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "Build Visual AI Agents From a Prompt With NVIDIA Cosmos and VSS 3.3",
+          "url": "https://youtube.com/watch?v=PQJKs1dyK7I",
+          "original_url": "https://www.youtube.com/watch?v=PQJKs1dyK7I",
+          "image_url": "https://i.ytimg.com/vi/PQJKs1dyK7I/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-01T17:10:41.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "PQJKs1dyK7I"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "Build Visual AI Agents From a Prompt With NVIDIA Cosmos and VSS 3.3",
+          "url": "https://youtube.com/watch?v=PQJKs1dyK7I",
+          "published_at": "2026-10-01T17:10:41.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.463,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "13b9b22",
+      "primary": {
+        "id": "13b9b22",
+        "source_id": "yt_huggingface",
+        "source_name": "Hugging Face YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "Transformers.js v4.3: Structured Output in the browser",
+        "url": "https://youtube.com/watch?v=InnVG6pOPpM",
+        "original_url": "https://www.youtube.com/watch?v=InnVG6pOPpM",
+        "image_url": "https://i.ytimg.com/vi/InnVG6pOPpM/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-09-16T07:49:24.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
+          "video_id": "InnVG6pOPpM"
+        }
+      },
+      "members": [
+        {
+          "id": "13b9b22",
+          "source_id": "yt_huggingface",
+          "source_name": "Hugging Face YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "Transformers.js v4.3: Structured Output in the browser",
+          "url": "https://youtube.com/watch?v=InnVG6pOPpM",
+          "original_url": "https://www.youtube.com/watch?v=InnVG6pOPpM",
+          "image_url": "https://i.ytimg.com/vi/InnVG6pOPpM/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-09-16T07:49:24.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
+            "video_id": "InnVG6pOPpM"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_huggingface",
+          "source_name": "Hugging Face YouTube",
+          "title": "Transformers.js v4.3: Structured Output in the browser",
+          "url": "https://youtube.com/watch?v=InnVG6pOPpM",
+          "published_at": "2026-09-16T07:49:24.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.463,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    }
+  ]
+}

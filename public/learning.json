@@ -1,52 +1,75 @@
 {
-  "generated_at": "2026-10-12T13:10:11.828Z",
-  "last_successful_generated_at": "2026-10-12T13:10:11.828Z",
-  "refresh_status": "ok",
+  "generated_at": "2026-10-13T00:39:38.623Z",
+  "last_successful_generated_at": "2026-10-13T00:39:38.623Z",
+  "refresh_status": "partial",
   "classification_mode": "deterministic",
   "window_hours": 720,
   "source_total": 7,
-  "source_ok": 7,
-  "source_failed": 0,
-  "failed_sources": [],
-  "source_health": [
+  "source_ok": 2,
+  "source_failed": 5,
+  "failed_sources": [
     {
       "id": "yt_deeplearning_ai",
       "name": "DeepLearning.AI YouTube",
-      "status": "ok",
-      "fetched_count": 7,
-      "fresh_count": 2,
-      "stale_count": 5,
-      "oldest_published_at": "2026-08-05T14:41:22.000Z",
-      "newest_published_at": "2026-09-23T13:30:05.000Z"
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCcIXc5mJsHVYTZR1maL5l9w"
     },
     {
       "id": "yt_google_deepmind",
       "name": "Google DeepMind YouTube",
-      "status": "ok",
-      "fetched_count": 7,
-      "fresh_count": 1,
-      "stale_count": 6,
-      "oldest_published_at": "2026-07-30T14:57:59.000Z",
-      "newest_published_at": "2026-09-23T15:23:38.000Z"
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCP7jMXSY2xbc3KCAE0MHQ-A"
     },
     {
       "id": "yt_openai",
       "name": "OpenAI YouTube",
-      "status": "ok",
-      "fetched_count": 1,
-      "fresh_count": 1,
-      "stale_count": 0,
-      "oldest_published_at": "2026-10-07T21:34:02.000Z",
-      "newest_published_at": "2026-10-07T21:34:02.000Z"
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A"
+    },
+    {
+      "id": "yt_google_developers",
+      "name": "Google for Developers YouTube",
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UC_x5XG1OV2P6uZZ5FSM9Ttw"
+    },
+    {
+      "id": "yt_microsoft_365_developer",
+      "name": "Microsoft 365 Developer YouTube",
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCV_6HOhwxYLXAGd-JOqKPoQ"
+    }
+  ],
+  "source_health": [
+    {
+      "id": "yt_deeplearning_ai",
+      "name": "DeepLearning.AI YouTube",
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCcIXc5mJsHVYTZR1maL5l9w",
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "yt_google_deepmind",
+      "name": "Google DeepMind YouTube",
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCP7jMXSY2xbc3KCAE0MHQ-A",
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "yt_openai",
+      "name": "OpenAI YouTube",
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A",
+      "fresh_count": 0,
+      "stale_count": 0
     },
     {
       "id": "yt_nvidia_developer",
       "name": "NVIDIA Developer YouTube",
       "status": "ok",
-      "fetched_count": 8,
-      "fresh_count": 8,
+      "fetched_count": 6,
+      "fresh_count": 6,
       "stale_count": 0,
-      "oldest_published_at": "2026-09-30T16:09:05.000Z",
+      "oldest_published_at": "2026-10-01T17:10:41.000Z",
       "newest_published_at": "2026-10-08T23:43:42.000Z"
     },
     {
@@ -62,24 +85,95 @@
     {
       "id": "yt_google_developers",
       "name": "Google for Developers YouTube",
-      "status": "ok",
-      "fetched_count": 5,
-      "fresh_count": 5,
-      "stale_count": 0,
-      "oldest_published_at": "2026-09-25T16:00:04.000Z",
-      "newest_published_at": "2026-10-09T16:00:10.000Z"
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UC_x5XG1OV2P6uZZ5FSM9Ttw",
+      "fresh_count": 0,
+      "stale_count": 0
     },
     {
       "id": "yt_microsoft_365_developer",
       "name": "Microsoft 365 Developer YouTube",
-      "status": "ok",
+      "status": "failed",
       "fetched_count": 0,
+      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCV_6HOhwxYLXAGd-JOqKPoQ",
       "fresh_count": 0,
       "stale_count": 0
     }
   ],
-  "count": 16,
+  "count": 8,
   "clusters": [
+    {
+      "id": "6o3ee",
+      "primary": {
+        "id": "6o3ee",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "Customizing Vertical Voice Agents with ASR and LLM Fine-Tuning | Nemotron Labs",
+        "url": "https://youtube.com/watch?v=F_glNmFP_5M",
+        "original_url": "https://www.youtube.com/watch?v=F_glNmFP_5M",
+        "image_url": "https://i.ytimg.com/vi/F_glNmFP_5M/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-08T21:41:49.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "F_glNmFP_5M"
+        }
+      },
+      "members": [
+        {
+          "id": "6o3ee",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "Customizing Vertical Voice Agents with ASR and LLM Fine-Tuning | Nemotron Labs",
+          "url": "https://youtube.com/watch?v=F_glNmFP_5M",
+          "original_url": "https://www.youtube.com/watch?v=F_glNmFP_5M",
+          "image_url": "https://i.ytimg.com/vi/F_glNmFP_5M/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-08T21:41:49.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "F_glNmFP_5M"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "Customizing Vertical Voice Agents with ASR and LLM Fine-Tuning | Nemotron Labs",
+          "url": "https://youtube.com/watch?v=F_glNmFP_5M",
+          "published_at": "2026-10-08T21:41:49.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.208,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.525,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
     {
       "id": "h2mjrd",
       "primary": {
@@ -141,436 +235,10 @@
       "kind": "video",
       "quality": "signal",
       "one_liner": "",
-      "novelty": 0.861,
-      "novelty_label": "high",
-      "trust": 0.78,
-      "score": 0.787,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "y7n8m8",
-      "primary": {
-        "id": "y7n8m8",
-        "source_id": "yt_google_developers",
-        "source_name": "Google for Developers YouTube",
-        "source_role": "learning",
-        "trust": 0.72,
-        "kind_hint": "video",
-        "title": "Top 3 new model launches at Gemini Audio at Night",
-        "url": "https://youtube.com/watch?v=lTQHImoeuEY",
-        "original_url": "https://www.youtube.com/watch?v=lTQHImoeuEY",
-        "image_url": "https://i.ytimg.com/vi/lTQHImoeuEY/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-10-06T23:00:23.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-          "video_id": "lTQHImoeuEY"
-        }
-      },
-      "members": [
-        {
-          "id": "y7n8m8",
-          "source_id": "yt_google_developers",
-          "source_name": "Google for Developers YouTube",
-          "source_role": "learning",
-          "trust": 0.72,
-          "kind_hint": "video",
-          "title": "Top 3 new model launches at Gemini Audio at Night",
-          "url": "https://youtube.com/watch?v=lTQHImoeuEY",
-          "original_url": "https://www.youtube.com/watch?v=lTQHImoeuEY",
-          "image_url": "https://i.ytimg.com/vi/lTQHImoeuEY/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-10-06T23:00:23.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-            "video_id": "lTQHImoeuEY"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_google_developers",
-          "source_name": "Google for Developers YouTube",
-          "title": "Top 3 new model launches at Gemini Audio at Night",
-          "url": "https://youtube.com/watch?v=lTQHImoeuEY",
-          "published_at": "2026-10-06T23:00:23.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "mixed",
-      "one_liner": "",
-      "novelty": 0.882,
-      "novelty_label": "high",
-      "trust": 0.72,
-      "score": 0.601,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "bbawsr",
-      "primary": {
-        "id": "bbawsr",
-        "source_id": "yt_google_developers",
-        "source_name": "Google for Developers YouTube",
-        "source_role": "learning",
-        "trust": 0.72,
-        "kind_hint": "video",
-        "title": "Turning code into fabric with Gemini",
-        "url": "https://youtube.com/watch?v=pijSNA-hWkg",
-        "original_url": "https://www.youtube.com/watch?v=pijSNA-hWkg",
-        "image_url": "https://i.ytimg.com/vi/pijSNA-hWkg/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-10-07T16:00:07.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-          "video_id": "pijSNA-hWkg"
-        }
-      },
-      "members": [
-        {
-          "id": "bbawsr",
-          "source_id": "yt_google_developers",
-          "source_name": "Google for Developers YouTube",
-          "source_role": "learning",
-          "trust": 0.72,
-          "kind_hint": "video",
-          "title": "Turning code into fabric with Gemini",
-          "url": "https://youtube.com/watch?v=pijSNA-hWkg",
-          "original_url": "https://www.youtube.com/watch?v=pijSNA-hWkg",
-          "image_url": "https://i.ytimg.com/vi/pijSNA-hWkg/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-10-07T16:00:07.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-            "video_id": "pijSNA-hWkg"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_google_developers",
-          "source_name": "Google for Developers YouTube",
-          "title": "Turning code into fabric with Gemini",
-          "url": "https://youtube.com/watch?v=pijSNA-hWkg",
-          "published_at": "2026-10-07T16:00:07.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "mixed",
-      "one_liner": "",
-      "novelty": 0.811,
-      "novelty_label": "high",
-      "trust": 0.72,
-      "score": 0.58,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "6p2ww2",
-      "primary": {
-        "id": "6p2ww2",
-        "source_id": "yt_google_deepmind",
-        "source_name": "Google DeepMind YouTube",
-        "source_role": "learning",
-        "trust": 0.82,
-        "kind_hint": "video",
-        "title": "Create your own voices with Gemini 3.8 text-to-speech",
-        "url": "https://youtube.com/watch?v=FL6mI_Br-mc",
-        "original_url": "https://www.youtube.com/watch?v=FL6mI_Br-mc",
-        "image_url": "https://i.ytimg.com/vi/FL6mI_Br-mc/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-09-23T15:23:38.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCP7jMXSY2xbc3KCAE0MHQ-A",
-          "video_id": "FL6mI_Br-mc"
-        }
-      },
-      "members": [
-        {
-          "id": "6p2ww2",
-          "source_id": "yt_google_deepmind",
-          "source_name": "Google DeepMind YouTube",
-          "source_role": "learning",
-          "trust": 0.82,
-          "kind_hint": "video",
-          "title": "Create your own voices with Gemini 3.8 text-to-speech",
-          "url": "https://youtube.com/watch?v=FL6mI_Br-mc",
-          "original_url": "https://www.youtube.com/watch?v=FL6mI_Br-mc",
-          "image_url": "https://i.ytimg.com/vi/FL6mI_Br-mc/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-09-23T15:23:38.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCP7jMXSY2xbc3KCAE0MHQ-A",
-            "video_id": "FL6mI_Br-mc"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_google_deepmind",
-          "source_name": "Google DeepMind YouTube",
-          "title": "Create your own voices with Gemini 3.8 text-to-speech",
-          "url": "https://youtube.com/watch?v=FL6mI_Br-mc",
-          "published_at": "2026-09-23T15:23:38.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.82,
-      "score": 0.472,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "11rm512",
-      "primary": {
-        "id": "11rm512",
-        "source_id": "yt_openai",
-        "source_name": "OpenAI YouTube",
-        "source_role": "learning",
-        "trust": 0.82,
-        "kind_hint": "video",
-        "title": "Build Plugins for ChatGPT",
-        "url": "https://youtube.com/watch?v=LiNhqbetrbU",
-        "original_url": "https://www.youtube.com/watch?v=LiNhqbetrbU",
-        "image_url": "https://i.ytimg.com/vi/LiNhqbetrbU/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-10-07T21:34:02.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
-          "video_id": "LiNhqbetrbU"
-        }
-      },
-      "members": [
-        {
-          "id": "11rm512",
-          "source_id": "yt_openai",
-          "source_name": "OpenAI YouTube",
-          "source_role": "learning",
-          "trust": 0.82,
-          "kind_hint": "video",
-          "title": "Build Plugins for ChatGPT",
-          "url": "https://youtube.com/watch?v=LiNhqbetrbU",
-          "original_url": "https://www.youtube.com/watch?v=LiNhqbetrbU",
-          "image_url": "https://i.ytimg.com/vi/LiNhqbetrbU/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-10-07T21:34:02.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
-            "video_id": "LiNhqbetrbU"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_openai",
-          "source_name": "OpenAI YouTube",
-          "title": "Build Plugins for ChatGPT",
-          "url": "https://youtube.com/watch?v=LiNhqbetrbU",
-          "published_at": "2026-10-07T21:34:02.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.82,
-      "score": 0.472,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "1dl578f",
-      "primary": {
-        "id": "1dl578f",
-        "source_id": "yt_deeplearning_ai",
-        "source_name": "DeepLearning.AI YouTube",
-        "source_role": "learning",
-        "trust": 0.78,
-        "kind_hint": "video",
-        "title": "Building AI Assistants with On-Device Memory",
-        "url": "https://youtube.com/watch?v=uRGHx-1CqBQ",
-        "original_url": "https://www.youtube.com/watch?v=uRGHx-1CqBQ",
-        "image_url": "https://i.ytimg.com/vi/uRGHx-1CqBQ/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-09-23T13:30:05.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCcIXc5mJsHVYTZR1maL5l9w",
-          "video_id": "uRGHx-1CqBQ"
-        }
-      },
-      "members": [
-        {
-          "id": "1dl578f",
-          "source_id": "yt_deeplearning_ai",
-          "source_name": "DeepLearning.AI YouTube",
-          "source_role": "learning",
-          "trust": 0.78,
-          "kind_hint": "video",
-          "title": "Building AI Assistants with On-Device Memory",
-          "url": "https://youtube.com/watch?v=uRGHx-1CqBQ",
-          "original_url": "https://www.youtube.com/watch?v=uRGHx-1CqBQ",
-          "image_url": "https://i.ytimg.com/vi/uRGHx-1CqBQ/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-09-23T13:30:05.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCcIXc5mJsHVYTZR1maL5l9w",
-            "video_id": "uRGHx-1CqBQ"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_deeplearning_ai",
-          "source_name": "DeepLearning.AI YouTube",
-          "title": "Building AI Assistants with On-Device Memory",
-          "url": "https://youtube.com/watch?v=uRGHx-1CqBQ",
-          "published_at": "2026-09-23T13:30:05.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.78,
-      "score": 0.463,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "19mxmb",
-      "primary": {
-        "id": "19mxmb",
-        "source_id": "yt_deeplearning_ai",
-        "source_name": "DeepLearning.AI YouTube",
-        "source_role": "learning",
-        "trust": 0.78,
-        "kind_hint": "video",
-        "title": "Full Course: Spec-Driven Development with Coding Agents",
-        "url": "https://youtube.com/watch?v=hy8UstR2NEg",
-        "original_url": "https://www.youtube.com/watch?v=hy8UstR2NEg",
-        "image_url": "https://i.ytimg.com/vi/hy8UstR2NEg/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-09-22T19:32:17.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCcIXc5mJsHVYTZR1maL5l9w",
-          "video_id": "hy8UstR2NEg"
-        }
-      },
-      "members": [
-        {
-          "id": "19mxmb",
-          "source_id": "yt_deeplearning_ai",
-          "source_name": "DeepLearning.AI YouTube",
-          "source_role": "learning",
-          "trust": 0.78,
-          "kind_hint": "video",
-          "title": "Full Course: Spec-Driven Development with Coding Agents",
-          "url": "https://youtube.com/watch?v=hy8UstR2NEg",
-          "original_url": "https://www.youtube.com/watch?v=hy8UstR2NEg",
-          "image_url": "https://i.ytimg.com/vi/hy8UstR2NEg/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-09-22T19:32:17.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCcIXc5mJsHVYTZR1maL5l9w",
-            "video_id": "hy8UstR2NEg"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_deeplearning_ai",
-          "source_name": "DeepLearning.AI YouTube",
-          "title": "Full Course: Spec-Driven Development with Coding Agents",
-          "url": "https://youtube.com/watch?v=hy8UstR2NEg",
-          "published_at": "2026-09-22T19:32:17.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.463,
+      "score": 0.509,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -630,77 +298,6 @@
           "title": "How H-Company Optimizes VLM Serving for Computer Use Agents With NVIDIA Dynamo",
           "url": "https://youtube.com/watch?v=eXlgMVAm28I",
           "published_at": "2026-10-08T23:43:42.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.463,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "6o3ee",
-      "primary": {
-        "id": "6o3ee",
-        "source_id": "yt_nvidia_developer",
-        "source_name": "NVIDIA Developer YouTube",
-        "source_role": "learning",
-        "trust": 0.78,
-        "kind_hint": "video",
-        "title": "Customizing Vertical Voice Agents with ASR and LLM Fine-Tuning",
-        "url": "https://youtube.com/watch?v=F_glNmFP_5M",
-        "original_url": "https://www.youtube.com/watch?v=F_glNmFP_5M",
-        "image_url": "https://i.ytimg.com/vi/F_glNmFP_5M/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-10-08T21:41:49.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-          "video_id": "F_glNmFP_5M"
-        }
-      },
-      "members": [
-        {
-          "id": "6o3ee",
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "source_role": "learning",
-          "trust": 0.78,
-          "kind_hint": "video",
-          "title": "Customizing Vertical Voice Agents with ASR and LLM Fine-Tuning",
-          "url": "https://youtube.com/watch?v=F_glNmFP_5M",
-          "original_url": "https://www.youtube.com/watch?v=F_glNmFP_5M",
-          "image_url": "https://i.ytimg.com/vi/F_glNmFP_5M/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-10-08T21:41:49.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-            "video_id": "F_glNmFP_5M"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "title": "Customizing Vertical Voice Agents with ASR and LLM Fine-Tuning",
-          "url": "https://youtube.com/watch?v=F_glNmFP_5M",
-          "published_at": "2026-10-08T21:41:49.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -985,148 +582,6 @@
           "title": "Build Visual AI Agents From a Prompt With NVIDIA Cosmos and VSS 3.3",
           "url": "https://youtube.com/watch?v=PQJKs1dyK7I",
           "published_at": "2026-10-01T17:10:41.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.463,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "480y86",
-      "primary": {
-        "id": "480y86",
-        "source_id": "yt_nvidia_developer",
-        "source_name": "NVIDIA Developer YouTube",
-        "source_role": "learning",
-        "trust": 0.78,
-        "kind_hint": "video",
-        "title": "A New Way to Build Edge AI: Agentic Development on NVIDIA Jetson",
-        "url": "https://youtube.com/watch?v=OF_ryVZmB3w",
-        "original_url": "https://www.youtube.com/watch?v=OF_ryVZmB3w",
-        "image_url": "https://i.ytimg.com/vi/OF_ryVZmB3w/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-09-30T17:24:22.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-          "video_id": "OF_ryVZmB3w"
-        }
-      },
-      "members": [
-        {
-          "id": "480y86",
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "source_role": "learning",
-          "trust": 0.78,
-          "kind_hint": "video",
-          "title": "A New Way to Build Edge AI: Agentic Development on NVIDIA Jetson",
-          "url": "https://youtube.com/watch?v=OF_ryVZmB3w",
-          "original_url": "https://www.youtube.com/watch?v=OF_ryVZmB3w",
-          "image_url": "https://i.ytimg.com/vi/OF_ryVZmB3w/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-09-30T17:24:22.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-            "video_id": "OF_ryVZmB3w"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "title": "A New Way to Build Edge AI: Agentic Development on NVIDIA Jetson",
-          "url": "https://youtube.com/watch?v=OF_ryVZmB3w",
-          "published_at": "2026-09-30T17:24:22.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.463,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "4nxgdw",
-      "primary": {
-        "id": "4nxgdw",
-        "source_id": "yt_nvidia_developer",
-        "source_name": "NVIDIA Developer YouTube",
-        "source_role": "learning",
-        "trust": 0.78,
-        "kind_hint": "video",
-        "title": "How to Trace and Evaluate a Hermes Agent with NVIDIA NeMo Relay and Phoenix",
-        "url": "https://youtube.com/watch?v=WWL99l93xsE",
-        "original_url": "https://www.youtube.com/watch?v=WWL99l93xsE",
-        "image_url": "https://i.ytimg.com/vi/WWL99l93xsE/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-09-30T16:09:05.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-          "video_id": "WWL99l93xsE"
-        }
-      },
-      "members": [
-        {
-          "id": "4nxgdw",
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "source_role": "learning",
-          "trust": 0.78,
-          "kind_hint": "video",
-          "title": "How to Trace and Evaluate a Hermes Agent with NVIDIA NeMo Relay and Phoenix",
-          "url": "https://youtube.com/watch?v=WWL99l93xsE",
-          "original_url": "https://www.youtube.com/watch?v=WWL99l93xsE",
-          "image_url": "https://i.ytimg.com/vi/WWL99l93xsE/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-09-30T16:09:05.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-            "video_id": "WWL99l93xsE"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "title": "How to Trace and Evaluate a Hermes Agent with NVIDIA NeMo Relay and Phoenix",
-          "url": "https://youtube.com/watch?v=WWL99l93xsE",
-          "published_at": "2026-09-30T16:09:05.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
