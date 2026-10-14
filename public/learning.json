@@ -1,116 +1,652 @@
 {
-  "generated_at": "2026-10-13T22:44:45.723Z",
-  "last_successful_generated_at": "2026-10-13T12:42:47.611Z",
-  "refresh_status": "failed",
+  "generated_at": "2026-10-14T10:12:52.860Z",
+  "last_successful_generated_at": "2026-10-14T10:12:52.860Z",
+  "refresh_status": "ok",
   "classification_mode": "deterministic",
   "window_hours": 720,
   "source_total": 7,
-  "source_ok": 0,
-  "source_failed": 7,
-  "failed_sources": [
-    {
-      "id": "yt_deeplearning_ai",
-      "name": "DeepLearning.AI YouTube",
-      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCcIXc5mJsHVYTZR1maL5l9w"
-    },
-    {
-      "id": "yt_google_deepmind",
-      "name": "Google DeepMind YouTube",
-      "message": "HTTP 500 Internal Server Error - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 500 (Server Error)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,s - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCP7jMXSY2xbc3KCAE0MHQ-A"
-    },
-    {
-      "id": "yt_openai",
-      "name": "OpenAI YouTube",
-      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A"
-    },
-    {
-      "id": "yt_nvidia_developer",
-      "name": "NVIDIA Developer YouTube",
-      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCBHcMCGaiJhv-ESTcWGJPcw"
-    },
-    {
-      "id": "yt_huggingface",
-      "name": "Hugging Face YouTube",
-      "message": "HTTP 500 Internal Server Error - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 500 (Server Error)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,s - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCHlNU7kIZhRgSbhHvFoy72w"
-    },
-    {
-      "id": "yt_google_developers",
-      "name": "Google for Developers YouTube",
-      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UC_x5XG1OV2P6uZZ5FSM9Ttw"
-    },
-    {
-      "id": "yt_microsoft_365_developer",
-      "name": "Microsoft 365 Developer YouTube",
-      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCV_6HOhwxYLXAGd-JOqKPoQ"
-    }
-  ],
+  "source_ok": 7,
+  "source_failed": 0,
+  "failed_sources": [],
   "source_health": [
     {
       "id": "yt_deeplearning_ai",
       "name": "DeepLearning.AI YouTube",
-      "status": "failed",
-      "fetched_count": 0,
-      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCcIXc5mJsHVYTZR1maL5l9w",
-      "fresh_count": 0,
-      "stale_count": 0
+      "status": "ok",
+      "fetched_count": 7,
+      "fresh_count": 2,
+      "stale_count": 5,
+      "oldest_published_at": "2026-08-05T14:41:22.000Z",
+      "newest_published_at": "2026-09-23T13:30:05.000Z"
     },
     {
       "id": "yt_google_deepmind",
       "name": "Google DeepMind YouTube",
-      "status": "failed",
-      "fetched_count": 0,
-      "message": "HTTP 500 Internal Server Error - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 500 (Server Error)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,s - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCP7jMXSY2xbc3KCAE0MHQ-A",
-      "fresh_count": 0,
-      "stale_count": 0
+      "status": "ok",
+      "fetched_count": 7,
+      "fresh_count": 5,
+      "stale_count": 2,
+      "oldest_published_at": "2026-07-30T14:58:12.000Z",
+      "newest_published_at": "2026-10-13T16:38:17.000Z"
     },
     {
       "id": "yt_openai",
       "name": "OpenAI YouTube",
-      "status": "failed",
+      "status": "ok",
       "fetched_count": 0,
-      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A",
       "fresh_count": 0,
       "stale_count": 0
     },
     {
       "id": "yt_nvidia_developer",
       "name": "NVIDIA Developer YouTube",
-      "status": "failed",
-      "fetched_count": 0,
-      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCBHcMCGaiJhv-ESTcWGJPcw",
-      "fresh_count": 0,
-      "stale_count": 0
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 6,
+      "stale_count": 0,
+      "oldest_published_at": "2026-10-01T17:10:41.000Z",
+      "newest_published_at": "2026-10-14T05:56:50.000Z"
     },
     {
       "id": "yt_huggingface",
       "name": "Hugging Face YouTube",
-      "status": "failed",
-      "fetched_count": 0,
-      "message": "HTTP 500 Internal Server Error - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 500 (Server Error)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,s - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCHlNU7kIZhRgSbhHvFoy72w",
-      "fresh_count": 0,
-      "stale_count": 0
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 3,
+      "stale_count": 2,
+      "oldest_published_at": "2026-08-21T10:08:41.000Z",
+      "newest_published_at": "2026-10-13T03:37:35.000Z"
     },
     {
       "id": "yt_google_developers",
       "name": "Google for Developers YouTube",
-      "status": "failed",
-      "fetched_count": 0,
-      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UC_x5XG1OV2P6uZZ5FSM9Ttw",
-      "fresh_count": 0,
-      "stale_count": 0
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 6,
+      "stale_count": 0,
+      "oldest_published_at": "2026-09-25T16:00:04.000Z",
+      "newest_published_at": "2026-10-13T19:00:11.000Z"
     },
     {
       "id": "yt_microsoft_365_developer",
       "name": "Microsoft 365 Developer YouTube",
-      "status": "failed",
+      "status": "ok",
       "fetched_count": 0,
-      "message": "HTTP 404 Not Found - <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 404 (Not Found)!!1</title> <style> *{margin:0;padding:0}html,code{font:15px/22px arial,sans - url=https://www.youtube.com/feeds/videos.xml?channel_id=UCV_6HOhwxYLXAGd-JOqKPoQ",
       "fresh_count": 0,
       "stale_count": 0
     }
   ],
   "count": 16,
   "clusters": [
+    {
+      "id": "1pfmqj6",
+      "primary": {
+        "id": "1pfmqj6",
+        "source_id": "yt_google_deepmind",
+        "source_name": "Google DeepMind YouTube",
+        "source_role": "learning",
+        "trust": 0.82,
+        "kind_hint": "video",
+        "title": "Using Gemini 4 Argon to protect against Cyber attackers",
+        "url": "https://youtube.com/watch?v=ftkic7Tdpcg",
+        "original_url": "https://www.youtube.com/watch?v=ftkic7Tdpcg",
+        "image_url": "https://i.ytimg.com/vi/ftkic7Tdpcg/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-13T16:38:14.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCP7jMXSY2xbc3KCAE0MHQ-A",
+          "video_id": "ftkic7Tdpcg"
+        }
+      },
+      "members": [
+        {
+          "id": "1pfmqj6",
+          "source_id": "yt_google_deepmind",
+          "source_name": "Google DeepMind YouTube",
+          "source_role": "learning",
+          "trust": 0.82,
+          "kind_hint": "video",
+          "title": "Using Gemini 4 Argon to protect against Cyber attackers",
+          "url": "https://youtube.com/watch?v=ftkic7Tdpcg",
+          "original_url": "https://www.youtube.com/watch?v=ftkic7Tdpcg",
+          "image_url": "https://i.ytimg.com/vi/ftkic7Tdpcg/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-13T16:38:14.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCP7jMXSY2xbc3KCAE0MHQ-A",
+            "video_id": "ftkic7Tdpcg"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_google_deepmind",
+          "source_name": "Google DeepMind YouTube",
+          "title": "Using Gemini 4 Argon to protect against Cyber attackers",
+          "url": "https://youtube.com/watch?v=ftkic7Tdpcg",
+          "published_at": "2026-10-13T16:38:14.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.861,
+      "novelty_label": "high",
+      "trust": 0.82,
+      "score": 0.781,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1we08l9",
+      "primary": {
+        "id": "1we08l9",
+        "source_id": "yt_google_deepmind",
+        "source_name": "Google DeepMind YouTube",
+        "source_role": "learning",
+        "trust": 0.82,
+        "kind_hint": "video",
+        "title": "Applying Gemini 4 for large-scale codebase maintenance in Chromium",
+        "url": "https://youtube.com/watch?v=LVEfFyijQ2c",
+        "original_url": "https://www.youtube.com/watch?v=LVEfFyijQ2c",
+        "image_url": "https://i.ytimg.com/vi/LVEfFyijQ2c/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-13T16:38:17.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCP7jMXSY2xbc3KCAE0MHQ-A",
+          "video_id": "LVEfFyijQ2c"
+        }
+      },
+      "members": [
+        {
+          "id": "1we08l9",
+          "source_id": "yt_google_deepmind",
+          "source_name": "Google DeepMind YouTube",
+          "source_role": "learning",
+          "trust": 0.82,
+          "kind_hint": "video",
+          "title": "Applying Gemini 4 for large-scale codebase maintenance in Chromium",
+          "url": "https://youtube.com/watch?v=LVEfFyijQ2c",
+          "original_url": "https://www.youtube.com/watch?v=LVEfFyijQ2c",
+          "image_url": "https://i.ytimg.com/vi/LVEfFyijQ2c/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-13T16:38:17.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCP7jMXSY2xbc3KCAE0MHQ-A",
+            "video_id": "LVEfFyijQ2c"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_google_deepmind",
+          "source_name": "Google DeepMind YouTube",
+          "title": "Applying Gemini 4 for large-scale codebase maintenance in Chromium",
+          "url": "https://youtube.com/watch?v=LVEfFyijQ2c",
+          "published_at": "2026-10-13T16:38:17.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.848,
+      "novelty_label": "high",
+      "trust": 0.82,
+      "score": 0.777,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1t5d1hn",
+      "primary": {
+        "id": "1t5d1hn",
+        "source_id": "yt_google_deepmind",
+        "source_name": "Google DeepMind YouTube",
+        "source_role": "learning",
+        "trust": 0.82,
+        "kind_hint": "video",
+        "title": "Teaching a humanoid robot to play cornhole with Gemini 4 Argon",
+        "url": "https://youtube.com/watch?v=9PICEmtfpWU",
+        "original_url": "https://www.youtube.com/watch?v=9PICEmtfpWU",
+        "image_url": "https://i.ytimg.com/vi/9PICEmtfpWU/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-13T15:58:20.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCP7jMXSY2xbc3KCAE0MHQ-A",
+          "video_id": "9PICEmtfpWU"
+        }
+      },
+      "members": [
+        {
+          "id": "1t5d1hn",
+          "source_id": "yt_google_deepmind",
+          "source_name": "Google DeepMind YouTube",
+          "source_role": "learning",
+          "trust": 0.82,
+          "kind_hint": "video",
+          "title": "Teaching a humanoid robot to play cornhole with Gemini 4 Argon",
+          "url": "https://youtube.com/watch?v=9PICEmtfpWU",
+          "original_url": "https://www.youtube.com/watch?v=9PICEmtfpWU",
+          "image_url": "https://i.ytimg.com/vi/9PICEmtfpWU/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-13T15:58:20.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCP7jMXSY2xbc3KCAE0MHQ-A",
+            "video_id": "9PICEmtfpWU"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_google_deepmind",
+          "source_name": "Google DeepMind YouTube",
+          "title": "Teaching a humanoid robot to play cornhole with Gemini 4 Argon",
+          "url": "https://youtube.com/watch?v=9PICEmtfpWU",
+          "published_at": "2026-10-13T15:58:20.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.814,
+      "novelty_label": "high",
+      "trust": 0.82,
+      "score": 0.766,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "8bm7ar",
+      "primary": {
+        "id": "8bm7ar",
+        "source_id": "yt_google_deepmind",
+        "source_name": "Google DeepMind YouTube",
+        "source_role": "learning",
+        "trust": 0.82,
+        "kind_hint": "video",
+        "title": "Untangling 500-page chemistry patents with Gemini 4",
+        "url": "https://youtube.com/watch?v=9jQA7IgPhBE",
+        "original_url": "https://www.youtube.com/watch?v=9jQA7IgPhBE",
+        "image_url": "https://i.ytimg.com/vi/9jQA7IgPhBE/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-13T15:58:17.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCP7jMXSY2xbc3KCAE0MHQ-A",
+          "video_id": "9jQA7IgPhBE"
+        }
+      },
+      "members": [
+        {
+          "id": "8bm7ar",
+          "source_id": "yt_google_deepmind",
+          "source_name": "Google DeepMind YouTube",
+          "source_role": "learning",
+          "trust": 0.82,
+          "kind_hint": "video",
+          "title": "Untangling 500-page chemistry patents with Gemini 4",
+          "url": "https://youtube.com/watch?v=9jQA7IgPhBE",
+          "original_url": "https://www.youtube.com/watch?v=9jQA7IgPhBE",
+          "image_url": "https://i.ytimg.com/vi/9jQA7IgPhBE/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-13T15:58:17.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCP7jMXSY2xbc3KCAE0MHQ-A",
+            "video_id": "9jQA7IgPhBE"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_google_deepmind",
+          "source_name": "Google DeepMind YouTube",
+          "title": "Untangling 500-page chemistry patents with Gemini 4",
+          "url": "https://youtube.com/watch?v=9jQA7IgPhBE",
+          "published_at": "2026-10-13T15:58:17.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.812,
+      "novelty_label": "high",
+      "trust": 0.82,
+      "score": 0.765,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "13b9b22",
+      "primary": {
+        "id": "13b9b22",
+        "source_id": "yt_huggingface",
+        "source_name": "Hugging Face YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "Transformers.js v4.3: Structured Output in the browser",
+        "url": "https://youtube.com/watch?v=InnVG6pOPpM",
+        "original_url": "https://www.youtube.com/watch?v=InnVG6pOPpM",
+        "image_url": "https://i.ytimg.com/vi/InnVG6pOPpM/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-09-16T07:49:24.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
+          "video_id": "InnVG6pOPpM"
+        }
+      },
+      "members": [
+        {
+          "id": "13b9b22",
+          "source_id": "yt_huggingface",
+          "source_name": "Hugging Face YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "Transformers.js v4.3: Structured Output in the browser",
+          "url": "https://youtube.com/watch?v=InnVG6pOPpM",
+          "original_url": "https://www.youtube.com/watch?v=InnVG6pOPpM",
+          "image_url": "https://i.ytimg.com/vi/InnVG6pOPpM/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-09-16T07:49:24.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
+            "video_id": "InnVG6pOPpM"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_huggingface",
+          "source_name": "Hugging Face YouTube",
+          "title": "Transformers.js v4.3: Structured Output in the browser",
+          "url": "https://youtube.com/watch?v=InnVG6pOPpM",
+          "published_at": "2026-09-16T07:49:24.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.916,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.738,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "r0s3fc",
+      "primary": {
+        "id": "r0s3fc",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "Build Visual AI Agents From a Prompt With NVIDIA Cosmos and VSS 3.3",
+        "url": "https://youtube.com/watch?v=PQJKs1dyK7I",
+        "original_url": "https://www.youtube.com/watch?v=PQJKs1dyK7I",
+        "image_url": "https://i.ytimg.com/vi/PQJKs1dyK7I/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-01T17:10:41.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "PQJKs1dyK7I"
+        }
+      },
+      "members": [
+        {
+          "id": "r0s3fc",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "Build Visual AI Agents From a Prompt With NVIDIA Cosmos and VSS 3.3",
+          "url": "https://youtube.com/watch?v=PQJKs1dyK7I",
+          "original_url": "https://www.youtube.com/watch?v=PQJKs1dyK7I",
+          "image_url": "https://i.ytimg.com/vi/PQJKs1dyK7I/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-01T17:10:41.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "PQJKs1dyK7I"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "Build Visual AI Agents From a Prompt With NVIDIA Cosmos and VSS 3.3",
+          "url": "https://youtube.com/watch?v=PQJKs1dyK7I",
+          "published_at": "2026-10-01T17:10:41.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0.847,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.717,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1tofivd",
+      "primary": {
+        "id": "1tofivd",
+        "source_id": "yt_google_developers",
+        "source_name": "Google for Developers YouTube",
+        "source_role": "learning",
+        "trust": 0.72,
+        "kind_hint": "video",
+        "title": "Gemini 4 Argon and Google Antigravity: From 2D concept to 3D cathedral",
+        "url": "https://youtube.com/watch?v=OYp5j2RihPE",
+        "original_url": "https://www.youtube.com/watch?v=OYp5j2RihPE",
+        "image_url": "https://i.ytimg.com/vi/OYp5j2RihPE/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-13T19:00:11.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+          "video_id": "OYp5j2RihPE"
+        }
+      },
+      "members": [
+        {
+          "id": "1tofivd",
+          "source_id": "yt_google_developers",
+          "source_name": "Google for Developers YouTube",
+          "source_role": "learning",
+          "trust": 0.72,
+          "kind_hint": "video",
+          "title": "Gemini 4 Argon and Google Antigravity: From 2D concept to 3D cathedral",
+          "url": "https://youtube.com/watch?v=OYp5j2RihPE",
+          "original_url": "https://www.youtube.com/watch?v=OYp5j2RihPE",
+          "image_url": "https://i.ytimg.com/vi/OYp5j2RihPE/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-13T19:00:11.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+            "video_id": "OYp5j2RihPE"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_google_developers",
+          "source_name": "Google for Developers YouTube",
+          "title": "Gemini 4 Argon and Google Antigravity: From 2D concept to 3D cathedral",
+          "url": "https://youtube.com/watch?v=OYp5j2RihPE",
+          "published_at": "2026-10-13T19:00:11.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.837,
+      "novelty_label": "high",
+      "trust": 0.72,
+      "score": 0.642,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "6o3ee",
+      "primary": {
+        "id": "6o3ee",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "Customizing Vertical Voice Agents with ASR and LLM Fine-Tuning | Nemotron Labs",
+        "url": "https://youtube.com/watch?v=F_glNmFP_5M",
+        "original_url": "https://www.youtube.com/watch?v=F_glNmFP_5M",
+        "image_url": "https://i.ytimg.com/vi/F_glNmFP_5M/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-14T05:56:50.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "F_glNmFP_5M"
+        }
+      },
+      "members": [
+        {
+          "id": "6o3ee",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "Customizing Vertical Voice Agents with ASR and LLM Fine-Tuning | Nemotron Labs",
+          "url": "https://youtube.com/watch?v=F_glNmFP_5M",
+          "original_url": "https://www.youtube.com/watch?v=F_glNmFP_5M",
+          "image_url": "https://i.ytimg.com/vi/F_glNmFP_5M/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-14T05:56:50.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "F_glNmFP_5M"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "Customizing Vertical Voice Agents with ASR and LLM Fine-Tuning | Nemotron Labs",
+          "url": "https://youtube.com/watch?v=F_glNmFP_5M",
+          "published_at": "2026-10-14T05:56:50.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.536,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
     {
       "id": "u57p6",
       "primary": {
@@ -172,12 +708,12 @@
       "kind": "video",
       "quality": "signal",
       "one_liner": "",
-      "novelty": 0.881,
-      "novelty_label": "high",
+      "novelty": 0,
+      "novelty_label": "familiar",
       "trust": 0.78,
-      "score": 0.792,
+      "score": 0.492,
       "why_this_surfaced": [
-        "high novelty against the 30-day history",
+        "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
       ],
       "builder_action": "Queue it for focused learning if the topic matches your current work."
@@ -243,83 +779,12 @@
       "kind": "video",
       "quality": "signal",
       "one_liner": "",
-      "novelty": 0.917,
-      "novelty_label": "high",
+      "novelty": 0,
+      "novelty_label": "familiar",
       "trust": 0.82,
-      "score": 0.747,
+      "score": 0.472,
       "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "11rm512",
-      "primary": {
-        "id": "11rm512",
-        "source_id": "yt_openai",
-        "source_name": "OpenAI YouTube",
-        "source_role": "learning",
-        "trust": 0.82,
-        "kind_hint": "video",
-        "title": "Build Plugins for ChatGPT",
-        "url": "https://youtube.com/watch?v=LiNhqbetrbU",
-        "original_url": "https://www.youtube.com/watch?v=LiNhqbetrbU",
-        "image_url": "https://i.ytimg.com/vi/LiNhqbetrbU/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-10-07T21:34:02.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
-          "video_id": "LiNhqbetrbU"
-        }
-      },
-      "members": [
-        {
-          "id": "11rm512",
-          "source_id": "yt_openai",
-          "source_name": "OpenAI YouTube",
-          "source_role": "learning",
-          "trust": 0.82,
-          "kind_hint": "video",
-          "title": "Build Plugins for ChatGPT",
-          "url": "https://youtube.com/watch?v=LiNhqbetrbU",
-          "original_url": "https://www.youtube.com/watch?v=LiNhqbetrbU",
-          "image_url": "https://i.ytimg.com/vi/LiNhqbetrbU/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-10-07T21:34:02.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
-            "video_id": "LiNhqbetrbU"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_openai",
-          "source_name": "OpenAI YouTube",
-          "title": "Build Plugins for ChatGPT",
-          "url": "https://youtube.com/watch?v=LiNhqbetrbU",
-          "published_at": "2026-10-07T21:34:02.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
-      "novelty": 0.865,
-      "novelty_label": "high",
-      "trust": 0.82,
-      "score": 0.731,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
+        "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
       ],
       "builder_action": "Queue it for focused learning if the topic matches your current work."
@@ -385,12 +850,12 @@
       "kind": "video",
       "quality": "signal",
       "one_liner": "",
-      "novelty": 0.857,
-      "novelty_label": "high",
+      "novelty": 0,
+      "novelty_label": "familiar",
       "trust": 0.78,
-      "score": 0.72,
+      "score": 0.463,
       "why_this_surfaced": [
-        "high novelty against the 30-day history",
+        "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
       ],
       "builder_action": "Queue it for focused learning if the topic matches your current work."
@@ -456,436 +921,10 @@
       "kind": "video",
       "quality": "signal",
       "one_liner": "",
-      "novelty": 0.812,
-      "novelty_label": "high",
-      "trust": 0.78,
-      "score": 0.706,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "1rd1l0s",
-      "primary": {
-        "id": "1rd1l0s",
-        "source_id": "yt_google_developers",
-        "source_name": "Google for Developers YouTube",
-        "source_role": "learning",
-        "trust": 0.72,
-        "kind_hint": "video",
-        "title": "Per-Layer Embeddings (PLE) in Gemma 4 explained",
-        "url": "https://youtube.com/watch?v=s82Ho5HdltE",
-        "original_url": "https://www.youtube.com/watch?v=s82Ho5HdltE",
-        "image_url": "https://i.ytimg.com/vi/s82Ho5HdltE/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-09-25T16:00:04.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-          "video_id": "s82Ho5HdltE"
-        }
-      },
-      "members": [
-        {
-          "id": "1rd1l0s",
-          "source_id": "yt_google_developers",
-          "source_name": "Google for Developers YouTube",
-          "source_role": "learning",
-          "trust": 0.72,
-          "kind_hint": "video",
-          "title": "Per-Layer Embeddings (PLE) in Gemma 4 explained",
-          "url": "https://youtube.com/watch?v=s82Ho5HdltE",
-          "original_url": "https://www.youtube.com/watch?v=s82Ho5HdltE",
-          "image_url": "https://i.ytimg.com/vi/s82Ho5HdltE/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-09-25T16:00:04.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-            "video_id": "s82Ho5HdltE"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_google_developers",
-          "source_name": "Google for Developers YouTube",
-          "title": "Per-Layer Embeddings (PLE) in Gemma 4 explained",
-          "url": "https://youtube.com/watch?v=s82Ho5HdltE",
-          "published_at": "2026-09-25T16:00:04.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "mixed",
-      "one_liner": "",
-      "novelty": 0.956,
-      "novelty_label": "high",
-      "trust": 0.72,
-      "score": 0.623,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "y7n8m8",
-      "primary": {
-        "id": "y7n8m8",
-        "source_id": "yt_google_developers",
-        "source_name": "Google for Developers YouTube",
-        "source_role": "learning",
-        "trust": 0.72,
-        "kind_hint": "video",
-        "title": "Top 3 new model launches at Gemini Audio at Night",
-        "url": "https://youtube.com/watch?v=lTQHImoeuEY",
-        "original_url": "https://www.youtube.com/watch?v=lTQHImoeuEY",
-        "image_url": "https://i.ytimg.com/vi/lTQHImoeuEY/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-10-06T23:00:23.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-          "video_id": "lTQHImoeuEY"
-        }
-      },
-      "members": [
-        {
-          "id": "y7n8m8",
-          "source_id": "yt_google_developers",
-          "source_name": "Google for Developers YouTube",
-          "source_role": "learning",
-          "trust": 0.72,
-          "kind_hint": "video",
-          "title": "Top 3 new model launches at Gemini Audio at Night",
-          "url": "https://youtube.com/watch?v=lTQHImoeuEY",
-          "original_url": "https://www.youtube.com/watch?v=lTQHImoeuEY",
-          "image_url": "https://i.ytimg.com/vi/lTQHImoeuEY/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-10-06T23:00:23.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-            "video_id": "lTQHImoeuEY"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_google_developers",
-          "source_name": "Google for Developers YouTube",
-          "title": "Top 3 new model launches at Gemini Audio at Night",
-          "url": "https://youtube.com/watch?v=lTQHImoeuEY",
-          "published_at": "2026-10-06T23:00:23.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "mixed",
-      "one_liner": "",
-      "novelty": 0.943,
-      "novelty_label": "high",
-      "trust": 0.72,
-      "score": 0.619,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "bbawsr",
-      "primary": {
-        "id": "bbawsr",
-        "source_id": "yt_google_developers",
-        "source_name": "Google for Developers YouTube",
-        "source_role": "learning",
-        "trust": 0.72,
-        "kind_hint": "video",
-        "title": "Turning code into fabric with Gemini",
-        "url": "https://youtube.com/watch?v=pijSNA-hWkg",
-        "original_url": "https://www.youtube.com/watch?v=pijSNA-hWkg",
-        "image_url": "https://i.ytimg.com/vi/pijSNA-hWkg/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-10-07T16:00:07.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-          "video_id": "pijSNA-hWkg"
-        }
-      },
-      "members": [
-        {
-          "id": "bbawsr",
-          "source_id": "yt_google_developers",
-          "source_name": "Google for Developers YouTube",
-          "source_role": "learning",
-          "trust": 0.72,
-          "kind_hint": "video",
-          "title": "Turning code into fabric with Gemini",
-          "url": "https://youtube.com/watch?v=pijSNA-hWkg",
-          "original_url": "https://www.youtube.com/watch?v=pijSNA-hWkg",
-          "image_url": "https://i.ytimg.com/vi/pijSNA-hWkg/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-10-07T16:00:07.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-            "video_id": "pijSNA-hWkg"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_google_developers",
-          "source_name": "Google for Developers YouTube",
-          "title": "Turning code into fabric with Gemini",
-          "url": "https://youtube.com/watch?v=pijSNA-hWkg",
-          "published_at": "2026-10-07T16:00:07.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "mixed",
-      "one_liner": "",
-      "novelty": 0.916,
-      "novelty_label": "high",
-      "trust": 0.72,
-      "score": 0.611,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "v2x25w",
-      "primary": {
-        "id": "v2x25w",
-        "source_id": "yt_google_developers",
-        "source_name": "Google for Developers YouTube",
-        "source_role": "learning",
-        "trust": 0.72,
-        "kind_hint": "video",
-        "title": "How to transform audio into physical prints using Gemini and Google AI Studio",
-        "url": "https://youtube.com/watch?v=Rnz9mOyxk0k",
-        "original_url": "https://www.youtube.com/watch?v=Rnz9mOyxk0k",
-        "image_url": "https://i.ytimg.com/vi/Rnz9mOyxk0k/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-10-01T19:00:13.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-          "video_id": "Rnz9mOyxk0k"
-        }
-      },
-      "members": [
-        {
-          "id": "v2x25w",
-          "source_id": "yt_google_developers",
-          "source_name": "Google for Developers YouTube",
-          "source_role": "learning",
-          "trust": 0.72,
-          "kind_hint": "video",
-          "title": "How to transform audio into physical prints using Gemini and Google AI Studio",
-          "url": "https://youtube.com/watch?v=Rnz9mOyxk0k",
-          "original_url": "https://www.youtube.com/watch?v=Rnz9mOyxk0k",
-          "image_url": "https://i.ytimg.com/vi/Rnz9mOyxk0k/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-10-01T19:00:13.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-            "video_id": "Rnz9mOyxk0k"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_google_developers",
-          "source_name": "Google for Developers YouTube",
-          "title": "How to transform audio into physical prints using Gemini and Google AI Studio",
-          "url": "https://youtube.com/watch?v=Rnz9mOyxk0k",
-          "published_at": "2026-10-01T19:00:13.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "mixed",
-      "one_liner": "",
-      "novelty": 0.914,
-      "novelty_label": "high",
-      "trust": 0.72,
-      "score": 0.611,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "1eeohw1",
-      "primary": {
-        "id": "1eeohw1",
-        "source_id": "yt_google_developers",
-        "source_name": "Google for Developers YouTube",
-        "source_role": "learning",
-        "trust": 0.72,
-        "kind_hint": "video",
-        "title": "Building low-latency remote robotics with Gemini",
-        "url": "https://youtube.com/watch?v=7sKHiuE7J-Y",
-        "original_url": "https://www.youtube.com/watch?v=7sKHiuE7J-Y",
-        "image_url": "https://i.ytimg.com/vi/7sKHiuE7J-Y/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-10-09T16:00:10.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-          "video_id": "7sKHiuE7J-Y"
-        }
-      },
-      "members": [
-        {
-          "id": "1eeohw1",
-          "source_id": "yt_google_developers",
-          "source_name": "Google for Developers YouTube",
-          "source_role": "learning",
-          "trust": 0.72,
-          "kind_hint": "video",
-          "title": "Building low-latency remote robotics with Gemini",
-          "url": "https://youtube.com/watch?v=7sKHiuE7J-Y",
-          "original_url": "https://www.youtube.com/watch?v=7sKHiuE7J-Y",
-          "image_url": "https://i.ytimg.com/vi/7sKHiuE7J-Y/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-10-09T16:00:10.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-            "video_id": "7sKHiuE7J-Y"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_google_developers",
-          "source_name": "Google for Developers YouTube",
-          "title": "Building low-latency remote robotics with Gemini",
-          "url": "https://youtube.com/watch?v=7sKHiuE7J-Y",
-          "published_at": "2026-10-09T16:00:10.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "mixed",
-      "one_liner": "",
-      "novelty": 0.895,
-      "novelty_label": "high",
-      "trust": 0.72,
-      "score": 0.605,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "h2mjrd",
-      "primary": {
-        "id": "h2mjrd",
-        "source_id": "yt_huggingface",
-        "source_name": "Hugging Face YouTube",
-        "source_role": "learning",
-        "trust": 0.78,
-        "kind_hint": "video",
-        "title": "Build a Business Dashboard with AI in MINUTES (for dummies...)",
-        "url": "https://youtube.com/watch?v=44RXU8Cxoas",
-        "original_url": "https://www.youtube.com/watch?v=44RXU8Cxoas",
-        "image_url": "https://i.ytimg.com/vi/44RXU8Cxoas/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-10-12T04:31:24.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
-          "video_id": "44RXU8Cxoas"
-        }
-      },
-      "members": [
-        {
-          "id": "h2mjrd",
-          "source_id": "yt_huggingface",
-          "source_name": "Hugging Face YouTube",
-          "source_role": "learning",
-          "trust": 0.78,
-          "kind_hint": "video",
-          "title": "Build a Business Dashboard with AI in MINUTES (for dummies...)",
-          "url": "https://youtube.com/watch?v=44RXU8Cxoas",
-          "original_url": "https://www.youtube.com/watch?v=44RXU8Cxoas",
-          "image_url": "https://i.ytimg.com/vi/44RXU8Cxoas/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-10-12T04:31:24.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
-            "video_id": "44RXU8Cxoas"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_huggingface",
-          "source_name": "Hugging Face YouTube",
-          "title": "Build a Business Dashboard with AI in MINUTES (for dummies...)",
-          "url": "https://youtube.com/watch?v=44RXU8Cxoas",
-          "published_at": "2026-10-12T04:31:24.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.78,
-      "score": 0.489,
+      "score": 0.463,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -945,77 +984,6 @@
           "title": "How H-Company Optimizes VLM Serving for Computer Use Agents With NVIDIA Dynamo",
           "url": "https://youtube.com/watch?v=eXlgMVAm28I",
           "published_at": "2026-10-08T23:43:42.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.463,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "6o3ee",
-      "primary": {
-        "id": "6o3ee",
-        "source_id": "yt_nvidia_developer",
-        "source_name": "NVIDIA Developer YouTube",
-        "source_role": "learning",
-        "trust": 0.78,
-        "kind_hint": "video",
-        "title": "Customizing Vertical Voice Agents with ASR and LLM Fine-Tuning | Nemotron Labs",
-        "url": "https://youtube.com/watch?v=F_glNmFP_5M",
-        "original_url": "https://www.youtube.com/watch?v=F_glNmFP_5M",
-        "image_url": "https://i.ytimg.com/vi/F_glNmFP_5M/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-10-08T21:41:49.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-          "video_id": "F_glNmFP_5M"
-        }
-      },
-      "members": [
-        {
-          "id": "6o3ee",
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "source_role": "learning",
-          "trust": 0.78,
-          "kind_hint": "video",
-          "title": "Customizing Vertical Voice Agents with ASR and LLM Fine-Tuning | Nemotron Labs",
-          "url": "https://youtube.com/watch?v=F_glNmFP_5M",
-          "original_url": "https://www.youtube.com/watch?v=F_glNmFP_5M",
-          "image_url": "https://i.ytimg.com/vi/F_glNmFP_5M/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-10-08T21:41:49.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-            "video_id": "F_glNmFP_5M"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "title": "Customizing Vertical Voice Agents with ASR and LLM Fine-Tuning | Nemotron Labs",
-          "url": "https://youtube.com/watch?v=F_glNmFP_5M",
-          "published_at": "2026-10-08T21:41:49.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
