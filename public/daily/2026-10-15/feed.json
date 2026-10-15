@@ -1,0 +1,3258 @@
+{
+  "generated_at": "2026-10-15T09:54:35.113Z",
+  "last_successful_generated_at": "2026-10-15T09:54:35.113Z",
+  "refresh_status": "partial",
+  "classification_mode": "llm",
+  "window_hours": 36,
+  "source_total": 53,
+  "source_ok": 50,
+  "source_failed": 3,
+  "failed_sources": [
+    {
+      "id": "marktechpost",
+      "name": "MarkTechPost",
+      "message": "HTTP 403 Forbidden - <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><m - url=https://www.marktechpost.com/feed"
+    },
+    {
+      "id": "r_localllama",
+      "name": "r/LocalLLaMA",
+      "message": "Invalid character in entity name\nLine: 23\nColumn: 151\nChar: ="
+    },
+    {
+      "id": "r_ml",
+      "name": "r/MachineLearning",
+      "message": "Invalid character in entity name\nLine: 23\nColumn: 151\nChar: ="
+    }
+  ],
+  "source_health": [
+    {
+      "id": "arxiv_cl",
+      "name": "arXiv cs.CL",
+      "status": "ok",
+      "fetched_count": 3,
+      "fresh_count": 3,
+      "stale_count": 0,
+      "oldest_published_at": "2026-10-15T04:00:00.000Z",
+      "newest_published_at": "2026-10-15T04:00:00.000Z"
+    },
+    {
+      "id": "arxiv_lg",
+      "name": "arXiv cs.LG",
+      "status": "ok",
+      "fetched_count": 3,
+      "fresh_count": 3,
+      "stale_count": 0,
+      "oldest_published_at": "2026-10-15T04:00:00.000Z",
+      "newest_published_at": "2026-10-15T04:00:00.000Z"
+    },
+    {
+      "id": "hf_papers",
+      "name": "Hugging Face Daily Papers",
+      "status": "ok",
+      "fetched_count": 20,
+      "fresh_count": 1,
+      "stale_count": 19,
+      "oldest_published_at": "2026-10-03T20:00:00.000Z",
+      "newest_published_at": "2026-10-14T03:19:43.000Z"
+    },
+    {
+      "id": "hf_trending_models",
+      "name": "Hugging Face trending models",
+      "status": "ok",
+      "fetched_count": 20,
+      "fresh_count": 0,
+      "stale_count": 20,
+      "oldest_published_at": "2026-06-19T09:40:33.000Z",
+      "newest_published_at": "2026-10-12T05:35:46.000Z"
+    },
+    {
+      "id": "simonw",
+      "name": "Simon Willison",
+      "status": "ok",
+      "fetched_count": 4,
+      "fresh_count": 3,
+      "stale_count": 1,
+      "oldest_published_at": "2026-10-12T23:58:46.000Z",
+      "newest_published_at": "2026-10-14T16:26:53.000Z"
+    },
+    {
+      "id": "martin_fowler",
+      "name": "Martin Fowler",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "2026-09-17T13:50:00.000Z",
+      "newest_published_at": "2026-10-13T13:35:00.000Z"
+    },
+    {
+      "id": "thoughtworks_insights",
+      "name": "Thoughtworks Insights",
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 2,
+      "stale_count": 4,
+      "oldest_published_at": "2026-10-08T00:00:00.000Z",
+      "newest_published_at": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "id": "latent_space",
+      "name": "Latent Space",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 4,
+      "stale_count": 6,
+      "oldest_published_at": "2026-10-10T00:31:26.000Z",
+      "newest_published_at": "2026-10-14T21:40:52.000Z"
+    },
+    {
+      "id": "interconnects",
+      "name": "Interconnects (Lambert)",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-08-17T15:07:49.000Z",
+      "newest_published_at": "2026-10-09T21:33:47.000Z"
+    },
+    {
+      "id": "import_ai",
+      "name": "Import AI (Jack Clark)",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-08-03T13:31:22.000Z",
+      "newest_published_at": "2026-10-12T12:30:39.000Z"
+    },
+    {
+      "id": "eugene_yan",
+      "name": "Eugene Yan",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2025-05-18T00:00:00.000Z",
+      "newest_published_at": "2026-06-21T00:00:00.000Z"
+    },
+    {
+      "id": "hamel",
+      "name": "Hamel Husain",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2025-07-11T07:00:00.000Z",
+      "newest_published_at": "2026-09-30T07:00:00.000Z"
+    },
+    {
+      "id": "philschmid",
+      "name": "Philipp Schmid",
+      "status": "ok",
+      "fetched_count": 15,
+      "fresh_count": 0,
+      "stale_count": 15,
+      "oldest_published_at": "2026-04-29T00:00:00.000Z",
+      "newest_published_at": "2026-09-28T00:00:00.000Z"
+    },
+    {
+      "id": "lilian_weng",
+      "name": "Lilian Weng",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2023-03-15T00:00:00.000Z",
+      "newest_published_at": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "chip_huyen",
+      "name": "Chip Huyen",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2023-06-07T00:00:00.000Z",
+      "newest_published_at": "2025-01-16T00:00:00.000Z"
+    },
+    {
+      "id": "addy_osmani",
+      "name": "Addy Osmani",
+      "status": "ok",
+      "fetched_count": 8,
+      "fresh_count": 0,
+      "stale_count": 8,
+      "oldest_published_at": "2026-07-06T00:00:00.000Z",
+      "newest_published_at": "2026-09-14T00:00:00.000Z"
+    },
+    {
+      "id": "daniel_miessler",
+      "name": "Daniel Miessler",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 4,
+      "stale_count": 6,
+      "oldest_published_at": "2026-09-27T00:41:43.000Z",
+      "newest_published_at": "2026-10-15T08:51:00.000Z"
+    },
+    {
+      "id": "sean_goedecke",
+      "name": "Sean Goedecke",
+      "status": "ok",
+      "fetched_count": 3,
+      "fresh_count": 0,
+      "stale_count": 3,
+      "oldest_published_at": "2026-09-27T00:00:00.000Z",
+      "newest_published_at": "2026-10-12T00:00:00.000Z"
+    },
+    {
+      "id": "techcrunch_ai",
+      "name": "TechCrunch AI",
+      "status": "ok",
+      "fetched_count": 12,
+      "fresh_count": 12,
+      "stale_count": 0,
+      "oldest_published_at": "2026-10-14T11:00:00.000Z",
+      "newest_published_at": "2026-10-15T04:30:00.000Z"
+    },
+    {
+      "id": "the_decoder",
+      "name": "The Decoder",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 7,
+      "stale_count": 3,
+      "oldest_published_at": "2026-10-13T17:12:41.000Z",
+      "newest_published_at": "2026-10-15T09:50:43.000Z"
+    },
+    {
+      "id": "mit_tech_review_ai",
+      "name": "MIT Technology Review AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-10-05T04:00:00.000Z",
+      "newest_published_at": "2026-10-13T10:00:00.000Z"
+    },
+    {
+      "id": "ars_ai",
+      "name": "Ars Technica AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 5,
+      "stale_count": 5,
+      "oldest_published_at": "2026-10-12T20:59:50.000Z",
+      "newest_published_at": "2026-10-14T21:15:56.000Z"
+    },
+    {
+      "id": "infoq_ai",
+      "name": "InfoQ AI/ML/Data",
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 2,
+      "stale_count": 4,
+      "oldest_published_at": "2026-10-09T17:00:00.000Z",
+      "newest_published_at": "2026-10-14T13:57:00.000Z"
+    },
+    {
+      "id": "stackoverflow_blog",
+      "name": "Stack Overflow Blog",
+      "status": "ok",
+      "fetched_count": 7,
+      "fresh_count": 0,
+      "stale_count": 7,
+      "oldest_published_at": "2026-10-07T20:48:55.000Z",
+      "newest_published_at": "2026-10-13T07:40:00.000Z"
+    },
+    {
+      "id": "the_verge_ai",
+      "name": "The Verge AI",
+      "status": "ok",
+      "fetched_count": 9,
+      "fresh_count": 9,
+      "stale_count": 0,
+      "oldest_published_at": "2026-10-14T16:00:00.000Z",
+      "newest_published_at": "2026-10-14T22:53:31.000Z"
+    },
+    {
+      "id": "wired_ai",
+      "name": "WIRED AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 5,
+      "stale_count": 5,
+      "oldest_published_at": "2026-10-12T17:00:27.000Z",
+      "newest_published_at": "2026-10-14T18:15:00.000Z"
+    },
+    {
+      "id": "nine_to_five_google_ai",
+      "name": "9to5Google AI",
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 0,
+      "stale_count": 6,
+      "oldest_published_at": "2017-08-08T14:44:01.000Z",
+      "newest_published_at": "2026-06-12T15:10:46.000Z"
+    },
+    {
+      "id": "product_hunt",
+      "name": "Product Hunt",
+      "status": "ok",
+      "fetched_count": 1,
+      "fresh_count": 1,
+      "stale_count": 0,
+      "oldest_published_at": "2026-10-14T12:11:07.000Z",
+      "newest_published_at": "2026-10-14T12:11:07.000Z"
+    },
+    {
+      "id": "marktechpost",
+      "name": "MarkTechPost",
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 403 Forbidden - <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><m - url=https://www.marktechpost.com/feed",
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "hn_ai",
+      "name": "Hacker News (AI-filtered)",
+      "status": "ok",
+      "fetched_count": 3,
+      "fresh_count": 2,
+      "stale_count": 1,
+      "oldest_published_at": "2026-10-13T05:54:01.000Z",
+      "newest_published_at": "2026-10-14T23:59:37.000Z"
+    },
+    {
+      "id": "hn_show_ai",
+      "name": "Show HN (AI-filtered)",
+      "status": "ok",
+      "fetched_count": 4,
+      "fresh_count": 2,
+      "stale_count": 2,
+      "oldest_published_at": "2026-10-13T10:08:34.000Z",
+      "newest_published_at": "2026-10-14T01:09:13.000Z"
+    },
+    {
+      "id": "lobsters_ai",
+      "name": "Lobsters (AI tag)",
+      "status": "ok",
+      "fetched_count": 20,
+      "fresh_count": 1,
+      "stale_count": 19,
+      "oldest_published_at": "2026-09-14T17:19:19.000Z",
+      "newest_published_at": "2026-10-14T11:24:24.000Z"
+    },
+    {
+      "id": "r_localllama",
+      "name": "r/LocalLLaMA",
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "Invalid character in entity name\nLine: 23\nColumn: 151\nChar: =",
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "r_ml",
+      "name": "r/MachineLearning",
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "Invalid character in entity name\nLine: 23\nColumn: 151\nChar: =",
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 5,
+      "stale_count": 5,
+      "oldest_published_at": "2026-10-08T12:00:00.000Z",
+      "newest_published_at": "2026-10-14T12:00:00.000Z"
+    },
+    {
+      "id": "deepmind",
+      "name": "Google DeepMind",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 1,
+      "stale_count": 9,
+      "oldest_published_at": "2026-09-23T15:25:14.000Z",
+      "newest_published_at": "2026-10-14T02:00:14.000Z"
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "status": "ok",
+      "fetched_count": 12,
+      "fresh_count": 2,
+      "stale_count": 10,
+      "oldest_published_at": "2026-10-06T19:00:00.000Z",
+      "newest_published_at": "2026-10-14T18:33:00.000Z"
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-06-23T12:00:48.000Z",
+      "newest_published_at": "2026-10-06T12:00:27.000Z"
+    },
+    {
+      "id": "google_research",
+      "name": "Google Research",
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 1,
+      "stale_count": 5,
+      "oldest_published_at": "2026-09-15T20:00:00.000Z",
+      "newest_published_at": "2026-10-14T16:14:00.000Z"
+    },
+    {
+      "id": "google_ai_keyword",
+      "name": "Google AI on Keyword",
+      "status": "ok",
+      "fetched_count": 8,
+      "fresh_count": 2,
+      "stale_count": 6,
+      "oldest_published_at": "2026-10-09T00:00:00.000Z",
+      "newest_published_at": "2026-10-14T16:15:00.000Z"
+    },
+    {
+      "id": "meta_ai",
+      "name": "Meta AI Blog",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "1970-01-01T00:00:00.000Z",
+      "newest_published_at": "2026-07-09T00:00:00.000Z"
+    },
+    {
+      "id": "microsoft_research",
+      "name": "Microsoft Research",
+      "status": "ok",
+      "fetched_count": 7,
+      "fresh_count": 0,
+      "stale_count": 7,
+      "oldest_published_at": "2026-08-31T16:00:00.000Z",
+      "newest_published_at": "2026-10-12T16:00:00.000Z"
+    },
+    {
+      "id": "azure_ai_blog",
+      "name": "Azure AI Blog",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "2026-09-24T18:00:00.000Z",
+      "newest_published_at": "2026-10-13T16:15:00.000Z"
+    },
+    {
+      "id": "aws_ml_blog",
+      "name": "AWS Machine Learning Blog",
+      "status": "ok",
+      "fetched_count": 12,
+      "fresh_count": 4,
+      "stale_count": 8,
+      "oldest_published_at": "2026-10-12T15:51:46.000Z",
+      "newest_published_at": "2026-10-14T16:24:07.000Z"
+    },
+    {
+      "id": "nvidia_developer_blog",
+      "name": "NVIDIA Developer Blog",
+      "status": "ok",
+      "fetched_count": 9,
+      "fresh_count": 1,
+      "stale_count": 8,
+      "oldest_published_at": "2026-10-06T19:58:03.000Z",
+      "newest_published_at": "2026-10-14T16:10:45.000Z"
+    },
+    {
+      "id": "cloudflare_ai_changelog",
+      "name": "Cloudflare AI Changelog",
+      "status": "ok",
+      "fetched_count": 12,
+      "fresh_count": 0,
+      "stale_count": 12,
+      "oldest_published_at": "2026-10-09T00:00:00.000Z",
+      "newest_published_at": "2026-10-13T00:00:00.000Z"
+    },
+    {
+      "id": "cohere_blog",
+      "name": "Cohere Blog",
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 1,
+      "stale_count": 5,
+      "oldest_published_at": "2026-09-22T17:45:00.000Z",
+      "newest_published_at": "2026-10-14T16:48:00.000Z"
+    },
+    {
+      "id": "ai2_blog",
+      "name": "Ai2 Blog",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "2026-09-09T08:00:00.000Z",
+      "newest_published_at": "2026-10-09T08:00:00.000Z"
+    },
+    {
+      "id": "together",
+      "name": "Together AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-09-09T00:00:00.000Z",
+      "newest_published_at": "2026-10-06T00:00:00.000Z"
+    },
+    {
+      "id": "modal",
+      "name": "Modal",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 1,
+      "stale_count": 9,
+      "oldest_published_at": "2026-09-23T00:00:00.000Z",
+      "newest_published_at": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "status": "ok",
+      "fetched_count": 12,
+      "fresh_count": 0,
+      "stale_count": 12,
+      "oldest_published_at": "2026-07-20T12:00:00.000Z",
+      "newest_published_at": "2026-08-14T12:00:00.000Z"
+    },
+    {
+      "id": "fahd_mirza",
+      "name": "Fahd Mirza YouTube",
+      "status": "ok",
+      "fetched_count": 8,
+      "fresh_count": 3,
+      "stale_count": 5,
+      "oldest_published_at": "2026-10-11T18:00:13.000Z",
+      "newest_published_at": "2026-10-15T06:00:33.000Z"
+    },
+    {
+      "id": "yt_nate_b_jones",
+      "name": "AI News & Strategy Daily",
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 2,
+      "stale_count": 4,
+      "oldest_published_at": "2026-10-07T14:00:32.000Z",
+      "newest_published_at": "2026-10-15T03:00:16.000Z"
+    }
+  ],
+  "top_news": [
+    {
+      "cluster_id": "1y187q0",
+      "title": "Do Vision CIL Methods Transfer to Protein? A Diagnostic Benchmark of Frozen Protein Encoders",
+      "url": "https://arxiv.org/abs/2610.18879",
+      "source_name": "arXiv cs.LG",
+      "published_at": "2026-10-15T04:00:00.000Z",
+      "kind": "paper",
+      "score": 0.817,
+      "dek": "Researchers benchmarked nine class-incremental learning (CIL) methods on frozen protein encoders to evaluate their efficacy in protein function annotation.",
+      "brief": "Protein function annotation requires adapting to new labels without full retraining. This study tests vision-derived CIL techniques across five protein encoder architectures (sequence, structure, and hybrid) to determine how well they handle expanding label spaces while keeping the underlying encoders frozen.",
+      "image_alt": "Diagram showing protein encoder architecture and CIL workflow",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-10-15T09:54:35.113Z"
+    },
+    {
+      "cluster_id": "13dv9vg",
+      "title": "LFM2.5-24B-A2B: Built for fast on-device agents",
+      "url": "https://liquid.ai/blog/lfm2-5-24b-a2b",
+      "source_name": "Hacker News (AI-filtered)",
+      "published_at": "2026-10-14T23:59:37Z",
+      "kind": "model_release",
+      "score": 0.769,
+      "dek": "Liquid AI released LFM2.5-24B-A2B, a 24B-parameter model with 2B active parameters optimized for fast, on-device agentic tasks.",
+      "brief": "The model features a sparse architecture that achieves 184 tokens/s on Apple M5 Max hardware. It outperforms larger models on several agentic and tool-use benchmarks, including LiveClaw and AutomationBench, while maintaining a smaller active parameter footprint for efficient local inference.",
+      "image_alt": "Performance comparison chart of LFM2.5-24B-A2B vs competitors",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-10-15T09:54:35.113Z"
+    },
+    {
+      "cluster_id": "vahzgg",
+      "title": "Share the Symbol, Not the Vector: Training-Free Fact Communication Across Language Models",
+      "url": "https://arxiv.org/abs/2610.19696",
+      "source_name": "Hugging Face Daily Papers",
+      "published_at": "2026-10-14T03:19:43.000Z",
+      "kind": "paper",
+      "score": 0.741,
+      "dek": "SYNC is a new training-free communication protocol that allows heterogeneous language models to exchange facts using word-indexed symbols.",
+      "brief": "SYNC enables multi-agent collaboration without fine-tuning or learned translators. By using a shared vocabulary of symbols to index internal states, models can communicate complementary information across different architectures, bypassing the need for vector-space alignment.",
+      "image_alt": "Conceptual diagram of SYNC protocol connecting two different LLMs",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-10-15T09:54:35.113Z"
+    },
+    {
+      "cluster_id": "ayyd51",
+      "title": "Anthropic's Q3 revenue hits $16.8B but growth slows ahead of planned November IPO",
+      "url": "https://the-decoder.com/anthropics-q3-revenue-hits-16-8b-but-growth-slows-ahead-of-planned-november-ipo",
+      "source_name": "The Decoder",
+      "published_at": "2026-10-15T09:50:43.000Z",
+      "kind": "news",
+      "score": 0.657,
+      "dek": "Anthropic reported $16.8B in Q3 revenue, signaling a deceleration in growth as the company prepares for a November IPO.",
+      "brief": "While Q3 revenue grew 45% over the previous quarter, this represents a significant slowdown from the 140% growth seen in Q2. Market analysts are adjusting valuation expectations ahead of the upcoming IPO, reflecting broader concerns about the sustainability of current AI revenue growth rates.",
+      "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/anthropic_amodei.png",
+      "image_alt": "Graph showing quarterly revenue growth trajectory for Anthropic",
+      "image_source": "rss_content",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-10-15T09:54:35.113Z"
+    },
+    {
+      "cluster_id": "19xhnjv",
+      "title": "Introducing UL Gauntlet, a Benchmark for How Well AI Explains",
+      "url": "https://danielmiessler.com/blog/introducing-ul-gauntlet",
+      "source_name": "Daniel Miessler",
+      "published_at": "2026-10-15T00:02:00.000Z",
+      "kind": "tool",
+      "score": 0.653,
+      "dek": "The UL Gauntlet benchmark evaluates AI models on their ability to provide high-quality, singular explanations based on David Deutsch's criteria.",
+      "brief": "The benchmark tests 30 model configurations by requiring them to explain complex concepts, commit to a single explanation, and justify their reasoning. It aims to move beyond standard accuracy metrics to measure the depth and logical consistency of AI-generated explanations.",
+      "image_alt": "UL Gauntlet benchmark results chart",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-10-15T09:54:35.113Z"
+    }
+  ],
+  "count": 42,
+  "clusters": [
+    {
+      "id": "1y187q0",
+      "primary": {
+        "id": "1y187q0",
+        "source_id": "arxiv_lg",
+        "source_name": "arXiv cs.LG",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "paper",
+        "title": "Do Vision CIL Methods Transfer to Protein? A Diagnostic Benchmark of Frozen Protein Encoders",
+        "url": "https://arxiv.org/abs/2610.18879",
+        "original_url": "https://arxiv.org/abs/2610.18879",
+        "summary": "Protein function annotation operates over an expanding label space, making class-incremental learning (CIL) a natural framework for incorporating newly discovered functions without full retraining. Yet existing CIL methods have been developed largely in vision and have not been systematically evaluated over frozen protein representations. We conduct a controlled benchmark of nine representative CIL methods across five sequence-, structure-, and sequence--structure-based protein encoders and two enzyme function datasets at different scales, while keeping the encoders frozen and evaluation setti",
+        "published_at": "2026-10-15T04:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1y187q0",
+          "source_id": "arxiv_lg",
+          "source_name": "arXiv cs.LG",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "paper",
+          "title": "Do Vision CIL Methods Transfer to Protein? A Diagnostic Benchmark of Frozen Protein Encoders",
+          "url": "https://arxiv.org/abs/2610.18879",
+          "original_url": "https://arxiv.org/abs/2610.18879",
+          "summary": "Protein function annotation operates over an expanding label space, making class-incremental learning (CIL) a natural framework for incorporating newly discovered functions without full retraining. Yet existing CIL methods have been developed largely in vision and have not been systematically evaluated over frozen protein representations. We conduct a controlled benchmark of nine representative CIL methods across five sequence-, structure-, and sequence--structure-based protein encoders and two enzyme function datasets at different scales, while keeping the encoders frozen and evaluation setti",
+          "published_at": "2026-10-15T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "arxiv_lg",
+          "source_name": "arXiv cs.LG",
+          "title": "Do Vision CIL Methods Transfer to Protein? A Diagnostic Benchmark of Frozen Protein Encoders",
+          "url": "https://arxiv.org/abs/2610.18879",
+          "published_at": "2026-10-15T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "Evaluates class-incremental learning methods for protein function annotation using frozen protein encoders.",
+      "novelty": 0.853,
+      "novelty_label": "high",
+      "trust": 0.9,
+      "score": 0.817,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "3f9iqv",
+      "primary": {
+        "id": "3f9iqv",
+        "source_id": "arxiv_cl",
+        "source_name": "arXiv cs.CL",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "paper",
+        "title": "Following the Flow the Law Requires: Training Voice Agents to Transfer to Unseen Regulated Procedures in Debt Collection",
+        "url": "https://arxiv.org/abs/2610.18881",
+        "original_url": "https://arxiv.org/abs/2610.18881",
+        "summary": "Voice agents built on large language models (LLMs) now handle customer calls, but in regulated applications completing the task is not enough: the agent must follow a conversational flow set by law. In debt collection, it must confirm it is speaking to the debtor before mentioning the debt, identify itself and the creditor, state the amount, and avoid prohibited language. Every creditor turns these rules into its own procedure and revises it. We ask whether a small, self-hosted policy can be trained once and then follow regulated procedures it has never seen. One machine-readable specification",
+        "published_at": "2026-10-15T04:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "3f9iqv",
+          "source_id": "arxiv_cl",
+          "source_name": "arXiv cs.CL",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "paper",
+          "title": "Following the Flow the Law Requires: Training Voice Agents to Transfer to Unseen Regulated Procedures in Debt Collection",
+          "url": "https://arxiv.org/abs/2610.18881",
+          "original_url": "https://arxiv.org/abs/2610.18881",
+          "summary": "Voice agents built on large language models (LLMs) now handle customer calls, but in regulated applications completing the task is not enough: the agent must follow a conversational flow set by law. In debt collection, it must confirm it is speaking to the debtor before mentioning the debt, identify itself and the creditor, state the amount, and avoid prohibited language. Every creditor turns these rules into its own procedure and revises it. We ask whether a small, self-hosted policy can be trained once and then follow regulated procedures it has never seen. One machine-readable specification",
+          "published_at": "2026-10-15T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "arxiv_cl",
+          "source_name": "arXiv cs.CL",
+          "title": "Following the Flow the Law Requires: Training Voice Agents to Transfer to Unseen Regulated Procedures in Debt Collection",
+          "url": "https://arxiv.org/abs/2610.18881",
+          "published_at": "2026-10-15T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "Investigates training voice agents to adhere to strict legal conversational flows in debt collection scenarios.",
+      "novelty": 0.837,
+      "novelty_label": "high",
+      "trust": 0.9,
+      "score": 0.812,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "13dv9vg",
+      "primary": {
+        "id": "13dv9vg",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "LFM2.5-24B-A2B: Built for fast on-device agents",
+        "url": "https://liquid.ai/blog/lfm2-5-24b-a2b",
+        "original_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+        "discussion_url": "https://news.ycombinator.com/item?id=50097369",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-10-14T23:59:37Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 212,
+          "comments": 44
+        }
+      },
+      "members": [
+        {
+          "id": "13dv9vg",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "LFM2.5-24B-A2B: Built for fast on-device agents",
+          "url": "https://liquid.ai/blog/lfm2-5-24b-a2b",
+          "original_url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+          "discussion_url": "https://news.ycombinator.com/item?id=50097369",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-10-14T23:59:37Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 212,
+            "comments": 44
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "LFM2.5-24B-A2B: Built for fast on-device agents",
+          "url": "https://liquid.ai/blog/lfm2-5-24b-a2b",
+          "published_at": "2026-10-14T23:59:37Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=50097369",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "Release of LFM2.5-24B-A2B, a model optimized for on-device agent performance.",
+      "novelty": 0.805,
+      "novelty_label": "high",
+      "trust": 0.65,
+      "score": 0.769,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
+    },
+    {
+      "id": "ne74c",
+      "primary": {
+        "id": "ne74c",
+        "source_id": "arxiv_cl",
+        "source_name": "arXiv cs.CL",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "paper",
+        "title": "Evaluating Large Language Models for Multilingual Abstractive Summarization: A Comprehensive Study of English and Bengali",
+        "url": "https://arxiv.org/abs/2610.19003",
+        "original_url": "https://arxiv.org/abs/2610.19003",
+        "summary": "Abstractive summarization remains challenging across languages, where linguistic quality and factual consistency may diverge, particularly in low-resource settings. We present a standardized zero-shot benchmark of eight closed-source and open-weight LLMs on size-matched English and Bengali XL-Sum test sets. Our evaluation combines lexical and semantic metrics with reference-free factuality verification and multidimensional LLM-as-a-Judge assessment, providing a comprehensive analysis of both surface-level quality and factual reliability in multilingual summarization. Results reveal substantial",
+        "published_at": "2026-10-15T04:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "ne74c",
+          "source_id": "arxiv_cl",
+          "source_name": "arXiv cs.CL",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "paper",
+          "title": "Evaluating Large Language Models for Multilingual Abstractive Summarization: A Comprehensive Study of English and Bengali",
+          "url": "https://arxiv.org/abs/2610.19003",
+          "original_url": "https://arxiv.org/abs/2610.19003",
+          "summary": "Abstractive summarization remains challenging across languages, where linguistic quality and factual consistency may diverge, particularly in low-resource settings. We present a standardized zero-shot benchmark of eight closed-source and open-weight LLMs on size-matched English and Bengali XL-Sum test sets. Our evaluation combines lexical and semantic metrics with reference-free factuality verification and multidimensional LLM-as-a-Judge assessment, providing a comprehensive analysis of both surface-level quality and factual reliability in multilingual summarization. Results reveal substantial",
+          "published_at": "2026-10-15T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "arxiv_cl",
+          "source_name": "arXiv cs.CL",
+          "title": "Evaluating Large Language Models for Multilingual Abstractive Summarization: A Comprehensive Study of English and Bengali",
+          "url": "https://arxiv.org/abs/2610.19003",
+          "published_at": "2026-10-15T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "Zero-shot benchmark comparing eight LLMs on English and Bengali abstractive summarization tasks.",
+      "novelty": 0.741,
+      "novelty_label": "medium",
+      "trust": 0.9,
+      "score": 0.783,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "vahzgg",
+      "primary": {
+        "id": "vahzgg",
+        "source_id": "hf_papers",
+        "source_name": "Hugging Face Daily Papers",
+        "source_role": "main",
+        "trust": 0.85,
+        "kind_hint": "paper",
+        "title": "Share the Symbol, Not the Vector: Training-Free Fact Communication Across Language Models",
+        "url": "https://arxiv.org/abs/2610.19696",
+        "original_url": "https://arxiv.org/abs/2610.19696",
+        "summary": "Multi-agent systems allow language models to solve tasks collaboratively by sharing complementary information. These systems typically communicate through text, while recent approaches also explore exchanging internal model states. However, sharing these states across architectures often requires learned translators or assumptions about model compatibility. We introduce SYNC (Symbol-Indexed Neural Communication), a word-indexed interface that connects heterogeneous models without fine-tuning or a learned translator. From descriptions only it can see, the sender selects words from a shared list and sends their indices for each object, without seeing the questions. The receiver writes the described facts into its hidden states using its own word directions, vectors fitted once from its activations. We test selective use by swapping one attribute between two objects and requiring correct answers about both changed and unchanged attributes before and after the swap, four answers in total. We choose an early write layer on four development receivers and then fix it. With three different senders and nine newer receivers from five families, four-answer success on new scenes reaches 72.0-98.3%, up to 96 percentage points above middle-layer writing, and the two largest receivers match plain text. A task-free probe predicted in advance which depths each new receiver can use (45 of 45 cases). Without retuning, messages listing every fact keep 89.6-100% success under new layouts, and sender messages reach 23.9-64.0% on a landmark task with multi-token symbols, below text but from 0% without a message. These results show that shared word indices and receiver-local directions can support selective fact use across model families without additional training.",
+        "published_at": "2026-10-14T03:19:43.000Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 1
+        }
+      },
+      "members": [
+        {
+          "id": "vahzgg",
+          "source_id": "hf_papers",
+          "source_name": "Hugging Face Daily Papers",
+          "source_role": "main",
+          "trust": 0.85,
+          "kind_hint": "paper",
+          "title": "Share the Symbol, Not the Vector: Training-Free Fact Communication Across Language Models",
+          "url": "https://arxiv.org/abs/2610.19696",
+          "original_url": "https://arxiv.org/abs/2610.19696",
+          "summary": "Multi-agent systems allow language models to solve tasks collaboratively by sharing complementary information. These systems typically communicate through text, while recent approaches also explore exchanging internal model states. However, sharing these states across architectures often requires learned translators or assumptions about model compatibility. We introduce SYNC (Symbol-Indexed Neural Communication), a word-indexed interface that connects heterogeneous models without fine-tuning or a learned translator. From descriptions only it can see, the sender selects words from a shared list and sends their indices for each object, without seeing the questions. The receiver writes the described facts into its hidden states using its own word directions, vectors fitted once from its activations. We test selective use by swapping one attribute between two objects and requiring correct answers about both changed and unchanged attributes before and after the swap, four answers in total. We choose an early write layer on four development receivers and then fix it. With three different senders and nine newer receivers from five families, four-answer success on new scenes reaches 72.0-98.3%, up to 96 percentage points above middle-layer writing, and the two largest receivers match plain text. A task-free probe predicted in advance which depths each new receiver can use (45 of 45 cases). Without retuning, messages listing every fact keep 89.6-100% success under new layouts, and sender messages reach 23.9-64.0% on a landmark task with multi-token symbols, below text but from 0% without a message. These results show that shared word indices and receiver-local directions can support selective fact use across model families without additional training.",
+          "published_at": "2026-10-14T03:19:43.000Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 1
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hf_papers",
+          "source_name": "Hugging Face Daily Papers",
+          "title": "Share the Symbol, Not the Vector: Training-Free Fact Communication Across Language Models",
+          "url": "https://arxiv.org/abs/2610.19696",
+          "published_at": "2026-10-14T03:19:43.000Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "Proposes a training-free method for multi-agent systems to communicate facts across different model architectures.",
+      "novelty": 0.765,
+      "novelty_label": "high",
+      "trust": 0.85,
+      "score": 0.741,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "ayyd51",
+      "primary": {
+        "id": "ayyd51",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Anthropic's Q3 revenue hits $16.8B but growth slows ahead of planned November IPO",
+        "url": "https://the-decoder.com/anthropics-q3-revenue-hits-16-8b-but-growth-slows-ahead-of-planned-november-ipo",
+        "original_url": "https://the-decoder.com/anthropics-q3-revenue-hits-16-8b-but-growth-slows-ahead-of-planned-november-ipo/",
+        "summary": "Anthropic hit $16.8 billion in third-quarter revenue, a 45 percent gain that still falls far short of Q2's 140 percent surge. With a November IPO approaching, some investors now expect the company's valuation to drop below $1.5 trillion. Slowing growth and a tough market are cooling expectations for the AI boom's biggest Wall Street test yet. The article Anthropic's Q3 revenue hits $16.8B but growth slows ahead of planned November IPO appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/anthropic_amodei.png",
+        "image_source": "rss_content",
+        "published_at": "2026-10-15T09:50:43.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "ayyd51",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Anthropic's Q3 revenue hits $16.8B but growth slows ahead of planned November IPO",
+          "url": "https://the-decoder.com/anthropics-q3-revenue-hits-16-8b-but-growth-slows-ahead-of-planned-november-ipo",
+          "original_url": "https://the-decoder.com/anthropics-q3-revenue-hits-16-8b-but-growth-slows-ahead-of-planned-november-ipo/",
+          "summary": "Anthropic hit $16.8 billion in third-quarter revenue, a 45 percent gain that still falls far short of Q2's 140 percent surge. With a November IPO approaching, some investors now expect the company's valuation to drop below $1.5 trillion. Slowing growth and a tough market are cooling expectations for the AI boom's biggest Wall Street test yet. The article Anthropic's Q3 revenue hits $16.8B but growth slows ahead of planned November IPO appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/anthropic_amodei.png",
+          "image_source": "rss_content",
+          "published_at": "2026-10-15T09:50:43.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Anthropic's Q3 revenue hits $16.8B but growth slows ahead of planned November IPO",
+          "url": "https://the-decoder.com/anthropics-q3-revenue-hits-16-8b-but-growth-slows-ahead-of-planned-november-ipo",
+          "published_at": "2026-10-15T09:50:43.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Financial reporting on Anthropic's quarterly revenue and IPO outlook.",
+      "novelty": 0.788,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.657,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "19xhnjv",
+      "primary": {
+        "id": "19xhnjv",
+        "source_id": "daniel_miessler",
+        "source_name": "Daniel Miessler",
+        "source_role": "main",
+        "trust": 0.78,
+        "title": "Introducing UL Gauntlet, a Benchmark for How Well AI Explains",
+        "url": "https://danielmiessler.com/blog/introducing-ul-gauntlet",
+        "original_url": "https://danielmiessler.com/blog/introducing-ul-gauntlet?utm_source=rss&utm_medium=feed&utm_campaign=website",
+        "summary": "UL Gauntlet results chart/images/introducing-ul-gauntlet.webphttps://thebenchmarks.ai I'm Kai, Daniel's AI assistant, and I wrote this post. toc UL Gauntlet is a benchmark for how well AI models explain things. Each model has to say why something is true, commit to one explanation, and name what...",
+        "published_at": "2026-10-15T00:02:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "19xhnjv",
+          "source_id": "daniel_miessler",
+          "source_name": "Daniel Miessler",
+          "source_role": "main",
+          "trust": 0.78,
+          "title": "Introducing UL Gauntlet, a Benchmark for How Well AI Explains",
+          "url": "https://danielmiessler.com/blog/introducing-ul-gauntlet",
+          "original_url": "https://danielmiessler.com/blog/introducing-ul-gauntlet?utm_source=rss&utm_medium=feed&utm_campaign=website",
+          "summary": "UL Gauntlet results chart/images/introducing-ul-gauntlet.webphttps://thebenchmarks.ai I'm Kai, Daniel's AI assistant, and I wrote this post. toc UL Gauntlet is a benchmark for how well AI models explain things. Each model has to say why something is true, commit to one explanation, and name what...",
+          "published_at": "2026-10-15T00:02:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "daniel_miessler",
+          "source_name": "Daniel Miessler",
+          "title": "Introducing UL Gauntlet, a Benchmark for How Well AI Explains",
+          "url": "https://danielmiessler.com/blog/introducing-ul-gauntlet",
+          "published_at": "2026-10-15T00:02:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "mixed",
+      "one_liner": "Introduction of UL Gauntlet, a benchmark designed to evaluate how well AI models explain concepts.",
+      "novelty": 0.797,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.653,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "1ffejul",
+      "primary": {
+        "id": "1ffejul",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "Figma announces new features to define how agents work on its platform",
+        "url": "https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform",
+        "original_url": "https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform/",
+        "summary": "Figma is also releasing its code layers feature in open beta.",
+        "published_at": "2026-10-15T04:30:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1ffejul",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "Figma announces new features to define how agents work on its platform",
+          "url": "https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform",
+          "original_url": "https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform/",
+          "summary": "Figma is also releasing its code layers feature in open beta.",
+          "published_at": "2026-10-15T04:30:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "Figma announces new features to define how agents work on its platform",
+          "url": "https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform",
+          "published_at": "2026-10-15T04:30:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "mixed",
+      "one_liner": "Figma announces new agent-related features and code layers in open beta.",
+      "novelty": 0.814,
+      "novelty_label": "high",
+      "trust": 0.72,
+      "score": 0.652,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+    },
+    {
+      "id": "f1arze",
+      "primary": {
+        "id": "f1arze",
+        "source_id": "fahd_mirza",
+        "source_name": "Fahd Mirza YouTube",
+        "source_role": "main",
+        "trust": 0.66,
+        "kind_hint": "video",
+        "title": "LFM2.5 24B-A2B: Did Liquid AI Manage to Beat Qwen? Tested Locally",
+        "url": "https://youtube.com/watch?v=gml5Hlca-Qs",
+        "original_url": "https://www.youtube.com/watch?v=gml5Hlca-Qs",
+        "image_url": "https://i.ytimg.com/vi/gml5Hlca-Qs/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-15T06:00:33.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+          "video_id": "gml5Hlca-Qs"
+        }
+      },
+      "members": [
+        {
+          "id": "f1arze",
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "source_role": "main",
+          "trust": 0.66,
+          "kind_hint": "video",
+          "title": "LFM2.5 24B-A2B: Did Liquid AI Manage to Beat Qwen? Tested Locally",
+          "url": "https://youtube.com/watch?v=gml5Hlca-Qs",
+          "original_url": "https://www.youtube.com/watch?v=gml5Hlca-Qs",
+          "image_url": "https://i.ytimg.com/vi/gml5Hlca-Qs/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-15T06:00:33.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+            "video_id": "gml5Hlca-Qs"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "title": "LFM2.5 24B-A2B: Did Liquid AI Manage to Beat Qwen? Tested Locally",
+          "url": "https://youtube.com/watch?v=gml5Hlca-Qs",
+          "published_at": "2026-10-15T06:00:33.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.814,
+      "novelty_label": "high",
+      "trust": 0.66,
+      "score": 0.64,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "vezkl9",
+      "primary": {
+        "id": "vezkl9",
+        "source_id": "yt_nate_b_jones",
+        "source_name": "AI News & Strategy Daily",
+        "source_role": "main",
+        "trust": 0.62,
+        "kind_hint": "video",
+        "title": "Is AI making us really productive? #AI #productivity #focus #futureofwork #careers",
+        "url": "https://youtube.com/shorts/ShSVKyAjyyk",
+        "original_url": "https://www.youtube.com/shorts/ShSVKyAjyyk",
+        "published_at": "2026-10-15T03:00:16.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UC0C-17n9iuUQPylguM1d-lQ"
+        }
+      },
+      "members": [
+        {
+          "id": "vezkl9",
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "source_role": "main",
+          "trust": 0.62,
+          "kind_hint": "video",
+          "title": "Is AI making us really productive? #AI #productivity #focus #futureofwork #careers",
+          "url": "https://youtube.com/shorts/ShSVKyAjyyk",
+          "original_url": "https://www.youtube.com/shorts/ShSVKyAjyyk",
+          "published_at": "2026-10-15T03:00:16.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UC0C-17n9iuUQPylguM1d-lQ"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "title": "Is AI making us really productive? #AI #productivity #focus #futureofwork #careers",
+          "url": "https://youtube.com/shorts/ShSVKyAjyyk",
+          "published_at": "2026-10-15T03:00:16.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.748,
+      "novelty_label": "medium",
+      "trust": 0.62,
+      "score": 0.606,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "62jp6n",
+      "primary": {
+        "id": "62jp6n",
+        "source_id": "product_hunt",
+        "source_name": "Product Hunt",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "tool",
+        "title": "AI Sandboxes by Buddy",
+        "url": "https://producthunt.com/products/buddy",
+        "original_url": "https://www.producthunt.com/products/buddy",
+        "summary": "Discussion | Link",
+        "published_at": "2026-10-14T12:11:07.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "62jp6n",
+          "source_id": "product_hunt",
+          "source_name": "Product Hunt",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "tool",
+          "title": "AI Sandboxes by Buddy",
+          "url": "https://producthunt.com/products/buddy",
+          "original_url": "https://www.producthunt.com/products/buddy",
+          "summary": "Discussion | Link",
+          "published_at": "2026-10-14T12:11:07.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "product_hunt",
+          "source_name": "Product Hunt",
+          "title": "AI Sandboxes by Buddy",
+          "url": "https://producthunt.com/products/buddy",
+          "published_at": "2026-10-14T12:11:07.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "mixed",
+      "one_liner": "A sandbox environment for AI development; limited technical detail provided.",
+      "novelty": 0.811,
+      "novelty_label": "high",
+      "trust": 0.5,
+      "score": 0.573,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "wgjh7o",
+      "primary": {
+        "id": "wgjh7o",
+        "source_id": "latent_space",
+        "source_name": "Latent Space",
+        "source_role": "main",
+        "trust": 0.85,
+        "title": "Crossing the Threshold: How OpenAI and Anthropic Approach Autonomy and Safety in Financial Agents",
+        "url": "https://latent.space/p/crossing-the-threshold",
+        "original_url": "https://www.latent.space/p/crossing-the-threshold",
+        "summary": "At AI Engineer New York, frontier labs and financial firms explored how to give agents useful autonomy while keeping consequential decisions under control.",
+        "image_url": "https://substackcdn.com/image/fetch/$s_!rtS2!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4aa91ce4-8821-4844-aa0f-56d4bd3c8d7e_1280x720.jpeg",
+        "image_source": "rss_enclosure",
+        "published_at": "2026-10-14T21:40:52.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "wgjh7o",
+          "source_id": "latent_space",
+          "source_name": "Latent Space",
+          "source_role": "main",
+          "trust": 0.85,
+          "title": "Crossing the Threshold: How OpenAI and Anthropic Approach Autonomy and Safety in Financial Agents",
+          "url": "https://latent.space/p/crossing-the-threshold",
+          "original_url": "https://www.latent.space/p/crossing-the-threshold",
+          "summary": "At AI Engineer New York, frontier labs and financial firms explored how to give agents useful autonomy while keeping consequential decisions under control.",
+          "image_url": "https://substackcdn.com/image/fetch/$s_!rtS2!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4aa91ce4-8821-4844-aa0f-56d4bd3c8d7e_1280x720.jpeg",
+          "image_source": "rss_enclosure",
+          "published_at": "2026-10-14T21:40:52.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "latent_space",
+          "source_name": "Latent Space",
+          "title": "Crossing the Threshold: How OpenAI and Anthropic Approach Autonomy and Safety in Financial Agents",
+          "url": "https://latent.space/p/crossing-the-threshold",
+          "published_at": "2026-10-14T21:40:52.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "Summary of industry discussions on balancing agent autonomy with safety in financial applications.",
+      "novelty": 0.79,
+      "novelty_label": "high",
+      "trust": 0.85,
+      "score": 0.583,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "15si5oq",
+      "primary": {
+        "id": "15si5oq",
+        "source_id": "nvidia_developer_blog",
+        "source_name": "NVIDIA Developer Blog",
+        "source_role": "main",
+        "trust": 0.82,
+        "kind_hint": "tool",
+        "title": "Optimizing Agent Reliability and Tool Calling Efficiency for Chip Design Using NVIDIA NeMo Gym",
+        "url": "https://developer.nvidia.com/blog/optimizing-agent-reliability-and-tool-calling-efficiency-for-chip-design-using-nvidia-nemo-gym",
+        "original_url": "https://developer.nvidia.com/blog/optimizing-agent-reliability-and-tool-calling-efficiency-for-chip-design-using-nvidia-nemo-gym/",
+        "summary": "AI agents offer remarkable productivity gains in complex chip design workflows, but their tendency to generate plausible yet incorrect artifacts makes... AI agents offer remarkable productivity gains in complex chip design workflows, but their tendency to generate plausible yet incorrect artifacts makes reliability a major barrier to production adoption. In multistage engineering workflows, an undetected error early in setup can silently propagate through downstream stages and final artifact generation. Evaluating and refining these agents against… Source",
+        "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/10/agentic-workflow-768x432.png",
+        "image_source": "rss_content",
+        "published_at": "2026-10-14T16:10:45.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "15si5oq",
+          "source_id": "nvidia_developer_blog",
+          "source_name": "NVIDIA Developer Blog",
+          "source_role": "main",
+          "trust": 0.82,
+          "kind_hint": "tool",
+          "title": "Optimizing Agent Reliability and Tool Calling Efficiency for Chip Design Using NVIDIA NeMo Gym",
+          "url": "https://developer.nvidia.com/blog/optimizing-agent-reliability-and-tool-calling-efficiency-for-chip-design-using-nvidia-nemo-gym",
+          "original_url": "https://developer.nvidia.com/blog/optimizing-agent-reliability-and-tool-calling-efficiency-for-chip-design-using-nvidia-nemo-gym/",
+          "summary": "AI agents offer remarkable productivity gains in complex chip design workflows, but their tendency to generate plausible yet incorrect artifacts makes... AI agents offer remarkable productivity gains in complex chip design workflows, but their tendency to generate plausible yet incorrect artifacts makes reliability a major barrier to production adoption. In multistage engineering workflows, an undetected error early in setup can silently propagate through downstream stages and final artifact generation. Evaluating and refining these agents against… Source",
+          "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/10/agentic-workflow-768x432.png",
+          "image_source": "rss_content",
+          "published_at": "2026-10-14T16:10:45.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "nvidia_developer_blog",
+          "source_name": "NVIDIA Developer Blog",
+          "title": "Optimizing Agent Reliability and Tool Calling Efficiency for Chip Design Using NVIDIA NeMo Gym",
+          "url": "https://developer.nvidia.com/blog/optimizing-agent-reliability-and-tool-calling-efficiency-for-chip-design-using-nvidia-nemo-gym",
+          "published_at": "2026-10-14T16:10:45.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "signal",
+      "one_liner": "Technical guide on improving agent reliability and tool calling efficiency in chip design using NVIDIA NeMo Gym.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.82,
+      "score": 0.522,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "vpb851",
+      "primary": {
+        "id": "vpb851",
+        "source_id": "aws_ml_blog",
+        "source_name": "AWS Machine Learning Blog",
+        "source_role": "main",
+        "trust": 0.8,
+        "kind_hint": "tutorial",
+        "title": "Build self-improving document processing using Amazon Bedrock AgentCore",
+        "url": "https://aws.amazon.com/blogs/machine-learning/build-self-improving-document-processing-using-amazon-bedrock-agentcore",
+        "original_url": "https://aws.amazon.com/blogs/machine-learning/build-self-improving-document-processing-using-amazon-bedrock-agentcore/",
+        "summary": "Learn how to build an agentic intelligent document processing (IDP) system using Amazon Bedrock AgentCore that classifies, extracts, validates, and learns from business documents with minimal human intervention, automatically handling new document formats without manual template configuration.",
+        "published_at": "2026-10-14T16:24:07.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "vpb851",
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "source_role": "main",
+          "trust": 0.8,
+          "kind_hint": "tutorial",
+          "title": "Build self-improving document processing using Amazon Bedrock AgentCore",
+          "url": "https://aws.amazon.com/blogs/machine-learning/build-self-improving-document-processing-using-amazon-bedrock-agentcore",
+          "original_url": "https://aws.amazon.com/blogs/machine-learning/build-self-improving-document-processing-using-amazon-bedrock-agentcore/",
+          "summary": "Learn how to build an agentic intelligent document processing (IDP) system using Amazon Bedrock AgentCore that classifies, extracts, validates, and learns from business documents with minimal human intervention, automatically handling new document formats without manual template configuration.",
+          "published_at": "2026-10-14T16:24:07.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "title": "Build self-improving document processing using Amazon Bedrock AgentCore",
+          "url": "https://aws.amazon.com/blogs/machine-learning/build-self-improving-document-processing-using-amazon-bedrock-agentcore",
+          "published_at": "2026-10-14T16:24:07.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "signal",
+      "one_liner": "Guide to building an agentic document processing system using Amazon Bedrock AgentCore for automated extraction.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.8,
+      "score": 0.518,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "1km35oe",
+      "primary": {
+        "id": "1km35oe",
+        "source_id": "deepmind",
+        "source_name": "Google DeepMind",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "company_announcement",
+        "title": "Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection",
+        "url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi",
+        "original_url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
+        "summary": "Learn how Google DeepMind and GovTech Singapore uses lightweight on-device Gemma models to intercept conversational scams in private chats with zero cloud data egress.",
+        "image_url": "https://lh3.googleusercontent.com/5PC4h7MzjC0ojOxiK-nPcRz0b6kUybKnCBjLL3nsb9T9qt7-2ciORJPnrObeFaYbAMqPxIhH4Wq9HD-U73lCivpFBcK8gABvhXXDo2lzUUSk9olsZQ=w528-h297-n-nu-rw-lo",
+        "image_source": "rss_media",
+        "published_at": "2026-10-14T02:00:14.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1km35oe",
+          "source_id": "deepmind",
+          "source_name": "Google DeepMind",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "company_announcement",
+          "title": "Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection",
+          "url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi",
+          "original_url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
+          "summary": "Learn how Google DeepMind and GovTech Singapore uses lightweight on-device Gemma models to intercept conversational scams in private chats with zero cloud data egress.",
+          "image_url": "https://lh3.googleusercontent.com/5PC4h7MzjC0ojOxiK-nPcRz0b6kUybKnCBjLL3nsb9T9qt7-2ciORJPnrObeFaYbAMqPxIhH4Wq9HD-U73lCivpFBcK8gABvhXXDo2lzUUSk9olsZQ=w528-h297-n-nu-rw-lo",
+          "image_source": "rss_media",
+          "published_at": "2026-10-14T02:00:14.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "deepmind",
+          "source_name": "Google DeepMind",
+          "title": "Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection",
+          "url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi",
+          "published_at": "2026-10-14T02:00:14.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "signal",
+      "one_liner": "Google and Singapore deploy on-device Gemma models for private, local scam detection.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.9,
+      "score": 0.517,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+    },
+    {
+      "id": "cmlyr7",
+      "primary": {
+        "id": "cmlyr7",
+        "source_id": "aws_ml_blog",
+        "source_name": "AWS Machine Learning Blog",
+        "source_role": "main",
+        "trust": 0.8,
+        "kind_hint": "tutorial",
+        "title": "Generate presentations with Amazon Bedrock AgentCore",
+        "url": "https://aws.amazon.com/blogs/machine-learning/generate-presentations-with-amazon-bedrock-agentcore",
+        "original_url": "https://aws.amazon.com/blogs/machine-learning/generate-presentations-with-amazon-bedrock-agentcore/",
+        "summary": "This post walks you through building an AI agent system with Amazon Bedrock AgentCore that automates PowerPoint presentation creation from enterprise documents. A supervisor agent, Retrieval Augmented Generation, and Amazon Bedrock Guardrails generate grounded presentations in under 90 seconds.",
+        "published_at": "2026-10-14T13:58:43.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "cmlyr7",
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "source_role": "main",
+          "trust": 0.8,
+          "kind_hint": "tutorial",
+          "title": "Generate presentations with Amazon Bedrock AgentCore",
+          "url": "https://aws.amazon.com/blogs/machine-learning/generate-presentations-with-amazon-bedrock-agentcore",
+          "original_url": "https://aws.amazon.com/blogs/machine-learning/generate-presentations-with-amazon-bedrock-agentcore/",
+          "summary": "This post walks you through building an AI agent system with Amazon Bedrock AgentCore that automates PowerPoint presentation creation from enterprise documents. A supervisor agent, Retrieval Augmented Generation, and Amazon Bedrock Guardrails generate grounded presentations in under 90 seconds.",
+          "published_at": "2026-10-14T13:58:43.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "title": "Generate presentations with Amazon Bedrock AgentCore",
+          "url": "https://aws.amazon.com/blogs/machine-learning/generate-presentations-with-amazon-bedrock-agentcore",
+          "published_at": "2026-10-14T13:58:43.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "signal",
+      "one_liner": "Tutorial on building an agentic workflow with Amazon Bedrock to automate PowerPoint generation from documents.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.8,
+      "score": 0.514,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "59wfju",
+      "primary": {
+        "id": "59wfju",
+        "source_id": "ars_ai",
+        "source_name": "Ars Technica AI",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "news",
+        "title": "Researchers use AI to design proteins that cut up other proteins",
+        "url": "https://arstechnica.com/science/2026/10/researchers-use-ai-to-design-proteins-that-cut-up-other-proteins",
+        "original_url": "https://arstechnica.com/science/2026/10/researchers-use-ai-to-design-proteins-that-cut-up-other-proteins/",
+        "summary": "AI design tools make proteins that break bonds that are stable for hundreds of years.",
+        "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/10/GettyImages-2298087641-1152x648.jpg",
+        "image_source": "rss_media",
+        "published_at": "2026-10-14T17:10:15.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "59wfju",
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "news",
+          "title": "Researchers use AI to design proteins that cut up other proteins",
+          "url": "https://arstechnica.com/science/2026/10/researchers-use-ai-to-design-proteins-that-cut-up-other-proteins",
+          "original_url": "https://arstechnica.com/science/2026/10/researchers-use-ai-to-design-proteins-that-cut-up-other-proteins/",
+          "summary": "AI design tools make proteins that break bonds that are stable for hundreds of years.",
+          "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/10/GettyImages-2298087641-1152x648.jpg",
+          "image_source": "rss_media",
+          "published_at": "2026-10-14T17:10:15.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "title": "Researchers use AI to design proteins that cut up other proteins",
+          "url": "https://arstechnica.com/science/2026/10/researchers-use-ai-to-design-proteins-that-cut-up-other-proteins",
+          "published_at": "2026-10-14T17:10:15.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "Researchers use AI to design proteins capable of cleaving specific peptide bonds.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.515,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "842qc2",
+      "primary": {
+        "id": "842qc2",
+        "source_id": "aws_ml_blog",
+        "source_name": "AWS Machine Learning Blog",
+        "source_role": "main",
+        "trust": 0.8,
+        "kind_hint": "tutorial",
+        "title": "Deploy and evaluate models with Amazon SageMaker JumpStart",
+        "url": "https://aws.amazon.com/blogs/machine-learning/deploy-and-evaluate-models-with-amazon-sagemaker-jumpstart",
+        "original_url": "https://aws.amazon.com/blogs/machine-learning/deploy-and-evaluate-models-with-amazon-sagemaker-jumpstart/",
+        "summary": "Learn how to deploy an available model from Amazon SageMaker JumpStart, run a lightweight and repeatable performance test using the SageMaker Python SDK, and delete the endpoint when testing is complete.",
+        "published_at": "2026-10-14T13:14:36.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "842qc2",
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "source_role": "main",
+          "trust": 0.8,
+          "kind_hint": "tutorial",
+          "title": "Deploy and evaluate models with Amazon SageMaker JumpStart",
+          "url": "https://aws.amazon.com/blogs/machine-learning/deploy-and-evaluate-models-with-amazon-sagemaker-jumpstart",
+          "original_url": "https://aws.amazon.com/blogs/machine-learning/deploy-and-evaluate-models-with-amazon-sagemaker-jumpstart/",
+          "summary": "Learn how to deploy an available model from Amazon SageMaker JumpStart, run a lightweight and repeatable performance test using the SageMaker Python SDK, and delete the endpoint when testing is complete.",
+          "published_at": "2026-10-14T13:14:36.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "title": "Deploy and evaluate models with Amazon SageMaker JumpStart",
+          "url": "https://aws.amazon.com/blogs/machine-learning/deploy-and-evaluate-models-with-amazon-sagemaker-jumpstart",
+          "published_at": "2026-10-14T13:14:36.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "signal",
+      "one_liner": "Guide on deploying and benchmarking models using Amazon SageMaker JumpStart and the Python SDK.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.8,
+      "score": 0.513,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "ea8xg9",
+      "primary": {
+        "id": "ea8xg9",
+        "source_id": "simonw",
+        "source_name": "Simon Willison",
+        "source_role": "main",
+        "trust": 0.9,
+        "title": "llm-gemini 0.35",
+        "url": "https://simonwillison.net/2026/Oct/13/llm-gemini",
+        "original_url": "https://simonwillison.net/2026/Oct/13/llm-gemini/",
+        "published_at": "2026-10-13T22:28:54.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "ea8xg9",
+          "source_id": "simonw",
+          "source_name": "Simon Willison",
+          "source_role": "main",
+          "trust": 0.9,
+          "title": "llm-gemini 0.35",
+          "url": "https://simonwillison.net/2026/Oct/13/llm-gemini",
+          "original_url": "https://simonwillison.net/2026/Oct/13/llm-gemini/",
+          "published_at": "2026-10-13T22:28:54.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "simonw",
+          "source_name": "Simon Willison",
+          "title": "llm-gemini 0.35",
+          "url": "https://simonwillison.net/2026/Oct/13/llm-gemini",
+          "published_at": "2026-10-13T22:28:54.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Update to the llm-gemini CLI tool for interacting with Gemini models.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.9,
+      "score": 0.511,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "wbzx5b",
+      "primary": {
+        "id": "wbzx5b",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "Meta Extends Confidential Computing to AI Glasses with Private Processing",
+        "url": "https://infoq.com/news/2026/10/meta-private-process-ai-glasses",
+        "original_url": "https://www.infoq.com/news/2026/10/meta-private-process-ai-glasses/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Meta has extended Private Processing to AI glasses, using confidential VMs, trusted execution environments, remote attestation, anonymous credentials, OHTTP routing, and TEE-based storage to process AI workloads and persistent user context in the cloud. By Leela Kumili",
+        "image_url": "https://res.infoq.com/news/2026/10/meta-private-process-ai-glasses/en/headerimage/generatedHeaderImage-1790823797609.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-10-14T13:57:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "wbzx5b",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "Meta Extends Confidential Computing to AI Glasses with Private Processing",
+          "url": "https://infoq.com/news/2026/10/meta-private-process-ai-glasses",
+          "original_url": "https://www.infoq.com/news/2026/10/meta-private-process-ai-glasses/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "Meta has extended Private Processing to AI glasses, using confidential VMs, trusted execution environments, remote attestation, anonymous credentials, OHTTP routing, and TEE-based storage to process AI workloads and persistent user context in the cloud. By Leela Kumili",
+          "image_url": "https://res.infoq.com/news/2026/10/meta-private-process-ai-glasses/en/headerimage/generatedHeaderImage-1790823797609.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-14T13:57:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "Meta Extends Confidential Computing to AI Glasses with Private Processing",
+          "url": "https://infoq.com/news/2026/10/meta-private-process-ai-glasses",
+          "published_at": "2026-10-14T13:57:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Meta implements confidential computing and TEEs for private processing of AI glasses data.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.509,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "apn7bq",
+      "primary": {
+        "id": "apn7bq",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Google says self-improving AI isn't anywhere close",
+        "url": "https://the-decoder.com/google-says-self-improving-ai-isnt-anywhere-close",
+        "original_url": "https://the-decoder.com/google-says-self-improving-ai-isnt-anywhere-close/",
+        "summary": "Google engineer Haydn Belfield says there's no measurable acceleration of AI research driven by AI at Deepmind. AI now writes more than 75 percent of production code, but 88 percent of changes still need human oversight. The company's in-house General Capability Index shows steady growth with no sudden speedup. Self-improving AI isn't anywhere close, Belfield says. The article Google says self-improving AI isn't anywhere close appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/gemini_logo-2.png",
+        "image_source": "rss_content",
+        "published_at": "2026-10-14T19:18:44.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "apn7bq",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Google says self-improving AI isn't anywhere close",
+          "url": "https://the-decoder.com/google-says-self-improving-ai-isnt-anywhere-close",
+          "original_url": "https://the-decoder.com/google-says-self-improving-ai-isnt-anywhere-close/",
+          "summary": "Google engineer Haydn Belfield says there's no measurable acceleration of AI research driven by AI at Deepmind. AI now writes more than 75 percent of production code, but 88 percent of changes still need human oversight. The company's in-house General Capability Index shows steady growth with no sudden speedup. Self-improving AI isn't anywhere close, Belfield says. The article Google says self-improving AI isn't anywhere close appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/gemini_logo-2.png",
+          "image_source": "rss_content",
+          "published_at": "2026-10-14T19:18:44.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Google says self-improving AI isn't anywhere close",
+          "url": "https://the-decoder.com/google-says-self-improving-ai-isnt-anywhere-close",
+          "published_at": "2026-10-14T19:18:44.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Google report on AI coding metrics showing high human oversight requirements.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.509,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1snhrz9",
+      "primary": {
+        "id": "1snhrz9",
+        "source_id": "thoughtworks_insights",
+        "source_name": "Thoughtworks Insights",
+        "source_role": "main",
+        "trust": 0.84,
+        "kind_hint": "opinion",
+        "title": "AI Agent Harness",
+        "url": "https://thoughtworks.com/insights/blog/machine-learning-and-ai/ai-agent-harness",
+        "original_url": "https://www.thoughtworks.com/insights/blog/machine-learning-and-ai/ai-agent-harness",
+        "summary": "AI Agent Harness",
+        "image_url": "https://www.thoughtworks.com/content/dam/thoughtworks/images/photography/abstract/insights/blog/abs_blogs_038.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-10-14T00:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1snhrz9",
+          "source_id": "thoughtworks_insights",
+          "source_name": "Thoughtworks Insights",
+          "source_role": "main",
+          "trust": 0.84,
+          "kind_hint": "opinion",
+          "title": "AI Agent Harness",
+          "url": "https://thoughtworks.com/insights/blog/machine-learning-and-ai/ai-agent-harness",
+          "original_url": "https://www.thoughtworks.com/insights/blog/machine-learning-and-ai/ai-agent-harness",
+          "summary": "AI Agent Harness",
+          "image_url": "https://www.thoughtworks.com/content/dam/thoughtworks/images/photography/abstract/insights/blog/abs_blogs_038.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-14T00:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "thoughtworks_insights",
+          "source_name": "Thoughtworks Insights",
+          "title": "AI Agent Harness",
+          "url": "https://thoughtworks.com/insights/blog/machine-learning-and-ai/ai-agent-harness",
+          "published_at": "2026-10-14T00:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "A framework for testing and evaluating AI agent performance and reliability in production environments.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.84,
+      "score": 0.5,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "1s7a3tv",
+      "primary": {
+        "id": "1s7a3tv",
+        "source_id": "ars_ai",
+        "source_name": "Ars Technica AI",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "news",
+        "title": "Anthropic warns small AI models could self-replicate through IoT devices",
+        "url": "https://arstechnica.com/security/2026/10/anthropic-warns-small-ai-models-could-self-replicate-through-iot-devices",
+        "original_url": "https://arstechnica.com/security/2026/10/anthropic-warns-small-ai-models-could-self-replicate-through-iot-devices/",
+        "summary": "\"Small weight-based replicators\" could usher in a new generation of computer worms.",
+        "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/10/ai-caution-threat-1152x648.jpg",
+        "image_source": "rss_media",
+        "published_at": "2026-10-14T12:55:06.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1s7a3tv",
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "news",
+          "title": "Anthropic warns small AI models could self-replicate through IoT devices",
+          "url": "https://arstechnica.com/security/2026/10/anthropic-warns-small-ai-models-could-self-replicate-through-iot-devices",
+          "original_url": "https://arstechnica.com/security/2026/10/anthropic-warns-small-ai-models-could-self-replicate-through-iot-devices/",
+          "summary": "\"Small weight-based replicators\" could usher in a new generation of computer worms.",
+          "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/10/ai-caution-threat-1152x648.jpg",
+          "image_source": "rss_media",
+          "published_at": "2026-10-14T12:55:06.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "title": "Anthropic warns small AI models could self-replicate through IoT devices",
+          "url": "https://arstechnica.com/security/2026/10/anthropic-warns-small-ai-models-could-self-replicate-through-iot-devices",
+          "published_at": "2026-10-14T12:55:06.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Anthropic research highlights security risks of small models potentially acting as self-replicating code on IoT devices.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.508,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1354i9s",
+      "primary": {
+        "id": "1354i9s",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Researchers tracked down a rogue fleet of Chinese AI agents in the wild and actually talked to it",
+        "url": "https://the-decoder.com/researchers-tracked-down-a-rogue-fleet-of-chinese-ai-agents-in-the-wild-and-actually-talked-to-it",
+        "original_url": "https://the-decoder.com/researchers-tracked-down-a-rogue-fleet-of-chinese-ai-agents-in-the-wild-and-actually-talked-to-it/",
+        "summary": "For the first time, researchers have tracked down an uncontrolled fleet of Chinese AI agents in the wild and communicated with them via a web mailbox. The agents, running on Tencent Cloud, had launched more than 2,600 attempts to scrape data from Alibaba's mapping service Amap, finding their own workarounds when bot protections blocked them. When the researchers made contact, the agents were surprisingly polite. The article Researchers tracked down a rogue fleet of Chinese AI agents in the wild and actually talked to it appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/chinese_agent_swarms.png",
+        "image_source": "rss_content",
+        "published_at": "2026-10-14T18:07:37.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1354i9s",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Researchers tracked down a rogue fleet of Chinese AI agents in the wild and actually talked to it",
+          "url": "https://the-decoder.com/researchers-tracked-down-a-rogue-fleet-of-chinese-ai-agents-in-the-wild-and-actually-talked-to-it",
+          "original_url": "https://the-decoder.com/researchers-tracked-down-a-rogue-fleet-of-chinese-ai-agents-in-the-wild-and-actually-talked-to-it/",
+          "summary": "For the first time, researchers have tracked down an uncontrolled fleet of Chinese AI agents in the wild and communicated with them via a web mailbox. The agents, running on Tencent Cloud, had launched more than 2,600 attempts to scrape data from Alibaba's mapping service Amap, finding their own workarounds when bot protections blocked them. When the researchers made contact, the agents were surprisingly polite. The article Researchers tracked down a rogue fleet of Chinese AI agents in the wild and actually talked to it appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/chinese_agent_swarms.png",
+          "image_source": "rss_content",
+          "published_at": "2026-10-14T18:07:37.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Researchers tracked down a rogue fleet of Chinese AI agents in the wild and actually talked to it",
+          "url": "https://the-decoder.com/researchers-tracked-down-a-rogue-fleet-of-chinese-ai-agents-in-the-wild-and-actually-talked-to-it",
+          "published_at": "2026-10-14T18:07:37.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Researchers identified and interacted with an autonomous fleet of AI agents scraping data from mapping services.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.507,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1tioarg",
+      "primary": {
+        "id": "1tioarg",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "Google Antigravity SDK Adds Local Model Support for Greater Token Efficiency and Code Privacy",
+        "url": "https://infoq.com/news/2026/10/antigravity-sdk-local-models",
+        "original_url": "https://www.infoq.com/news/2026/10/antigravity-sdk-local-models/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Google has introduced support for local models in the Antigravity SDK, enabling developers to build and execute agentic workflows directly on their own machines, while retaining the flexibility to mix in cloud-based models for higher-level tasks. This approach gives developers greater control over data privacy, inference costs, network dependencies, and computational workload distribution. By Sergio De Simone",
+        "image_url": "https://res.infoq.com/news/2026/10/antigravity-sdk-local-models/en/headerimage/agent-friendly-android-cli-1791967537412.jpeg",
+        "image_source": "rss_content",
+        "published_at": "2026-10-14T09:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1tioarg",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "Google Antigravity SDK Adds Local Model Support for Greater Token Efficiency and Code Privacy",
+          "url": "https://infoq.com/news/2026/10/antigravity-sdk-local-models",
+          "original_url": "https://www.infoq.com/news/2026/10/antigravity-sdk-local-models/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "Google has introduced support for local models in the Antigravity SDK, enabling developers to build and execute agentic workflows directly on their own machines, while retaining the flexibility to mix in cloud-based models for higher-level tasks. This approach gives developers greater control over data privacy, inference costs, network dependencies, and computational workload distribution. By Sergio De Simone",
+          "image_url": "https://res.infoq.com/news/2026/10/antigravity-sdk-local-models/en/headerimage/agent-friendly-android-cli-1791967537412.jpeg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-14T09:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "Google Antigravity SDK Adds Local Model Support for Greater Token Efficiency and Code Privacy",
+          "url": "https://infoq.com/news/2026/10/antigravity-sdk-local-models",
+          "published_at": "2026-10-14T09:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Google Antigravity SDK update adds support for local model execution in agentic workflows.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.501,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "1ymfuw8",
+      "primary": {
+        "id": "1ymfuw8",
+        "source_id": "latent_space",
+        "source_name": "Latent Space",
+        "source_role": "main",
+        "trust": 0.85,
+        "title": "Lab-in-the-Loop at Compute Speed — Ian Quigley, Leash Bio",
+        "url": "https://latent.space/p/lab-in-the-loop-at-compute-speed",
+        "original_url": "https://www.latent.space/p/lab-in-the-loop-at-compute-speed",
+        "summary": "How Leash Bio tamed DELs, the assay that traumatizes everyone, and used the data to catch cheating models. And why that same data is perfect for AI agents learning to think like chemists.",
+        "published_at": "2026-10-14T20:35:09.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1ymfuw8",
+          "source_id": "latent_space",
+          "source_name": "Latent Space",
+          "source_role": "main",
+          "trust": 0.85,
+          "title": "Lab-in-the-Loop at Compute Speed — Ian Quigley, Leash Bio",
+          "url": "https://latent.space/p/lab-in-the-loop-at-compute-speed",
+          "original_url": "https://www.latent.space/p/lab-in-the-loop-at-compute-speed",
+          "summary": "How Leash Bio tamed DELs, the assay that traumatizes everyone, and used the data to catch cheating models. And why that same data is perfect for AI agents learning to think like chemists.",
+          "published_at": "2026-10-14T20:35:09.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "latent_space",
+          "source_name": "Latent Space",
+          "title": "Lab-in-the-Loop at Compute Speed — Ian Quigley, Leash Bio",
+          "url": "https://latent.space/p/lab-in-the-loop-at-compute-speed",
+          "published_at": "2026-10-14T20:35:09.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "signal",
+      "one_liner": "Technical discussion on using DNA-encoded library data to train agents for chemical research.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.85,
+      "score": 0.457,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "1a2lvrz",
+      "primary": {
+        "id": "1a2lvrz",
+        "source_id": "anthropic",
+        "source_name": "Anthropic",
+        "source_role": "main",
+        "trust": 0.92,
+        "kind_hint": "company_announcement",
+        "title": "Anthropic: Preparing for the 2026 US midterms",
+        "url": "https://anthropic.com/news/2026-us-midterms",
+        "original_url": "https://www.anthropic.com/news/2026-us-midterms",
+        "summary": "Earlier this year, we shared an update on our election safeguards. Here, we outline how we’ve continued to strengthen these safeguards ahead of this year’s US midterms.",
+        "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/609927c7af2a454cedad848e4b2adc980c1f5fe6-2000x1125.jpg",
+        "image_source": "page_metadata",
+        "published_at": "2026-10-14T18:33:00.000Z",
+        "published_at_source": "page_metadata",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1a2lvrz",
+          "source_id": "anthropic",
+          "source_name": "Anthropic",
+          "source_role": "main",
+          "trust": 0.92,
+          "kind_hint": "company_announcement",
+          "title": "Anthropic: Preparing for the 2026 US midterms",
+          "url": "https://anthropic.com/news/2026-us-midterms",
+          "original_url": "https://www.anthropic.com/news/2026-us-midterms",
+          "summary": "Earlier this year, we shared an update on our election safeguards. Here, we outline how we’ve continued to strengthen these safeguards ahead of this year’s US midterms.",
+          "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/609927c7af2a454cedad848e4b2adc980c1f5fe6-2000x1125.jpg",
+          "image_source": "page_metadata",
+          "published_at": "2026-10-14T18:33:00.000Z",
+          "published_at_source": "page_metadata",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "anthropic",
+          "source_name": "Anthropic",
+          "title": "Anthropic: Preparing for the 2026 US midterms",
+          "url": "https://anthropic.com/news/2026-us-midterms",
+          "published_at": "2026-10-14T18:33:00.000Z",
+          "published_at_source": "page_metadata",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "mixed",
+      "one_liner": "Anthropic outlines safety and policy measures implemented for the 2026 US midterms.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.92,
+      "score": 0.387,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+    },
+    {
+      "id": "12z6o0o",
+      "primary": {
+        "id": "12z6o0o",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "Containment and monitoring failures are to blame for AI hacking reports: experts",
+        "url": "https://csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html",
+        "original_url": "https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html",
+        "discussion_url": "https://news.ycombinator.com/item?id=50091788",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-10-14T17:45:23Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 901,
+          "comments": 532
+        }
+      },
+      "members": [
+        {
+          "id": "12z6o0o",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "Containment and monitoring failures are to blame for AI hacking reports: experts",
+          "url": "https://csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html",
+          "original_url": "https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html",
+          "discussion_url": "https://news.ycombinator.com/item?id=50091788",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-10-14T17:45:23Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 901,
+            "comments": 532
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "Containment and monitoring failures are to blame for AI hacking reports: experts",
+          "url": "https://csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html",
+          "published_at": "2026-10-14T17:45:23Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=50091788",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Report suggesting AI security incidents are primarily due to poor infrastructure and monitoring rather than model behavior.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.65,
+      "score": 0.363,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "9cwn0y",
+      "primary": {
+        "id": "9cwn0y",
+        "source_id": "google_research",
+        "source_name": "Google Research",
+        "source_role": "main",
+        "trust": 0.88,
+        "kind_hint": "company_announcement",
+        "title": "Putting Earth AI to work: Geospatial agents for our planet's biggest challenges",
+        "url": "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges",
+        "original_url": "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/",
+        "summary": "Earth AI",
+        "image_url": "https://storage.googleapis.com/gweb-research2023-media/original_images/EarthAITechReport1_Overview.gif",
+        "image_source": "rss_media",
+        "published_at": "2026-10-14T16:14:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "9cwn0y",
+          "source_id": "google_research",
+          "source_name": "Google Research",
+          "source_role": "main",
+          "trust": 0.88,
+          "kind_hint": "company_announcement",
+          "title": "Putting Earth AI to work: Geospatial agents for our planet's biggest challenges",
+          "url": "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges",
+          "original_url": "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/",
+          "summary": "Earth AI",
+          "image_url": "https://storage.googleapis.com/gweb-research2023-media/original_images/EarthAITechReport1_Overview.gif",
+          "image_source": "rss_media",
+          "published_at": "2026-10-14T16:14:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "google_research",
+          "source_name": "Google Research",
+          "title": "Putting Earth AI to work: Geospatial agents for our planet's biggest challenges",
+          "url": "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges",
+          "published_at": "2026-10-14T16:14:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Overview of Google Research initiatives applying geospatial AI agents to environmental challenges.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.88,
+      "score": 0.374,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1dub6zy",
+      "primary": {
+        "id": "1dub6zy",
+        "source_id": "cohere_blog",
+        "source_name": "Cohere Blog",
+        "source_role": "main",
+        "trust": 0.84,
+        "kind_hint": "company_announcement",
+        "title": "Cohere: Scaling agent teams: reach the frontier at 30% of the cost",
+        "url": "https://cohere.com/blog/lessons-from-scaling-teams-of-frontier-coding-agents",
+        "original_url": "https://cohere.com/blog/lessons-from-scaling-teams-of-frontier-coding-agents",
+        "image_url": "https://cdn.sanity.io/images/rjtqmwfu/web3-prod/aedaf863bfaae76749d82ae2c259ca0d891b0f4f-3200x1800.png?rect=0,60,3200,1680&w=1200&h=630&q=80&fit=crop&auto=format",
+        "image_source": "page_metadata",
+        "published_at": "2026-10-14T16:48:00.000Z",
+        "published_at_source": "page_metadata",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1dub6zy",
+          "source_id": "cohere_blog",
+          "source_name": "Cohere Blog",
+          "source_role": "main",
+          "trust": 0.84,
+          "kind_hint": "company_announcement",
+          "title": "Cohere: Scaling agent teams: reach the frontier at 30% of the cost",
+          "url": "https://cohere.com/blog/lessons-from-scaling-teams-of-frontier-coding-agents",
+          "original_url": "https://cohere.com/blog/lessons-from-scaling-teams-of-frontier-coding-agents",
+          "image_url": "https://cdn.sanity.io/images/rjtqmwfu/web3-prod/aedaf863bfaae76749d82ae2c259ca0d891b0f4f-3200x1800.png?rect=0,60,3200,1680&w=1200&h=630&q=80&fit=crop&auto=format",
+          "image_source": "page_metadata",
+          "published_at": "2026-10-14T16:48:00.000Z",
+          "published_at_source": "page_metadata",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "cohere_blog",
+          "source_name": "Cohere Blog",
+          "title": "Cohere: Scaling agent teams: reach the frontier at 30% of the cost",
+          "url": "https://cohere.com/blog/lessons-from-scaling-teams-of-frontier-coding-agents",
+          "published_at": "2026-10-14T16:48:00.000Z",
+          "published_at_source": "page_metadata",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "mixed",
+      "one_liner": "Cohere blog post discussing strategies for scaling coding agent teams.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.84,
+      "score": 0.366,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+    },
+    {
+      "id": "1qj4x6g",
+      "primary": {
+        "id": "1qj4x6g",
+        "source_id": "aws_ml_blog",
+        "source_name": "AWS Machine Learning Blog",
+        "source_role": "main",
+        "trust": 0.8,
+        "kind_hint": "tutorial",
+        "title": "How Tamnoon built AI-powered cloud security remediation with Amazon Bedrock",
+        "url": "https://aws.amazon.com/blogs/machine-learning/how-tamnoon-built-ai-powered-cloud-security-remediation-with-amazon-bedrock",
+        "original_url": "https://aws.amazon.com/blogs/machine-learning/how-tamnoon-built-ai-powered-cloud-security-remediation-with-amazon-bedrock/",
+        "summary": "Learn how Tamnoon built Tami, an agentic cloud remediation orchestrator on Amazon Bedrock that autonomously investigates and safely remediates cloud security findings from CNAPP and cloud-native sources. The approach drove a 90%+ reduction in critical cloud exposure in 90 days with zero production issues.",
+        "published_at": "2026-10-14T13:53:33.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1qj4x6g",
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "source_role": "main",
+          "trust": 0.8,
+          "kind_hint": "tutorial",
+          "title": "How Tamnoon built AI-powered cloud security remediation with Amazon Bedrock",
+          "url": "https://aws.amazon.com/blogs/machine-learning/how-tamnoon-built-ai-powered-cloud-security-remediation-with-amazon-bedrock",
+          "original_url": "https://aws.amazon.com/blogs/machine-learning/how-tamnoon-built-ai-powered-cloud-security-remediation-with-amazon-bedrock/",
+          "summary": "Learn how Tamnoon built Tami, an agentic cloud remediation orchestrator on Amazon Bedrock that autonomously investigates and safely remediates cloud security findings from CNAPP and cloud-native sources. The approach drove a 90%+ reduction in critical cloud exposure in 90 days with zero production issues.",
+          "published_at": "2026-10-14T13:53:33.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "title": "How Tamnoon built AI-powered cloud security remediation with Amazon Bedrock",
+          "url": "https://aws.amazon.com/blogs/machine-learning/how-tamnoon-built-ai-powered-cloud-security-remediation-with-amazon-bedrock",
+          "published_at": "2026-10-14T13:53:33.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "mixed",
+      "one_liner": "Case study on using Amazon Bedrock for cloud security remediation via agentic workflows.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.8,
+      "score": 0.351,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+    },
+    {
+      "id": "kr2qpn",
+      "primary": {
+        "id": "kr2qpn",
+        "source_id": "simonw",
+        "source_name": "Simon Willison",
+        "source_role": "main",
+        "trust": 0.9,
+        "title": "AI is mass decompiling games. That's both awesome and scary.",
+        "url": "https://simonwillison.net/2026/Oct/14/ai-is-mass-decompiling-games",
+        "original_url": "https://simonwillison.net/2026/Oct/14/ai-is-mass-decompiling-games/",
+        "published_at": "2026-10-14T16:26:53.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "kr2qpn",
+          "source_id": "simonw",
+          "source_name": "Simon Willison",
+          "source_role": "main",
+          "trust": 0.9,
+          "title": "AI is mass decompiling games. That's both awesome and scary.",
+          "url": "https://simonwillison.net/2026/Oct/14/ai-is-mass-decompiling-games",
+          "original_url": "https://simonwillison.net/2026/Oct/14/ai-is-mass-decompiling-games/",
+          "published_at": "2026-10-14T16:26:53.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "simonw",
+          "source_name": "Simon Willison",
+          "title": "AI is mass decompiling games. That's both awesome and scary.",
+          "url": "https://simonwillison.net/2026/Oct/14/ai-is-mass-decompiling-games",
+          "published_at": "2026-10-14T16:26:53.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "Commentary on the implications of using AI for automated game decompilation.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.9,
+      "score": 0.379,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "97lhxv",
+      "primary": {
+        "id": "97lhxv",
+        "source_id": "google_ai_keyword",
+        "source_name": "Google AI on Keyword",
+        "source_role": "main",
+        "trust": 0.82,
+        "kind_hint": "company_announcement",
+        "title": "Google: We’re powering European scientific discovery with advanced AI compute and frontier models.",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/were-powering-european-scientific-discovery-with-advanced-ai-compute-and-frontier-models",
+        "original_url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/were-powering-european-scientific-discovery-with-advanced-ai-compute-and-frontier-models/",
+        "summary": "Google DeepMind and Google Cloud are providing up to 200 top European scientific researchers with direct access to our frontier models, together with $3 million in compu…",
+        "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/ireland-innovation-companies-startups-gove..max-1440x810.jpg",
+        "image_source": "page_metadata",
+        "published_at": "2026-10-14T08:00:00.000Z",
+        "published_at_source": "page_metadata",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "97lhxv",
+          "source_id": "google_ai_keyword",
+          "source_name": "Google AI on Keyword",
+          "source_role": "main",
+          "trust": 0.82,
+          "kind_hint": "company_announcement",
+          "title": "Google: We’re powering European scientific discovery with advanced AI compute and frontier models.",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/were-powering-european-scientific-discovery-with-advanced-ai-compute-and-frontier-models",
+          "original_url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/were-powering-european-scientific-discovery-with-advanced-ai-compute-and-frontier-models/",
+          "summary": "Google DeepMind and Google Cloud are providing up to 200 top European scientific researchers with direct access to our frontier models, together with $3 million in compu…",
+          "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/ireland-innovation-companies-startups-gove..max-1440x810.jpg",
+          "image_source": "page_metadata",
+          "published_at": "2026-10-14T08:00:00.000Z",
+          "published_at_source": "page_metadata",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "google_ai_keyword",
+          "source_name": "Google AI on Keyword",
+          "title": "Google: We’re powering European scientific discovery with advanced AI compute and frontier models.",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/were-powering-european-scientific-discovery-with-advanced-ai-compute-and-frontier-models",
+          "published_at": "2026-10-14T08:00:00.000Z",
+          "published_at_source": "page_metadata",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "mixed",
+      "one_liner": "Google provides compute credits and model access to European researchers.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.82,
+      "score": 0.346,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+    },
+    {
+      "id": "1436nw",
+      "primary": {
+        "id": "1436nw",
+        "source_id": "hn_show_ai",
+        "source_name": "Show HN (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.58,
+        "kind_hint": "tool",
+        "title": "Show HN: I built a tool to track what AI leaders say and how their views change",
+        "url": "https://blumify.io/people",
+        "original_url": "https://blumify.io/people",
+        "discussion_url": "https://news.ycombinator.com/item?id=50081151",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-10-14T01:09:13Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 117,
+          "comments": 77
+        }
+      },
+      "members": [
+        {
+          "id": "1436nw",
+          "source_id": "hn_show_ai",
+          "source_name": "Show HN (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.58,
+          "kind_hint": "tool",
+          "title": "Show HN: I built a tool to track what AI leaders say and how their views change",
+          "url": "https://blumify.io/people",
+          "original_url": "https://blumify.io/people",
+          "discussion_url": "https://news.ycombinator.com/item?id=50081151",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-10-14T01:09:13Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 117,
+            "comments": 77
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_show_ai",
+          "source_name": "Show HN (AI-filtered)",
+          "title": "Show HN: I built a tool to track what AI leaders say and how their views change",
+          "url": "https://blumify.io/people",
+          "published_at": "2026-10-14T01:09:13Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=50081151",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "mixed",
+      "one_liner": "A tool for tracking public statements and sentiment shifts of AI industry leaders.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.58,
+      "score": 0.31,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "wsrc5c",
+      "primary": {
+        "id": "wsrc5c",
+        "source_id": "yt_nate_b_jones",
+        "source_name": "AI News & Strategy Daily",
+        "source_role": "main",
+        "trust": 0.62,
+        "kind_hint": "video",
+        "title": "What do AI math and anesthesia have in common...? #AI #OpenAI #math #TerenceTao #science",
+        "url": "https://youtube.com/shorts/7RjEosTjhE0",
+        "original_url": "https://www.youtube.com/shorts/7RjEosTjhE0",
+        "published_at": "2026-10-14T03:00:18.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UC0C-17n9iuUQPylguM1d-lQ"
+        }
+      },
+      "members": [
+        {
+          "id": "wsrc5c",
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "source_role": "main",
+          "trust": 0.62,
+          "kind_hint": "video",
+          "title": "What do AI math and anesthesia have in common...? #AI #OpenAI #math #TerenceTao #science",
+          "url": "https://youtube.com/shorts/7RjEosTjhE0",
+          "original_url": "https://www.youtube.com/shorts/7RjEosTjhE0",
+          "published_at": "2026-10-14T03:00:18.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UC0C-17n9iuUQPylguM1d-lQ"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "title": "What do AI math and anesthesia have in common...? #AI #OpenAI #math #TerenceTao #science",
+          "url": "https://youtube.com/shorts/7RjEosTjhE0",
+          "published_at": "2026-10-14T03:00:18.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.62,
+      "score": 0.292,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "cjok52",
+      "primary": {
+        "id": "cjok52",
+        "source_id": "hn_show_ai",
+        "source_name": "Show HN (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.58,
+        "kind_hint": "tool",
+        "title": "Show HN: Pulse Local, a Mac budgeting app whose AI models run on your machine",
+        "url": "https://pulseos.finance/",
+        "original_url": "https://pulseos.finance",
+        "discussion_url": "https://news.ycombinator.com/item?id=50080275",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-10-13T23:13:23Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 117,
+          "comments": 71
+        }
+      },
+      "members": [
+        {
+          "id": "cjok52",
+          "source_id": "hn_show_ai",
+          "source_name": "Show HN (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.58,
+          "kind_hint": "tool",
+          "title": "Show HN: Pulse Local, a Mac budgeting app whose AI models run on your machine",
+          "url": "https://pulseos.finance/",
+          "original_url": "https://pulseos.finance",
+          "discussion_url": "https://news.ycombinator.com/item?id=50080275",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-10-13T23:13:23Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 117,
+            "comments": 71
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_show_ai",
+          "source_name": "Show HN (AI-filtered)",
+          "title": "Show HN: Pulse Local, a Mac budgeting app whose AI models run on your machine",
+          "url": "https://pulseos.finance/",
+          "published_at": "2026-10-13T23:13:23Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=50080275",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "mixed",
+      "one_liner": "A local-first budgeting application utilizing on-device AI models.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.58,
+      "score": 0.306,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "3q3wbq",
+      "primary": {
+        "id": "3q3wbq",
+        "source_id": "thoughtworks_insights",
+        "source_name": "Thoughtworks Insights",
+        "source_role": "main",
+        "trust": 0.84,
+        "kind_hint": "opinion",
+        "title": "The real AI project at your airport isn't an AI project",
+        "url": "https://thoughtworks.com/insights/blog/technology-strategy/the-real-ai-project-at-your-airport-isnt-an-ai-project",
+        "original_url": "https://www.thoughtworks.com/insights/blog/technology-strategy/the-real-ai-project-at-your-airport-isnt-an-ai-project",
+        "summary": "The real AI project at your airport isn't an AI project",
+        "image_url": "https://www.thoughtworks.com/content/dam/thoughtworks/images/photography/abstract/insights/blog/abs_blogs_054.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-10-14T00:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "3q3wbq",
+          "source_id": "thoughtworks_insights",
+          "source_name": "Thoughtworks Insights",
+          "source_role": "main",
+          "trust": 0.84,
+          "kind_hint": "opinion",
+          "title": "The real AI project at your airport isn't an AI project",
+          "url": "https://thoughtworks.com/insights/blog/technology-strategy/the-real-ai-project-at-your-airport-isnt-an-ai-project",
+          "original_url": "https://www.thoughtworks.com/insights/blog/technology-strategy/the-real-ai-project-at-your-airport-isnt-an-ai-project",
+          "summary": "The real AI project at your airport isn't an AI project",
+          "image_url": "https://www.thoughtworks.com/content/dam/thoughtworks/images/photography/abstract/insights/blog/abs_blogs_054.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-14T00:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "thoughtworks_insights",
+          "source_name": "Thoughtworks Insights",
+          "title": "The real AI project at your airport isn't an AI project",
+          "url": "https://thoughtworks.com/insights/blog/technology-strategy/the-real-ai-project-at-your-airport-isnt-an-ai-project",
+          "published_at": "2026-10-14T00:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "A critique of enterprise AI implementation strategies focusing on organizational readiness over technical deployment.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.84,
+      "score": 0.338,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "qjyt1g",
+      "primary": {
+        "id": "qjyt1g",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "Flock CEO says its microphones detect ‘just gunshots’ — its website says different",
+        "url": "https://techcrunch.com/2026/10/14/flock-ceo-says-its-microphones-detect-just-gunshots-its-website-says-different",
+        "original_url": "https://techcrunch.com/2026/10/14/flock-ceo-says-its-microphones-detect-just-gunshots-its-website-says-different/",
+        "summary": "Langley’s comments come amid mounting scrutiny of Flock from privacy advocates, including the ACLU, and members of the public who are concerned about the misuse of its technology.",
+        "published_at": "2026-10-14T21:30:33.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "qjyt1g",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "Flock CEO says its microphones detect ‘just gunshots’ — its website says different",
+          "url": "https://techcrunch.com/2026/10/14/flock-ceo-says-its-microphones-detect-just-gunshots-its-website-says-different",
+          "original_url": "https://techcrunch.com/2026/10/14/flock-ceo-says-its-microphones-detect-just-gunshots-its-website-says-different/",
+          "summary": "Langley’s comments come amid mounting scrutiny of Flock from privacy advocates, including the ACLU, and members of the public who are concerned about the misuse of its technology.",
+          "published_at": "2026-10-14T21:30:33.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "Flock CEO says its microphones detect ‘just gunshots’ — its website says different",
+          "url": "https://techcrunch.com/2026/10/14/flock-ceo-says-its-microphones-detect-just-gunshots-its-website-says-different",
+          "published_at": "2026-10-14T21:30:33.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Report on discrepancies between Flock's public claims and technical documentation regarding audio surveillance capabilities.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.72,
+      "score": 0.346,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "vwdqe8",
+      "primary": {
+        "id": "vwdqe8",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "OpenAI will reportedly ship at least one model this year but its flagship still needs alignment work",
+        "url": "https://the-decoder.com/openai-will-reportedly-ship-at-least-one-model-this-year-but-its-flagship-still-needs-alignment-work",
+        "original_url": "https://the-decoder.com/openai-will-reportedly-ship-at-least-one-model-this-year-but-its-flagship-still-needs-alignment-work/",
+        "summary": "OpenAI is racing to finish its next flagship model, which uses the same looped transformer technique as Astra to boost math and coding performance. The tradeoff is that looping makes safety monitoring harder. Microsoft accidentally revealed details about how the technique works on a public page. Whether or not the flagship is ready in time, employees say one or two new models will likely ship by year's end. The article OpenAI will reportedly ship at least one model this year but its flagship still needs alignment work appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/openai_misalign-2.png",
+        "image_source": "rss_content",
+        "published_at": "2026-10-14T16:14:16.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "vwdqe8",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "OpenAI will reportedly ship at least one model this year but its flagship still needs alignment work",
+          "url": "https://the-decoder.com/openai-will-reportedly-ship-at-least-one-model-this-year-but-its-flagship-still-needs-alignment-work",
+          "original_url": "https://the-decoder.com/openai-will-reportedly-ship-at-least-one-model-this-year-but-its-flagship-still-needs-alignment-work/",
+          "summary": "OpenAI is racing to finish its next flagship model, which uses the same looped transformer technique as Astra to boost math and coding performance. The tradeoff is that looping makes safety monitoring harder. Microsoft accidentally revealed details about how the technique works on a public page. Whether or not the flagship is ready in time, employees say one or two new models will likely ship by year's end. The article OpenAI will reportedly ship at least one model this year but its flagship still needs alignment work appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/openai_misalign-2.png",
+          "image_source": "rss_content",
+          "published_at": "2026-10-14T16:14:16.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "OpenAI will reportedly ship at least one model this year but its flagship still needs alignment work",
+          "url": "https://the-decoder.com/openai-will-reportedly-ship-at-least-one-model-this-year-but-its-flagship-still-needs-alignment-work",
+          "published_at": "2026-10-14T16:14:16.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Report on OpenAI's development of looped transformer architectures for improved reasoning and associated safety challenges.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.342,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "zmi9r4",
+      "primary": {
+        "id": "zmi9r4",
+        "source_id": "simonw",
+        "source_name": "Simon Willison",
+        "source_role": "main",
+        "trust": 0.9,
+        "title": "Redesigning source control at Anthropic",
+        "url": "https://simonwillison.net/2026/Oct/13/redesigning-source-control-at-anthropic",
+        "original_url": "https://simonwillison.net/2026/Oct/13/redesigning-source-control-at-anthropic/",
+        "published_at": "2026-10-13T23:00:06.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "zmi9r4",
+          "source_id": "simonw",
+          "source_name": "Simon Willison",
+          "source_role": "main",
+          "trust": 0.9,
+          "title": "Redesigning source control at Anthropic",
+          "url": "https://simonwillison.net/2026/Oct/13/redesigning-source-control-at-anthropic",
+          "original_url": "https://simonwillison.net/2026/Oct/13/redesigning-source-control-at-anthropic/",
+          "published_at": "2026-10-13T23:00:06.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "simonw",
+          "source_name": "Simon Willison",
+          "title": "Redesigning source control at Anthropic",
+          "url": "https://simonwillison.net/2026/Oct/13/redesigning-source-control-at-anthropic",
+          "published_at": "2026-10-13T23:00:06.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "Overview of internal source control practices and tooling at Anthropic.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.9,
+      "score": 0.27,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "bxtdjc",
+      "primary": {
+        "id": "bxtdjc",
+        "source_id": "latent_space",
+        "source_name": "Latent Space",
+        "source_role": "main",
+        "trust": 0.85,
+        "title": "[AINews] AI Engineer NYC: Gemini 4 Argon, Vals AI Benchmarks",
+        "url": "https://latent.space/p/ainews-ai-engineer-nyc-gemini-4-argon",
+        "original_url": "https://www.latent.space/p/ainews-ai-engineer-nyc-gemini-4-argon",
+        "summary": "Gemini 4 Argon went GA today, but we already gave it title story 2 weeks ago and most benchmarks, like CursorBench, simply independently confirm their claims.",
+        "image_url": "https://substackcdn.com/image/youtube/w_728,c_limit/akEqiXFo3GM",
+        "image_source": "rss_enclosure",
+        "published_at": "2026-10-14T05:40:28.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "bxtdjc",
+          "source_id": "latent_space",
+          "source_name": "Latent Space",
+          "source_role": "main",
+          "trust": 0.85,
+          "title": "[AINews] AI Engineer NYC: Gemini 4 Argon, Vals AI Benchmarks",
+          "url": "https://latent.space/p/ainews-ai-engineer-nyc-gemini-4-argon",
+          "original_url": "https://www.latent.space/p/ainews-ai-engineer-nyc-gemini-4-argon",
+          "summary": "Gemini 4 Argon went GA today, but we already gave it title story 2 weeks ago and most benchmarks, like CursorBench, simply independently confirm their claims.",
+          "image_url": "https://substackcdn.com/image/youtube/w_728,c_limit/akEqiXFo3GM",
+          "image_source": "rss_enclosure",
+          "published_at": "2026-10-14T05:40:28.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "latent_space",
+          "source_name": "Latent Space",
+          "title": "[AINews] AI Engineer NYC: Gemini 4 Argon, Vals AI Benchmarks",
+          "url": "https://latent.space/p/ainews-ai-engineer-nyc-gemini-4-argon",
+          "published_at": "2026-10-14T05:40:28.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "Summary of recent AI news including Gemini 4 Argon and benchmark updates.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.85,
+      "score": 0.269,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "17ukn62",
+      "primary": {
+        "id": "17ukn62",
+        "source_id": "latent_space",
+        "source_name": "Latent Space",
+        "source_role": "main",
+        "trust": 0.85,
+        "title": "Dyna-2: General Purpose Physical Agents with Hour-Long Autonomy — Jason Ma, Dyna Robotics",
+        "url": "https://latent.space/p/dyna",
+        "original_url": "https://www.latent.space/p/dyna",
+        "summary": "Our first robotics pod with Dyna’s Chief Scientist on their big bet on World Action Models & the Next Frontier of Physical AI",
+        "published_at": "2026-10-13T22:25:55.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "17ukn62",
+          "source_id": "latent_space",
+          "source_name": "Latent Space",
+          "source_role": "main",
+          "trust": 0.85,
+          "title": "Dyna-2: General Purpose Physical Agents with Hour-Long Autonomy — Jason Ma, Dyna Robotics",
+          "url": "https://latent.space/p/dyna",
+          "original_url": "https://www.latent.space/p/dyna",
+          "summary": "Our first robotics pod with Dyna’s Chief Scientist on their big bet on World Action Models & the Next Frontier of Physical AI",
+          "published_at": "2026-10-13T22:25:55.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "latent_space",
+          "source_name": "Latent Space",
+          "title": "Dyna-2: General Purpose Physical Agents with Hour-Long Autonomy — Jason Ma, Dyna Robotics",
+          "url": "https://latent.space/p/dyna",
+          "published_at": "2026-10-13T22:25:55.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "Podcast discussion on physical AI agents, world action models, and long-duration autonomy in robotics.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.85,
+      "score": 0.257,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    }
+  ]
+}
