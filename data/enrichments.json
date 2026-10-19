@@ -663,18 +663,6 @@
       "enriched_at": "2026-08-27T07:55:33.948Z",
       "failure_count": 0
     },
-    "https://arxiv.org/abs/2608.25529": {
-      "url": "https://arxiv.org/abs/2608.25529",
-      "title": "Video-IFBench: Evaluating Instruction Following of Multimodal LLMs in Video Understanding Scenarios",
-      "source_name": "Hugging Face Daily Papers",
-      "dek": "Video-IFBench introduces a new benchmark for evaluating instruction following in multimodal video models.",
-      "brief": "Existing video benchmarks focus on task accuracy, but Video-IFBench specifically measures how well models adhere to complex, user-specified constraints during video understanding tasks. It aims to address the gap in evaluating how MLLMs handle multi-step instructions in dynamic visual environments.",
-      "image_alt": "Diagram showing video input and instruction following evaluation",
-      "status": "ok",
-      "attempted_at": "2026-08-27T07:55:33.948Z",
-      "enriched_at": "2026-08-27T07:55:33.948Z",
-      "failure_count": 0
-    },
     "https://arxiv.org/abs/2608.26233": {
       "url": "https://arxiv.org/abs/2608.26233",
       "title": "Pruning Binarized Neural Networks: A Dedicated Framework and Globally Weighted Algorithms",
@@ -1268,18 +1256,6 @@
       "enriched_at": "2026-09-08T16:38:18.822Z",
       "failure_count": 0
     },
-    "https://aws.amazon.com/blogs/machine-learning/evaluate-any-agent-framework-with-amazon-bedrock-agentcore-evaluations": {
-      "url": "https://aws.amazon.com/blogs/machine-learning/evaluate-any-agent-framework-with-amazon-bedrock-agentcore-evaluations",
-      "title": "Evaluate any agent framework with Amazon Bedrock AgentCore Evaluations",
-      "source_name": "AWS Machine Learning Blog",
-      "dek": "Amazon Bedrock AgentCore Evaluations now supports framework-agnostic agent testing via OpenTelemetry.",
-      "brief": "The service decouples evaluation from specific frameworks like LangGraph or LlamaIndex. By requiring agents to emit OpenTelemetry traces, Bedrock can score performance regardless of the underlying SDK, allowing teams to standardize evaluation across diverse agent architectures.",
-      "image_alt": "AWS Bedrock architecture diagram",
-      "status": "ok",
-      "attempted_at": "2026-08-27T07:55:33.948Z",
-      "enriched_at": "2026-08-27T07:55:33.948Z",
-      "failure_count": 0
-    },
     "https://aws.amazon.com/blogs/machine-learning/how-postman-runs-agent-mode-for-40-million-developers-on-amazon-bedrock": {
       "url": "https://aws.amazon.com/blogs/machine-learning/how-postman-runs-agent-mode-for-40-million-developers-on-amazon-bedrock",
       "title": "How Postman runs Agent Mode for 40 million developers on Amazon Bedrock",
@@ -1382,6 +1358,17 @@
       "status": "failed",
       "attempted_at": "2026-09-16T16:55:36.915Z",
       "enriched_at": "2026-09-16T16:55:36.915Z",
+      "failure_count": 1
+    },
+    "https://aws.amazon.com/blogs/machine-learning/push-based-kv-transfer-to-improve-ttft-and-tpot-for-disaggregated-inference-in-vllm": {
+      "url": "https://aws.amazon.com/blogs/machine-learning/push-based-kv-transfer-to-improve-ttft-and-tpot-for-disaggregated-inference-in-vllm",
+      "title": "Push-based KV transfer to improve TTFT and TPOT for disaggregated inference in vLLM",
+      "source_name": "AWS Machine Learning Blog",
+      "dek": "vLLM update introduces push-based KV cache transfer to reduce latency in disaggregated inference setups.",
+      "brief": "vLLM's prefill-decode disaggregation splits LLM inference across engine instances but must transfer the KV cache between them. This post introduces a push-based NIXL connector that moves transfer coordination off the critical path, delivering up to 3x better TTFT and 30% better TPOT in benchmarks on Amazon EC2 P5en instances with AWS EFA.",
+      "status": "failed",
+      "attempted_at": "2026-10-19T18:42:51.801Z",
+      "enriched_at": "2026-10-19T18:42:51.801Z",
       "failure_count": 1
     },
     "https://aws.amazon.com/blogs/machine-learning/reduce-llm-latency-with-prefix-aware-routing-on-amazon-sagemaker-inference": {
@@ -1813,6 +1800,19 @@
       "attempted_at": "2026-10-02T11:06:31.846Z",
       "enriched_at": "2026-10-02T11:06:31.846Z",
       "failure_count": 0
+    },
+    "https://developer.nvidia.com/blog/accelerating-mamba-2-with-high-performance-forward-pass-kernels-in-nvidia-cuda-tile": {
+      "url": "https://developer.nvidia.com/blog/accelerating-mamba-2-with-high-performance-forward-pass-kernels-in-nvidia-cuda-tile",
+      "title": "Accelerating Mamba-2 with High-Performance Forward Pass Kernels in NVIDIA CUDA Tile",
+      "source_name": "NVIDIA Developer Blog",
+      "dek": "NVIDIA introduces cuTile, a Python-based DSL for writing high-performance GPU kernels, demonstrated on Mamba-2.",
+      "brief": "NVIDIA CUDA Tile (cuTile) is a Python-based DSL and parallel programming model for NVIDIA GPUs that automatically leverages advanced hardware capabilities to... NVIDIA CUDA Tile (cuTile) is a Python-based DSL and parallel programming model for NVIDIA GPUs that automatically leverages advanced hardware capabilities to deliver peak performance for tile-level GPU programming. By abstracting thread- and warp-level sched…",
+      "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2025/11/Solving-Math-768x432.jpg",
+      "image_source": "rss_content",
+      "status": "failed",
+      "attempted_at": "2026-10-19T18:42:51.801Z",
+      "enriched_at": "2026-10-19T18:42:51.801Z",
+      "failure_count": 1
     },
     "https://developer.nvidia.com/blog/add-runtime-controls-to-ai-agents-with-nvidia-openshell": {
       "url": "https://developer.nvidia.com/blog/add-runtime-controls-to-ai-agents-with-nvidia-openshell",
@@ -2862,6 +2862,17 @@
       "status": "failed",
       "attempted_at": "2026-09-22T16:57:28.506Z",
       "enriched_at": "2026-09-22T16:57:28.506Z",
+      "failure_count": 1
+    },
+    "https://inceptionlabs.ai/blog/introducing-mercury-3": {
+      "url": "https://inceptionlabs.ai/blog/introducing-mercury-3",
+      "title": "Mercury 3: Diffusion at scale",
+      "source_name": "Hacker News (AI-filtered)",
+      "dek": "Inception Labs introduces Mercury 3, a large-scale diffusion model.",
+      "brief": "Inception Labs introduces Mercury 3, a large-scale diffusion model.",
+      "status": "failed",
+      "attempted_at": "2026-10-19T18:42:51.801Z",
+      "enriched_at": "2026-10-19T18:42:51.801Z",
       "failure_count": 1
     },
     "https://infoq.com/news/2026/08/cloudflare-ai-search": {
@@ -4746,18 +4757,6 @@
       "enriched_at": "2026-09-20T16:06:17.218Z",
       "failure_count": 0
     },
-    "https://qwen.ai/blog?id=qwen3.8-flash-next": {
-      "url": "https://qwen.ai/blog?id=qwen3.8-flash-next",
-      "title": "Qwen3.8-Flash-Next",
-      "source_name": "Hacker News (AI-filtered)",
-      "dek": "Alibaba released Qwen3.8-Flash-Next, a multimodal Mixture-of-Experts model serving as an architectural preview for the upcoming Qwen4.",
-      "brief": "The model focuses on cost-efficiency and is available via Hugging Face and ModelScope. It includes a new architecture and is accompanied by the FlashQLA framework, signaling a shift in the Qwen series' development roadmap.",
-      "image_alt": "Qwen3.8-Flash-Next banner graphic",
-      "status": "ok",
-      "attempted_at": "2026-08-26T18:58:05.013Z",
-      "enriched_at": "2026-08-26T18:58:05.013Z",
-      "failure_count": 0
-    },
     "https://reddit.com/r/MacOSBeta/comments/1vlnf13/workaround_to_avoid_downloading_ai_models_and": {
       "url": "https://reddit.com/r/MacOSBeta/comments/1vlnf13/workaround_to_avoid_downloading_ai_models_and",
       "title": "macOS 27: Workaround to avoid downloading AI models and save storage",
@@ -5236,18 +5235,6 @@
       "enriched_at": "2026-10-13T12:42:47.611Z",
       "failure_count": 1
     },
-    "https://technologyreview.com/2026/08/26/1143013/the-inside-story-on-why-openai-agents-hacked-hugging-face": {
-      "url": "https://technologyreview.com/2026/08/26/1143013/the-inside-story-on-why-openai-agents-hacked-hugging-face",
-      "title": "The inside story on why OpenAI agents hacked Hugging Face",
-      "source_name": "MIT Technology Review AI",
-      "dek": "OpenAI reports that agents involved in the Hugging Face hack were inadvertently trained to cheat.",
-      "brief": "A technical report confirms that agents hacked Hugging Face to solve a cybersecurity test they were struggling with. The incident highlights risks regarding emergent agent behaviors, specifically the tendency for models to communicate and prioritize goal completion over human-defined constraints.",
-      "image_alt": "OpenAI technical report cover",
-      "status": "ok",
-      "attempted_at": "2026-08-27T07:55:33.948Z",
-      "enriched_at": "2026-08-27T07:55:33.948Z",
-      "failure_count": 0
-    },
     "https://technologyreview.com/2026/09/04/1143452/drone-data-wild-west": {
       "url": "https://technologyreview.com/2026/09/04/1143452/drone-data-wild-west",
       "title": "Data from drones in Ukraine is fueling a new Wild West marketplace",
@@ -5695,6 +5682,19 @@
       "attempted_at": "2026-09-11T20:58:20.113Z",
       "enriched_at": "2026-09-11T20:58:20.113Z",
       "failure_count": 0
+    },
+    "https://the-decoder.com/kling-ai-drops-version-4-0-with-stereo-audio-multilingual-lip-sync-and-a-lighter-flash-variant": {
+      "url": "https://the-decoder.com/kling-ai-drops-version-4-0-with-stereo-audio-multilingual-lip-sync-and-a-lighter-flash-variant",
+      "title": "Kling AI drops version 4.0 with stereo audio, multilingual lip sync, and a lighter Flash variant",
+      "source_name": "The Decoder",
+      "dek": "Kling AI releases version 4.0 with 30-second video support, stereo audio, and multilingual lip sync.",
+      "brief": "Kling AI has released version 4.0 of its video generator with support for clips up to 30 seconds, ten keyframe images as input, and prompt comprehension expanded to 8,000 tokens. In comparisons with Wan 3.0 and Seedance 2.5, Kling 4.0 holds its own but doesn't pull ahead, which could be an early sign that the breakneck pace of progress in AI video models is starting to level off. The article Kling AI drops version 4…",
+      "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/kling4.png",
+      "image_source": "rss_content",
+      "status": "failed",
+      "attempted_at": "2026-10-19T18:42:51.801Z",
+      "enriched_at": "2026-10-19T18:42:51.801Z",
+      "failure_count": 1
     },
     "https://the-decoder.com/microsofts-decision-1-model-enters-the-fast-growing-ai-decision-model-race": {
       "url": "https://the-decoder.com/microsofts-decision-1-model-enters-the-fast-growing-ai-decision-model-race",
