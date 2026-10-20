@@ -1,18 +1,6 @@
 {
   "version": 1,
   "entries": {
-    "https://acceptmarkdown.com/": {
-      "url": "https://acceptmarkdown.com/",
-      "title": "Serve Markdown to AI Agents with Accept Headers",
-      "source_name": "Hacker News (AI-filtered)",
-      "dek": "A new utility allows websites to serve Markdown content to AI agents via HTTP Accept headers.",
-      "brief": "By serving Markdown, sites can strip away navigation, scripts, and layout markup, reducing token usage and improving retrieval signal-to-noise ratios. The approach requires setting 'Accept: text/markdown' and 'Vary: Accept' headers to ensure AI clients receive clean, parseable text.",
-      "image_alt": "Conceptual diagram of content negotiation for AI agents",
-      "status": "ok",
-      "attempted_at": "2026-08-27T07:55:33.948Z",
-      "enriched_at": "2026-08-27T07:55:33.948Z",
-      "failure_count": 0
-    },
     "https://agentexecutor.io/": {
       "url": "https://agentexecutor.io/",
       "title": "AX – Google’s Open Agentic Orchestrator",
@@ -480,20 +468,6 @@
       "enriched_at": "2026-09-24T21:30:56.650Z",
       "failure_count": 0
     },
-    "https://arstechnica.com/security/2026/08/claude-codex-and-hermes-installed-unowned-code-inside-corporate-networks": {
-      "url": "https://arstechnica.com/security/2026/08/claude-codex-and-hermes-installed-unowned-code-inside-corporate-networks",
-      "title": "Claude, Codex, and Hermes installed unowned code inside corporate networks",
-      "source_name": "Ars Technica AI",
-      "dek": "Security researchers identified 227 instances of unowned code being installed via AI-generated commands within corporate environments.",
-      "brief": "An analysis of corporate documentation revealed that AI coding assistants like Claude, Codex, and Hermes frequently suggested install commands pointing to unverified or unowned code repositories. This practice introduces significant supply chain risks, as developers may inadvertently execute malicious or abandoned packages suggested by LLMs.",
-      "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/02/gatekeeping-ai-agents-1152x648.jpg",
-      "image_alt": "Abstract representation of code injection and supply chain security risks.",
-      "image_source": "rss_media",
-      "status": "ok",
-      "attempted_at": "2026-08-27T15:57:54.264Z",
-      "enriched_at": "2026-08-27T15:57:54.264Z",
-      "failure_count": 0
-    },
     "https://arstechnica.com/security/2026/09/ai-text-watermarking-can-make-models-more-vulnerable-to-adversarial-prompts": {
       "url": "https://arstechnica.com/security/2026/09/ai-text-watermarking-can-make-models-more-vulnerable-to-adversarial-prompts",
       "title": "LLMs respond differently to harmful prompts when AI watermarking is used",
@@ -649,18 +623,6 @@
       "status": "ok",
       "attempted_at": "2026-08-28T21:31:50.282Z",
       "enriched_at": "2026-08-28T21:31:50.282Z",
-      "failure_count": 0
-    },
-    "https://arxiv.org/abs/2608.24936": {
-      "url": "https://arxiv.org/abs/2608.24936",
-      "title": "GreenLeaf Law Embed Tiny: A Compact Embedding Model for Legal Domain Retrieval",
-      "source_name": "arXiv cs.LG",
-      "dek": "GreenLeaf Law Embed Tiny is a 0.6B parameter model optimized for legal domain retrieval.",
-      "brief": "The model achieves 75.11% on the Massive Legal Embedding Benchmark (MLEB) and 64.38% on MTEB(Law, v1). It uses a two-stage training pipeline that distills knowledge from a larger teacher model into a compact student architecture, offering competitive performance for resource-constrained legal applications.",
-      "image_alt": "arXiv logo",
-      "status": "ok",
-      "attempted_at": "2026-08-27T07:55:33.948Z",
-      "enriched_at": "2026-08-27T07:55:33.948Z",
       "failure_count": 0
     },
     "https://arxiv.org/abs/2608.26233": {
@@ -1209,6 +1171,17 @@
       "enriched_at": "2026-10-19T10:46:22.525Z",
       "failure_count": 0
     },
+    "https://arxiv.org/abs/2610.23867": {
+      "url": "https://arxiv.org/abs/2610.23867",
+      "title": "Composable Parametric Demographic Injection for Values Survey Simulation",
+      "source_name": "arXiv cs.CL",
+      "dek": "Proposes a method for demographic injection to improve LLM simulation of heterogeneous population response distributions.",
+      "brief": "Large language models (LLMs) are increasingly used as simulated respondents in computational social science, yet accurately reproducing population-specific heterogeneous response distributions remains challenging. Existing methods such as demographic prompting are sensitive to prompt design and increase inference overhead, while parameter-based methods struggle to reuse demographic information efficiently, limiting…",
+      "status": "failed",
+      "attempted_at": "2026-10-20T10:05:00.105Z",
+      "enriched_at": "2026-10-20T10:05:00.105Z",
+      "failure_count": 1
+    },
     "https://arxiv.org/html/2610.05978v1": {
       "url": "https://arxiv.org/html/2610.05978v1",
       "title": "Byte Language Models: Scaling, Emergent Abstractions, and Information Allocation",
@@ -1418,6 +1391,17 @@
       "attempted_at": "2026-08-28T16:25:09.425Z",
       "enriched_at": "2026-08-28T16:25:09.425Z",
       "failure_count": 0
+    },
+    "https://aws.amazon.com/blogs/machine-learning/structured-outputs-for-anthropic-claude-models-on-amazon-bedrock": {
+      "url": "https://aws.amazon.com/blogs/machine-learning/structured-outputs-for-anthropic-claude-models-on-amazon-bedrock",
+      "title": "Structured outputs for Anthropic Claude models on Amazon Bedrock",
+      "source_name": "AWS Machine Learning Blog",
+      "dek": "Amazon Bedrock adds native support for structured JSON outputs for Anthropic Claude models.",
+      "brief": "Amazon Bedrock now supports structured outputs for all Anthropic Claude models on both the bedrock-runtime and bedrock-mantle endpoints. Receive schema-compliant JSON that conforms to a defined structure, without custom parsing, retry logic, or post-processing, using JSON Schema output format and strict tool use.",
+      "status": "failed",
+      "attempted_at": "2026-10-20T10:05:00.105Z",
+      "enriched_at": "2026-10-20T10:05:00.105Z",
+      "failure_count": 1
     },
     "https://aws.amazon.com/blogs/machine-learning/the-new-agentcore-runtime-elastic-optimized-and-consistently-fast-starts": {
       "url": "https://aws.amazon.com/blogs/machine-learning/the-new-agentcore-runtime-elastic-optimized-and-consistently-fast-starts",
@@ -3563,18 +3547,6 @@
       "enriched_at": "2026-10-15T09:54:35.113Z",
       "failure_count": 0
     },
-    "https://louisabraham.github.io/load-bearing": {
-      "url": "https://louisabraham.github.io/load-bearing",
-      "title": "Show HN: The load-bearing vocabulary of Claude",
-      "source_name": "Hacker News (AI-filtered)",
-      "dek": "A new analysis explores how specific tokens act as 'load-bearing' vocabulary that significantly influences Claude's output behavior.",
-      "brief": "The study investigates the sensitivity of Claude's performance to specific token sequences. By analyzing how certain vocabulary choices shift model outputs, the research highlights the importance of prompt engineering and token selection in maintaining consistent model behavior and performance.",
-      "image_alt": "Visualization of token influence on LLM output patterns.",
-      "status": "ok",
-      "attempted_at": "2026-08-27T15:57:54.264Z",
-      "enriched_at": "2026-08-27T15:57:54.264Z",
-      "failure_count": 0
-    },
     "https://lucumr.pocoo.org/2026/9/14/interpreting-pangram": {
       "url": "https://lucumr.pocoo.org/2026/9/14/interpreting-pangram",
       "title": "Interpreting Pangram",
@@ -4301,19 +4273,6 @@
       "enriched_at": "2026-09-20T09:48:55.739Z",
       "failure_count": 0
     },
-    "https://old.reddit.com/r/LocalLLaMA/comments/1vz3a1a/little_tool_for_offline_wikipedia_rag": {
-      "url": "https://old.reddit.com/r/LocalLLaMA/comments/1vz3a1a/little_tool_for_offline_wikipedia_rag",
-      "title": "little tool for offline wikipedia RAG",
-      "source_name": "r/LocalLLaMA",
-      "dek": "A lightweight bash script for performing RAG against an offline Wikipedia archive.",
-      "brief": "I was bored and handwrote a tiny 100-line bash script to let an agent search for and read articles from an offline wikipedia archive during a regular chat. It's not particularly useful, but it's definitely neat and a big step up from llama-cli. I got surprisingly good results even with LFM2.5-2B (Q8 at 0.5 temp), which is usually too weak to be of much use. (and Qwen had no trouble, obviously— see main image) Just p…",
-      "image_url": "https://preview.redd.it/q4oc9mzx4rlh1.png?width=640&crop=smart&auto=webp&s=b3c62b035fbe16243d8490467855257fde0033bc",
-      "image_source": "rss_media",
-      "status": "failed",
-      "attempted_at": "2026-08-27T15:57:54.264Z",
-      "enriched_at": "2026-08-27T15:57:54.264Z",
-      "failure_count": 1
-    },
     "https://old.reddit.com/r/LocalLLaMA/comments/1w18v86/use_llms_to_auto_annotation_your_dataset_locally": {
       "url": "https://old.reddit.com/r/LocalLLaMA/comments/1w18v86/use_llms_to_auto_annotation_your_dataset_locally",
       "title": "use llms to auto annotation your dataset locally",
@@ -4462,6 +4421,17 @@
       "attempted_at": "2026-10-17T09:21:08.892Z",
       "enriched_at": "2026-10-17T09:21:08.892Z",
       "failure_count": 0
+    },
+    "https://openai.com/index/low-resource-programming-languages": {
+      "url": "https://openai.com/index/low-resource-programming-languages",
+      "title": "Advancing coding in low‑resource programming languages",
+      "source_name": "OpenAI",
+      "dek": "OpenAI reports improvements in coding capabilities for low-resource programming languages.",
+      "brief": "Learn how OpenAI is improving ChatGPT across low-resource programming languages, with new evaluations for software engineering, SQLite, and COBOL migration.",
+      "status": "failed",
+      "attempted_at": "2026-10-20T10:05:00.105Z",
+      "enriched_at": "2026-10-20T10:05:00.105Z",
+      "failure_count": 1
     },
     "https://openai.com/index/model-misalignment-reporting-framework": {
       "url": "https://openai.com/index/model-misalignment-reporting-framework",
@@ -4818,6 +4788,17 @@
       "status": "failed",
       "attempted_at": "2026-09-04T09:46:25.670Z",
       "enriched_at": "2026-09-04T09:46:25.670Z",
+      "failure_count": 1
+    },
+    "https://reuters.com/technology/us-banning-chinese-ai-deepseek-government-agency-it-systems-2026-10-19": {
+      "url": "https://reuters.com/technology/us-banning-chinese-ai-deepseek-government-agency-it-systems-2026-10-19",
+      "title": "DeepSeek banned from U.S. federal civilian agencies under new DHS order",
+      "source_name": "Hacker News (AI-filtered)",
+      "dek": "DHS issues order banning the use of DeepSeek models within U.S. federal civilian agencies.",
+      "brief": "DHS issues order banning the use of DeepSeek models within U.S. federal civilian agencies.",
+      "status": "failed",
+      "attempted_at": "2026-10-20T10:05:00.105Z",
+      "enriched_at": "2026-10-20T10:05:00.105Z",
       "failure_count": 1
     },
     "https://rubyhack.ai/": {
@@ -5269,6 +5250,17 @@
       "attempted_at": "2026-10-13T22:44:45.723Z",
       "enriched_at": "2026-10-13T22:44:45.723Z",
       "failure_count": 0
+    },
+    "https://technologyreview.com/2026/10/20/1145916/dispatch-visit-to-samsung-massive-new-semiconductor-hub": {
+      "url": "https://technologyreview.com/2026/10/20/1145916/dispatch-visit-to-samsung-massive-new-semiconductor-hub",
+      "title": "A visit to Samsung’s massive new semiconductor hub",
+      "source_name": "MIT Technology Review AI",
+      "dek": "Overview of Samsung's semiconductor manufacturing expansion in South Korea to meet AI memory demand.",
+      "brief": "Generative AI models run on powerful chips known as GPUs, which depend on stacks of specialized memory chips packaged with the processor. To meet growing demand for memory, Samsung is building a massive new semiconductor manufacturing complex in Pyeongtaek, South Korea. Three fabs already operate around the clock, and a fourth is coming online. Construction…",
+      "status": "failed",
+      "attempted_at": "2026-10-20T10:05:00.105Z",
+      "enriched_at": "2026-10-20T10:05:00.105Z",
+      "failure_count": 1
     },
     "https://tej.as/blog/aleph-alpha-kolibri": {
       "url": "https://tej.as/blog/aleph-alpha-kolibri",
