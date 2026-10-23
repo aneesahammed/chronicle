@@ -625,18 +625,6 @@
       "enriched_at": "2026-09-02T16:34:37.702Z",
       "failure_count": 0
     },
-    "https://arxiv.org/abs/2608.27513": {
-      "url": "https://arxiv.org/abs/2608.27513",
-      "title": "DAMP: Decay-Aware Mixed-Precision Recurrent-State Quantization",
-      "source_name": "arXiv cs.LG",
-      "dek": "DAMP introduces post-training quantization for recurrent states in Gated DeltaNet and Kimi Delta Attention to reduce memory usage and decoding latency.",
-      "brief": "Recurrent states in models like GDN and KDA are typically stored in FP32, leading to high memory consumption and bandwidth bottlenecks. DAMP (Decay-Aware Mixed-Precision) addresses this by applying post-training quantization to these states, optimizing memory footprint without significantly sacrificing performance.",
-      "image_alt": "Diagram showing recurrent state quantization process",
-      "status": "ok",
-      "attempted_at": "2026-08-31T05:26:56.582Z",
-      "enriched_at": "2026-08-31T05:26:56.582Z",
-      "failure_count": 0
-    },
     "https://arxiv.org/abs/2608.28840": {
       "url": "https://arxiv.org/abs/2608.28840",
       "title": "Unsupervised Latent Space Alignment with Hyperspherical Geodesic Matching",
@@ -1193,6 +1181,18 @@
       "enriched_at": "2026-10-23T10:03:42.069Z",
       "failure_count": 1
     },
+    "https://arxiv.org/abs/2610.30211": {
+      "url": "https://arxiv.org/abs/2610.30211",
+      "title": "Prediction Is Not Calibration: Item Parameter Recovery and Representation Coupling in Knowledge Tracing",
+      "source_name": "arXiv cs.LG",
+      "dek": "New research highlights that predictive accuracy in knowledge tracing models does not guarantee accurate recovery of underlying item parameters.",
+      "brief": "The study examines how various decoders (2PL, GPCM, NRM) paired with encoders like Transformers and LSTMs handle parameter estimation. Findings indicate that affine logit identities allow item-dependent shifts to be absorbed into parameters without altering response probabilities, complicating the recovery of true item characteristics.",
+      "image_alt": "Chart comparing predictive accuracy versus parameter recovery in knowledge tracing models",
+      "status": "ok",
+      "attempted_at": "2026-10-23T17:07:03.788Z",
+      "enriched_at": "2026-10-23T17:07:03.788Z",
+      "failure_count": 0
+    },
     "https://arxiv.org/html/2610.05978v1": {
       "url": "https://arxiv.org/html/2610.05978v1",
       "title": "Byte Language Models: Scaling, Emergent Abstractions, and Information Allocation",
@@ -1365,6 +1365,18 @@
       "attempted_at": "2026-09-16T16:55:36.915Z",
       "enriched_at": "2026-09-16T16:55:36.915Z",
       "failure_count": 1
+    },
+    "https://aws.amazon.com/blogs/machine-learning/orchestrating-sagemaker-ai-endpoint-auto-scaling-with-aws-cdk": {
+      "url": "https://aws.amazon.com/blogs/machine-learning/orchestrating-sagemaker-ai-endpoint-auto-scaling-with-aws-cdk",
+      "title": "Orchestrating SageMaker AI endpoint auto scaling with AWS CDK",
+      "source_name": "AWS Machine Learning Blog",
+      "dek": "A new AWS CDK construct automates the deregistration and re-registration of SageMaker auto-scaling targets during endpoint updates.",
+      "brief": "Updating SageMaker real-time endpoints via CloudFormation or CDK often fails because the scalable target must be deregistered first. This solution uses custom resources to orchestrate the lifecycle of Application Auto Scaling, allowing developers to update instance configurations without manual intervention or deployment errors.",
+      "image_alt": "Workflow diagram showing the CDK custom resource orchestrating SageMaker endpoint updates",
+      "status": "ok",
+      "attempted_at": "2026-10-23T17:07:03.788Z",
+      "enriched_at": "2026-10-23T17:07:03.788Z",
+      "failure_count": 0
     },
     "https://aws.amazon.com/blogs/machine-learning/push-based-kv-transfer-to-improve-ttft-and-tpot-for-disaggregated-inference-in-vllm": {
       "url": "https://aws.amazon.com/blogs/machine-learning/push-based-kv-transfer-to-improve-ttft-and-tpot-for-disaggregated-inference-in-vllm",
@@ -2860,18 +2872,6 @@
       "enriched_at": "2026-09-19T09:30:51.925Z",
       "failure_count": 0
     },
-    "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp": {
-      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
-      "title": "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp (0 downloads, 169 likes)",
-      "source_name": "Hugging Face trending models",
-      "dek": "DeepSeek has released the DeepSeek-V4-Flash-Vision-Exp model, a new vision-capable iteration available on Hugging Face.",
-      "brief": "The model supports text-generation and image-text-to-text tasks. It is released under an MIT license and is compatible with the transformers and safetensors libraries.",
-      "image_alt": "DeepSeek AI logo",
-      "status": "ok",
-      "attempted_at": "2026-08-31T12:37:42.294Z",
-      "enriched_at": "2026-08-31T12:37:42.294Z",
-      "failure_count": 0
-    },
     "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash": {
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
       "title": "deepseek-ai/DeepSeek-V4.1-Flash (6 downloads, 1592 likes)",
@@ -2954,20 +2954,6 @@
       "status": "ok",
       "attempted_at": "2026-08-31T18:31:23.548Z",
       "enriched_at": "2026-08-31T18:31:23.548Z",
-      "failure_count": 0
-    },
-    "https://infoq.com/news/2026/08/foundry-model-router-regions": {
-      "url": "https://infoq.com/news/2026/08/foundry-model-router-regions",
-      "title": "Foundry Model Router Expands from Two Regions to 28, Refreshing Its Model Pool",
-      "source_name": "InfoQ AI/ML/Data",
-      "dek": "Microsoft has expanded its Foundry model router to 28 regions and updated the model pool with Claude Opus 4.8 and GPT-5.6.",
-      "brief": "The Foundry model router now supports 28 regions for global standard deployments and 21 for data zones. The model pool has been refreshed to include Claude Opus 4.8 and the GPT-5.6 family, while older models like DeepSeek-V3.1 have been deprecated. Default configurations update automatically, but custom subsets require manual updates.",
-      "image_url": "https://res.infoq.com/news/2026/08/foundry-model-router-regions/en/headerimage/generatedHeaderImage-1787836928169.jpg",
-      "image_alt": "Azure AI Foundry logo and regional deployment map",
-      "image_source": "rss_content",
-      "status": "ok",
-      "attempted_at": "2026-08-31T12:37:42.294Z",
-      "enriched_at": "2026-08-31T12:37:42.294Z",
       "failure_count": 0
     },
     "https://infoq.com/news/2026/09/cloudflare-optional-oauth-scopes": {
@@ -3637,18 +3623,6 @@
       "enriched_at": "2026-09-24T21:30:56.650Z",
       "failure_count": 0
     },
-    "https://marktechpost.com/2026/08/30/google-ai-introduces-envharness-a-programmable-layer-that-turns-static-agent-environments-into-adaptive-training-worlds": {
-      "url": "https://marktechpost.com/2026/08/30/google-ai-introduces-envharness-a-programmable-layer-that-turns-static-agent-environments-into-adaptive-training-worlds",
-      "title": "Google AI Introduces EnvHarness: A Programmable Layer That Turns Static Agent Environments Into Adaptive Training Worlds",
-      "source_name": "MarkTechPost",
-      "dek": "Google's new EnvHarness library allows developers to wrap static agent benchmarks in an adaptive layer that responds to policy training.",
-      "brief": "EnvHarness uses an LLM-based designer, EnvRigger, to automatically wrap frozen environments. This allows static benchmarks to evolve alongside the agent, providing dynamic feedback without requiring manual changes to existing verifiers or environment interfaces.",
-      "image_alt": "Diagram showing EnvHarness wrapping a static environment",
-      "status": "ok",
-      "attempted_at": "2026-08-31T12:37:42.294Z",
-      "enriched_at": "2026-08-31T12:37:42.294Z",
-      "failure_count": 0
-    },
     "https://marktechpost.com/2026/09/01/aqua-a-two-part-agentic-framework-for-autonomous-factor-discovery": {
       "url": "https://marktechpost.com/2026/09/01/aqua-a-two-part-agentic-framework-for-autonomous-factor-discovery",
       "title": "Researchers from Princeton, Ant Group and Stanford Introduce AQuA: A Two-Part Agentic Framework for Autonomous Factor Discovery and Model Development in Quantitative Finance",
@@ -4315,16 +4289,16 @@
       "enriched_at": "2026-09-20T09:48:55.739Z",
       "failure_count": 0
     },
-    "https://old.reddit.com/r/MachineLearning/comments/1w3br9c/how_to_assess_if_there_is_a_strong_signal_in_your": {
-      "url": "https://old.reddit.com/r/MachineLearning/comments/1w3br9c/how_to_assess_if_there_is_a_strong_signal_in_your",
-      "title": "How to assess if there is a strong signal in your dirty data [Project]",
-      "source_name": "r/MachineLearning",
-      "dek": "Entropic Scree is a new diagnostic tool designed to evaluate signal strength and informational volume in noisy, high-dimensional tabular datasets.",
-      "brief": "This tool helps data scientists assess whether a dataset contains enough signal to be useful for training. It estimates the signal-to-idiosyncratic volume ratio (SNR) and intrinsic rank, providing an exploratory map to visualize data quality before model development.",
-      "image_alt": "Data visualization showing signal-to-noise ratio analysis",
+    "https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies": {
+      "url": "https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies",
+      "title": "AI: EU Member States approve “digital expropriation” of Europeans for AI companies",
+      "source_name": "Lobsters (AI tag)",
+      "dek": "EU member states have approved the 'Digital Omnibus' proposal, raising concerns over data protection standards for AI development.",
+      "brief": "The proposal, passed via a fast-track procedure without a fundamental rights assessment, has been criticized by privacy advocates as a form of digital expropriation. Critics argue the move prioritizes AI industry profits over established European data protection rights.",
+      "image_alt": "European Union flag and digital data icons",
       "status": "ok",
-      "attempted_at": "2026-08-31T12:37:42.294Z",
-      "enriched_at": "2026-08-31T12:37:42.294Z",
+      "attempted_at": "2026-10-23T17:07:03.788Z",
+      "enriched_at": "2026-10-23T17:07:03.788Z",
       "failure_count": 0
     },
     "https://openai.com/index/australian-youth-safety-blueprint": {
@@ -4548,6 +4522,18 @@
       "status": "ok",
       "attempted_at": "2026-09-11T20:58:20.113Z",
       "enriched_at": "2026-09-11T20:58:20.113Z",
+      "failure_count": 0
+    },
+    "https://openai.com/index/scaling-storage-one-billion-users-part-two": {
+      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+      "source_name": "OpenAI",
+      "dek": "OpenAI details the evolution of Habitat, its internal storage platform designed to handle millisecond-latency requirements for over 1 billion users.",
+      "brief": "Habitat serves as the backbone for OpenAI's product suite, operating across 40 geographic regions. The platform's design philosophy prioritizes reliability for mission-critical traffic, followed by global performance optimization and operational scalability. The architecture leverages Azure Cosmos DB and multi-tenancy to maintain high developer velocity while supporting explosive growth.",
+      "image_alt": "Diagram showing the multi-layered architecture of the Habitat storage platform",
+      "status": "ok",
+      "attempted_at": "2026-10-23T17:07:03.788Z",
+      "enriched_at": "2026-10-23T17:07:03.788Z",
       "failure_count": 0
     },
     "https://openai.com/index/sharing-ai-progress-in-mathematics": {
@@ -5991,6 +5977,20 @@
       "status": "ok",
       "attempted_at": "2026-09-25T10:11:54.760Z",
       "enriched_at": "2026-09-25T10:11:54.760Z",
+      "failure_count": 0
+    },
+    "https://theverge.com/tech/1017600/google-personal-intelligence-privacy-policy-ads-update": {
+      "url": "https://theverge.com/tech/1017600/google-personal-intelligence-privacy-policy-ads-update",
+      "title": "Now Google says it might use your Gmail and Google Photos data to target ads",
+      "source_name": "The Verge AI",
+      "dek": "Google updated its privacy policy to allow the use of personal data from Gmail, Drive, and Photos for targeted ads within AI features.",
+      "brief": "An October 16th policy update removes previous restrictions on using personal user data for ad targeting. The change specifically impacts users interacting with personalized AI features, marking a shift in how Google leverages private user content for advertising revenue.",
+      "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/02/STK093_GOOGLE_D.jpg?quality=90&",
+      "image_alt": "Graphic representing data privacy and targeted advertising",
+      "image_source": "rss_content",
+      "status": "ok",
+      "attempted_at": "2026-10-23T17:07:03.788Z",
+      "enriched_at": "2026-10-23T17:07:03.788Z",
       "failure_count": 0
     },
     "https://theverge.com/tech/986789/linux-debian-generative-ai-policy": {
