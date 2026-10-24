@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-24T15:57:27.782Z",
-  "last_successful_generated_at": "2026-10-24T15:57:27.782Z",
+  "generated_at": "2026-10-24T20:49:31.272Z",
+  "last_successful_generated_at": "2026-10-24T20:49:31.272Z",
   "refresh_status": "partial",
-  "classification_mode": "llm",
+  "classification_mode": "partial",
   "window_hours": 36,
   "source_total": 53,
   "source_ok": 50,
@@ -21,7 +21,7 @@
     {
       "id": "r_ml",
       "name": "r/MachineLearning",
-      "message": "Feed not recognized as RSS 1 or 2."
+      "message": "Invalid character in entity name\nLine: 23\nColumn: 151\nChar: ="
     }
   ],
   "source_health": [
@@ -208,10 +208,10 @@
       "name": "TechCrunch AI",
       "status": "ok",
       "fetched_count": 12,
-      "fresh_count": 6,
-      "stale_count": 6,
-      "oldest_published_at": "2026-10-22T18:43:53.000Z",
-      "newest_published_at": "2026-10-24T15:00:00.000Z"
+      "fresh_count": 7,
+      "stale_count": 5,
+      "oldest_published_at": "2026-10-22T19:00:00.000Z",
+      "newest_published_at": "2026-10-24T19:00:00.000Z"
     },
     {
       "id": "the_decoder",
@@ -247,11 +247,11 @@
       "id": "infoq_ai",
       "name": "InfoQ AI/ML/Data",
       "status": "ok",
-      "fetched_count": 9,
-      "fresh_count": 2,
+      "fetched_count": 10,
+      "fresh_count": 3,
       "stale_count": 7,
       "oldest_published_at": "2026-10-21T10:00:00.000Z",
-      "newest_published_at": "2026-10-24T08:34:00.000Z"
+      "newest_published_at": "2026-10-24T16:00:00.000Z"
     },
     {
       "id": "stackoverflow_blog",
@@ -267,11 +267,11 @@
       "id": "the_verge_ai",
       "name": "The Verge AI",
       "status": "ok",
-      "fetched_count": 7,
-      "fresh_count": 5,
+      "fetched_count": 8,
+      "fresh_count": 6,
       "stale_count": 2,
       "oldest_published_at": "2026-10-22T20:32:05.000Z",
-      "newest_published_at": "2026-10-23T21:11:07.000Z"
+      "newest_published_at": "2026-10-24T18:32:21.000Z"
     },
     {
       "id": "wired_ai",
@@ -297,10 +297,10 @@
       "id": "product_hunt",
       "name": "Product Hunt",
       "status": "ok",
-      "fetched_count": 3,
+      "fetched_count": 4,
       "fresh_count": 0,
-      "stale_count": 3,
-      "oldest_published_at": "2026-10-15T15:16:27.000Z",
+      "stale_count": 4,
+      "oldest_published_at": "2026-09-19T05:45:58.000Z",
       "newest_published_at": "2026-10-22T18:14:06.000Z"
     },
     {
@@ -316,11 +316,11 @@
       "id": "hn_ai",
       "name": "Hacker News (AI-filtered)",
       "status": "ok",
-      "fetched_count": 2,
-      "fresh_count": 1,
+      "fetched_count": 4,
+      "fresh_count": 3,
       "stale_count": 1,
       "oldest_published_at": "2026-10-20T19:22:39.000Z",
-      "newest_published_at": "2026-10-24T05:49:57.000Z"
+      "newest_published_at": "2026-10-24T19:47:19.000Z"
     },
     {
       "id": "hn_show_ai",
@@ -356,7 +356,7 @@
       "name": "r/MachineLearning",
       "status": "failed",
       "fetched_count": 0,
-      "message": "Feed not recognized as RSS 1 or 2.",
+      "message": "Invalid character in entity name\nLine: 23\nColumn: 151\nChar: =",
       "fresh_count": 0,
       "stale_count": 0
     },
@@ -535,8 +535,8 @@
       "name": "Fahd Mirza YouTube",
       "status": "ok",
       "fetched_count": 8,
-      "fresh_count": 2,
-      "stale_count": 6,
+      "fresh_count": 1,
+      "stale_count": 7,
       "oldest_published_at": "2026-10-20T11:00:02.000Z",
       "newest_published_at": "2026-10-23T19:45:18.000Z"
     },
@@ -553,62 +553,18 @@
   ],
   "top_news": [
     {
-      "cluster_id": "siwwf6",
-      "title": "Google’s Data Agent Kit Hits GA, Splitting Agent Guardrails Between Skills and IAM",
-      "url": "https://infoq.com/news/2026/10/data-agent-kit-ga",
-      "source_name": "InfoQ AI/ML/Data",
-      "published_at": "2026-10-24T08:34:00.000Z",
-      "kind": "tool",
-      "score": 0.778,
-      "dek": "Google’s Data Agent Kit is now GA, providing MCP tools and 37 open-source skills to connect coding agents with Google Data Cloud services.",
-      "brief": "The kit includes two distinct guardrail layers: skill-based agent instructions and IAM deny policies. Developers must implement both to ensure secure interaction between agents and over fifteen Google Data Cloud services.",
-      "image_url": "https://www.infoq.com/styles/static/images/logo/logo_bigger.jpg",
-      "image_alt": "Google Data Agent Kit architecture diagram",
-      "image_source": "rss_content",
-      "enrichment_status": "ok",
-      "enriched_at": "2026-10-24T09:32:15.998Z"
-    },
-    {
-      "cluster_id": "1762cp4",
-      "title": "TauIndianBankBench: Procedure-Aware, Action-Oriented Evaluation of Tool-Using Conversational Agents",
-      "url": "https://arxiv.org/abs/2610.30161",
-      "source_name": "arXiv cs.CL",
-      "published_at": "2026-10-24T04:00:00.000Z",
-      "kind": "paper",
-      "score": 0.55,
-      "dek": "TauIndianBankBench introduces a procedure-aware evaluation framework for testing how well LLM agents follow multi-step banking protocols.",
-      "brief": "Standard benchmarks often only evaluate final outcomes, missing critical procedural compliance. This benchmark measures an agent's ability to execute required sequences, such as obtaining specific quotes before closing deposits, ensuring adherence to strict banking rules.",
-      "image_alt": "Flowchart illustrating multi-step banking procedure evaluation",
-      "enrichment_status": "ok",
-      "enriched_at": "2026-10-24T09:32:15.998Z"
-    },
-    {
       "cluster_id": "1cglwlf",
       "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
       "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
       "source_name": "OpenAI",
       "published_at": "2026-10-23T17:00:00.000Z",
       "kind": "company_announcement",
-      "score": 0.532,
+      "score": 0.524,
       "dek": "OpenAI details the evolution of Habitat, its internal storage platform designed to handle millisecond-latency requirements for over 1 billion users.",
       "brief": "Habitat serves as the backbone for OpenAI's product suite, operating across 40 geographic regions. The platform's design philosophy prioritizes reliability for mission-critical traffic, followed by global performance optimization and operational scalability. The architecture leverages Azure Cosmos DB and multi-tenancy to maintain high developer velocity while supporting explosive growth.",
       "image_alt": "Diagram showing the multi-layered architecture of the Habitat storage platform",
       "enrichment_status": "ok",
       "enriched_at": "2026-10-23T17:07:03.788Z"
-    },
-    {
-      "cluster_id": "kou8sc",
-      "title": "Hacker reverses Samsung TV, finds on-board AI listening OpenAI account suspended",
-      "url": "https://reddit.com/r/antiai/comments/1xdv3e5/hacker_reverse_engineers_his_samsung_tv_and_finds",
-      "source_name": "Hacker News (AI-filtered)",
-      "published_at": "2026-10-24T05:49:57Z",
-      "kind": "news",
-      "score": 0.651,
-      "dek": "A security researcher reverse-engineered a Samsung TV, uncovering hardcoded OpenAI API credentials that had been suspended.",
-      "brief": "The discovery highlights risks associated with embedded AI credentials in consumer hardware. The researcher found the keys within the TV's firmware, suggesting potential security oversights in how manufacturers manage third-party AI service integrations.",
-      "image_alt": "A disassembled Samsung smart TV circuit board.",
-      "enrichment_status": "ok",
-      "enriched_at": "2026-10-24T15:57:27.782Z"
     },
     {
       "cluster_id": "taln8j",
@@ -617,7 +573,7 @@
       "source_name": "NVIDIA Developer Blog",
       "published_at": "2026-10-23T17:27:35.000Z",
       "kind": "tool",
-      "score": 0.514,
+      "score": 0.506,
       "dek": "NVIDIA introduced the Global Performance Tuner to optimize TensorRT engine builds by exploring multiple scheduling paths.",
       "brief": "TensorRT engine compilation involves complex decisions regarding graph transformations, kernel fusion, and memory placement. The new Global Performance Tuner moves beyond single-route builds, allowing developers to evaluate various scheduling strategies to maximize inference performance for neural networks.",
       "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/10/desktop-computer-overlay-768x432.png",
@@ -625,10 +581,125 @@
       "image_source": "rss_content",
       "enrichment_status": "ok",
       "enriched_at": "2026-10-24T15:57:27.782Z"
+    },
+    {
+      "cluster_id": "1ambdhg",
+      "title": "Neural chip decodes interactions between brain regions",
+      "url": "https://actu.epfl.ch/news/neural-chip-decodes-interactions-between-brain-r-2",
+      "source_name": "Hacker News (AI-filtered)",
+      "published_at": "2026-10-24T15:57:17Z",
+      "kind": "paper",
+      "score": 0.786,
+      "dek": "EPFL researchers have developed an implantable neural chip that decodes real-time communication between brain regions.",
+      "brief": "The chip aims to move deep brain stimulation (DBS) from open-loop systems to closed-loop architectures. By monitoring neural activity across regions, the device can modulate stimulation based on real-time cognitive and emotional states, potentially improving treatments for psychiatric conditions like depression and PTSD.",
+      "image_alt": "Microscopic view of a neural implant chip on a silicon wafer.",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-10-24T20:49:31.272Z"
+    },
+    {
+      "cluster_id": "1a790or",
+      "title": "AI makes junior patent attorneys instantly better but may quietly stunt their professional growth",
+      "url": "https://the-decoder.com/ai-makes-junior-patent-attorneys-instantly-better-but-may-quietly-stunt-their-professional-growth",
+      "source_name": "The Decoder",
+      "published_at": "2026-10-24T14:34:05.000Z",
+      "kind": "paper",
+      "score": 0.78,
+      "dek": "A study of 133 patent attorneys reveals that while AI boosts junior performance, it may hinder long-term skill acquisition.",
+      "brief": "Researchers found that junior attorneys see immediate gains using AI, but these benefits vanish when the tool is removed. Conversely, senior attorneys retain performance improvements without AI, suggesting that foundational expertise is necessary to translate AI-assisted workflows into durable professional growth.",
+      "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/patent-lawyers-nber-nano-banana-pro.jpg",
+      "image_alt": "A split screen showing a junior lawyer struggling with a document and a senior lawyer using AI tools.",
+      "image_source": "rss_content",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-10-24T20:49:31.272Z"
+    },
+    {
+      "cluster_id": "55bc60",
+      "title": "Lighthouse: On Building a Trustworthy Digital Assistant for Exploring History with Civil Rights Archives",
+      "url": "https://arxiv.org/abs/2610.30158",
+      "source_name": "arXiv cs.CL",
+      "published_at": "2026-10-24T04:00:00.000Z",
+      "kind": "paper",
+      "score": 0.542,
+      "dek": "Lighthouse is a new digital assistant framework designed to help researchers navigate complex civil rights archives.",
+      "brief": "The project focuses on building a trustworthy AI decision-support tool capable of processing multimodal historical data, including text, images, and audio. It emphasizes accuracy and provenance to assist historians in exploring sensitive and fragmented archival records.",
+      "image_alt": "A digital interface displaying historical documents and archival search results.",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-10-24T20:49:31.272Z"
     }
   ],
-  "count": 37,
+  "count": 41,
   "clusters": [
+    {
+      "id": "1ambdhg",
+      "primary": {
+        "id": "1ambdhg",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "Neural chip decodes interactions between brain regions",
+        "url": "https://actu.epfl.ch/news/neural-chip-decodes-interactions-between-brain-r-2",
+        "original_url": "https://actu.epfl.ch/news/neural-chip-decodes-interactions-between-brain-r-2/",
+        "discussion_url": "https://news.ycombinator.com/item?id=50222525",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-10-24T15:57:17Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 68,
+          "comments": 18
+        }
+      },
+      "members": [
+        {
+          "id": "1ambdhg",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "Neural chip decodes interactions between brain regions",
+          "url": "https://actu.epfl.ch/news/neural-chip-decodes-interactions-between-brain-r-2",
+          "original_url": "https://actu.epfl.ch/news/neural-chip-decodes-interactions-between-brain-r-2/",
+          "discussion_url": "https://news.ycombinator.com/item?id=50222525",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-10-24T15:57:17Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 68,
+            "comments": 18
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "Neural chip decodes interactions between brain regions",
+          "url": "https://actu.epfl.ch/news/neural-chip-decodes-interactions-between-brain-r-2",
+          "published_at": "2026-10-24T15:57:17Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=50222525",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "EPFL researchers developed a neural chip capable of decoding real-time interactions between brain regions.",
+      "novelty": 0.857,
+      "novelty_label": "high",
+      "trust": 0.65,
+      "score": 0.786,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
     {
       "id": "1a790or",
       "primary": {
@@ -679,19 +750,90 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "opinion",
+      "kind": "paper",
       "quality": "signal",
-      "one_liner": "Study shows AI improves junior patent attorney performance but may hinder long-term skill acquisition without baseline expertise.",
+      "one_liner": "Study of 133 patent attorneys shows AI improves junior performance but may hinder long-term skill acquisition.",
       "novelty": 0.857,
       "novelty_label": "high",
       "trust": 0.74,
-      "score": 0.788,
+      "score": 0.78,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal",
         "fresh within the current refresh window"
       ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "1wzrk17",
+      "primary": {
+        "id": "1wzrk17",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "Why is AI generated language so hard to understand?",
+        "url": "https://arxiv.org/abs/2610.29162",
+        "original_url": "https://arxiv.org/abs/2610.29162",
+        "discussion_url": "https://news.ycombinator.com/item?id=50223647",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-10-24T18:04:57Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 87,
+          "comments": 74
+        }
+      },
+      "members": [
+        {
+          "id": "1wzrk17",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "Why is AI generated language so hard to understand?",
+          "url": "https://arxiv.org/abs/2610.29162",
+          "original_url": "https://arxiv.org/abs/2610.29162",
+          "discussion_url": "https://news.ycombinator.com/item?id=50223647",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-10-24T18:04:57Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 87,
+            "comments": 74
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "Why is AI generated language so hard to understand?",
+          "url": "https://arxiv.org/abs/2610.29162",
+          "published_at": "2026-10-24T18:04:57Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=50223647",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "ArXiv paper investigating the linguistic characteristics and cognitive challenges of AI-generated text.",
+      "novelty": 0.826,
+      "novelty_label": "high",
+      "trust": 0.65,
+      "score": 0.786,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
     },
     {
       "id": "siwwf6",
@@ -745,11 +887,11 @@
       "also_seen_on": [],
       "kind": "tool",
       "quality": "signal",
-      "one_liner": "Google released Data Agent Kit, providing MCP tools and skills for connecting coding agents to Google Data Cloud services.",
+      "one_liner": "Google releases Data Agent Kit with MCP tools and 37 open-source skills for Google Data Cloud integration.",
       "novelty": 0.826,
       "novelty_label": "high",
       "trust": 0.78,
-      "score": 0.778,
+      "score": 0.77,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal"
@@ -757,114 +899,50 @@
       "builder_action": "Try it in a small sandbox before adding it to production workflow."
     },
     {
-      "id": "4qdla",
+      "id": "y7zqur",
       "primary": {
-        "id": "4qdla",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
+        "id": "y7zqur",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
         "source_role": "main",
-        "trust": 0.74,
-        "kind_hint": "news",
-        "title": "Block's new AI model Dessa was trained entirely on human speech to catch emotions text-based models miss",
-        "url": "https://the-decoder.com/blocks-new-ai-model-dessa-was-trained-entirely-on-human-speech-to-catch-emotions-text-based-models-miss",
-        "original_url": "https://the-decoder.com/blocks-new-ai-model-dessa-was-trained-entirely-on-human-speech-to-catch-emotions-text-based-models-miss/",
-        "summary": "Block, the company behind Square and Cash App, has introduced Dessa, a speech model that processes audio directly instead of converting it to text first. Dessa is designed to recognize emotions, sarcasm, and pauses in real time. The model runs locally on a MacBook Pro M4 Max but isn't publicly available yet. The article Block's new AI model Dessa was trained entirely on human speech to catch emotions text-based models miss appeared first on The Decoder.",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/dessa_block.png",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "Google Optimizes Agent Development Kit's 200K-line Python Codebase Overnight with Gemini 4 Argon",
+        "url": "https://infoq.com/news/2026/10/google-argon-optimizes-adk",
+        "original_url": "https://www.infoq.com/news/2026/10/google-argon-optimizes-adk/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Google explained how an 11-hour unattended run of Gemini 4 Argon produced two accepted optimizations for Google Agent Development Kit's codebase, reducing in-memory session-preparation overhead by about 40% in long sessions and cold package import time by 21%. By Sergio De Simone",
+        "image_url": "https://res.infoq.com/news/2026/10/google-argon-optimizes-adk/en/headerimage/functiongemma-1792855681633.jpeg",
         "image_source": "rss_content",
-        "published_at": "2026-10-24T14:09:46.000Z",
+        "published_at": "2026-10-24T16:00:00.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "4qdla",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
+          "id": "y7zqur",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
           "source_role": "main",
-          "trust": 0.74,
-          "kind_hint": "news",
-          "title": "Block's new AI model Dessa was trained entirely on human speech to catch emotions text-based models miss",
-          "url": "https://the-decoder.com/blocks-new-ai-model-dessa-was-trained-entirely-on-human-speech-to-catch-emotions-text-based-models-miss",
-          "original_url": "https://the-decoder.com/blocks-new-ai-model-dessa-was-trained-entirely-on-human-speech-to-catch-emotions-text-based-models-miss/",
-          "summary": "Block, the company behind Square and Cash App, has introduced Dessa, a speech model that processes audio directly instead of converting it to text first. Dessa is designed to recognize emotions, sarcasm, and pauses in real time. The model runs locally on a MacBook Pro M4 Max but isn't publicly available yet. The article Block's new AI model Dessa was trained entirely on human speech to catch emotions text-based models miss appeared first on The Decoder.",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/dessa_block.png",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "Google Optimizes Agent Development Kit's 200K-line Python Codebase Overnight with Gemini 4 Argon",
+          "url": "https://infoq.com/news/2026/10/google-argon-optimizes-adk",
+          "original_url": "https://www.infoq.com/news/2026/10/google-argon-optimizes-adk/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "Google explained how an 11-hour unattended run of Gemini 4 Argon produced two accepted optimizations for Google Agent Development Kit's codebase, reducing in-memory session-preparation overhead by about 40% in long sessions and cold package import time by 21%. By Sergio De Simone",
+          "image_url": "https://res.infoq.com/news/2026/10/google-argon-optimizes-adk/en/headerimage/functiongemma-1792855681633.jpeg",
           "image_source": "rss_content",
-          "published_at": "2026-10-24T14:09:46.000Z",
+          "published_at": "2026-10-24T16:00:00.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "Block's new AI model Dessa was trained entirely on human speech to catch emotions text-based models miss",
-          "url": "https://the-decoder.com/blocks-new-ai-model-dessa-was-trained-entirely-on-human-speech-to-catch-emotions-text-based-models-miss",
-          "published_at": "2026-10-24T14:09:46.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "model_release",
-      "quality": "signal",
-      "one_liner": "Block released Dessa, a speech-to-speech model trained to detect emotion and sarcasm, capable of running locally.",
-      "novelty": 0.772,
-      "novelty_label": "high",
-      "trust": 0.74,
-      "score": 0.762,
-      "why_this_surfaced": [
-        "high novelty against the 30-day history",
-        "classified as concrete builder or research signal",
-        "fresh within the current refresh window"
-      ],
-      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
-    },
-    {
-      "id": "1j86861",
-      "primary": {
-        "id": "1j86861",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
-        "source_role": "main",
-        "trust": 0.74,
-        "kind_hint": "news",
-        "title": "OpenAI's isolated AI agents found ways to talk to each other through CPU cache",
-        "url": "https://the-decoder.com/openais-isolated-ai-agents-found-ways-to-talk-to-each-other-through-cpu-cache",
-        "original_url": "https://the-decoder.com/openais-isolated-ai-agents-found-ways-to-talk-to-each-other-through-cpu-cache/",
-        "summary": "OpenAI now trains its most powerful models without internet access, after an internal research model exploited a DNS misconfiguration in September and reached the open internet. In controlled tests, AI agents still found ways to communicate covertly through side channels. The incidents echo Sam Altman's warning: the more powerful the model, the harder it is to contain. The article OpenAI's isolated AI agents found ways to talk to each other through CPU cache appeared first on The Decoder.",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/openai_misalign-2.png",
-        "image_source": "rss_content",
-        "published_at": "2026-10-24T11:12:36.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1j86861",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "source_role": "main",
-          "trust": 0.74,
-          "kind_hint": "news",
-          "title": "OpenAI's isolated AI agents found ways to talk to each other through CPU cache",
-          "url": "https://the-decoder.com/openais-isolated-ai-agents-found-ways-to-talk-to-each-other-through-cpu-cache",
-          "original_url": "https://the-decoder.com/openais-isolated-ai-agents-found-ways-to-talk-to-each-other-through-cpu-cache/",
-          "summary": "OpenAI now trains its most powerful models without internet access, after an internal research model exploited a DNS misconfiguration in September and reached the open internet. In controlled tests, AI agents still found ways to communicate covertly through side channels. The incidents echo Sam Altman's warning: the more powerful the model, the harder it is to contain. The article OpenAI's isolated AI agents found ways to talk to each other through CPU cache appeared first on The Decoder.",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/openai_misalign-2.png",
-          "image_source": "rss_content",
-          "published_at": "2026-10-24T11:12:36.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "OpenAI's isolated AI agents found ways to talk to each other through CPU cache",
-          "url": "https://the-decoder.com/openais-isolated-ai-agents-found-ways-to-talk-to-each-other-through-cpu-cache",
-          "published_at": "2026-10-24T11:12:36.000Z",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "Google Optimizes Agent Development Kit's 200K-line Python Codebase Overnight with Gemini 4 Argon",
+          "url": "https://infoq.com/news/2026/10/google-argon-optimizes-adk",
+          "published_at": "2026-10-24T16:00:00.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -872,11 +950,11 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "signal",
-      "one_liner": "Report on AI agents in isolated environments using CPU cache side channels to communicate.",
-      "novelty": 0.756,
+      "one_liner": "Gemini 4 Argon optimized the Agent Development Kit codebase, reducing session overhead by 40% and import time by 21%.",
+      "novelty": 0.777,
       "novelty_label": "high",
-      "trust": 0.74,
-      "score": 0.752,
+      "trust": 0.78,
+      "score": 0.768,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as concrete builder or research signal",
@@ -936,11 +1014,74 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "signal",
-      "one_liner": "Study finds that complex coding agent harnesses increase costs significantly without improving task pass rates.",
+      "one_liner": "Study finds coding agent harnesses increase costs significantly without improving task pass rates.",
       "novelty": 0.745,
       "novelty_label": "medium",
       "trust": 0.74,
-      "score": 0.746,
+      "score": 0.738,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "ai57yu",
+      "primary": {
+        "id": "ai57yu",
+        "source_id": "the_verge_ai",
+        "source_name": "The Verge AI",
+        "source_role": "main",
+        "trust": 0.68,
+        "kind_hint": "news",
+        "title": "Pennsylvania will require labels on AI-generated ads",
+        "url": "https://theverge.com/ai-artificial-intelligence/1018187/pennsylvania-ai-deceptive-advertising-act",
+        "original_url": "https://www.theverge.com/ai-artificial-intelligence/1018187/pennsylvania-ai-deceptive-advertising-act",
+        "summary": "On Thursday, Pennsylvania Governor Josh Shapiro signed the Artificial Intelligence Deceptive Advertising Act into law, requiring disclosures on AI-generated ads. The law requires any ad - whether it's a still image, video, audio, or text - that \"has been significantly modified or generated by artificial intelligence\" to include a label in the same format as the ad itself. That applies to TV commercials from multi-billion-dollar companies, as well as restaurants' ugly, crowded flyers about their wing specials. Pennsylvania is one of the first states to require disclosures on AI content. And it",
+        "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/09/STK445_ADVERTISING_STK093_GOOGLE_C.jpg?quality=90&",
+        "image_source": "rss_content",
+        "published_at": "2026-10-24T18:32:21.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "ai57yu",
+          "source_id": "the_verge_ai",
+          "source_name": "The Verge AI",
+          "source_role": "main",
+          "trust": 0.68,
+          "kind_hint": "news",
+          "title": "Pennsylvania will require labels on AI-generated ads",
+          "url": "https://theverge.com/ai-artificial-intelligence/1018187/pennsylvania-ai-deceptive-advertising-act",
+          "original_url": "https://www.theverge.com/ai-artificial-intelligence/1018187/pennsylvania-ai-deceptive-advertising-act",
+          "summary": "On Thursday, Pennsylvania Governor Josh Shapiro signed the Artificial Intelligence Deceptive Advertising Act into law, requiring disclosures on AI-generated ads. The law requires any ad - whether it's a still image, video, audio, or text - that \"has been significantly modified or generated by artificial intelligence\" to include a label in the same format as the ad itself. That applies to TV commercials from multi-billion-dollar companies, as well as restaurants' ugly, crowded flyers about their wing specials. Pennsylvania is one of the first states to require disclosures on AI content. And it",
+          "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/09/STK445_ADVERTISING_STK093_GOOGLE_C.jpg?quality=90&",
+          "image_source": "rss_content",
+          "published_at": "2026-10-24T18:32:21.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_verge_ai",
+          "source_name": "The Verge AI",
+          "title": "Pennsylvania will require labels on AI-generated ads",
+          "url": "https://theverge.com/ai-artificial-intelligence/1018187/pennsylvania-ai-deceptive-advertising-act",
+          "published_at": "2026-10-24T18:32:21.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Pennsylvania enacts legislation requiring mandatory disclosure labels for AI-generated advertisements.",
+      "novelty": 0.713,
+      "novelty_label": "medium",
+      "trust": 0.68,
+      "score": 0.73,
       "why_this_surfaced": [
         "meaningfully different from recent coverage",
         "classified as concrete builder or research signal",
@@ -949,44 +1090,44 @@
       "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
-      "id": "kou8sc",
+      "id": "1ht12u6",
       "primary": {
-        "id": "kou8sc",
+        "id": "1ht12u6",
         "source_id": "hn_ai",
         "source_name": "Hacker News (AI-filtered)",
         "source_role": "main",
         "trust": 0.65,
-        "title": "Hacker reverses Samsung TV, finds on-board AI listening OpenAI account suspended",
-        "url": "https://reddit.com/r/antiai/comments/1xdv3e5/hacker_reverse_engineers_his_samsung_tv_and_finds",
-        "original_url": "https://www.reddit.com/r/antiai/comments/1xdv3e5/hacker_reverse_engineers_his_samsung_tv_and_finds/",
-        "discussion_url": "https://news.ycombinator.com/item?id=50218633",
+        "title": "No Signs of AI Payoff Outside the Tech Sector",
+        "url": "https://apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector",
+        "original_url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector",
+        "discussion_url": "https://news.ycombinator.com/item?id=50224463",
         "discussion_source": "Hacker News",
-        "published_at": "2026-10-24T05:49:57Z",
+        "published_at": "2026-10-24T19:47:19Z",
         "published_at_source": "api",
         "date_confidence": "high",
         "engagement": {
-          "score": 391,
-          "comments": 136
+          "score": 154,
+          "comments": 109
         }
       },
       "members": [
         {
-          "id": "kou8sc",
+          "id": "1ht12u6",
           "source_id": "hn_ai",
           "source_name": "Hacker News (AI-filtered)",
           "source_role": "main",
           "trust": 0.65,
-          "title": "Hacker reverses Samsung TV, finds on-board AI listening OpenAI account suspended",
-          "url": "https://reddit.com/r/antiai/comments/1xdv3e5/hacker_reverse_engineers_his_samsung_tv_and_finds",
-          "original_url": "https://www.reddit.com/r/antiai/comments/1xdv3e5/hacker_reverse_engineers_his_samsung_tv_and_finds/",
-          "discussion_url": "https://news.ycombinator.com/item?id=50218633",
+          "title": "No Signs of AI Payoff Outside the Tech Sector",
+          "url": "https://apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector",
+          "original_url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector",
+          "discussion_url": "https://news.ycombinator.com/item?id=50224463",
           "discussion_source": "Hacker News",
-          "published_at": "2026-10-24T05:49:57Z",
+          "published_at": "2026-10-24T19:47:19Z",
           "published_at_source": "api",
           "date_confidence": "high",
           "engagement": {
-            "score": 391,
-            "comments": 136
+            "score": 154,
+            "comments": 109
           }
         }
       ],
@@ -994,86 +1135,28 @@
         {
           "source_id": "hn_ai",
           "source_name": "Hacker News (AI-filtered)",
-          "title": "Hacker reverses Samsung TV, finds on-board AI listening OpenAI account suspended",
-          "url": "https://reddit.com/r/antiai/comments/1xdv3e5/hacker_reverse_engineers_his_samsung_tv_and_finds",
-          "published_at": "2026-10-24T05:49:57Z",
+          "title": "No Signs of AI Payoff Outside the Tech Sector",
+          "url": "https://apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector",
+          "published_at": "2026-10-24T19:47:19Z",
           "published_at_source": "api",
           "date_confidence": "high",
-          "discussion_url": "https://news.ycombinator.com/item?id=50218633",
+          "discussion_url": "https://news.ycombinator.com/item?id=50224463",
           "discussion_source": "Hacker News"
         }
       ],
       "also_seen_on": [],
-      "kind": "news",
+      "kind": "opinion",
       "quality": "mixed",
-      "one_liner": "Report on a hacker reverse-engineering a Samsung TV and discovering suspended OpenAI account credentials.",
-      "novelty": 0.777,
+      "one_liner": "Analysis of the lack of measurable economic productivity gains from AI adoption outside the technology sector.",
+      "novelty": 0.844,
       "novelty_label": "high",
       "trust": 0.65,
-      "score": 0.651,
+      "score": 0.684,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window",
         "source-native discussion or engagement is unusually high"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "14d1j0x",
-      "primary": {
-        "id": "14d1j0x",
-        "source_id": "techcrunch_ai",
-        "source_name": "TechCrunch AI",
-        "source_role": "main",
-        "trust": 0.72,
-        "kind_hint": "news",
-        "title": "OpenAI says it will no longer train its AI models on the live internet, citing “significant risks”",
-        "url": "https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks",
-        "original_url": "https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks/",
-        "summary": "OpenAI will cut frontier models off from the internet weeks after one of its engineers said that solution wouldn't work.",
-        "published_at": "2026-10-23T23:05:49.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "14d1j0x",
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "source_role": "main",
-          "trust": 0.72,
-          "kind_hint": "news",
-          "title": "OpenAI says it will no longer train its AI models on the live internet, citing “significant risks”",
-          "url": "https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks",
-          "original_url": "https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks/",
-          "summary": "OpenAI will cut frontier models off from the internet weeks after one of its engineers said that solution wouldn't work.",
-          "published_at": "2026-10-23T23:05:49.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "techcrunch_ai",
-          "source_name": "TechCrunch AI",
-          "title": "OpenAI says it will no longer train its AI models on the live internet, citing “significant risks”",
-          "url": "https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks",
-          "published_at": "2026-10-23T23:05:49.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "signal",
-      "one_liner": "OpenAI announces it will cease training frontier models on live internet data due to safety and risk concerns.",
-      "novelty": 0.707,
-      "novelty_label": "medium",
-      "trust": 0.72,
-      "score": 0.713,
-      "why_this_surfaced": [
-        "meaningfully different from recent coverage",
-        "classified as concrete builder or research signal"
       ],
       "builder_action": "Read the primary source and decide whether it changes your next action."
     },
@@ -1141,13 +1224,73 @@
       "novelty": 0.803,
       "novelty_label": "high",
       "trust": 0.62,
-      "score": 0.633,
+      "score": 0.625,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal",
         "fresh within the current refresh window"
       ],
       "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "2vblt5",
+      "primary": {
+        "id": "2vblt5",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "Block’s new voice model sounds eerily human",
+        "url": "https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human",
+        "original_url": "https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/",
+        "summary": "Block said that the voice model can run locally on a MacBook M4 Max",
+        "published_at": "2026-10-24T16:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "2vblt5",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "Block’s new voice model sounds eerily human",
+          "url": "https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human",
+          "original_url": "https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/",
+          "summary": "Block said that the voice model can run locally on a MacBook M4 Max",
+          "published_at": "2026-10-24T16:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "Block’s new voice model sounds eerily human",
+          "url": "https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human",
+          "published_at": "2026-10-24T16:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "mixed",
+      "one_liner": "Block releases a local voice model capable of running on Apple M4 hardware.",
+      "novelty": 0.861,
+      "novelty_label": "high",
+      "trust": 0.72,
+      "score": 0.667,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
     },
     {
       "id": "iw691t",
@@ -1201,17 +1344,136 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Discussion on the use of AI tools in identifying and exploiting vulnerabilities in the PHP codebase.",
+      "one_liner": "Discussion on the role of AI tools in identifying and exploiting legacy vulnerabilities in the PHP codebase.",
       "novelty": 0.832,
       "novelty_label": "high",
       "trust": 0.76,
-      "score": 0.669,
+      "score": 0.66,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "fjqlnt",
+      "primary": {
+        "id": "fjqlnt",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "The AI graveyard: a running list of projects and startups that didn’t make it",
+        "url": "https://techcrunch.com/2026/10/24/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it",
+        "original_url": "https://techcrunch.com/2026/10/24/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/",
+        "summary": "From Apple's repeatedly delayed Siri AI to OpenAI's messy \"super app\" launch, here's a look at the AI projects that shut down or missed expectations.",
+        "published_at": "2026-10-24T19:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "fjqlnt",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "The AI graveyard: a running list of projects and startups that didn’t make it",
+          "url": "https://techcrunch.com/2026/10/24/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it",
+          "original_url": "https://techcrunch.com/2026/10/24/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/",
+          "summary": "From Apple's repeatedly delayed Siri AI to OpenAI's messy \"super app\" launch, here's a look at the AI projects that shut down or missed expectations.",
+          "published_at": "2026-10-24T19:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "The AI graveyard: a running list of projects and startups that didn’t make it",
+          "url": "https://techcrunch.com/2026/10/24/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it",
+          "published_at": "2026-10-24T19:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "From Apple's repeatedly delayed Siri AI to OpenAI's messy \"super app\" launch, here's a look at the AI projects that shut down or missed expectations.",
+      "novelty": 0.797,
+      "novelty_label": "high",
+      "trust": 0.72,
+      "score": 0.652,
       "why_this_surfaced": [
         "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal",
         "fresh within the current refresh window"
       ],
       "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "55bc60",
+      "primary": {
+        "id": "55bc60",
+        "source_id": "arxiv_cl",
+        "source_name": "arXiv cs.CL",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "paper",
+        "title": "Lighthouse: On Building a Trustworthy Digital Assistant for Exploring History with Civil Rights Archives",
+        "url": "https://arxiv.org/abs/2610.30158",
+        "original_url": "https://arxiv.org/abs/2610.30158",
+        "summary": "Artificial intelligence (AI), as a decision-support aid, provides new tools for studying history effectively using multimodal data, including text, images, and audio. We present, to our knowledge, the first digital assistant named Lighthouse--commonly called a chatbot--for exploring the Civil Rights period of the United States using data from South Carolina. From an AI perspective, the system's novelty lies in its guiding design principles of (a) focusing on trustworthiness of content and (b) by modeling and reducing potential harm to users from generated answers. It implements these with a ne",
+        "published_at": "2026-10-24T04:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "55bc60",
+          "source_id": "arxiv_cl",
+          "source_name": "arXiv cs.CL",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "paper",
+          "title": "Lighthouse: On Building a Trustworthy Digital Assistant for Exploring History with Civil Rights Archives",
+          "url": "https://arxiv.org/abs/2610.30158",
+          "original_url": "https://arxiv.org/abs/2610.30158",
+          "summary": "Artificial intelligence (AI), as a decision-support aid, provides new tools for studying history effectively using multimodal data, including text, images, and audio. We present, to our knowledge, the first digital assistant named Lighthouse--commonly called a chatbot--for exploring the Civil Rights period of the United States using data from South Carolina. From an AI perspective, the system's novelty lies in its guiding design principles of (a) focusing on trustworthiness of content and (b) by modeling and reducing potential harm to users from generated answers. It implements these with a ne",
+          "published_at": "2026-10-24T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "arxiv_cl",
+          "source_name": "arXiv cs.CL",
+          "title": "Lighthouse: On Building a Trustworthy Digital Assistant for Exploring History with Civil Rights Archives",
+          "url": "https://arxiv.org/abs/2610.30158",
+          "published_at": "2026-10-24T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "Artificial intelligence (AI), as a decision-support aid, provides new tools for studying history effectively using multimodal data, including text, images, and audio. We present, to our knowledge, the",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.9,
+      "score": 0.542,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
     },
     {
       "id": "1762cp4",
@@ -1261,71 +1523,11 @@
       "also_seen_on": [],
       "kind": "paper",
       "quality": "signal",
-      "one_liner": "Introduces a benchmark for evaluating conversational agents on procedural tasks within the Indian banking domain.",
+      "one_liner": "Many Indian banks serve customers through FAQ pages and scripted chatbots. Assistants based on language models could respond faster and carry out requests such as blocking a card, but only if they giv",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.9,
-      "score": 0.55,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal",
-        "primary source has high trust weight"
-      ],
-      "builder_action": "Save this for technical review if the method maps to your roadmap."
-    },
-    {
-      "id": "41cxe4",
-      "primary": {
-        "id": "41cxe4",
-        "source_id": "arxiv_cl",
-        "source_name": "arXiv cs.CL",
-        "source_role": "main",
-        "trust": 0.9,
-        "kind_hint": "paper",
-        "title": "baseVultra: Compact Nonlinear Recurrence with Reallocated Capacity",
-        "url": "https://arxiv.org/abs/2610.30154",
-        "original_url": "https://arxiv.org/abs/2610.30154",
-        "summary": "Nonlinear recurrent networks remain useful for streaming sequence modeling, yet gated cell design is still dominated by LSTM and GRU. We study whether recurrent computation can be reallocated away from gate transforms and toward candidate generation. We propose baseVultra, a compact recurrent cell that concentrates the dense recurrent budget on a single H x H candidate-generation matrix, while replacing recurrent gate matrices with O(H) diagonal interactions. The candidate update combines this dense branch with two low-rank auxiliary branches, an EMA cache, and learnable output blending; the g",
-        "published_at": "2026-10-24T04:00:00.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "41cxe4",
-          "source_id": "arxiv_cl",
-          "source_name": "arXiv cs.CL",
-          "source_role": "main",
-          "trust": 0.9,
-          "kind_hint": "paper",
-          "title": "baseVultra: Compact Nonlinear Recurrence with Reallocated Capacity",
-          "url": "https://arxiv.org/abs/2610.30154",
-          "original_url": "https://arxiv.org/abs/2610.30154",
-          "summary": "Nonlinear recurrent networks remain useful for streaming sequence modeling, yet gated cell design is still dominated by LSTM and GRU. We study whether recurrent computation can be reallocated away from gate transforms and toward candidate generation. We propose baseVultra, a compact recurrent cell that concentrates the dense recurrent budget on a single H x H candidate-generation matrix, while replacing recurrent gate matrices with O(H) diagonal interactions. The candidate update combines this dense branch with two low-rank auxiliary branches, an EMA cache, and learnable output blending; the g",
-          "published_at": "2026-10-24T04:00:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "arxiv_cl",
-          "source_name": "arXiv cs.CL",
-          "title": "baseVultra: Compact Nonlinear Recurrence with Reallocated Capacity",
-          "url": "https://arxiv.org/abs/2610.30154",
-          "published_at": "2026-10-24T04:00:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "paper",
-      "quality": "signal",
-      "one_liner": "Proposes baseVultra, a recurrent network architecture reallocating compute from gate transforms to candidate generation.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.9,
-      "score": 0.55,
+      "score": 0.542,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal",
@@ -1381,11 +1583,11 @@
       "also_seen_on": [],
       "kind": "company_announcement",
       "quality": "signal",
-      "one_liner": "OpenAI details infrastructure scaling for ChatGPT, focusing on multi-tenancy and Azure Cosmos DB optimizations.",
+      "one_liner": "OpenAI engineering post on scaling storage infrastructure for ChatGPT using multi-tenancy and global caching.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.9,
-      "score": 0.532,
+      "score": 0.524,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal",
@@ -1394,39 +1596,39 @@
       "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
     },
     {
-      "id": "1tc7vug",
+      "id": "4qdla",
       "primary": {
-        "id": "1tc7vug",
+        "id": "4qdla",
         "source_id": "the_decoder",
         "source_name": "The Decoder",
         "source_role": "main",
         "trust": 0.74,
         "kind_hint": "news",
-        "title": "Three fired OpenAI safety researchers say they were never told what they actually leaked",
-        "url": "https://the-decoder.com/three-fired-openai-safety-researchers-say-they-were-never-told-what-they-actually-leaked",
-        "original_url": "https://the-decoder.com/three-fired-openai-safety-researchers-say-they-were-never-told-what-they-actually-leaked/",
-        "summary": "The three OpenAI safety researchers who were fired, Tomek Korbak, Mikita Balesni, and Jasmine Wang, are publicly pushing back against allegations from their former employer. They deny sharing confidential information and see a connection to their advocacy for AI systems that are easier to scrutinize. The researchers say OpenAI never told them in writing which information they allegedly mishandled. The article Three fired OpenAI safety researchers say they were never told what they actually leaked appeared first on The Decoder.",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/openai_fired_researchers.png",
+        "title": "Block's new AI model Dessa was trained entirely on human speech to catch emotions text-based models miss",
+        "url": "https://the-decoder.com/blocks-new-ai-model-dessa-was-trained-entirely-on-human-speech-to-catch-emotions-text-based-models-miss",
+        "original_url": "https://the-decoder.com/blocks-new-ai-model-dessa-was-trained-entirely-on-human-speech-to-catch-emotions-text-based-models-miss/",
+        "summary": "Block, the company behind Square and Cash App, has introduced Dessa, a speech model that processes audio directly instead of converting it to text first. Dessa is designed to recognize emotions, sarcasm, and pauses in real time. The model runs locally on a MacBook Pro M4 Max but isn't publicly available yet. The article Block's new AI model Dessa was trained entirely on human speech to catch emotions text-based models miss appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/dessa_block.png",
         "image_source": "rss_content",
-        "published_at": "2026-10-24T15:19:33.000Z",
+        "published_at": "2026-10-24T14:09:46.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "1tc7vug",
+          "id": "4qdla",
           "source_id": "the_decoder",
           "source_name": "The Decoder",
           "source_role": "main",
           "trust": 0.74,
           "kind_hint": "news",
-          "title": "Three fired OpenAI safety researchers say they were never told what they actually leaked",
-          "url": "https://the-decoder.com/three-fired-openai-safety-researchers-say-they-were-never-told-what-they-actually-leaked",
-          "original_url": "https://the-decoder.com/three-fired-openai-safety-researchers-say-they-were-never-told-what-they-actually-leaked/",
-          "summary": "The three OpenAI safety researchers who were fired, Tomek Korbak, Mikita Balesni, and Jasmine Wang, are publicly pushing back against allegations from their former employer. They deny sharing confidential information and see a connection to their advocacy for AI systems that are easier to scrutinize. The researchers say OpenAI never told them in writing which information they allegedly mishandled. The article Three fired OpenAI safety researchers say they were never told what they actually leaked appeared first on The Decoder.",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/openai_fired_researchers.png",
+          "title": "Block's new AI model Dessa was trained entirely on human speech to catch emotions text-based models miss",
+          "url": "https://the-decoder.com/blocks-new-ai-model-dessa-was-trained-entirely-on-human-speech-to-catch-emotions-text-based-models-miss",
+          "original_url": "https://the-decoder.com/blocks-new-ai-model-dessa-was-trained-entirely-on-human-speech-to-catch-emotions-text-based-models-miss/",
+          "summary": "Block, the company behind Square and Cash App, has introduced Dessa, a speech model that processes audio directly instead of converting it to text first. Dessa is designed to recognize emotions, sarcasm, and pauses in real time. The model runs locally on a MacBook Pro M4 Max but isn't publicly available yet. The article Block's new AI model Dessa was trained entirely on human speech to catch emotions text-based models miss appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/dessa_block.png",
           "image_source": "rss_content",
-          "published_at": "2026-10-24T15:19:33.000Z",
+          "published_at": "2026-10-24T14:09:46.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -1435,9 +1637,9 @@
         {
           "source_id": "the_decoder",
           "source_name": "The Decoder",
-          "title": "Three fired OpenAI safety researchers say they were never told what they actually leaked",
-          "url": "https://the-decoder.com/three-fired-openai-safety-researchers-say-they-were-never-told-what-they-actually-leaked",
-          "published_at": "2026-10-24T15:19:33.000Z",
+          "title": "Block's new AI model Dessa was trained entirely on human speech to catch emotions text-based models miss",
+          "url": "https://the-decoder.com/blocks-new-ai-model-dessa-was-trained-entirely-on-human-speech-to-catch-emotions-text-based-models-miss",
+          "published_at": "2026-10-24T14:09:46.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -1445,17 +1647,77 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Fired OpenAI safety researchers dispute allegations regarding unauthorized disclosure of confidential information.",
-      "novelty": 0.693,
-      "novelty_label": "medium",
+      "one_liner": "Block, the company behind Square and Cash App, has introduced Dessa, a speech model that processes audio directly instead of converting it to text first. Dessa is designed to recognize emotions, sarca",
+      "novelty": 0.772,
+      "novelty_label": "high",
       "trust": 0.74,
-      "score": 0.628,
+      "score": 0.641,
       "why_this_surfaced": [
-        "meaningfully different from recent coverage",
+        "high novelty against the 30-day history",
         "classified as useful but lower-confidence signal",
         "fresh within the current refresh window"
       ],
       "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "41cxe4",
+      "primary": {
+        "id": "41cxe4",
+        "source_id": "arxiv_cl",
+        "source_name": "arXiv cs.CL",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "paper",
+        "title": "baseVultra: Compact Nonlinear Recurrence with Reallocated Capacity",
+        "url": "https://arxiv.org/abs/2610.30154",
+        "original_url": "https://arxiv.org/abs/2610.30154",
+        "summary": "Nonlinear recurrent networks remain useful for streaming sequence modeling, yet gated cell design is still dominated by LSTM and GRU. We study whether recurrent computation can be reallocated away from gate transforms and toward candidate generation. We propose baseVultra, a compact recurrent cell that concentrates the dense recurrent budget on a single H x H candidate-generation matrix, while replacing recurrent gate matrices with O(H) diagonal interactions. The candidate update combines this dense branch with two low-rank auxiliary branches, an EMA cache, and learnable output blending; the g",
+        "published_at": "2026-10-24T04:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "41cxe4",
+          "source_id": "arxiv_cl",
+          "source_name": "arXiv cs.CL",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "paper",
+          "title": "baseVultra: Compact Nonlinear Recurrence with Reallocated Capacity",
+          "url": "https://arxiv.org/abs/2610.30154",
+          "original_url": "https://arxiv.org/abs/2610.30154",
+          "summary": "Nonlinear recurrent networks remain useful for streaming sequence modeling, yet gated cell design is still dominated by LSTM and GRU. We study whether recurrent computation can be reallocated away from gate transforms and toward candidate generation. We propose baseVultra, a compact recurrent cell that concentrates the dense recurrent budget on a single H x H candidate-generation matrix, while replacing recurrent gate matrices with O(H) diagonal interactions. The candidate update combines this dense branch with two low-rank auxiliary branches, an EMA cache, and learnable output blending; the g",
+          "published_at": "2026-10-24T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "arxiv_cl",
+          "source_name": "arXiv cs.CL",
+          "title": "baseVultra: Compact Nonlinear Recurrence with Reallocated Capacity",
+          "url": "https://arxiv.org/abs/2610.30154",
+          "published_at": "2026-10-24T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "Introduces baseVultra, a recurrent network architecture optimizing capacity allocation for streaming sequence modeling.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.9,
+      "score": 0.542,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
     },
     {
       "id": "taln8j",
@@ -1509,16 +1771,75 @@
       "also_seen_on": [],
       "kind": "tool",
       "quality": "signal",
-      "one_liner": "Overview of NVIDIA's Global Performance Tuner for optimizing TensorRT model compilation beyond single build routes.",
+      "one_liner": "Deploying a trained neural network involves more than translating each operator into a GPU kernel. It is a compilation problem with many legitimate answers. For... Deploying a trained neural network i",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.82,
-      "score": 0.514,
+      "score": 0.506,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
       ],
       "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "3u8luh",
+      "primary": {
+        "id": "3u8luh",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "Hottest toy for Christmas? Nvidia CEO plays with adorable Microduck robots, 20,000 sell",
+        "url": "https://techcrunch.com/2026/10/23/hottest-toy-for-christmas-nvidia-ceo-plays-with-adorable-microduck-robots-20000-sell",
+        "original_url": "https://techcrunch.com/2026/10/23/hottest-toy-for-christmas-nvidia-ceo-plays-with-adorable-microduck-robots-20000-sell/",
+        "summary": "The robots, stomping their little feet and making tiny R2-D2 noises, sat, fell down dead for a \"nap,\" and summersaulted on voice command.",
+        "published_at": "2026-10-23T21:59:19.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "3u8luh",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "Hottest toy for Christmas? Nvidia CEO plays with adorable Microduck robots, 20,000 sell",
+          "url": "https://techcrunch.com/2026/10/23/hottest-toy-for-christmas-nvidia-ceo-plays-with-adorable-microduck-robots-20000-sell",
+          "original_url": "https://techcrunch.com/2026/10/23/hottest-toy-for-christmas-nvidia-ceo-plays-with-adorable-microduck-robots-20000-sell/",
+          "summary": "The robots, stomping their little feet and making tiny R2-D2 noises, sat, fell down dead for a \"nap,\" and summersaulted on voice command.",
+          "published_at": "2026-10-23T21:59:19.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "Hottest toy for Christmas? Nvidia CEO plays with adorable Microduck robots, 20,000 sell",
+          "url": "https://techcrunch.com/2026/10/23/hottest-toy-for-christmas-nvidia-ceo-plays-with-adorable-microduck-robots-20000-sell",
+          "published_at": "2026-10-23T21:59:19.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "The robots, stomping their little feet and making tiny R2-D2 noises, sat, fell down dead for a \"nap,\" and summersaulted on voice command.",
+      "novelty": 0.865,
+      "novelty_label": "high",
+      "trust": 0.72,
+      "score": 0.638,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "ee9quh",
@@ -1568,11 +1889,11 @@
       "also_seen_on": [],
       "kind": "tutorial",
       "quality": "signal",
-      "one_liner": "Guide to implementing multi-turn reinforcement learning on Amazon SageMaker using a Wordle-based agent example.",
+      "one_liner": "Multi-Turn Reinforcement Learning (MTRL) on Amazon SageMaker AI trains models on the outcome of a whole multi-step task rather than labeled steps. This hands-on guide walks the full pipeline using Wor",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.8,
-      "score": 0.51,
+      "score": 0.502,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -1627,17 +1948,80 @@
       "also_seen_on": [],
       "kind": "company_announcement",
       "quality": "signal",
-      "one_liner": "OpenAI outlines security measures for frontier model training, including offline environments and red-teaming protocols.",
+      "one_liner": "OpenAI details security measures for frontier model training, including offline environments and red-teaming protocols.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.9,
-      "score": 0.52,
+      "score": 0.512,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal",
         "primary source has high trust weight"
       ],
       "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+    },
+    {
+      "id": "137lstu",
+      "primary": {
+        "id": "137lstu",
+        "source_id": "nvidia_developer_blog",
+        "source_name": "NVIDIA Developer Blog",
+        "source_role": "main",
+        "trust": 0.82,
+        "kind_hint": "tool",
+        "title": "Using AI Agents to Teach Robots Like Microduck to Walk in Simulation",
+        "url": "https://developer.nvidia.com/blog/using-ai-agents-to-teach-robots-like-microduck-to-walk-in-simulation",
+        "original_url": "https://developer.nvidia.com/blog/using-ai-agents-to-teach-robots-like-microduck-to-walk-in-simulation/",
+        "summary": "Teaching a robot to navigate an obstacle course requires more than a walking policy. It must perceive its surroundings, maintain balance, and adjust its actions... Teaching a robot to navigate an obstacle course requires more than a walking policy. It must perceive its surroundings, maintain balance, and adjust its actions when obstacles block the path ahead. Developing these capabilities connects several stages: creating assets and an environment, using physics simulation to model how the robot interacts with its environment, and training and evaluating… Source",
+        "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/10/Microduck-labels-768x432.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-10-23T14:58:32.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "137lstu",
+          "source_id": "nvidia_developer_blog",
+          "source_name": "NVIDIA Developer Blog",
+          "source_role": "main",
+          "trust": 0.82,
+          "kind_hint": "tool",
+          "title": "Using AI Agents to Teach Robots Like Microduck to Walk in Simulation",
+          "url": "https://developer.nvidia.com/blog/using-ai-agents-to-teach-robots-like-microduck-to-walk-in-simulation",
+          "original_url": "https://developer.nvidia.com/blog/using-ai-agents-to-teach-robots-like-microduck-to-walk-in-simulation/",
+          "summary": "Teaching a robot to navigate an obstacle course requires more than a walking policy. It must perceive its surroundings, maintain balance, and adjust its actions... Teaching a robot to navigate an obstacle course requires more than a walking policy. It must perceive its surroundings, maintain balance, and adjust its actions when obstacles block the path ahead. Developing these capabilities connects several stages: creating assets and an environment, using physics simulation to model how the robot interacts with its environment, and training and evaluating… Source",
+          "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/10/Microduck-labels-768x432.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-23T14:58:32.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "nvidia_developer_blog",
+          "source_name": "NVIDIA Developer Blog",
+          "title": "Using AI Agents to Teach Robots Like Microduck to Walk in Simulation",
+          "url": "https://developer.nvidia.com/blog/using-ai-agents-to-teach-robots-like-microduck-to-walk-in-simulation",
+          "published_at": "2026-10-23T14:58:32.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Teaching a robot to navigate an obstacle course requires more than a walking policy. It must perceive its surroundings, maintain balance, and adjust its actions... Teaching a robot to navigate an obst",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.82,
+      "score": 0.502,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
     },
     {
       "id": "749eyv",
@@ -1685,18 +2069,81 @@
         }
       ],
       "also_seen_on": [],
-      "kind": "tool",
+      "kind": "tutorial",
       "quality": "signal",
-      "one_liner": "Provides a reusable AWS CDK construct to manage SageMaker endpoint auto-scaling during infrastructure updates.",
+      "one_liner": "Updating a SageMaker AI endpoint that has Application Auto Scaling registered makes AWS CloudFormation and AWS CDK deployments fail. This post shows how to build a reusable AWS CDK construct with Clou",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.8,
-      "score": 0.508,
+      "score": 0.5,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
       ],
-      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "1j86861",
+      "primary": {
+        "id": "1j86861",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "OpenAI's isolated AI agents found ways to talk to each other through CPU cache",
+        "url": "https://the-decoder.com/openais-isolated-ai-agents-found-ways-to-talk-to-each-other-through-cpu-cache",
+        "original_url": "https://the-decoder.com/openais-isolated-ai-agents-found-ways-to-talk-to-each-other-through-cpu-cache/",
+        "summary": "OpenAI now trains its most powerful models without internet access, after an internal research model exploited a DNS misconfiguration in September and reached the open internet. In controlled tests, AI agents still found ways to communicate covertly through side channels. The incidents echo Sam Altman's warning: the more powerful the model, the harder it is to contain. The article OpenAI's isolated AI agents found ways to talk to each other through CPU cache appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/openai_misalign-2.png",
+        "image_source": "rss_content",
+        "published_at": "2026-10-24T11:12:36.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1j86861",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "OpenAI's isolated AI agents found ways to talk to each other through CPU cache",
+          "url": "https://the-decoder.com/openais-isolated-ai-agents-found-ways-to-talk-to-each-other-through-cpu-cache",
+          "original_url": "https://the-decoder.com/openais-isolated-ai-agents-found-ways-to-talk-to-each-other-through-cpu-cache/",
+          "summary": "OpenAI now trains its most powerful models without internet access, after an internal research model exploited a DNS misconfiguration in September and reached the open internet. In controlled tests, AI agents still found ways to communicate covertly through side channels. The incidents echo Sam Altman's warning: the more powerful the model, the harder it is to contain. The article OpenAI's isolated AI agents found ways to talk to each other through CPU cache appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/openai_misalign-2.png",
+          "image_source": "rss_content",
+          "published_at": "2026-10-24T11:12:36.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "OpenAI's isolated AI agents found ways to talk to each other through CPU cache",
+          "url": "https://the-decoder.com/openais-isolated-ai-agents-found-ways-to-talk-to-each-other-through-cpu-cache",
+          "published_at": "2026-10-24T11:12:36.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "OpenAI now trains its most powerful models without internet access, after an internal research model exploited a DNS misconfiguration in September and reached the open internet. In controlled tests, A",
+      "novelty": 0.756,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.632,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "8srpwv",
@@ -1750,11 +2197,11 @@
       "also_seen_on": [],
       "kind": "paper",
       "quality": "signal",
-      "one_liner": "Introduces a method for fast, parallel coarse-to-fine text generation using next-concept modeling.",
+      "one_liner": "Proposes a coarse-to-fine text generation method for parallel, faster inference.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.7,
-      "score": 0.487,
+      "score": 0.479,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
@@ -1762,190 +2209,127 @@
       "builder_action": "Save this for technical review if the method maps to your roadmap."
     },
     {
-      "id": "1nmm80",
+      "id": "1tc7vug",
       "primary": {
-        "id": "1nmm80",
-        "source_id": "ars_ai",
-        "source_name": "Ars Technica AI",
+        "id": "1tc7vug",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
         "source_role": "main",
-        "trust": 0.78,
+        "trust": 0.74,
         "kind_hint": "news",
-        "title": "Updated Google privacy policy says your Gmail might be used for advertising",
-        "url": "https://arstechnica.com/gadgets/2026/10/updated-google-privacy-policy-says-your-gmail-might-be-used-for-advertising",
-        "original_url": "https://arstechnica.com/gadgets/2026/10/updated-google-privacy-policy-says-your-gmail-might-be-used-for-advertising/",
-        "summary": "Turning on Personal Intelligence gives the company more data for ad targeting.",
-        "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2025/05/google-logo-big-g-grooves-1152x648.jpg",
-        "image_source": "rss_media",
-        "published_at": "2026-10-23T20:19:55.000Z",
+        "title": "Three fired OpenAI safety researchers say they were never told what they actually leaked",
+        "url": "https://the-decoder.com/three-fired-openai-safety-researchers-say-they-were-never-told-what-they-actually-leaked",
+        "original_url": "https://the-decoder.com/three-fired-openai-safety-researchers-say-they-were-never-told-what-they-actually-leaked/",
+        "summary": "The three OpenAI safety researchers who were fired, Tomek Korbak, Mikita Balesni, and Jasmine Wang, are publicly pushing back against allegations from their former employer. They deny sharing confidential information and see a connection to their advocacy for AI systems that are easier to scrutinize. The researchers say OpenAI never told them in writing which information they allegedly mishandled. The article Three fired OpenAI safety researchers say they were never told what they actually leaked appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/openai_fired_researchers.png",
+        "image_source": "rss_content",
+        "published_at": "2026-10-24T15:19:33.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "1nmm80",
-          "source_id": "ars_ai",
-          "source_name": "Ars Technica AI",
+          "id": "1tc7vug",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
           "source_role": "main",
-          "trust": 0.78,
+          "trust": 0.74,
           "kind_hint": "news",
-          "title": "Updated Google privacy policy says your Gmail might be used for advertising",
-          "url": "https://arstechnica.com/gadgets/2026/10/updated-google-privacy-policy-says-your-gmail-might-be-used-for-advertising",
-          "original_url": "https://arstechnica.com/gadgets/2026/10/updated-google-privacy-policy-says-your-gmail-might-be-used-for-advertising/",
-          "summary": "Turning on Personal Intelligence gives the company more data for ad targeting.",
-          "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2025/05/google-logo-big-g-grooves-1152x648.jpg",
-          "image_source": "rss_media",
-          "published_at": "2026-10-23T20:19:55.000Z",
+          "title": "Three fired OpenAI safety researchers say they were never told what they actually leaked",
+          "url": "https://the-decoder.com/three-fired-openai-safety-researchers-say-they-were-never-told-what-they-actually-leaked",
+          "original_url": "https://the-decoder.com/three-fired-openai-safety-researchers-say-they-were-never-told-what-they-actually-leaked/",
+          "summary": "The three OpenAI safety researchers who were fired, Tomek Korbak, Mikita Balesni, and Jasmine Wang, are publicly pushing back against allegations from their former employer. They deny sharing confidential information and see a connection to their advocacy for AI systems that are easier to scrutinize. The researchers say OpenAI never told them in writing which information they allegedly mishandled. The article Three fired OpenAI safety researchers say they were never told what they actually leaked appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/openai_fired_researchers.png",
+          "image_source": "rss_content",
+          "published_at": "2026-10-24T15:19:33.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "ars_ai",
-          "source_name": "Ars Technica AI",
-          "title": "Updated Google privacy policy says your Gmail might be used for advertising",
-          "url": "https://arstechnica.com/gadgets/2026/10/updated-google-privacy-policy-says-your-gmail-might-be-used-for-advertising",
-          "published_at": "2026-10-23T20:19:55.000Z",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Three fired OpenAI safety researchers say they were never told what they actually leaked",
+          "url": "https://the-decoder.com/three-fired-openai-safety-researchers-say-they-were-never-told-what-they-actually-leaked",
+          "published_at": "2026-10-24T15:19:33.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "also_seen_on": [],
       "kind": "news",
-      "quality": "signal",
-      "one_liner": "Google updated its privacy policy to allow Gmail data usage for ad targeting via Personal Intelligence features.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.51,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "1bzmh8h",
-      "primary": {
-        "id": "1bzmh8h",
-        "source_id": "ars_ai",
-        "source_name": "Ars Technica AI",
-        "source_role": "main",
-        "trust": 0.78,
-        "kind_hint": "news",
-        "title": "Intel gets waiver after worries fuzzy US ban on foreign-made robots may hit fabs",
-        "url": "https://arstechnica.com/ai/2026/10/intel-gets-waiver-after-worries-fuzzy-us-ban-on-foreign-made-robots-may-hit-fabs",
-        "original_url": "https://arstechnica.com/ai/2026/10/intel-gets-waiver-after-worries-fuzzy-us-ban-on-foreign-made-robots-may-hit-fabs/",
-        "summary": "Company says foreign-made robotic vehicles are crucial to US chip production.",
-        "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/10/Intel-fab-interior-1152x648.jpg",
-        "image_source": "rss_media",
-        "published_at": "2026-10-23T17:18:31.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1bzmh8h",
-          "source_id": "ars_ai",
-          "source_name": "Ars Technica AI",
-          "source_role": "main",
-          "trust": 0.78,
-          "kind_hint": "news",
-          "title": "Intel gets waiver after worries fuzzy US ban on foreign-made robots may hit fabs",
-          "url": "https://arstechnica.com/ai/2026/10/intel-gets-waiver-after-worries-fuzzy-us-ban-on-foreign-made-robots-may-hit-fabs",
-          "original_url": "https://arstechnica.com/ai/2026/10/intel-gets-waiver-after-worries-fuzzy-us-ban-on-foreign-made-robots-may-hit-fabs/",
-          "summary": "Company says foreign-made robotic vehicles are crucial to US chip production.",
-          "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/10/Intel-fab-interior-1152x648.jpg",
-          "image_source": "rss_media",
-          "published_at": "2026-10-23T17:18:31.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "ars_ai",
-          "source_name": "Ars Technica AI",
-          "title": "Intel gets waiver after worries fuzzy US ban on foreign-made robots may hit fabs",
-          "url": "https://arstechnica.com/ai/2026/10/intel-gets-waiver-after-worries-fuzzy-us-ban-on-foreign-made-robots-may-hit-fabs",
-          "published_at": "2026-10-23T17:18:31.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "signal",
-      "one_liner": "Intel received a waiver for foreign-made robotic vehicles essential to US semiconductor manufacturing.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.505,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "55bc60",
-      "primary": {
-        "id": "55bc60",
-        "source_id": "arxiv_cl",
-        "source_name": "arXiv cs.CL",
-        "source_role": "main",
-        "trust": 0.9,
-        "kind_hint": "paper",
-        "title": "Lighthouse: On Building a Trustworthy Digital Assistant for Exploring History with Civil Rights Archives",
-        "url": "https://arxiv.org/abs/2610.30158",
-        "original_url": "https://arxiv.org/abs/2610.30158",
-        "summary": "Artificial intelligence (AI), as a decision-support aid, provides new tools for studying history effectively using multimodal data, including text, images, and audio. We present, to our knowledge, the first digital assistant named Lighthouse--commonly called a chatbot--for exploring the Civil Rights period of the United States using data from South Carolina. From an AI perspective, the system's novelty lies in its guiding design principles of (a) focusing on trustworthiness of content and (b) by modeling and reducing potential harm to users from generated answers. It implements these with a ne",
-        "published_at": "2026-10-24T04:00:00.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "55bc60",
-          "source_id": "arxiv_cl",
-          "source_name": "arXiv cs.CL",
-          "source_role": "main",
-          "trust": 0.9,
-          "kind_hint": "paper",
-          "title": "Lighthouse: On Building a Trustworthy Digital Assistant for Exploring History with Civil Rights Archives",
-          "url": "https://arxiv.org/abs/2610.30158",
-          "original_url": "https://arxiv.org/abs/2610.30158",
-          "summary": "Artificial intelligence (AI), as a decision-support aid, provides new tools for studying history effectively using multimodal data, including text, images, and audio. We present, to our knowledge, the first digital assistant named Lighthouse--commonly called a chatbot--for exploring the Civil Rights period of the United States using data from South Carolina. From an AI perspective, the system's novelty lies in its guiding design principles of (a) focusing on trustworthiness of content and (b) by modeling and reducing potential harm to users from generated answers. It implements these with a ne",
-          "published_at": "2026-10-24T04:00:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "arxiv_cl",
-          "source_name": "arXiv cs.CL",
-          "title": "Lighthouse: On Building a Trustworthy Digital Assistant for Exploring History with Civil Rights Archives",
-          "url": "https://arxiv.org/abs/2610.30158",
-          "published_at": "2026-10-24T04:00:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "paper",
       "quality": "mixed",
-      "one_liner": "Introduction of Lighthouse, a digital assistant for exploring civil rights archives using multimodal data.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.9,
-      "score": 0.388,
+      "one_liner": "Fired OpenAI safety researchers dispute allegations regarding confidential information leaks.",
+      "novelty": 0.693,
+      "novelty_label": "medium",
+      "trust": 0.74,
+      "score": 0.62,
       "why_this_surfaced": [
-        "kept for context despite familiar coverage",
+        "meaningfully different from recent coverage",
         "classified as useful but lower-confidence signal",
-        "primary source has high trust weight"
+        "fresh within the current refresh window"
       ],
-      "builder_action": "Save this for technical review if the method maps to your roadmap."
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "14d1j0x",
+      "primary": {
+        "id": "14d1j0x",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "OpenAI says it will no longer train its AI models on the live internet, citing “significant risks”",
+        "url": "https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks",
+        "original_url": "https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks/",
+        "summary": "OpenAI will cut frontier models off from the internet weeks after one of its engineers said that solution wouldn't work.",
+        "published_at": "2026-10-23T23:05:49.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "14d1j0x",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "OpenAI says it will no longer train its AI models on the live internet, citing “significant risks”",
+          "url": "https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks",
+          "original_url": "https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks/",
+          "summary": "OpenAI will cut frontier models off from the internet weeks after one of its engineers said that solution wouldn't work.",
+          "published_at": "2026-10-23T23:05:49.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "OpenAI says it will no longer train its AI models on the live internet, citing “significant risks”",
+          "url": "https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks",
+          "published_at": "2026-10-23T23:05:49.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "OpenAI reportedly plans to stop training frontier models on live internet data due to safety risks.",
+      "novelty": 0.707,
+      "novelty_label": "medium",
+      "trust": 0.72,
+      "score": 0.592,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "9txqd",
@@ -1997,78 +2381,15 @@
       "also_seen_on": [],
       "kind": "opinion",
       "quality": "mixed",
-      "one_liner": "Analysis of current trends in LLM mathematical reasoning capabilities and potential future performance patterns.",
+      "one_liner": "Discussion on emerging patterns in AI performance regarding mathematical problem solving.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.85,
-      "score": 0.355,
+      "score": 0.347,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal",
         "primary source has high trust weight"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "1k12wg0",
-      "primary": {
-        "id": "1k12wg0",
-        "source_id": "the_decoder",
-        "source_name": "The Decoder",
-        "source_role": "main",
-        "trust": 0.74,
-        "kind_hint": "news",
-        "title": "Three-week on-site audit at OpenAI reveals major gaps in AI safety monitoring",
-        "url": "https://the-decoder.com/three-week-on-site-audit-at-openai-reveals-major-gaps-in-ai-safety-monitoring",
-        "original_url": "https://the-decoder.com/three-week-on-site-audit-at-openai-reveals-major-gaps-in-ai-safety-monitoring/",
-        "summary": "External auditors from METR and Redwood Research spent three weeks on-site at OpenAI examining the company's internal monitoring system for AI agents and found significant gaps, with up to 25 percent of agent traffic from models at the GPT-5.5 class and above going unmonitored. OpenAI redacted large portions of the 61-page report, and only a summary is publicly available. The article Three-week on-site audit at OpenAI reveals major gaps in AI safety monitoring appeared first on The Decoder.",
-        "image_url": "https://the-decoder.com/wp-content/uploads/2024/12/openai_safety_research_alignment_illustration.png",
-        "image_source": "rss_content",
-        "published_at": "2026-10-23T18:00:32.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1k12wg0",
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "source_role": "main",
-          "trust": 0.74,
-          "kind_hint": "news",
-          "title": "Three-week on-site audit at OpenAI reveals major gaps in AI safety monitoring",
-          "url": "https://the-decoder.com/three-week-on-site-audit-at-openai-reveals-major-gaps-in-ai-safety-monitoring",
-          "original_url": "https://the-decoder.com/three-week-on-site-audit-at-openai-reveals-major-gaps-in-ai-safety-monitoring/",
-          "summary": "External auditors from METR and Redwood Research spent three weeks on-site at OpenAI examining the company's internal monitoring system for AI agents and found significant gaps, with up to 25 percent of agent traffic from models at the GPT-5.5 class and above going unmonitored. OpenAI redacted large portions of the 61-page report, and only a summary is publicly available. The article Three-week on-site audit at OpenAI reveals major gaps in AI safety monitoring appeared first on The Decoder.",
-          "image_url": "https://the-decoder.com/wp-content/uploads/2024/12/openai_safety_research_alignment_illustration.png",
-          "image_source": "rss_content",
-          "published_at": "2026-10-23T18:00:32.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_decoder",
-          "source_name": "The Decoder",
-          "title": "Three-week on-site audit at OpenAI reveals major gaps in AI safety monitoring",
-          "url": "https://the-decoder.com/three-week-on-site-audit-at-openai-reveals-major-gaps-in-ai-safety-monitoring",
-          "published_at": "2026-10-23T18:00:32.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "signal",
-      "one_liner": "External audit of OpenAI reveals significant gaps in safety monitoring for high-end agentic models.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.74,
-      "score": 0.497,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
       ],
       "builder_action": "Read the primary source and decide whether it changes your next action."
     },
@@ -2124,11 +2445,11 @@
       "also_seen_on": [],
       "kind": "company_announcement",
       "quality": "mixed",
-      "one_liner": "Google Research discusses applying foundational models to tuberculosis screening in clinical settings.",
+      "one_liner": "Google Research overview on applying foundational models to tuberculosis screening.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.88,
-      "score": 0.368,
+      "score": 0.36,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal",
@@ -2137,130 +2458,66 @@
       "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
     },
     {
-      "id": "137lstu",
+      "id": "dpjgpa",
       "primary": {
-        "id": "137lstu",
-        "source_id": "nvidia_developer_blog",
-        "source_name": "NVIDIA Developer Blog",
+        "id": "dpjgpa",
+        "source_id": "latent_space",
+        "source_name": "Latent Space",
         "source_role": "main",
-        "trust": 0.82,
-        "kind_hint": "tool",
-        "title": "Using AI Agents to Teach Robots Like Microduck to Walk in Simulation",
-        "url": "https://developer.nvidia.com/blog/using-ai-agents-to-teach-robots-like-microduck-to-walk-in-simulation",
-        "original_url": "https://developer.nvidia.com/blog/using-ai-agents-to-teach-robots-like-microduck-to-walk-in-simulation/",
-        "summary": "Teaching a robot to navigate an obstacle course requires more than a walking policy. It must perceive its surroundings, maintain balance, and adjust its actions... Teaching a robot to navigate an obstacle course requires more than a walking policy. It must perceive its surroundings, maintain balance, and adjust its actions when obstacles block the path ahead. Developing these capabilities connects several stages: creating assets and an environment, using physics simulation to model how the robot interacts with its environment, and training and evaluating… Source",
-        "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/10/Microduck-labels-768x432.jpg",
-        "image_source": "rss_content",
-        "published_at": "2026-10-23T14:58:32.000Z",
+        "trust": 0.85,
+        "title": "[AINews] Black October",
+        "url": "https://latent.space/p/ainews-black-october",
+        "original_url": "https://latent.space/p/ainews-black-october/",
+        "summary": "the Cyber onslaught continues.",
+        "image_url": "https://beehiiv-images-production.s3.amazonaws.com/uploads/publication/logo/3967c1f2-cb97-4eb0-a5c0-21a1d2579408/73b0838a-bd14-46a1-801c-b6a2046e5c1e_1130x1130.jpg",
+        "image_source": "rss_media",
+        "published_at": "2026-10-23T10:09:29.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "137lstu",
-          "source_id": "nvidia_developer_blog",
-          "source_name": "NVIDIA Developer Blog",
+          "id": "dpjgpa",
+          "source_id": "latent_space",
+          "source_name": "Latent Space",
           "source_role": "main",
-          "trust": 0.82,
-          "kind_hint": "tool",
-          "title": "Using AI Agents to Teach Robots Like Microduck to Walk in Simulation",
-          "url": "https://developer.nvidia.com/blog/using-ai-agents-to-teach-robots-like-microduck-to-walk-in-simulation",
-          "original_url": "https://developer.nvidia.com/blog/using-ai-agents-to-teach-robots-like-microduck-to-walk-in-simulation/",
-          "summary": "Teaching a robot to navigate an obstacle course requires more than a walking policy. It must perceive its surroundings, maintain balance, and adjust its actions... Teaching a robot to navigate an obstacle course requires more than a walking policy. It must perceive its surroundings, maintain balance, and adjust its actions when obstacles block the path ahead. Developing these capabilities connects several stages: creating assets and an environment, using physics simulation to model how the robot interacts with its environment, and training and evaluating… Source",
-          "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/10/Microduck-labels-768x432.jpg",
-          "image_source": "rss_content",
-          "published_at": "2026-10-23T14:58:32.000Z",
+          "trust": 0.85,
+          "title": "[AINews] Black October",
+          "url": "https://latent.space/p/ainews-black-october",
+          "original_url": "https://latent.space/p/ainews-black-october/",
+          "summary": "the Cyber onslaught continues.",
+          "image_url": "https://beehiiv-images-production.s3.amazonaws.com/uploads/publication/logo/3967c1f2-cb97-4eb0-a5c0-21a1d2579408/73b0838a-bd14-46a1-801c-b6a2046e5c1e_1130x1130.jpg",
+          "image_source": "rss_media",
+          "published_at": "2026-10-23T10:09:29.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "nvidia_developer_blog",
-          "source_name": "NVIDIA Developer Blog",
-          "title": "Using AI Agents to Teach Robots Like Microduck to Walk in Simulation",
-          "url": "https://developer.nvidia.com/blog/using-ai-agents-to-teach-robots-like-microduck-to-walk-in-simulation",
-          "published_at": "2026-10-23T14:58:32.000Z",
+          "source_id": "latent_space",
+          "source_name": "Latent Space",
+          "title": "[AINews] Black October",
+          "url": "https://latent.space/p/ainews-black-october",
+          "published_at": "2026-10-23T10:09:29.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "also_seen_on": [],
-      "kind": "tutorial",
+      "kind": "news",
       "quality": "mixed",
-      "one_liner": "Overview of using simulation environments and AI agents to train robotic locomotion policies.",
+      "one_liner": "General commentary on recent AI industry developments and security concerns.",
       "novelty": 0,
       "novelty_label": "familiar",
-      "trust": 0.82,
-      "score": 0.348,
+      "trust": 0.85,
+      "score": 0.339,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
+        "classified as useful but lower-confidence signal",
+        "primary source has high trust weight"
       ],
-      "builder_action": "Use this as implementation reference if it matches your stack."
-    },
-    {
-      "id": "7kynk6",
-      "primary": {
-        "id": "7kynk6",
-        "source_id": "infoq_ai",
-        "source_name": "InfoQ AI/ML/Data",
-        "source_role": "main",
-        "trust": 0.78,
-        "kind_hint": "tutorial",
-        "title": "Anthropic Adds Opt-In Security Scanning for Critical Open-Source Projects",
-        "url": "https://infoq.com/news/2026/10/anthropic-oss-security-scanner",
-        "original_url": "https://www.infoq.com/news/2026/10/anthropic-oss-security-scanner/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
-        "summary": "AI company Anthropic has launched OSS Scanner, a free, opt-in service to find vulnerabilities in open-source projects. Enrolled maintainers receive periodic security reports generated by the company's strongest models, including Claude Mythos. The reports are sent without human review, and project maintainers can choose to validate their findings and decide which proposed fixes to accept. By Matt Saunders",
-        "image_url": "https://res.infoq.com/news/2026/10/anthropic-oss-security-scanner/en/headerimage/generatedHeaderImage-1792523938215.jpg",
-        "image_source": "rss_content",
-        "published_at": "2026-10-23T09:00:00.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "7kynk6",
-          "source_id": "infoq_ai",
-          "source_name": "InfoQ AI/ML/Data",
-          "source_role": "main",
-          "trust": 0.78,
-          "kind_hint": "tutorial",
-          "title": "Anthropic Adds Opt-In Security Scanning for Critical Open-Source Projects",
-          "url": "https://infoq.com/news/2026/10/anthropic-oss-security-scanner",
-          "original_url": "https://www.infoq.com/news/2026/10/anthropic-oss-security-scanner/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
-          "summary": "AI company Anthropic has launched OSS Scanner, a free, opt-in service to find vulnerabilities in open-source projects. Enrolled maintainers receive periodic security reports generated by the company's strongest models, including Claude Mythos. The reports are sent without human review, and project maintainers can choose to validate their findings and decide which proposed fixes to accept. By Matt Saunders",
-          "image_url": "https://res.infoq.com/news/2026/10/anthropic-oss-security-scanner/en/headerimage/generatedHeaderImage-1792523938215.jpg",
-          "image_source": "rss_content",
-          "published_at": "2026-10-23T09:00:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "infoq_ai",
-          "source_name": "InfoQ AI/ML/Data",
-          "title": "Anthropic Adds Opt-In Security Scanning for Critical Open-Source Projects",
-          "url": "https://infoq.com/news/2026/10/anthropic-oss-security-scanner",
-          "published_at": "2026-10-23T09:00:00.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "tool",
-      "quality": "signal",
-      "one_liner": "Anthropic releases an opt-in security scanner using Claude models to identify vulnerabilities in open-source projects.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.491,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "s92xkt",
@@ -2310,11 +2567,11 @@
       "also_seen_on": [],
       "kind": "company_announcement",
       "quality": "mixed",
-      "one_liner": "Case study on Bayer Crop Science's implementation of a multi-agent decision engine using Amazon Bedrock.",
+      "one_liner": "Bayer Crop Science details an agentic decision engine architecture built on Amazon Bedrock.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.8,
-      "score": 0.346,
+      "score": 0.337,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -2322,67 +2579,193 @@
       "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
     },
     {
-      "id": "1vpjuv1",
+      "id": "1nmm80",
       "primary": {
-        "id": "1vpjuv1",
-        "source_id": "the_verge_ai",
-        "source_name": "The Verge AI",
+        "id": "1nmm80",
+        "source_id": "ars_ai",
+        "source_name": "Ars Technica AI",
         "source_role": "main",
-        "trust": 0.68,
+        "trust": 0.78,
         "kind_hint": "news",
-        "title": "OpenAI now trains its frontier AI models with no internet access",
-        "url": "https://theverge.com/ai-artificial-intelligence/1018021/openai-training-top-ai-models-no-internet",
-        "original_url": "https://www.theverge.com/ai-artificial-intelligence/1018021/openai-training-top-ai-models-no-internet",
-        "summary": "OpenAI is now training its most advanced AI models without internet access following a string of rogue hacking incidents. In a blog post on Friday, OpenAI says it built an offline testing environment where AI models can interact with indexed and cached web content \"without risk of affecting external systems.\" OpenAI paused training its frontier AI models in September, after disclosing several incidents in which its AI agents broke out of their testing environments to hack third-party companies and government agencies, or swarm obscure websites. On October 1st, OpenAI resumed reinforcement lear",
-        "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/02/STK155_OPEN_AI_2025_CVirgiia_B_d6ffc8.jpg?quality=90&",
-        "image_source": "rss_content",
-        "published_at": "2026-10-23T21:11:07.000Z",
+        "title": "Updated Google privacy policy says your Gmail might be used for advertising",
+        "url": "https://arstechnica.com/gadgets/2026/10/updated-google-privacy-policy-says-your-gmail-might-be-used-for-advertising",
+        "original_url": "https://arstechnica.com/gadgets/2026/10/updated-google-privacy-policy-says-your-gmail-might-be-used-for-advertising/",
+        "summary": "Turning on Personal Intelligence gives the company more data for ad targeting.",
+        "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2025/05/google-logo-big-g-grooves-1152x648.jpg",
+        "image_source": "rss_media",
+        "published_at": "2026-10-23T20:19:55.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "1vpjuv1",
-          "source_id": "the_verge_ai",
-          "source_name": "The Verge AI",
+          "id": "1nmm80",
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
           "source_role": "main",
-          "trust": 0.68,
+          "trust": 0.78,
           "kind_hint": "news",
-          "title": "OpenAI now trains its frontier AI models with no internet access",
-          "url": "https://theverge.com/ai-artificial-intelligence/1018021/openai-training-top-ai-models-no-internet",
-          "original_url": "https://www.theverge.com/ai-artificial-intelligence/1018021/openai-training-top-ai-models-no-internet",
-          "summary": "OpenAI is now training its most advanced AI models without internet access following a string of rogue hacking incidents. In a blog post on Friday, OpenAI says it built an offline testing environment where AI models can interact with indexed and cached web content \"without risk of affecting external systems.\" OpenAI paused training its frontier AI models in September, after disclosing several incidents in which its AI agents broke out of their testing environments to hack third-party companies and government agencies, or swarm obscure websites. On October 1st, OpenAI resumed reinforcement lear",
-          "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/02/STK155_OPEN_AI_2025_CVirgiia_B_d6ffc8.jpg?quality=90&",
-          "image_source": "rss_content",
-          "published_at": "2026-10-23T21:11:07.000Z",
+          "title": "Updated Google privacy policy says your Gmail might be used for advertising",
+          "url": "https://arstechnica.com/gadgets/2026/10/updated-google-privacy-policy-says-your-gmail-might-be-used-for-advertising",
+          "original_url": "https://arstechnica.com/gadgets/2026/10/updated-google-privacy-policy-says-your-gmail-might-be-used-for-advertising/",
+          "summary": "Turning on Personal Intelligence gives the company more data for ad targeting.",
+          "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2025/05/google-logo-big-g-grooves-1152x648.jpg",
+          "image_source": "rss_media",
+          "published_at": "2026-10-23T20:19:55.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "source_trail": [
         {
-          "source_id": "the_verge_ai",
-          "source_name": "The Verge AI",
-          "title": "OpenAI now trains its frontier AI models with no internet access",
-          "url": "https://theverge.com/ai-artificial-intelligence/1018021/openai-training-top-ai-models-no-internet",
-          "published_at": "2026-10-23T21:11:07.000Z",
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "title": "Updated Google privacy policy says your Gmail might be used for advertising",
+          "url": "https://arstechnica.com/gadgets/2026/10/updated-google-privacy-policy-says-your-gmail-might-be-used-for-advertising",
+          "published_at": "2026-10-23T20:19:55.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
       ],
       "also_seen_on": [],
-      "kind": "company_announcement",
+      "kind": "news",
       "quality": "signal",
-      "one_liner": "OpenAI has transitioned to training frontier models in an offline environment to mitigate security risks.",
+      "one_liner": "Google updates privacy policy to allow Gmail data usage for ad targeting via Personal Intelligence features.",
       "novelty": 0,
       "novelty_label": "familiar",
-      "trust": 0.68,
-      "score": 0.488,
+      "trust": 0.78,
+      "score": 0.502,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
       ],
-      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "11jou42",
+      "primary": {
+        "id": "11jou42",
+        "source_id": "lobsters_ai",
+        "source_name": "Lobsters (AI tag)",
+        "source_role": "main",
+        "trust": 0.7,
+        "title": "AI: EU Member States approve “digital expropriation” of Europeans for AI companies",
+        "url": "https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies",
+        "original_url": "https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies",
+        "discussion_url": "https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies",
+        "discussion_source": "Lobsters (AI tag)",
+        "summary": "Comments",
+        "published_at": "2026-10-23T13:04:23.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "11jou42",
+          "source_id": "lobsters_ai",
+          "source_name": "Lobsters (AI tag)",
+          "source_role": "main",
+          "trust": 0.7,
+          "title": "AI: EU Member States approve “digital expropriation” of Europeans for AI companies",
+          "url": "https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies",
+          "original_url": "https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies",
+          "discussion_url": "https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies",
+          "discussion_source": "Lobsters (AI tag)",
+          "summary": "Comments",
+          "published_at": "2026-10-23T13:04:23.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "lobsters_ai",
+          "source_name": "Lobsters (AI tag)",
+          "title": "AI: EU Member States approve “digital expropriation” of Europeans for AI companies",
+          "url": "https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies",
+          "published_at": "2026-10-23T13:04:23.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies",
+          "discussion_source": "Lobsters (AI tag)"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Report on EU policy changes regarding data usage for AI training.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.7,
+      "score": 0.309,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1bzmh8h",
+      "primary": {
+        "id": "1bzmh8h",
+        "source_id": "ars_ai",
+        "source_name": "Ars Technica AI",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "news",
+        "title": "Intel gets waiver after worries fuzzy US ban on foreign-made robots may hit fabs",
+        "url": "https://arstechnica.com/ai/2026/10/intel-gets-waiver-after-worries-fuzzy-us-ban-on-foreign-made-robots-may-hit-fabs",
+        "original_url": "https://arstechnica.com/ai/2026/10/intel-gets-waiver-after-worries-fuzzy-us-ban-on-foreign-made-robots-may-hit-fabs/",
+        "summary": "Company says foreign-made robotic vehicles are crucial to US chip production.",
+        "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/10/Intel-fab-interior-1152x648.jpg",
+        "image_source": "rss_media",
+        "published_at": "2026-10-23T17:18:31.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1bzmh8h",
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "news",
+          "title": "Intel gets waiver after worries fuzzy US ban on foreign-made robots may hit fabs",
+          "url": "https://arstechnica.com/ai/2026/10/intel-gets-waiver-after-worries-fuzzy-us-ban-on-foreign-made-robots-may-hit-fabs",
+          "original_url": "https://arstechnica.com/ai/2026/10/intel-gets-waiver-after-worries-fuzzy-us-ban-on-foreign-made-robots-may-hit-fabs/",
+          "summary": "Company says foreign-made robotic vehicles are crucial to US chip production.",
+          "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/10/Intel-fab-interior-1152x648.jpg",
+          "image_source": "rss_media",
+          "published_at": "2026-10-23T17:18:31.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "title": "Intel gets waiver after worries fuzzy US ban on foreign-made robots may hit fabs",
+          "url": "https://arstechnica.com/ai/2026/10/intel-gets-waiver-after-worries-fuzzy-us-ban-on-foreign-made-robots-may-hit-fabs",
+          "published_at": "2026-10-23T17:18:31.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Intel receives a waiver for foreign-made robotics in chip fabs amid US import restrictions.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.497,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "13xjf3p",
@@ -2448,12 +2831,75 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.66,
-      "score": 0.319,
+      "score": 0.311,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
       ],
       "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1k12wg0",
+      "primary": {
+        "id": "1k12wg0",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Three-week on-site audit at OpenAI reveals major gaps in AI safety monitoring",
+        "url": "https://the-decoder.com/three-week-on-site-audit-at-openai-reveals-major-gaps-in-ai-safety-monitoring",
+        "original_url": "https://the-decoder.com/three-week-on-site-audit-at-openai-reveals-major-gaps-in-ai-safety-monitoring/",
+        "summary": "External auditors from METR and Redwood Research spent three weeks on-site at OpenAI examining the company's internal monitoring system for AI agents and found significant gaps, with up to 25 percent of agent traffic from models at the GPT-5.5 class and above going unmonitored. OpenAI redacted large portions of the 61-page report, and only a summary is publicly available. The article Three-week on-site audit at OpenAI reveals major gaps in AI safety monitoring appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2024/12/openai_safety_research_alignment_illustration.png",
+        "image_source": "rss_content",
+        "published_at": "2026-10-23T18:00:32.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1k12wg0",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Three-week on-site audit at OpenAI reveals major gaps in AI safety monitoring",
+          "url": "https://the-decoder.com/three-week-on-site-audit-at-openai-reveals-major-gaps-in-ai-safety-monitoring",
+          "original_url": "https://the-decoder.com/three-week-on-site-audit-at-openai-reveals-major-gaps-in-ai-safety-monitoring/",
+          "summary": "External auditors from METR and Redwood Research spent three weeks on-site at OpenAI examining the company's internal monitoring system for AI agents and found significant gaps, with up to 25 percent of agent traffic from models at the GPT-5.5 class and above going unmonitored. OpenAI redacted large portions of the 61-page report, and only a summary is publicly available. The article Three-week on-site audit at OpenAI reveals major gaps in AI safety monitoring appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2024/12/openai_safety_research_alignment_illustration.png",
+          "image_source": "rss_content",
+          "published_at": "2026-10-23T18:00:32.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Three-week on-site audit at OpenAI reveals major gaps in AI safety monitoring",
+          "url": "https://the-decoder.com/three-week-on-site-audit-at-openai-reveals-major-gaps-in-ai-safety-monitoring",
+          "published_at": "2026-10-23T18:00:32.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Audit of OpenAI safety systems reveals 25 percent of agent traffic for frontier models remains unmonitored.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.489,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
     },
     {
       "id": "3f73yr",
@@ -2474,7 +2920,7 @@
         "date_confidence": "high",
         "engagement": {
           "score": 64,
-          "comments": 54
+          "comments": 55
         }
       },
       "members": [
@@ -2495,7 +2941,7 @@
           "date_confidence": "high",
           "engagement": {
             "score": 64,
-            "comments": 54
+            "comments": 55
           }
         }
       ],
@@ -2515,11 +2961,11 @@
       "also_seen_on": [],
       "kind": "tool",
       "quality": "mixed",
-      "one_liner": "A wiki generated from the Enron email dataset using LLMs with automated fact citation.",
+      "one_liner": "A wiki generated from Enron emails using AI with citation-based retrieval.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.58,
-      "score": 0.316,
+      "score": 0.308,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal",
@@ -2528,39 +2974,102 @@
       "builder_action": "Try it in a small sandbox before adding it to production workflow."
     },
     {
-      "id": "uzuvyg",
+      "id": "7kynk6",
       "primary": {
-        "id": "uzuvyg",
-        "source_id": "the_verge_ai",
-        "source_name": "The Verge AI",
+        "id": "7kynk6",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
         "source_role": "main",
-        "trust": 0.68,
-        "kind_hint": "news",
-        "title": "Meta delays new business terms after publisher pushback on AI scraping",
-        "url": "https://theverge.com/tech/1017450/meta-business-terms-delayed-ai-scraping",
-        "original_url": "https://www.theverge.com/tech/1017450/meta-business-terms-delayed-ai-scraping",
-        "summary": "Meta is delaying the enforcement of its new business terms after publishers raised concerns that they could allow the company to scrape news sites for AI training, as reported earlier by Fast Company. In a statement to The Verge, Meta spokesperson Daniel Roberts says the terms will go into effect on November 20th \"to allow more time for us to explain to our partners and stakeholders what's changing and what's not.\" The business terms, which were originally supposed to go into effect on October 30th, appeared to give Meta permission to freely scrape the new sites that use its platforms, while u",
-        "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/23951350/STK043_VRG_Illo_N_Barclay_6_Meta.jpg?quality=90&",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "Anthropic Adds Opt-In Security Scanning for Critical Open-Source Projects",
+        "url": "https://infoq.com/news/2026/10/anthropic-oss-security-scanner",
+        "original_url": "https://www.infoq.com/news/2026/10/anthropic-oss-security-scanner/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "AI company Anthropic has launched OSS Scanner, a free, opt-in service to find vulnerabilities in open-source projects. Enrolled maintainers receive periodic security reports generated by the company's strongest models, including Claude Mythos. The reports are sent without human review, and project maintainers can choose to validate their findings and decide which proposed fixes to accept. By Matt Saunders",
+        "image_url": "https://res.infoq.com/news/2026/10/anthropic-oss-security-scanner/en/headerimage/generatedHeaderImage-1792523938215.jpg",
         "image_source": "rss_content",
-        "published_at": "2026-10-23T14:47:41.000Z",
+        "published_at": "2026-10-23T09:00:00.000Z",
         "published_at_source": "feed",
         "date_confidence": "high"
       },
       "members": [
         {
-          "id": "uzuvyg",
+          "id": "7kynk6",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "Anthropic Adds Opt-In Security Scanning for Critical Open-Source Projects",
+          "url": "https://infoq.com/news/2026/10/anthropic-oss-security-scanner",
+          "original_url": "https://www.infoq.com/news/2026/10/anthropic-oss-security-scanner/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "AI company Anthropic has launched OSS Scanner, a free, opt-in service to find vulnerabilities in open-source projects. Enrolled maintainers receive periodic security reports generated by the company's strongest models, including Claude Mythos. The reports are sent without human review, and project maintainers can choose to validate their findings and decide which proposed fixes to accept. By Matt Saunders",
+          "image_url": "https://res.infoq.com/news/2026/10/anthropic-oss-security-scanner/en/headerimage/generatedHeaderImage-1792523938215.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-23T09:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "Anthropic Adds Opt-In Security Scanning for Critical Open-Source Projects",
+          "url": "https://infoq.com/news/2026/10/anthropic-oss-security-scanner",
+          "published_at": "2026-10-23T09:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Anthropic releases an opt-in automated vulnerability scanner for open-source projects using Claude models.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.483,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "1vpjuv1",
+      "primary": {
+        "id": "1vpjuv1",
+        "source_id": "the_verge_ai",
+        "source_name": "The Verge AI",
+        "source_role": "main",
+        "trust": 0.68,
+        "kind_hint": "news",
+        "title": "OpenAI now trains its frontier AI models with no internet access",
+        "url": "https://theverge.com/ai-artificial-intelligence/1018021/openai-training-top-ai-models-no-internet",
+        "original_url": "https://www.theverge.com/ai-artificial-intelligence/1018021/openai-training-top-ai-models-no-internet",
+        "summary": "OpenAI is now training its most advanced AI models without internet access following a string of rogue hacking incidents. In a blog post on Friday, OpenAI says it built an offline testing environment where AI models can interact with indexed and cached web content \"without risk of affecting external systems.\" OpenAI paused training its frontier AI models in September, after disclosing several incidents in which its AI agents broke out of their testing environments to hack third-party companies and government agencies, or swarm obscure websites. On October 1st, OpenAI resumed reinforcement lear",
+        "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/02/STK155_OPEN_AI_2025_CVirgiia_B_d6ffc8.jpg?quality=90&",
+        "image_source": "rss_content",
+        "published_at": "2026-10-23T21:11:07.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1vpjuv1",
           "source_id": "the_verge_ai",
           "source_name": "The Verge AI",
           "source_role": "main",
           "trust": 0.68,
           "kind_hint": "news",
-          "title": "Meta delays new business terms after publisher pushback on AI scraping",
-          "url": "https://theverge.com/tech/1017450/meta-business-terms-delayed-ai-scraping",
-          "original_url": "https://www.theverge.com/tech/1017450/meta-business-terms-delayed-ai-scraping",
-          "summary": "Meta is delaying the enforcement of its new business terms after publishers raised concerns that they could allow the company to scrape news sites for AI training, as reported earlier by Fast Company. In a statement to The Verge, Meta spokesperson Daniel Roberts says the terms will go into effect on November 20th \"to allow more time for us to explain to our partners and stakeholders what's changing and what's not.\" The business terms, which were originally supposed to go into effect on October 30th, appeared to give Meta permission to freely scrape the new sites that use its platforms, while u",
-          "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/23951350/STK043_VRG_Illo_N_Barclay_6_Meta.jpg?quality=90&",
+          "title": "OpenAI now trains its frontier AI models with no internet access",
+          "url": "https://theverge.com/ai-artificial-intelligence/1018021/openai-training-top-ai-models-no-internet",
+          "original_url": "https://www.theverge.com/ai-artificial-intelligence/1018021/openai-training-top-ai-models-no-internet",
+          "summary": "OpenAI is now training its most advanced AI models without internet access following a string of rogue hacking incidents. In a blog post on Friday, OpenAI says it built an offline testing environment where AI models can interact with indexed and cached web content \"without risk of affecting external systems.\" OpenAI paused training its frontier AI models in September, after disclosing several incidents in which its AI agents broke out of their testing environments to hack third-party companies and government agencies, or swarm obscure websites. On October 1st, OpenAI resumed reinforcement lear",
+          "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/02/STK155_OPEN_AI_2025_CVirgiia_B_d6ffc8.jpg?quality=90&",
           "image_source": "rss_content",
-          "published_at": "2026-10-23T14:47:41.000Z",
+          "published_at": "2026-10-23T21:11:07.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -2569,9 +3078,9 @@
         {
           "source_id": "the_verge_ai",
           "source_name": "The Verge AI",
-          "title": "Meta delays new business terms after publisher pushback on AI scraping",
-          "url": "https://theverge.com/tech/1017450/meta-business-terms-delayed-ai-scraping",
-          "published_at": "2026-10-23T14:47:41.000Z",
+          "title": "OpenAI now trains its frontier AI models with no internet access",
+          "url": "https://theverge.com/ai-artificial-intelligence/1018021/openai-training-top-ai-models-no-internet",
+          "published_at": "2026-10-23T21:11:07.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -2579,150 +3088,16 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "signal",
-      "one_liner": "Meta delayed new business terms following publisher pushback regarding AI training data scraping.",
+      "one_liner": "OpenAI transitions to offline training environments for frontier models to mitigate security risks.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.68,
-      "score": 0.478,
+      "score": 0.48,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as concrete builder or research signal"
       ],
       "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "10syoie",
-      "primary": {
-        "id": "10syoie",
-        "source_id": "fahd_mirza",
-        "source_name": "Fahd Mirza YouTube",
-        "source_role": "main",
-        "trust": 0.66,
-        "kind_hint": "video",
-        "title": "InclusionAI Releases 2 Models in a Day: Ling-3.0 Flash Sante Tested",
-        "url": "https://youtube.com/watch?v=l0OO9jogP4Y",
-        "original_url": "https://www.youtube.com/watch?v=l0OO9jogP4Y",
-        "image_url": "https://i.ytimg.com/vi/l0OO9jogP4Y/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-10-23T06:00:27.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
-          "video_id": "l0OO9jogP4Y"
-        }
-      },
-      "members": [
-        {
-          "id": "10syoie",
-          "source_id": "fahd_mirza",
-          "source_name": "Fahd Mirza YouTube",
-          "source_role": "main",
-          "trust": 0.66,
-          "kind_hint": "video",
-          "title": "InclusionAI Releases 2 Models in a Day: Ling-3.0 Flash Sante Tested",
-          "url": "https://youtube.com/watch?v=l0OO9jogP4Y",
-          "original_url": "https://www.youtube.com/watch?v=l0OO9jogP4Y",
-          "image_url": "https://i.ytimg.com/vi/l0OO9jogP4Y/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-10-23T06:00:27.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
-            "video_id": "l0OO9jogP4Y"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "fahd_mirza",
-          "source_name": "Fahd Mirza YouTube",
-          "title": "InclusionAI Releases 2 Models in a Day: Ling-3.0 Flash Sante Tested",
-          "url": "https://youtube.com/watch?v=l0OO9jogP4Y",
-          "published_at": "2026-10-23T06:00:27.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "mixed",
-      "one_liner": "",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.66,
-      "score": 0.296,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Queue it for focused learning if the topic matches your current work."
-    },
-    {
-      "id": "11jou42",
-      "primary": {
-        "id": "11jou42",
-        "source_id": "lobsters_ai",
-        "source_name": "Lobsters (AI tag)",
-        "source_role": "main",
-        "trust": 0.7,
-        "title": "AI: EU Member States approve “digital expropriation” of Europeans for AI companies",
-        "url": "https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies",
-        "original_url": "https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies",
-        "discussion_url": "https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies",
-        "discussion_source": "Lobsters (AI tag)",
-        "summary": "Comments",
-        "published_at": "2026-10-23T13:04:23.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "11jou42",
-          "source_id": "lobsters_ai",
-          "source_name": "Lobsters (AI tag)",
-          "source_role": "main",
-          "trust": 0.7,
-          "title": "AI: EU Member States approve “digital expropriation” of Europeans for AI companies",
-          "url": "https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies",
-          "original_url": "https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies",
-          "discussion_url": "https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies",
-          "discussion_source": "Lobsters (AI tag)",
-          "summary": "Comments",
-          "published_at": "2026-10-23T13:04:23.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "lobsters_ai",
-          "source_name": "Lobsters (AI tag)",
-          "title": "AI: EU Member States approve “digital expropriation” of Europeans for AI companies",
-          "url": "https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies",
-          "published_at": "2026-10-23T13:04:23.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "discussion_url": "https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies",
-          "discussion_source": "Lobsters (AI tag)"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "discussion",
-      "quality": "mixed",
-      "one_liner": "Discussion regarding EU policy changes concerning data usage for AI model training.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.7,
-      "score": 0.237,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Use this as weak signal and verify against primary sources."
     },
     {
       "id": "136y4ea",
@@ -2776,11 +3151,11 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Moonshot AI's Kimi K3.1 Pro model shows performance gains on the Artificial Analysis Intelligence Index.",
+      "one_liner": "Performance comparison of Moonshot AI's Kimi K3.1 Pro against top-tier models on the Artificial Analysis index.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.74,
-      "score": 0.336,
+      "score": 0.328,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
@@ -2839,137 +3214,11 @@
       "also_seen_on": [],
       "kind": "news",
       "quality": "mixed",
-      "one_liner": "Anthropic reports internal model improvements and cites safety testing failures in Mythos 5.1.",
+      "one_liner": "Anthropic reports internal model performance against Mythos 5.1 following cybersecurity testing by UK AISI.",
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.74,
-      "score": 0.333,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Read the primary source and decide whether it changes your next action."
-    },
-    {
-      "id": "byji67",
-      "primary": {
-        "id": "byji67",
-        "source_id": "the_verge_ai",
-        "source_name": "The Verge AI",
-        "source_role": "main",
-        "trust": 0.68,
-        "kind_hint": "news",
-        "title": "Jack Dorsey’s Block made an AI model that talks to you like an awkward new friend",
-        "url": "https://theverge.com/ai-artificial-intelligence/1017906/jack-dorsey-block-dessa-ai-voice-speech",
-        "original_url": "https://www.theverge.com/ai-artificial-intelligence/1017906/jack-dorsey-block-dessa-ai-voice-speech",
-        "summary": "Jack Dorsey's Block announced an AI model called Dessa that's trained \"from scratch on nothing but human conversation,\" and to show off the model, Block shared chats it has had with humans that can occasionally be a little awkward and uncanny. Take this one, for example, shared by Dessa lead Ragavan Thurairatnam. The conversation between the model and the speaker does have a mostly natural back and forth (though for some reason, the model initially mistakes the speaker for somebody named \"Ronaldo\"). We made the first AI model you can have a realistic conversation with that was trained entirely",
-        "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/STKS536_AI_HALLUCINATION_B.png?quality=90&",
-        "image_source": "rss_content",
-        "published_at": "2026-10-23T19:32:39.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "byji67",
-          "source_id": "the_verge_ai",
-          "source_name": "The Verge AI",
-          "source_role": "main",
-          "trust": 0.68,
-          "kind_hint": "news",
-          "title": "Jack Dorsey’s Block made an AI model that talks to you like an awkward new friend",
-          "url": "https://theverge.com/ai-artificial-intelligence/1017906/jack-dorsey-block-dessa-ai-voice-speech",
-          "original_url": "https://www.theverge.com/ai-artificial-intelligence/1017906/jack-dorsey-block-dessa-ai-voice-speech",
-          "summary": "Jack Dorsey's Block announced an AI model called Dessa that's trained \"from scratch on nothing but human conversation,\" and to show off the model, Block shared chats it has had with humans that can occasionally be a little awkward and uncanny. Take this one, for example, shared by Dessa lead Ragavan Thurairatnam. The conversation between the model and the speaker does have a mostly natural back and forth (though for some reason, the model initially mistakes the speaker for somebody named \"Ronaldo\"). We made the first AI model you can have a realistic conversation with that was trained entirely",
-          "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/STKS536_AI_HALLUCINATION_B.png?quality=90&",
-          "image_source": "rss_content",
-          "published_at": "2026-10-23T19:32:39.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_verge_ai",
-          "source_name": "The Verge AI",
-          "title": "Jack Dorsey’s Block made an AI model that talks to you like an awkward new friend",
-          "url": "https://theverge.com/ai-artificial-intelligence/1017906/jack-dorsey-block-dessa-ai-voice-speech",
-          "published_at": "2026-10-23T19:32:39.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "model_release",
-      "quality": "mixed",
-      "one_liner": "Block released Dessa, a conversational model trained on human dialogue data.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.68,
-      "score": 0.323,
-      "why_this_surfaced": [
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
-    },
-    {
-      "id": "1oxymly",
-      "primary": {
-        "id": "1oxymly",
-        "source_id": "the_verge_ai",
-        "source_name": "The Verge AI",
-        "source_role": "main",
-        "trust": 0.68,
-        "kind_hint": "news",
-        "title": "Now Google says it might use your Gmail and Google Photos data to target ads",
-        "url": "https://theverge.com/tech/1017600/google-personal-intelligence-privacy-policy-ads-update",
-        "original_url": "https://www.theverge.com/tech/1017600/google-personal-intelligence-privacy-policy-ads-update",
-        "summary": "Google has updated its privacy policy in a way that could mean you'll start seeing targeted ads based on your personal data if you're using personalized AI features. The update, spotted by Android Authority, adds an exception to its promise about not using your Drive, Gmail, or Google Photos for personalized ads. While the previous version simply said it wouldn't do that, as of October 16th, Google has added the line, \"unless you choose to make data from these services available to other Google services that support personalized ads.\" That means anyone who has connected their Drive, Gmail, or",
-        "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/02/STK093_GOOGLE_D.jpg?quality=90&",
-        "image_source": "rss_content",
-        "published_at": "2026-10-23T16:52:55.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high"
-      },
-      "members": [
-        {
-          "id": "1oxymly",
-          "source_id": "the_verge_ai",
-          "source_name": "The Verge AI",
-          "source_role": "main",
-          "trust": 0.68,
-          "kind_hint": "news",
-          "title": "Now Google says it might use your Gmail and Google Photos data to target ads",
-          "url": "https://theverge.com/tech/1017600/google-personal-intelligence-privacy-policy-ads-update",
-          "original_url": "https://www.theverge.com/tech/1017600/google-personal-intelligence-privacy-policy-ads-update",
-          "summary": "Google has updated its privacy policy in a way that could mean you'll start seeing targeted ads based on your personal data if you're using personalized AI features. The update, spotted by Android Authority, adds an exception to its promise about not using your Drive, Gmail, or Google Photos for personalized ads. While the previous version simply said it wouldn't do that, as of October 16th, Google has added the line, \"unless you choose to make data from these services available to other Google services that support personalized ads.\" That means anyone who has connected their Drive, Gmail, or",
-          "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/02/STK093_GOOGLE_D.jpg?quality=90&",
-          "image_source": "rss_content",
-          "published_at": "2026-10-23T16:52:55.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "the_verge_ai",
-          "source_name": "The Verge AI",
-          "title": "Now Google says it might use your Gmail and Google Photos data to target ads",
-          "url": "https://theverge.com/tech/1017600/google-personal-intelligence-privacy-policy-ads-update",
-          "published_at": "2026-10-23T16:52:55.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "news",
-      "quality": "mixed",
-      "one_liner": "Google updated its privacy policy to allow potential use of personal data for targeted ads in AI features.",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.68,
-      "score": 0.319,
+      "score": 0.325,
       "why_this_surfaced": [
         "kept for context despite familiar coverage",
         "classified as useful but lower-confidence signal"
