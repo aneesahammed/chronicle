@@ -58,7 +58,7 @@ const DEFAULT_GEMINI_MODEL = "gemini-3.1-flash-lite";
 // Keep this conservative. Gemini rate limits vary by project, tier, and model,
 // and Google surfaces active quotas in AI Studio rather than stable public constants.
 const DEFAULT_GEMINI_BATCH_DELAY_MS = 4_500;
-const DEFAULT_GROQ_MODEL = "qwen/qwen3-32b";
+const DEFAULT_GROQ_MODEL = "qwen/qwen3.8-27b";
 const DEFAULT_GROQ_BATCH_DELAY_MS = 30_000;
 const DEFAULT_ALL_PROVIDER_COOLDOWN_WAIT_MS = 120_000;
 
