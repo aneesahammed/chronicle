@@ -1,0 +1,2424 @@
+{
+  "generated_at": "2026-10-26T11:07:10.577Z",
+  "last_successful_generated_at": "2026-10-26T11:07:10.577Z",
+  "refresh_status": "partial",
+  "classification_mode": "llm",
+  "window_hours": 36,
+  "source_total": 53,
+  "source_ok": 50,
+  "source_failed": 3,
+  "failed_sources": [
+    {
+      "id": "marktechpost",
+      "name": "MarkTechPost",
+      "message": "HTTP 403 Forbidden - <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><m - url=https://www.marktechpost.com/feed"
+    },
+    {
+      "id": "r_localllama",
+      "name": "r/LocalLLaMA",
+      "message": "Invalid character in entity name\nLine: 23\nColumn: 151\nChar: ="
+    },
+    {
+      "id": "r_ml",
+      "name": "r/MachineLearning",
+      "message": "Invalid character in entity name\nLine: 23\nColumn: 151\nChar: ="
+    }
+  ],
+  "source_health": [
+    {
+      "id": "arxiv_cl",
+      "name": "arXiv cs.CL",
+      "status": "ok",
+      "fetched_count": 3,
+      "fresh_count": 3,
+      "stale_count": 0,
+      "oldest_published_at": "2026-10-26T04:00:00.000Z",
+      "newest_published_at": "2026-10-26T04:00:00.000Z"
+    },
+    {
+      "id": "arxiv_lg",
+      "name": "arXiv cs.LG",
+      "status": "ok",
+      "fetched_count": 3,
+      "fresh_count": 3,
+      "stale_count": 0,
+      "oldest_published_at": "2026-10-26T04:00:00.000Z",
+      "newest_published_at": "2026-10-26T04:00:00.000Z"
+    },
+    {
+      "id": "hf_papers",
+      "name": "Hugging Face Daily Papers",
+      "status": "ok",
+      "fetched_count": 20,
+      "fresh_count": 0,
+      "stale_count": 20,
+      "oldest_published_at": "2026-10-13T20:00:00.000Z",
+      "newest_published_at": "2026-10-22T20:00:00.000Z"
+    },
+    {
+      "id": "hf_trending_models",
+      "name": "Hugging Face trending models",
+      "status": "ok",
+      "fetched_count": 20,
+      "fresh_count": 0,
+      "stale_count": 20,
+      "oldest_published_at": "2026-07-23T07:55:24.000Z",
+      "newest_published_at": "2026-10-24T02:49:18.000Z"
+    },
+    {
+      "id": "simonw",
+      "name": "Simon Willison",
+      "status": "ok",
+      "fetched_count": 3,
+      "fresh_count": 0,
+      "stale_count": 3,
+      "oldest_published_at": "2026-10-18T23:16:16.000Z",
+      "newest_published_at": "2026-10-22T18:09:56.000Z"
+    },
+    {
+      "id": "martin_fowler",
+      "name": "Martin Fowler",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "2026-09-24T15:35:00.000Z",
+      "newest_published_at": "2026-10-21T10:51:00.000Z"
+    },
+    {
+      "id": "thoughtworks_insights",
+      "name": "Thoughtworks Insights",
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 1,
+      "stale_count": 5,
+      "oldest_published_at": "2026-10-15T00:00:00.000Z",
+      "newest_published_at": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "id": "latent_space",
+      "name": "Latent Space",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-10-20T19:31:57.000Z",
+      "newest_published_at": "2026-10-24T07:18:29.000Z"
+    },
+    {
+      "id": "interconnects",
+      "name": "Interconnects (Lambert)",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 1,
+      "stale_count": 9,
+      "oldest_published_at": "2026-09-10T15:28:52.000Z",
+      "newest_published_at": "2026-10-25T11:49:00.000Z"
+    },
+    {
+      "id": "import_ai",
+      "name": "Import AI (Jack Clark)",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-08-10T12:32:20.000Z",
+      "newest_published_at": "2026-10-19T12:31:37.000Z"
+    },
+    {
+      "id": "eugene_yan",
+      "name": "Eugene Yan",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2025-05-18T00:00:00.000Z",
+      "newest_published_at": "2026-06-21T00:00:00.000Z"
+    },
+    {
+      "id": "hamel",
+      "name": "Hamel Husain",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2025-10-01T07:00:00.000Z",
+      "newest_published_at": "2026-10-20T07:00:00.000Z"
+    },
+    {
+      "id": "philschmid",
+      "name": "Philipp Schmid",
+      "status": "ok",
+      "fetched_count": 15,
+      "fresh_count": 0,
+      "stale_count": 15,
+      "oldest_published_at": "2026-04-29T00:00:00.000Z",
+      "newest_published_at": "2026-09-28T00:00:00.000Z"
+    },
+    {
+      "id": "lilian_weng",
+      "name": "Lilian Weng",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2023-03-15T00:00:00.000Z",
+      "newest_published_at": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "chip_huyen",
+      "name": "Chip Huyen",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2023-06-07T00:00:00.000Z",
+      "newest_published_at": "2025-01-16T00:00:00.000Z"
+    },
+    {
+      "id": "addy_osmani",
+      "name": "Addy Osmani",
+      "status": "ok",
+      "fetched_count": 8,
+      "fresh_count": 0,
+      "stale_count": 8,
+      "oldest_published_at": "2026-07-06T00:00:00.000Z",
+      "newest_published_at": "2026-09-14T00:00:00.000Z"
+    },
+    {
+      "id": "daniel_miessler",
+      "name": "Daniel Miessler",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 2,
+      "stale_count": 8,
+      "oldest_published_at": "2026-10-01T22:45:00.000Z",
+      "newest_published_at": "2026-10-25T15:46:32.000Z"
+    },
+    {
+      "id": "sean_goedecke",
+      "name": "Sean Goedecke",
+      "status": "ok",
+      "fetched_count": 2,
+      "fresh_count": 0,
+      "stale_count": 2,
+      "oldest_published_at": "2026-10-12T00:00:00.000Z",
+      "newest_published_at": "2026-10-16T00:00:00.000Z"
+    },
+    {
+      "id": "techcrunch_ai",
+      "name": "TechCrunch AI",
+      "status": "ok",
+      "fetched_count": 12,
+      "fresh_count": 3,
+      "stale_count": 9,
+      "oldest_published_at": "2026-10-23T00:45:37.000Z",
+      "newest_published_at": "2026-10-25T21:31:16.000Z"
+    },
+    {
+      "id": "the_decoder",
+      "name": "The Decoder",
+      "status": "ok",
+      "fetched_count": 9,
+      "fresh_count": 7,
+      "stale_count": 2,
+      "oldest_published_at": "2026-10-24T14:34:05.000Z",
+      "newest_published_at": "2026-10-26T09:49:33.000Z"
+    },
+    {
+      "id": "mit_tech_review_ai",
+      "name": "MIT Technology Review AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-10-19T09:08:05.000Z",
+      "newest_published_at": "2026-10-22T21:17:29.000Z"
+    },
+    {
+      "id": "ars_ai",
+      "name": "Ars Technica AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-10-20T18:22:54.000Z",
+      "newest_published_at": "2026-10-23T20:19:55.000Z"
+    },
+    {
+      "id": "infoq_ai",
+      "name": "InfoQ AI/ML/Data",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 4,
+      "stale_count": 6,
+      "oldest_published_at": "2026-10-22T09:33:00.000Z",
+      "newest_published_at": "2026-10-26T11:00:00.000Z"
+    },
+    {
+      "id": "stackoverflow_blog",
+      "name": "Stack Overflow Blog",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "2026-10-15T17:00:00.000Z",
+      "newest_published_at": "2026-10-20T07:40:00.000Z"
+    },
+    {
+      "id": "the_verge_ai",
+      "name": "The Verge AI",
+      "status": "ok",
+      "fetched_count": 8,
+      "fresh_count": 1,
+      "stale_count": 7,
+      "oldest_published_at": "2026-10-23T12:00:00.000Z",
+      "newest_published_at": "2026-10-25T12:00:00.000Z"
+    },
+    {
+      "id": "wired_ai",
+      "name": "WIRED AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 3,
+      "stale_count": 7,
+      "oldest_published_at": "2026-10-21T16:00:00.000Z",
+      "newest_published_at": "2026-10-26T09:30:00.000Z"
+    },
+    {
+      "id": "nine_to_five_google_ai",
+      "name": "9to5Google AI",
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 0,
+      "stale_count": 6,
+      "oldest_published_at": "2017-08-08T14:44:01.000Z",
+      "newest_published_at": "2026-06-12T15:10:46.000Z"
+    },
+    {
+      "id": "product_hunt",
+      "name": "Product Hunt",
+      "status": "ok",
+      "fetched_count": 4,
+      "fresh_count": 3,
+      "stale_count": 1,
+      "oldest_published_at": "2026-10-21T08:10:28.000Z",
+      "newest_published_at": "2026-10-26T05:15:29.000Z"
+    },
+    {
+      "id": "marktechpost",
+      "name": "MarkTechPost",
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 403 Forbidden - <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><m - url=https://www.marktechpost.com/feed",
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "hn_ai",
+      "name": "Hacker News (AI-filtered)",
+      "status": "ok",
+      "fetched_count": 4,
+      "fresh_count": 4,
+      "stale_count": 0,
+      "oldest_published_at": "2026-10-25T17:15:38.000Z",
+      "newest_published_at": "2026-10-26T03:29:05.000Z"
+    },
+    {
+      "id": "hn_show_ai",
+      "name": "Show HN (AI-filtered)",
+      "status": "ok",
+      "fetched_count": 1,
+      "fresh_count": 0,
+      "stale_count": 1,
+      "oldest_published_at": "2026-10-23T12:02:53.000Z",
+      "newest_published_at": "2026-10-23T12:02:53.000Z"
+    },
+    {
+      "id": "lobsters_ai",
+      "name": "Lobsters (AI tag)",
+      "status": "ok",
+      "fetched_count": 20,
+      "fresh_count": 0,
+      "stale_count": 20,
+      "oldest_published_at": "2026-09-19T16:31:05.000Z",
+      "newest_published_at": "2026-10-23T17:25:34.000Z"
+    },
+    {
+      "id": "r_localllama",
+      "name": "r/LocalLLaMA",
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "Invalid character in entity name\nLine: 23\nColumn: 151\nChar: =",
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "r_ml",
+      "name": "r/MachineLearning",
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "Invalid character in entity name\nLine: 23\nColumn: 151\nChar: =",
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-10-21T07:00:00.000Z",
+      "newest_published_at": "2026-10-23T17:00:00.000Z"
+    },
+    {
+      "id": "deepmind",
+      "name": "Google DeepMind",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-09-24T16:20:39.000Z",
+      "newest_published_at": "2026-10-22T14:30:24.000Z"
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "status": "ok",
+      "fetched_count": 12,
+      "fresh_count": 0,
+      "stale_count": 12,
+      "oldest_published_at": "2026-10-16T00:00:00.000Z",
+      "newest_published_at": "2026-10-23T00:00:00.000Z"
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-07-08T12:00:59.000Z",
+      "newest_published_at": "2026-10-22T07:00:00.000Z"
+    },
+    {
+      "id": "google_research",
+      "name": "Google Research",
+      "status": "ok",
+      "fetched_count": 7,
+      "fresh_count": 0,
+      "stale_count": 7,
+      "oldest_published_at": "2026-09-24T19:40:00.000Z",
+      "newest_published_at": "2026-10-23T18:51:33.000Z"
+    },
+    {
+      "id": "google_ai_keyword",
+      "name": "Google AI on Keyword",
+      "status": "ok",
+      "fetched_count": 7,
+      "fresh_count": 0,
+      "stale_count": 7,
+      "oldest_published_at": "2026-10-16T00:00:00.000Z",
+      "newest_published_at": "2026-10-23T00:00:00.000Z"
+    },
+    {
+      "id": "meta_ai",
+      "name": "Meta AI Blog",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "1970-01-01T00:00:00.000Z",
+      "newest_published_at": "2026-07-09T00:00:00.000Z"
+    },
+    {
+      "id": "microsoft_research",
+      "name": "Microsoft Research",
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 0,
+      "stale_count": 6,
+      "oldest_published_at": "2026-09-28T21:00:00.000Z",
+      "newest_published_at": "2026-10-22T16:00:00.000Z"
+    },
+    {
+      "id": "azure_ai_blog",
+      "name": "Azure AI Blog",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "2026-10-07T15:00:00.000Z",
+      "newest_published_at": "2026-10-16T16:05:00.000Z"
+    },
+    {
+      "id": "aws_ml_blog",
+      "name": "AWS Machine Learning Blog",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-10-22T16:25:57.000Z",
+      "newest_published_at": "2026-10-23T17:48:54.000Z"
+    },
+    {
+      "id": "nvidia_developer_blog",
+      "name": "NVIDIA Developer Blog",
+      "status": "ok",
+      "fetched_count": 11,
+      "fresh_count": 0,
+      "stale_count": 11,
+      "oldest_published_at": "2026-10-16T17:00:00.000Z",
+      "newest_published_at": "2026-10-23T17:27:35.000Z"
+    },
+    {
+      "id": "cloudflare_ai_changelog",
+      "name": "Cloudflare AI Changelog",
+      "status": "ok",
+      "fetched_count": 9,
+      "fresh_count": 1,
+      "stale_count": 8,
+      "oldest_published_at": "2026-10-19T00:00:00.000Z",
+      "newest_published_at": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "id": "cohere_blog",
+      "name": "Cohere Blog",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-10-14T16:48:00.000Z",
+      "newest_published_at": "2026-10-22T20:36:00.000Z"
+    },
+    {
+      "id": "ai2_blog",
+      "name": "Ai2 Blog",
+      "status": "ok",
+      "fetched_count": 3,
+      "fresh_count": 0,
+      "stale_count": 3,
+      "oldest_published_at": "2026-10-09T08:00:00.000Z",
+      "newest_published_at": "2026-10-22T08:00:00.000Z"
+    },
+    {
+      "id": "together",
+      "name": "Together AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-09-10T00:00:00.000Z",
+      "newest_published_at": "2026-10-19T00:00:00.000Z"
+    },
+    {
+      "id": "modal",
+      "name": "Modal",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-10-12T00:00:00.000Z",
+      "newest_published_at": "2026-10-22T12:00:00.000Z"
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "status": "ok",
+      "fetched_count": 12,
+      "fresh_count": 0,
+      "stale_count": 12,
+      "oldest_published_at": "2026-07-20T12:00:00.000Z",
+      "newest_published_at": "2026-08-14T12:00:00.000Z"
+    },
+    {
+      "id": "fahd_mirza",
+      "name": "Fahd Mirza YouTube",
+      "status": "ok",
+      "fetched_count": 8,
+      "fresh_count": 3,
+      "stale_count": 5,
+      "oldest_published_at": "2026-10-22T06:00:18.000Z",
+      "newest_published_at": "2026-10-26T04:00:06.000Z"
+    },
+    {
+      "id": "yt_nate_b_jones",
+      "name": "AI News & Strategy Daily",
+      "status": "ok",
+      "fetched_count": 8,
+      "fresh_count": 2,
+      "stale_count": 6,
+      "oldest_published_at": "2026-10-18T16:00:27.000Z",
+      "newest_published_at": "2026-10-25T16:00:17.000Z"
+    }
+  ],
+  "top_news": [
+    {
+      "cluster_id": "1pbumwy",
+      "title": "Validating the Comparison, Not Just the Scorer: Why Overall Accuracy Can Mislead in Interactive LLM Evaluation",
+      "url": "https://arxiv.org/abs/2610.31678",
+      "source_name": "arXiv cs.CL",
+      "published_at": "2026-10-26T04:00:00.000Z",
+      "kind": "paper",
+      "score": 0.813,
+      "dek": "Researchers warn that relying on overall accuracy metrics for LLM evaluators can mask prompt-specific errors.",
+      "brief": "When evaluating LLM responses to varying conversational pressures, researchers often use automatic scorers validated by a single F1 or accuracy score. This study demonstrates that high aggregate performance can hide significant bias, where a scorer performs worse on specific prompt types, leading to skewed measurements of model behavior.",
+      "image_alt": "Diagram showing how aggregate metrics can obscure performance variance across different prompt types.",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-10-26T11:07:10.577Z"
+    },
+    {
+      "cluster_id": "1ansp2n",
+      "title": "Cloudflare’s Auto Router Rates Each Request for Stakes, from the Most Recent Turns",
+      "url": "https://infoq.com/news/2026/10/cloudflare-auto-router",
+      "source_name": "InfoQ AI/ML/Data",
+      "published_at": "2026-10-26T10:20:00.000Z",
+      "kind": "tool",
+      "score": 0.787,
+      "dek": "Cloudflare's Auto Router uses a classifier to dynamically select models based on request complexity and stakes.",
+      "brief": "Cloudflare launched a public beta of Auto Router via AI Gateway. The system classifies incoming requests by complexity, ambiguity, and stakes to route them to the most appropriate model. While Cloudflare claims high success rates at a fraction of the cost of top-tier models, questions remain regarding how the system maintains context and stakes over long agent sessions.",
+      "image_url": "https://res.infoq.com/news/2026/10/cloudflare-auto-router/en/headerimage/generatedHeaderImage-1792492628413.jpg",
+      "image_alt": "Conceptual flow of Cloudflare AI Gateway routing requests to different LLM endpoints.",
+      "image_source": "rss_content",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-10-26T11:07:10.577Z"
+    },
+    {
+      "cluster_id": "cz96te",
+      "title": "PaperPilot – Zero-Cloud, Pure-Rust PDF Engine with WASM and MCP",
+      "url": "https://github.com/KrushnaVardhanReddy/PaperPilot",
+      "source_name": "Hacker News (AI-filtered)",
+      "published_at": "2026-10-26T03:29:05Z",
+      "kind": "tool",
+      "score": 0.769,
+      "dek": "PaperPilot is a local, Rust-based PDF processing engine leveraging WASM and MCP.",
+      "brief": "PaperPilot provides a zero-cloud document processing solution. By utilizing Rust and WebAssembly, it enables local AI-assisted document interaction, integrating with the Model Context Protocol (MCP) to facilitate tool use without external data dependencies.",
+      "image_alt": "Architecture diagram of a local PDF processing engine using Rust and WASM.",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-10-26T11:07:10.577Z"
+    },
+    {
+      "cluster_id": "1418r9k",
+      "title": "ManyAgents",
+      "url": "https://producthunt.com/products/manyagents",
+      "source_name": "Product Hunt",
+      "published_at": "2026-10-25T19:55:39.000Z",
+      "kind": "tool",
+      "score": 0.562,
+      "dek": "ManyAgents enables users to manage a team of AI coding agents from a single macOS interface.",
+      "brief": "ManyAgents is a desktop application designed to orchestrate multiple AI coding agents simultaneously. It provides a centralized dashboard for developers to manage agent workflows and code generation tasks directly from their local machine.",
+      "image_alt": "Screenshot of the ManyAgents macOS interface showing multiple active coding agents.",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-10-26T11:07:10.577Z"
+    }
+  ],
+  "count": 28,
+  "clusters": [
+    {
+      "id": "1pbumwy",
+      "primary": {
+        "id": "1pbumwy",
+        "source_id": "arxiv_cl",
+        "source_name": "arXiv cs.CL",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "paper",
+        "title": "Validating the Comparison, Not Just the Scorer: Why Overall Accuracy Can Mislead in Interactive LLM Evaluation",
+        "url": "https://arxiv.org/abs/2610.31678",
+        "original_url": "https://arxiv.org/abs/2610.31678",
+        "summary": "Many LLM studies compare how models respond to different follow-up prompts. For example, one prompt may neutrally ask a model to reconsider, while another insists that an invented film really exists. The difference is used to measure the effect of conversational pressure. An automatic scorer then labels whether each response makes an unsupported factual claim. Researchers commonly validate the scorer with one overall accuracy or $F_1$ score. However, high overall performance can hide prompt-specific mistakes: if the scorer makes more errors after one prompt, the measured difference can be too",
+        "published_at": "2026-10-26T04:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1pbumwy",
+          "source_id": "arxiv_cl",
+          "source_name": "arXiv cs.CL",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "paper",
+          "title": "Validating the Comparison, Not Just the Scorer: Why Overall Accuracy Can Mislead in Interactive LLM Evaluation",
+          "url": "https://arxiv.org/abs/2610.31678",
+          "original_url": "https://arxiv.org/abs/2610.31678",
+          "summary": "Many LLM studies compare how models respond to different follow-up prompts. For example, one prompt may neutrally ask a model to reconsider, while another insists that an invented film really exists. The difference is used to measure the effect of conversational pressure. An automatic scorer then labels whether each response makes an unsupported factual claim. Researchers commonly validate the scorer with one overall accuracy or $F_1$ score. However, high overall performance can hide prompt-specific mistakes: if the scorer makes more errors after one prompt, the measured difference can be too",
+          "published_at": "2026-10-26T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "arxiv_cl",
+          "source_name": "arXiv cs.CL",
+          "title": "Validating the Comparison, Not Just the Scorer: Why Overall Accuracy Can Mislead in Interactive LLM Evaluation",
+          "url": "https://arxiv.org/abs/2610.31678",
+          "published_at": "2026-10-26T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "Analyzes how conversational pressure and prompt framing bias LLM evaluation metrics in interactive benchmarks.",
+      "novelty": 0.849,
+      "novelty_label": "high",
+      "trust": 0.9,
+      "score": 0.813,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "1r1uxb9",
+      "primary": {
+        "id": "1r1uxb9",
+        "source_id": "arxiv_lg",
+        "source_name": "arXiv cs.LG",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "paper",
+        "title": "Does LeWorldModel Preserve Local Action Geometry?",
+        "url": "https://arxiv.org/abs/2610.31716",
+        "original_url": "https://arxiv.org/abs/2610.31716",
+        "summary": "We examine how closely pretrained LeWorldModel (LeWM) reproduces the effects of small action changes. Using matched simulator and model responses, we measure action sensitivity with Gram matrices at three perturbation scales. Across nearly a thousand states from Reacher and OGBench Cube, the most sensitive action directions differ by median angles of about $36^\\circ$ and $42^\\circ$, respectively, at the smallest scale. Increasing the perturbation tenfold reduces median normalized Gram discrepancy by roughly 70% on Reacher and 47% on Cube. Geometry measured in pixels and embeddings varies more",
+        "published_at": "2026-10-26T04:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1r1uxb9",
+          "source_id": "arxiv_lg",
+          "source_name": "arXiv cs.LG",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "paper",
+          "title": "Does LeWorldModel Preserve Local Action Geometry?",
+          "url": "https://arxiv.org/abs/2610.31716",
+          "original_url": "https://arxiv.org/abs/2610.31716",
+          "summary": "We examine how closely pretrained LeWorldModel (LeWM) reproduces the effects of small action changes. Using matched simulator and model responses, we measure action sensitivity with Gram matrices at three perturbation scales. Across nearly a thousand states from Reacher and OGBench Cube, the most sensitive action directions differ by median angles of about $36^\\circ$ and $42^\\circ$, respectively, at the smallest scale. Increasing the perturbation tenfold reduces median normalized Gram discrepancy by roughly 70% on Reacher and 47% on Cube. Geometry measured in pixels and embeddings varies more",
+          "published_at": "2026-10-26T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "arxiv_lg",
+          "source_name": "arXiv cs.LG",
+          "title": "Does LeWorldModel Preserve Local Action Geometry?",
+          "url": "https://arxiv.org/abs/2610.31716",
+          "published_at": "2026-10-26T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "Evaluates how well LeWorldModel preserves local action geometry using Gram matrices across simulated environments.",
+      "novelty": 0.814,
+      "novelty_label": "high",
+      "trust": 0.9,
+      "score": 0.803,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "1ansp2n",
+      "primary": {
+        "id": "1ansp2n",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "Cloudflare’s Auto Router Rates Each Request for Stakes, from the Most Recent Turns",
+        "url": "https://infoq.com/news/2026/10/cloudflare-auto-router",
+        "original_url": "https://www.infoq.com/news/2026/10/cloudflare-auto-router/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Cloudflare has released Auto Router in public beta through AI Gateway, picking a model per request from a classifier that scores complexity, ambiguity, stakes and context dependence. Cloudflare’s own benchmark puts it ten points below Claude Opus 5.5 on success rate at a third of the cost, and practitioners have questioned how stakes survive a long agent session. By Steef-Jan Wiggers",
+        "image_url": "https://res.infoq.com/news/2026/10/cloudflare-auto-router/en/headerimage/generatedHeaderImage-1792492628413.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-10-26T10:20:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1ansp2n",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "Cloudflare’s Auto Router Rates Each Request for Stakes, from the Most Recent Turns",
+          "url": "https://infoq.com/news/2026/10/cloudflare-auto-router",
+          "original_url": "https://www.infoq.com/news/2026/10/cloudflare-auto-router/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "Cloudflare has released Auto Router in public beta through AI Gateway, picking a model per request from a classifier that scores complexity, ambiguity, stakes and context dependence. Cloudflare’s own benchmark puts it ten points below Claude Opus 5.5 on success rate at a third of the cost, and practitioners have questioned how stakes survive a long agent session. By Steef-Jan Wiggers",
+          "image_url": "https://res.infoq.com/news/2026/10/cloudflare-auto-router/en/headerimage/generatedHeaderImage-1792492628413.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-26T10:20:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "Cloudflare’s Auto Router Rates Each Request for Stakes, from the Most Recent Turns",
+          "url": "https://infoq.com/news/2026/10/cloudflare-auto-router",
+          "published_at": "2026-10-26T10:20:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Cloudflare AI Gateway beta routes requests to models based on complexity and stakes, offering a cost-performance trade-off.",
+      "novelty": 0.82,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.787,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "cz96te",
+      "primary": {
+        "id": "cz96te",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "PaperPilot – Zero-Cloud, Pure-Rust PDF Engine with WASM and MCP",
+        "url": "https://github.com/KrushnaVardhanReddy/PaperPilot",
+        "original_url": "https://github.com/KrushnaVardhanReddy/PaperPilot",
+        "discussion_url": "https://news.ycombinator.com/item?id=50238739",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-10-26T03:29:05Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 152,
+          "comments": 44
+        }
+      },
+      "members": [
+        {
+          "id": "cz96te",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "PaperPilot – Zero-Cloud, Pure-Rust PDF Engine with WASM and MCP",
+          "url": "https://github.com/KrushnaVardhanReddy/PaperPilot",
+          "original_url": "https://github.com/KrushnaVardhanReddy/PaperPilot",
+          "discussion_url": "https://news.ycombinator.com/item?id=50238739",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-10-26T03:29:05Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 152,
+            "comments": 44
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "PaperPilot – Zero-Cloud, Pure-Rust PDF Engine with WASM and MCP",
+          "url": "https://github.com/KrushnaVardhanReddy/PaperPilot",
+          "published_at": "2026-10-26T03:29:05Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=50238739",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "A local, Rust-based PDF engine utilizing WASM and MCP for document processing.",
+      "novelty": 0.8,
+      "novelty_label": "high",
+      "trust": 0.65,
+      "score": 0.769,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "15s6jt7",
+      "primary": {
+        "id": "15s6jt7",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "OpenAI and Anthropic cut their LLM prices by up to 80% within a few months. Why?",
+        "url": "https://minimaxir.com/2026/10/cheap-llms",
+        "original_url": "https://minimaxir.com/2026/10/cheap-llms/",
+        "discussion_url": "https://news.ycombinator.com/item?id=50236102",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-10-25T21:11:31Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 328,
+          "comments": 319
+        }
+      },
+      "members": [
+        {
+          "id": "15s6jt7",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "OpenAI and Anthropic cut their LLM prices by up to 80% within a few months. Why?",
+          "url": "https://minimaxir.com/2026/10/cheap-llms",
+          "original_url": "https://minimaxir.com/2026/10/cheap-llms/",
+          "discussion_url": "https://news.ycombinator.com/item?id=50236102",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-10-25T21:11:31Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 328,
+            "comments": 319
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "OpenAI and Anthropic cut their LLM prices by up to 80% within a few months. Why?",
+          "url": "https://minimaxir.com/2026/10/cheap-llms",
+          "published_at": "2026-10-25T21:11:31Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=50236102",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "signal",
+      "one_liner": "Analysis of the economic drivers behind recent significant LLM price reductions.",
+      "novelty": 0.79,
+      "novelty_label": "high",
+      "trust": 0.65,
+      "score": 0.767,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "9w1dyc",
+      "primary": {
+        "id": "9w1dyc",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "Microsoft Decision-1: 9B Qwen Model Launch Explained",
+        "url": "https://shattered.io/microsoft-decision-1-qwen3-5-9b-model-2026",
+        "original_url": "https://shattered.io/microsoft-decision-1-qwen3-5-9b-model-2026/",
+        "discussion_url": "https://news.ycombinator.com/item?id=50238620",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-10-26T03:12:05Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 65,
+          "comments": 24
+        }
+      },
+      "members": [
+        {
+          "id": "9w1dyc",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "Microsoft Decision-1: 9B Qwen Model Launch Explained",
+          "url": "https://shattered.io/microsoft-decision-1-qwen3-5-9b-model-2026",
+          "original_url": "https://shattered.io/microsoft-decision-1-qwen3-5-9b-model-2026/",
+          "discussion_url": "https://news.ycombinator.com/item?id=50238620",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-10-26T03:12:05Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 65,
+            "comments": 24
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "Microsoft Decision-1: 9B Qwen Model Launch Explained",
+          "url": "https://shattered.io/microsoft-decision-1-qwen3-5-9b-model-2026",
+          "published_at": "2026-10-26T03:12:05Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=50238620",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "Technical overview of the Microsoft Decision-1 9B model based on Qwen.",
+      "novelty": 0.614,
+      "novelty_label": "medium",
+      "trust": 0.65,
+      "score": 0.708,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as concrete builder or research signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
+    },
+    {
+      "id": "bu0e4e",
+      "primary": {
+        "id": "bu0e4e",
+        "source_id": "thoughtworks_insights",
+        "source_name": "Thoughtworks Insights",
+        "source_role": "main",
+        "trust": 0.84,
+        "kind_hint": "opinion",
+        "title": "Ethical and commercial risk regarding product development, GDR and AI",
+        "url": "https://thoughtworks.com/insights/blog/product-innovation/ethical-commercial-risk-regarding-product-development-gdr-ai",
+        "original_url": "https://www.thoughtworks.com/insights/blog/product-innovation/ethical-commercial-risk-regarding-product-development-gdr-ai",
+        "summary": "Ethical and commercial risk regarding product development, GDR and AI",
+        "image_url": "https://www.thoughtworks.com/content/dam/thoughtworks/images/photography/abstract/insights/blog/abs_blogs_054.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-10-26T00:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "bu0e4e",
+          "source_id": "thoughtworks_insights",
+          "source_name": "Thoughtworks Insights",
+          "source_role": "main",
+          "trust": 0.84,
+          "kind_hint": "opinion",
+          "title": "Ethical and commercial risk regarding product development, GDR and AI",
+          "url": "https://thoughtworks.com/insights/blog/product-innovation/ethical-commercial-risk-regarding-product-development-gdr-ai",
+          "original_url": "https://www.thoughtworks.com/insights/blog/product-innovation/ethical-commercial-risk-regarding-product-development-gdr-ai",
+          "summary": "Ethical and commercial risk regarding product development, GDR and AI",
+          "image_url": "https://www.thoughtworks.com/content/dam/thoughtworks/images/photography/abstract/insights/blog/abs_blogs_054.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-26T00:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "thoughtworks_insights",
+          "source_name": "Thoughtworks Insights",
+          "title": "Ethical and commercial risk regarding product development, GDR and AI",
+          "url": "https://thoughtworks.com/insights/blog/product-innovation/ethical-commercial-risk-regarding-product-development-gdr-ai",
+          "published_at": "2026-10-26T00:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "High-level discussion on ethical and commercial risks in AI product development.",
+      "novelty": 0.809,
+      "novelty_label": "high",
+      "trust": 0.84,
+      "score": 0.668,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "vz0a4e",
+      "primary": {
+        "id": "vz0a4e",
+        "source_id": "arxiv_lg",
+        "source_name": "arXiv cs.LG",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "paper",
+        "title": "The Path to NDE 4.0: A Review of Algorithms, Techniques, and Strategies for Autonomous Inspection",
+        "url": "https://arxiv.org/abs/2610.31704",
+        "original_url": "https://arxiv.org/abs/2610.31704",
+        "summary": "Non-Destructive Inspection (NDI) is a cornerstone of modern quality assurance, critical for ensuring the safety and reliability of infrastructure and manufactured components without causing damage. This paper presents a comprehensive review of the current NDI landscape, analyzing the field through four distinct lenses, namely, computational algorithms, physical techniques, industrial applications, and research objectives. We synthesize a broad range of academic literature to illustrate the rapid evolution from manual, analog interpretation to a digitized, data-centric paradigm known as NDE 4.0",
+        "published_at": "2026-10-26T04:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "vz0a4e",
+          "source_id": "arxiv_lg",
+          "source_name": "arXiv cs.LG",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "paper",
+          "title": "The Path to NDE 4.0: A Review of Algorithms, Techniques, and Strategies for Autonomous Inspection",
+          "url": "https://arxiv.org/abs/2610.31704",
+          "original_url": "https://arxiv.org/abs/2610.31704",
+          "summary": "Non-Destructive Inspection (NDI) is a cornerstone of modern quality assurance, critical for ensuring the safety and reliability of infrastructure and manufactured components without causing damage. This paper presents a comprehensive review of the current NDI landscape, analyzing the field through four distinct lenses, namely, computational algorithms, physical techniques, industrial applications, and research objectives. We synthesize a broad range of academic literature to illustrate the rapid evolution from manual, analog interpretation to a digitized, data-centric paradigm known as NDE 4.0",
+          "published_at": "2026-10-26T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "arxiv_lg",
+          "source_name": "arXiv cs.LG",
+          "title": "The Path to NDE 4.0: A Review of Algorithms, Techniques, and Strategies for Autonomous Inspection",
+          "url": "https://arxiv.org/abs/2610.31704",
+          "published_at": "2026-10-26T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "mixed",
+      "one_liner": "A broad review of non-destructive inspection algorithms; lacks specific new technical contributions.",
+      "novelty": 0.832,
+      "novelty_label": "high",
+      "trust": 0.9,
+      "score": 0.696,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "primary source has high trust weight",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "1t4nx27",
+      "primary": {
+        "id": "1t4nx27",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Wall Street's fastest traders are building data centers and backing chip startups to stay ahead in AI",
+        "url": "https://the-decoder.com/wall-streets-fastest-traders-are-building-data-centers-and-backing-chip-startups-to-stay-ahead-in-ai",
+        "original_url": "https://the-decoder.com/wall-streets-fastest-traders-are-building-data-centers-and-backing-chip-startups-to-stay-ahead-in-ai/",
+        "summary": "High-frequency traders like Jane Street and Hudson River Trading are now racing each other for AI computing power. The article Wall Street's fastest traders are building data centers and backing chip startups to stay ahead in AI appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2024/05/money_server_room.png",
+        "image_source": "rss_content",
+        "published_at": "2026-10-26T09:49:33.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1t4nx27",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Wall Street's fastest traders are building data centers and backing chip startups to stay ahead in AI",
+          "url": "https://the-decoder.com/wall-streets-fastest-traders-are-building-data-centers-and-backing-chip-startups-to-stay-ahead-in-ai",
+          "original_url": "https://the-decoder.com/wall-streets-fastest-traders-are-building-data-centers-and-backing-chip-startups-to-stay-ahead-in-ai/",
+          "summary": "High-frequency traders like Jane Street and Hudson River Trading are now racing each other for AI computing power. The article Wall Street's fastest traders are building data centers and backing chip startups to stay ahead in AI appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2024/05/money_server_room.png",
+          "image_source": "rss_content",
+          "published_at": "2026-10-26T09:49:33.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Wall Street's fastest traders are building data centers and backing chip startups to stay ahead in AI",
+          "url": "https://the-decoder.com/wall-streets-fastest-traders-are-building-data-centers-and-backing-chip-startups-to-stay-ahead-in-ai",
+          "published_at": "2026-10-26T09:49:33.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Overview of high-frequency trading firms investing in AI infrastructure.",
+      "novelty": 0.762,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.647,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "gmx7nt",
+      "primary": {
+        "id": "gmx7nt",
+        "source_id": "fahd_mirza",
+        "source_name": "Fahd Mirza YouTube",
+        "source_role": "main",
+        "trust": 0.66,
+        "kind_hint": "video",
+        "title": "DecisionNode: Typed decisions in Milliseconds: Hands-on Tutorial",
+        "url": "https://youtube.com/watch?v=2u4Ft6KUGTQ",
+        "original_url": "https://www.youtube.com/watch?v=2u4Ft6KUGTQ",
+        "image_url": "https://i.ytimg.com/vi/2u4Ft6KUGTQ/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-26T04:00:06.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+          "video_id": "2u4Ft6KUGTQ"
+        }
+      },
+      "members": [
+        {
+          "id": "gmx7nt",
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "source_role": "main",
+          "trust": 0.66,
+          "kind_hint": "video",
+          "title": "DecisionNode: Typed decisions in Milliseconds: Hands-on Tutorial",
+          "url": "https://youtube.com/watch?v=2u4Ft6KUGTQ",
+          "original_url": "https://www.youtube.com/watch?v=2u4Ft6KUGTQ",
+          "image_url": "https://i.ytimg.com/vi/2u4Ft6KUGTQ/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-26T04:00:06.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+            "video_id": "2u4Ft6KUGTQ"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "title": "DecisionNode: Typed decisions in Milliseconds: Hands-on Tutorial",
+          "url": "https://youtube.com/watch?v=2u4Ft6KUGTQ",
+          "published_at": "2026-10-26T04:00:06.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.802,
+      "novelty_label": "high",
+      "trust": 0.66,
+      "score": 0.631,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1rpo53c",
+      "primary": {
+        "id": "1rpo53c",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "Article: The Evolution of Agentic Harnesses: From Chains to Graph to Code",
+        "url": "https://infoq.com/articles/agentic-ai-architecture-harness-evolution",
+        "original_url": "https://www.infoq.com/articles/agentic-ai-architecture-harness-evolution/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Agentic LLM systems have moved from linear prompt chains to graph-based workflows and, more recently, code-executing harnesses. Chains are simple but fragile, graphs add branching, retries, and validation, and code harnesses verify outputs through execution. The article advises validating model outputs and choosing the least complex design that meets reliability, speed, and cost needs. By Karthik Ramgopal",
+        "image_url": "https://res.infoq.com/articles/agentic-ai-architecture-harness-evolution/en/headerimage/agentic-ai-architecture-harness-evolution-header-1792744961862.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-10-26T11:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1rpo53c",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "Article: The Evolution of Agentic Harnesses: From Chains to Graph to Code",
+          "url": "https://infoq.com/articles/agentic-ai-architecture-harness-evolution",
+          "original_url": "https://www.infoq.com/articles/agentic-ai-architecture-harness-evolution/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "Agentic LLM systems have moved from linear prompt chains to graph-based workflows and, more recently, code-executing harnesses. Chains are simple but fragile, graphs add branching, retries, and validation, and code harnesses verify outputs through execution. The article advises validating model outputs and choosing the least complex design that meets reliability, speed, and cost needs. By Karthik Ramgopal",
+          "image_url": "https://res.infoq.com/articles/agentic-ai-architecture-harness-evolution/en/headerimage/agentic-ai-architecture-harness-evolution-header-1792744961862.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-26T11:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "Article: The Evolution of Agentic Harnesses: From Chains to Graph to Code",
+          "url": "https://infoq.com/articles/agentic-ai-architecture-harness-evolution",
+          "published_at": "2026-10-26T11:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "Overview of agentic architecture evolution from linear chains to code-executing harnesses.",
+      "novelty": 0.693,
+      "novelty_label": "medium",
+      "trust": 0.78,
+      "score": 0.638,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "11azxl",
+      "primary": {
+        "id": "11azxl",
+        "source_id": "yt_nate_b_jones",
+        "source_name": "AI News & Strategy Daily",
+        "source_role": "main",
+        "trust": 0.62,
+        "kind_hint": "video",
+        "title": "Enterprise AI Pricing: Why Everything You Know Is Wrong",
+        "url": "https://youtube.com/watch?v=RvnQZQAHUDc",
+        "original_url": "https://www.youtube.com/watch?v=RvnQZQAHUDc",
+        "image_url": "https://i.ytimg.com/vi/RvnQZQAHUDc/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-25T16:00:17.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UC0C-17n9iuUQPylguM1d-lQ",
+          "video_id": "RvnQZQAHUDc"
+        }
+      },
+      "members": [
+        {
+          "id": "11azxl",
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "source_role": "main",
+          "trust": 0.62,
+          "kind_hint": "video",
+          "title": "Enterprise AI Pricing: Why Everything You Know Is Wrong",
+          "url": "https://youtube.com/watch?v=RvnQZQAHUDc",
+          "original_url": "https://www.youtube.com/watch?v=RvnQZQAHUDc",
+          "image_url": "https://i.ytimg.com/vi/RvnQZQAHUDc/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-25T16:00:17.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UC0C-17n9iuUQPylguM1d-lQ",
+            "video_id": "RvnQZQAHUDc"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "title": "Enterprise AI Pricing: Why Everything You Know Is Wrong",
+          "url": "https://youtube.com/watch?v=RvnQZQAHUDc",
+          "published_at": "2026-10-25T16:00:17.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.788,
+      "novelty_label": "high",
+      "trust": 0.62,
+      "score": 0.598,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1418r9k",
+      "primary": {
+        "id": "1418r9k",
+        "source_id": "product_hunt",
+        "source_name": "Product Hunt",
+        "source_role": "main",
+        "trust": 0.5,
+        "kind_hint": "tool",
+        "title": "ManyAgents",
+        "url": "https://producthunt.com/products/manyagents",
+        "original_url": "https://www.producthunt.com/products/manyagents",
+        "summary": "Discussion | Link",
+        "published_at": "2026-10-25T19:55:39.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1418r9k",
+          "source_id": "product_hunt",
+          "source_name": "Product Hunt",
+          "source_role": "main",
+          "trust": 0.5,
+          "kind_hint": "tool",
+          "title": "ManyAgents",
+          "url": "https://producthunt.com/products/manyagents",
+          "original_url": "https://www.producthunt.com/products/manyagents",
+          "summary": "Discussion | Link",
+          "published_at": "2026-10-25T19:55:39.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "product_hunt",
+          "source_name": "Product Hunt",
+          "title": "ManyAgents",
+          "url": "https://producthunt.com/products/manyagents",
+          "published_at": "2026-10-25T19:55:39.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "mixed",
+      "one_liner": "A platform for managing AI agents.",
+      "novelty": 0.737,
+      "novelty_label": "medium",
+      "trust": 0.5,
+      "score": 0.562,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "1ewkc8x",
+      "primary": {
+        "id": "1ewkc8x",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "A 10-year-old CNN outperforms frontier LLMs for skin cancer diagnosis",
+        "url": "https://lynchlab.net/llm-skin-cancer",
+        "original_url": "https://lynchlab.net/llm-skin-cancer",
+        "discussion_url": "https://news.ycombinator.com/item?id=50233779",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-10-25T17:15:38Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 569,
+          "comments": 244
+        }
+      },
+      "members": [
+        {
+          "id": "1ewkc8x",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "A 10-year-old CNN outperforms frontier LLMs for skin cancer diagnosis",
+          "url": "https://lynchlab.net/llm-skin-cancer",
+          "original_url": "https://lynchlab.net/llm-skin-cancer",
+          "discussion_url": "https://news.ycombinator.com/item?id=50233779",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-10-25T17:15:38Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 569,
+            "comments": 244
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "A 10-year-old CNN outperforms frontier LLMs for skin cancer diagnosis",
+          "url": "https://lynchlab.net/llm-skin-cancer",
+          "published_at": "2026-10-25T17:15:38Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=50233779",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "Study shows a 10-year-old CNN architecture outperforms frontier LLMs in skin cancer diagnostic accuracy.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.65,
+      "score": 0.521,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "1eb9amt",
+      "primary": {
+        "id": "1eb9amt",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "PyTorch Conference 2026: Google and Meta Open-Source TorchTPU for Native PyTorch on TPUs",
+        "url": "https://infoq.com/news/2026/10/google-meta-torchtpu",
+        "original_url": "https://www.infoq.com/news/2026/10/google-meta-torchtpu/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Google and Meta open-sourced TorchTPU, a native PyTorch backend for Google's TPUs, at PyTorch Conference North America 2026, and Meta said it plans to move larger LLM workloads onto TPUs with it. AWS released TorchNeuron for Trainium the same week, while developers questioned TPU availability and where vendor lock-in now sits. By Andrew Hoblitzell",
+        "image_url": "https://res.infoq.com/news/2026/10/google-meta-torchtpu/en/headerimage/torchtpu-header-1792934272172.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-10-25T18:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1eb9amt",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "PyTorch Conference 2026: Google and Meta Open-Source TorchTPU for Native PyTorch on TPUs",
+          "url": "https://infoq.com/news/2026/10/google-meta-torchtpu",
+          "original_url": "https://www.infoq.com/news/2026/10/google-meta-torchtpu/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "Google and Meta open-sourced TorchTPU, a native PyTorch backend for Google's TPUs, at PyTorch Conference North America 2026, and Meta said it plans to move larger LLM workloads onto TPUs with it. AWS released TorchNeuron for Trainium the same week, while developers questioned TPU availability and where vendor lock-in now sits. By Andrew Hoblitzell",
+          "image_url": "https://res.infoq.com/news/2026/10/google-meta-torchtpu/en/headerimage/torchtpu-header-1792934272172.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-25T18:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "PyTorch Conference 2026: Google and Meta Open-Source TorchTPU for Native PyTorch on TPUs",
+          "url": "https://infoq.com/news/2026/10/google-meta-torchtpu",
+          "published_at": "2026-10-25T18:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "signal",
+      "one_liner": "Google and Meta open-source TorchTPU for native PyTorch support on TPU hardware.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.514,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+    },
+    {
+      "id": "1cppwk3",
+      "primary": {
+        "id": "1cppwk3",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "Google ML Drift Accelerates On-Device AI Inference Across Diverse GPUs",
+        "url": "https://infoq.com/news/2026/10/google-ml-drift",
+        "original_url": "https://www.infoq.com/news/2026/10/google-ml-drift/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Google has released ML Drift, an open-source, cross-platform GPU compute engine designed for on-device AI and machine learning inference. Licensed under Apache 2.0, it abstracts the complexities of different GPU hardware and low-level APIs, supporting OpenGL ES, OpenCL, Metal, and WebGPU. By Sergio De Simone",
+        "image_url": "https://res.infoq.com/news/2026/10/google-ml-drift/en/headerimage/gemini-agentic-vision-1792946554031.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-10-25T17:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1cppwk3",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "Google ML Drift Accelerates On-Device AI Inference Across Diverse GPUs",
+          "url": "https://infoq.com/news/2026/10/google-ml-drift",
+          "original_url": "https://www.infoq.com/news/2026/10/google-ml-drift/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "Google has released ML Drift, an open-source, cross-platform GPU compute engine designed for on-device AI and machine learning inference. Licensed under Apache 2.0, it abstracts the complexities of different GPU hardware and low-level APIs, supporting OpenGL ES, OpenCL, Metal, and WebGPU. By Sergio De Simone",
+          "image_url": "https://res.infoq.com/news/2026/10/google-ml-drift/en/headerimage/gemini-agentic-vision-1792946554031.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-25T17:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "Google ML Drift Accelerates On-Device AI Inference Across Diverse GPUs",
+          "url": "https://infoq.com/news/2026/10/google-ml-drift",
+          "published_at": "2026-10-25T17:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Google releases ML Drift, an open-source cross-platform GPU compute engine for on-device inference.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.513,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "1m7y56g",
+      "primary": {
+        "id": "1m7y56g",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Nvidia open-sources Flora to make robot video labeling 125x cheaper than GPT-6 Astra",
+        "url": "https://the-decoder.com/nvidia-open-sources-flora-to-make-robot-video-labeling-125x-cheaper-than-gpt-6-astra",
+        "original_url": "https://the-decoder.com/nvidia-open-sources-flora-to-make-robot-video-labeling-125x-cheaper-than-gpt-6-astra/",
+        "summary": "Nvidia's new data engine Flora labels one hour of robot video for 72 cents instead of $88 with GPT-6 Astra, while scoring slightly higher on quality. The open system, built on three fine-tuned Qwen3.5 models, catches errors in robot actions far more reliably than any competitor but sometimes falls short on descriptive accuracy. Nvidia is positioning Flora as a key piece of its strategy to control the entire robotics value chain. The article Nvidia open-sources Flora to make robot video labeling 125x cheaper than GPT-6 Astra appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/nvidia-flora-hero-robot-hands.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-10-25T10:08:49.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1m7y56g",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Nvidia open-sources Flora to make robot video labeling 125x cheaper than GPT-6 Astra",
+          "url": "https://the-decoder.com/nvidia-open-sources-flora-to-make-robot-video-labeling-125x-cheaper-than-gpt-6-astra",
+          "original_url": "https://the-decoder.com/nvidia-open-sources-flora-to-make-robot-video-labeling-125x-cheaper-than-gpt-6-astra/",
+          "summary": "Nvidia's new data engine Flora labels one hour of robot video for 72 cents instead of $88 with GPT-6 Astra, while scoring slightly higher on quality. The open system, built on three fine-tuned Qwen3.5 models, catches errors in robot actions far more reliably than any competitor but sometimes falls short on descriptive accuracy. Nvidia is positioning Flora as a key piece of its strategy to control the entire robotics value chain. The article Nvidia open-sources Flora to make robot video labeling 125x cheaper than GPT-6 Astra appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/nvidia-flora-hero-robot-hands.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-25T10:08:49.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Nvidia open-sources Flora to make robot video labeling 125x cheaper than GPT-6 Astra",
+          "url": "https://the-decoder.com/nvidia-open-sources-flora-to-make-robot-video-labeling-125x-cheaper-than-gpt-6-astra",
+          "published_at": "2026-10-25T10:08:49.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Nvidia releases Flora, an open-source data engine for cost-effective robot video labeling.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.492,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "1pgwo37",
+      "primary": {
+        "id": "1pgwo37",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Anthropic says one AI agent beats many subagents now that models can handle complexity alone",
+        "url": "https://the-decoder.com/anthropic-says-one-ai-agent-beats-many-subagents-now-that-models-can-handle-complexity-alone",
+        "original_url": "https://the-decoder.com/anthropic-says-one-ai-agent-beats-many-subagents-now-that-models-can-handle-complexity-alone/",
+        "summary": "Anthropic says companies should evaluate whether they can consolidate sub-agents into a single agent that loads context on demand. In one architecture comparison, the single-agent setup ran about twice as fast. Anthropic has published a migration kit on GitHub to help teams make the transition. The article Anthropic says one AI agent beats many subagents now that models can handle complexity alone appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/claude_claude_baby_logos.png",
+        "image_source": "rss_content",
+        "published_at": "2026-10-25T09:12:10.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1pgwo37",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Anthropic says one AI agent beats many subagents now that models can handle complexity alone",
+          "url": "https://the-decoder.com/anthropic-says-one-ai-agent-beats-many-subagents-now-that-models-can-handle-complexity-alone",
+          "original_url": "https://the-decoder.com/anthropic-says-one-ai-agent-beats-many-subagents-now-that-models-can-handle-complexity-alone/",
+          "summary": "Anthropic says companies should evaluate whether they can consolidate sub-agents into a single agent that loads context on demand. In one architecture comparison, the single-agent setup ran about twice as fast. Anthropic has published a migration kit on GitHub to help teams make the transition. The article Anthropic says one AI agent beats many subagents now that models can handle complexity alone appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/claude_claude_baby_logos.png",
+          "image_source": "rss_content",
+          "published_at": "2026-10-25T09:12:10.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Anthropic says one AI agent beats many subagents now that models can handle complexity alone",
+          "url": "https://the-decoder.com/anthropic-says-one-ai-agent-beats-many-subagents-now-that-models-can-handle-complexity-alone",
+          "published_at": "2026-10-25T09:12:10.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "signal",
+      "one_liner": "Anthropic suggests consolidating multi-agent systems into single-agent architectures for improved performance.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.49,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+    },
+    {
+      "id": "17i6g80",
+      "primary": {
+        "id": "17i6g80",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "OpenMobile-2 proves open-source smartphone agents can rival proprietary models",
+        "url": "https://the-decoder.com/openmobile-2-proves-open-source-smartphone-agents-can-rival-proprietary-models",
+        "original_url": "https://the-decoder.com/openmobile-2-proves-open-source-smartphone-agents-can-rival-proprietary-models/",
+        "summary": "Smartphone agents don't get better by processing more data. They improve by training on as many different apps as possible. The researchers behind OpenMobile-2 built an open training environment with more than 110 applications, including 35 replicas of popular apps. On real Android devices, their model scores highest among open agents, the authors say. The article OpenMobile-2 proves open-source smartphone agents can rival proprietary models appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/open-mobile-2-smartphone-app-training-nano-banana-pro.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-10-25T06:55:22.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "17i6g80",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "OpenMobile-2 proves open-source smartphone agents can rival proprietary models",
+          "url": "https://the-decoder.com/openmobile-2-proves-open-source-smartphone-agents-can-rival-proprietary-models",
+          "original_url": "https://the-decoder.com/openmobile-2-proves-open-source-smartphone-agents-can-rival-proprietary-models/",
+          "summary": "Smartphone agents don't get better by processing more data. They improve by training on as many different apps as possible. The researchers behind OpenMobile-2 built an open training environment with more than 110 applications, including 35 replicas of popular apps. On real Android devices, their model scores highest among open agents, the authors say. The article OpenMobile-2 proves open-source smartphone agents can rival proprietary models appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/open-mobile-2-smartphone-app-training-nano-banana-pro.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-25T06:55:22.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "OpenMobile-2 proves open-source smartphone agents can rival proprietary models",
+          "url": "https://the-decoder.com/openmobile-2-proves-open-source-smartphone-agents-can-rival-proprietary-models",
+          "published_at": "2026-10-25T06:55:22.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "OpenMobile-2 introduces an open training environment with 110+ apps to improve smartphone agent performance.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.487,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "1bu7r4j",
+      "primary": {
+        "id": "1bu7r4j",
+        "source_id": "daniel_miessler",
+        "source_name": "Daniel Miessler",
+        "source_role": "main",
+        "trust": 0.78,
+        "title": "Models Are the How, Harnesses Are the What",
+        "url": "https://danielmiessler.com/blog/models-how-harnesses-what",
+        "original_url": "https://danielmiessler.com/blog/models-how-harnesses-what?utm_source=rss&utm_medium=feed&utm_campaign=website",
+        "summary": "A person hands their preferences, context, goals and how they like things done to a harness labeled the what, which feeds a model labeled the how, which produces a result that returns to the person; both harness and model point up at a hilltop flag labeled what you want/images/models-how-harnesses-w...",
+        "published_at": "2026-10-25T01:28:26.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1bu7r4j",
+          "source_id": "daniel_miessler",
+          "source_name": "Daniel Miessler",
+          "source_role": "main",
+          "trust": 0.78,
+          "title": "Models Are the How, Harnesses Are the What",
+          "url": "https://danielmiessler.com/blog/models-how-harnesses-what",
+          "original_url": "https://danielmiessler.com/blog/models-how-harnesses-what?utm_source=rss&utm_medium=feed&utm_campaign=website",
+          "summary": "A person hands their preferences, context, goals and how they like things done to a harness labeled the what, which feeds a model labeled the how, which produces a result that returns to the person; both harness and model point up at a hilltop flag labeled what you want/images/models-how-harnesses-w...",
+          "published_at": "2026-10-25T01:28:26.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "daniel_miessler",
+          "source_name": "Daniel Miessler",
+          "title": "Models Are the How, Harnesses Are the What",
+          "url": "https://danielmiessler.com/blog/models-how-harnesses-what",
+          "published_at": "2026-10-25T01:28:26.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "Conceptual framework for separating model capabilities from user-defined task harnesses.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.324,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "bxybo5",
+      "primary": {
+        "id": "bxybo5",
+        "source_id": "fahd_mirza",
+        "source_name": "Fahd Mirza YouTube",
+        "source_role": "main",
+        "trust": 0.66,
+        "kind_hint": "video",
+        "title": "Tested FLUX 3 Klein Locally: Has AI Image Generation Plateaued?",
+        "url": "https://youtube.com/watch?v=nr1FVpOOviQ",
+        "original_url": "https://www.youtube.com/watch?v=nr1FVpOOviQ",
+        "image_url": "https://i.ytimg.com/vi/nr1FVpOOviQ/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-25T16:00:14.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+          "video_id": "nr1FVpOOviQ"
+        }
+      },
+      "members": [
+        {
+          "id": "bxybo5",
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "source_role": "main",
+          "trust": 0.66,
+          "kind_hint": "video",
+          "title": "Tested FLUX 3 Klein Locally: Has AI Image Generation Plateaued?",
+          "url": "https://youtube.com/watch?v=nr1FVpOOviQ",
+          "original_url": "https://www.youtube.com/watch?v=nr1FVpOOviQ",
+          "image_url": "https://i.ytimg.com/vi/nr1FVpOOviQ/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-25T16:00:14.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+            "video_id": "nr1FVpOOviQ"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "title": "Tested FLUX 3 Klein Locally: Has AI Image Generation Plateaued?",
+          "url": "https://youtube.com/watch?v=nr1FVpOOviQ",
+          "published_at": "2026-10-25T16:00:14.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.66,
+      "score": 0.321,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1qg85cd",
+      "primary": {
+        "id": "1qg85cd",
+        "source_id": "yt_nate_b_jones",
+        "source_name": "AI News & Strategy Daily",
+        "source_role": "main",
+        "trust": 0.62,
+        "kind_hint": "video",
+        "title": "AI agents = messy roommates",
+        "url": "https://youtube.com/shorts/Dpr4GqZEc5o",
+        "original_url": "https://www.youtube.com/shorts/Dpr4GqZEc5o",
+        "published_at": "2026-10-25T03:00:09.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UC0C-17n9iuUQPylguM1d-lQ"
+        }
+      },
+      "members": [
+        {
+          "id": "1qg85cd",
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "source_role": "main",
+          "trust": 0.62,
+          "kind_hint": "video",
+          "title": "AI agents = messy roommates",
+          "url": "https://youtube.com/shorts/Dpr4GqZEc5o",
+          "original_url": "https://www.youtube.com/shorts/Dpr4GqZEc5o",
+          "published_at": "2026-10-25T03:00:09.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UC0C-17n9iuUQPylguM1d-lQ"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "title": "AI agents = messy roommates",
+          "url": "https://youtube.com/shorts/Dpr4GqZEc5o",
+          "published_at": "2026-10-25T03:00:09.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.62,
+      "score": 0.29,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "p14p1u",
+      "primary": {
+        "id": "p14p1u",
+        "source_id": "fahd_mirza",
+        "source_name": "Fahd Mirza YouTube",
+        "source_role": "main",
+        "trust": 0.66,
+        "kind_hint": "video",
+        "title": "Dessa by Jack Dorsey's Block",
+        "url": "https://youtube.com/watch?v=qcz1XQGHlfA",
+        "original_url": "https://www.youtube.com/watch?v=qcz1XQGHlfA",
+        "image_url": "https://i.ytimg.com/vi/qcz1XQGHlfA/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-25T06:00:09.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+          "video_id": "qcz1XQGHlfA"
+        }
+      },
+      "members": [
+        {
+          "id": "p14p1u",
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "source_role": "main",
+          "trust": 0.66,
+          "kind_hint": "video",
+          "title": "Dessa by Jack Dorsey's Block",
+          "url": "https://youtube.com/watch?v=qcz1XQGHlfA",
+          "original_url": "https://www.youtube.com/watch?v=qcz1XQGHlfA",
+          "image_url": "https://i.ytimg.com/vi/qcz1XQGHlfA/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-25T06:00:09.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+            "video_id": "qcz1XQGHlfA"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "title": "Dessa by Jack Dorsey's Block",
+          "url": "https://youtube.com/watch?v=qcz1XQGHlfA",
+          "published_at": "2026-10-25T06:00:09.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.66,
+      "score": 0.304,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1b7kit3",
+      "primary": {
+        "id": "1b7kit3",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "AI delivers ‘zero financial payoff’ to most companies, Apollo economist says",
+        "url": "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist",
+        "original_url": "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/",
+        "summary": "\"Despite massive investments and widespread hype around artificial intelligence, the technology has delivered zero financial payoff to corporate America outside of tech.\"",
+        "published_at": "2026-10-25T16:57:32.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1b7kit3",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "AI delivers ‘zero financial payoff’ to most companies, Apollo economist says",
+          "url": "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist",
+          "original_url": "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/",
+          "summary": "\"Despite massive investments and widespread hype around artificial intelligence, the technology has delivered zero financial payoff to corporate America outside of tech.\"",
+          "published_at": "2026-10-25T16:57:32.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "AI delivers ‘zero financial payoff’ to most companies, Apollo economist says",
+          "url": "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist",
+          "published_at": "2026-10-25T16:57:32.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Economic analysis suggesting limited financial ROI for AI adoption outside the tech sector.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.72,
+      "score": 0.336,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "u86prh",
+      "primary": {
+        "id": "u86prh",
+        "source_id": "interconnects",
+        "source_name": "Interconnects (Lambert)",
+        "source_role": "main",
+        "trust": 0.85,
+        "title": "Podcast: Kimi K3.1 Pro, the new cyber reality, and Muse musings",
+        "url": "https://interconnects.ai/p/podcast-kimi-k31-pro-the-new-cyber",
+        "original_url": "https://www.interconnects.ai/p/podcast-kimi-k31-pro-the-new-cyber",
+        "summary": "#20",
+        "published_at": "2026-10-25T11:49:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "u86prh",
+          "source_id": "interconnects",
+          "source_name": "Interconnects (Lambert)",
+          "source_role": "main",
+          "trust": 0.85,
+          "title": "Podcast: Kimi K3.1 Pro, the new cyber reality, and Muse musings",
+          "url": "https://interconnects.ai/p/podcast-kimi-k31-pro-the-new-cyber",
+          "original_url": "https://www.interconnects.ai/p/podcast-kimi-k31-pro-the-new-cyber",
+          "summary": "#20",
+          "published_at": "2026-10-25T11:49:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "interconnects",
+          "source_name": "Interconnects (Lambert)",
+          "title": "Podcast: Kimi K3.1 Pro, the new cyber reality, and Muse musings",
+          "url": "https://interconnects.ai/p/podcast-kimi-k31-pro-the-new-cyber",
+          "published_at": "2026-10-25T11:49:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "discussion",
+      "quality": "mixed",
+      "one_liner": "A podcast episode covering Kimi K3.1 Pro and general AI industry trends.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.85,
+      "score": 0.277,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Use this as weak signal and verify against primary sources."
+    },
+    {
+      "id": "5mvzj8",
+      "primary": {
+        "id": "5mvzj8",
+        "source_id": "wired_ai",
+        "source_name": "WIRED AI",
+        "source_role": "main",
+        "trust": 0.76,
+        "kind_hint": "news",
+        "title": "What the US Movement Against Data Centers Can Learn From Abroad",
+        "url": "https://wired.com/story/what-the-us-anti-data-center-movement-can-learn-from-everywhere-else",
+        "original_url": "https://www.wired.com/story/what-the-us-anti-data-center-movement-can-learn-from-everywhere-else/",
+        "summary": "Paris Marx, author of Hyperscale, has been tracking global data center development for years. The US has a lot to learn from what’s happened everywhere from Ireland to New Zealand.",
+        "image_url": "https://media.wired.com/photos/6adbe4fc594ddd5d406f1b4a/master/pass/102326-Power%20Play-What%20the%20US%20Anti-Data%20Center%20Movement%20Can%20Learn%20From%20Everywhere%20Else-v2.jpg",
+        "image_source": "rss_media",
+        "published_at": "2026-10-25T10:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "5mvzj8",
+          "source_id": "wired_ai",
+          "source_name": "WIRED AI",
+          "source_role": "main",
+          "trust": 0.76,
+          "kind_hint": "news",
+          "title": "What the US Movement Against Data Centers Can Learn From Abroad",
+          "url": "https://wired.com/story/what-the-us-anti-data-center-movement-can-learn-from-everywhere-else",
+          "original_url": "https://www.wired.com/story/what-the-us-anti-data-center-movement-can-learn-from-everywhere-else/",
+          "summary": "Paris Marx, author of Hyperscale, has been tracking global data center development for years. The US has a lot to learn from what’s happened everywhere from Ireland to New Zealand.",
+          "image_url": "https://media.wired.com/photos/6adbe4fc594ddd5d406f1b4a/master/pass/102326-Power%20Play-What%20the%20US%20Anti-Data%20Center%20Movement%20Can%20Learn%20From%20Everywhere%20Else-v2.jpg",
+          "image_source": "rss_media",
+          "published_at": "2026-10-25T10:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "wired_ai",
+          "source_name": "WIRED AI",
+          "title": "What the US Movement Against Data Centers Can Learn From Abroad",
+          "url": "https://wired.com/story/what-the-us-anti-data-center-movement-can-learn-from-everywhere-else",
+          "published_at": "2026-10-25T10:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Overview of global regulatory and social challenges regarding data center infrastructure expansion.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.76,
+      "score": 0.334,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "13hc5f9",
+      "primary": {
+        "id": "13hc5f9",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Anthropic co-founder Jack Clark moves his prediction for self-improving AI forward to 2027",
+        "url": "https://the-decoder.com/anthropic-co-founder-jack-clark-moves-his-prediction-for-self-improving-ai-forward-to-2027",
+        "original_url": "https://the-decoder.com/anthropic-co-founder-jack-clark-moves-his-prediction-for-self-improving-ai-forward-to-2027/",
+        "summary": "A new benchmark by P-Zero Research measures how well AI models design and evaluate experiments on their own. The results are improving so fast that Anthropic co-founder Jack Clark now thinks self-improving AI could arrive by 2027. The article Anthropic co-founder Jack Clark moves his prediction for self-improving AI forward to 2027 appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/tasteval_and_rsi.png",
+        "image_source": "rss_content",
+        "published_at": "2026-10-25T09:37:46.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "13hc5f9",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Anthropic co-founder Jack Clark moves his prediction for self-improving AI forward to 2027",
+          "url": "https://the-decoder.com/anthropic-co-founder-jack-clark-moves-his-prediction-for-self-improving-ai-forward-to-2027",
+          "original_url": "https://the-decoder.com/anthropic-co-founder-jack-clark-moves-his-prediction-for-self-improving-ai-forward-to-2027/",
+          "summary": "A new benchmark by P-Zero Research measures how well AI models design and evaluate experiments on their own. The results are improving so fast that Anthropic co-founder Jack Clark now thinks self-improving AI could arrive by 2027. The article Anthropic co-founder Jack Clark moves his prediction for self-improving AI forward to 2027 appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/tasteval_and_rsi.png",
+          "image_source": "rss_content",
+          "published_at": "2026-10-25T09:37:46.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Anthropic co-founder Jack Clark moves his prediction for self-improving AI forward to 2027",
+          "url": "https://the-decoder.com/anthropic-co-founder-jack-clark-moves-his-prediction-for-self-improving-ai-forward-to-2027",
+          "published_at": "2026-10-25T09:37:46.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Report on updated industry timelines for self-improving AI based on new experimental benchmarks.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.329,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1kbb1hd",
+      "primary": {
+        "id": "1kbb1hd",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "OpenAI offers discounts up to 90 percent to poach Anthropic's biggest customers",
+        "url": "https://the-decoder.com/openai-offers-discounts-up-to-90-percent-to-poach-anthropics-biggest-customers",
+        "original_url": "https://the-decoder.com/openai-offers-discounts-up-to-90-percent-to-poach-anthropics-biggest-customers/",
+        "summary": "OpenAI is poaching Anthropic's customers with steep discounts. Companies like Rippling, Replit, and DataCamp say they've cut AI costs by up to 90 percent after switching. Anthropic's growth has slowed, but OpenAI is trading its own margins for market share. Chinese rivals like Deepseek are piling on more price pressure. The article OpenAI offers discounts up to 90 percent to poach Anthropic's biggest customers appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/openai_anthropic.png",
+        "image_source": "rss_content",
+        "published_at": "2026-10-25T07:30:11.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1kbb1hd",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "OpenAI offers discounts up to 90 percent to poach Anthropic's biggest customers",
+          "url": "https://the-decoder.com/openai-offers-discounts-up-to-90-percent-to-poach-anthropics-biggest-customers",
+          "original_url": "https://the-decoder.com/openai-offers-discounts-up-to-90-percent-to-poach-anthropics-biggest-customers/",
+          "summary": "OpenAI is poaching Anthropic's customers with steep discounts. Companies like Rippling, Replit, and DataCamp say they've cut AI costs by up to 90 percent after switching. Anthropic's growth has slowed, but OpenAI is trading its own margins for market share. Chinese rivals like Deepseek are piling on more price pressure. The article OpenAI offers discounts up to 90 percent to poach Anthropic's biggest customers appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/openai_anthropic.png",
+          "image_source": "rss_content",
+          "published_at": "2026-10-25T07:30:11.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "OpenAI offers discounts up to 90 percent to poach Anthropic's biggest customers",
+          "url": "https://the-decoder.com/openai-offers-discounts-up-to-90-percent-to-poach-anthropics-biggest-customers",
+          "published_at": "2026-10-25T07:30:11.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "OpenAI is offering significant pricing discounts to attract enterprise customers currently using Anthropic models.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.325,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    }
+  ]
+}
