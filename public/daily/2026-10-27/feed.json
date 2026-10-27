@@ -1,0 +1,3371 @@
+{
+  "generated_at": "2026-10-27T10:34:13.004Z",
+  "last_successful_generated_at": "2026-10-27T10:34:13.004Z",
+  "refresh_status": "partial",
+  "classification_mode": "llm",
+  "window_hours": 36,
+  "source_total": 54,
+  "source_ok": 51,
+  "source_failed": 3,
+  "failed_sources": [
+    {
+      "id": "marktechpost",
+      "name": "MarkTechPost",
+      "message": "HTTP 403 Forbidden - <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><m - url=https://www.marktechpost.com/feed"
+    },
+    {
+      "id": "r_localllama",
+      "name": "r/LocalLLaMA",
+      "message": "Invalid character in entity name\nLine: 23\nColumn: 151\nChar: ="
+    },
+    {
+      "id": "r_ml",
+      "name": "r/MachineLearning",
+      "message": "Feed not recognized as RSS 1 or 2."
+    }
+  ],
+  "source_health": [
+    {
+      "id": "arxiv_cl",
+      "name": "arXiv cs.CL",
+      "status": "ok",
+      "fetched_count": 3,
+      "fresh_count": 3,
+      "stale_count": 0,
+      "oldest_published_at": "2026-10-27T04:00:00.000Z",
+      "newest_published_at": "2026-10-27T04:00:00.000Z"
+    },
+    {
+      "id": "arxiv_lg",
+      "name": "arXiv cs.LG",
+      "status": "ok",
+      "fetched_count": 3,
+      "fresh_count": 3,
+      "stale_count": 0,
+      "oldest_published_at": "2026-10-27T04:00:00.000Z",
+      "newest_published_at": "2026-10-27T04:00:00.000Z"
+    },
+    {
+      "id": "hf_papers",
+      "name": "Hugging Face Daily Papers",
+      "status": "ok",
+      "fetched_count": 20,
+      "fresh_count": 0,
+      "stale_count": 20,
+      "oldest_published_at": "2026-10-14T20:00:00.000Z",
+      "newest_published_at": "2026-10-25T20:00:00.000Z"
+    },
+    {
+      "id": "hf_trending_models",
+      "name": "Hugging Face trending models",
+      "status": "ok",
+      "fetched_count": 20,
+      "fresh_count": 0,
+      "stale_count": 20,
+      "oldest_published_at": "2026-07-23T07:55:24.000Z",
+      "newest_published_at": "2026-10-24T02:49:18.000Z"
+    },
+    {
+      "id": "simonw",
+      "name": "Simon Willison",
+      "status": "ok",
+      "fetched_count": 2,
+      "fresh_count": 1,
+      "stale_count": 1,
+      "oldest_published_at": "2026-10-22T18:09:56.000Z",
+      "newest_published_at": "2026-10-26T23:53:07.000Z"
+    },
+    {
+      "id": "martin_fowler",
+      "name": "Martin Fowler",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "2026-09-24T15:35:00.000Z",
+      "newest_published_at": "2026-10-21T10:51:00.000Z"
+    },
+    {
+      "id": "thoughtworks_insights",
+      "name": "Thoughtworks Insights",
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 1,
+      "stale_count": 5,
+      "oldest_published_at": "2026-10-15T00:00:00.000Z",
+      "newest_published_at": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "id": "latent_space",
+      "name": "Latent Space",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 1,
+      "stale_count": 9,
+      "oldest_published_at": "2026-10-21T05:01:26.000Z",
+      "newest_published_at": "2026-10-27T07:24:59.000Z"
+    },
+    {
+      "id": "interconnects",
+      "name": "Interconnects (Lambert)",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-09-10T15:28:52.000Z",
+      "newest_published_at": "2026-10-25T11:49:00.000Z"
+    },
+    {
+      "id": "import_ai",
+      "name": "Import AI (Jack Clark)",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 1,
+      "stale_count": 9,
+      "oldest_published_at": "2026-08-17T13:05:36.000Z",
+      "newest_published_at": "2026-10-26T12:31:52.000Z"
+    },
+    {
+      "id": "eugene_yan",
+      "name": "Eugene Yan",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2025-05-18T00:00:00.000Z",
+      "newest_published_at": "2026-06-21T00:00:00.000Z"
+    },
+    {
+      "id": "hamel",
+      "name": "Hamel Husain",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2025-10-01T07:00:00.000Z",
+      "newest_published_at": "2026-10-20T07:00:00.000Z"
+    },
+    {
+      "id": "philschmid",
+      "name": "Philipp Schmid",
+      "status": "ok",
+      "fetched_count": 15,
+      "fresh_count": 0,
+      "stale_count": 15,
+      "oldest_published_at": "2026-04-29T00:00:00.000Z",
+      "newest_published_at": "2026-09-28T00:00:00.000Z"
+    },
+    {
+      "id": "lilian_weng",
+      "name": "Lilian Weng",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2023-03-15T00:00:00.000Z",
+      "newest_published_at": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "chip_huyen",
+      "name": "Chip Huyen",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2023-06-07T00:00:00.000Z",
+      "newest_published_at": "2025-01-16T00:00:00.000Z"
+    },
+    {
+      "id": "addy_osmani",
+      "name": "Addy Osmani",
+      "status": "ok",
+      "fetched_count": 8,
+      "fresh_count": 0,
+      "stale_count": 8,
+      "oldest_published_at": "2026-07-06T00:00:00.000Z",
+      "newest_published_at": "2026-09-14T00:00:00.000Z"
+    },
+    {
+      "id": "daniel_miessler",
+      "name": "Daniel Miessler",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-10-01T22:45:00.000Z",
+      "newest_published_at": "2026-10-25T15:46:32.000Z"
+    },
+    {
+      "id": "sean_goedecke",
+      "name": "Sean Goedecke",
+      "status": "ok",
+      "fetched_count": 2,
+      "fresh_count": 0,
+      "stale_count": 2,
+      "oldest_published_at": "2026-10-12T00:00:00.000Z",
+      "newest_published_at": "2026-10-16T00:00:00.000Z"
+    },
+    {
+      "id": "techcrunch_ai",
+      "name": "TechCrunch AI",
+      "status": "ok",
+      "fetched_count": 12,
+      "fresh_count": 5,
+      "stale_count": 7,
+      "oldest_published_at": "2026-10-24T15:00:00.000Z",
+      "newest_published_at": "2026-10-27T02:00:00.000Z"
+    },
+    {
+      "id": "the_decoder",
+      "name": "The Decoder",
+      "status": "ok",
+      "fetched_count": 9,
+      "fresh_count": 8,
+      "stale_count": 1,
+      "oldest_published_at": "2026-10-25T10:08:49.000Z",
+      "newest_published_at": "2026-10-27T10:09:26.000Z"
+    },
+    {
+      "id": "mit_tech_review_ai",
+      "name": "MIT Technology Review AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 2,
+      "stale_count": 8,
+      "oldest_published_at": "2026-10-19T18:22:47.000Z",
+      "newest_published_at": "2026-10-26T17:45:43.000Z"
+    },
+    {
+      "id": "ars_ai",
+      "name": "Ars Technica AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 4,
+      "stale_count": 6,
+      "oldest_published_at": "2026-10-21T18:20:40.000Z",
+      "newest_published_at": "2026-10-26T20:04:16.000Z"
+    },
+    {
+      "id": "infoq_ai",
+      "name": "InfoQ AI/ML/Data",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 6,
+      "stale_count": 4,
+      "oldest_published_at": "2026-10-24T08:34:00.000Z",
+      "newest_published_at": "2026-10-27T04:45:00.000Z"
+    },
+    {
+      "id": "stackoverflow_blog",
+      "name": "Stack Overflow Blog",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "2026-10-15T17:00:00.000Z",
+      "newest_published_at": "2026-10-20T07:40:00.000Z"
+    },
+    {
+      "id": "the_verge_ai",
+      "name": "The Verge AI",
+      "status": "ok",
+      "fetched_count": 9,
+      "fresh_count": 9,
+      "stale_count": 0,
+      "oldest_published_at": "2026-10-26T13:15:00.000Z",
+      "newest_published_at": "2026-10-27T10:00:00.000Z"
+    },
+    {
+      "id": "wired_ai",
+      "name": "WIRED AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 6,
+      "stale_count": 4,
+      "oldest_published_at": "2026-10-22T13:00:00.000Z",
+      "newest_published_at": "2026-10-27T09:30:00.000Z"
+    },
+    {
+      "id": "nine_to_five_google_ai",
+      "name": "9to5Google AI",
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 0,
+      "stale_count": 6,
+      "oldest_published_at": "2017-08-08T14:44:01.000Z",
+      "newest_published_at": "2026-06-12T15:10:46.000Z"
+    },
+    {
+      "id": "product_hunt",
+      "name": "Product Hunt",
+      "status": "ok",
+      "fetched_count": 2,
+      "fresh_count": 2,
+      "stale_count": 0,
+      "oldest_published_at": "2026-10-26T12:12:10.000Z",
+      "newest_published_at": "2026-10-26T21:29:10.000Z"
+    },
+    {
+      "id": "marktechpost",
+      "name": "MarkTechPost",
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 403 Forbidden - <!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><m - url=https://www.marktechpost.com/feed",
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "hn_ai",
+      "name": "Hacker News (AI-filtered)",
+      "status": "ok",
+      "fetched_count": 3,
+      "fresh_count": 3,
+      "stale_count": 0,
+      "oldest_published_at": "2026-10-26T13:04:50.000Z",
+      "newest_published_at": "2026-10-26T22:41:48.000Z"
+    },
+    {
+      "id": "hn_show_ai",
+      "name": "Show HN (AI-filtered)",
+      "status": "ok",
+      "fetched_count": 2,
+      "fresh_count": 1,
+      "stale_count": 1,
+      "oldest_published_at": "2026-10-25T00:43:47.000Z",
+      "newest_published_at": "2026-10-26T16:12:29.000Z"
+    },
+    {
+      "id": "lobsters_ai",
+      "name": "Lobsters (AI tag)",
+      "status": "ok",
+      "fetched_count": 20,
+      "fresh_count": 0,
+      "stale_count": 20,
+      "oldest_published_at": "2026-09-19T16:31:05.000Z",
+      "newest_published_at": "2026-10-23T17:25:34.000Z"
+    },
+    {
+      "id": "r_localllama",
+      "name": "r/LocalLLaMA",
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "Invalid character in entity name\nLine: 23\nColumn: 151\nChar: =",
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "r_ml",
+      "name": "r/MachineLearning",
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "Feed not recognized as RSS 1 or 2.",
+      "fresh_count": 0,
+      "stale_count": 0
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 7,
+      "stale_count": 3,
+      "oldest_published_at": "2026-10-23T00:00:00.000Z",
+      "newest_published_at": "2026-10-26T22:00:00.000Z"
+    },
+    {
+      "id": "deepmind",
+      "name": "Google DeepMind",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-09-24T16:20:39.000Z",
+      "newest_published_at": "2026-10-22T14:30:24.000Z"
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "status": "ok",
+      "fetched_count": 12,
+      "fresh_count": 1,
+      "stale_count": 11,
+      "oldest_published_at": "2026-10-16T00:00:00.000Z",
+      "newest_published_at": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-07-08T12:00:59.000Z",
+      "newest_published_at": "2026-10-22T07:00:00.000Z"
+    },
+    {
+      "id": "google_research",
+      "name": "Google Research",
+      "status": "ok",
+      "fetched_count": 7,
+      "fresh_count": 0,
+      "stale_count": 7,
+      "oldest_published_at": "2026-09-24T19:40:00.000Z",
+      "newest_published_at": "2026-10-23T18:51:33.000Z"
+    },
+    {
+      "id": "google_ai_keyword",
+      "name": "Google AI on Keyword",
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 0,
+      "stale_count": 6,
+      "oldest_published_at": "2026-10-16T16:00:00.000Z",
+      "newest_published_at": "2026-10-23T00:00:00.000Z"
+    },
+    {
+      "id": "meta_ai",
+      "name": "Meta AI Blog",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "1970-01-01T00:00:00.000Z",
+      "newest_published_at": "2026-07-09T00:00:00.000Z"
+    },
+    {
+      "id": "microsoft_research",
+      "name": "Microsoft Research",
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 0,
+      "stale_count": 6,
+      "oldest_published_at": "2026-09-28T21:00:00.000Z",
+      "newest_published_at": "2026-10-22T16:00:00.000Z"
+    },
+    {
+      "id": "azure_ai_blog",
+      "name": "Azure AI Blog",
+      "status": "ok",
+      "fetched_count": 5,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "oldest_published_at": "2026-10-07T15:00:00.000Z",
+      "newest_published_at": "2026-10-16T16:05:00.000Z"
+    },
+    {
+      "id": "aws_ml_blog",
+      "name": "AWS Machine Learning Blog",
+      "status": "ok",
+      "fetched_count": 9,
+      "fresh_count": 2,
+      "stale_count": 7,
+      "oldest_published_at": "2026-10-22T17:48:22.000Z",
+      "newest_published_at": "2026-10-26T17:27:20.000Z"
+    },
+    {
+      "id": "nvidia_developer_blog",
+      "name": "NVIDIA Developer Blog",
+      "status": "ok",
+      "fetched_count": 11,
+      "fresh_count": 2,
+      "stale_count": 9,
+      "oldest_published_at": "2026-10-21T09:35:32.000Z",
+      "newest_published_at": "2026-10-26T16:00:00.000Z"
+    },
+    {
+      "id": "cloudflare_ai_changelog",
+      "name": "Cloudflare AI Changelog",
+      "status": "ok",
+      "fetched_count": 9,
+      "fresh_count": 2,
+      "stale_count": 7,
+      "oldest_published_at": "2026-10-19T00:00:00.000Z",
+      "newest_published_at": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "id": "cohere_blog",
+      "name": "Cohere Blog",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-10-14T16:48:00.000Z",
+      "newest_published_at": "2026-10-22T20:36:00.000Z"
+    },
+    {
+      "id": "ai2_blog",
+      "name": "Ai2 Blog",
+      "status": "ok",
+      "fetched_count": 3,
+      "fresh_count": 0,
+      "stale_count": 3,
+      "oldest_published_at": "2026-10-09T08:00:00.000Z",
+      "newest_published_at": "2026-10-22T08:00:00.000Z"
+    },
+    {
+      "id": "together",
+      "name": "Together AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-09-10T00:00:00.000Z",
+      "newest_published_at": "2026-10-19T00:00:00.000Z"
+    },
+    {
+      "id": "modal",
+      "name": "Modal",
+      "status": "ok",
+      "fetched_count": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "oldest_published_at": "2026-10-13T12:00:00.000Z",
+      "newest_published_at": "2026-10-22T12:00:00.000Z"
+    },
+    {
+      "id": "weaviate",
+      "name": "Weaviate",
+      "status": "ok",
+      "fetched_count": 6,
+      "fresh_count": 0,
+      "stale_count": 6,
+      "oldest_published_at": "2026-09-09T00:00:00.000Z",
+      "newest_published_at": "2026-10-15T00:00:00.000Z"
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "status": "ok",
+      "fetched_count": 12,
+      "fresh_count": 0,
+      "stale_count": 12,
+      "oldest_published_at": "2026-07-20T12:00:00.000Z",
+      "newest_published_at": "2026-08-14T12:00:00.000Z"
+    },
+    {
+      "id": "fahd_mirza",
+      "name": "Fahd Mirza YouTube",
+      "status": "ok",
+      "fetched_count": 8,
+      "fresh_count": 3,
+      "stale_count": 5,
+      "oldest_published_at": "2026-10-23T06:00:27.000Z",
+      "newest_published_at": "2026-10-27T04:00:36.000Z"
+    },
+    {
+      "id": "yt_nate_b_jones",
+      "name": "AI News & Strategy Daily",
+      "status": "ok",
+      "fetched_count": 8,
+      "fresh_count": 0,
+      "stale_count": 8,
+      "oldest_published_at": "2026-10-18T16:00:27.000Z",
+      "newest_published_at": "2026-10-25T16:00:17.000Z"
+    }
+  ],
+  "top_news": [
+    {
+      "cluster_id": "kq6xyr",
+      "title": "Whispering Wisely: Smart Subset Selection for ASR Fine-Tuning",
+      "url": "https://arxiv.org/abs/2610.32997",
+      "source_name": "arXiv cs.CL",
+      "published_at": "2026-10-27T04:00:00.000Z",
+      "kind": "paper",
+      "score": 0.813,
+      "dek": "Researchers propose an embedding-based subset selection method to reduce the computational cost of fine-tuning ASR models like Whisper.",
+      "brief": "Fine-tuning ASR models on large datasets is resource-intensive. This approach uses Whisper's pretrained encoder to map audio samples into an embedding space, then applies a greedy k-center algorithm to select a diverse, representative subset of data for training.",
+      "image_alt": "Diagram showing audio samples mapped to an embedding space with selected representative clusters.",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-10-27T10:34:13.004Z"
+    },
+    {
+      "cluster_id": "ziw7sb",
+      "title": "Working with academic communities to build scientific understanding",
+      "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities",
+      "source_name": "OpenAI",
+      "published_at": "2026-10-26T14:30:00.000Z",
+      "kind": "paper",
+      "score": 0.778,
+      "dek": "OpenAI is experimenting with new academic release strategies for AI-generated scientific discoveries in math, physics, and computer science.",
+      "brief": "OpenAI is releasing raw research data on the Kakeya conjecture, the Exponential Time Hypothesis, and quantum chromodynamics. They are collaborating with academic 'shepherds' to organize expert review and verification, treating AI outputs as raw data rather than finished papers.",
+      "image_alt": "Abstract representation of scientific research collaboration between AI and academic experts.",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-10-27T10:34:13.004Z"
+    },
+    {
+      "cluster_id": "1pq0dyb",
+      "title": "Cross-request KV cache exposure in the GLM-5.3 Workers AI model (155 responses)",
+      "url": "https://blog.cloudflare.com/kv-cache-exposure-remediation",
+      "source_name": "Hacker News (AI-filtered)",
+      "published_at": "2026-10-26T22:41:48Z",
+      "kind": "news",
+      "score": 0.776,
+      "dek": "Cloudflare remediated a vulnerability in the GLM-5.3 Workers AI model that caused cross-request KV cache exposure.",
+      "brief": "Between August 27 and September 9, 2026, 155 responses from the GLM-5.3 model contained data from previous user requests. Cloudflare confirmed the issue was isolated to this specific model and has since implemented a fix.",
+      "image_alt": "Security vulnerability remediation concept showing isolated data streams.",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-10-27T10:34:13.004Z"
+    },
+    {
+      "cluster_id": "1q22qii",
+      "title": "Developers Reporting Double-Digit Weekly Time Savings From AI Fell From 68% to 26%",
+      "url": "https://infoq.com/news/2026/10/atlassian-devex-2026",
+      "source_name": "InfoQ AI/ML/Data",
+      "published_at": "2026-10-27T04:45:00.000Z",
+      "kind": "news",
+      "score": 0.775,
+      "dek": "Atlassian's 2026 report shows a sharp decline in developers reporting significant weekly time savings from AI tools.",
+      "brief": "The percentage of developers saving ten or more hours per week with AI dropped from 68% to 26% year-over-year. Only 28% of developers report reduced friction, with many engineering leaders noting that managing and correcting AI-generated output now consumes significant time.",
+      "image_url": "https://res.infoq.com/news/2026/10/atlassian-devex-2026/en/headerimage/generatedHeaderImage-1793026389174.jpg",
+      "image_alt": "Chart showing the year-over-year decline in developer productivity gains from AI.",
+      "image_source": "rss_content",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-10-27T10:34:13.004Z"
+    },
+    {
+      "cluster_id": "15xfk97",
+      "title": "[AINews] Anthropic files for $2T IPO in 2 weeks: 1400% growth rate, 48% of revenue through cloud partners, 85% margin, $1B op profit in Q2, $134B cash in bank and $10B lifetime burn",
+      "url": "https://latent.space/p/ainews-anthropic-s1",
+      "source_name": "Latent Space",
+      "published_at": "2026-10-27T07:24:59.000Z",
+      "kind": "news",
+      "score": 0.695,
+      "dek": "Anthropic has filed for a $2 trillion IPO, reporting high growth, strong margins, and significant operational profitability.",
+      "brief": "Anthropic's S-1 filing reveals a 1400% growth rate, 85% margins, and $1 billion in Q2 operating profit. The company reports $134 billion in cash reserves against $10 billion in lifetime burn, with nearly half of its revenue generated through cloud partnerships.",
+      "image_url": "https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/f056ab0b-c9ca-46f2-8fb1-08d5f2f6b891/image.png?t=1793085208",
+      "image_alt": "Financial growth chart representing Anthropic's IPO metrics.",
+      "image_source": "rss_media",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-10-27T10:34:13.004Z"
+    }
+  ],
+  "count": 43,
+  "clusters": [
+    {
+      "id": "kq6xyr",
+      "primary": {
+        "id": "kq6xyr",
+        "source_id": "arxiv_cl",
+        "source_name": "arXiv cs.CL",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "paper",
+        "title": "Whispering Wisely: Smart Subset Selection for ASR Fine-Tuning",
+        "url": "https://arxiv.org/abs/2610.32997",
+        "original_url": "https://arxiv.org/abs/2610.32997",
+        "summary": "Automatic Speech Recognition (ASR) models such as OpenAIs Whisper have substantially improved speech recognition quality but remain expensive to fine-tune, especially when large amounts of transcribed audio are available. This makes it challenging for many practitioners to adapt these models to new languages or domains. In this work, we introduce an embedding-based subset selection approach for selecting smaller training sets for ASR fine-tuning. Using Whispers pretrained encoder, we map each audio sample into a fixed-dimensional embedding space and apply a greedy k-center algorithm to select",
+        "published_at": "2026-10-27T04:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "kq6xyr",
+          "source_id": "arxiv_cl",
+          "source_name": "arXiv cs.CL",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "paper",
+          "title": "Whispering Wisely: Smart Subset Selection for ASR Fine-Tuning",
+          "url": "https://arxiv.org/abs/2610.32997",
+          "original_url": "https://arxiv.org/abs/2610.32997",
+          "summary": "Automatic Speech Recognition (ASR) models such as OpenAIs Whisper have substantially improved speech recognition quality but remain expensive to fine-tune, especially when large amounts of transcribed audio are available. This makes it challenging for many practitioners to adapt these models to new languages or domains. In this work, we introduce an embedding-based subset selection approach for selecting smaller training sets for ASR fine-tuning. Using Whispers pretrained encoder, we map each audio sample into a fixed-dimensional embedding space and apply a greedy k-center algorithm to select",
+          "published_at": "2026-10-27T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "arxiv_cl",
+          "source_name": "arXiv cs.CL",
+          "title": "Whispering Wisely: Smart Subset Selection for ASR Fine-Tuning",
+          "url": "https://arxiv.org/abs/2610.32997",
+          "published_at": "2026-10-27T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "Proposes a smart subset selection method to reduce computational costs for fine-tuning ASR models like Whisper.",
+      "novelty": 0.846,
+      "novelty_label": "high",
+      "trust": 0.9,
+      "score": 0.813,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "17038m5",
+      "primary": {
+        "id": "17038m5",
+        "source_id": "arxiv_cl",
+        "source_name": "arXiv cs.CL",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "paper",
+        "title": "Entity-Aware Evaluation of OCR Systems for Historical Document Transcription",
+        "url": "https://arxiv.org/abs/2610.33004",
+        "original_url": "https://arxiv.org/abs/2610.33004",
+        "summary": "Optical Character Recognition (OCR) is essential for digitizing historical archives, yet standard evaluation metrics such as Character Error Rate (CER) do not necessarily reflect whether meaningful information, such as names, dates, and identifiers, is preserved. In this work, we investigate entitylevel analysis of OCR errors as a complementary perspective for evaluating OCR quality in historical documents. Using a publicly available benchmark of 175 documents from the Berrutti Archive, augmented with 5,209 manually annotated entity mentions that will be released upon acceptance, we compare se",
+        "published_at": "2026-10-27T04:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "17038m5",
+          "source_id": "arxiv_cl",
+          "source_name": "arXiv cs.CL",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "paper",
+          "title": "Entity-Aware Evaluation of OCR Systems for Historical Document Transcription",
+          "url": "https://arxiv.org/abs/2610.33004",
+          "original_url": "https://arxiv.org/abs/2610.33004",
+          "summary": "Optical Character Recognition (OCR) is essential for digitizing historical archives, yet standard evaluation metrics such as Character Error Rate (CER) do not necessarily reflect whether meaningful information, such as names, dates, and identifiers, is preserved. In this work, we investigate entitylevel analysis of OCR errors as a complementary perspective for evaluating OCR quality in historical documents. Using a publicly available benchmark of 175 documents from the Berrutti Archive, augmented with 5,209 manually annotated entity mentions that will be released upon acceptance, we compare se",
+          "published_at": "2026-10-27T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "arxiv_cl",
+          "source_name": "arXiv cs.CL",
+          "title": "Entity-Aware Evaluation of OCR Systems for Historical Document Transcription",
+          "url": "https://arxiv.org/abs/2610.33004",
+          "published_at": "2026-10-27T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "Introduces entity-aware evaluation metrics for OCR to better assess accuracy on historical documents beyond standard CER.",
+      "novelty": 0.816,
+      "novelty_label": "high",
+      "trust": 0.9,
+      "score": 0.804,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "ziw7sb",
+      "primary": {
+        "id": "ziw7sb",
+        "source_id": "openai",
+        "source_name": "OpenAI",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "company_announcement",
+        "title": "Working with academic communities to build scientific understanding",
+        "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities",
+        "original_url": "https://openai.com/index/building-scientific-understanding-with-academic-communities",
+        "summary": "OpenAI shares model results on the Kakeya conjecture, Exponential Time Hypothesis, and quantum chromodynamics—and how researchers can verify and build on them.",
+        "published_at": "2026-10-26T14:30:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "ziw7sb",
+          "source_id": "openai",
+          "source_name": "OpenAI",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "company_announcement",
+          "title": "Working with academic communities to build scientific understanding",
+          "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities",
+          "original_url": "https://openai.com/index/building-scientific-understanding-with-academic-communities",
+          "summary": "OpenAI shares model results on the Kakeya conjecture, Exponential Time Hypothesis, and quantum chromodynamics—and how researchers can verify and build on them.",
+          "published_at": "2026-10-26T14:30:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "openai",
+          "source_name": "OpenAI",
+          "title": "Working with academic communities to build scientific understanding",
+          "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities",
+          "published_at": "2026-10-26T14:30:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "signal",
+      "one_liner": "OpenAI reports model performance on mathematical and scientific benchmarks including the Kakeya conjecture.",
+      "novelty": 0.805,
+      "novelty_label": "high",
+      "trust": 0.9,
+      "score": 0.778,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "1pq0dyb",
+      "primary": {
+        "id": "1pq0dyb",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "Cross-request KV cache exposure in the GLM-5.3 Workers AI model (155 responses)",
+        "url": "https://blog.cloudflare.com/kv-cache-exposure-remediation",
+        "original_url": "https://blog.cloudflare.com/kv-cache-exposure-remediation/",
+        "discussion_url": "https://news.ycombinator.com/item?id=50252159",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-10-26T22:41:48Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 139,
+          "comments": 45
+        }
+      },
+      "members": [
+        {
+          "id": "1pq0dyb",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "Cross-request KV cache exposure in the GLM-5.3 Workers AI model (155 responses)",
+          "url": "https://blog.cloudflare.com/kv-cache-exposure-remediation",
+          "original_url": "https://blog.cloudflare.com/kv-cache-exposure-remediation/",
+          "discussion_url": "https://news.ycombinator.com/item?id=50252159",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-10-26T22:41:48Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 139,
+            "comments": 45
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "Cross-request KV cache exposure in the GLM-5.3 Workers AI model (155 responses)",
+          "url": "https://blog.cloudflare.com/kv-cache-exposure-remediation",
+          "published_at": "2026-10-26T22:41:48Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=50252159",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Cloudflare details remediation for a cross-request KV cache exposure vulnerability in the GLM-5.3 model.",
+      "novelty": 0.847,
+      "novelty_label": "high",
+      "trust": 0.65,
+      "score": 0.776,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1q22qii",
+      "primary": {
+        "id": "1q22qii",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "Developers Reporting Double-Digit Weekly Time Savings From AI Fell From 68% to 26%",
+        "url": "https://infoq.com/news/2026/10/atlassian-devex-2026",
+        "original_url": "https://www.infoq.com/news/2026/10/atlassian-devex-2026/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Atlassian’s State of Developer Experience 2026 finds the share of developers saving ten or more hours a week with AI dropped from 68% to 26% year over year, while only 28% report noticeably less friction than before AI. Engineering leaders report spending more time managing and correcting AI output than developers do. By Steef-Jan Wiggers",
+        "image_url": "https://res.infoq.com/news/2026/10/atlassian-devex-2026/en/headerimage/generatedHeaderImage-1793026389174.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-10-27T04:45:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1q22qii",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "Developers Reporting Double-Digit Weekly Time Savings From AI Fell From 68% to 26%",
+          "url": "https://infoq.com/news/2026/10/atlassian-devex-2026",
+          "original_url": "https://www.infoq.com/news/2026/10/atlassian-devex-2026/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "Atlassian’s State of Developer Experience 2026 finds the share of developers saving ten or more hours a week with AI dropped from 68% to 26% year over year, while only 28% report noticeably less friction than before AI. Engineering leaders report spending more time managing and correcting AI output than developers do. By Steef-Jan Wiggers",
+          "image_url": "https://res.infoq.com/news/2026/10/atlassian-devex-2026/en/headerimage/generatedHeaderImage-1793026389174.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-27T04:45:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "Developers Reporting Double-Digit Weekly Time Savings From AI Fell From 68% to 26%",
+          "url": "https://infoq.com/news/2026/10/atlassian-devex-2026",
+          "published_at": "2026-10-27T04:45:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Atlassian report shows a significant decline in developer time savings attributed to AI tools year-over-year.",
+      "novelty": 0.805,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.775,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "srrchb",
+      "primary": {
+        "id": "srrchb",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "GPT-6.1 Terra halves OpenAI's API prices and still gains ground on its larger models",
+        "url": "https://the-decoder.com/gpt-6-1-terra-halves-openais-api-prices-and-still-gains-ground-on-its-larger-models",
+        "original_url": "https://the-decoder.com/gpt-6-1-terra-halves-openais-api-prices-and-still-gains-ground-on-its-larger-models/",
+        "summary": "OpenAI has released GPT-6.1 Terra, a mid-range model that cuts API prices in half compared to its predecessor. Analysts say it sets a new standard for intelligence per dollar, especially for everyday computing tasks and AI-driven computer control. The article GPT-6.1 Terra halves OpenAI's API prices and still gains ground on its larger models appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/openai_logo_earth.png",
+        "image_source": "rss_content",
+        "published_at": "2026-10-26T20:30:55.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "srrchb",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "GPT-6.1 Terra halves OpenAI's API prices and still gains ground on its larger models",
+          "url": "https://the-decoder.com/gpt-6-1-terra-halves-openais-api-prices-and-still-gains-ground-on-its-larger-models",
+          "original_url": "https://the-decoder.com/gpt-6-1-terra-halves-openais-api-prices-and-still-gains-ground-on-its-larger-models/",
+          "summary": "OpenAI has released GPT-6.1 Terra, a mid-range model that cuts API prices in half compared to its predecessor. Analysts say it sets a new standard for intelligence per dollar, especially for everyday computing tasks and AI-driven computer control. The article GPT-6.1 Terra halves OpenAI's API prices and still gains ground on its larger models appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/openai_logo_earth.png",
+          "image_source": "rss_content",
+          "published_at": "2026-10-26T20:30:55.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "GPT-6.1 Terra halves OpenAI's API prices and still gains ground on its larger models",
+          "url": "https://the-decoder.com/gpt-6-1-terra-halves-openais-api-prices-and-still-gains-ground-on-its-larger-models",
+          "published_at": "2026-10-26T20:30:55.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "OpenAI releases GPT-6.1 Terra, a mid-range model with reduced API pricing.",
+      "novelty": 0.813,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.754,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
+    },
+    {
+      "id": "15xfk97",
+      "primary": {
+        "id": "15xfk97",
+        "source_id": "latent_space",
+        "source_name": "Latent Space",
+        "source_role": "main",
+        "trust": 0.85,
+        "title": "[AINews] Anthropic files for $2T IPO in 2 weeks: 1400% growth rate, 48% of revenue through cloud partners, 85% margin, $1B op profit in Q2, $134B cash in bank and $10B lifetime burn",
+        "url": "https://latent.space/p/ainews-anthropic-s1",
+        "original_url": "https://latent.space/p/ainews-anthropic-s1/",
+        "summary": "The S-1, the numbers, and the reactions.",
+        "image_url": "https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/f056ab0b-c9ca-46f2-8fb1-08d5f2f6b891/image.png?t=1793085208",
+        "image_source": "rss_media",
+        "published_at": "2026-10-27T07:24:59.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "15xfk97",
+          "source_id": "latent_space",
+          "source_name": "Latent Space",
+          "source_role": "main",
+          "trust": 0.85,
+          "title": "[AINews] Anthropic files for $2T IPO in 2 weeks: 1400% growth rate, 48% of revenue through cloud partners, 85% margin, $1B op profit in Q2, $134B cash in bank and $10B lifetime burn",
+          "url": "https://latent.space/p/ainews-anthropic-s1",
+          "original_url": "https://latent.space/p/ainews-anthropic-s1/",
+          "summary": "The S-1, the numbers, and the reactions.",
+          "image_url": "https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/f056ab0b-c9ca-46f2-8fb1-08d5f2f6b891/image.png?t=1793085208",
+          "image_source": "rss_media",
+          "published_at": "2026-10-27T07:24:59.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "latent_space",
+          "source_name": "Latent Space",
+          "title": "[AINews] Anthropic files for $2T IPO in 2 weeks: 1400% growth rate, 48% of revenue through cloud partners, 85% margin, $1B op profit in Q2, $134B cash in bank and $10B lifetime burn",
+          "url": "https://latent.space/p/ainews-anthropic-s1",
+          "published_at": "2026-10-27T07:24:59.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Summary of Anthropic's S-1 filing and financial performance metrics.",
+      "novelty": 0.848,
+      "novelty_label": "high",
+      "trust": 0.85,
+      "score": 0.695,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "primary source has high trust weight",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "15m585a",
+      "primary": {
+        "id": "15m585a",
+        "source_id": "arxiv_cl",
+        "source_name": "arXiv cs.CL",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "paper",
+        "title": "From Writing Advice to Manuscript Governance: A Constrained-Transformation Framework for Academic Revision",
+        "url": "https://arxiv.org/abs/2610.33001",
+        "original_url": "https://arxiv.org/abs/2610.33001",
+        "summary": "Academic revision presents a governance problem when legitimate writing objectives conflict. Writing-process and social-science research show that revision is recursive and that wording carries epistemic and disciplinary commitments. Those literatures identify important constraints but do not settle which objective should prevail when concision, outlet form or stylistic variation conflicts with evidence and claim boundaries. This paper models revision as an admissibility problem under ordered constraints. Task-relative invariants, contextual constraints and mutable presentation choices define",
+        "published_at": "2026-10-27T04:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "15m585a",
+          "source_id": "arxiv_cl",
+          "source_name": "arXiv cs.CL",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "paper",
+          "title": "From Writing Advice to Manuscript Governance: A Constrained-Transformation Framework for Academic Revision",
+          "url": "https://arxiv.org/abs/2610.33001",
+          "original_url": "https://arxiv.org/abs/2610.33001",
+          "summary": "Academic revision presents a governance problem when legitimate writing objectives conflict. Writing-process and social-science research show that revision is recursive and that wording carries epistemic and disciplinary commitments. Those literatures identify important constraints but do not settle which objective should prevail when concision, outlet form or stylistic variation conflicts with evidence and claim boundaries. This paper models revision as an admissibility problem under ordered constraints. Task-relative invariants, contextual constraints and mutable presentation choices define",
+          "published_at": "2026-10-27T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "arxiv_cl",
+          "source_name": "arXiv cs.CL",
+          "title": "From Writing Advice to Manuscript Governance: A Constrained-Transformation Framework for Academic Revision",
+          "url": "https://arxiv.org/abs/2610.33001",
+          "published_at": "2026-10-27T04:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "mixed",
+      "one_liner": "Explores academic revision through a constrained-transformation framework; lacks clear technical implementation details.",
+      "novelty": 0.838,
+      "novelty_label": "high",
+      "trust": 0.9,
+      "score": 0.698,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "primary source has high trust weight",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Save this for technical review if the method maps to your roadmap."
+    },
+    {
+      "id": "18cfhhh",
+      "primary": {
+        "id": "18cfhhh",
+        "source_id": "openai",
+        "source_name": "OpenAI",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "company_announcement",
+        "title": "GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases",
+        "url": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
+        "original_url": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
+        "summary": "CodeRabbit uses GPT-6.1 Sol to investigate security risks across complex codebases. Its security agent helps developers review findings and proposed fixes.",
+        "published_at": "2026-10-26T13:45:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "18cfhhh",
+          "source_id": "openai",
+          "source_name": "OpenAI",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "company_announcement",
+          "title": "GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases",
+          "url": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
+          "original_url": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
+          "summary": "CodeRabbit uses GPT-6.1 Sol to investigate security risks across complex codebases. Its security agent helps developers review findings and proposed fixes.",
+          "published_at": "2026-10-26T13:45:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "openai",
+          "source_name": "OpenAI",
+          "title": "GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases",
+          "url": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
+          "published_at": "2026-10-26T13:45:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "mixed",
+      "one_liner": "CodeRabbit integrates GPT-6.1 Sol for automated security analysis and code review.",
+      "novelty": 0.836,
+      "novelty_label": "high",
+      "trust": 0.9,
+      "score": 0.674,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+    },
+    {
+      "id": "nco2o0",
+      "primary": {
+        "id": "nco2o0",
+        "source_id": "hn_show_ai",
+        "source_name": "Show HN (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.58,
+        "kind_hint": "tool",
+        "title": "Show HN: Hob - Open-source, on device alternative to Claude Cowork and ChatGPT",
+        "url": "https://github.com/FrigadeHQ/hob",
+        "original_url": "https://github.com/FrigadeHQ/hob",
+        "discussion_url": "https://news.ycombinator.com/item?id=50246238",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-10-26T16:12:29Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 147,
+          "comments": 33
+        }
+      },
+      "members": [
+        {
+          "id": "nco2o0",
+          "source_id": "hn_show_ai",
+          "source_name": "Show HN (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.58,
+          "kind_hint": "tool",
+          "title": "Show HN: Hob - Open-source, on device alternative to Claude Cowork and ChatGPT",
+          "url": "https://github.com/FrigadeHQ/hob",
+          "original_url": "https://github.com/FrigadeHQ/hob",
+          "discussion_url": "https://news.ycombinator.com/item?id=50246238",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-10-26T16:12:29Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 147,
+            "comments": 33
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_show_ai",
+          "source_name": "Show HN (AI-filtered)",
+          "title": "Show HN: Hob - Open-source, on device alternative to Claude Cowork and ChatGPT",
+          "url": "https://github.com/FrigadeHQ/hob",
+          "published_at": "2026-10-26T16:12:29Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=50246238",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Open-source, on-device agentic tool presented as an alternative to proprietary coding assistants.",
+      "novelty": 0.582,
+      "novelty_label": "medium",
+      "trust": 0.58,
+      "score": 0.67,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as concrete builder or research signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "5bshc8",
+      "primary": {
+        "id": "5bshc8",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "OpenAI's Ted Sanders shares a rule of thumb for picking the right GPT-model",
+        "url": "https://the-decoder.com/openais-ted-sanders-shares-a-rule-of-thumb-for-picking-the-right-gpt-model",
+        "original_url": "https://the-decoder.com/openais-ted-sanders-shares-a-rule-of-thumb-for-picking-the-right-gpt-model/",
+        "summary": "OpenAI's Ted Sanders explains where GPT-6.1 Terra fits in the company's GPT lineup. The smaller model outperforms the larger Astra in technical communication and costs far less but trails it in most other areas. Sanders says model size, reasoning effort, and multi-agent systems are distinct dimensions that can’t be reduced to a single \"IQ score.\" The article OpenAI's Ted Sanders shares a rule of thumb for picking the right GPT-model appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/openai_logo-1.png",
+        "image_source": "rss_content",
+        "published_at": "2026-10-27T10:09:26.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "5bshc8",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "OpenAI's Ted Sanders shares a rule of thumb for picking the right GPT-model",
+          "url": "https://the-decoder.com/openais-ted-sanders-shares-a-rule-of-thumb-for-picking-the-right-gpt-model",
+          "original_url": "https://the-decoder.com/openais-ted-sanders-shares-a-rule-of-thumb-for-picking-the-right-gpt-model/",
+          "summary": "OpenAI's Ted Sanders explains where GPT-6.1 Terra fits in the company's GPT lineup. The smaller model outperforms the larger Astra in technical communication and costs far less but trails it in most other areas. Sanders says model size, reasoning effort, and multi-agent systems are distinct dimensions that can’t be reduced to a single \"IQ score.\" The article OpenAI's Ted Sanders shares a rule of thumb for picking the right GPT-model appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/openai_logo-1.png",
+          "image_source": "rss_content",
+          "published_at": "2026-10-27T10:09:26.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "OpenAI's Ted Sanders shares a rule of thumb for picking the right GPT-model",
+          "url": "https://the-decoder.com/openais-ted-sanders-shares-a-rule-of-thumb-for-picking-the-right-gpt-model",
+          "published_at": "2026-10-27T10:09:26.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "Overview of GPT-6.1 Terra performance trade-offs compared to larger models like Astra.",
+      "novelty": 0.822,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.667,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1fcy30z",
+      "primary": {
+        "id": "1fcy30z",
+        "source_id": "ars_ai",
+        "source_name": "Ars Technica AI",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "news",
+        "title": "Apple releases iOS and macOS 27.2 with new Siri AI features, new Music logo",
+        "url": "https://arstechnica.com/apple/2026/10/apple-releases-ios-and-macos-27-2-with-new-siri-ai-features-new-music-logo",
+        "original_url": "https://arstechnica.com/apple/2026/10/apple-releases-ios-and-macos-27-2-with-new-siri-ai-features-new-music-logo/",
+        "summary": "Included is the ability to limit which applications Siri can directly access.",
+        "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/10/Siri-AI-1152x648.png",
+        "image_source": "rss_media",
+        "published_at": "2026-10-26T20:04:16.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1fcy30z",
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "news",
+          "title": "Apple releases iOS and macOS 27.2 with new Siri AI features, new Music logo",
+          "url": "https://arstechnica.com/apple/2026/10/apple-releases-ios-and-macos-27-2-with-new-siri-ai-features-new-music-logo",
+          "original_url": "https://arstechnica.com/apple/2026/10/apple-releases-ios-and-macos-27-2-with-new-siri-ai-features-new-music-logo/",
+          "summary": "Included is the ability to limit which applications Siri can directly access.",
+          "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/10/Siri-AI-1152x648.png",
+          "image_source": "rss_media",
+          "published_at": "2026-10-26T20:04:16.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "title": "Apple releases iOS and macOS 27.2 with new Siri AI features, new Music logo",
+          "url": "https://arstechnica.com/apple/2026/10/apple-releases-ios-and-macos-27-2-with-new-siri-ai-features-new-music-logo",
+          "published_at": "2026-10-26T20:04:16.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Apple updates iOS and macOS with new Siri features, including granular application access controls.",
+      "novelty": 0.813,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.65,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "16q1pyr",
+      "primary": {
+        "id": "16q1pyr",
+        "source_id": "openai",
+        "source_name": "OpenAI",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "company_announcement",
+        "title": "Introducing GPT-6.1 Terra",
+        "url": "https://openai.com/index/introducing-gpt-6-1-terra",
+        "original_url": "https://openai.com/index/introducing-gpt-6-1-terra",
+        "summary": "Bringing fast and capable computer use to everyone",
+        "published_at": "2026-10-26T00:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "16q1pyr",
+          "source_id": "openai",
+          "source_name": "OpenAI",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "company_announcement",
+          "title": "Introducing GPT-6.1 Terra",
+          "url": "https://openai.com/index/introducing-gpt-6-1-terra",
+          "original_url": "https://openai.com/index/introducing-gpt-6-1-terra",
+          "summary": "Bringing fast and capable computer use to everyone",
+          "published_at": "2026-10-26T00:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "openai",
+          "source_name": "OpenAI",
+          "title": "Introducing GPT-6.1 Terra",
+          "url": "https://openai.com/index/introducing-gpt-6-1-terra",
+          "published_at": "2026-10-26T00:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "OpenAI releases GPT-6.1 Terra, featuring updated capabilities for computer use.",
+      "novelty": 0.375,
+      "novelty_label": "familiar",
+      "trust": 0.9,
+      "score": 0.625,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Check migration notes, pricing, and benchmark deltas before adopting."
+    },
+    {
+      "id": "1nqtcv8",
+      "primary": {
+        "id": "1nqtcv8",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "AGNTCon + MCPCon 2026: Agentic AI Foundation Adds Four Projects as MCP Turns to Security",
+        "url": "https://infoq.com/news/2026/10/agntcon-mcpcon-2026",
+        "original_url": "https://www.infoq.com/news/2026/10/agntcon-mcpcon-2026/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "At AGNTCon + MCPCon North America 2026, the Agentic AI Foundation added OpenSandbox, Open Responses, Agent Skills, and OpenEnv, reaching ten projects in its first year. Keynotes from Anthropic, OpenAI, Google, and UC Berkeley focused on MCP in production, security, and agents with their own identities. By Andrew Hoblitzell",
+        "image_url": "https://res.infoq.com/news/2026/10/agntcon-mcpcon-2026/en/headerimage/agntcon-header-1792936265463.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-10-26T22:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1nqtcv8",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "AGNTCon + MCPCon 2026: Agentic AI Foundation Adds Four Projects as MCP Turns to Security",
+          "url": "https://infoq.com/news/2026/10/agntcon-mcpcon-2026",
+          "original_url": "https://www.infoq.com/news/2026/10/agntcon-mcpcon-2026/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "At AGNTCon + MCPCon North America 2026, the Agentic AI Foundation added OpenSandbox, Open Responses, Agent Skills, and OpenEnv, reaching ten projects in its first year. Keynotes from Anthropic, OpenAI, Google, and UC Berkeley focused on MCP in production, security, and agents with their own identities. By Andrew Hoblitzell",
+          "image_url": "https://res.infoq.com/news/2026/10/agntcon-mcpcon-2026/en/headerimage/agntcon-header-1792936265463.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-26T22:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "AGNTCon + MCPCon 2026: Agentic AI Foundation Adds Four Projects as MCP Turns to Security",
+          "url": "https://infoq.com/news/2026/10/agntcon-mcpcon-2026",
+          "published_at": "2026-10-26T22:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "mixed",
+      "one_liner": "Agentic AI Foundation adds four projects and discusses MCP security at their 2026 conference.",
+      "novelty": 0.765,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.639,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+    },
+    {
+      "id": "bbn40j",
+      "primary": {
+        "id": "bbn40j",
+        "source_id": "fahd_mirza",
+        "source_name": "Fahd Mirza YouTube",
+        "source_role": "main",
+        "trust": 0.66,
+        "kind_hint": "video",
+        "title": "DeepSeek-V4.1-Flash-1017 GSQ+RCO GGUF: Run Under 12GB VRAM Locally",
+        "url": "https://youtube.com/watch?v=ViICJ3_CDZc",
+        "original_url": "https://www.youtube.com/watch?v=ViICJ3_CDZc",
+        "image_url": "https://i.ytimg.com/vi/ViICJ3_CDZc/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-27T04:00:36.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+          "video_id": "ViICJ3_CDZc"
+        }
+      },
+      "members": [
+        {
+          "id": "bbn40j",
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "source_role": "main",
+          "trust": 0.66,
+          "kind_hint": "video",
+          "title": "DeepSeek-V4.1-Flash-1017 GSQ+RCO GGUF: Run Under 12GB VRAM Locally",
+          "url": "https://youtube.com/watch?v=ViICJ3_CDZc",
+          "original_url": "https://www.youtube.com/watch?v=ViICJ3_CDZc",
+          "image_url": "https://i.ytimg.com/vi/ViICJ3_CDZc/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-27T04:00:36.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+            "video_id": "ViICJ3_CDZc"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "title": "DeepSeek-V4.1-Flash-1017 GSQ+RCO GGUF: Run Under 12GB VRAM Locally",
+          "url": "https://youtube.com/watch?v=ViICJ3_CDZc",
+          "published_at": "2026-10-27T04:00:36.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0.632,
+      "novelty_label": "medium",
+      "trust": 0.66,
+      "score": 0.581,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "1artypc",
+      "primary": {
+        "id": "1artypc",
+        "source_id": "the_verge_ai",
+        "source_name": "The Verge AI",
+        "source_role": "main",
+        "trust": 0.68,
+        "kind_hint": "news",
+        "title": "Data center backlash is uniting America",
+        "url": "https://theverge.com/policy/1019152/data-centers-midterm-elections",
+        "original_url": "https://www.theverge.com/policy/1019152/data-centers-midterm-elections",
+        "summary": "If there's one issue that seems to activate all kinds of voters in 2026, it's data centers. The rapid buildout of these massive server storage facilities - and the infrastructure construction and expenses that come with them - has sparked local opposition in communities across the country and become a major issue in many congressional and gubernatorial campaigns. At the same time, tech money has been pouring into many of these races. Leading the Future, a super PAC backed by venture capitalist Marc Andreessen and OpenAI President Greg Brockman, has already spent $45 million in a year. And Publ",
+        "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/268813_ELECTIONS_DATA_CENTERS_CVirginia.jpg?quality=90&",
+        "image_source": "rss_content",
+        "published_at": "2026-10-27T10:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1artypc",
+          "source_id": "the_verge_ai",
+          "source_name": "The Verge AI",
+          "source_role": "main",
+          "trust": 0.68,
+          "kind_hint": "news",
+          "title": "Data center backlash is uniting America",
+          "url": "https://theverge.com/policy/1019152/data-centers-midterm-elections",
+          "original_url": "https://www.theverge.com/policy/1019152/data-centers-midterm-elections",
+          "summary": "If there's one issue that seems to activate all kinds of voters in 2026, it's data centers. The rapid buildout of these massive server storage facilities - and the infrastructure construction and expenses that come with them - has sparked local opposition in communities across the country and become a major issue in many congressional and gubernatorial campaigns. At the same time, tech money has been pouring into many of these races. Leading the Future, a super PAC backed by venture capitalist Marc Andreessen and OpenAI President Greg Brockman, has already spent $45 million in a year. And Publ",
+          "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/268813_ELECTIONS_DATA_CENTERS_CVirginia.jpg?quality=90&",
+          "image_source": "rss_content",
+          "published_at": "2026-10-27T10:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_verge_ai",
+          "source_name": "The Verge AI",
+          "title": "Data center backlash is uniting America",
+          "url": "https://theverge.com/policy/1019152/data-centers-midterm-elections",
+          "published_at": "2026-10-27T10:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Overview of local community opposition to data center infrastructure expansion.",
+      "novelty": 0.741,
+      "novelty_label": "medium",
+      "trust": 0.68,
+      "score": 0.629,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as useful but lower-confidence signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "g53qi5",
+      "primary": {
+        "id": "g53qi5",
+        "source_id": "the_verge_ai",
+        "source_name": "The Verge AI",
+        "source_role": "main",
+        "trust": 0.68,
+        "kind_hint": "news",
+        "title": "OpenAI announces three big science discoveries and a new way to work with academics",
+        "url": "https://theverge.com/ai-artificial-intelligence/1019143/openai-eth-kaseya-science-math-physics",
+        "original_url": "https://www.theverge.com/ai-artificial-intelligence/1019143/openai-eth-kaseya-science-math-physics",
+        "summary": "Less than a month after its mass release of hundreds of manuscripts that it said contained solutions to long-standing mathematics questions, OpenAI is back with three more \"major\" discoveries in math, computer science, and physics. What's different this time is the choice to have external experts that OpenAI describes as \"shepherds\" guiding the results in computer science and physics, while for the math problem it says that they advised it to release the AI output for researchers to work through their own explanations. OpenAI results added to GitHub today: Local smoothing for the Euclidean wav",
+        "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/STKS537_AI_MATH_2.jpg?quality=90&",
+        "image_source": "rss_content",
+        "published_at": "2026-10-26T23:34:58.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "g53qi5",
+          "source_id": "the_verge_ai",
+          "source_name": "The Verge AI",
+          "source_role": "main",
+          "trust": 0.68,
+          "kind_hint": "news",
+          "title": "OpenAI announces three big science discoveries and a new way to work with academics",
+          "url": "https://theverge.com/ai-artificial-intelligence/1019143/openai-eth-kaseya-science-math-physics",
+          "original_url": "https://www.theverge.com/ai-artificial-intelligence/1019143/openai-eth-kaseya-science-math-physics",
+          "summary": "Less than a month after its mass release of hundreds of manuscripts that it said contained solutions to long-standing mathematics questions, OpenAI is back with three more \"major\" discoveries in math, computer science, and physics. What's different this time is the choice to have external experts that OpenAI describes as \"shepherds\" guiding the results in computer science and physics, while for the math problem it says that they advised it to release the AI output for researchers to work through their own explanations. OpenAI results added to GitHub today: Local smoothing for the Euclidean wav",
+          "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/STKS537_AI_MATH_2.jpg?quality=90&",
+          "image_source": "rss_content",
+          "published_at": "2026-10-26T23:34:58.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_verge_ai",
+          "source_name": "The Verge AI",
+          "title": "OpenAI announces three big science discoveries and a new way to work with academics",
+          "url": "https://theverge.com/ai-artificial-intelligence/1019143/openai-eth-kaseya-science-math-physics",
+          "published_at": "2026-10-26T23:34:58.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Report on OpenAI's recent scientific research claims and new academic collaboration initiatives.",
+      "novelty": 0.764,
+      "novelty_label": "high",
+      "trust": 0.68,
+      "score": 0.618,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "kpe1jz",
+      "primary": {
+        "id": "kpe1jz",
+        "source_id": "nvidia_developer_blog",
+        "source_name": "NVIDIA Developer Blog",
+        "source_role": "main",
+        "trust": 0.82,
+        "kind_hint": "tool",
+        "title": "How NVIDIA Minerva Turns Telemetry Chaos Into Peak GPU Yield",
+        "url": "https://developer.nvidia.com/blog/how-nvidia-minerva-turns-telemetry-chaos-into-peak-gpu-yield",
+        "original_url": "https://developer.nvidia.com/blog/how-nvidia-minerva-turns-telemetry-chaos-into-peak-gpu-yield/",
+        "summary": "AI Factories are some of the most technologically complex operational environments ever created. Hundreds of thousands of GPUs, NVIDIA Spectrum-X Ethernet... AI Factories are some of the most technologically complex operational environments ever created. Hundreds of thousands of GPUs, NVIDIA Spectrum-X Ethernet scale-out, scale-across and scale-in fabrics, NVIDIA NVLink scale-up fabrics, distributed schedulers, and multi-week training runs operate in continuous lockstep.These layers function as one production system even when different teams own their… Source",
+        "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/10/MinervaKV-768x432.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-10-26T16:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "kpe1jz",
+          "source_id": "nvidia_developer_blog",
+          "source_name": "NVIDIA Developer Blog",
+          "source_role": "main",
+          "trust": 0.82,
+          "kind_hint": "tool",
+          "title": "How NVIDIA Minerva Turns Telemetry Chaos Into Peak GPU Yield",
+          "url": "https://developer.nvidia.com/blog/how-nvidia-minerva-turns-telemetry-chaos-into-peak-gpu-yield",
+          "original_url": "https://developer.nvidia.com/blog/how-nvidia-minerva-turns-telemetry-chaos-into-peak-gpu-yield/",
+          "summary": "AI Factories are some of the most technologically complex operational environments ever created. Hundreds of thousands of GPUs, NVIDIA Spectrum-X Ethernet... AI Factories are some of the most technologically complex operational environments ever created. Hundreds of thousands of GPUs, NVIDIA Spectrum-X Ethernet scale-out, scale-across and scale-in fabrics, NVIDIA NVLink scale-up fabrics, distributed schedulers, and multi-week training runs operate in continuous lockstep.These layers function as one production system even when different teams own their… Source",
+          "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/10/MinervaKV-768x432.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-26T16:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "nvidia_developer_blog",
+          "source_name": "NVIDIA Developer Blog",
+          "title": "How NVIDIA Minerva Turns Telemetry Chaos Into Peak GPU Yield",
+          "url": "https://developer.nvidia.com/blog/how-nvidia-minerva-turns-telemetry-chaos-into-peak-gpu-yield",
+          "published_at": "2026-10-26T16:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Nvidia introduces Minerva for telemetry-based optimization of GPU cluster yields.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.82,
+      "score": 0.521,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "r2lra2",
+      "primary": {
+        "id": "r2lra2",
+        "source_id": "aws_ml_blog",
+        "source_name": "AWS Machine Learning Blog",
+        "source_role": "main",
+        "trust": 0.8,
+        "kind_hint": "tutorial",
+        "title": "Groundhog Day for AI agents: Prompt caching patterns for using OpenAI models on Amazon Bedrock",
+        "url": "https://aws.amazon.com/blogs/machine-learning/groundhog-day-for-ai-agents-prompt-caching-patterns-for-using-openai-models-on-amazon-bedrock",
+        "original_url": "https://aws.amazon.com/blogs/machine-learning/groundhog-day-for-ai-agents-prompt-caching-patterns-for-using-openai-models-on-amazon-bedrock/",
+        "summary": "Every time an agent takes a step, it re-reads its entire context before acting. Here is how prompt caching for OpenAI models on Amazon Bedrock lets your agent remember, cutting input cost and latency without resending the same tools, instructions, and history every turn.",
+        "published_at": "2026-10-26T17:27:20.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "r2lra2",
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "source_role": "main",
+          "trust": 0.8,
+          "kind_hint": "tutorial",
+          "title": "Groundhog Day for AI agents: Prompt caching patterns for using OpenAI models on Amazon Bedrock",
+          "url": "https://aws.amazon.com/blogs/machine-learning/groundhog-day-for-ai-agents-prompt-caching-patterns-for-using-openai-models-on-amazon-bedrock",
+          "original_url": "https://aws.amazon.com/blogs/machine-learning/groundhog-day-for-ai-agents-prompt-caching-patterns-for-using-openai-models-on-amazon-bedrock/",
+          "summary": "Every time an agent takes a step, it re-reads its entire context before acting. Here is how prompt caching for OpenAI models on Amazon Bedrock lets your agent remember, cutting input cost and latency without resending the same tools, instructions, and history every turn.",
+          "published_at": "2026-10-26T17:27:20.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "title": "Groundhog Day for AI agents: Prompt caching patterns for using OpenAI models on Amazon Bedrock",
+          "url": "https://aws.amazon.com/blogs/machine-learning/groundhog-day-for-ai-agents-prompt-caching-patterns-for-using-openai-models-on-amazon-bedrock",
+          "published_at": "2026-10-26T17:27:20.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "signal",
+      "one_liner": "Guide on using prompt caching with OpenAI models on Amazon Bedrock to reduce input costs and latency for agentic workflows.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.8,
+      "score": 0.519,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "opr7r4",
+      "primary": {
+        "id": "opr7r4",
+        "source_id": "wired_ai",
+        "source_name": "WIRED AI",
+        "source_role": "main",
+        "trust": 0.76,
+        "kind_hint": "news",
+        "title": "Why Anthropic’s IPO Prospectus Is Missing So Many Key Figures",
+        "url": "https://wired.com/story/anthropic-prospectus-leaves-out-some-numbers",
+        "original_url": "https://www.wired.com/story/anthropic-prospectus-leaves-out-some-numbers/",
+        "summary": "Anthropic’s S-1 filing is hundreds of pages long—and it leaves out quite a few financial details. “Anthropic owes investors more information,” one analyst tells WIRED.",
+        "image_url": "https://media.wired.com/photos/6adf8a425d1e509438fb58ec/master/pass/Anthropic3.jpg",
+        "image_source": "rss_media",
+        "published_at": "2026-10-26T21:27:15.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "opr7r4",
+          "source_id": "wired_ai",
+          "source_name": "WIRED AI",
+          "source_role": "main",
+          "trust": 0.76,
+          "kind_hint": "news",
+          "title": "Why Anthropic’s IPO Prospectus Is Missing So Many Key Figures",
+          "url": "https://wired.com/story/anthropic-prospectus-leaves-out-some-numbers",
+          "original_url": "https://www.wired.com/story/anthropic-prospectus-leaves-out-some-numbers/",
+          "summary": "Anthropic’s S-1 filing is hundreds of pages long—and it leaves out quite a few financial details. “Anthropic owes investors more information,” one analyst tells WIRED.",
+          "image_url": "https://media.wired.com/photos/6adf8a425d1e509438fb58ec/master/pass/Anthropic3.jpg",
+          "image_source": "rss_media",
+          "published_at": "2026-10-26T21:27:15.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "wired_ai",
+          "source_name": "WIRED AI",
+          "title": "Why Anthropic’s IPO Prospectus Is Missing So Many Key Figures",
+          "url": "https://wired.com/story/anthropic-prospectus-leaves-out-some-numbers",
+          "published_at": "2026-10-26T21:27:15.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Analysis of missing financial disclosures in Anthropic's IPO prospectus.",
+      "novelty": 0.707,
+      "novelty_label": "medium",
+      "trust": 0.76,
+      "score": 0.616,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "t8hhei",
+      "primary": {
+        "id": "t8hhei",
+        "source_id": "nvidia_developer_blog",
+        "source_name": "NVIDIA Developer Blog",
+        "source_role": "main",
+        "trust": 0.82,
+        "kind_hint": "tool",
+        "title": "How NVIDIA Mission Control 2.5 Brings Autonomous Recovery to Kubernetes",
+        "url": "https://developer.nvidia.com/blog/how-nvidia-mission-control-2-5-brings-autonomous-recovery-to-kubernetes",
+        "original_url": "https://developer.nvidia.com/blog/how-nvidia-mission-control-2-5-brings-autonomous-recovery-to-kubernetes/",
+        "summary": "Training large-scale AI models on thousands of GPUs is a high-stakes operation where monitoring and automation must be built-in to optimize cluster resiliency... Training large-scale AI models on thousands of GPUs is a high-stakes operation where monitoring and automation must be built-in to optimize cluster resiliency and uptime at scale. This concept isn’t new to data center operators who have measured mean-time-to-repair (MTTR) and mean-time-between-failure (MTBF) long before AI factories existed. Now the stakes are higher. Modern AI factories run… Source",
+        "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/09/7_resized-768x431.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-10-26T15:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "t8hhei",
+          "source_id": "nvidia_developer_blog",
+          "source_name": "NVIDIA Developer Blog",
+          "source_role": "main",
+          "trust": 0.82,
+          "kind_hint": "tool",
+          "title": "How NVIDIA Mission Control 2.5 Brings Autonomous Recovery to Kubernetes",
+          "url": "https://developer.nvidia.com/blog/how-nvidia-mission-control-2-5-brings-autonomous-recovery-to-kubernetes",
+          "original_url": "https://developer.nvidia.com/blog/how-nvidia-mission-control-2-5-brings-autonomous-recovery-to-kubernetes/",
+          "summary": "Training large-scale AI models on thousands of GPUs is a high-stakes operation where monitoring and automation must be built-in to optimize cluster resiliency... Training large-scale AI models on thousands of GPUs is a high-stakes operation where monitoring and automation must be built-in to optimize cluster resiliency and uptime at scale. This concept isn’t new to data center operators who have measured mean-time-to-repair (MTTR) and mean-time-between-failure (MTBF) long before AI factories existed. Now the stakes are higher. Modern AI factories run… Source",
+          "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/09/7_resized-768x431.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-26T15:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "nvidia_developer_blog",
+          "source_name": "NVIDIA Developer Blog",
+          "title": "How NVIDIA Mission Control 2.5 Brings Autonomous Recovery to Kubernetes",
+          "url": "https://developer.nvidia.com/blog/how-nvidia-mission-control-2-5-brings-autonomous-recovery-to-kubernetes",
+          "published_at": "2026-10-26T15:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "signal",
+      "one_liner": "NVIDIA Mission Control 2.5 update introduces autonomous recovery features for Kubernetes-based large-scale AI training clusters.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.82,
+      "score": 0.519,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+    },
+    {
+      "id": "1h0p7a6",
+      "primary": {
+        "id": "1h0p7a6",
+        "source_id": "aws_ml_blog",
+        "source_name": "AWS Machine Learning Blog",
+        "source_role": "main",
+        "trust": 0.8,
+        "kind_hint": "tutorial",
+        "title": "Build agentic retrieval on a Managed Amazon Bedrock Knowledge Base with CDK",
+        "url": "https://aws.amazon.com/blogs/machine-learning/build-agentic-retrieval-on-a-managed-amazon-bedrock-knowledge-base-with-cdk",
+        "original_url": "https://aws.amazon.com/blogs/machine-learning/build-agentic-retrieval-on-a-managed-amazon-bedrock-knowledge-base-with-cdk/",
+        "summary": "Build enterprise agentic retrieval on a Managed Amazon Bedrock Knowledge Base with the AWS CDK: an agent that routes across two knowledge bases, retrieves through the AgentCore Gateway, and returns grounded, cited answers, with seven layers of observability and both on-demand and continuous evaluation, all deployed as a single CDK application.",
+        "published_at": "2026-10-26T17:15:14.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1h0p7a6",
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "source_role": "main",
+          "trust": 0.8,
+          "kind_hint": "tutorial",
+          "title": "Build agentic retrieval on a Managed Amazon Bedrock Knowledge Base with CDK",
+          "url": "https://aws.amazon.com/blogs/machine-learning/build-agentic-retrieval-on-a-managed-amazon-bedrock-knowledge-base-with-cdk",
+          "original_url": "https://aws.amazon.com/blogs/machine-learning/build-agentic-retrieval-on-a-managed-amazon-bedrock-knowledge-base-with-cdk/",
+          "summary": "Build enterprise agentic retrieval on a Managed Amazon Bedrock Knowledge Base with the AWS CDK: an agent that routes across two knowledge bases, retrieves through the AgentCore Gateway, and returns grounded, cited answers, with seven layers of observability and both on-demand and continuous evaluation, all deployed as a single CDK application.",
+          "published_at": "2026-10-26T17:15:14.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "aws_ml_blog",
+          "source_name": "AWS Machine Learning Blog",
+          "title": "Build agentic retrieval on a Managed Amazon Bedrock Knowledge Base with CDK",
+          "url": "https://aws.amazon.com/blogs/machine-learning/build-agentic-retrieval-on-a-managed-amazon-bedrock-knowledge-base-with-cdk",
+          "published_at": "2026-10-26T17:15:14.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "signal",
+      "one_liner": "Implementation guide for agentic retrieval using Amazon Bedrock Knowledge Bases and AWS CDK with observability patterns.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.8,
+      "score": 0.518,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "1a96y90",
+      "primary": {
+        "id": "1a96y90",
+        "source_id": "import_ai",
+        "source_name": "Import AI (Jack Clark)",
+        "source_role": "main",
+        "trust": 0.85,
+        "title": "Import AI 478: Math for alignment; ProgramBench; and Mirendil shows what RSI means",
+        "url": "https://jack-clark.net/2026/10/26/import-ai-478-math-for-alignment-programbench-and-mirendil-shows-what-rsi-means",
+        "original_url": "https://jack-clark.net/2026/10/26/import-ai-478-math-for-alignment-programbench-and-mirendil-shows-what-rsi-means/",
+        "summary": "Welcome to Import AI, a newsletter about AI research. Import AI runs on arXiv, cappuccinos, and feedback from readers. If you’d like to support this, please subscribe. Subscribe now How math could help alignment:…What the “industrialization of mathematics” means for safety…AI safety startup Resolution (formerly known as Sequent, Import AI 461) has published work on […]",
+        "image_url": "https://i0.wp.com/jack-clark.net/wp-content/uploads/2026/10/https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2Fd6d17996-2bef-40a4-abe3-be72a0e8a227_258x258-IAEEMa.png?resize=150%2C150&amp;ssl=1",
+        "image_source": "rss_content",
+        "published_at": "2026-10-26T12:31:52.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1a96y90",
+          "source_id": "import_ai",
+          "source_name": "Import AI (Jack Clark)",
+          "source_role": "main",
+          "trust": 0.85,
+          "title": "Import AI 478: Math for alignment; ProgramBench; and Mirendil shows what RSI means",
+          "url": "https://jack-clark.net/2026/10/26/import-ai-478-math-for-alignment-programbench-and-mirendil-shows-what-rsi-means",
+          "original_url": "https://jack-clark.net/2026/10/26/import-ai-478-math-for-alignment-programbench-and-mirendil-shows-what-rsi-means/",
+          "summary": "Welcome to Import AI, a newsletter about AI research. Import AI runs on arXiv, cappuccinos, and feedback from readers. If you’d like to support this, please subscribe. Subscribe now How math could help alignment:…What the “industrialization of mathematics” means for safety…AI safety startup Resolution (formerly known as Sequent, Import AI 461) has published work on […]",
+          "image_url": "https://i0.wp.com/jack-clark.net/wp-content/uploads/2026/10/https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2Fd6d17996-2bef-40a4-abe3-be72a0e8a227_258x258-IAEEMa.png?resize=150%2C150&amp;ssl=1",
+          "image_source": "rss_content",
+          "published_at": "2026-10-26T12:31:52.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "import_ai",
+          "source_name": "Import AI (Jack Clark)",
+          "title": "Import AI 478: Math for alignment; ProgramBench; and Mirendil shows what RSI means",
+          "url": "https://jack-clark.net/2026/10/26/import-ai-478-math-for-alignment-programbench-and-mirendil-shows-what-rsi-means",
+          "published_at": "2026-10-26T12:31:52.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Newsletter covering mathematical approaches to alignment, ProgramBench, and research on recursive self-improvement.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.85,
+      "score": 0.522,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1jrm3po",
+      "primary": {
+        "id": "1jrm3po",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "Sebastian Raschka's from-scratch video course on building reasoning models",
+        "url": "https://magazine.sebastianraschka.com/p/building-reasoning-models",
+        "original_url": "https://magazine.sebastianraschka.com/p/building-reasoning-models",
+        "discussion_url": "https://news.ycombinator.com/item?id=50245138",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-10-26T15:11:59Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 713,
+          "comments": 99
+        }
+      },
+      "members": [
+        {
+          "id": "1jrm3po",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "Sebastian Raschka's from-scratch video course on building reasoning models",
+          "url": "https://magazine.sebastianraschka.com/p/building-reasoning-models",
+          "original_url": "https://magazine.sebastianraschka.com/p/building-reasoning-models",
+          "discussion_url": "https://news.ycombinator.com/item?id=50245138",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-10-26T15:11:59Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 713,
+            "comments": 99
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "Sebastian Raschka's from-scratch video course on building reasoning models",
+          "url": "https://magazine.sebastianraschka.com/p/building-reasoning-models",
+          "published_at": "2026-10-26T15:11:59Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=50245138",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "signal",
+      "one_liner": "A technical guide on implementing reasoning models from scratch.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.65,
+      "score": 0.519,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Use this as implementation reference if it matches your stack."
+    },
+    {
+      "id": "pxoug9",
+      "primary": {
+        "id": "pxoug9",
+        "source_id": "the_verge_ai",
+        "source_name": "The Verge AI",
+        "source_role": "main",
+        "trust": 0.68,
+        "kind_hint": "news",
+        "title": "Anthropic is burning gas to feed the AI boom",
+        "url": "https://theverge.com/ai-artificial-intelligence/1018994/anthropic-ipo-ai-data-center-energy-climate-risk",
+        "original_url": "https://www.theverge.com/ai-artificial-intelligence/1018994/anthropic-ipo-ai-data-center-energy-climate-risk",
+        "summary": "As it prepares to go public, Anthropic's S-1 filing makes generative AI's methane dependency glaringly obvious. \"Competition for access to electrical supply and data center locations with adequate power availability is intense.\" In documents filed with the US Securities and Exchange Commission Monday, Anthropic acknowledges that data centers are becoming increasingly reliant on \"natural gas\" - the fossil fuel industry's marketing term for what is primarily methane - leaving the company's AI data center buildout vulnerable to rising fuel costs and existing supply chain constraints. And in a pos",
+        "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/01/STK269_ANTHROPIC_2_B.jpg?quality=90&",
+        "image_source": "rss_content",
+        "published_at": "2026-10-26T21:45:31.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "pxoug9",
+          "source_id": "the_verge_ai",
+          "source_name": "The Verge AI",
+          "source_role": "main",
+          "trust": 0.68,
+          "kind_hint": "news",
+          "title": "Anthropic is burning gas to feed the AI boom",
+          "url": "https://theverge.com/ai-artificial-intelligence/1018994/anthropic-ipo-ai-data-center-energy-climate-risk",
+          "original_url": "https://www.theverge.com/ai-artificial-intelligence/1018994/anthropic-ipo-ai-data-center-energy-climate-risk",
+          "summary": "As it prepares to go public, Anthropic's S-1 filing makes generative AI's methane dependency glaringly obvious. \"Competition for access to electrical supply and data center locations with adequate power availability is intense.\" In documents filed with the US Securities and Exchange Commission Monday, Anthropic acknowledges that data centers are becoming increasingly reliant on \"natural gas\" - the fossil fuel industry's marketing term for what is primarily methane - leaving the company's AI data center buildout vulnerable to rising fuel costs and existing supply chain constraints. And in a pos",
+          "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/01/STK269_ANTHROPIC_2_B.jpg?quality=90&",
+          "image_source": "rss_content",
+          "published_at": "2026-10-26T21:45:31.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_verge_ai",
+          "source_name": "The Verge AI",
+          "title": "Anthropic is burning gas to feed the AI boom",
+          "url": "https://theverge.com/ai-artificial-intelligence/1018994/anthropic-ipo-ai-data-center-energy-climate-risk",
+          "published_at": "2026-10-26T21:45:31.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Anthropic's S-1 filing highlights the significant energy and infrastructure demands required to scale generative AI operations.",
+      "novelty": 0.734,
+      "novelty_label": "medium",
+      "trust": 0.68,
+      "score": 0.606,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "9sch1g",
+      "primary": {
+        "id": "9sch1g",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "Anthropic S-1",
+        "url": "https://sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+        "original_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+        "discussion_url": "https://news.ycombinator.com/item?id=50242939",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-10-26T13:04:50Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 1618,
+          "comments": 1550
+        }
+      },
+      "members": [
+        {
+          "id": "9sch1g",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "Anthropic S-1",
+          "url": "https://sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+          "original_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+          "discussion_url": "https://news.ycombinator.com/item?id=50242939",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-10-26T13:04:50Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 1618,
+            "comments": 1550
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "Anthropic S-1",
+          "url": "https://sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+          "published_at": "2026-10-26T13:04:50Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=50242939",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Anthropic's official S-1 filing providing primary data on company financials and operational risks.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.65,
+      "score": 0.517,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "ichj6u",
+      "primary": {
+        "id": "ichj6u",
+        "source_id": "anthropic",
+        "source_name": "Anthropic",
+        "source_role": "main",
+        "trust": 0.92,
+        "kind_hint": "company_announcement",
+        "title": "Anthropic files S-1 with the SEC for proposed initial public offering",
+        "url": "https://anthropic.com/news/s1-sec",
+        "original_url": "https://www.anthropic.com/news/s1-sec",
+        "summary": "Anthropic is an AI safety and research company that&#x27;s working to build reliable, interpretable, and steerable AI systems.",
+        "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+        "image_source": "page_metadata",
+        "published_at": "2026-10-26T00:00:00.000Z",
+        "published_at_source": "page_metadata",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "ichj6u",
+          "source_id": "anthropic",
+          "source_name": "Anthropic",
+          "source_role": "main",
+          "trust": 0.92,
+          "kind_hint": "company_announcement",
+          "title": "Anthropic files S-1 with the SEC for proposed initial public offering",
+          "url": "https://anthropic.com/news/s1-sec",
+          "original_url": "https://www.anthropic.com/news/s1-sec",
+          "summary": "Anthropic is an AI safety and research company that&#x27;s working to build reliable, interpretable, and steerable AI systems.",
+          "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+          "image_source": "page_metadata",
+          "published_at": "2026-10-26T00:00:00.000Z",
+          "published_at_source": "page_metadata",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "anthropic",
+          "source_name": "Anthropic",
+          "title": "Anthropic files S-1 with the SEC for proposed initial public offering",
+          "url": "https://anthropic.com/news/s1-sec",
+          "published_at": "2026-10-26T00:00:00.000Z",
+          "published_at_source": "page_metadata",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Anthropic has officially filed an S-1 registration statement for an initial public offering.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.92,
+      "score": 0.517,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "pubmnn",
+      "primary": {
+        "id": "pubmnn",
+        "source_id": "cloudflare_ai_changelog",
+        "source_name": "Cloudflare AI Changelog",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tool",
+        "title": "Agents, Workers - Cloudflare Computer now helps agents recover from interruptions and wait for approval",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-10-26-computer-durable-javascript",
+        "original_url": "https://developers.cloudflare.com/changelog/post/2026-10-26-computer-durable-javascript/",
+        "summary": "@cloudflare/computer ↗︎ gives your agent a workspace to run code in. From v0.7.0, that code can resume after a deploy or crash, and pause on an external action, for example to approve a tool call. Resume interrupted runs Set onInterrupt: \"replay\" on WorkerJavaScriptBackend, or on a single run. import { DurableObject } from \"cloudflare:workers\"; import { Workspace } from \"@cloudflare/computer\"; import { WorkerJavaScriptBackend } from \"@cloudflare/computer/backends/worker-javascript\"; export class MyAgent extends DurableObject { workspace = new Workspace({ storage: this.ctx.storage, backends: [",
+        "image_url": "https://developers.cloudflare.com/cdn-cgi/image/onerror=redirect,width=920,height=292,format=svg/_astro/computer-approval-flow.CNEabsLO.svg",
+        "image_source": "rss_content",
+        "published_at": "2026-10-26T00:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "pubmnn",
+          "source_id": "cloudflare_ai_changelog",
+          "source_name": "Cloudflare AI Changelog",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tool",
+          "title": "Agents, Workers - Cloudflare Computer now helps agents recover from interruptions and wait for approval",
+          "url": "https://developers.cloudflare.com/changelog/post/2026-10-26-computer-durable-javascript",
+          "original_url": "https://developers.cloudflare.com/changelog/post/2026-10-26-computer-durable-javascript/",
+          "summary": "@cloudflare/computer ↗︎ gives your agent a workspace to run code in. From v0.7.0, that code can resume after a deploy or crash, and pause on an external action, for example to approve a tool call. Resume interrupted runs Set onInterrupt: \"replay\" on WorkerJavaScriptBackend, or on a single run. import { DurableObject } from \"cloudflare:workers\"; import { Workspace } from \"@cloudflare/computer\"; import { WorkerJavaScriptBackend } from \"@cloudflare/computer/backends/worker-javascript\"; export class MyAgent extends DurableObject { workspace = new Workspace({ storage: this.ctx.storage, backends: [",
+          "image_url": "https://developers.cloudflare.com/cdn-cgi/image/onerror=redirect,width=920,height=292,format=svg/_astro/computer-approval-flow.CNEabsLO.svg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-26T00:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "cloudflare_ai_changelog",
+          "source_name": "Cloudflare AI Changelog",
+          "title": "Agents, Workers - Cloudflare Computer now helps agents recover from interruptions and wait for approval",
+          "url": "https://developers.cloudflare.com/changelog/post/2026-10-26-computer-durable-javascript",
+          "published_at": "2026-10-26T00:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Cloudflare Computer v0.7.0 adds durable execution, allowing agent code to resume after crashes and pause for human approval.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.485,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "1yjiyyf",
+      "primary": {
+        "id": "1yjiyyf",
+        "source_id": "cloudflare_ai_changelog",
+        "source_name": "Cloudflare AI Changelog",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tool",
+        "title": "DNS - Advanced Nameservers use a nameserver type",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-10-26-foundation-dns-nameserver-type",
+        "original_url": "https://developers.cloudflare.com/changelog/post/2026-10-26-foundation-dns-nameserver-type/",
+        "summary": "Starting today, the DNS settings endpoints gradually begin to represent Advanced Nameservers with nameservers.type: \"cloudflare.advanced\". The rollout is expected to take seven days. Previously, the API used the \"foundation_dns\": true setting for this configuration. Before the rollout reaches an account, the endpoints continue to return nameservers.type: \"cloudflare.standard\" for Advanced Nameservers. The endpoints accept nameservers.type: \"cloudflare.advanced\" in PATCH requests for entitled accounts throughout the rollout. The zone settings JSON for /zones/{zone_id}/dns_settings is: { \"namese",
+        "published_at": "2026-10-26T00:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1yjiyyf",
+          "source_id": "cloudflare_ai_changelog",
+          "source_name": "Cloudflare AI Changelog",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tool",
+          "title": "DNS - Advanced Nameservers use a nameserver type",
+          "url": "https://developers.cloudflare.com/changelog/post/2026-10-26-foundation-dns-nameserver-type",
+          "original_url": "https://developers.cloudflare.com/changelog/post/2026-10-26-foundation-dns-nameserver-type/",
+          "summary": "Starting today, the DNS settings endpoints gradually begin to represent Advanced Nameservers with nameservers.type: \"cloudflare.advanced\". The rollout is expected to take seven days. Previously, the API used the \"foundation_dns\": true setting for this configuration. Before the rollout reaches an account, the endpoints continue to return nameservers.type: \"cloudflare.standard\" for Advanced Nameservers. The endpoints accept nameservers.type: \"cloudflare.advanced\" in PATCH requests for entitled accounts throughout the rollout. The zone settings JSON for /zones/{zone_id}/dns_settings is: { \"namese",
+          "published_at": "2026-10-26T00:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "cloudflare_ai_changelog",
+          "source_name": "Cloudflare AI Changelog",
+          "title": "DNS - Advanced Nameservers use a nameserver type",
+          "url": "https://developers.cloudflare.com/changelog/post/2026-10-26-foundation-dns-nameserver-type",
+          "published_at": "2026-10-26T00:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "signal",
+      "one_liner": "Cloudflare updates DNS API to use nameservers.type: 'cloudflare.advanced' for Advanced Nameservers configuration.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.485,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+    },
+    {
+      "id": "1kaa1yg",
+      "primary": {
+        "id": "1kaa1yg",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Anthropic opens its books for Wall Street, showing record revenue and mounting obligations",
+        "url": "https://the-decoder.com/anthropic-opens-its-books-for-wall-street-showing-record-revenue-and-mounting-obligations",
+        "original_url": "https://the-decoder.com/anthropic-opens-its-books-for-wall-street-showing-record-revenue-and-mounting-obligations/",
+        "summary": "Anthropic is the first major AI lab to file an S-1 with the SEC, planning to list on the Nasdaq under the ticker \"ANT.\" The numbers are strong, with $11.6 billion in quarterly revenue, a first-ever operating profit, and existing customers spending nine times more year over year. But the company also carries roughly $800 billion in long-term compute commitments. The article Anthropic opens its books for Wall Street, showing record revenue and mounting obligations appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/anthropic_claude_bull_.png",
+        "image_source": "rss_content",
+        "published_at": "2026-10-26T19:14:45.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1kaa1yg",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Anthropic opens its books for Wall Street, showing record revenue and mounting obligations",
+          "url": "https://the-decoder.com/anthropic-opens-its-books-for-wall-street-showing-record-revenue-and-mounting-obligations",
+          "original_url": "https://the-decoder.com/anthropic-opens-its-books-for-wall-street-showing-record-revenue-and-mounting-obligations/",
+          "summary": "Anthropic is the first major AI lab to file an S-1 with the SEC, planning to list on the Nasdaq under the ticker \"ANT.\" The numbers are strong, with $11.6 billion in quarterly revenue, a first-ever operating profit, and existing customers spending nine times more year over year. But the company also carries roughly $800 billion in long-term compute commitments. The article Anthropic opens its books for Wall Street, showing record revenue and mounting obligations appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/anthropic_claude_bull_.png",
+          "image_source": "rss_content",
+          "published_at": "2026-10-26T19:14:45.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Anthropic opens its books for Wall Street, showing record revenue and mounting obligations",
+          "url": "https://the-decoder.com/anthropic-opens-its-books-for-wall-street-showing-record-revenue-and-mounting-obligations",
+          "published_at": "2026-10-26T19:14:45.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Summary of financial data from Anthropic's S-1 filing, including revenue and operating profit figures.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.508,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1rpo53c",
+      "primary": {
+        "id": "1rpo53c",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "Article: The Evolution of Agentic Harnesses: From Chains to Graph to Code",
+        "url": "https://infoq.com/articles/agentic-ai-architecture-harness-evolution",
+        "original_url": "https://www.infoq.com/articles/agentic-ai-architecture-harness-evolution/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Agentic LLM systems have moved from linear prompt chains to graph-based workflows and, more recently, code-executing harnesses. Chains are simple but fragile, graphs add branching, retries, and validation, and code harnesses verify outputs through execution. The article advises validating model outputs and choosing the least complex design that meets reliability, speed, and cost needs. By Karthik Ramgopal",
+        "image_url": "https://res.infoq.com/articles/agentic-ai-architecture-harness-evolution/en/headerimage/agentic-ai-architecture-harness-evolution-header-1792744961862.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-10-26T11:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1rpo53c",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "Article: The Evolution of Agentic Harnesses: From Chains to Graph to Code",
+          "url": "https://infoq.com/articles/agentic-ai-architecture-harness-evolution",
+          "original_url": "https://www.infoq.com/articles/agentic-ai-architecture-harness-evolution/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "Agentic LLM systems have moved from linear prompt chains to graph-based workflows and, more recently, code-executing harnesses. Chains are simple but fragile, graphs add branching, retries, and validation, and code harnesses verify outputs through execution. The article advises validating model outputs and choosing the least complex design that meets reliability, speed, and cost needs. By Karthik Ramgopal",
+          "image_url": "https://res.infoq.com/articles/agentic-ai-architecture-harness-evolution/en/headerimage/agentic-ai-architecture-harness-evolution-header-1792744961862.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-26T11:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "Article: The Evolution of Agentic Harnesses: From Chains to Graph to Code",
+          "url": "https://infoq.com/articles/agentic-ai-architecture-harness-evolution",
+          "published_at": "2026-10-26T11:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "signal",
+      "one_liner": "Analysis of architectural shifts in agentic systems from linear chains to graph-based and code-execution workflows.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.503,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1ansp2n",
+      "primary": {
+        "id": "1ansp2n",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "Cloudflare’s Auto Router Rates Each Request for Stakes, from the Most Recent Turns",
+        "url": "https://infoq.com/news/2026/10/cloudflare-auto-router",
+        "original_url": "https://www.infoq.com/news/2026/10/cloudflare-auto-router/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Cloudflare has released Auto Router in public beta through AI Gateway, picking a model per request from a classifier that scores complexity, ambiguity, stakes and context dependence. Cloudflare’s own benchmark puts it ten points below Claude Opus 5.5 on success rate at a third of the cost, and practitioners have questioned how stakes survive a long agent session. By Steef-Jan Wiggers",
+        "image_url": "https://res.infoq.com/news/2026/10/cloudflare-auto-router/en/headerimage/generatedHeaderImage-1792492628413.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-10-26T10:20:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1ansp2n",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "Cloudflare’s Auto Router Rates Each Request for Stakes, from the Most Recent Turns",
+          "url": "https://infoq.com/news/2026/10/cloudflare-auto-router",
+          "original_url": "https://www.infoq.com/news/2026/10/cloudflare-auto-router/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "Cloudflare has released Auto Router in public beta through AI Gateway, picking a model per request from a classifier that scores complexity, ambiguity, stakes and context dependence. Cloudflare’s own benchmark puts it ten points below Claude Opus 5.5 on success rate at a third of the cost, and practitioners have questioned how stakes survive a long agent session. By Steef-Jan Wiggers",
+          "image_url": "https://res.infoq.com/news/2026/10/cloudflare-auto-router/en/headerimage/generatedHeaderImage-1792492628413.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-26T10:20:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "Cloudflare’s Auto Router Rates Each Request for Stakes, from the Most Recent Turns",
+          "url": "https://infoq.com/news/2026/10/cloudflare-auto-router",
+          "published_at": "2026-10-26T10:20:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Cloudflare released Auto Router, a model-routing classifier for AI Gateway based on request complexity and stakes.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.502,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Try it in a small sandbox before adding it to production workflow."
+    },
+    {
+      "id": "1qnjwvg",
+      "primary": {
+        "id": "1qnjwvg",
+        "source_id": "openai",
+        "source_name": "OpenAI",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "company_announcement",
+        "title": "ChatGPT’s expanding world of work",
+        "url": "https://openai.com/index/chatgpt-expanding-world-of-work",
+        "original_url": "https://openai.com/index/chatgpt-expanding-world-of-work",
+        "summary": "Explore OpenAI Signals data on 165 work activities across nearly 100 countries, revealing how people use ChatGPT for work and how usage changes over time.",
+        "published_at": "2026-10-26T10:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1qnjwvg",
+          "source_id": "openai",
+          "source_name": "OpenAI",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "company_announcement",
+          "title": "ChatGPT’s expanding world of work",
+          "url": "https://openai.com/index/chatgpt-expanding-world-of-work",
+          "original_url": "https://openai.com/index/chatgpt-expanding-world-of-work",
+          "summary": "Explore OpenAI Signals data on 165 work activities across nearly 100 countries, revealing how people use ChatGPT for work and how usage changes over time.",
+          "published_at": "2026-10-26T10:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "openai",
+          "source_name": "OpenAI",
+          "title": "ChatGPT’s expanding world of work",
+          "url": "https://openai.com/index/chatgpt-expanding-world-of-work",
+          "published_at": "2026-10-26T10:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "OpenAI report on global ChatGPT usage patterns across various work activities.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.9,
+      "score": 0.367,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "bu0e4e",
+      "primary": {
+        "id": "bu0e4e",
+        "source_id": "thoughtworks_insights",
+        "source_name": "Thoughtworks Insights",
+        "source_role": "main",
+        "trust": 0.84,
+        "kind_hint": "opinion",
+        "title": "Ethical and commercial risk regarding product development, GDR and AI",
+        "url": "https://thoughtworks.com/insights/blog/product-innovation/ethical-commercial-risk-regarding-product-development-gdr-ai",
+        "original_url": "https://www.thoughtworks.com/insights/blog/product-innovation/ethical-commercial-risk-regarding-product-development-gdr-ai",
+        "summary": "Ethical and commercial risk regarding product development, GDR and AI",
+        "image_url": "https://www.thoughtworks.com/content/dam/thoughtworks/images/photography/abstract/insights/blog/abs_blogs_054.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-10-26T00:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "bu0e4e",
+          "source_id": "thoughtworks_insights",
+          "source_name": "Thoughtworks Insights",
+          "source_role": "main",
+          "trust": 0.84,
+          "kind_hint": "opinion",
+          "title": "Ethical and commercial risk regarding product development, GDR and AI",
+          "url": "https://thoughtworks.com/insights/blog/product-innovation/ethical-commercial-risk-regarding-product-development-gdr-ai",
+          "original_url": "https://www.thoughtworks.com/insights/blog/product-innovation/ethical-commercial-risk-regarding-product-development-gdr-ai",
+          "summary": "Ethical and commercial risk regarding product development, GDR and AI",
+          "image_url": "https://www.thoughtworks.com/content/dam/thoughtworks/images/photography/abstract/insights/blog/abs_blogs_054.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-26T00:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "thoughtworks_insights",
+          "source_name": "Thoughtworks Insights",
+          "title": "Ethical and commercial risk regarding product development, GDR and AI",
+          "url": "https://thoughtworks.com/insights/blog/product-innovation/ethical-commercial-risk-regarding-product-development-gdr-ai",
+          "published_at": "2026-10-26T00:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "General overview of ethical and commercial risks in AI product development.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.84,
+      "score": 0.336,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "6di2nc",
+      "primary": {
+        "id": "6di2nc",
+        "source_id": "openai",
+        "source_name": "OpenAI",
+        "source_role": "main",
+        "trust": 0.9,
+        "kind_hint": "company_announcement",
+        "title": "How Ultrafast cut incident investigation from hours to minutes at OpenAI",
+        "url": "https://openai.com/index/openai-cut-incident-investigation",
+        "original_url": "https://openai.com/index/openai-cut-incident-investigation",
+        "summary": "See how OpenAI engineers use Codex Ultrafast to investigate incidents in minutes. Explore faster security analysis, code refactoring, and daily workflows.",
+        "published_at": "2026-10-26T07:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "6di2nc",
+          "source_id": "openai",
+          "source_name": "OpenAI",
+          "source_role": "main",
+          "trust": 0.9,
+          "kind_hint": "company_announcement",
+          "title": "How Ultrafast cut incident investigation from hours to minutes at OpenAI",
+          "url": "https://openai.com/index/openai-cut-incident-investigation",
+          "original_url": "https://openai.com/index/openai-cut-incident-investigation",
+          "summary": "See how OpenAI engineers use Codex Ultrafast to investigate incidents in minutes. Explore faster security analysis, code refactoring, and daily workflows.",
+          "published_at": "2026-10-26T07:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "openai",
+          "source_name": "OpenAI",
+          "title": "How Ultrafast cut incident investigation from hours to minutes at OpenAI",
+          "url": "https://openai.com/index/openai-cut-incident-investigation",
+          "published_at": "2026-10-26T07:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "mixed",
+      "one_liner": "Marketing case study on OpenAI's internal use of Codex for incident response.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.9,
+      "score": 0.362,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+    },
+    {
+      "id": "dy1zng",
+      "primary": {
+        "id": "dy1zng",
+        "source_id": "fahd_mirza",
+        "source_name": "Fahd Mirza YouTube",
+        "source_role": "main",
+        "trust": 0.66,
+        "kind_hint": "video",
+        "title": "Nanbeige4.3 33B: Great Benchmarks, But It Failed My Tests Royally",
+        "url": "https://youtube.com/watch?v=BjRTtHCJCgM",
+        "original_url": "https://www.youtube.com/watch?v=BjRTtHCJCgM",
+        "image_url": "https://i.ytimg.com/vi/BjRTtHCJCgM/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-26T18:00:25.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+          "video_id": "BjRTtHCJCgM"
+        }
+      },
+      "members": [
+        {
+          "id": "dy1zng",
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "source_role": "main",
+          "trust": 0.66,
+          "kind_hint": "video",
+          "title": "Nanbeige4.3 33B: Great Benchmarks, But It Failed My Tests Royally",
+          "url": "https://youtube.com/watch?v=BjRTtHCJCgM",
+          "original_url": "https://www.youtube.com/watch?v=BjRTtHCJCgM",
+          "image_url": "https://i.ytimg.com/vi/BjRTtHCJCgM/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-26T18:00:25.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+            "video_id": "BjRTtHCJCgM"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "title": "Nanbeige4.3 33B: Great Benchmarks, But It Failed My Tests Royally",
+          "url": "https://youtube.com/watch?v=BjRTtHCJCgM",
+          "published_at": "2026-10-26T18:00:25.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.66,
+      "score": 0.325,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "gmx7nt",
+      "primary": {
+        "id": "gmx7nt",
+        "source_id": "fahd_mirza",
+        "source_name": "Fahd Mirza YouTube",
+        "source_role": "main",
+        "trust": 0.66,
+        "kind_hint": "video",
+        "title": "DecisionNode: Typed decisions in Milliseconds: Hands-on Tutorial",
+        "url": "https://youtube.com/watch?v=2u4Ft6KUGTQ",
+        "original_url": "https://www.youtube.com/watch?v=2u4Ft6KUGTQ",
+        "image_url": "https://i.ytimg.com/vi/2u4Ft6KUGTQ/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-26T04:00:06.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+          "video_id": "2u4Ft6KUGTQ"
+        }
+      },
+      "members": [
+        {
+          "id": "gmx7nt",
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "source_role": "main",
+          "trust": 0.66,
+          "kind_hint": "video",
+          "title": "DecisionNode: Typed decisions in Milliseconds: Hands-on Tutorial",
+          "url": "https://youtube.com/watch?v=2u4Ft6KUGTQ",
+          "original_url": "https://www.youtube.com/watch?v=2u4Ft6KUGTQ",
+          "image_url": "https://i.ytimg.com/vi/2u4Ft6KUGTQ/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-26T04:00:06.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+            "video_id": "2u4Ft6KUGTQ"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "title": "DecisionNode: Typed decisions in Milliseconds: Hands-on Tutorial",
+          "url": "https://youtube.com/watch?v=2u4Ft6KUGTQ",
+          "published_at": "2026-10-26T04:00:06.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.66,
+      "score": 0.302,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Queue it for focused learning if the topic matches your current work."
+    },
+    {
+      "id": "d9jo6v",
+      "primary": {
+        "id": "d9jo6v",
+        "source_id": "mit_tech_review_ai",
+        "source_name": "MIT Technology Review AI",
+        "source_role": "main",
+        "trust": 0.82,
+        "kind_hint": "news",
+        "title": "Will the real Anthropic please stand up",
+        "url": "https://technologyreview.com/2026/10/26/1147672/will-the-real-anthropic-please-stand-up",
+        "original_url": "https://www.technologyreview.com/2026/10/26/1147672/will-the-real-anthropic-please-stand-up/",
+        "summary": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. After weeks of frenzied speculation, Anthropic has filed its IPO prospectus. The 335-page document (100 pages or so are focused on risks) lays out the company’s unique view of the technology it…",
+        "published_at": "2026-10-26T17:45:43.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "d9jo6v",
+          "source_id": "mit_tech_review_ai",
+          "source_name": "MIT Technology Review AI",
+          "source_role": "main",
+          "trust": 0.82,
+          "kind_hint": "news",
+          "title": "Will the real Anthropic please stand up",
+          "url": "https://technologyreview.com/2026/10/26/1147672/will-the-real-anthropic-please-stand-up",
+          "original_url": "https://www.technologyreview.com/2026/10/26/1147672/will-the-real-anthropic-please-stand-up/",
+          "summary": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. After weeks of frenzied speculation, Anthropic has filed its IPO prospectus. The 335-page document (100 pages or so are focused on risks) lays out the company’s unique view of the technology it…",
+          "published_at": "2026-10-26T17:45:43.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "mit_tech_review_ai",
+          "source_name": "MIT Technology Review AI",
+          "title": "Will the real Anthropic please stand up",
+          "url": "https://technologyreview.com/2026/10/26/1147672/will-the-real-anthropic-please-stand-up",
+          "published_at": "2026-10-26T17:45:43.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "Commentary on Anthropic's IPO filing and the associated risk disclosures.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.82,
+      "score": 0.361,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "vlztqh",
+      "primary": {
+        "id": "vlztqh",
+        "source_id": "ars_ai",
+        "source_name": "Ars Technica AI",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "news",
+        "title": "ICE plan to buy robot dogs spurs protest from hundreds of Boston Dynamics employees",
+        "url": "https://arstechnica.com/ai/2026/10/boston-dynamics-employees-want-to-block-sale-of-robot-dogs-to-ice",
+        "original_url": "https://arstechnica.com/ai/2026/10/boston-dynamics-employees-want-to-block-sale-of-robot-dogs-to-ice/",
+        "summary": "US robotics company stands by ICE deal as more than 300 employees warn of risk.",
+        "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/10/Radeco-Cerberus-robot-1152x648.jpg",
+        "image_source": "rss_media",
+        "published_at": "2026-10-26T18:50:41.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "vlztqh",
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "news",
+          "title": "ICE plan to buy robot dogs spurs protest from hundreds of Boston Dynamics employees",
+          "url": "https://arstechnica.com/ai/2026/10/boston-dynamics-employees-want-to-block-sale-of-robot-dogs-to-ice",
+          "original_url": "https://arstechnica.com/ai/2026/10/boston-dynamics-employees-want-to-block-sale-of-robot-dogs-to-ice/",
+          "summary": "US robotics company stands by ICE deal as more than 300 employees warn of risk.",
+          "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/10/Radeco-Cerberus-robot-1152x648.jpg",
+          "image_source": "rss_media",
+          "published_at": "2026-10-26T18:50:41.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "title": "ICE plan to buy robot dogs spurs protest from hundreds of Boston Dynamics employees",
+          "url": "https://arstechnica.com/ai/2026/10/boston-dynamics-employees-want-to-block-sale-of-robot-dogs-to-ice",
+          "published_at": "2026-10-26T18:50:41.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Report on internal employee protests at Boston Dynamics regarding sales to ICE.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.354,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "ihda18",
+      "primary": {
+        "id": "ihda18",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "DigitalOcean Launches Learning and Data Services to Enable Self-Improving AI Agents",
+        "url": "https://infoq.com/news/2026/10/digitalocean-self-improving-ai",
+        "original_url": "https://www.infoq.com/news/2026/10/digitalocean-self-improving-ai/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "DigitalOcean has announced the public preview of Learning Services and Agent Data Services, enabling developers to build, evaluate, and continuously improve AI agents within a unified, AI-native, cloud platform. By Sergio De Simone",
+        "image_url": "https://res.infoq.com/news/2026/10/digitalocean-self-improving-ai/en/headerimage/digitalocean-managed-agents-1793035926117.jpeg",
+        "image_source": "rss_content",
+        "published_at": "2026-10-26T18:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "ihda18",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "DigitalOcean Launches Learning and Data Services to Enable Self-Improving AI Agents",
+          "url": "https://infoq.com/news/2026/10/digitalocean-self-improving-ai",
+          "original_url": "https://www.infoq.com/news/2026/10/digitalocean-self-improving-ai/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "DigitalOcean has announced the public preview of Learning Services and Agent Data Services, enabling developers to build, evaluate, and continuously improve AI agents within a unified, AI-native, cloud platform. By Sergio De Simone",
+          "image_url": "https://res.infoq.com/news/2026/10/digitalocean-self-improving-ai/en/headerimage/digitalocean-managed-agents-1793035926117.jpeg",
+          "image_source": "rss_content",
+          "published_at": "2026-10-26T18:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "DigitalOcean Launches Learning and Data Services to Enable Self-Improving AI Agents",
+          "url": "https://infoq.com/news/2026/10/digitalocean-self-improving-ai",
+          "published_at": "2026-10-26T18:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "company_announcement",
+      "quality": "mixed",
+      "one_liner": "DigitalOcean introduces cloud services for building and evaluating AI agents.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.353,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Scan for API, pricing, policy, or platform changes that affect shipped systems."
+    },
+    {
+      "id": "hwibxb",
+      "primary": {
+        "id": "hwibxb",
+        "source_id": "ars_ai",
+        "source_name": "Ars Technica AI",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "news",
+        "title": "Highway thieves are spoofing GPS to steal millions in data center-bound cargo",
+        "url": "https://arstechnica.com/tech-policy/2026/10/highway-thieves-are-spoofing-gps-to-steal-millions-in-data-center-bound-cargo",
+        "original_url": "https://arstechnica.com/tech-policy/2026/10/highway-thieves-are-spoofing-gps-to-steal-millions-in-data-center-bound-cargo/",
+        "summary": "Investigators explain how highway thieves stole $100M in data center equipment.",
+        "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/10/via-Cook-County-Sheriffs-Office-X-1152x648-1793033307.jpeg",
+        "image_source": "rss_media",
+        "published_at": "2026-10-26T17:26:36.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "hwibxb",
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "news",
+          "title": "Highway thieves are spoofing GPS to steal millions in data center-bound cargo",
+          "url": "https://arstechnica.com/tech-policy/2026/10/highway-thieves-are-spoofing-gps-to-steal-millions-in-data-center-bound-cargo",
+          "original_url": "https://arstechnica.com/tech-policy/2026/10/highway-thieves-are-spoofing-gps-to-steal-millions-in-data-center-bound-cargo/",
+          "summary": "Investigators explain how highway thieves stole $100M in data center equipment.",
+          "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/10/via-Cook-County-Sheriffs-Office-X-1152x648-1793033307.jpeg",
+          "image_source": "rss_media",
+          "published_at": "2026-10-26T17:26:36.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "ars_ai",
+          "source_name": "Ars Technica AI",
+          "title": "Highway thieves are spoofing GPS to steal millions in data center-bound cargo",
+          "url": "https://arstechnica.com/tech-policy/2026/10/highway-thieves-are-spoofing-gps-to-steal-millions-in-data-center-bound-cargo",
+          "published_at": "2026-10-26T17:26:36.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Report on GPS spoofing attacks targeting logistics shipments of data center hardware.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.352,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "1ousnim",
+      "primary": {
+        "id": "1ousnim",
+        "source_id": "mit_tech_review_ai",
+        "source_name": "MIT Technology Review AI",
+        "source_role": "main",
+        "trust": 0.82,
+        "kind_hint": "news",
+        "title": "The focus on AI safety disasters ignores everyday harms",
+        "url": "https://technologyreview.com/2026/10/26/1147645/the-focus-on-ai-safety-disasters-ignores-everyday-harms",
+        "original_url": "https://www.technologyreview.com/2026/10/26/1147645/the-focus-on-ai-safety-disasters-ignores-everyday-harms/",
+        "summary": "Consider what passes for success in technology policy. An AI company promises that its chatbot will not encourage suicide. A social media platform makes it more difficult for children to buy fentanyl. These are important protections, and they should have existed all along. But companies can clear these low bars while continuing to make products…",
+        "published_at": "2026-10-26T09:01:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1ousnim",
+          "source_id": "mit_tech_review_ai",
+          "source_name": "MIT Technology Review AI",
+          "source_role": "main",
+          "trust": 0.82,
+          "kind_hint": "news",
+          "title": "The focus on AI safety disasters ignores everyday harms",
+          "url": "https://technologyreview.com/2026/10/26/1147645/the-focus-on-ai-safety-disasters-ignores-everyday-harms",
+          "original_url": "https://www.technologyreview.com/2026/10/26/1147645/the-focus-on-ai-safety-disasters-ignores-everyday-harms/",
+          "summary": "Consider what passes for success in technology policy. An AI company promises that its chatbot will not encourage suicide. A social media platform makes it more difficult for children to buy fentanyl. These are important protections, and they should have existed all along. But companies can clear these low bars while continuing to make products…",
+          "published_at": "2026-10-26T09:01:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "mit_tech_review_ai",
+          "source_name": "MIT Technology Review AI",
+          "title": "The focus on AI safety disasters ignores everyday harms",
+          "url": "https://technologyreview.com/2026/10/26/1147645/the-focus-on-ai-safety-disasters-ignores-everyday-harms",
+          "published_at": "2026-10-26T09:01:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "Argument that AI safety discourse should prioritize immediate harms over long-term existential risks.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.82,
+      "score": 0.347,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    },
+    {
+      "id": "15eatbo",
+      "primary": {
+        "id": "15eatbo",
+        "source_id": "wired_ai",
+        "source_name": "WIRED AI",
+        "source_role": "main",
+        "trust": 0.76,
+        "kind_hint": "news",
+        "title": "The Anthropic S-1 Filing Is Also an AI Doomsday Primer",
+        "url": "https://wired.com/story/the-anthropic-ipo-is-also-a-doomsday-primer",
+        "original_url": "https://www.wired.com/story/the-anthropic-ipo-is-also-a-doomsday-primer/",
+        "summary": "Anthropic thinks “closing the loop” is the best path to AI triumph—and a recipe for “existential” threats to humanity.",
+        "image_url": "https://media.wired.com/photos/6adf6d7844b1eb496ab79957/master/pass/Business_The%20Anthropic%20IPO%20Is%20Also%20a%20Doomsday%20Primer_v1.jpg",
+        "image_source": "rss_media",
+        "published_at": "2026-10-26T16:01:55.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "15eatbo",
+          "source_id": "wired_ai",
+          "source_name": "WIRED AI",
+          "source_role": "main",
+          "trust": 0.76,
+          "kind_hint": "news",
+          "title": "The Anthropic S-1 Filing Is Also an AI Doomsday Primer",
+          "url": "https://wired.com/story/the-anthropic-ipo-is-also-a-doomsday-primer",
+          "original_url": "https://www.wired.com/story/the-anthropic-ipo-is-also-a-doomsday-primer/",
+          "summary": "Anthropic thinks “closing the loop” is the best path to AI triumph—and a recipe for “existential” threats to humanity.",
+          "image_url": "https://media.wired.com/photos/6adf6d7844b1eb496ab79957/master/pass/Business_The%20Anthropic%20IPO%20Is%20Also%20a%20Doomsday%20Primer_v1.jpg",
+          "image_source": "rss_media",
+          "published_at": "2026-10-26T16:01:55.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "wired_ai",
+          "source_name": "WIRED AI",
+          "title": "The Anthropic S-1 Filing Is Also an AI Doomsday Primer",
+          "url": "https://wired.com/story/the-anthropic-ipo-is-also-a-doomsday-primer",
+          "published_at": "2026-10-26T16:01:55.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "Analysis of Anthropic's S-1 filing focusing on their stated existential risk concerns and long-term strategic outlook.",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.76,
+      "score": 0.345,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Read the primary source and decide whether it changes your next action."
+    }
+  ]
+}
