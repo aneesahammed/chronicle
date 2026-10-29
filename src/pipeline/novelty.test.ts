@@ -30,3 +30,8 @@ test("novelty ignores same-day history entries during manual reruns", () => {
   assert.equal(novelty("Anthropic releases Claude for creative work", history), 0);
   assert.equal(novelty("Anthropic releases Claude for creative work", history, today), 1);
 });
+
+test("canonical URL identity catches a retitled article even on the same day", () => {
+  const history = { entries: [{ id: "old", title: "Original headline", url: "https://example.com/article", date: "2026-10-29" }] };
+  assert.equal(novelty("Completely different headline", history, new Date("2026-10-29"), "https://example.com/article?utm_source=feed"), 0);
+});

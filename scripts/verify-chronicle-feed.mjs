@@ -131,7 +131,7 @@ export function collectChronicleFeedWarnings(feed) {
   const warnings = [];
   for (const [family, count] of counts) {
     const ratio = count / feed.clusters.length;
-    if (ratio > SOURCE_FAMILY_WARNING_RATIO) {
+    if (ratio > Math.max(SOURCE_FAMILY_WARNING_RATIO, 1 / feed.clusters.length)) {
       warnings.push(
         `Chronicle source family "${family}" is ${Math.round(ratio * 100)}% of the feed (${count}/${feed.clusters.length})`,
       );
@@ -266,10 +266,19 @@ function validateLearningMetadata(learning, label, failures) {
     failures.push(`${label} should be an object`);
     return;
   }
-  for (const key of ['provider', 'channel_id', 'video_id', 'playlist_url', 'course_url', 'level']) {
+  for (const key of ['provider', 'channel_id', 'video_id', 'playlist_url', 'course_url', 'level', 'track', 'publication_label', 'prerequisites', 'cost', 'reviewed_at', 'last_checked_at', 'compatibility_status', 'compatibility']) {
     if (learning[key] !== undefined && typeof learning[key] !== 'string') {
       failures.push(`${label}.${key} should be a string`);
     }
+  }
+  if (learning.track !== undefined && !['new', 'foundations'].includes(learning.track)) failures.push(`${label} has invalid track`);
+  if (learning.track === 'foundations') {
+    for (const key of ['publication_label', 'prerequisites', 'cost', 'reviewed_at', 'compatibility_status', 'compatibility']) {
+      if (typeof learning[key] !== 'string' || !learning[key].trim()) failures.push(`${label} missing ${key}`);
+    }
+    if (!isIsoDate(learning.reviewed_at)) failures.push(`${label} invalid review date`);
+    if (!isIsoDate(learning.last_checked_at)) failures.push(`${label} invalid check date`);
+    if (!['not_execution_tested', 'historical'].includes(learning.compatibility_status)) failures.push(`${label} invalid compatibility status`);
   }
 }
 
@@ -297,7 +306,7 @@ function validateSourceHealth(source, index, failures) {
     if (!source[key] || typeof source[key] !== 'string') failures.push(`${label} missing string ${key}`);
   }
   if (!['ok', 'failed'].includes(source.status)) failures.push(`${label} has invalid status: ${source.status}`);
-  for (const key of ['fetched_count', 'fresh_count', 'stale_count']) {
+  for (const key of ['fetched_count', 'fresh_count', 'stale_count', 'evergreen_count', 'selected_count', 'unique_selected_count']) {
     if (source[key] !== undefined && (!Number.isFinite(source[key]) || source[key] < 0)) {
       failures.push(`${label} ${key} should be a non-negative number`);
     }

@@ -62,6 +62,9 @@ export function clusterItems(items: RawItem[]): Cluster[] {
   const signatures = stage1.map((c) => claimSignature(c));
   for (let i = 0; i < stage1.length; i++) {
     for (let j = i + 1; j < stage1.length; j++) {
+      // Course identity is its canonical URL. Similar provider/course names are
+      // distinct curricula, not repeated reporting of the same claim.
+      if ([stage1[i], stage1[j]].some(cluster => cluster.members.some(item => item.learning?.track === "foundations"))) continue;
       const sim = jaccard(tris[i], tris[j]);
       if (sim >= TITLE_THRESHOLD || shouldMergeClaim(sim, signatures[i], signatures[j])) {
         parent[find(j)] = find(i);

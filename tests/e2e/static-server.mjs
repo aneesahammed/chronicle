@@ -18,6 +18,16 @@ const mime = {
 
 createServer((request, response) => {
   const url = new URL(request.url || "/", `http://127.0.0.1:${port}`);
+  if (url.pathname === "/__test__/legacy-worker.js") {
+    response.writeHead(200, { "Content-Type": "text/javascript", "Service-Worker-Allowed": "/", "Cache-Control": "no-store" });
+    createReadStream(new URL("./fixtures/legacy-worker.js", import.meta.url)).pipe(response);
+    return;
+  }
+  if (url.pathname === "/__test__/legacy-client.html") {
+    response.writeHead(200, { "Content-Type": "text/html", "Cache-Control": "no-store" });
+    response.end('<!doctype html><button id="readerMode"></button><link rel="stylesheet" href="/app.css">');
+    return;
+  }
   let pathname = decodeURIComponent(url.pathname);
   if (pathname.endsWith("/")) pathname += "index.html";
 

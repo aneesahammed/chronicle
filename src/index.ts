@@ -87,6 +87,7 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
   console.log(`[run] ${now.toISOString()}  window=${windowHours}h repo_window=${repoWindowHours}h learning_window=${learningWindowHours}h`);
 
   const reg = YAML.parse(await fs.readFile(registryPath, "utf8")) as Registry;
+  reg.sources = reg.sources.filter((source) => source.enabled !== false);
   const previous = await loadExistingFeed(feedOut);
   const providers = options.providers ?? createLlmProviders(env);
   console.log(`[llm] providers=${providers.map((provider) => `${provider.name}:${provider.model}`).join(",") || "fallback"}`);
@@ -134,10 +135,6 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
   const updated = appendToHistory(history, mainClusters, now);
   await saveHistory(historyOut, updated);
   console.log(`[write] ${historyOut}  entries=${updated.entries.length}`);
-  await writeFeed(feedOut, mainFeed);
-  await writeRenderedHomePage(publicDir, mainFeed);
-  await writeSyndicationFeeds(publicDir, mainFeed);
-  await writeFeedSchema(publicDir);
 
   const repoFeed = await buildRoleFeed({
     role: "repo",
@@ -168,6 +165,12 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
   });
   await writeFeed(learningFeedOut, learningFeed);
 
+  mainFeed.section_counts = { main: mainFeed.count, repo: repoFeed.count, learning: learningFeed.count };
+  await writeFeed(feedOut, mainFeed);
+  await writeRenderedHomePage(publicDir, mainFeed);
+  await writeSyndicationFeeds(publicDir, mainFeed);
+  await writeFeedSchema(publicDir);
+
   if (mainFeed.refresh_status !== "failed") {
     await writeArchiveOutputs(publicDir, {
       main: mainFeed,
@@ -178,7 +181,12 @@ export async function runPipeline(options: RunPipelineOptions = {}) {
 }
 
 function freshItems(items: RawItem[], cutoff: number): RawItem[] {
-  return items.filter((it) => new Date(it.published_at).getTime() >= cutoff);
+  // Evergreen lessons are deliberately separate from the dated news window.
+  return items.filter((it) => isFoundation(it) || Date.parse(it.discovered_at ?? it.published_at) >= cutoff);
+}
+
+function isFoundation(item: Pick<RawItem, "source_role" | "learning">): boolean {
+  return item.source_role === "learning" && item.learning?.track === "foundations";
 }
 
 async function buildRoleFeed(options: {
@@ -198,6 +206,7 @@ async function buildRoleFeed(options: {
     options.fetched.source_health,
     options.healthItems ?? options.items,
     options.now.getTime() - options.windowHours * 3.6e6,
+    options.previous?.source_health ?? [],
   );
   const clusters = clusterItems(options.items);
   console.log(`[cluster:${options.role}] ${options.items.length} → ${clusters.length} clusters`);
@@ -217,12 +226,12 @@ async function buildRoleFeed(options: {
   const noveltyByClusterId = new Map<string, number>();
   const preliminaryScored = clusters
     .map((c, i) => {
-      const noveltyScore = novelty(c.primary.title, options.history, options.now);
+      const noveltyScore = novelty(c.primary.title, options.history, options.now, c.primary.url);
       noveltyByClusterId.set(c.id, noveltyScore);
       return scoreCluster(c, preclassified.items[i], noveltyScore, options.now);
-    })
-    .filter((s) => !(s.quality === "hype" && s.members.length < 2));
-  const candidates = selectDiverseClusters(preliminaryScored, { maxOutput: options.maxOutput });
+    });
+  // Review all fresh candidates before output caps; heuristic labels cannot hide items from the model.
+  const candidates = preliminaryScored;
   let classificationMode: ClassificationResult["mode"] = preclassified.mode;
   let scored = candidates;
 
@@ -235,7 +244,16 @@ async function buildRoleFeed(options: {
       .filter((s) => !(s.quality === "hype" && s.members.length < 2));
   }
 
-  const selected = selectDiverseClusters(scored, { maxOutput: options.maxOutput });
+  const eligible = scored.filter((item) => item.quality !== "hype");
+  // A curated library has its own bounded shelf and does not compete with new lessons.
+  const foundations = options.role === "learning" && options.maxOutput > 0
+    ? eligible.filter(item => isFoundation(item.primary)).slice(0, 12) : [];
+  const selected = [
+    ...selectDiverseClusters(eligible.filter(item => !isFoundation(item.primary)), {
+      maxOutput: options.maxOutput, enforceFamilyRatio: options.role === "main",
+    }),
+    ...foundations,
+  ];
 
   console.log(`[score:${options.role}] kept ${selected.length} after filtering`);
   console.log(`[diversity:${options.role}] ${JSON.stringify(sourceFamilyMix(selected))}`);
@@ -260,6 +278,9 @@ async function buildRoleFeed(options: {
     : [];
 
   return {
+    attempted_at: options.now.toISOString(),
+    selection_stats: { candidates: clusters.length, reviewed: candidates.length, selected: selected.length },
+    classification_counts: selected.reduce((counts, item) => { const method = item.classification_method ?? "fallback"; counts[method] = (counts[method] ?? 0) + 1; return counts; }, {} as Record<string, number>),
     generated_at: options.now.toISOString(),
     last_successful_generated_at: selected.length
       ? options.now.toISOString()
@@ -271,7 +292,12 @@ async function buildRoleFeed(options: {
     source_ok: options.fetched.source_ok,
     source_failed: options.fetched.source_failed,
     failed_sources: options.fetched.failed_sources,
-    source_health: sourceHealth,
+    source_health: sourceHealth.map(source => ({
+      ...source,
+      selected_count: selected.filter(cluster => cluster.members.some(item => item.source_id === source.id)).length,
+      unique_selected_count: selected.filter(cluster => cluster.members.some(item => item.source_id === source.id)
+        && cluster.members.every(item => item.source_id === source.id)).length,
+    })),
     ...(topNews.length ? { top_news: topNews } : {}),
     count: selected.length,
     clusters: selected,
@@ -419,6 +445,7 @@ function applyRepoHistory(
         stars_delta_30d: starsDelta,
         trending_period: repo.trending_period,
         readme_image_url: repo.readme_image_url,
+        has_readme: repo.has_readme,
       },
     });
   }
@@ -478,11 +505,14 @@ function previousFeed(
   },
 ): FeedFile {
   const preserved: FeedFile = {
-    generated_at: options.now.toISOString(),
+    attempted_at: options.now.toISOString(),
+    generated_at: previousFeed.generated_at,
     last_successful_generated_at:
       previousFeed.last_successful_generated_at ?? previousFeed.generated_at ?? null,
     refresh_status: "failed",
-    classification_mode: options.classificationMode,
+    classification_mode: previousFeed.classification_mode ?? options.classificationMode,
+    classification_counts: previousFeed.classification_counts,
+    selection_stats: previousFeed.selection_stats,
     window_hours: options.windowHours,
     source_total: options.fetched.source_total,
     source_ok: options.fetched.source_ok,
@@ -544,16 +574,19 @@ function readNonNegativeInteger(env: NodeJS.ProcessEnv, key: string, fallback: n
 
 function enrichSourceHealth(
   health: SourceHealth[],
-  items: { source_id: string; published_at: string }[],
+  items: RawItem[],
   cutoff: number,
+  previous: SourceHealth[] = [],
 ): SourceHealth[] {
-  const bySource = new Map<string, { fresh: number; stale: number; dates: string[] }>();
+  const bySource = new Map<string, { fresh: number; stale: number; evergreen: number; dates: string[] }>();
   for (const item of items) {
-    const bucket = bySource.get(item.source_id) ?? { fresh: 0, stale: 0, dates: [] };
+    const bucket = bySource.get(item.source_id) ?? { fresh: 0, stale: 0, evergreen: 0, dates: [] };
     const published = Date.parse(item.published_at);
-    if (Number.isFinite(published)) {
+    if (isFoundation(item)) {
+      bucket.evergreen++;
+    } else if (Number.isFinite(published)) {
       bucket.dates.push(new Date(published).toISOString());
-      if (published >= cutoff) bucket.fresh++;
+      if (Date.parse(item.discovered_at ?? item.published_at) >= cutoff) bucket.fresh++;
       else bucket.stale++;
     } else {
       bucket.stale++;
@@ -562,12 +595,15 @@ function enrichSourceHealth(
   }
 
   return health.map((source) => {
-    const stats = bySource.get(source.id) ?? { fresh: 0, stale: 0, dates: [] };
+    const stats = bySource.get(source.id) ?? { fresh: 0, stale: 0, evergreen: 0, dates: [] };
     const sortedDates = [...stats.dates].sort();
     return {
       ...source,
+      consecutive_failures: source.status === "failed" ? (previous.find((item) => item.id === source.id)?.consecutive_failures ?? 0) + 1 : 0,
+      consecutive_empty: source.status === "ok" && stats.fresh === 0 && stats.evergreen === 0 ? (previous.find((item) => item.id === source.id)?.consecutive_empty ?? 0) + 1 : 0,
       fresh_count: stats.fresh,
       stale_count: stats.stale,
+      evergreen_count: stats.evergreen,
       oldest_published_at: sortedDates[0],
       newest_published_at: sortedDates.at(-1),
     };

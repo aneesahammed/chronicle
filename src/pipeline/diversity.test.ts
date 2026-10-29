@@ -80,7 +80,7 @@ test("selectDiverseClusters does not allow arXiv exceptional overflow", () => {
   assert.equal(mix.arxiv, 3);
 });
 
-test("selectDiverseClusters allows a small exceptional overflow for non-arXiv families", () => {
+test("selectDiverseClusters keeps the ratio even for exceptional scores", () => {
   const reporting = Array.from({ length: 20 }, (_, index) => scored({
     id: `reporting-${index}`,
     source_id: index % 2 === 0 ? "techcrunch_ai" : "the_decoder",
@@ -98,10 +98,10 @@ test("selectDiverseClusters allows a small exceptional overflow for non-arXiv fa
   const mix = sourceFamilyMix(selected);
 
   assert.equal(selected.length, 20);
-  assert.equal(mix.reporting, 9);
+  assert.equal(mix.reporting, 8);
 });
 
-test("selectDiverseClusters treats maxOutput as a maximum when only arXiv is available", () => {
+test("selectDiverseClusters keeps a single-family edition to one item, including arXiv", () => {
   const arxiv = Array.from({ length: 20 }, (_, index) => scored({
     id: `arxiv-${index}`,
     source_id: "arxiv_cl",
@@ -111,7 +111,7 @@ test("selectDiverseClusters treats maxOutput as a maximum when only arXiv is ava
 
   const selected = selectDiverseClusters(arxiv, { maxOutput: 20 });
 
-  assert.equal(selected.length, 3);
+  assert.equal(selected.length, 1);
 });
 
 test("selectDiverseClusters applies a light same-family score penalty", () => {
@@ -124,7 +124,6 @@ test("selectDiverseClusters applies a light same-family score penalty", () => {
   assert.deepEqual(selected.map((item) => item.id), [
     "reporting-1",
     "hn",
-    "reporting-2",
   ]);
 });
 
@@ -200,3 +199,15 @@ function withSilencedWarnings<T>(fn: () => T): T {
     console.warn = originalWarn;
   }
 }
+
+test("quiet editions use the final length for family caps", () => {
+  const input = [
+    ...Array.from({length:16},(_,i)=>scored({id:`r${i}`,source_id:"the_decoder",score:0.8-i*.001})),
+    ...Array.from({length:3},(_,i)=>scored({id:`b${i}`,source_id:"martin_fowler",score:0.7-i*.001})),
+    ...Array.from({length:2},(_,i)=>scored({id:`h${i}`,source_id:"hn_ai",score:0.69-i*.001})),
+    scored({id:"l",source_id:"yt_openai",score:0.65}),
+  ];
+  const selected = selectDiverseClusters(input,{maxOutput:60});
+  assert.ok(selected.length < 22 && selected.length >= 3);
+  for(const count of Object.values(sourceFamilyMix(selected))) assert.ok(count/selected.length<=0.4);
+});

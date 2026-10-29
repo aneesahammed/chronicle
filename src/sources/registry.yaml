@@ -6,6 +6,48 @@
 # url_include/url_exclude: optional substring filters for sitemap sources.
 
 sources:
+  # Small source pilot: inspect contribution and quality before widening.
+  - id: learn_huggingface
+    name: Hugging Face Learn
+    type: course_catalog
+    url: https://huggingface.co/learn/
+    trust: 0.82
+    source_role: learning
+    kind_hint: course
+    limit: 2
+  - id: learn_fullstack
+    name: Full Stack Deep Learning
+    type: course_catalog
+    url: https://fullstackdeeplearning.com/llm-bootcamp/
+    trust: 0.82
+    source_role: learning
+    kind_hint: course
+    limit: 1
+  - id: learn_fastai
+    name: fast.ai
+    type: course_catalog
+    url: https://course.fast.ai/
+    trust: 0.82
+    source_role: learning
+    kind_hint: course
+    limit: 1
+  - id: repo_vllm_releases
+    name: vLLM releases
+    type: github_releases
+    url: https://api.github.com/repos/vllm-project/vllm/releases?per_page=20
+    trust: 0.80
+    source_role: repo
+    kind_hint: repo_release
+    limit: 1
+  - id: metr
+    name: METR
+    type: rss
+    url: https://metr.org/feed.xml
+    trust: 0.80
+    kind_hint: news
+    ai_filter: true
+    limit: 5
+
   # ── Research ────────────────────────────────────────────────────────────
   - id: arxiv_cl
     name: arXiv cs.CL
@@ -85,7 +127,7 @@ sources:
   - id: import_ai
     name: Import AI (Jack Clark)
     type: rss
-    url: https://importai.net/feed/
+    url: https://jack-clark.net/feed/
     trust: 0.85
     limit: 10
 
@@ -242,6 +284,8 @@ sources:
     limit: 20
 
   - id: marktechpost
+    enabled: false
+    disabled_reason: "Quarantined 2026-10-29 after persistent fetch/parse failures; review access and response format before re-enabling."
     name: MarkTechPost
     type: rss
     url: https://www.marktechpost.com/feed
@@ -276,6 +320,8 @@ sources:
     limit: 20
 
   - id: r_localllama
+    enabled: false
+    disabled_reason: "Quarantined 2026-10-29 after persistent fetch/parse failures; review access and response format before re-enabling."
     name: r/LocalLLaMA
     type: rss
     url: https://old.reddit.com/r/LocalLLaMA/top/.rss?t=day
@@ -284,6 +330,8 @@ sources:
     limit: 25
 
   - id: r_ml
+    enabled: false
+    disabled_reason: "Quarantined 2026-10-29 after persistent fetch/parse failures; review access and response format before re-enabling."
     name: r/MachineLearning
     type: rss
     url: https://old.reddit.com/r/MachineLearning/top/.rss?t=day
@@ -319,6 +367,9 @@ sources:
       - anthropic.com/news/
       - anthropic.com/engineering/
       - anthropic.com/research/
+    url_exclude:
+      # This old research URL now redirects to an Academy tutorial on another host.
+      - /research/AI-fluency-index
     limit: 12
 
   - id: mistral

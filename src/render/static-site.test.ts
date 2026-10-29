@@ -123,7 +123,7 @@ test("writeRenderedHomePage renders non-material source failures as quiet status
   const html = await fs.readFile(path.join(root, "index.html"), "utf8");
   assert.match(html, /<span id="statusText">1 item · updated .* · 1 source skipped<\/span>/);
   assert.match(html, /<summary>1 source skipped<\/summary>/);
-  assert.match(html, /<strong>MarkTechPost<\/strong>: Invalid character in entity name Line: 0 Column: 117 Char: =/);
+  assert.match(html, /<strong>MarkTechPost<\/strong>: Invalid feed format/);
   assert.doesNotMatch(html, /1 failed/);
 });
 

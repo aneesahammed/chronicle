@@ -1,4 +1,5 @@
 import type { ClassificationMode, Cluster, Kind, Quality } from "../types.ts";
+import { evidenceQuality, builderValue } from "../pipeline/quality-policy.ts";
 import { sourceRoleOf } from "../types.ts";
 import { completeJsonWithProviders, type LlmJsonRequest, type LlmProvider } from "./providers.ts";
 
@@ -85,6 +86,10 @@ export interface Classification {
   kind: Kind;
   quality: Quality;
   one_liner: string;
+  classification_method?: "llm" | "deterministic" | "fallback";
+  classification_reason?: string;
+  classification_provider?: string;
+  classification_model?: string;
 }
 
 export interface ClassificationResult {
@@ -113,7 +118,7 @@ export function classifyClustersDeterministically(clusters: Cluster[]): Classifi
 export async function classifyClusters(
   clusters: Cluster[],
   providers: LlmProvider[] = [],
-  completeJson?: (request: LlmJsonRequest) => Promise<{ content: string }>,
+  completeJson?: (request: LlmJsonRequest) => Promise<{ content: string; provider?: string; model?: string }>,
 ): Promise<ClassificationResult> {
   if (clusters.length === 0) return { items: [], mode: "fallback" };
 
@@ -141,6 +146,7 @@ export async function classifyClusters(
       );
       classified.forEach((classification, offset) => {
         items[batch[offset].index] = classification;
+        if (classification.classification_method === "fallback") failedClusters++;
       });
     } catch (error) {
       failedClusters += batch.length;
@@ -172,17 +178,13 @@ function deterministicClassification(cluster: Cluster): Classification {
     kind,
     quality: deterministicQuality(cluster, kind),
     one_liner: deterministicOneLiner(cluster),
+    classification_method: "deterministic",
+    classification_reason: "Metadata evidence rules; not independently verified",
   };
 }
 
 function deterministicQuality(cluster: Cluster, kind: Kind): Quality {
-  if (kind === "repo_release") return cluster.primary.trust >= 0.75 ? "signal" : "mixed";
-  if (kind === "repo_trending") {
-    const stars = cluster.primary.repo?.stargazers_count ?? 0;
-    const starsToday = cluster.primary.repo?.stars_today ?? 0;
-    return stars >= 1000 || starsToday >= 50 ? "signal" : "mixed";
-  }
-  if (kind === "video" || kind === "course") return cluster.primary.trust >= 0.75 ? "signal" : "mixed";
+  if (["repo_release", "repo_trending", "video", "course"].includes(kind)) return evidenceQuality(cluster, kind);
   return fallbackQuality(cluster, kind);
 }
 
@@ -264,7 +266,7 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 
 async function classifyBatch(
   clusters: Cluster[],
-  completeJson: (request: LlmJsonRequest) => Promise<{ content: string }>,
+  completeJson: (request: LlmJsonRequest) => Promise<{ content: string; provider?: string; model?: string }>,
 ): Promise<Classification[]> {
   const payload = clusters.map((c, i) => ({
     index: i,
@@ -295,8 +297,12 @@ async function classifyBatch(
   return clusters.map((c, i) => {
     const got = byIdx.get(i);
     if (!got) return fallback(c);
-    if (!isKind(got.kind) || !isQuality(got.quality)) return fallback(c);
+    if (!isKind(got.kind) || !isQuality(got.quality) || typeof got.one_liner !== "string" || !got.one_liner.trim()) return fallback(c);
     return {
+      classification_method: "llm",
+      classification_provider: resp.provider,
+      classification_model: resp.model,
+      classification_reason: "Model assessment from source metadata; not independently verified",
       kind: got.kind,
       quality: got.quality,
       one_liner: String(got.one_liner || c.primary.title).slice(0, 200),
@@ -310,6 +316,8 @@ function fallback(c: Cluster): Classification {
     kind,
     quality: fallbackQuality(c, kind),
     one_liner: deterministicOneLiner(c),
+    classification_method: "fallback",
+    classification_reason: "Model assessment unavailable or invalid; conservative metadata rules",
   };
 }
 
@@ -319,9 +327,9 @@ function fallbackQuality(c: Cluster, kind: Kind): Quality {
   const text = `${title} ${summary}`;
 
   if (kind === "discussion" && isLowSignalDiscussion(title, text)) return "hype";
-  if (kind === "paper") return isLikelySignalPaper(text) ? "signal" : "mixed";
+  if (kind === "paper") return isLikelySignalPaper(text) && summary.length >= 40 && builderValue(c) >= 0.55 ? "signal" : "mixed";
   if (kind === "tutorial" || kind === "tool" || kind === "repo_release" || kind === "video" || kind === "course") {
-    return "signal";
+    return evidenceQuality(c, kind);
   }
   if (kind === "repo_trending") return deterministicQuality(c, kind);
   return "mixed";

@@ -1,7 +1,7 @@
 {
   "name": "chronicle",
   "version": "0.1.0",
-  "description": "Chronicle — a daily AI signal filter for builders.",
+  "description": "Chronicle \u2014 a daily AI signal filter for builders.",
   "private": true,
   "type": "module",
   "engines": {
@@ -18,7 +18,13 @@
     "verify:repos": "node scripts/verify-chronicle-feed.mjs public/repos.json",
     "verify:learning": "node scripts/verify-chronicle-feed.mjs public/learning.json",
     "verify:all": "npm run verify:feed && npm run verify:repos && npm run verify:learning",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "verify:freshness": "node --experimental-strip-types scripts/verify-freshness.ts",
+    "health:report": "node --experimental-strip-types scripts/health-report.ts",
+    "render:site": "node --experimental-strip-types scripts/render-site.ts",
+    "evaluate": "node --experimental-strip-types scripts/evaluate.ts",
+    "sources:check": "node --experimental-strip-types scripts/source-pilots.ts --fetch",
+    "sources:report": "node --experimental-strip-types scripts/source-pilots.ts"
   },
   "dependencies": {
     "cheerio": "^1.2.0",

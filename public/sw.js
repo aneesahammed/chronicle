@@ -1,21 +1,29 @@
-const CACHE_VERSION = "v9";
+const CACHE_VERSION = "assets-69f18b6b271a8138";
 const CACHE_PREFIX = "chronicle-";
 const SHELL_CACHE = `${CACHE_PREFIX}shell-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `${CACHE_PREFIX}runtime-${CACHE_VERSION}`;
 const MAX_RUNTIME_ENTRIES = 160;
+// CHRONICLE_ASSETS_START
+const VERSIONED_ASSETS = [
+  "/assets/app.2a4d80c240ab30cb.js",
+  "/assets/app.44add64fcd9b7a5b.css",
+  "/assets/mobile-reader-state.90781e93f1bdf2c8.js",
+  "/assets/theme.75c3ac8ffe1ccf04.js",
+  "/assets/sw-register.6112dc51a5b513da.js",
+  "/assets/archive.4a53bfc8b190730f.js",
+  "/assets/policy.810fec62a0079c26.js"
+];
+// CHRONICLE_ASSETS_END
 const APP_SHELL = [
+  ...VERSIONED_ASSETS,
   "/",
   "/index.html",
   "/daily/",
   "/daily/index.html",
-  "/daily/index.json",
-  "/feed.json",
-  "/rss.xml",
-  "/atom.xml",
-  "/feed.schema.json",
   "/manifest.webmanifest",
-  "/mobile-reader-state.js",
-  "/sw-register.js",
+  "/methodology.html",
+  "/privacy.html",
+  "/corrections.html",
   "/favicon.svg",
   "/icon-192.png",
   "/icon-512.png",
@@ -76,11 +84,11 @@ async function matchRuntimeThenShell(request, fallbackUrl) {
 
 async function matchShellThenRuntime(request) {
   const shell = await caches.open(SHELL_CACHE);
-  const shellHit = await shell.match(request, { ignoreSearch: true });
+  const shellHit = await shell.match(request);
   if (shellHit) return shellHit;
 
   const runtime = await caches.open(RUNTIME_CACHE);
-  return runtime.match(request, { ignoreSearch: true });
+  return runtime.match(request);
 }
 
 async function networkFirst(request, fallbackUrl) {
