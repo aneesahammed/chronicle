@@ -16,7 +16,8 @@ test("an existing cache cannot apply old app code to the latest page", async ({ 
   // The historical ignoreSearch behavior also defeats query-string version tags.
   expect(await page.evaluate(async () => (await fetch("/app.js?v=next")).text())).toContain("Use card reader");
 
-  await page.goto("/?tab=learning", { waitUntil: "domcontentloaded" });
+  // Foundations remain available when external lesson feeds return no items.
+  await page.goto("/?tab=learning&track=foundations", { waitUntil: "domcontentloaded" });
   await expect(page.locator("#mobileReader")).toBeVisible();
   await expect(page.locator("#readerMode")).toHaveText("");
   await expect(page.locator("#readerMode svg")).toBeVisible();
