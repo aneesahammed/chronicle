@@ -17,7 +17,12 @@ test("an existing cache cannot apply old app code to the latest page", async ({ 
   expect(await page.evaluate(async () => (await fetch("/app.js?v=next")).text())).toContain("Use card reader");
 
   // Foundations remain available when external lesson feeds return no items.
+  let navigations = 0;
+  page.on("framenavigated", frame => { if (frame === page.mainFrame()) navigations++; });
   await page.goto("/?tab=learning&track=foundations", { waitUntil: "domcontentloaded" });
+  // /sw.js replaces the legacy worker and sw-register.js reloads once onto current code.
+  // Assert on the reloaded page; evaluating during that reload destroys the context.
+  await expect.poll(() => navigations).toBe(2);
   await expect(page.locator("#mobileReader")).toBeVisible();
   await expect(page.locator("#readerMode")).toHaveText("");
   await expect(page.locator("#readerMode svg")).toBeVisible();
