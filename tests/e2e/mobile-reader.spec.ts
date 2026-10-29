@@ -1,4 +1,5 @@
-import { expect, test } from "@playwright/test";
+import { readFileSync } from "node:fs";
+import { expect, test, type Page } from "@playwright/test";
 
 test.beforeEach(async ({ context }) => {
   await context.addInitScript(() => localStorage.setItem("chronicle-reader-mode", "deck"));
@@ -41,9 +42,9 @@ test("mobile reader supports scroll snap and keyboard navigation", async ({ page
 });
 
 test("compact mobile reader keeps image cards readable on iPhone SE", async ({ browser }) => {
-  const page = await browser.newPage({ viewport: { width: 375, height: 667 } });
+  const page = await browser.newPage({ viewport: { width: 375, height: 667 }, serviceWorkers: "block" });
   await page.addInitScript(() => localStorage.setItem("chronicle-reader-mode", "deck"));
-  await page.route(/https:\/\//, route => route.abort());
+  await installImageFeed(page);
   await page.goto("/", { waitUntil: "domcontentloaded" });
   await expect(page.locator("#mobileReader")).toBeVisible();
 
@@ -53,9 +54,10 @@ test("compact mobile reader keeps image cards readable on iPhone SE", async ({ b
   await expect(page.locator("#mobileReader")).toBeVisible();
 
   await page.getByRole("button", { name: "Index" }).click();
-  const imageIndex = await firstImageReaderIndex(page, 5);
-  await page.locator(`.reader-index-row[data-reader-index="${imageIndex}"]`).click();
-  await expect(page.locator(".reader-card.is-current .reader-media")).toBeVisible();
+  await page.locator('.reader-index-row[data-reader-index="5"]').click();
+  const image = page.locator(".reader-card.is-current .reader-media");
+  await expect(image).toBeVisible();
+  await expect.poll(() => image.evaluate((img: HTMLImageElement) => img.naturalWidth)).toBe(800);
 
   const closed = await visibleBounds(page);
   expect(closed.cardBottom).toBeLessThanOrEqual(closed.viewportHeight);
@@ -66,6 +68,23 @@ test("compact mobile reader keeps image cards readable on iPhone SE", async ({ b
   expect(open.explainBottom).toBeLessThanOrEqual(open.viewportHeight);
 
   await page.close();
+});
+
+test("mobile reader preserves readable content when an image fails", async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 667 });
+  await installImageFeed(page, true);
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+
+  const card = page.locator(".reader-card.is-current");
+  await expect(card).toHaveClass(/is-text-first/);
+  await expect(card.locator(".reader-media")).toHaveCount(0);
+  await expect(card.locator(".reader-title a")).toHaveAttribute("href", "https://example.test/reader/0");
+  await expect(card.locator(".reader-title")).toBeVisible();
+  const closed = await visibleBounds(page);
+  expect(closed.titleBottom).toBeLessThan(closed.explainTop);
+  await card.locator(".reader-explain summary").click();
+  const open = await visibleBounds(page);
+  expect(open.explainBottom).toBeLessThanOrEqual(open.viewportHeight);
 });
 
 test("desktop keeps the original list experience", async ({ browser }) => {
@@ -106,13 +125,40 @@ async function visibleBounds(page: import("@playwright/test").Page) {
   });
 }
 
-async function firstImageReaderIndex(page: import("@playwright/test").Page, startIndex: number) {
-  return page.locator(".reader-card").evaluateAll((cards, minIndex) => {
-    const card = cards.find((candidate) => {
-      const index = Number((candidate as HTMLElement).dataset.readerIndex || -1);
-      return index >= Number(minIndex) && Boolean(candidate.querySelector(".reader-media"));
-    }) as HTMLElement | undefined;
-    if (!card?.dataset.readerIndex) throw new Error("No image-backed reader card found");
-    return Number(card.dataset.readerIndex);
-  }, startIndex);
+async function installImageFeed(page: Page, failImage = false) {
+  // Exercise layout with a decoded image, independently of today's feeds and
+  // third-party hosts. Aborting the image tests the text fallback instead.
+  const now = new Date().toISOString();
+  const clusters = Array.from({ length: 12 }, (_, index) => ({
+    id: `reader-fixture-${index}`,
+    primary: {
+      title: `Engineering lesson ${index + 1}: building and evaluating reliable language model applications`,
+      url: `https://example.test/reader/${index}`,
+      image_url: "https://example.test/reader-image.svg",
+      published_at: now,
+      source_name: "Reader layout fixture",
+    },
+    members: [],
+    kind: "tutorial",
+    score: 0.8,
+    novelty: 0.8,
+    one_liner: "A practical walkthrough of evaluation methods, deployment tradeoffs, and reproducible examples for developers.",
+    why_this_surfaced: ["Includes implementation details and reproducible examples."],
+    builder_action: "Review the examples and compare the evaluation results.",
+  }));
+  const feed = {
+    generated_at: now, last_successful_generated_at: now, refresh_status: "success",
+    count: clusters.length, clusters, top_news: [], source_total: 1, source_ok: 1,
+    source_failed: 0, failed_sources: [], source_health: [],
+  };
+  const html = readFileSync("public/index.html", "utf8").replace(
+    /(<script id="feedBootstrap" type="application\/json">)[\s\S]*?(<\/script>)/,
+    (_match, start, end) => `${start}${JSON.stringify(feed)}${end}`,
+  );
+  await page.route(/https:\/\//, route => route.abort());
+  await page.route("https://example.test/reader-image.svg", route => failImage
+    ? route.abort()
+    : route.fulfill({ contentType: "image/svg+xml", body: '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450"><rect width="800" height="450" fill="#657986"/></svg>' }));
+  await page.route(url => url.pathname === "/", route => route.fulfill({ contentType: "text/html", body: html }));
+  await page.route("**/feed.json", route => route.fulfill({ json: feed }));
 }
