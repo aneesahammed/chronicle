@@ -1,4 +1,4 @@
-const CACHE_VERSION = "assets-36340c1a404f3bee";
+const CACHE_VERSION = "assets-f7850ba34a3e17df";
 const CACHE_PREFIX = "chronicle-";
 const SHELL_CACHE = `${CACHE_PREFIX}shell-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `${CACHE_PREFIX}runtime-${CACHE_VERSION}`;
@@ -6,12 +6,13 @@ const MAX_RUNTIME_ENTRIES = 160;
 // CHRONICLE_ASSETS_START
 const VERSIONED_ASSETS = [
   "/assets/app.30ea0b79f0d59cb8.js",
-  "/assets/app.cb56080fd7d1ac1a.css",
+  "/assets/app.552df66fcb18fa8a.css",
   "/assets/mobile-reader-state.90781e93f1bdf2c8.js",
-  "/assets/theme.75c3ac8ffe1ccf04.js",
+  "/assets/theme.fd4e8737e08ec990.js",
   "/assets/sw-register.6112dc51a5b513da.js",
   "/assets/archive.4a53bfc8b190730f.js",
-  "/assets/policy.810fec62a0079c26.js"
+  "/assets/policy.2f19d44b506ee5e3.js",
+  "/assets/policy.685121eee2719fd5.css"
 ];
 // CHRONICLE_ASSETS_END
 const APP_SHELL = [

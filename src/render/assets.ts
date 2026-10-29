@@ -3,7 +3,7 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import { writeFileAtomic } from "../pipeline/atomic-write.ts";
 
-const ASSETS = ["app.js", "app.css", "mobile-reader-state.js", "theme.js", "sw-register.js", "archive.js", "policy.js"];
+const ASSETS = ["app.js", "app.css", "mobile-reader-state.js", "theme.js", "sw-register.js", "archive.js", "policy.js", "policy.css"];
 const MANIFEST_START = "// CHRONICLE_ASSETS_START";
 const MANIFEST_END = "// CHRONICLE_ASSETS_END";
 const digest = (content: string) => createHash("sha256").update(content).digest("hex").slice(0, 16);

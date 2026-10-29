@@ -63,6 +63,20 @@ test("both themes and the methodology route work", async ({ page }) => {
   await expect(page.getByRole("heading", { name: "How Chronicle works", exact: true })).toBeVisible();
   await page.locator("#themeToggle").click();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  // Animated blocks start hidden, so each must be revealed once scrolled into view.
+  for (const block of await page.locator("[data-motion]").all()) {
+    await block.scrollIntoViewIfNeeded();
+    await expect(block).toHaveClass(/\bis-in\b/);
+  }
+});
+
+test.describe("reduced motion", () => {
+  test("methodology figures render without the motion gate", async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    await page.goto("/methodology.html", { waitUntil: "domcontentloaded" });
+    await expect(page.locator("html")).not.toHaveClass(/\bmotion\b/);
+    await expect(page.locator(".weights")).not.toHaveClass(/\bis-in\b/);
+  });
 });
 
 test.describe("offline edition", () => {

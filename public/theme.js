@@ -8,4 +8,10 @@
     } catch (_) {
       document.documentElement.setAttribute("data-theme", "light");
     }
+    // Set before first paint so animated blocks start hidden instead of flashing; see policy.css.
+    try {
+      if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("motion");
+      }
+    } catch (_) {}
   })();

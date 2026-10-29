@@ -1,0 +1,137 @@
+/* About pages (methodology, privacy, corrections) build on app.css: masthead, tab bar, footer and Top News label. */
+.doc-back:hover { color: var(--accent-2); }
+a.section-nav-cell { display: block; }
+.doc-tab-indicator { position: absolute; left: 50%; bottom: -1px; width: 56px; height: 2px; margin-left: -28px; background: var(--ink); }
+.doc { display: grid; gap: 44px; padding: 40px 0 8px; }
+.doc-head { display: grid; gap: 12px; }
+.doc-title { color: var(--ink); font: 600 clamp(28px, 4vw, 38px)/1.1 var(--font-display); letter-spacing: -0.02em; text-wrap: balance; }
+.doc-lede { max-width: 60ch; color: var(--ink-2); font: 16px/1.55 var(--font-body); text-wrap: pretty; }
+.doc-section { display: grid; gap: 16px; }
+.doc-note { max-width: 68ch; color: var(--ink-3); font: 13px/1.55 var(--font-body); }
+.doc-mono { color: var(--ink); font: 12px/1.4 var(--font-mono); }
+.doc p a, .doc dd a { color: var(--accent); border-bottom: 1px solid var(--rule); }
+.doc p a:hover, .doc dd a:hover { border-bottom-color: currentColor; }
+
+/* Numbered steps, read left to right; any step count fits. */
+.doc-steps { counter-reset: step; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; padding: 0; list-style: none; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.doc-steps li { counter-increment: step; display: grid; align-content: start; gap: 6px; padding: 16px 16px 18px; }
+.doc-steps li:first-child { padding-left: 0; }
+.doc-steps li + li { border-left: 1px solid var(--rule); }
+.doc-steps li::before { content: counter(step, decimal-leading-zero); color: var(--ink-3); font: 11px/1 var(--font-mono); letter-spacing: 0.08em; }
+.doc-step-name { color: var(--ink); font: 600 16px/1.2 var(--font-display); }
+.doc-steps p { color: var(--ink-2); font: 13px/1.5 var(--font-body); }
+
+/* Ranking weights as bars; widths are relative to the largest weight (25). */
+.weights { display: grid; gap: 10px; max-width: 640px; padding: 0; list-style: none; }
+.weights li { display: grid; grid-template-columns: 10rem 1fr 2.75rem; align-items: center; gap: 14px; color: var(--ink-2); font: 13px/1.3 var(--font-body); }
+.weight-bar { height: 6px; background: var(--rule); }
+.weight-bar::before { content: ""; display: block; height: 100%; background: var(--ink-2); }
+[data-w="25"] .weight-bar::before { width: 100%; }
+[data-w="20"] .weight-bar::before { width: 80%; }
+[data-w="7"] .weight-bar::before { width: 28%; }
+[data-w="5"] .weight-bar::before { width: 20%; }
+[data-w="3"] .weight-bar::before { width: 12%; }
+.weight-value { color: var(--ink); font: 12px/1 var(--font-mono); font-variant-numeric: tabular-nums; text-align: right; }
+
+/* Side-by-side panels separated by rules, matching the tab bar. */
+.lanes { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.lane { display: grid; align-content: start; gap: 8px; padding: 18px 20px 20px 0; }
+.lane + .lane { padding-left: 20px; border-left: 1px solid var(--rule); }
+.lane-name { color: var(--ink); font: 600 12px/1.3 var(--font-mono); letter-spacing: 0.22em; text-transform: uppercase; }
+.lane-window { color: var(--ink-3); font: 11px/1 var(--font-mono); letter-spacing: 0.04em; }
+.lane p { color: var(--ink-2); font: 14px/1.5 var(--font-body); }
+.lane .lane-caveat { color: var(--ink-3); font-size: 13px; }
+
+.glossary { display: grid; grid-template-columns: minmax(150px, 13rem) 1fr; border-top: 1px solid var(--rule); }
+.glossary dt, .glossary dd { padding: 12px 0; border-bottom: 1px solid var(--rule); }
+.glossary dt { padding-right: 16px; color: var(--ink); font: 12px/1.6 var(--font-mono); letter-spacing: 0.03em; }
+.glossary dd { color: var(--ink-2); font: 14px/1.55 var(--font-body); }
+.glossary ul { display: grid; gap: 4px; padding-left: 18px; }
+
+/* 24-hour UTC axis with the three scheduled editions. */
+.schedule { max-width: 640px; padding-top: 26px; }
+.schedule-track { position: relative; height: 2px; }
+.schedule-track::before { content: ""; position: absolute; inset: 0; background: var(--rule); transform-origin: left; }
+/* `translate`, not `transform`, so the motion's `scale` grows each dot from its own centre. */
+.schedule-mark { position: absolute; top: 50%; width: 9px; height: 9px; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 3px var(--paper); translate: -50% -50%; }
+.schedule-mark:nth-child(1) { left: 22.01%; }
+.schedule-mark:nth-child(2) { left: 51.18%; }
+.schedule-mark:nth-child(3) { left: 76.18%; }
+.schedule-mark span { position: absolute; bottom: 15px; left: 50%; color: var(--ink); font: 11px/1 var(--font-mono); white-space: nowrap; transform: translateX(-50%); }
+.schedule-axis { position: relative; height: 10px; margin-top: 12px; color: var(--ink-3); font: 10px/1 var(--font-mono); letter-spacing: 0.06em; }
+.schedule-axis span { position: absolute; white-space: nowrap; transform: translateX(-50%); }
+.schedule-axis span:nth-child(1) { left: 0; transform: none; }
+.schedule-axis span:nth-child(2) { left: 25%; }
+.schedule-axis span:nth-child(3) { left: 50%; }
+.schedule-axis span:nth-child(4) { left: 75%; }
+.schedule-axis span:nth-child(5) { right: 0; transform: none; }
+
+.doc-callout { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; padding: 18px 20px; border: 1px solid var(--rule); background: var(--panel); }
+.doc-callout p { max-width: 58ch; color: var(--ink-2); font: 14px/1.55 var(--font-body); }
+.doc-links { display: flex; flex-wrap: wrap; gap: 6px 14px; color: var(--ink-3); font: 11px/1.6 var(--font-mono); letter-spacing: 0.04em; }
+.doc-links a { border-bottom: 1px solid var(--rule); }
+.doc-empty { padding: 22px 20px; border: 1px dashed var(--rule); color: var(--ink-2); font: 14px/1.55 var(--font-body); }
+.doc-empty strong { display: block; margin-bottom: 4px; color: var(--ink); font: 600 16px/1.3 var(--font-display); }
+
+@media (max-width: 720px) {
+  .doc { gap: 34px; padding-top: 28px; }
+  .doc-nav .section-nav-cell { padding: 14px 4px 12px; }
+  .doc-nav .section-nav-name { font-size: 11px; letter-spacing: 0.12em; }
+  .doc-steps, .lanes { grid-auto-flow: row; }
+  .doc-steps li { grid-template-columns: 2.25rem 1fr; gap: 4px 8px; padding: 12px 0; }
+  .doc-steps li::before { grid-row: 1 / span 2; padding-top: 4px; }
+  .doc-steps li + li, .lane + .lane { border-left: 0; border-top: 1px solid var(--rule); }
+  .lane, .lane + .lane { padding: 16px 0; }
+  .weights li { grid-template-columns: 8.25rem 1fr 2.5rem; gap: 10px; }
+  .glossary { grid-template-columns: 1fr; }
+  .glossary dt { padding-bottom: 2px; border-bottom: 0; }
+  .glossary dd { padding-top: 0; }
+}
+
+/* Motion. Each animation shows something the page states: the tab moving between pages, the order of the
+   pipeline, the size of each weight and the time of each run. theme.js adds html.motion before first paint
+   (unless reduced motion is requested); policy.js adds .is-in once a [data-motion] block scrolls into view. */
+@media screen and (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  .doc-tab-indicator { view-transition-name: doc-tab; }
+  ::view-transition-group(doc-tab) { animation-duration: 280ms; animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+  ::view-transition-new(root) { animation: doc-fade-in 200ms ease-out both; }
+  :root.is-theme-switch::view-transition-new(root) { animation: chronicle-vt-reveal 520ms cubic-bezier(0.22, 1, 0.36, 1); }
+
+  .doc-steps { position: relative; }
+  html.motion .doc-steps li { transition: opacity 420ms ease-out, translate 420ms cubic-bezier(0.22, 1, 0.36, 1); }
+  html.motion .doc-steps:not(.is-in) li { opacity: 0; translate: 0 8px; }
+  html.motion .doc-steps li:nth-child(2) { transition-delay: 100ms; }
+  html.motion .doc-steps li:nth-child(3) { transition-delay: 200ms; }
+  html.motion .doc-steps li:nth-child(4) { transition-delay: 300ms; }
+  html.motion .doc-steps li:nth-child(5) { transition-delay: 400ms; }
+  html.motion .doc-steps::after { content: ""; position: absolute; top: -1px; left: 0; width: 100%; height: 1px; background: var(--ink); transform-origin: left; opacity: 0; pointer-events: none; }
+  html.motion .doc-steps.is-in::after { animation: doc-sweep 900ms linear; }
+
+  html.motion .weight-bar::before { transform-origin: left; transition: scale 700ms cubic-bezier(0.22, 1, 0.36, 1); }
+  html.motion .weights:not(.is-in) .weight-bar::before { scale: 0 1; }
+  html.motion .weights li:nth-child(2) .weight-bar::before { transition-delay: 60ms; }
+  html.motion .weights li:nth-child(3) .weight-bar::before { transition-delay: 120ms; }
+  html.motion .weights li:nth-child(4) .weight-bar::before { transition-delay: 180ms; }
+  html.motion .weights li:nth-child(5) .weight-bar::before { transition-delay: 240ms; }
+  html.motion .weights li:nth-child(6) .weight-bar::before { transition-delay: 300ms; }
+  html.motion .weights li:nth-child(7) .weight-bar::before { transition-delay: 360ms; }
+
+  /* The line draws across the day; each run appears as the line reaches its time. */
+  html.motion .schedule-track::before { transition: scale 800ms linear; }
+  html.motion .schedule:not(.is-in) .schedule-track::before { scale: 0 1; }
+  html.motion .schedule-mark { transition: scale 320ms cubic-bezier(0.22, 1, 0.36, 1), opacity 200ms ease-out; }
+  html.motion .schedule:not(.is-in) .schedule-mark { scale: 0; opacity: 0; }
+  html.motion .schedule-mark:nth-child(1) { transition-delay: 176ms; }
+  html.motion .schedule-mark:nth-child(2) { transition-delay: 409ms; }
+  html.motion .schedule-mark:nth-child(3) { transition-delay: 609ms; }
+}
+@media (max-width: 720px) {
+  html.motion .doc-steps::after { display: none; }
+}
+@keyframes doc-fade-in { from { opacity: 0; } }
+@keyframes doc-sweep {
+  0% { opacity: 1; scale: 0 1; }
+  60% { opacity: 1; scale: 1 1; }
+  100% { opacity: 0; scale: 1 1; }
+}

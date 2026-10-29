@@ -25,7 +25,7 @@ test("scoreCluster ranks signal quality above hype for the same cluster", () => 
 
 test("methodology page shows the current ranking weights", async () => {
   const html = await readFile(new URL("../../public/methodology.html", import.meta.url), "utf8");
-  const css = await readFile(new URL("../../public/app.css", import.meta.url), "utf8");
+  const css = await readFile(new URL("../../public/policy.css", import.meta.url), "utf8");
   for (const [factor, weight] of Object.entries(W)) {
     const percent = Math.round(weight * 100);
     assert.match(html, new RegExp(`data-factor="${factor}" data-w="${percent}"`), `${factor} weight on methodology page`);
