@@ -1,1 +1,148 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self'"><meta name="theme-color" content="#f7f8fa" id="themeColor"><link rel="stylesheet" href="/fonts/fonts.css"><link rel="stylesheet" href="/assets/app.3d33c2fa5dfb8802.css"><script src="/assets/theme.75c3ac8ffe1ccf04.js"></script><script src="/assets/policy.810fec62a0079c26.js" defer></script><title>How Chronicle works · Chronicle</title></head><body><main class="policy"><nav><a href="/">Chronicle</a><a href="/methodology.html">Methodology</a><a href="/privacy.html">Privacy</a><a href="/corrections.html">Corrections</a><button id="themeToggle" type="button" aria-label="Switch theme">Switch theme</button></nav><h1>How Chronicle works</h1><p>Chronicle helps builders scan AI developments, repositories and instructional resources. It is an automated reading guide. Labels describe the available evidence and usefulness; they do not certify that a claim is true.</p><h2>Selection and ranking</h2><p>We fetch a curated source registry three times daily, group repeated article links, and rank fresh candidates by source weighting, novelty, evidence of usefulness, recency and a small engagement contribution. A ranking score is not a probability or factual-confidence score. Discussion and reposts are labeled “seen on” feeds, not independent corroboration.</p><p>Every fresh main-feed candidate reaches classification before the output limit. Eligible kinds use a model when available; repository releases and learning formats use metadata rules. “LLM” denotes model assessment of metadata; “deterministic” denotes documented metadata rules; “fallback” denotes an unavailable or invalid model result. The item’s explanation identifies the route. Missing evidence remains mixed.</p><h2>What signal means</h2><ul><li>Main feed: a specific contribution or change useful to builders or researchers. Promotional, vague, or unsupported material is downgraded.</li><li>Learning: instructional intent and a substantive description. Marketing, interviews, trailers and pricing announcements are excluded from this lane.</li><li>Repos: a useful description, README, declared license and recent maintenance. Stars indicate attention, not quality or safety. Review code and dependencies before use.</li></ul><p>We aim for at most 40% from one source family in the main edition and at most three arXiv items. Quiet days can be shorter. Editions of one or two items allow one item per family. Repo and learning lanes have their own scope and do not use this news-family cap.</p><h2>Summaries and dates</h2><p>Top News uses short source excerpts with an exact text match, or clearly labeled source metadata when retrieval is unavailable. Excerpts are not independent verification. Cached excerpts are reused only after checking current source text and metadata. Model-generated one-liners elsewhere are assessments of source metadata and may need correction.</p><p>Publication and discovery are separate: a paper can be old but newly listed on Daily Papers; a model can trend without being newly released. Listing/trending dates are shown separately. Repeated canonical article URLs receive low novelty.</p><h2>Learning: New lessons and Foundations</h2><p>New lessons covers recent instructional videos and tutorials within a 30-day window. Foundations is a separate, bounded collection of courses from Hugging Face Learn, Full Stack Deep Learning and fast.ai. Older courses stay on this shelf; they are not presented as newly published lessons.</p><p>Course entries show the original edition or “publication date not stated,” prerequisites, difficulty, cost and a separate syllabus review date. Difficulty labels are editorial estimates. A review checks the syllabus and prerequisites; it does not certify that example code runs. Compatibility notes flag historical tooling and examples we have not executed. We request a new syllabus review after 90 days. An automated page check does not change the review date.</p><p>Distinct course URLs are kept separate even when their titles are similar. Foundations currently uses the conservative mixed assessment because the example code has not been independently tested. Free materials may still require paid compute or API usage for optional exercises.</p><h2>Source pilots</h2><p>The first pilot adds the three course providers above, stable vLLM releases and METR research/updates. vLLM excludes draft and pre-release builds and contributes at most the latest stable release within the seven-day repository window. METR follows the 36-hour main-feed window. Quiet periods are expected. We track reachable sources, fresh candidates, evergreen courses, selected stories and contributions unique to each source; reachability alone is not success.</p><h2>Freshness and coverage</h2><p>“Updated” is the last successful edition time. A failed attempt preserves that age. “Check for updates” downloads the latest published edition; it does not run ingestion. Scheduled editions start around 05:17, 12:17 and 18:17 UTC and may be delayed.</p><p>Reachable sources and sources contributing fresh items are counted separately. A quiet source is not automatically broken. Persistent failures are monitored; quarantined sources remain documented in the public registry. The 120-day archive preserves historical snapshots, including legacy assessment metadata.</p><h2>Independence and corrections</h2><p>Chronicle’s ranking has no paid-placement input. Company announcements can be useful, but their source is shown so readers can assess the commercial context. Source trust weights are editorial starting points, not a guarantee of accuracy.</p><p><a href="https://github.com/aneesahammed/chronicle/issues/new?title=Content%20correction">Report a wrong summary, missing source, or broken link</a>. Include the item URL, edition date, disputed text and supporting source. The maintainer can correct the source rule or summary and record a visible correction. <a href="/corrections.html">Read the correction log</a>.</p><p><a href="https://github.com/aneesahammed/chronicle/blob/pages/src/sources/registry.yaml">Source registry</a> · <a href="/rss.xml">RSS</a> · <a href="/atom.xml">Atom</a></p></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self'">
+<meta name="theme-color" content="#f7f8fa" id="themeColor">
+<title>How Chronicle works · Chronicle</title>
+<meta name="description" content="How Chronicle fetches, groups, assesses and ranks AI news, repositories and learning resources for builders.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="/assets/app.cb56080fd7d1ac1a.css">
+<script src="/assets/theme.75c3ac8ffe1ccf04.js"></script>
+<script src="/assets/policy.810fec62a0079c26.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<div class="shell">
+  <header class="masthead">
+    <a class="wordmark" href="/">Chronicle</a>
+    <a class="status-line doc-back" href="/">← Today’s edition</a>
+    <div class="masthead-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" title="Toggle theme" aria-label="Toggle theme">
+        <svg id="themeIconContrast" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" fill="none" stroke="var(--ink-2)" stroke-width="1.75" />
+          <path d="M12 3 A9 9 0 0 1 12 21 Z" fill="var(--ink)" />
+        </svg>
+      </button>
+    </div>
+  </header>
+  <nav class="section-nav doc-nav" aria-label="About Chronicle">
+    <a class="section-nav-cell" href="/methodology.html" aria-current="page"><span class="section-nav-name">How it works</span></a>
+    <a class="section-nav-cell" href="/privacy.html"><span class="section-nav-name">Privacy</span></a>
+    <a class="section-nav-cell" href="/corrections.html"><span class="section-nav-name">Corrections</span></a>
+  </nav>
+
+  <main class="doc" id="content">
+    <header class="doc-head">
+      <h1 class="doc-title">How Chronicle works</h1>
+      <p class="doc-lede">Chronicle is an automated reading guide to AI work that builders can use. Its labels describe the evidence behind each item; they don’t certify that a claim is true.</p>
+    </header>
+
+    <section class="doc-section" aria-labelledby="edition">
+      <h2 class="doc-label" id="edition">Each edition</h2>
+      <ol class="doc-steps">
+        <li><span class="doc-step-name">Fetch</span><p>New items from a curated source list, three times a day.</p></li>
+        <li><span class="doc-step-name">Group</span><p>Links to the same article merge into one story.</p></li>
+        <li><span class="doc-step-name">Assess</span><p>Each story gets a kind and a quality label from a model or metadata rules.</p></li>
+        <li><span class="doc-step-name">Rank</span><p>Stories are scored on the weights below.</p></li>
+        <li><span class="doc-step-name">Balance</span><p>No source family above 40%, at most three arXiv papers. Quiet days run shorter.</p></li>
+      </ol>
+    </section>
+
+    <section class="doc-section" aria-labelledby="ranking">
+      <h2 class="doc-label" id="ranking">Ranking weights</h2>
+      <ul class="weights">
+        <li data-factor="quality" data-w="25"><span>Quality</span><span class="weight-bar"></span><span class="weight-value">25%</span></li>
+        <li data-factor="trust" data-w="20"><span>Source trust</span><span class="weight-bar"></span><span class="weight-value">20%</span></li>
+        <li data-factor="novelty" data-w="20"><span>Novelty</span><span class="weight-bar"></span><span class="weight-value">20%</span></li>
+        <li data-factor="builder" data-w="20"><span>Builder usefulness</span><span class="weight-bar"></span><span class="weight-value">20%</span></li>
+        <li data-factor="recency" data-w="7"><span>Recency</span><span class="weight-bar"></span><span class="weight-value">7%</span></li>
+        <li data-factor="cluster" data-w="5"><span>Distinct coverage</span><span class="weight-bar"></span><span class="weight-value">5%</span></li>
+        <li data-factor="engagement" data-w="3"><span>Engagement</span><span class="weight-bar"></span><span class="weight-value">3%</span></li>
+      </ul>
+      <p class="doc-note">The score orders the feed; it is not the probability that a story is true. Uncertain dates and thin single-source threads lose a few points. Trending repos gain a few for daily star growth.</p>
+    </section>
+
+    <section class="doc-section" aria-labelledby="tabs">
+      <h2 class="doc-label" id="tabs">What each tab holds</h2>
+      <div class="lanes">
+        <div class="lane">
+          <h3 class="lane-name">Signal</h3>
+          <span class="lane-window">Last 36 hours</span>
+          <p>Specific releases, results and changes builders can use.</p>
+          <p class="lane-caveat">Vague, promotional or unsupported items rank lower.</p>
+        </div>
+        <div class="lane">
+          <h3 class="lane-name">Repos</h3>
+          <span class="lane-window">Last 7 days</span>
+          <p>Repositories with a clear description, README, declared license and recent commits.</p>
+          <p class="lane-caveat">Stars measure attention, not quality or safety. Review code and dependencies before use.</p>
+        </div>
+        <div class="lane">
+          <h3 class="lane-name">Learning</h3>
+          <span class="lane-window">Last 30 days · plus Foundations</span>
+          <p>New lessons are tutorials and videos with real instruction, not trailers, interviews or pricing posts. Foundations holds courses from Hugging Face Learn, Full Stack Deep Learning and fast.ai.</p>
+          <p class="lane-caveat">Syllabi are re-reviewed every 90 days. Example code is not run.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section" aria-labelledby="labels">
+      <h2 class="doc-label" id="labels">Reading an item</h2>
+      <dl class="glossary">
+        <dt>Seen on N feeds</dt>
+        <dd>The same link appeared on several feeds. That is not independent confirmation.</dd>
+        <dt>Summary</dt>
+        <dd>Top News quotes short excerpts that match the source exactly. Other one-liners are model summaries of the title and description, and can be wrong.</dd>
+        <dt>Dates</dt>
+        <dd>Publication and discovery are shown separately. An old paper can be newly listed; a model can trend long after release.</dd>
+        <dt>Assessment</dt>
+        <dd><ul>
+          <li><span class="doc-mono">llm</span> a model read the title and description</li>
+          <li><span class="doc-mono">deterministic</span> documented metadata rules</li>
+          <li><span class="doc-mono">fallback</span> the model result was missing or invalid</li>
+        </ul></dd>
+      </dl>
+    </section>
+
+    <section class="doc-section" aria-labelledby="freshness">
+      <h2 class="doc-label" id="freshness">Freshness</h2>
+      <div class="schedule" role="img" aria-label="Editions start at 05:17, 12:17 and 18:17 UTC">
+        <div class="schedule-track">
+          <span class="schedule-mark"><span>05:17</span></span>
+          <span class="schedule-mark"><span>12:17</span></span>
+          <span class="schedule-mark"><span>18:17</span></span>
+        </div>
+        <div class="schedule-axis"><span>00</span><span>06</span><span>12</span><span>18</span><span>24 UTC</span></div>
+      </div>
+      <dl class="glossary">
+        <dt>Updated</dt>
+        <dd>Time of the last successful edition. Runs can start late, and a failed run doesn’t reset it.</dd>
+        <dt>Check for updates</dt>
+        <dd>Loads the latest published edition. It doesn’t fetch sources.</dd>
+        <dt>Sources</dt>
+        <dd>Reachable sources and sources with fresh items are counted separately. A quiet source isn’t necessarily broken.</dd>
+        <dt>Archive</dt>
+        <dd>Daily editions are kept for 120 days.</dd>
+      </dl>
+    </section>
+
+    <section class="doc-section" aria-labelledby="independence">
+      <h2 class="doc-label" id="independence">Independence</h2>
+      <div class="doc-callout">
+        <p>Ranking has no paid placement. Company posts show their source so you can judge the commercial context. Source weights are editorial starting points, not a guarantee of accuracy.</p>
+        <a class="archive-cta-button" href="https://github.com/aneesahammed/chronicle/issues/new?title=Content%20correction">Report a correction</a>
+      </div>
+      <nav class="doc-links" aria-label="Related"><a href="/corrections.html">Correction log</a><a href="https://github.com/aneesahammed/chronicle/blob/pages/src/sources/registry.yaml">Source registry</a></nav>
+    </section>
+  </main>
+
+  <footer>
+    <span>Chronicle · daily AI signal for builders</span>
+    <div><a href="/rss.xml">RSS</a> · <a href="/atom.xml">Atom</a> · <a href="https://github.com/aneesahammed/chronicle">GitHub</a> · Built by <a href="https://anees.xyz">Anees</a></div>
+  </footer>
+</div>
+</body>
+</html>

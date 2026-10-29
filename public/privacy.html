@@ -1,1 +1,76 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self'"><meta name="theme-color" content="#f7f8fa" id="themeColor"><link rel="stylesheet" href="/fonts/fonts.css"><link rel="stylesheet" href="/assets/app.3d33c2fa5dfb8802.css"><script src="/assets/theme.75c3ac8ffe1ccf04.js"></script><script src="/assets/policy.810fec62a0079c26.js" defer></script><title>Privacy · Chronicle</title></head><body><main class="policy"><nav><a href="/">Chronicle</a><a href="/methodology.html">Methodology</a><a href="/privacy.html">Privacy</a><a href="/corrections.html">Corrections</a><button id="themeToggle" type="button" aria-label="Switch theme">Switch theme</button></nav><h1>Privacy</h1><p>Chronicle is a static site with no user accounts. The site stores your theme, reader mode and reading position in your browser’s local storage. Those preferences are not sent to a Chronicle application server.</p><h2>Requests made by your browser</h2><p>The homepage loads GoatCounter analytics from gc.zgo.at and sends page-view requests to chronicle.goatcounter.com. Article and repository images may load from their publishers’ servers. These third parties receive network information such as your IP address. Image requests use a no-referrer policy. Opening an external link takes you to that publisher’s site and its own policies.</p><p>Fonts and app assets are hosted with Chronicle. A service worker may cache pages and feeds for offline reading. Clear site data in your browser to remove local preferences, reading history and cached content. A cached edition retains its original content time.</p><h2>Content processing</h2><p>The scheduled builder retrieves public source material. It may send public titles and descriptions to the configured classification providers, and public article URLs to Jina Reader. It does not receive your personal reading preferences. Correction reports submitted on GitHub follow GitHub’s privacy settings and may be public.</p><p><a href="https://github.com/aneesahammed/chronicle/issues/new?title=Privacy%20question">Contact the maintainer about privacy</a>.</p></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self'">
+<meta name="theme-color" content="#f7f8fa" id="themeColor">
+<title>Privacy · Chronicle</title>
+<meta name="description" content="What Chronicle stores in your browser, which third parties your browser contacts, and what the builder sends to outside services.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="/assets/app.cb56080fd7d1ac1a.css">
+<script src="/assets/theme.75c3ac8ffe1ccf04.js"></script>
+<script src="/assets/policy.810fec62a0079c26.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<div class="shell">
+  <header class="masthead">
+    <a class="wordmark" href="/">Chronicle</a>
+    <a class="status-line doc-back" href="/">← Today’s edition</a>
+    <div class="masthead-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" title="Toggle theme" aria-label="Toggle theme">
+        <svg id="themeIconContrast" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" fill="none" stroke="var(--ink-2)" stroke-width="1.75" />
+          <path d="M12 3 A9 9 0 0 1 12 21 Z" fill="var(--ink)" />
+        </svg>
+      </button>
+    </div>
+  </header>
+  <nav class="section-nav doc-nav" aria-label="About Chronicle">
+    <a class="section-nav-cell" href="/methodology.html"><span class="section-nav-name">How it works</span></a>
+    <a class="section-nav-cell" href="/privacy.html" aria-current="page"><span class="section-nav-name">Privacy</span></a>
+    <a class="section-nav-cell" href="/corrections.html"><span class="section-nav-name">Corrections</span></a>
+  </nav>
+
+  <main class="doc" id="content">
+    <header class="doc-head">
+      <h1 class="doc-title">Privacy</h1>
+      <p class="doc-lede">Chronicle is a static site with no accounts. Your preferences stay in your browser.</p>
+    </header>
+
+    <section class="doc-section" aria-labelledby="data">
+      <h2 class="doc-label" id="data">Where data goes</h2>
+      <div class="lanes">
+        <div class="lane">
+          <h3 class="lane-name">Your browser</h3>
+          <p>Theme, reader mode and reading position are kept in local storage. They are never sent to a Chronicle server.</p>
+          <p class="lane-caveat">A service worker caches pages and feeds for offline reading; a cached edition keeps its original time. Clear site data to remove all of it.</p>
+        </div>
+        <div class="lane">
+          <h3 class="lane-name">Third parties</h3>
+          <p>The homepage counts page views with GoatCounter (gc.zgo.at, chronicle.goatcounter.com). Article images load from their publishers, without a referrer.</p>
+          <p class="lane-caveat">Both see network details such as your IP address. Fonts and app files are self-hosted. External links follow the publisher’s own policies.</p>
+        </div>
+        <div class="lane">
+          <h3 class="lane-name">The builder</h3>
+          <p>The scheduled builder sends public titles and descriptions to classification providers, and public article URLs to Jina Reader.</p>
+          <p class="lane-caveat">It never sees your reading preferences.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="doc-callout">
+      <p>Questions and reports filed on GitHub follow GitHub’s privacy settings and may be public.</p>
+      <a class="archive-cta-button" href="https://github.com/aneesahammed/chronicle/issues/new?title=Privacy%20question">Ask a privacy question</a>
+    </div>
+  </main>
+
+  <footer>
+    <span>Chronicle · daily AI signal for builders</span>
+    <div><a href="/rss.xml">RSS</a> · <a href="/atom.xml">Atom</a> · <a href="https://github.com/aneesahammed/chronicle">GitHub</a> · Built by <a href="https://anees.xyz">Anees</a></div>
+  </footer>
+</div>
+</body>
+</html>

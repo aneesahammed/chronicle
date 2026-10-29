@@ -6,7 +6,7 @@ import type { Classification } from "../llm/classify.ts";
 // Composite ranking score, not factual confidence. Evaluate changes on the editorial corpus.
 // Keep changes reviewable against the versioned usefulness regression corpus.
 
-const W = {
+export const W = {
   trust:      0.20,
   novelty:    0.20,
   quality:    0.25,
