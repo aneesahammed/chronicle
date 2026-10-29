@@ -21,11 +21,25 @@
     return `text:${title}|${published}`;
   }
 
+  function prioritizeTopNews(items, topNews) {
+    const result = [], seen = new Set();
+    const add = (item) => { const key = itemKey(item); if (!seen.has(key)) { seen.add(key); result.push(item); } };
+    for (const news of topNews || []) {
+      const item = items.find(item => item.id === news.cluster_id || item.primary?.url === news.url);
+      const fallback = { id: news.cluster_id, primary: { url: news.url, title: news.title, source_name: news.source_name, image_url: news.image_url, image_source: news.image_source, published_at: news.published_at }, kind: news.kind, score: news.score, one_liner: news.dek };
+      add({ ...(item || fallback), top_news: news });
+    }
+    items.forEach(add);
+    return result;
+  }
+
   function filterSignature(input) {
     const kinds = Array.isArray(input && input.kinds) ? input.kinds.slice().sort() : [];
     const novelty = input && input.highNovelty ? "novelty:high" : "novelty:any";
     const discussion = input && input.discussionOnly ? "discussion:1" : "discussion:0";
-    return [novelty, discussion, `kinds:${kinds.join(",")}`].join("|");
+    const parts = [novelty, discussion, `kinds:${kinds.join(",")}`];
+    if (input?.learningTrack) parts.push(`track:${input.learningTrack}`);
+    return parts.join("|");
   }
 
   function progressKey(day, tab, signature) {
@@ -63,6 +77,7 @@
 
   global.ChronicleReaderState = Object.freeze({
     PREFIX,
+    prioritizeTopNews,
     clampIndex,
     itemKey,
     filterSignature,

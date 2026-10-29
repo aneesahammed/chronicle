@@ -123,7 +123,7 @@ test("classifyClusters rejects non-LLM kind values from LLM output", async () =>
     }),
   }));
 
-  assert.equal(result.mode, "llm");
+  assert.equal(result.mode, "fallback");
   assert.equal(result.items[0].kind, "company_announcement");
   assert.equal(result.items[0].quality, "mixed");
 });
@@ -173,11 +173,11 @@ test("classifyClusters skips LLM work for repo and learning kinds", async () => 
   assert.equal(calls, 0);
   assert.equal(result.mode, "deterministic");
   assert.equal(result.items[0].kind, "repo_release");
-  assert.equal(result.items[0].quality, "signal");
+  assert.equal(result.items[0].quality, "mixed");
   assert.equal(result.items[1].kind, "video");
 });
 
-test("repo trending deterministic quality uses daily stars before legacy deltas", async () => {
+test("repo popularity alone does not establish quality", async () => {
   const result = await classifyClusters([cluster({
     source_role: "repo",
     kind_hint: "repo_trending",
@@ -193,7 +193,7 @@ test("repo trending deterministic quality uses daily stars before legacy deltas"
   })]);
 
   assert.equal(result.items[0].kind, "repo_trending");
-  assert.equal(result.items[0].quality, "signal");
+  assert.equal(result.items[0].quality, "mixed");
 });
 
 function cluster(overrides: Partial<RawItem> = {}): Cluster {
@@ -227,3 +227,13 @@ function cluster(overrides: Partial<RawItem> = {}): Cluster {
     also_seen_on: [],
   };
 }
+
+test("missing individual responses count as fallback without promoting a tool", async () => {
+  const result = await classifyClusters([cluster({ kind_hint: "tool" }), cluster({ kind_hint: "news" })], [], async () => ({ provider: "groq", model: "test-model", content: JSON.stringify({ items: [{ index: 1, kind: "news", quality: "mixed", one_liner: "A reported API change." }] }) }));
+  assert.equal(result.mode, "partial");
+  assert.equal(result.items[0].classification_method, "fallback");
+  assert.equal(result.items[0].quality, "mixed");
+  assert.equal(result.items[1].classification_method, "llm");
+  assert.equal(result.items[1].classification_provider, "groq");
+  assert.equal(result.items[1].classification_model, "test-model");
+});

@@ -1,5 +1,6 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
+import { canonicalizeUrl } from "./canonicalize.ts";
 import { jaccard, trigrams } from "./cluster.ts";
 import { writeJsonAtomic } from "./atomic-write.ts";
 import type { Cluster, HistoryFile } from "../types.ts";
@@ -40,8 +41,10 @@ function historyTrigrams(history: HistoryFile): Set<string>[] {
 }
 
 // novelty in [0, 1]: 1 = never seen, 0 = identical to a recent item.
-export function novelty(title: string, history: HistoryFile, today?: Date): number {
+export function novelty(title: string, history: HistoryFile, today?: Date, url?: string): number {
   if (history.entries.length === 0) return 1;
+  const canonical = url ? canonicalizeUrl(url) : "";
+  if (canonical && history.entries.some((entry) => canonicalizeUrl(entry.url) === canonical)) return 0;
   const todayStr = today?.toISOString().slice(0, 10);
   const t = trigrams(title);
   const tris = historyTrigrams(history);

@@ -41,13 +41,14 @@ sources → fetch → canonicalize → window-filter → cluster
 - **Repo Radar** scrapes GitHub Trending daily, filters for AI-relevant projects,
   enriches with GitHub metadata when available, and pulls a best-effort README
   image from raw GitHub content without spending README API calls.
-- **Learning videos** are filtered for instructional intent at ingestion.
-  Ads, brand campaigns, launches, and pre-release clips are dropped because
+- **Learning videos** are filtered for instructional intent at ingestion using titles and parsed descriptions.
+  Pricing, interviews, ads, trailers, and pre-release clips are dropped because
   Chronicle does not have a separate non-learning video lane.
-- **Novelty** is `1 − max trigram-Jaccard against 30 days of history`.
-- **Score** is a weighted sum of trust, novelty, quality, cluster-size,
-  recency, and weak engagement signals. Each scored cluster also carries
-  visible ranking reasons and a builder action hint.
+- **Novelty** is zero for a repeated canonical article URL; otherwise it is
+  `1 − max trigram-Jaccard against 30 days of history`.
+- **Score** combines trust, novelty, evidence quality, distinct article count,
+  recency, engineering relevance and weak engagement signals. Ranking reasons
+  and metadata-supported action hints are available per item.
 
 ## Local run
 
@@ -77,7 +78,8 @@ state back to `pages`, and deploys `public/` to GitHub Pages.
 
 ## Tuning
 
-All knobs live in source. Eyeball output for a week, then adjust:
+All knobs live in source. Compare changes with `npm run evaluate`, inspect
+recent editions, and review the rubric labels before changing thresholds:
 
 - **Trust weights**: `src/sources/registry.yaml`
 - **Cluster threshold**: `TITLE_THRESHOLD` in `src/pipeline/cluster.ts`
@@ -91,7 +93,7 @@ All knobs live in source. Eyeball output for a week, then adjust:
 - **LLM provider order**: `LLM_PROVIDER_ORDER` env (default `gemini,groq`)
 - **Gemini model**: `GEMINI_MODEL` env (default `gemini-3.1-flash-lite`)
 - **Gemini batch delay**: `GEMINI_BATCH_DELAY_MS` env (default 4500; intentionally conservative because active Gemini limits are project/model-specific in AI Studio)
-- **Groq fallback model**: `GROQ_MODEL` env (default `qwen/qwen3-32b`)
+- **Groq fallback model**: `GROQ_MODEL` env (default `qwen/qwen3.8-27b`)
 - **Groq batch delay**: `GROQ_BATCH_DELAY_MS` env (default 30000)
 
 ## Cost
@@ -99,13 +101,32 @@ All knobs live in source. Eyeball output for a week, then adjust:
 Gemini calls are roughly proportional to fresh main-feed clusters. Trending
 repos, videos, and courses skip LLM classification. GitHub Actions provides
 `GITHUB_TOKEN` for repo metadata enrichment; README images use raw GitHub URLs
-to avoid spending GitHub API quota. Repo items are fresh because they appeared
-on GitHub Trending during the current run, not because their repo was created
-or pushed recently.
+to avoid spending GitHub API quota. Trending items use observation dates; stable release items keep their original
+release dates and the seven-day repository window.
 
 DataCamp AI and Karpathy's YouTube are intentionally not enabled as scheduled
 sources yet. DataCamp returned 403 to direct Node fetches, and Karpathy's
 verified YouTube feed had no new 2026 video when checked on 2026-05-04.
+
+## Source pilots and Foundations
+
+Five additions are enabled: Hugging Face Learn, Full Stack Deep Learning, fast.ai,
+vLLM stable releases and METR. The four curated courses live in
+`src/sources/foundations.ts`. Learning has two shelves: **New lessons** (30 days)
+and **Foundations** (evergreen; up to 12 courses, separate from the new-lesson cap).
+Foundation edition labels, prerequisites, cost, syllabus review dates and compatibility
+notes are manually maintained. Automated page checks never advance the review date.
+Unknown publication days use the existing low-confidence date sentinel in JSON; the
+UI shows the edition label or explicitly unknown date. Course code is not execution-tested.
+
+- `npm run sources:check`: live ingestion of the five pilots; fail on unreachable or invalid sources.
+- `npm run sources:report`: last 30 archived editions, distinct selected URLs and unique contribution.
+- `npm run health:report`: includes evergreen counts, source contribution and overdue 90-day course reviews.
+
+Review sampled usefulness, duplicate coverage, dates, attribution and compatibility
+before expanding. See [the public methodology](public/methodology.html).
+Mobile defaults to a single card reader including Top News; the view icon beside
+refresh/theme switches to a compact list and remembers the user's choice.
 
 ## v2 backlog (deferred on purpose)
 
@@ -115,6 +136,21 @@ verified YouTube feed had no new 2026 video when checked on 2026-05-04.
 - **Per-source quality learning.** Track how often a source produces `signal`
   vs `hype` over time, fold into trust.
 - **Personal weighting.** Let the user upvote/downvote; persist to localStorage.
-- **RSS output** of the curated feed.
 - **Email digest** via a separate Action.
 - **Twitter/X** ingestion (probably via Nitter mirrors, fragile).
+
+## Quality and operations
+
+Read [the public methodology](public/methodology.html) for quality labels, source/discovery dates, fallback rules, diversity and corrections. `npm run verify:freshness` checks all active lanes after a scheduled refresh. `npm run evaluate` measures the versioned metadata rubric corpus; it is an editorial regression set, not a factual-accuracy certification. `npm run health:report` reports source failure/contribution streaks.
+
+Runtime UI assets live in `public/app.js`, `app.css` and `theme.js`. `public/index.html` remains the render template; preserve its `CHRONICLE_*` markers and `feedBootstrap` element. Regenerate static editions with `npm run render:site`. Changes to the scheduled workflow must land on `main`; app changes land on `pages`. Run check, feed verification, rubric evaluation and E2E before deploying.
+
+### Frontend assets and cached upgrades
+
+After editing browser JavaScript or CSS, run `npm run render:site` before previewing or
+publishing. It generates content-addressed files in `public/assets/`, updates all HTML
+references and synchronizes the service worker's pre-cache manifest/version. Edit the
+root source assets, not the generated copies. Retain older fingerprinted files while
+existing pages may reference them. Local previews automatically activate waiting
+workers; production keeps the explicit update control. The cache-upgrade browser test
+starts from an older installed worker, rather than an empty browser profile.

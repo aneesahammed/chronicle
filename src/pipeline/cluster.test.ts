@@ -135,3 +135,12 @@ function item(
     date_confidence: "high",
   };
 }
+
+
+test("distinct Foundations courses do not merge by provider-name similarity", () => {
+  const a = { ...item("llm", "Hugging Face LLM Course", "https://huggingface.co/learn/llm-course/"), learning: { track: "foundations" as const } };
+  const b = { ...item("agents", "Hugging Face Agents Course", "https://huggingface.co/learn/agents-course/"), learning: { track: "foundations" as const } };
+  const clusters = clusterItems([a, b, { ...a, id: "repost" }]);
+  assert.equal(clusters.length, 2);
+  assert.equal(clusters.find(c => c.id === "llm")?.members.length, 2);
+});

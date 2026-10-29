@@ -1,46 +1,24 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
+import { createHash } from "node:crypto";
+import { boundedText, safeFetch } from "../sources/safe-fetch.ts";
 import { sanitizeImageUrl } from "./images.ts";
 import { writeFileAtomic } from "../pipeline/atomic-write.ts";
 import { sourceFamily } from "../pipeline/diversity.ts";
 import type { EnrichmentStatus, Kind, ScoredCluster, TopNewsItem } from "../types.ts";
 import {
-  completeJsonWithProviders,
   createLlmProviders,
   type LlmProvider,
 } from "../llm/providers.ts";
 
 export const TOP_NEWS_LIMIT = 5;
-export const TOP_NEWS_INPUT_CHARS = 900;
+export const TOP_NEWS_INPUT_CHARS = 12_000;
 export const TOP_NEWS_TIMEOUT_MS = 15_000;
 
 const CACHE_VERSION = 1;
 const MAX_CACHE_ENTRIES = 500;
-const OK_CACHE_TTL_MS = 30 * 864e5;
-const RETRY_AFTER_MS = 24 * 36e5;
+const OK_CACHE_TTL_MS = 6 * 36e5;
 const PREFERRED_KINDS = new Set<Kind>(["news", "company_announcement", "model_release", "tool", "paper"]);
-const SUMMARY_SCHEMA = {
-  type: "object",
-  properties: {
-    items: {
-      type: "array",
-      items: {
-        type: "object",
-        properties: {
-          index: { type: "integer", minimum: 0 },
-          dek: { type: "string", maxLength: 180 },
-          brief: { type: "string", maxLength: 420 },
-          image_alt: { type: "string", maxLength: 120 },
-        },
-        required: ["index", "dek", "brief"],
-        additionalProperties: false,
-      },
-    },
-  },
-  required: ["items"],
-  additionalProperties: false,
-  propertyOrdering: ["items"],
-};
 
 interface EnrichmentCacheFile {
   version: 1;
@@ -48,6 +26,10 @@ interface EnrichmentCacheFile {
 }
 
 interface CachedEnrichment {
+  input_hash?: string;
+  source_content_hash?: string;
+  summary_version?: number;
+  summary_method?: TopNewsItem["summary_method"];
   url: string;
   title: string;
   source_name: string;
@@ -114,74 +96,62 @@ export async function buildTopNews(
   const nowIso = options.now.toISOString();
   const cache = await loadEnrichmentCache(options.cachePath);
   const topNews: TopNewsItem[] = [];
-  const drafts: EnrichmentDraft[] = [];
   const fetchImpl = options.fetchImpl ?? fetch;
   const providers = options.providers ?? createLlmProviders(options.env);
-  const hasLlm = providers.length > 0 || Boolean(options.summarize);
-
+  const canRead = Boolean(options.fetchImpl || options.summarize || providers.length || options.env.JINA_API_KEY);
   for (const candidate of candidates) {
+    const draft: EnrichmentDraft = { candidate, metadata: fallbackFor(candidate), failed: false };
+    if (canRead) {
+      try { draft.reader_text = await fetchJinaReaderText(candidate.primary.url, { apiKey: options.env.JINA_API_KEY, fetchImpl }); }
+      catch (error) { draft.failed = true; console.warn(`[top-news] reader unavailable for ${candidate.primary.url}`); }
+    }
+    const contentHash = draft.reader_text ? fingerprint(draft.reader_text) : undefined;
     const cached = cache.entries[candidate.primary.url];
-    if (cached && shouldUseCached(cached, options.now)) {
+    // Always re-read available source text before reusing a brief: same-title corrections matter.
+    if (cached && !draft.failed && cached.input_hash === inputFingerprint(candidate)
+      && cached.source_content_hash === contentHash && cached.summary_version === 2 && shouldUseCached(cached, options.now)) {
       topNews.push(topNewsFromCache(candidate, cached, nowIso));
       continue;
     }
-    if (cached && shouldThrottleRetry(cached, options.now)) {
-      topNews.push(topNewsFromCache(candidate, cached, nowIso));
-      continue;
-    }
-
-    const metadata = fallbackFor(candidate);
-    const draft: EnrichmentDraft = { candidate, metadata, failed: false };
-    if (hasLlm) {
+    let summary: SummaryOutput | undefined;
+    if (draft.reader_text) {
+      const input = summaryInput(draft, 0);
       try {
-        draft.reader_text = await fetchJinaReaderText(candidate.primary.url, {
-          apiKey: options.env.JINA_API_KEY,
-          fetchImpl,
-        });
-      } catch (error) {
-        draft.failed = true;
-        console.warn(`[top-news] Jina Reader failed for ${candidate.primary.url}: ${(error as Error).message}`);
-      }
+        const proposed = options.summarize ? (await options.summarize([input], providers))[0] : extractSummary(input);
+        if (proposed && isGroundedExcerpt(proposed, input.reader_text)) summary = proposed;
+        else draft.failed = true;
+      } catch { draft.failed = true; }
     }
-    drafts.push(draft);
-  }
-
-  const summaryInputs = drafts
-    .map((draft, index) => draft.reader_text ? summaryInput(draft, index) : null)
-    .filter(Boolean) as SummaryInput[];
-  const summaries = new Map<number, SummaryOutput>();
-  if (summaryInputs.length > 0 && hasLlm) {
-    try {
-      const runner = options.summarize ?? summarizeWithProviders;
-      for (const item of await runner(summaryInputs, providers)) {
-        summaries.set(item.index, item);
-      }
-    } catch (error) {
-      console.warn(`[top-news] summary failed: ${(error as Error).message}`);
-      drafts.forEach((draft) => {
-        if (draft.reader_text) draft.failed = true;
-      });
-    }
-  }
-
-  for (const draft of drafts) {
-    const summary = summaries.get(drafts.indexOf(draft));
     const item = topNewsFromDraft(draft, summary, nowIso);
+    item.summary_method = summary ? "extractive" : "source_metadata";
+    item.summary_version = 2;
+    item.source_content_hash = contentHash;
     topNews.push(item);
-    cache.entries[draft.candidate.primary.url] = cacheEntryFromItem(
-      item,
-      draft.candidate,
-      draft.failed || item.enrichment_status !== "ok",
-      cache.entries[draft.candidate.primary.url],
-    );
+    cache.entries[candidate.primary.url] = cacheEntryFromItem(item, candidate, draft.failed, cached);
   }
+  try { await saveEnrichmentCache(options.cachePath, pruneCache(cache)); }
+  catch (error) { console.warn(`[top-news] cache write failed: ${(error as Error).message}`); }
+  return topNews;
+}
 
-  try {
-    await saveEnrichmentCache(options.cachePath, pruneCache(cache));
-  } catch (error) {
-    console.warn(`[top-news] could not write enrichment cache: ${(error as Error).message}`);
-  }
-  return topNews.slice(0, TOP_NEWS_LIMIT);
+function fingerprint(text: string): string { return createHash("sha256").update(text).digest("hex"); }
+function inputFingerprint(item: ScoredCluster): string { return fingerprint(JSON.stringify([item.primary.title, item.primary.summary, item.primary.url])); }
+export function isGroundedExcerpt(summary: SummaryOutput, text: string): boolean {
+  const normalized = text.replace(/\s+/g, " ").trim();
+  const parts = [...new Set([summary.dek, summary.brief])];
+  return parts.every((part) => part.length >= 20 && normalized.includes(part))
+    && parts.join(" ").split(/\s+/).length <= 25;
+}
+function extractSummary(input: SummaryInput): SummaryOutput | undefined {
+  const titleWords = new Set(input.title.toLowerCase().match(/[a-z]{4,}/g) ?? []);
+  const paragraphs = input.reader_text.split(/\n\s*\n/).map((line) => line.replace(/\s+/g, " ").trim())
+    .filter((line) => line.length >= 60 && !/^(title:|url source:|published time:|#|\[|!)/i.test(line) && !/subscribe|cookie policy|sign up for/i.test(line));
+  paragraphs.sort((a,b) => [...titleWords].filter(w=>b.toLowerCase().includes(w)).length - [...titleWords].filter(w=>a.toLowerCase().includes(w)).length);
+  const paragraph = paragraphs[0];
+  if (!paragraph) return undefined;
+  let excerpt = paragraph.split(/\s+/).slice(0, 25).join(" ");
+  if (excerpt.length > 180) excerpt = excerpt.slice(0, 180).replace(/\s+\S*$/, "");
+  return { index: input.index, dek: excerpt, brief: excerpt };
 }
 
 export function selectTopNewsCandidates(scored: ScoredCluster[]): ScoredCluster[] {
@@ -253,13 +223,13 @@ async function fetchJinaReaderText(
     "Accept": "text/plain",
   };
   if (options.apiKey) headers.Authorization = `Bearer ${options.apiKey}`;
-  const response = await options.fetchImpl(readerUrlFor(url), {
+  const response = await safeFetch(readerUrlFor(url), {
     headers,
     signal: AbortSignal.timeout(TOP_NEWS_TIMEOUT_MS),
-  });
+  }, options.fetchImpl);
   if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText}`.trim());
-  const text = await response.text();
-  return text.replace(/\s+/g, " ").trim().slice(0, TOP_NEWS_INPUT_CHARS);
+  const text = await boundedText(response, 1_000_000);
+  return (text.split("Markdown Content:").at(-1) ?? text).trim().slice(0, TOP_NEWS_INPUT_CHARS);
 }
 
 function summaryInput(draft: EnrichmentDraft, index: number): SummaryInput {
@@ -271,67 +241,6 @@ function summaryInput(draft: EnrichmentDraft, index: number): SummaryInput {
     current_summary: draft.metadata.brief,
     reader_text: (draft.reader_text ?? "").slice(0, TOP_NEWS_INPUT_CHARS),
   };
-}
-
-async function summarizeWithProviders(items: SummaryInput[], providers: LlmProvider[]): Promise<SummaryOutput[]> {
-  if (providers.length === 0) throw new Error("no LLM providers configured");
-  const response = await completeJsonWithProviders(providers, {
-    system: [
-      "You write compact AI news briefs for experienced builders.",
-      "Return only JSON. Do not quote long source text.",
-      "Summaries must be factual, plain English, and non-marketing.",
-    ].join(" "),
-    user: [
-      "For each item, write:",
-      "- dek: one sentence, <= 180 chars",
-      "- brief: one or two short paragraphs, <= 420 chars total",
-      "- image_alt: <= 120 chars, if an image is likely useful",
-      "",
-      "Return shape:",
-      '{"items":[{"index":0,"dek":"...","brief":"...","image_alt":"..."}]}',
-      "",
-      JSON.stringify(items, null, 2),
-    ].join("\n"),
-    schemaName: "top_news_summary",
-    schema: SUMMARY_SCHEMA,
-    maxOutputTokens: 1200,
-    temperature: 0,
-  });
-  return parseSummaryContent(response.content);
-}
-
-function parseSummaryContent(content: string): SummaryOutput[] {
-  const parsed = parseJsonFromContent(content);
-  if (!isRecord(parsed) || !Array.isArray(parsed.items)) {
-    throw new Error("invalid top news summary JSON");
-  }
-  return parsed.items.flatMap((item) => {
-    if (!isRecord(item) || typeof item.index !== "number") return [];
-    const dek = clampText(item.dek, 180);
-    const brief = clampText(item.brief, 420);
-    if (!dek || !brief) return [];
-    const imageAlt = clampText(item.image_alt, 120);
-    return [{
-      index: item.index,
-      dek,
-      brief,
-      ...(imageAlt ? { image_alt: imageAlt } : {}),
-    }];
-  });
-}
-
-function parseJsonFromContent(content: string): unknown {
-  const trimmed = content.trim()
-    .replace(/^```(?:json)?\s*/i, "")
-    .replace(/\s*```$/i, "");
-  try {
-    return JSON.parse(trimmed);
-  } catch {
-    const start = trimmed.indexOf("{");
-    const end = trimmed.lastIndexOf("}");
-    if (start >= 0 && end > start) return JSON.parse(trimmed.slice(start, end + 1));
-    throw new Error("top news summary response was not JSON");
-  }
 }
 
 function topNewsFromDraft(
@@ -377,6 +286,9 @@ function topNewsFromCache(candidate: ScoredCluster, cached: CachedEnrichment, no
     ...(image && cached.image_source ? { image_source: cached.image_source } : {}),
     enrichment_status: cached.status === "failed" ? "metadata_only" : cached.status,
     enriched_at: cached.enriched_at ?? cached.attempted_at ?? nowIso,
+    summary_method: cached.summary_method,
+    source_content_hash: cached.source_content_hash,
+    summary_version: cached.summary_version,
   };
 }
 
@@ -387,6 +299,10 @@ function cacheEntryFromItem(
   previous: CachedEnrichment | undefined,
 ): CachedEnrichment {
   return {
+    input_hash: inputFingerprint(candidate),
+    source_content_hash: item.source_content_hash,
+    summary_version: item.summary_version,
+    summary_method: item.summary_method,
     url: item.url,
     title: item.title,
     source_name: item.source_name,
@@ -403,7 +319,7 @@ function cacheEntryFromItem(
 }
 
 function fallbackFor(item: ScoredCluster): MetadataFallback {
-  const line = cleanLine(item.one_liner) || cleanLine(item.primary.summary) || item.primary.title;
+  const line = cleanLine(item.primary.summary) || item.primary.title;
   const summary = cleanLine(item.primary.summary);
   const dek = clampText(line, 180) || item.primary.title;
   const brief = summary && normalizeText(summary) !== normalizeText(item.primary.title)
@@ -455,6 +371,10 @@ function sanitizeCacheEntries(entries: Record<string, unknown>): Record<string, 
     const dek = clampText(value.dek, 180);
     const brief = clampText(value.brief, 420);
     out[key] = {
+      input_hash: typeof value.input_hash === "string" ? value.input_hash : undefined,
+      source_content_hash: typeof value.source_content_hash === "string" ? value.source_content_hash : undefined,
+      summary_version: typeof value.summary_version === "number" ? value.summary_version : undefined,
+      summary_method: value.summary_method === "extractive" ? "extractive" : "source_metadata",
       url,
       title: String(value.title ?? ""),
       source_name: String(value.source_name ?? ""),
@@ -487,11 +407,6 @@ function shouldUseCached(entry: CachedEnrichment, now: Date): boolean {
   if (entry.status !== "ok" && entry.status !== "metadata_only") return false;
   const base = Date.parse(entry.enriched_at ?? entry.attempted_at);
   return Number.isFinite(base) && now.getTime() - base < OK_CACHE_TTL_MS;
-}
-
-function shouldThrottleRetry(entry: CachedEnrichment, now: Date): boolean {
-  const attempted = Date.parse(entry.attempted_at);
-  return Number.isFinite(attempted) && now.getTime() - attempted < RETRY_AFTER_MS;
 }
 
 function timestampFor(entry: CachedEnrichment): number {

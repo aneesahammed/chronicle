@@ -1,19 +1,19 @@
-import type { Cluster, Kind, NoveltyLabel, Quality, ScoredCluster } from "../types.ts";
+import { builderValue, instructionalIntent } from "./quality-policy.ts";
+import { canonicalizeUrl } from "./canonicalize.ts";
+import type { Cluster, NoveltyLabel, Quality, ScoredCluster } from "../types.ts";
 import type { Classification } from "../llm/classify.ts";
 
-// Composite score in [0, 1]. Tunable weights. Eyeball the output and adjust.
-//
-// We deliberately keep this simple. The point of v1 is the *pipeline*, not
-// a learned ranker. Once you've used the feed for two weeks you'll know
-// which knob to turn.
+// Composite ranking score, not factual confidence. Evaluate changes on the editorial corpus.
+// Keep changes reviewable against the versioned usefulness regression corpus.
 
 const W = {
-  trust:      0.23,
-  novelty:    0.30,
+  trust:      0.20,
+  novelty:    0.20,
   quality:    0.25,
-  cluster:    0.10,  // multiple sources covering it = stronger signal
-  recency:    0.08,
-  engagement: 0.04,
+  cluster:    0.05,  // distinct articles; discussion reposts add no weight
+  recency:    0.07,
+  engagement: 0.03,
+  builder:    0.20,
 };
 
 const QUALITY_VALUE: Record<Quality, number> = {
@@ -31,9 +31,9 @@ export function scoreCluster(
   const trust = c.primary.trust;
   const quality = QUALITY_VALUE[cls.quality];
   // sqrt squashes big clusters so a 10-source pile-up doesn't dominate.
-  const cluster = Math.min(1, Math.sqrt(c.members.length) / 3);
+  const cluster = Math.min(1, Math.sqrt(new Set(c.members.map((member) => canonicalizeUrl(member.url))).size) / 3);
   const ageHours =
-    (now.getTime() - new Date(c.primary.published_at).getTime()) / 3.6e6;
+    (now.getTime() - new Date(c.primary.discovered_at ?? c.primary.published_at).getTime()) / 3.6e6;
   const recency = Math.max(0, Math.min(1, 1 - ageHours / 48));
   const engagement = engagementSignal(c);
   const repoVelocity = cls.kind === "repo_trending" ? repoTrendingVelocitySignal(c) : 0;
@@ -44,7 +44,8 @@ export function scoreCluster(
     W.quality * quality +
     W.cluster * cluster +
     W.recency * recency +
-    W.engagement * engagement;
+    W.engagement * engagement +
+    W.builder * builderValue(c);
   const score = clamp(baseScore + repoVelocity * 0.12 - qualityPenalty(c, cls, noveltyScore));
   const novelty_label = noveltyLabel(noveltyScore);
 
@@ -53,12 +54,16 @@ export function scoreCluster(
     kind: cls.kind,
     quality: cls.quality,
     one_liner: cls.one_liner,
+    classification_method: cls.classification_method,
+    classification_reason: cls.classification_reason,
+    classification_provider: cls.classification_provider,
+    classification_model: cls.classification_model,
     novelty: round(noveltyScore),
     novelty_label,
     trust: round(trust),
     score: round(score),
     why_this_surfaced: whyThisSurfaced(c, cls, noveltyScore, recency, engagement),
-    builder_action: builderAction(cls.kind),
+    builder_action: builderAction(c),
   };
 }
 
@@ -110,6 +115,7 @@ function whyThisSurfaced(
   engagement: number,
 ): string[] {
   const reasons: string[] = [];
+  if (builderValue(c) >= 0.8) reasons.push("specific engineering subject or instructional task in source metadata");
   const novelty = noveltyLabel(noveltyScore);
   if (novelty === "high") reasons.push("high novelty against the 30-day history");
   else if (novelty === "medium") reasons.push("meaningfully different from recent coverage");
@@ -119,38 +125,40 @@ function whyThisSurfaced(
   else if (cls.quality === "mixed") reasons.push("classified as useful but lower-confidence signal");
   else reasons.push("kept only because multiple signals offset hype risk");
 
-  if (c.members.length > 1) reasons.push(`corroborated by ${c.members.length} sources`);
+  const feeds = new Set(c.members.map((member) => member.source_id)).size;
+  if (feeds > 1) reasons.push(`seen on ${feeds} feeds; not independent verification`);
+  if (c.primary.discovery_reason) reasons.push(`${c.primary.discovery_reason === "trending" ? "trending observed" : "listed on Daily Papers"} ${c.primary.discovered_at?.slice(0, 10)}; publication date preserved`);
   if (cls.kind === "repo_trending" && repoTrendingVelocitySignal(c) >= 0.55) {
     reasons.push("high daily GitHub star velocity");
   }
   if (c.primary.trust >= 0.85) reasons.push("primary source has high trust weight");
   if (recency >= 0.85) reasons.push("fresh within the current refresh window");
   if (engagement >= 0.55) reasons.push("source-native discussion or engagement is unusually high");
-  return reasons.slice(0, 4);
+  return reasons.slice(0, 6);
 }
 
-function builderAction(kind: Kind): string {
-  switch (kind) {
-    case "paper":
-      return "Save this for technical review if the method maps to your roadmap.";
-    case "model_release":
-      return "Check migration notes, pricing, and benchmark deltas before adopting.";
-    case "company_announcement":
-      return "Scan for API, pricing, policy, or platform changes that affect shipped systems.";
-    case "tutorial":
-      return "Use this as implementation reference if it matches your stack.";
-    case "tool":
-      return "Try it in a small sandbox before adding it to production workflow.";
-    case "repo_release":
-      return "Review the changelog and test the release against your integration points.";
-    case "repo_trending":
-      return "Inspect docs, issue activity, and recent commits before depending on it.";
-    case "video":
-    case "course":
-      return "Queue it for focused learning if the topic matches your current work.";
-    case "discussion":
-      return "Use this as weak signal and verify against primary sources.";
-    default:
-      return "Read the primary source and decide whether it changes your next action.";
+function builderAction(cluster: Cluster): string {
+  const item = cluster.primary;
+  const repo = item.repo;
+  if (repo) return `Review ${repo.full_name}: ${repo.license && repo.license !== "NOASSERTION" ? `license ${repo.license}` : "license not established"}; ${repo.has_readme ? "README available" : "README not verified"}. Check usage and maintenance before adopting.`;
+  const summary = item.summary?.trim() ?? "";
+  if (summary.length < 40) return "";
+  if (item.source_role === "learning" && instructionalIntent(item.title, summary)) {
+    return "Work through the instructional example; check the source description for prerequisites.";
   }
+  const text = `${item.title} ${summary}`;
+  if (/\b(deprecat\w*|breaking changes?|migrat\w*)\b/i.test(text)) {
+    return "Check the migration or deprecation details against your current integrations.";
+  }
+  if (/\b(benchmarks?|evaluat\w*|datasets?)\b/i.test(text)) {
+    return "Inspect the evaluation setup, data and baselines before applying the reported results.";
+  }
+  if (/\b(licen[cs]e|open weights)\b/i.test(text)) {
+    return "Read the source's license and usage conditions before adopting the release.";
+  }
+  if (/\b(latency|throughput|memory usage|kv cache)\b/i.test(text)) {
+    return "Compare the reported performance conditions with your hardware and workload.";
+  }
+  // Withhold a next step when metadata does not support a specific review task.
+  return "";
 }

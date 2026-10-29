@@ -22,6 +22,27 @@
       "type": "string",
       "format": "date-time"
     },
+    "attempted_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "section_counts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "classification_counts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "selection_stats": {
+      "type": "object"
+    },
     "last_successful_generated_at": {
       "anyOf": [
         {
@@ -76,6 +97,24 @@
       "type": "array",
       "items": {
         "type": "object",
+        "properties": {
+          "classification_method": {
+            "enum": [
+              "llm",
+              "deterministic",
+              "fallback"
+            ]
+          },
+          "classification_reason": {
+            "type": "string"
+          },
+          "classification_provider": {
+            "type": "string"
+          },
+          "classification_model": {
+            "type": "string"
+          }
+        },
         "required": [
           "id",
           "primary",

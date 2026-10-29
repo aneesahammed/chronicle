@@ -2,6 +2,7 @@
   "use strict";
 
   var refreshPending = false;
+  var localPreview = ["localhost", "127.0.0.1", "[::1]"].includes(location.hostname);
 
   function injectStyles() {
     if (document.getElementById("pwaUpdateStyles")) return;
@@ -72,9 +73,11 @@
 
   function wireLifecycle(registration) {
     if (!registration || !("serviceWorker" in navigator)) return;
+    var wasControlled = Boolean(navigator.serviceWorker.controller);
 
     if (registration.waiting && navigator.serviceWorker.controller) {
-      showUpdateToast(registration);
+      if (localPreview) registration.waiting.postMessage({ type: "SKIP_WAITING" });
+      else showUpdateToast(registration);
     }
 
     registration.addEventListener("updatefound", function () {
@@ -82,12 +85,15 @@
       if (!installing) return;
       installing.addEventListener("statechange", function () {
         if (installing.state === "installed" && navigator.serviceWorker.controller) {
-          showUpdateToast(registration);
+          if (localPreview) installing.postMessage({ type: "SKIP_WAITING" });
+          else showUpdateToast(registration);
         }
       });
     });
 
     navigator.serviceWorker.addEventListener("controllerchange", function () {
+      // First installation can claim this page without downloading it again.
+      if (!wasControlled) { wasControlled = true; return; }
       if (refreshPending) return;
       refreshPending = true;
       window.location.reload();

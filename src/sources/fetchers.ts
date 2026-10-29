@@ -1,4 +1,7 @@
 import Parser from "rss-parser";
+import { FOUNDATIONS } from "./foundations.ts";
+import { safeFetch, boundedText, sameSourceHost, publicFetchError } from "./safe-fetch.ts";
+import { instructionalIntent } from "../pipeline/quality-policy.ts";
 import { XMLParser } from "fast-xml-parser";
 import * as cheerio from "cheerio";
 import type { AnyNode } from "domhandler";
@@ -52,6 +55,8 @@ interface RssMediaNode {
   };
 }
 interface RssCustomItem {
+  comments?: string;
+  mediaGroup?: { "media:description"?: string[] | string };
   mediaContent?: RssMediaNode | RssMediaNode[];
   mediaThumbnail?: RssMediaNode | RssMediaNode[];
 }
@@ -59,6 +64,7 @@ const rss = new Parser<unknown, RssCustomItem>({
   timeout: TIMEOUT_MS,
   customFields: {
     item: [
+      ["media:group", "mediaGroup"],
       ["media:content", "mediaContent", { keepArray: true }],
       ["media:thumbnail", "mediaThumbnail", { keepArray: true }],
     ],
@@ -83,7 +89,7 @@ async function fetchRss(s: SourceConfig, kw: string[]): Promise<RawItem[]> {
         published_at: it.isoDate ?? it.pubDate ?? UNKNOWN_PUBLISHED_AT,
         published_at_source: it.isoDate || it.pubDate ? "feed" : "generated_fallback",
         date_confidence: it.isoDate || it.pubDate ? "high" : "low",
-        discussion_url: isDiscussionFeed ? it.link ?? "" : undefined,
+        discussion_url: isDiscussionFeed ? it.comments || (s.id.startsWith("r_") ? it.link : undefined) : undefined,
         discussion_source: isDiscussionFeed ? s.name : undefined,
       });
     })
@@ -108,7 +114,7 @@ async function fetchYoutubeRss(s: SourceConfig, kw: string[]): Promise<RawItem[]
       return normalize(s, {
         title: it.title ?? "",
         url: link,
-        summary: stripHtml(it.contentSnippet ?? it.content ?? ""),
+        summary: stripHtml(asArray(it.mediaGroup?.["media:description"]).join(" ") || it.contentSnippet || it.content || ""),
         image_url: image?.url,
         image_source: image?.source,
         published_at: it.isoDate ?? it.pubDate ?? UNKNOWN_PUBLISHED_AT,
@@ -205,6 +211,7 @@ interface RedditPost {
 async function fetchHfPapers(s: SourceConfig): Promise<RawItem[]> {
   const data = await fetchJson<HfPaper[]>(s.url);
   return data.slice(0, s.limit).map((p) => {
+    const published = p.paper?.publishedAt ?? p.publishedAt;
     const arxivId = p.paper?.id ?? "";
     const url = arxivId
       ? `https://arxiv.org/abs/${arxivId}`
@@ -213,9 +220,11 @@ async function fetchHfPapers(s: SourceConfig): Promise<RawItem[]> {
       title: p.title ?? p.paper?.title ?? "",
       url,
       summary: p.paper?.summary ?? "",
-      published_at: p.publishedAt ?? UNKNOWN_PUBLISHED_AT,
-      published_at_source: p.publishedAt ? "api" : "generated_fallback",
-      date_confidence: p.publishedAt ? "high" : "low",
+      published_at: published ?? UNKNOWN_PUBLISHED_AT,
+      discovered_at: p.paper?.submittedOnDailyAt ? validDateOrFallback(p.paper.submittedOnDailyAt) : undefined,
+      discovery_reason: p.paper?.submittedOnDailyAt ? "daily_listing" : undefined,
+      published_at_source: published ? "api" : "generated_fallback",
+      date_confidence: published ? "high" : "low",
       engagement: { score: p.paper?.upvotes ?? 0 },
     })!;
   });
@@ -223,11 +232,11 @@ async function fetchHfPapers(s: SourceConfig): Promise<RawItem[]> {
 interface HfPaper {
   title?: string;
   publishedAt?: string;
-  paper?: { id?: string; title?: string; summary?: string; upvotes?: number };
+  paper?: { id?: string; title?: string; summary?: string; upvotes?: number; publishedAt?: string; submittedOnDailyAt?: string };
 }
 
 // ---- HuggingFace trending models -----------------------------------------
-async function fetchHfModels(s: SourceConfig): Promise<RawItem[]> {
+async function fetchHfModels(s: SourceConfig, now = new Date()): Promise<RawItem[]> {
   const data = await fetchJson<HfModel[]>(s.url);
   return data.slice(0, s.limit).map((m) => {
     const published = m.createdAt ?? m.lastModified;
@@ -236,6 +245,8 @@ async function fetchHfModels(s: SourceConfig): Promise<RawItem[]> {
       url: `https://huggingface.co/${m.id}`,
       summary: (m.tags ?? []).slice(0, 6).join(", "),
       published_at: published ?? UNKNOWN_PUBLISHED_AT,
+      discovered_at: now.toISOString(),
+      discovery_reason: "trending",
       published_at_source: m.createdAt ? "api" : m.lastModified ? "api_last_modified" : "generated_fallback",
       date_confidence: m.createdAt ? "high" : m.lastModified ? "medium" : "low",
       engagement: { score: m.likes ?? 0 },
@@ -256,7 +267,7 @@ async function fetchGithubReleases(s: SourceConfig, options: FetchAllOptions): P
   const repo = repoFromGitHubApiUrl(s.url);
   const data = await fetchJson<GithubRelease[]>(s.url, githubHeaders(options.env));
   return data
-    .filter((release) => !release.draft)
+    .filter((release) => !release.draft && !release.prerelease)
     .slice(0, s.limit)
     .map((release) => normalize(s, {
       title: `${repo}: ${release.name || release.tag_name}`,
@@ -399,11 +410,13 @@ async function enrichGithubTrendingCandidate(
       stars_today: starsToday,
       trending_period: "daily",
       readme_image_url: readmeImage,
+      has_readme: Boolean(readme && readme.trim().length >= 100),
     },
   });
 }
 
 interface GithubRelease {
+  prerelease?: boolean;
   tag_name: string;
   name?: string | null;
   html_url: string;
@@ -541,8 +554,8 @@ async function fetchSitemap(s: SourceConfig, kw: string[]): Promise<RawItem[]> {
     .filter((it) => !s.ai_filter || isAiRelevant(it as RawItem, kw)) as RawItem[];
 }
 
-async function fetchSitemapEntries(url: string, depth = 0): Promise<SitemapEntry[]> {
-  if (depth > 1) return [];
+async function fetchSitemapEntries(url: string, depth = 0, sourceUrl = url): Promise<SitemapEntry[]> {
+  if (depth > 1 || !sameSourceHost(url, sourceUrl)) return [];
   const text = await fetchText(url);
   const parsed = xml.parse(text) as SitemapDocument;
   const urls = asArray(parsed.urlset?.url)
@@ -558,7 +571,7 @@ async function fetchSitemapEntries(url: string, depth = 0): Promise<SitemapEntry
     .map((entry) => String(entry.loc ?? "").trim())
     .filter(Boolean)
     .slice(0, SITEMAP_CHILD_LIMIT);
-  const nested = await Promise.all(childSitemaps.map((child) => fetchSitemapEntries(child, depth + 1)));
+  const nested = await Promise.all(childSitemaps.map((child) => fetchSitemapEntries(child, depth + 1, sourceUrl)));
   return nested.flat();
 }
 
@@ -611,12 +624,12 @@ async function fetchPageDetails(url: string): Promise<PageDetails> {
 }
 
 async function fetchPageText(url: string): Promise<string> {
-  const r = await fetch(url, {
+  const r = await safeFetch(url, {
     signal: AbortSignal.timeout(SITEMAP_PAGE_TIMEOUT_MS),
     headers: { "user-agent": USER_AGENT },
   });
   if (!r.ok) throw new Error(`HTTP ${r.status} ${r.statusText}`.trim());
-  return await r.text();
+  return await boundedText(r);
 }
 
 // ---- Normalization --------------------------------------------------------
@@ -628,6 +641,8 @@ function normalize(
     summary?: string;
     image_url?: string;
     image_source?: string;
+    discovered_at?: string;
+    discovery_reason?: RawItem["discovery_reason"];
     published_at: string;
     published_at_source: PublishedAtSource;
     date_confidence: DateConfidence;
@@ -658,6 +673,8 @@ function normalize(
     image_url: raw.image_url,
     image_source: raw.image_url ? raw.image_source : undefined,
     published_at: raw.published_at,
+    discovered_at: raw.discovered_at,
+    discovery_reason: raw.discovery_reason,
     published_at_source: raw.published_at_source,
     date_confidence: raw.date_confidence,
     engagement: raw.engagement,
@@ -723,33 +740,7 @@ function isLearningVideoCandidate(item: RawItem): boolean {
   if (isYoutubeShortsItem(item)) return false;
   if (item.learning?.provider === "YouTube" && !item.learning.video_id) return false;
 
-  const text = normalizeFilterText(`${item.title} ${item.summary ?? ""}`);
-  const hasCourseSignal = /\b(courses?|lessons?|curriculum|classroom)\b/.test(text);
-  const hasInstructionSignal = [
-    /\bhow\s+(?:to|the)\b/,
-    /\b(?:learn|tutorial|guide|workshop|lecture|training|webinar|walkthrough)\b/,
-    /\b(?:hands[- ]on|deep dive|explained|from scratch|quickstart)\b/,
-    /\b(?:build|building|deploy|code|coding|implement|debug|evaluate|benchmark)\b/,
-    /\b(?:foundations?|office hours|build hour|dev community live)\b/,
-  ].some((pattern) => pattern.test(text));
-  const hasTechnicalLearningTopic = [
-    /\b(?:llms?|agents?|rag|mcp|inference|fine[- ]?tun(?:e|ing)|evals?)\b/,
-    /\b(?:embeddings?|vector search|transformers?|tokenizers?|quantiz(?:e|ation))\b/,
-    /\b(?:multimodal|vlms?|cuda|pytorch|jax|open source models?)\b/,
-    /\b(?:gemini|ai studio|apis?|sdks?|colab|kaggle)\b/,
-  ].some((pattern) => pattern.test(text));
-  const isPreReleaseMarketing = /\b(?:coming soon|almost here|trailer|teaser|save your spot|sign up)\b/.test(text);
-  const isLaunchOrBrandMarketing = [
-    /\b(?:ad|advert|advertisement|commercial|campaign|brand film)\b/,
-    /\|\s*with chatgpt\b/,
-    /\b(?:introducing|launch(?:ed)?|available now|is live|is here|sota for)\b/,
-  ].some((pattern) => pattern.test(text));
-
-  if (hasCourseSignal) return true;
-  if (isPreReleaseMarketing) return false;
-  if (hasInstructionSignal) return true;
-  if (isLaunchOrBrandMarketing) return false;
-  return hasTechnicalLearningTopic;
+  return instructionalIntent(item.title, item.summary ?? "");
 }
 
 function isYoutubeShortsItem(item: RawItem): boolean {
@@ -1018,25 +1009,25 @@ function formatNumber(value: number): string {
 
 async function fetchJson<T>(url: string, headers: Record<string, string> = {}): Promise<T> {
   return await withRetry(async () => {
-    const r = await fetch(url, {
+    const r = await safeFetch(url, {
       signal: AbortSignal.timeout(TIMEOUT_MS),
       headers,
     });
     if (!r.ok) throw await fetchHttpError(url, r);
     assertResponseWithinLimit(url, r);
-    return (await r.json()) as T;
+    return JSON.parse(await boundedText(r)) as T;
   });
 }
 
 async function fetchText(url: string, options: RetryOptions = {}): Promise<string> {
   return await withRetry(async () => {
-    const r = await fetch(url, {
+    const r = await safeFetch(url, {
       signal: AbortSignal.timeout(options.timeoutMs ?? TIMEOUT_MS),
       headers: { "user-agent": USER_AGENT },
     });
     if (!r.ok) throw await fetchHttpError(url, r, options.retryStatuses);
     assertResponseWithinLimit(url, r);
-    const text = await r.text();
+    const text = await boundedText(r);
     if (text.length > MAX_RESPONSE_BYTES) {
       throw new Error(`response too large from ${url}: ${text.length} chars`);
     }
@@ -1079,7 +1070,7 @@ async function fetchHttpError(
   response: Response,
   retryStatuses: Set<number> = new Set(),
 ): Promise<FetchHttpError> {
-  const body = await response.text().catch(() => "");
+  const body = await boundedText(response, 4096).catch(() => "");
   const rateLimit = githubRateLimitMessage(response.headers);
   const bodyMessage = body.trim().replace(/\s+/g, " ").slice(0, 240);
   const message = [
@@ -1113,7 +1104,7 @@ function sleep(ms: number): Promise<void> {
 
 function sourceUrlMatches(url: string, s: SourceConfig): boolean {
   const canonical = canonicalizeUrl(url);
-  if (!canonical) return false;
+  if (!canonical || !sameSourceHost(url, s.url)) return false;
   if (s.url_include?.length && !s.url_include.some((needle) => canonical.includes(needle))) {
     return false;
   }
@@ -1329,19 +1320,43 @@ async function mapLimit<T, U>(
   return out;
 }
 
+async function fetchCourseCatalog(s: SourceConfig, now = new Date()): Promise<RawItem[]> {
+  const courses = FOUNDATIONS.filter(course => course.source_id === s.id).slice(0, s.limit);
+  if (!courses.length) throw new Error("Empty curated course catalog");
+  return await Promise.all(courses.map(async course => {
+    if (!sameSourceHost(course.url, s.url)) throw new Error("Blocked catalog destination");
+    const html = await fetchText(course.url);
+    const $ = cheerio.load(html);
+    $("script,style,nav,header,footer").remove();
+    const text = $("body").text().replace(/\s+/g, " ");
+    if (!text.toLowerCase().includes(course.expected_text.toLowerCase()) || text.length < 300) {
+      throw new Error("Course syllabus identity check failed");
+    }
+    const item = normalize(s, {
+      title: course.title, url: course.url, summary: course.summary,
+      published_at: UNKNOWN_PUBLISHED_AT, published_at_source: "generated_fallback", date_confidence: "low",
+      learning: { ...course.learning, course_url: course.url, last_checked_at: now.toISOString() },
+    });
+    if (!item) throw new Error("Invalid curated course");
+    return item;
+  }));
+}
+
 // ---- Public API -----------------------------------------------------------
 export async function fetchAll(reg: Registry, options: FetchAllOptions = {}): Promise<FetchResult> {
   const youtubeGate = createSerialGate(YOUTUBE_RSS_SPACING_MS);
-  const tasks = reg.sources.map(async (s) => {
+  const activeSources = reg.sources.filter((source) => source.enabled !== false);
+  const tasks = activeSources.map(async (s) => {
     try {
       let items: RawItem[] = [];
       switch (s.type) {
+        case "course_catalog": items = await fetchCourseCatalog(s, options.now); break;
         case "rss":         items = await fetchRss(s, reg.hn_ai_keywords); break;
         case "youtube_rss": items = await youtubeGate(() => fetchYoutubeRss(s, reg.hn_ai_keywords)); break;
         case "hn_algolia":  items = await fetchHN(s, reg.hn_ai_keywords); break;
         case "reddit":      items = await fetchReddit(s); break;
         case "hf_papers":   items = await fetchHfPapers(s); break;
-        case "hf_models":   items = await fetchHfModels(s); break;
+        case "hf_models":   items = await fetchHfModels(s, options.now); break;
         case "sitemap":     items = await fetchSitemap(s, reg.hn_ai_keywords); break;
         case "github_releases": items = await fetchGithubReleases(s, options); break;
         case "github_repo_search": items = await fetchGithubRepoSearch(s, options); break;
@@ -1354,8 +1369,8 @@ export async function fetchAll(reg: Registry, options: FetchAllOptions = {}): Pr
         health: sourceHealth(s, "ok", items.length),
       };
     } catch (e) {
-      const message = (e as Error).message;
-      console.warn(`[fetch] ${s.id} failed: ${message}`);
+      console.warn(`[fetch] ${s.id} failed: ${(e as Error).message}`);
+      const message = publicFetchError(e);
       return {
         items: [],
         failed_source: { id: s.id, name: s.name, message },
@@ -1369,8 +1384,8 @@ export async function fetchAll(reg: Registry, options: FetchAllOptions = {}): Pr
     .filter(Boolean) as SourceFetchFailure[];
   return {
     items: results.flatMap((result) => result.items),
-    source_total: reg.sources.length,
-    source_ok: reg.sources.length - failed_sources.length,
+    source_total: activeSources.length,
+    source_ok: activeSources.length - failed_sources.length,
     source_failed: failed_sources.length,
     failed_sources,
     source_health: results.map((result) => result.health),

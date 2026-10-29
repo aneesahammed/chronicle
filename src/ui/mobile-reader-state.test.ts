@@ -5,9 +5,10 @@ import test from "node:test";
 import vm from "node:vm";
 
 type ReaderStateApi = {
+  prioritizeTopNews(items: any[], topNews: any[]): any[];
   clampIndex(index: number, total: number): number;
   itemKey(item: unknown): string;
-  filterSignature(input: { kinds?: string[]; highNovelty?: boolean; discussionOnly?: boolean }): string;
+  filterSignature(input: { learningTrack?: string; kinds?: string[]; highNovelty?: boolean; discussionOnly?: boolean }): string;
   progressKey(day: string, tab: string, signature: string): string;
   restoreIndex(items: unknown[], saved: { itemKey?: string; index?: number } | null, fallbackIndex?: number): number;
   indexAfterFilterChange(previousKey: string, items: unknown[], previousIndex: number): number;
@@ -60,3 +61,22 @@ function cluster(url: string, title: string) {
     },
   };
 }
+
+
+test("card reader includes Top News first, without repeating their clusters", async () => {
+  const reader = await loadReaderState();
+  const a = cluster("https://example.com/a", "Alpha"), b = cluster("https://example.com/b", "Beta");
+  const news = [ { cluster_id: b.id, url: b.primary.url, title: "Beta", dek: "Beta brief" }, { cluster_id: "extra", url: "https://example.com/c", title: "Gamma" } ];
+  const items = reader.prioritizeTopNews([a, b], news.concat(news[0]));
+  assert.equal(items.length, 3);
+  assert.equal(items[0].primary.title, "Beta");
+  assert.equal(items[0].top_news.dek, "Beta brief");
+  assert.equal(items[1].primary.title, "Gamma");
+  assert.equal(items[2].primary.title, "Alpha");
+  assert.equal((b as any).top_news, undefined);
+});
+
+test("Learning shelves have separate reader progress", async () => {
+  const reader = await loadReaderState();
+  assert.notEqual(reader.filterSignature({ learningTrack: "new" }), reader.filterSignature({ learningTrack: "foundations" }));
+});

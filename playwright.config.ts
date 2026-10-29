@@ -8,9 +8,11 @@ export default defineConfig({
   timeout: 30_000,
   expect: { timeout: 5_000 },
   fullyParallel: true,
+  workers: 2,
   use: {
     baseURL,
     serviceWorkers: "block",
+    navigationTimeout: 15_000,
     trace: "on-first-retry",
   },
   webServer: {

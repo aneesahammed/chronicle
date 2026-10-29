@@ -107,3 +107,22 @@ function makeRepoCluster(starsToday: number): Cluster {
     also_seen_on: [],
   };
 }
+
+test("reposts change the coverage label without adding independent article weight", () => {
+  const c = makeCluster();
+  const cls = { kind: "model_release" as const, quality: "signal" as const, one_liner: "Release." };
+  const before = scoreCluster(c, cls, 1, new Date("2026-05-02"));
+  c.members.push({ ...c.primary, source_id: "hn_ai" });
+  const after = scoreCluster(c, cls, 1, new Date("2026-05-02"));
+  assert.equal(before.score, after.score);
+  assert.ok(after.why_this_surfaced.some(reason => reason.includes("seen on 2 feeds")));
+  assert.ok(!after.why_this_surfaced.some(reason => reason.includes("corroborated")));
+});
+
+test("action hints require source metadata supporting the review task", () => {
+  const c = makeCluster();
+  const cls = { kind: "model_release" as const, quality: "mixed" as const, one_liner: "Release." };
+  assert.equal(scoreCluster(c, cls, 1, new Date("2026-05-02")).builder_action, "");
+  c.primary.summary = "The release changes the API schema and includes migration instructions for existing integrations.";
+  assert.match(scoreCluster(c, cls, 1, new Date("2026-05-02")).builder_action, /migration/);
+});

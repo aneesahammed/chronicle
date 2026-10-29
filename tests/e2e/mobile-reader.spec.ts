@@ -1,7 +1,12 @@
 import { expect, test } from "@playwright/test";
 
+test.beforeEach(async ({ context }) => {
+  await context.addInitScript(() => localStorage.setItem("chronicle-reader-mode", "deck"));
+  await context.route(/https:\/\/(?!127\.0\.0\.1)/, route => route.abort());
+});
+
 test("mobile reader enhances the static feed without removing the fallback list", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("/", { waitUntil: "domcontentloaded" });
 
   await expect(page.locator("#mobileReader")).toBeVisible();
   await expect(page.locator(".reader-card.is-current")).toBeVisible();
@@ -21,7 +26,7 @@ test("mobile reader enhances the static feed without removing the fallback list"
 });
 
 test("mobile reader supports scroll snap and keyboard navigation", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("/", { waitUntil: "domcontentloaded" });
   await expect(page.locator("#mobileReader")).toBeVisible();
 
   await scrollReaderTo(page, 1);
@@ -37,12 +42,14 @@ test("mobile reader supports scroll snap and keyboard navigation", async ({ page
 
 test("compact mobile reader keeps image cards readable on iPhone SE", async ({ browser }) => {
   const page = await browser.newPage({ viewport: { width: 375, height: 667 } });
-  await page.goto("/");
+  await page.addInitScript(() => localStorage.setItem("chronicle-reader-mode", "deck"));
+  await page.route(/https:\/\//, route => route.abort());
+  await page.goto("/", { waitUntil: "domcontentloaded" });
   await expect(page.locator("#mobileReader")).toBeVisible();
 
   await page.getByRole("button", { name: "Index" }).click();
   await page.locator(".reader-index-row").nth(10).click();
-  await page.reload();
+  await page.reload({ waitUntil: "domcontentloaded" });
   await expect(page.locator("#mobileReader")).toBeVisible();
 
   await page.getByRole("button", { name: "Index" }).click();
@@ -63,7 +70,7 @@ test("compact mobile reader keeps image cards readable on iPhone SE", async ({ b
 
 test("desktop keeps the original list experience", async ({ browser }) => {
   const page = await browser.newPage({ viewport: { width: 1100, height: 900 } });
-  await page.goto("/");
+  await page.goto("/", { waitUntil: "domcontentloaded" });
 
   await expect(page.locator("#mobileReader")).toHaveCount(0);
   await expect(page.locator("#feed .item").first()).toBeVisible();

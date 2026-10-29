@@ -1,3 +1,5 @@
+import dns from "node:dns/promises";
+import { mock } from "node:test";
 import assert from "node:assert/strict";
 import { promises as fs } from "node:fs";
 import { readFileSync } from "node:fs";
@@ -61,6 +63,8 @@ hn_ai_keywords:
     last_successful_generated_at: "2026-05-01T06:00:00.000Z",
     refresh_status: "ok",
     classification_mode: "fallback",
+    classification_counts: { fallback: 1 },
+    selection_stats: { candidates: 1, reviewed: 1, selected: 1 },
     window_hours: 36,
     source_total: 1,
     source_ok: 1,
@@ -84,7 +88,11 @@ hn_ai_keywords:
   assert.equal(feed.source_failed, 1);
   assert.equal(feed.count, 1);
   assert.deepEqual(feed.clusters, previous.clusters);
+  assert.deepEqual(feed.classification_counts, previous.classification_counts);
+  assert.deepEqual(feed.selection_stats, previous.selection_stats);
   assert.equal(feed.last_successful_generated_at, "2026-05-01T06:00:00.000Z");
+  assert.equal(feed.generated_at, previous.generated_at);
+  assert.equal(feed.attempted_at, "2026-05-02T06:00:00.000Z");
 });
 
 test("runPipeline preserves previous repo and learning feeds when their sources fail", async () => {
@@ -185,7 +193,7 @@ test("runPipeline keeps previously seen repos when they are currently trending",
       });
     }
     if (url === "https://raw.githubusercontent.com/acme/agent-runtime/HEAD/README.md") {
-      return new Response("![preview](https://cdn.example.com/agent.png)\nAI coding agent runtime.");
+      return new Response("![preview](https://cdn.example.com/agent.png)\nAI coding agent runtime. Install the package, configure a provider, and run the example to evaluate tool calls and persistent memory.");
     }
     if (url.startsWith("https://api.github.com/repos/")) {
       return Response.json({
@@ -446,7 +454,7 @@ hn_ai_keywords:
   assert.equal(archivedLearning.clusters[0].primary.learning.video_id, "learn123");
 });
 
-test("runPipeline classifies only preselected main feed candidates", async () => {
+test("runPipeline reviews all fresh main candidates before diversity and output caps", async () => {
   const titles = [
     "Alpha routing benchmark improves agent planning",
     "Beacon dataset evaluates retrieval quality",
@@ -528,9 +536,10 @@ hn_ai_keywords:
   });
 
   const feed = JSON.parse(await fs.readFile(path.join(publicDir, "feed.json"), "utf8"));
-  assert.equal(classifiedBatchSizes.length, 1);
-  assert.ok(classifiedBatchSizes[0] < titles.length);
-  assert.equal(classifiedBatchSizes[0], feed.count);
+  assert.equal(classifiedBatchSizes.length, 2);
+  assert.equal(classifiedBatchSizes.reduce((sum, size) => sum + size, 0), titles.length);
+  assert.ok(feed.count <= 5);
+  assert.equal(feed.selection_stats.reviewed, titles.length);
   assert.equal(feed.classification_mode, "llm");
 });
 
@@ -650,3 +659,37 @@ async function fileExists(filePath: string): Promise<boolean> {
     return false;
   }
 }
+
+// Keep network-policy DNS deterministic while HTTP responses use local fixtures.
+test.beforeEach(() => { mock.method(dns, "lookup", async () => [{ address: "93.184.216.34", family: 4 }]); });
+test.afterEach(() => { mock.restoreAll(); });
+
+test("Foundations survive the lesson window without becoming fresh or resetting review dates", async () => {
+  globalThis.fetch = async () => new Response(`<html><body>April 2023 ${"LLM Bootcamp syllabus. ".repeat(35)}</body></html>`);
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "chronicle-foundations-"));
+  const publicDir = path.join(root, "public");
+  await fs.mkdir(publicDir);
+  const registryPath = path.join(root, "registry.yaml");
+  await fs.writeFile(registryPath, `sources:
+  - id: learn_fullstack
+    name: Full Stack Deep Learning
+    type: course_catalog
+    url: https://fullstackdeeplearning.com/llm-bootcamp/
+    trust: 0.82
+    source_role: learning
+    kind_hint: course
+    limit: 1
+hn_ai_keywords: []
+`);
+  await runPipeline({ registryPath, publicDir, dataDir: path.join(root, "data"), now: new Date("2026-11-01T12:00:00Z"), env: { LEARNING_WINDOW_HOURS: "1" }, providers: [] });
+  const feed = JSON.parse(await fs.readFile(path.join(publicDir, "learning.json"), "utf8"));
+  assert.equal(feed.count, 1);
+  assert.equal(feed.clusters[0].primary.learning.reviewed_at, "2026-10-29");
+  assert.equal(feed.clusters[0].primary.published_at, "1970-01-01T00:00:00.000Z");
+  assert.equal(feed.clusters[0].quality, "mixed");
+  assert.equal(feed.source_health[0].fresh_count, 0);
+  assert.equal(feed.source_health[0].evergreen_count, 1);
+  assert.equal(feed.source_health[0].consecutive_empty, 0);
+  assert.equal(feed.source_health[0].selected_count, 1);
+  assert.equal(feed.source_health[0].unique_selected_count, 1);
+});

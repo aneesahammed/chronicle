@@ -1,3 +1,5 @@
+import dns from "node:dns/promises";
+import { mock } from "node:test";
 import assert from "node:assert/strict";
 import { promises as fs } from "node:fs";
 import os from "node:os";
@@ -58,12 +60,12 @@ test("image helpers only accept safe https images", () => {
   );
 });
 
-test("buildTopNews enriches with Jina and Groq without storing raw article text", async () => {
+test("buildTopNews accepts a short source excerpt without storing the full article", async () => {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), "chronicle-top-news-"));
   const cachePath = path.join(root, "enrichments.json");
   const fetchImpl = async (input: string | URL | Request) => {
     assert.match(String(input), /^https:\/\/r\.jina\.ai\//);
-    return new Response("This is raw article text that should only be summarized in memory.");
+    return new Response("Anthropic launched a code security scanner for Claude users. Additional raw article text is only processed in memory.");
   };
 
   const topNews = await buildTopNews([
@@ -84,7 +86,7 @@ test("buildTopNews enriches with Jina and Groq without storing raw article text"
       return [{
         index: 0,
         dek: "Anthropic launched a code security scanner for Claude users.",
-        brief: "The release adds AI-assisted vulnerability scanning for teams that already use Claude.",
+        brief: "Anthropic launched a code security scanner for Claude users.",
         image_alt: "Security product illustration",
       }];
     },
@@ -94,11 +96,11 @@ test("buildTopNews enriches with Jina and Groq without storing raw article text"
   assert.equal(topNews[0].enrichment_status, "ok");
   assert.equal(topNews[0].image_url, "https://cdn.example.com/security.png");
   const cacheText = await fs.readFile(cachePath, "utf8");
-  assert.equal(cacheText.includes("raw article text"), false);
+  assert.equal(cacheText.includes("Additional raw article text"), false);
   assert.match(cacheText, /code security scanner/);
 });
 
-test("buildTopNews falls back to metadata_only when Groq returns malformed JSON", async () => {
+test("buildTopNews falls back to metadata_only when excerpt generation fails", async () => {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), "chronicle-top-news-fallback-"));
   const cachePath = path.join(root, "enrichments.json");
 
@@ -118,7 +120,7 @@ test("buildTopNews falls back to metadata_only when Groq returns malformed JSON"
 
   assert.equal(topNews.length, 1);
   assert.equal(topNews[0].enrichment_status, "metadata_only");
-  assert.equal(topNews[0].dek, "Useful one liner.");
+  assert.equal(topNews[0].dek, "A useful launch summary from the source feed.");
   assert.equal(topNews[0].brief, "A useful launch summary from the source feed.");
 
   const cache = JSON.parse(await fs.readFile(cachePath, "utf8"));
@@ -186,12 +188,12 @@ test("buildTopNews retries stale failures and prunes cache deterministically", a
     env: { GROQ_API_KEY: "test-key" },
     fetchImpl: async () => {
       fetched = true;
-      return new Response("Fresh article text.");
+      return new Response("Fresh source article text describes the updated model release.");
     },
     summarize: async () => [{
       index: 0,
-      dek: "Fresh dek",
-      brief: "Fresh brief",
+      dek: "Fresh source article text describes the updated model release.",
+      brief: "Fresh source article text describes the updated model release.",
     }],
   });
 
@@ -254,3 +256,32 @@ function scored(overrides: Partial<RawItem> & {
     builder_action: "Read the primary source.",
   };
 }
+
+// Keep network-policy DNS deterministic while HTTP responses use local fixtures.
+test.beforeEach(() => { mock.method(dns, "lookup", async () => [{ address: "93.184.216.34", family: 4 }]); });
+test.afterEach(() => { mock.restoreAll(); });
+
+test("cache hits preserve unequal-score order and source corrections invalidate excerpts", async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "chronicle-order-"));
+  const cachePath = path.join(root, "cache.json");
+  const high = scored({ id: "high", source_id: "openai", score: 0.9, title: "Model release" });
+  const low = scored({ id: "low", source_id: "hn_ai", score: 0.7, title: "Useful tool" });
+  let body = "This source describes a useful tool for evaluating retrieval quality with reproducible examples and documented test cases.";
+  const options = { cachePath, now: new Date("2026-10-29T12:00:00Z"), env: {}, fetchImpl: async () => new Response(body) };
+  await buildTopNews([low], options);
+  const first = await buildTopNews([high, low], options);
+  assert.deepEqual(first.map(item => item.cluster_id), [high.id, low.id]);
+  const oldHash = first[1].source_content_hash;
+  body = "The corrected source explains that the tool evaluates classification quality, using a public dataset and a reproducible test harness.";
+  const second = await buildTopNews([low], options);
+  assert.notEqual(second[0].source_content_hash, oldHash);
+  assert.match(second[0].dek, /corrected/);
+});
+
+test("unsupported generated claims fall back to source metadata", async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "chronicle-grounding-"));
+  const result = await buildTopNews([scored({ summary: "A documented model release." })], { cachePath: path.join(root,"cache.json"), now: new Date(), env: {}, fetchImpl: async () => new Response("The source describes a model release but provides no benchmark claim."), summarize: async () => [{ index: 0, dek: "This model doubles accuracy on all tasks.", brief: "This model doubles accuracy on all tasks." }] });
+  assert.equal(result[0].enrichment_status, "metadata_only");
+  assert.equal(result[0].summary_method, "source_metadata");
+  assert.ok(!result[0].dek.includes("doubles"));
+});

@@ -1,5 +1,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
+import { publishVersionedAssets } from "./assets.ts";
+import { publicFetchError } from "../sources/safe-fetch.ts";
 import { writeFileAtomic } from "../pipeline/atomic-write.ts";
 import type { FeedFile, ScoredCluster, TopNewsItem } from "../types.ts";
 
@@ -43,6 +45,7 @@ export interface ArchiveDay {
 }
 
 export async function writeRenderedHomePage(publicDir: string, feed: FeedFile) {
+  await publishVersionedAssets(publicDir);
   const indexPath = path.join(publicDir, "index.html");
   const template = await readOptionalText(indexPath);
   if (!template) return;
@@ -236,6 +239,10 @@ function renderFeedPage(
   html = replaceBetween(html, TOP_NEWS_START, TOP_NEWS_END, renderTopNews(feed.top_news ?? []), "top news markers");
   html = replaceBetween(html, FEED_START, FEED_END, renderFeed(feed), "feed markers");
   html = replaceBetween(html, JSONLD_START, JSONLD_END, itemListJsonLd(feed, options.canonicalUrl), "JSON-LD markers");
+  const bootstrap = { ...feed, clusters: feed.clusters.map(({ members, ...item }) => item) };
+  const payload = JSON.stringify(bootstrap).replaceAll("<", "\\u003c");
+  html = html.replace(/<script id="feedBootstrap" type="application\/json">[\s\S]*?<\/script>/,
+    () => `<script id="feedBootstrap" type="application/json">${payload}</script>`);
   return html;
 }
 
@@ -387,6 +394,7 @@ function itemMeta(item: ScoredCluster): string {
   const parts = [
     sourceLabelHtml(item.primary),
     escapeHtml(relativeDate(item.primary.published_at)),
+    item.primary.discovered_at ? escapeHtml(`listed ${shortDate(item.primary.discovered_at)}`) : "",
     item.kind && item.kind !== "unknown" ? escapeHtml(item.kind.replaceAll("_", " ")) : "",
     item.primary.repo?.stargazers_count ? escapeHtml(`${formatNumber(item.primary.repo.stargazers_count)} stars`) : "",
     item.primary.repo?.stars_today ? escapeHtml(`+${formatNumber(item.primary.repo.stars_today)} stars today`) : "",
@@ -457,7 +465,8 @@ function sourceGlyphKind(source: SourceGlyphContext): SourceGlyphKind {
 }
 
 function renderExplain(item: ScoredCluster): string {
-  const reasons = item.why_this_surfaced ?? [];
+  const reasons = (item.why_this_surfaced ?? []).map((reason) => reason.replace(/corroborated by (\d+) sources/, "seen on $1 feeds; not independent verification"));
+  if (item.classification_method) reasons.push(`Assessment: ${item.classification_method}. ${item.classification_reason ?? ""}`);
   if (!reasons.length && !item.builder_action) return "";
   return [
     `<details class="item-explain">`,
@@ -465,7 +474,7 @@ function renderExplain(item: ScoredCluster): string {
     `<ul>`,
     ...reasons.map((reason) => `<li>${escapeHtml(reason)}</li>`),
     item.builder_action ? `<li>${escapeHtml(item.builder_action)}</li>` : "",
-    `</ul>`,
+    `</ul><a href="/methodology.html">How Chronicle selects stories · report a correction</a>`,
     `</details>`,
   ].filter(Boolean).join("\n");
 }
@@ -620,6 +629,10 @@ function feedSchema(): Record<string, unknown> {
     ],
     properties: {
       generated_at: { type: "string", format: "date-time" },
+      attempted_at: { type: "string", format: "date-time" },
+      section_counts: { type: "object", additionalProperties: { type: "integer", minimum: 0 } },
+      classification_counts: { type: "object", additionalProperties: { type: "integer", minimum: 0 } },
+      selection_stats: { type: "object" },
       last_successful_generated_at: { anyOf: [{ type: "string", format: "date-time" }, { type: "null" }] },
       refresh_status: { enum: ["ok", "partial", "failed"] },
       classification_mode: { enum: ["llm", "partial", "fallback", "deterministic"] },
@@ -635,6 +648,12 @@ function feedSchema(): Record<string, unknown> {
         type: "array",
         items: {
           type: "object",
+          properties: {
+            classification_method: { enum: ["llm", "deterministic", "fallback"] },
+            classification_reason: { type: "string" },
+            classification_provider: { type: "string" },
+            classification_model: { type: "string" },
+          },
           required: [
             "id", "primary", "members", "source_trail", "kind", "quality",
             "one_liner", "novelty", "novelty_label", "trust", "score",
@@ -662,7 +681,7 @@ function replaceBetween(html: string, start: string, end: string, content: strin
 }
 
 function statusText(feed: FeedFile): string {
-  const updated = relativeDate(feed.generated_at);
+  const updated = relativeDate(feed.last_successful_generated_at ?? feed.generated_at);
   const parts = [`${feed.count} ${itemCountLabel(feed.count)}`, `updated ${updated}`];
   if (feed.refresh_status === "failed") {
     parts.push("refresh failed");
@@ -674,11 +693,13 @@ function statusText(feed: FeedFile): string {
 
 function healthHtml(feed: FeedFile): string {
   const tail = [];
+  const assessments = feed.classification_counts;
+  if (assessments) tail.push(`${assessments.llm || 0} model · ${assessments.deterministic || 0} rules · ${assessments.fallback || 0} fallback assessments`);
   if (feed.classification_mode !== "llm") tail.push(`classify ${feed.classification_mode}`);
   tail.push(`window ${feed.window_hours}h`);
   const sourceDetails = feed.source_failed > 0 ? sourceFailureDetailsHtml(feed) : "";
   return [
-    `<strong>${feed.source_ok}/${feed.source_total} sources</strong>`,
+    `<strong>${feed.source_ok}/${feed.source_total} reachable · ${(feed.source_health ?? []).filter((source) => (source.fresh_count ?? 0) > 0).length} contributed fresh items</strong>`,
     sourceDetails,
     tail.length ? escapeHtml(tail.join(" · ")) : "",
   ].filter(Boolean).join(" · ");
@@ -713,10 +734,7 @@ function sourceFailureDetailsHtml(feed: FeedFile): string {
 }
 
 function compactErrorMessage(message: string | undefined): string {
-  return String(message ?? "")
-    .replace(/\s+/g, " ")
-    .trim()
-    .slice(0, 180);
+  return message ? publicFetchError(new Error(message)) : "";
 }
 
 function topNewsMeta(item: TopNewsItem): string {
@@ -724,7 +742,7 @@ function topNewsMeta(item: TopNewsItem): string {
     sourceLabelHtml(item),
     escapeHtml(relativeDate(item.published_at)),
     item.kind && item.kind !== "unknown" ? escapeHtml(item.kind.replaceAll("_", " ")) : "",
-    Number.isFinite(item.score) ? item.score.toFixed(2) : "",
+    item.summary_method === "extractive" ? `source excerpt · checked ${escapeHtml(relativeDate(item.enriched_at))}` : item.summary_method === "source_metadata" ? "source metadata" : "legacy automated brief",
   ].filter(Boolean).join(`<span class="sep">·</span>`);
 }
 

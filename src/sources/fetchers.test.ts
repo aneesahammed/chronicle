@@ -1,3 +1,5 @@
+import dns from "node:dns/promises";
+import { mock } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
@@ -632,7 +634,7 @@ test("fetchAll filters non-learning YouTube clips from the learning feed", async
     hn_ai_keywords: ["gpt", "chatgpt", "llm", "agent"],
   });
 
-  assert.deepEqual(result.items.map((item) => item.learning?.video_id), ["course123", "technical123"]);
+  assert.deepEqual(result.items.map((item) => item.learning?.video_id), ["course123"]);
   assert.ok(result.items.every((item) => !item.url.includes("/shorts/")));
 });
 
@@ -839,3 +841,70 @@ function registry(type: Registry["sources"][number]["type"]): Registry {
     hn_ai_keywords: ["ai"],
   };
 }
+
+// Keep network-policy DNS deterministic while HTTP responses use local fixtures.
+test.beforeEach(() => { mock.method(dns, "lookup", async () => [{ address: "93.184.216.34", family: 4 }]); });
+test.afterEach(() => { mock.restoreAll(); });
+
+test("YouTube nested media descriptions reach learning summaries", async () => {
+  const description = "Learn how to implement an AI agent with tool calls, evaluate its outputs, and run the complete code example.";
+  globalThis.fetch = async () => new Response(`<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><entry><title>How to build an AI agent</title><link href="https://www.youtube.com/watch?v=real123"/><published>2026-10-29T10:00:00Z</published><media:group><media:description>${description}</media:description></media:group></entry></feed>`);
+  const reg = registry("youtube_rss");
+  Object.assign(reg.sources[0], { source_role: "learning", kind_hint: "video" });
+  const result = await fetchAll(reg);
+  assert.equal(result.items[0].summary, description);
+});
+
+test("Daily Papers keeps publication separate from its verified daily submission field", async () => {
+  globalThis.fetch = async () => Response.json([{ publishedAt: "2026-10-25T20:00:00Z", paper: { id: "2610.36095", title: "A useful AI evaluation", publishedAt: "2026-10-26T00:00:00Z", submittedOnDailyAt: "2026-10-29T00:00:00Z", summary: "An evaluation benchmark." } }]);
+  const result = await fetchAll(registry("hf_papers"));
+  assert.equal(result.items[0].published_at, "2026-10-26T00:00:00Z");
+  assert.equal(result.items[0].discovered_at, "2026-10-29T00:00:00.000Z");
+  assert.equal(result.items[0].discovery_reason, "daily_listing");
+});
+
+test("Lobsters uses the comments permalink instead of the external article", async () => {
+  globalThis.fetch = async () => new Response(`<rss version="2.0"><channel><item><title>AI tools</title><link>https://example.com/story</link><comments>https://lobste.rs/s/abc/tools</comments><pubDate>Thu, 29 Oct 2026 10:00:00 GMT</pubDate></item></channel></rss>`);
+  const reg = registry("rss"); reg.sources[0].id = "lobsters_ai";
+  const result = await fetchAll(reg);
+  assert.equal(result.items[0].discussion_url, "https://lobste.rs/s/abc/tools");
+  assert.equal(result.items[0].url, "https://example.com/story");
+});
+
+test("trending observations do not rewrite an old model's publication date", async () => {
+  globalThis.fetch = async () => Response.json([{ id: "acme/model", createdAt: "2026-08-01T00:00:00Z", lastModified: "2026-09-01T00:00:00Z", likes: 10, tags: ["text-generation"] }]);
+  const now = new Date("2026-10-29T12:00:00Z");
+  const result = await fetchAll(registry("hf_models"), { now });
+  assert.equal(result.items[0].published_at, "2026-08-01T00:00:00Z");
+  assert.equal(result.items[0].discovered_at, now.toISOString());
+  assert.equal(result.items[0].discovery_reason, "trending");
+});
+
+
+test("curated courses retain edition dates and review scope across automatic checks", async () => {
+  globalThis.fetch = async () => new Response(`<html><body><h1>April 2023 LLM Bootcamp</h1><p>${"Lessons and syllabus. ".repeat(30)}</p></body></html>`);
+  const result = await fetchAll({ sources: [{ id: "learn_fullstack", name: "Full Stack Deep Learning", type: "course_catalog", url: "https://fullstackdeeplearning.com/llm-bootcamp/", source_role: "learning", kind_hint: "course", trust: 0.82, limit: 1 }], hn_ai_keywords: [] }, { now: new Date("2026-11-01T12:00:00Z") });
+  assert.equal(result.source_ok, 1);
+  const course = result.items[0];
+  assert.equal(course.published_at_source, "generated_fallback");
+  assert.equal(course.published_at, "1970-01-01T00:00:00.000Z");
+  assert.equal(course.learning?.publication_label, "April 2023 bootcamp");
+  assert.equal(course.learning?.reviewed_at, "2026-10-29");
+  assert.equal(course.learning?.last_checked_at, "2026-11-01T12:00:00.000Z");
+  assert.equal(course.learning?.compatibility_status, "historical");
+});
+
+test("curated catalog rejects soft-404 pages instead of reporting healthy", async () => {
+  globalThis.fetch = async () => new Response(`<html><body>${"Page not found. ".repeat(40)}</body></html>`);
+  const result = await fetchAll({ sources: [{ id: "learn_fastai", name: "fast.ai", type: "course_catalog", url: "https://course.fast.ai/", source_role: "learning", kind_hint: "course", trust: 0.82, limit: 1 }], hn_ai_keywords: [] });
+  assert.equal(result.source_failed, 1);
+  assert.equal(result.items.length, 0);
+});
+
+test("release pilot ignores drafts and prereleases before applying its limit", async () => {
+  const release = (tag: string, extra = {}) => ({ tag_name: tag, html_url: `https://github.com/vllm-project/vllm/releases/tag/${tag}`, published_at: "2026-10-28T12:00:00Z", ...extra });
+  globalThis.fetch = async () => Response.json([release("draft", { draft: true }), release("rc", { prerelease: true }), release("v1"), release("v0")]);
+  const result = await fetchAll({ sources: [{ id: "repo_vllm_releases", name: "vLLM", type: "github_releases", url: "https://api.github.com/repos/vllm-project/vllm/releases?per_page=20", source_role: "repo", kind_hint: "repo_release", trust: 0.8, limit: 1 }], hn_ai_keywords: [] });
+  assert.equal(result.items.length, 1);
+  assert.equal(result.items[0].repo?.release_tag, "v1");
+});

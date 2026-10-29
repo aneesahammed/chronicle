@@ -5,10 +5,8 @@ import sourceFamilyConfig from "./source-family-config.json" with { type: "json"
 // tightly packed, so the penalty needs to be small enough to preserve relevance
 // while still letting close non-arXiv items interleave.
 const FAMILY_PENALTY = 0.015;
-const EXCEPTIONAL_SCORE = 0.90;
 const ARXIV_HARD_CAP = 3;
 const DEFAULT_FAMILY_CAP_RATIO = 0.40;
-const EXCEPTION_CAP_RATIO = 0.05;
 const warnedUnmappedSources = new Set<string>();
 
 interface SourceFamilyConfig {
@@ -20,15 +18,20 @@ const FAMILY_CONFIG = sourceFamilyConfig as SourceFamilyConfig;
 
 export interface DiversitySelectionOptions {
   maxOutput: number;
+  enforceFamilyRatio?: boolean;
 }
 
 export function selectDiverseClusters(
   clusters: ScoredCluster[],
   options: DiversitySelectionOptions,
 ): ScoredCluster[] {
-  const maxOutput = Math.max(0, Math.floor(options.maxOutput));
+  let maxOutput = Math.max(0, Math.floor(options.maxOutput));
   if (maxOutput === 0 || clusters.length === 0) return [];
 
+  if (options.enforceFamilyRatio === false) return [...clusters].sort((a, b) => b.score - a.score).slice(0, maxOutput);
+  const available = sourceFamilyMix(clusters);
+  maxOutput = Math.min(maxOutput, clusters.length);
+  while (maxOutput > 0 && Object.entries(available).reduce((sum, [family, count]) => sum + Math.min(count, familyCap(family, maxOutput)), 0) < maxOutput) maxOutput--;
   const remaining = [...clusters].sort((a, b) => b.score - a.score);
   const selected: ScoredCluster[] = [];
   const familyCounts = new Map<string, number>();
@@ -94,15 +97,11 @@ function bestCandidateIndex(
 function withinFamilyCap(candidate: ScoredCluster, familyCount: number, maxOutput: number): boolean {
   const family = sourceFamily(candidate.primary.source_id);
   const cap = familyCap(family, maxOutput);
-  if (familyCount < cap) return true;
-  if (family === "arxiv") return false;
-
-  const exceptionCap = cap + Math.max(1, Math.ceil(maxOutput * EXCEPTION_CAP_RATIO));
-  return candidate.score >= EXCEPTIONAL_SCORE && familyCount < exceptionCap;
+  return familyCount < cap;
 }
 
 function familyCap(family: string, maxOutput: number): number {
-  if (family === "arxiv") return Math.min(ARXIV_HARD_CAP, maxOutput);
+  if (family === "arxiv") return Math.min(ARXIV_HARD_CAP, ratioCap(maxOutput, DEFAULT_FAMILY_CAP_RATIO));
   return ratioCap(maxOutput, DEFAULT_FAMILY_CAP_RATIO);
 }
 
