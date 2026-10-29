@@ -900,7 +900,12 @@ function renderFeed() {
   if (!items.length && (!shouldUseMobileReader() || !readerItems.length)) {
     disableMobileReader();
     const isFoundationShelf = state.activeFeed === "learning" && state.learningTrack === "foundations";
-    main.replaceChildren(emptyState(isFoundationShelf ? "No Foundations in this edition" : "No matching items", isFoundationShelf ? "Try today's edition or clear the filters." : "Relax the filters or hit reset."));
+    const isEmptyLessons = state.activeFeed === "learning" && !isFoundationShelf && !hasFilters;
+    const title = isFoundationShelf ? "No Foundations in this edition" : isEmptyLessons ? "No new lessons in this edition" : "No matching items";
+    const detail = isFoundationShelf ? "Try today's edition or clear the filters." : isEmptyLessons
+      ? `${state.data.source_failed > 0 ? "Some lesson sources could not be refreshed." : "No recent lessons met the selection rules."} Browse Foundations for reviewed courses or open an earlier edition.`
+      : "Relax the filters or hit reset.";
+    main.replaceChildren(emptyState(title, detail));
     hideResumePrompt();
     return;
   }
