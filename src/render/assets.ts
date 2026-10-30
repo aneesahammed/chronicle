@@ -36,9 +36,15 @@ export async function publishVersionedAssets(publicDir: string): Promise<void> {
     const section = new RegExp(`${MANIFEST_START}[\\s\\S]*?${MANIFEST_END}`);
     if (!section.test(worker)) throw new Error("Service worker asset markers missing");
     const normalized = worker.replace(section, "ASSET_MANIFEST").replace(/const CACHE_VERSION = "[^"]+";/, "CACHE_VERSION");
+    // Icons, fonts and the web manifest keep fixed URLs and are served cache-first, so their
+    // bytes must move the cache version too, or returning visitors keep the old files.
+    const shell = createHash("sha256");
+    for (const [, url] of normalized.matchAll(/"(\/[^"]+\.(?:png|svg|webmanifest|woff2|css))"/g)) {
+      shell.update((await optionalBytes(path.join(publicDir, url))) ?? "missing");
+    }
     const next = worker
       .replace(section, `${MANIFEST_START}\nconst VERSIONED_ASSETS = ${JSON.stringify(Object.values(manifest), null, 2)};\n${MANIFEST_END}`)
-      .replace(/const CACHE_VERSION = "[^"]+";/, `const CACHE_VERSION = "assets-${digest(manifestText + normalized)}";`);
+      .replace(/const CACHE_VERSION = "[^"]+";/, `const CACHE_VERSION = "assets-${digest(manifestText + normalized + shell.digest("hex"))}";`);
     if (next !== worker) await writeFileAtomic(workerPath, next);
   }
 }
@@ -57,6 +63,10 @@ async function rewritePages(directory: string, rewrite: (html: string) => string
 }
 
 async function optionalText(file: string): Promise<string | null> {
-  try { return await fs.readFile(file, "utf8"); }
+  return (await optionalBytes(file))?.toString("utf8") ?? null;
+}
+
+async function optionalBytes(file: string): Promise<Buffer | null> {
+  try { return await fs.readFile(file); }
   catch (error) { if ((error as NodeJS.ErrnoException).code === "ENOENT") return null; throw error; }
 }

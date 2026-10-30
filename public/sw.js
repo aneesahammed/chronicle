@@ -1,4 +1,4 @@
-const CACHE_VERSION = "assets-c36fcf8b468f4c16";
+const CACHE_VERSION = "assets-2fb77dd8acc7d419";
 const CACHE_PREFIX = "chronicle-";
 const SHELL_CACHE = `${CACHE_PREFIX}shell-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `${CACHE_PREFIX}runtime-${CACHE_VERSION}`;

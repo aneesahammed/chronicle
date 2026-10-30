@@ -35,3 +35,19 @@ test("page and worker references change with asset content and keep old assets a
     assert.ok((await fs.readFile(path.join(root, "index.html"), "utf8")).includes(after["/app.js"]));
   } finally { await fs.rm(root, { recursive: true, force: true }); }
 });
+
+test("worker cache version changes when a fixed-URL shell file such as an icon changes", async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "chronicle-assets-"));
+  try {
+    await fs.writeFile(path.join(root, "app.js"), "console.log('one')");
+    await fs.writeFile(path.join(root, "icon-192.png"), "old icon");
+    await fs.writeFile(path.join(root, "sw.js"), 'const CACHE_VERSION = "old";\nconst APP_SHELL = ["/", "/icon-192.png"];\n// CHRONICLE_ASSETS_START\nconst VERSIONED_ASSETS = [];\n// CHRONICLE_ASSETS_END\n');
+    await publishVersionedAssets(root);
+    const before = await fs.readFile(path.join(root, "sw.js"), "utf8");
+    await publishVersionedAssets(root);
+    assert.equal(await fs.readFile(path.join(root, "sw.js"), "utf8"), before);
+    await fs.writeFile(path.join(root, "icon-192.png"), "new icon");
+    await publishVersionedAssets(root);
+    assert.notEqual(await fs.readFile(path.join(root, "sw.js"), "utf8"), before);
+  } finally { await fs.rm(root, { recursive: true, force: true }); }
+});
