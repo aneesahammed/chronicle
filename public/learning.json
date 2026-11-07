@@ -1,56 +1,42 @@
 {
-  "attempted_at": "2026-11-06T23:07:58.743Z",
+  "attempted_at": "2026-11-07T11:43:41.378Z",
   "selection_stats": {
-    "candidates": 9,
-    "reviewed": 9,
-    "selected": 9
+    "candidates": 11,
+    "reviewed": 11,
+    "selected": 11
   },
   "classification_counts": {
-    "deterministic": 9
+    "deterministic": 11
   },
-  "generated_at": "2026-11-06T23:07:58.743Z",
-  "last_successful_generated_at": "2026-11-06T23:07:58.743Z",
+  "generated_at": "2026-11-07T11:43:41.378Z",
+  "last_successful_generated_at": "2026-11-07T11:43:41.378Z",
   "refresh_status": "partial",
   "classification_mode": "deterministic",
   "window_hours": 720,
   "source_total": 10,
-  "source_ok": 6,
-  "source_failed": 4,
+  "source_ok": 9,
+  "source_failed": 1,
   "failed_sources": [
     {
-      "id": "yt_openai",
-      "name": "OpenAI YouTube",
-      "message": "HTTP 404"
-    },
-    {
-      "id": "yt_nvidia_developer",
-      "name": "NVIDIA Developer YouTube",
-      "message": "HTTP 500"
-    },
-    {
-      "id": "yt_google_developers",
-      "name": "Google for Developers YouTube",
-      "message": "HTTP 404"
-    },
-    {
-      "id": "yt_microsoft_365_developer",
-      "name": "Microsoft 365 Developer YouTube",
-      "message": "HTTP 404"
+      "id": "learn_huggingface",
+      "name": "Hugging Face Learn",
+      "message": "HTTP 429"
     }
   ],
   "source_health": [
     {
       "id": "learn_huggingface",
       "name": "Hugging Face Learn",
-      "status": "ok",
-      "fetched_count": 2,
-      "consecutive_failures": 0,
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "HTTP 429",
+      "consecutive_failures": 1,
       "consecutive_empty": 0,
       "fresh_count": 0,
       "stale_count": 0,
-      "evergreen_count": 2,
-      "selected_count": 2,
-      "unique_selected_count": 2
+      "evergreen_count": 0,
+      "selected_count": 0,
+      "unique_selected_count": 0
     },
     {
       "id": "learn_fullstack",
@@ -99,7 +85,7 @@
       "status": "ok",
       "fetched_count": 0,
       "consecutive_failures": 0,
-      "consecutive_empty": 6,
+      "consecutive_empty": 7,
       "fresh_count": 0,
       "stale_count": 0,
       "evergreen_count": 0,
@@ -109,11 +95,10 @@
     {
       "id": "yt_openai",
       "name": "OpenAI YouTube",
-      "status": "failed",
+      "status": "ok",
       "fetched_count": 0,
-      "message": "HTTP 404",
-      "consecutive_failures": 1,
-      "consecutive_empty": 0,
+      "consecutive_failures": 0,
+      "consecutive_empty": 1,
       "fresh_count": 0,
       "stale_count": 0,
       "evergreen_count": 0,
@@ -123,16 +108,17 @@
     {
       "id": "yt_nvidia_developer",
       "name": "NVIDIA Developer YouTube",
-      "status": "failed",
-      "fetched_count": 0,
-      "message": "HTTP 500",
-      "consecutive_failures": 1,
+      "status": "ok",
+      "fetched_count": 2,
+      "consecutive_failures": 0,
       "consecutive_empty": 0,
-      "fresh_count": 0,
+      "fresh_count": 2,
       "stale_count": 0,
       "evergreen_count": 0,
-      "selected_count": 0,
-      "unique_selected_count": 0
+      "oldest_published_at": "2026-10-30T07:21:18.000Z",
+      "newest_published_at": "2026-11-06T06:21:34.000Z",
+      "selected_count": 2,
+      "unique_selected_count": 2
     },
     {
       "id": "yt_huggingface",
@@ -152,25 +138,25 @@
     {
       "id": "yt_google_developers",
       "name": "Google for Developers YouTube",
-      "status": "failed",
-      "fetched_count": 0,
-      "message": "HTTP 404",
-      "consecutive_failures": 1,
+      "status": "ok",
+      "fetched_count": 2,
+      "consecutive_failures": 0,
       "consecutive_empty": 0,
-      "fresh_count": 0,
+      "fresh_count": 2,
       "stale_count": 0,
       "evergreen_count": 0,
-      "selected_count": 0,
-      "unique_selected_count": 0
+      "oldest_published_at": "2026-10-21T19:00:23.000Z",
+      "newest_published_at": "2026-10-28T15:08:11.000Z",
+      "selected_count": 2,
+      "unique_selected_count": 2
     },
     {
       "id": "yt_microsoft_365_developer",
       "name": "Microsoft 365 Developer YouTube",
-      "status": "failed",
+      "status": "ok",
       "fetched_count": 0,
-      "message": "HTTP 404",
-      "consecutive_failures": 1,
-      "consecutive_empty": 0,
+      "consecutive_failures": 0,
+      "consecutive_empty": 1,
       "fresh_count": 0,
       "stale_count": 0,
       "evergreen_count": 0,
@@ -178,8 +164,312 @@
       "unique_selected_count": 0
     }
   ],
-  "count": 9,
+  "count": 11,
   "clusters": [
+    {
+      "id": "1o9b2q3",
+      "primary": {
+        "id": "1o9b2q3",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "Train, Simulate, and Serve World Models with NVIDIA Cosmos Framework and NIM | Cosmos Labs",
+        "url": "https://youtube.com/watch?v=8lNoGg_j8S8",
+        "original_url": "https://www.youtube.com/watch?v=8lNoGg_j8S8",
+        "summary": "NVIDIA Cosmos Framework is opening more of the training stack behind Cosmos models, giving developers reusable skills and recipes to build with Cosmos and other compatible models. Join NVIDIA experts for a practical walkthrough of how to choose a recipe, work with a compatible model, and point your coding agent to skills for training, customization, distillation, and quantization. We’ll also explore new support for offline and online reinforcement learning and what it enables for robotics developers. What You'll Learn: - How to build custom world models using Cosmos Framework - How to use offl",
+        "image_url": "https://i.ytimg.com/vi/8lNoGg_j8S8/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-11-06T06:21:34.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "8lNoGg_j8S8"
+        }
+      },
+      "members": [
+        {
+          "id": "1o9b2q3",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "Train, Simulate, and Serve World Models with NVIDIA Cosmos Framework and NIM | Cosmos Labs",
+          "url": "https://youtube.com/watch?v=8lNoGg_j8S8",
+          "original_url": "https://www.youtube.com/watch?v=8lNoGg_j8S8",
+          "summary": "NVIDIA Cosmos Framework is opening more of the training stack behind Cosmos models, giving developers reusable skills and recipes to build with Cosmos and other compatible models. Join NVIDIA experts for a practical walkthrough of how to choose a recipe, work with a compatible model, and point your coding agent to skills for training, customization, distillation, and quantization. We’ll also explore new support for offline and online reinforcement learning and what it enables for robotics developers. What You'll Learn: - How to build custom world models using Cosmos Framework - How to use offl",
+          "image_url": "https://i.ytimg.com/vi/8lNoGg_j8S8/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-11-06T06:21:34.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "8lNoGg_j8S8"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "Train, Simulate, and Serve World Models with NVIDIA Cosmos Framework and NIM | Cosmos Labs",
+          "url": "https://youtube.com/watch?v=8lNoGg_j8S8",
+          "published_at": "2026-11-06T06:21:34.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "NVIDIA Cosmos Framework is opening more of the training stack behind Cosmos models, giving developers reusable skills and recipes to build with Cosmos and other compatible models. Join NVIDIA experts ",
+      "classification_method": "deterministic",
+      "classification_reason": "Metadata evidence rules; not independently verified",
+      "novelty": 0.89,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.828,
+      "why_this_surfaced": [
+        "specific engineering subject or instructional task in source metadata",
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Work through the instructional example; check the source description for prerequisites."
+    },
+    {
+      "id": "8d7or8",
+      "primary": {
+        "id": "8d7or8",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "How to Maximize Memory Efficiency and Reduce Costs on NVIDIA Jetson",
+        "url": "https://youtube.com/watch?v=mW1LWZWkojo",
+        "original_url": "https://www.youtube.com/watch?v=mW1LWZWkojo",
+        "summary": "Memory optimization can unlock bigger AI models on lower-cost NVIDIA Jetson SKUs. By reducing software overhead, choosing efficient inference runtimes, and quantizing models, developers can make room for more AI - and reduce hardware costs. In this livestream, NVIDIA partners RidgeRun and Connect Tech will share demos and lessons learned on memory optimization, covering model quantization, efficient inference runtimes, and NVIDIA Jetson Agent Skills. You’ll see how large vision-language models fit into less memory and how a real robotics application moved to a more cost-efficient Jetson SKU. Y",
+        "image_url": "https://i.ytimg.com/vi/mW1LWZWkojo/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-30T07:21:18.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "mW1LWZWkojo"
+        }
+      },
+      "members": [
+        {
+          "id": "8d7or8",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "How to Maximize Memory Efficiency and Reduce Costs on NVIDIA Jetson",
+          "url": "https://youtube.com/watch?v=mW1LWZWkojo",
+          "original_url": "https://www.youtube.com/watch?v=mW1LWZWkojo",
+          "summary": "Memory optimization can unlock bigger AI models on lower-cost NVIDIA Jetson SKUs. By reducing software overhead, choosing efficient inference runtimes, and quantizing models, developers can make room for more AI - and reduce hardware costs. In this livestream, NVIDIA partners RidgeRun and Connect Tech will share demos and lessons learned on memory optimization, covering model quantization, efficient inference runtimes, and NVIDIA Jetson Agent Skills. You’ll see how large vision-language models fit into less memory and how a real robotics application moved to a more cost-efficient Jetson SKU. Y",
+          "image_url": "https://i.ytimg.com/vi/mW1LWZWkojo/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-30T07:21:18.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "mW1LWZWkojo"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "How to Maximize Memory Efficiency and Reduce Costs on NVIDIA Jetson",
+          "url": "https://youtube.com/watch?v=mW1LWZWkojo",
+          "published_at": "2026-10-30T07:21:18.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "Memory optimization can unlock bigger AI models on lower-cost NVIDIA Jetson SKUs. By reducing software overhead, choosing efficient inference runtimes, and quantizing models, developers can make room ",
+      "classification_method": "deterministic",
+      "classification_reason": "Metadata evidence rules; not independently verified",
+      "novelty": 0.935,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.81,
+      "why_this_surfaced": [
+        "specific engineering subject or instructional task in source metadata",
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Work through the instructional example; check the source description for prerequisites."
+    },
+    {
+      "id": "1ounyxx",
+      "primary": {
+        "id": "1ounyxx",
+        "source_id": "yt_google_developers",
+        "source_name": "Google for Developers YouTube",
+        "source_role": "learning",
+        "trust": 0.72,
+        "kind_hint": "video",
+        "title": "Functional smart devices using Gemini 4 Argon and Google Antigravity",
+        "url": "https://youtube.com/watch?v=pQ_Dnr9Q4k8",
+        "original_url": "https://www.youtube.com/watch?v=pQ_Dnr9Q4k8",
+        "summary": "What happens when you have a wild hardware idea and zero clue how to build it? Watch to see how these makers used Gemini 4 Argon and Google Antigravity to take a custom \"Surf Clock\" from a rough sketch to a working prototype. The models explored: *Initial concepts to lock in a retro 60s design *Ran Python scripts to control Blender and model 3D parts *Wrote custom firmware to pull live ocean data *Built an interactive assembly guide to wire it all together Learn more on how to get started today → https://goo.gle/3UmeYWb Subscribe to Google for Developers → https://goo.gle/developers Products M",
+        "image_url": "https://i.ytimg.com/vi/pQ_Dnr9Q4k8/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-28T15:08:11.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+          "video_id": "pQ_Dnr9Q4k8"
+        }
+      },
+      "members": [
+        {
+          "id": "1ounyxx",
+          "source_id": "yt_google_developers",
+          "source_name": "Google for Developers YouTube",
+          "source_role": "learning",
+          "trust": 0.72,
+          "kind_hint": "video",
+          "title": "Functional smart devices using Gemini 4 Argon and Google Antigravity",
+          "url": "https://youtube.com/watch?v=pQ_Dnr9Q4k8",
+          "original_url": "https://www.youtube.com/watch?v=pQ_Dnr9Q4k8",
+          "summary": "What happens when you have a wild hardware idea and zero clue how to build it? Watch to see how these makers used Gemini 4 Argon and Google Antigravity to take a custom \"Surf Clock\" from a rough sketch to a working prototype. The models explored: *Initial concepts to lock in a retro 60s design *Ran Python scripts to control Blender and model 3D parts *Wrote custom firmware to pull live ocean data *Built an interactive assembly guide to wire it all together Learn more on how to get started today → https://goo.gle/3UmeYWb Subscribe to Google for Developers → https://goo.gle/developers Products M",
+          "image_url": "https://i.ytimg.com/vi/pQ_Dnr9Q4k8/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-28T15:08:11.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+            "video_id": "pQ_Dnr9Q4k8"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_google_developers",
+          "source_name": "Google for Developers YouTube",
+          "title": "Functional smart devices using Gemini 4 Argon and Google Antigravity",
+          "url": "https://youtube.com/watch?v=pQ_Dnr9Q4k8",
+          "published_at": "2026-10-28T15:08:11.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "What happens when you have a wild hardware idea and zero clue how to build it? Watch to see how these makers used Gemini 4 Argon and Google Antigravity to take a custom \"Surf Clock\" from a rough sketc",
+      "classification_method": "deterministic",
+      "classification_reason": "Metadata evidence rules; not independently verified",
+      "novelty": 0.941,
+      "novelty_label": "high",
+      "trust": 0.72,
+      "score": 0.799,
+      "why_this_surfaced": [
+        "specific engineering subject or instructional task in source metadata",
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Work through the instructional example; check the source description for prerequisites."
+    },
+    {
+      "id": "xs66r6",
+      "primary": {
+        "id": "xs66r6",
+        "source_id": "yt_google_developers",
+        "source_name": "Google for Developers YouTube",
+        "source_role": "learning",
+        "trust": 0.72,
+        "kind_hint": "video",
+        "title": "Design and replicate voices with Gemini 3.8 Flash TTS",
+        "url": "https://youtube.com/watch?v=SOF3_evPje8",
+        "original_url": "https://www.youtube.com/watch?v=SOF3_evPje8",
+        "summary": "See how Gemini 3.8 Flash TTS lets you design custom voices from a text prompt and replicate your own voice in Google AI Studio. Google DeepMind’s Thor Schaeff walks through: *Voice design *Voice replication *Multi-speaker dialogue generation *Building with the Gemini API across 100+ languages *Partner integrations with Agora, LiveKit, Pipecat, and Vercel Try it now at ai.studio/generate-speech. Have questions? Drop them in the comments. Chapters: 0:00 — Introduction to Gemini TTS 0:27 — Voice replication in Google AI Studio 1:00 — Voice design from a text prompt 2:19 — Using custom voices acro",
+        "image_url": "https://i.ytimg.com/vi/SOF3_evPje8/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-10-21T19:00:23.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+          "video_id": "SOF3_evPje8"
+        }
+      },
+      "members": [
+        {
+          "id": "xs66r6",
+          "source_id": "yt_google_developers",
+          "source_name": "Google for Developers YouTube",
+          "source_role": "learning",
+          "trust": 0.72,
+          "kind_hint": "video",
+          "title": "Design and replicate voices with Gemini 3.8 Flash TTS",
+          "url": "https://youtube.com/watch?v=SOF3_evPje8",
+          "original_url": "https://www.youtube.com/watch?v=SOF3_evPje8",
+          "summary": "See how Gemini 3.8 Flash TTS lets you design custom voices from a text prompt and replicate your own voice in Google AI Studio. Google DeepMind’s Thor Schaeff walks through: *Voice design *Voice replication *Multi-speaker dialogue generation *Building with the Gemini API across 100+ languages *Partner integrations with Agora, LiveKit, Pipecat, and Vercel Try it now at ai.studio/generate-speech. Have questions? Drop them in the comments. Chapters: 0:00 — Introduction to Gemini TTS 0:27 — Voice replication in Google AI Studio 1:00 — Voice design from a text prompt 2:19 — Using custom voices acro",
+          "image_url": "https://i.ytimg.com/vi/SOF3_evPje8/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-10-21T19:00:23.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+            "video_id": "SOF3_evPje8"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_google_developers",
+          "source_name": "Google for Developers YouTube",
+          "title": "Design and replicate voices with Gemini 3.8 Flash TTS",
+          "url": "https://youtube.com/watch?v=SOF3_evPje8",
+          "published_at": "2026-10-21T19:00:23.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "See how Gemini 3.8 Flash TTS lets you design custom voices from a text prompt and replicate your own voice in Google AI Studio. Google DeepMind’s Thor Schaeff walks through: *Voice design *Voice repli",
+      "classification_method": "deterministic",
+      "classification_reason": "Metadata evidence rules; not independently verified",
+      "novelty": 0.927,
+      "novelty_label": "high",
+      "trust": 0.72,
+      "score": 0.796,
+      "why_this_surfaced": [
+        "specific engineering subject or instructional task in source metadata",
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Work through the instructional example; check the source description for prerequisites."
+    },
     {
       "id": "8h39y8",
       "primary": {
@@ -561,182 +851,6 @@
       "builder_action": "Work through the instructional example; check the source description for prerequisites."
     },
     {
-      "id": "89n5y6",
-      "primary": {
-        "id": "89n5y6",
-        "source_id": "learn_huggingface",
-        "source_name": "Hugging Face Learn",
-        "source_role": "learning",
-        "trust": 0.82,
-        "kind_hint": "course",
-        "title": "Hugging Face LLM Course",
-        "url": "https://huggingface.co/learn/llm-course/chapter1/1",
-        "original_url": "https://huggingface.co/learn/llm-course/chapter1/1",
-        "summary": "Learn Transformers, datasets and tokenizers through practical NLP exercises, model fine-tuning and shareable demos. Start here after an introductory deep-learning course.",
-        "published_at": "1970-01-01T00:00:00.000Z",
-        "published_at_source": "generated_fallback",
-        "date_confidence": "low",
-        "learning": {
-          "track": "foundations",
-          "provider": "Hugging Face",
-          "level": "intermediate",
-          "publication_label": "Publication date not stated",
-          "prerequisites": "Good Python; introductory deep learning recommended",
-          "cost": "Free",
-          "reviewed_at": "2026-10-29",
-          "compatibility_status": "not_execution_tested",
-          "compatibility": "Follow the course's current environment setup. Example notebooks have not been run by Chronicle.",
-          "course_url": "https://huggingface.co/learn/llm-course/chapter1/1",
-          "last_checked_at": "2026-11-06T23:07:58.743Z"
-        }
-      },
-      "members": [
-        {
-          "id": "89n5y6",
-          "source_id": "learn_huggingface",
-          "source_name": "Hugging Face Learn",
-          "source_role": "learning",
-          "trust": 0.82,
-          "kind_hint": "course",
-          "title": "Hugging Face LLM Course",
-          "url": "https://huggingface.co/learn/llm-course/chapter1/1",
-          "original_url": "https://huggingface.co/learn/llm-course/chapter1/1",
-          "summary": "Learn Transformers, datasets and tokenizers through practical NLP exercises, model fine-tuning and shareable demos. Start here after an introductory deep-learning course.",
-          "published_at": "1970-01-01T00:00:00.000Z",
-          "published_at_source": "generated_fallback",
-          "date_confidence": "low",
-          "learning": {
-            "track": "foundations",
-            "provider": "Hugging Face",
-            "level": "intermediate",
-            "publication_label": "Publication date not stated",
-            "prerequisites": "Good Python; introductory deep learning recommended",
-            "cost": "Free",
-            "reviewed_at": "2026-10-29",
-            "compatibility_status": "not_execution_tested",
-            "compatibility": "Follow the course's current environment setup. Example notebooks have not been run by Chronicle.",
-            "course_url": "https://huggingface.co/learn/llm-course/chapter1/1",
-            "last_checked_at": "2026-11-06T23:07:58.743Z"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "learn_huggingface",
-          "source_name": "Hugging Face Learn",
-          "title": "Hugging Face LLM Course",
-          "url": "https://huggingface.co/learn/llm-course/chapter1/1",
-          "published_at": "1970-01-01T00:00:00.000Z",
-          "published_at_source": "generated_fallback",
-          "date_confidence": "low"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "course",
-      "quality": "mixed",
-      "one_liner": "Learn Transformers, datasets and tokenizers through practical NLP exercises, model fine-tuning and shareable demos. Start here after an introductory deep-learning course.",
-      "classification_method": "deterministic",
-      "classification_reason": "Metadata evidence rules; not independently verified",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.82,
-      "score": 0.428,
-      "why_this_surfaced": [
-        "specific engineering subject or instructional task in source metadata",
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Work through the instructional example; check the source description for prerequisites."
-    },
-    {
-      "id": "1qi8mkc",
-      "primary": {
-        "id": "1qi8mkc",
-        "source_id": "learn_huggingface",
-        "source_name": "Hugging Face Learn",
-        "source_role": "learning",
-        "trust": 0.82,
-        "kind_hint": "course",
-        "title": "Hugging Face Agents Course",
-        "url": "https://huggingface.co/learn/agents-course/unit0/introduction",
-        "original_url": "https://huggingface.co/learn/agents-course/unit0/introduction",
-        "summary": "Learn agent fundamentals, tool use and agent frameworks with hands-on assignments. Build and evaluate an agent through the course's practical units.",
-        "published_at": "1970-01-01T00:00:00.000Z",
-        "published_at_source": "generated_fallback",
-        "date_confidence": "low",
-        "learning": {
-          "track": "foundations",
-          "provider": "Hugging Face",
-          "level": "intermediate",
-          "publication_label": "Publication date not stated",
-          "prerequisites": "Python and basic LLM knowledge",
-          "cost": "Free",
-          "reviewed_at": "2026-10-29",
-          "compatibility_status": "not_execution_tested",
-          "compatibility": "Agent frameworks change quickly; use each unit's current setup instructions. Examples have not been run by Chronicle.",
-          "course_url": "https://huggingface.co/learn/agents-course/unit0/introduction",
-          "last_checked_at": "2026-11-06T23:07:58.743Z"
-        }
-      },
-      "members": [
-        {
-          "id": "1qi8mkc",
-          "source_id": "learn_huggingface",
-          "source_name": "Hugging Face Learn",
-          "source_role": "learning",
-          "trust": 0.82,
-          "kind_hint": "course",
-          "title": "Hugging Face Agents Course",
-          "url": "https://huggingface.co/learn/agents-course/unit0/introduction",
-          "original_url": "https://huggingface.co/learn/agents-course/unit0/introduction",
-          "summary": "Learn agent fundamentals, tool use and agent frameworks with hands-on assignments. Build and evaluate an agent through the course's practical units.",
-          "published_at": "1970-01-01T00:00:00.000Z",
-          "published_at_source": "generated_fallback",
-          "date_confidence": "low",
-          "learning": {
-            "track": "foundations",
-            "provider": "Hugging Face",
-            "level": "intermediate",
-            "publication_label": "Publication date not stated",
-            "prerequisites": "Python and basic LLM knowledge",
-            "cost": "Free",
-            "reviewed_at": "2026-10-29",
-            "compatibility_status": "not_execution_tested",
-            "compatibility": "Agent frameworks change quickly; use each unit's current setup instructions. Examples have not been run by Chronicle.",
-            "course_url": "https://huggingface.co/learn/agents-course/unit0/introduction",
-            "last_checked_at": "2026-11-06T23:07:58.743Z"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "learn_huggingface",
-          "source_name": "Hugging Face Learn",
-          "title": "Hugging Face Agents Course",
-          "url": "https://huggingface.co/learn/agents-course/unit0/introduction",
-          "published_at": "1970-01-01T00:00:00.000Z",
-          "published_at_source": "generated_fallback",
-          "date_confidence": "low"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "course",
-      "quality": "mixed",
-      "one_liner": "Learn agent fundamentals, tool use and agent frameworks with hands-on assignments. Build and evaluate an agent through the course's practical units.",
-      "classification_method": "deterministic",
-      "classification_reason": "Metadata evidence rules; not independently verified",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.82,
-      "score": 0.428,
-      "why_this_surfaced": [
-        "specific engineering subject or instructional task in source metadata",
-        "kept for context despite familiar coverage",
-        "classified as useful but lower-confidence signal"
-      ],
-      "builder_action": "Work through the instructional example; check the source description for prerequisites."
-    },
-    {
       "id": "10c4rd8",
       "primary": {
         "id": "10c4rd8",
@@ -763,7 +877,7 @@
           "compatibility_status": "historical",
           "compatibility": "The publisher warns that tools and model capabilities have evolved. Treat the code as historical; examples have not been run by Chronicle.",
           "course_url": "https://fullstackdeeplearning.com/llm-bootcamp/",
-          "last_checked_at": "2026-11-06T23:07:58.743Z"
+          "last_checked_at": "2026-11-07T11:43:41.378Z"
         }
       },
       "members": [
@@ -792,7 +906,7 @@
             "compatibility_status": "historical",
             "compatibility": "The publisher warns that tools and model capabilities have evolved. Treat the code as historical; examples have not been run by Chronicle.",
             "course_url": "https://fullstackdeeplearning.com/llm-bootcamp/",
-            "last_checked_at": "2026-11-06T23:07:58.743Z"
+            "last_checked_at": "2026-11-07T11:43:41.378Z"
           }
         }
       ],
@@ -851,7 +965,7 @@
           "compatibility_status": "historical",
           "compatibility": "The lessons are the 2022 edition. Check the course's setup guidance before running notebooks; examples have not been run by Chronicle.",
           "course_url": "https://course.fast.ai/",
-          "last_checked_at": "2026-11-06T23:07:58.743Z"
+          "last_checked_at": "2026-11-07T11:43:41.378Z"
         }
       },
       "members": [
@@ -880,7 +994,7 @@
             "compatibility_status": "historical",
             "compatibility": "The lessons are the 2022 edition. Check the course's setup guidance before running notebooks; examples have not been run by Chronicle.",
             "course_url": "https://course.fast.ai/",
-            "last_checked_at": "2026-11-06T23:07:58.743Z"
+            "last_checked_at": "2026-11-07T11:43:41.378Z"
           }
         }
       ],
