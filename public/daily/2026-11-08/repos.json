@@ -1,0 +1,138 @@
+{
+  "attempted_at": "2026-11-08T11:56:09.054Z",
+  "selection_stats": {
+    "candidates": 1,
+    "reviewed": 1,
+    "selected": 1
+  },
+  "classification_counts": {
+    "deterministic": 1
+  },
+  "generated_at": "2026-11-08T11:56:09.054Z",
+  "last_successful_generated_at": "2026-11-08T11:56:09.054Z",
+  "refresh_status": "partial",
+  "classification_mode": "deterministic",
+  "window_hours": 168,
+  "source_total": 2,
+  "source_ok": 1,
+  "source_failed": 1,
+  "failed_sources": [
+    {
+      "id": "github_trending_daily",
+      "name": "GitHub Trending",
+      "message": "Request timed out"
+    }
+  ],
+  "source_health": [
+    {
+      "id": "repo_vllm_releases",
+      "name": "vLLM releases",
+      "status": "ok",
+      "fetched_count": 1,
+      "consecutive_failures": 0,
+      "consecutive_empty": 0,
+      "fresh_count": 1,
+      "stale_count": 0,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-11-02T10:10:05.000Z",
+      "newest_published_at": "2026-11-02T10:10:05.000Z",
+      "selected_count": 1,
+      "unique_selected_count": 1
+    },
+    {
+      "id": "github_trending_daily",
+      "name": "GitHub Trending",
+      "status": "failed",
+      "fetched_count": 0,
+      "message": "Request timed out",
+      "consecutive_failures": 1,
+      "consecutive_empty": 0,
+      "fresh_count": 0,
+      "stale_count": 0,
+      "evergreen_count": 0,
+      "selected_count": 0,
+      "unique_selected_count": 0
+    }
+  ],
+  "count": 1,
+  "clusters": [
+    {
+      "id": "iymbwb",
+      "primary": {
+        "id": "iymbwb",
+        "source_id": "repo_vllm_releases",
+        "source_name": "vLLM releases",
+        "source_role": "repo",
+        "trust": 0.8,
+        "kind_hint": "repo_release",
+        "title": "vllm-project/vllm: v0.33.0",
+        "url": "https://github.com/vllm-project/vllm/releases/tag/v0.33.0rc3",
+        "original_url": "https://github.com/vllm-project/vllm/releases/tag/v0.33.0rc3",
+        "summary": "# v0.33.0 ## Highlights This release features 927 commits from 389 contributors (122 new)! * **New models**: Reflection Beam-1.0 (501B MoE, 23B active) with its DFlash2 drafter (#62074), Yandex AliceAI-Foundation-80B-A3B (#57963), Recursive Flint (40B MoE, 2.5B active) (#62938), Muse Spark Open (#61879), Step-5 Preview (#61727, #63147), NVIDIA Alpamayo 2 Super (#62957), Nemotron-Labs Dory1.0-4B (#60149), Nemotron Parse 3.5 (#61651), MiniCPM-OCR 1.0 (#63095), Domyn Edge (#62544) and the ColUltraVBERT visual document retriever (#62237). * **PyTorch 2.14**: vLLM is upgraded to PyTorch 2.14.0, wit",
+        "published_at": "2026-11-02T10:10:05Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "repo": {
+          "full_name": "vllm-project/vllm",
+          "html_url": "https://github.com/vllm-project/vllm",
+          "release_tag": "v0.33.0rc3",
+          "release_name": "v0.33.0",
+          "stars_delta_run": 0,
+          "stars_delta_30d": 0
+        }
+      },
+      "members": [
+        {
+          "id": "iymbwb",
+          "source_id": "repo_vllm_releases",
+          "source_name": "vLLM releases",
+          "source_role": "repo",
+          "trust": 0.8,
+          "kind_hint": "repo_release",
+          "title": "vllm-project/vllm: v0.33.0",
+          "url": "https://github.com/vllm-project/vllm/releases/tag/v0.33.0rc3",
+          "original_url": "https://github.com/vllm-project/vllm/releases/tag/v0.33.0rc3",
+          "summary": "# v0.33.0 ## Highlights This release features 927 commits from 389 contributors (122 new)! * **New models**: Reflection Beam-1.0 (501B MoE, 23B active) with its DFlash2 drafter (#62074), Yandex AliceAI-Foundation-80B-A3B (#57963), Recursive Flint (40B MoE, 2.5B active) (#62938), Muse Spark Open (#61879), Step-5 Preview (#61727, #63147), NVIDIA Alpamayo 2 Super (#62957), Nemotron-Labs Dory1.0-4B (#60149), Nemotron Parse 3.5 (#61651), MiniCPM-OCR 1.0 (#63095), Domyn Edge (#62544) and the ColUltraVBERT visual document retriever (#62237). * **PyTorch 2.14**: vLLM is upgraded to PyTorch 2.14.0, wit",
+          "published_at": "2026-11-02T10:10:05Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "repo": {
+            "full_name": "vllm-project/vllm",
+            "html_url": "https://github.com/vllm-project/vllm",
+            "release_tag": "v0.33.0rc3",
+            "release_name": "v0.33.0",
+            "stars_delta_run": 0,
+            "stars_delta_30d": 0
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "repo_vllm_releases",
+          "source_name": "vLLM releases",
+          "title": "vllm-project/vllm: v0.33.0",
+          "url": "https://github.com/vllm-project/vllm/releases/tag/v0.33.0rc3",
+          "published_at": "2026-11-02T10:10:05Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "repo_release",
+      "quality": "mixed",
+      "one_liner": "# v0.33.0 ## Highlights This release features 927 commits from 389 contributors (122 new)! * **New models**: Reflection Beam-1.0 (501B MoE, 23B active) with its DFlash2 drafter (#62074), Yandex AliceA",
+      "classification_method": "deterministic",
+      "classification_reason": "Metadata evidence rules; not independently verified",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.8,
+      "score": 0.464,
+      "why_this_surfaced": [
+        "specific engineering subject or instructional task in source metadata",
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": "Review vllm-project/vllm: license not established; README not verified. Check usage and maintenance before adopting."
+    }
+  ]
+}
