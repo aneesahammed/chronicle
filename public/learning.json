@@ -1,15 +1,15 @@
 {
-  "attempted_at": "2026-11-10T23:21:41.136Z",
+  "attempted_at": "2026-11-11T12:43:08.962Z",
   "selection_stats": {
-    "candidates": 12,
-    "reviewed": 12,
-    "selected": 12
+    "candidates": 15,
+    "reviewed": 15,
+    "selected": 15
   },
   "classification_counts": {
-    "deterministic": 12
+    "deterministic": 15
   },
-  "generated_at": "2026-11-10T23:21:41.136Z",
-  "last_successful_generated_at": "2026-11-10T23:21:41.136Z",
+  "generated_at": "2026-11-11T12:43:08.962Z",
+  "last_successful_generated_at": "2026-11-11T12:43:08.962Z",
   "refresh_status": "ok",
   "classification_mode": "deterministic",
   "window_hours": 720,
@@ -78,7 +78,7 @@
       "status": "ok",
       "fetched_count": 0,
       "consecutive_failures": 0,
-      "consecutive_empty": 2,
+      "consecutive_empty": 3,
       "fresh_count": 0,
       "stale_count": 0,
       "evergreen_count": 0,
@@ -89,14 +89,16 @@
       "id": "yt_openai",
       "name": "OpenAI YouTube",
       "status": "ok",
-      "fetched_count": 0,
+      "fetched_count": 3,
       "consecutive_failures": 0,
-      "consecutive_empty": 2,
-      "fresh_count": 0,
+      "consecutive_empty": 0,
+      "fresh_count": 3,
       "stale_count": 0,
       "evergreen_count": 0,
-      "selected_count": 0,
-      "unique_selected_count": 0
+      "oldest_published_at": "2026-11-11T01:24:07.000Z",
+      "newest_published_at": "2026-11-11T01:24:08.000Z",
+      "selected_count": 3,
+      "unique_selected_count": 3
     },
     {
       "id": "yt_nvidia_developer",
@@ -149,7 +151,7 @@
       "status": "ok",
       "fetched_count": 0,
       "consecutive_failures": 0,
-      "consecutive_empty": 2,
+      "consecutive_empty": 3,
       "fresh_count": 0,
       "stale_count": 0,
       "evergreen_count": 0,
@@ -157,8 +159,236 @@
       "unique_selected_count": 0
     }
   ],
-  "count": 12,
+  "count": 15,
   "clusters": [
+    {
+      "id": "lob81n",
+      "primary": {
+        "id": "lob81n",
+        "source_id": "yt_openai",
+        "source_name": "OpenAI YouTube",
+        "source_role": "learning",
+        "trust": 0.82,
+        "kind_hint": "video",
+        "title": "Build What’s Next on the ChatGPT Platform with Plugins | DevDay 2026",
+        "url": "https://youtube.com/watch?v=pIW_8VyvCuQ",
+        "original_url": "https://www.youtube.com/watch?v=pIW_8VyvCuQ",
+        "summary": "Bring your tools, knowledge, and interfaces into ChatGPT and Codex with plugin extensions. Through live demos, learn how to turn an idea into a useful experience, share it, and reach new users.",
+        "image_url": "https://i.ytimg.com/vi/pIW_8VyvCuQ/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-11-11T01:24:08.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
+          "video_id": "pIW_8VyvCuQ"
+        }
+      },
+      "members": [
+        {
+          "id": "lob81n",
+          "source_id": "yt_openai",
+          "source_name": "OpenAI YouTube",
+          "source_role": "learning",
+          "trust": 0.82,
+          "kind_hint": "video",
+          "title": "Build What’s Next on the ChatGPT Platform with Plugins | DevDay 2026",
+          "url": "https://youtube.com/watch?v=pIW_8VyvCuQ",
+          "original_url": "https://www.youtube.com/watch?v=pIW_8VyvCuQ",
+          "summary": "Bring your tools, knowledge, and interfaces into ChatGPT and Codex with plugin extensions. Through live demos, learn how to turn an idea into a useful experience, share it, and reach new users.",
+          "image_url": "https://i.ytimg.com/vi/pIW_8VyvCuQ/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-11-11T01:24:08.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
+            "video_id": "pIW_8VyvCuQ"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_openai",
+          "source_name": "OpenAI YouTube",
+          "title": "Build What’s Next on the ChatGPT Platform with Plugins | DevDay 2026",
+          "url": "https://youtube.com/watch?v=pIW_8VyvCuQ",
+          "published_at": "2026-11-11T01:24:08.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "Bring your tools, knowledge, and interfaces into ChatGPT and Codex with plugin extensions. Through live demos, learn how to turn an idea into a useful experience, share it, and reach new users.",
+      "classification_method": "deterministic",
+      "classification_reason": "Metadata evidence rules; not independently verified",
+      "novelty": 0.897,
+      "novelty_label": "high",
+      "trust": 0.82,
+      "score": 0.864,
+      "why_this_surfaced": [
+        "specific engineering subject or instructional task in source metadata",
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Work through the instructional example; check the source description for prerequisites."
+    },
+    {
+      "id": "1vd19n7",
+      "primary": {
+        "id": "1vd19n7",
+        "source_id": "yt_openai",
+        "source_name": "OpenAI YouTube",
+        "source_role": "learning",
+        "trust": 0.82,
+        "kind_hint": "video",
+        "title": "Harness-as-a-Service: Building with the Agents API | DevDay 2026",
+        "url": "https://youtube.com/watch?v=b7l_Dhe1h8M",
+        "original_url": "https://www.youtube.com/watch?v=b7l_Dhe1h8M",
+        "summary": "Build with the Codex harness through the Agents API. Learn how to run agents in your environment, keep long-running tasks going, and understand which infrastructure OpenAI manages.",
+        "image_url": "https://i.ytimg.com/vi/b7l_Dhe1h8M/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-11-11T01:24:07.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
+          "video_id": "b7l_Dhe1h8M"
+        }
+      },
+      "members": [
+        {
+          "id": "1vd19n7",
+          "source_id": "yt_openai",
+          "source_name": "OpenAI YouTube",
+          "source_role": "learning",
+          "trust": 0.82,
+          "kind_hint": "video",
+          "title": "Harness-as-a-Service: Building with the Agents API | DevDay 2026",
+          "url": "https://youtube.com/watch?v=b7l_Dhe1h8M",
+          "original_url": "https://www.youtube.com/watch?v=b7l_Dhe1h8M",
+          "summary": "Build with the Codex harness through the Agents API. Learn how to run agents in your environment, keep long-running tasks going, and understand which infrastructure OpenAI manages.",
+          "image_url": "https://i.ytimg.com/vi/b7l_Dhe1h8M/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-11-11T01:24:07.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
+            "video_id": "b7l_Dhe1h8M"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_openai",
+          "source_name": "OpenAI YouTube",
+          "title": "Harness-as-a-Service: Building with the Agents API | DevDay 2026",
+          "url": "https://youtube.com/watch?v=b7l_Dhe1h8M",
+          "published_at": "2026-11-11T01:24:07.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "Build with the Codex harness through the Agents API. Learn how to run agents in your environment, keep long-running tasks going, and understand which infrastructure OpenAI manages.",
+      "classification_method": "deterministic",
+      "classification_reason": "Metadata evidence rules; not independently verified",
+      "novelty": 0.852,
+      "novelty_label": "high",
+      "trust": 0.82,
+      "score": 0.855,
+      "why_this_surfaced": [
+        "specific engineering subject or instructional task in source metadata",
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Work through the instructional example; check the source description for prerequisites."
+    },
+    {
+      "id": "1ymfzw4",
+      "primary": {
+        "id": "1ymfzw4",
+        "source_id": "yt_openai",
+        "source_name": "OpenAI YouTube",
+        "source_role": "learning",
+        "trust": 0.82,
+        "kind_hint": "video",
+        "title": "What Will You Build With Coding Agents That Don’t Quit? | DevDay 2026",
+        "url": "https://youtube.com/watch?v=U1IVZy9FhVQ",
+        "original_url": "https://www.youtube.com/watch?v=U1IVZy9FhVQ",
+        "summary": "Learn from a Codex run that spent over 1,000 hours keeping builds and tests passing. Explore how to choose recurring tasks, improve feedback, manage token budgets, and decide when engineers should step in.",
+        "image_url": "https://i.ytimg.com/vi/U1IVZy9FhVQ/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-11-11T01:24:07.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
+          "video_id": "U1IVZy9FhVQ"
+        }
+      },
+      "members": [
+        {
+          "id": "1ymfzw4",
+          "source_id": "yt_openai",
+          "source_name": "OpenAI YouTube",
+          "source_role": "learning",
+          "trust": 0.82,
+          "kind_hint": "video",
+          "title": "What Will You Build With Coding Agents That Don’t Quit? | DevDay 2026",
+          "url": "https://youtube.com/watch?v=U1IVZy9FhVQ",
+          "original_url": "https://www.youtube.com/watch?v=U1IVZy9FhVQ",
+          "summary": "Learn from a Codex run that spent over 1,000 hours keeping builds and tests passing. Explore how to choose recurring tasks, improve feedback, manage token budgets, and decide when engineers should step in.",
+          "image_url": "https://i.ytimg.com/vi/U1IVZy9FhVQ/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-11-11T01:24:07.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
+            "video_id": "U1IVZy9FhVQ"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_openai",
+          "source_name": "OpenAI YouTube",
+          "title": "What Will You Build With Coding Agents That Don’t Quit? | DevDay 2026",
+          "url": "https://youtube.com/watch?v=U1IVZy9FhVQ",
+          "published_at": "2026-11-11T01:24:07.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "Learn from a Codex run that spent over 1,000 hours keeping builds and tests passing. Explore how to choose recurring tasks, improve feedback, manage token budgets, and decide when engineers should ste",
+      "classification_method": "deterministic",
+      "classification_reason": "Metadata evidence rules; not independently verified",
+      "novelty": 0.848,
+      "novelty_label": "high",
+      "trust": 0.82,
+      "score": 0.854,
+      "why_this_surfaced": [
+        "specific engineering subject or instructional task in source metadata",
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Work through the instructional example; check the source description for prerequisites."
+    },
     {
       "id": "16zgyyt",
       "primary": {
@@ -227,7 +457,7 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.78,
-      "score": 0.651,
+      "score": 0.631,
       "why_this_surfaced": [
         "specific engineering subject or instructional task in source metadata",
         "kept for context despite familiar coverage",
@@ -794,7 +1024,7 @@
           "compatibility_status": "not_execution_tested",
           "compatibility": "Follow the course's current environment setup. Example notebooks have not been run by Chronicle.",
           "course_url": "https://huggingface.co/learn/llm-course/chapter1/1",
-          "last_checked_at": "2026-11-10T23:21:41.136Z"
+          "last_checked_at": "2026-11-11T12:43:08.962Z"
         }
       },
       "members": [
@@ -823,7 +1053,7 @@
             "compatibility_status": "not_execution_tested",
             "compatibility": "Follow the course's current environment setup. Example notebooks have not been run by Chronicle.",
             "course_url": "https://huggingface.co/learn/llm-course/chapter1/1",
-            "last_checked_at": "2026-11-10T23:21:41.136Z"
+            "last_checked_at": "2026-11-11T12:43:08.962Z"
           }
         }
       ],
@@ -882,7 +1112,7 @@
           "compatibility_status": "not_execution_tested",
           "compatibility": "Agent frameworks change quickly; use each unit's current setup instructions. Examples have not been run by Chronicle.",
           "course_url": "https://huggingface.co/learn/agents-course/unit0/introduction",
-          "last_checked_at": "2026-11-10T23:21:41.136Z"
+          "last_checked_at": "2026-11-11T12:43:08.962Z"
         }
       },
       "members": [
@@ -911,7 +1141,7 @@
             "compatibility_status": "not_execution_tested",
             "compatibility": "Agent frameworks change quickly; use each unit's current setup instructions. Examples have not been run by Chronicle.",
             "course_url": "https://huggingface.co/learn/agents-course/unit0/introduction",
-            "last_checked_at": "2026-11-10T23:21:41.136Z"
+            "last_checked_at": "2026-11-11T12:43:08.962Z"
           }
         }
       ],
@@ -970,7 +1200,7 @@
           "compatibility_status": "historical",
           "compatibility": "The publisher warns that tools and model capabilities have evolved. Treat the code as historical; examples have not been run by Chronicle.",
           "course_url": "https://fullstackdeeplearning.com/llm-bootcamp/",
-          "last_checked_at": "2026-11-10T23:21:41.136Z"
+          "last_checked_at": "2026-11-11T12:43:08.962Z"
         }
       },
       "members": [
@@ -999,7 +1229,7 @@
             "compatibility_status": "historical",
             "compatibility": "The publisher warns that tools and model capabilities have evolved. Treat the code as historical; examples have not been run by Chronicle.",
             "course_url": "https://fullstackdeeplearning.com/llm-bootcamp/",
-            "last_checked_at": "2026-11-10T23:21:41.136Z"
+            "last_checked_at": "2026-11-11T12:43:08.962Z"
           }
         }
       ],
@@ -1058,7 +1288,7 @@
           "compatibility_status": "historical",
           "compatibility": "The lessons are the 2022 edition. Check the course's setup guidance before running notebooks; examples have not been run by Chronicle.",
           "course_url": "https://course.fast.ai/",
-          "last_checked_at": "2026-11-10T23:21:41.136Z"
+          "last_checked_at": "2026-11-11T12:43:08.962Z"
         }
       },
       "members": [
@@ -1087,7 +1317,7 @@
             "compatibility_status": "historical",
             "compatibility": "The lessons are the 2022 edition. Check the course's setup guidance before running notebooks; examples have not been run by Chronicle.",
             "course_url": "https://course.fast.ai/",
-            "last_checked_at": "2026-11-10T23:21:41.136Z"
+            "last_checked_at": "2026-11-11T12:43:08.962Z"
           }
         }
       ],
