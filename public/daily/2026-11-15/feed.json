@@ -1,0 +1,3517 @@
+{
+  "attempted_at": "2026-11-15T12:44:11.702Z",
+  "selection_stats": {
+    "candidates": 47,
+    "reviewed": 47,
+    "selected": 35
+  },
+  "classification_counts": {
+    "llm": 33,
+    "deterministic": 2
+  },
+  "generated_at": "2026-11-15T12:44:11.702Z",
+  "last_successful_generated_at": "2026-11-15T12:44:11.702Z",
+  "refresh_status": "ok",
+  "classification_mode": "llm",
+  "window_hours": 36,
+  "source_total": 52,
+  "source_ok": 52,
+  "source_failed": 0,
+  "failed_sources": [],
+  "source_health": [
+    {
+      "id": "metr",
+      "name": "METR",
+      "status": "ok",
+      "fetched_count": 5,
+      "consecutive_failures": 0,
+      "consecutive_empty": 21,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-10-14T07:00:00.000Z",
+      "newest_published_at": "2026-11-05T08:00:00.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "arxiv_cl",
+      "name": "arXiv cs.CL",
+      "status": "ok",
+      "fetched_count": 0,
+      "consecutive_failures": 0,
+      "consecutive_empty": 4,
+      "fresh_count": 0,
+      "stale_count": 0,
+      "evergreen_count": 0,
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "arxiv_lg",
+      "name": "arXiv cs.LG",
+      "status": "ok",
+      "fetched_count": 0,
+      "consecutive_failures": 0,
+      "consecutive_empty": 4,
+      "fresh_count": 0,
+      "stale_count": 0,
+      "evergreen_count": 0,
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "hf_papers",
+      "name": "Hugging Face Daily Papers",
+      "status": "ok",
+      "fetched_count": 20,
+      "consecutive_failures": 0,
+      "consecutive_empty": 4,
+      "fresh_count": 0,
+      "stale_count": 20,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-11-05T00:00:00.000Z",
+      "newest_published_at": "2026-11-12T00:00:00.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "hf_trending_models",
+      "name": "Hugging Face trending models",
+      "status": "ok",
+      "fetched_count": 20,
+      "consecutive_failures": 0,
+      "consecutive_empty": 0,
+      "fresh_count": 20,
+      "stale_count": 0,
+      "evergreen_count": 0,
+      "oldest_published_at": "2025-11-07T05:17:48.000Z",
+      "newest_published_at": "2026-11-12T11:05:59.000Z",
+      "selected_count": 14,
+      "unique_selected_count": 14
+    },
+    {
+      "id": "simonw",
+      "name": "Simon Willison",
+      "status": "ok",
+      "fetched_count": 8,
+      "consecutive_failures": 0,
+      "consecutive_empty": 0,
+      "fresh_count": 1,
+      "stale_count": 7,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-11-09T23:58:46.000Z",
+      "newest_published_at": "2026-11-14T23:59:28.000Z",
+      "selected_count": 1,
+      "unique_selected_count": 1
+    },
+    {
+      "id": "martin_fowler",
+      "name": "Martin Fowler",
+      "status": "ok",
+      "fetched_count": 8,
+      "consecutive_failures": 0,
+      "consecutive_empty": 4,
+      "fresh_count": 0,
+      "stale_count": 8,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-10-21T16:51:00.000Z",
+      "newest_published_at": "2026-11-12T14:15:00.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "thoughtworks_insights",
+      "name": "Thoughtworks Insights",
+      "status": "ok",
+      "fetched_count": 4,
+      "consecutive_failures": 0,
+      "consecutive_empty": 4,
+      "fresh_count": 0,
+      "stale_count": 4,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-11-05T00:00:00.000Z",
+      "newest_published_at": "2026-11-13T00:00:00.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "latent_space",
+      "name": "Latent Space",
+      "status": "ok",
+      "fetched_count": 10,
+      "consecutive_failures": 0,
+      "consecutive_empty": 0,
+      "fresh_count": 1,
+      "stale_count": 9,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-11-10T06:34:44.000Z",
+      "newest_published_at": "2026-11-14T08:31:02.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "interconnects",
+      "name": "Interconnects (Lambert)",
+      "status": "ok",
+      "fetched_count": 10,
+      "consecutive_failures": 0,
+      "consecutive_empty": 0,
+      "fresh_count": 1,
+      "stale_count": 9,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-09-22T13:37:45.000Z",
+      "newest_published_at": "2026-11-14T12:23:15.000Z",
+      "selected_count": 1,
+      "unique_selected_count": 1
+    },
+    {
+      "id": "import_ai",
+      "name": "Import AI (Jack Clark)",
+      "status": "ok",
+      "fetched_count": 10,
+      "consecutive_failures": 0,
+      "consecutive_empty": 10,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-08-31T13:31:06.000Z",
+      "newest_published_at": "2026-11-09T13:31:34.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "eugene_yan",
+      "name": "Eugene Yan",
+      "status": "ok",
+      "fetched_count": 10,
+      "consecutive_failures": 0,
+      "consecutive_empty": 39,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "evergreen_count": 0,
+      "oldest_published_at": "2025-06-04T00:00:00.000Z",
+      "newest_published_at": "2026-06-30T00:00:00.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "hamel",
+      "name": "Hamel Husain",
+      "status": "ok",
+      "fetched_count": 10,
+      "consecutive_failures": 0,
+      "consecutive_empty": 39,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "evergreen_count": 0,
+      "oldest_published_at": "2025-10-01T07:00:00.000Z",
+      "newest_published_at": "2026-10-20T07:00:00.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "philschmid",
+      "name": "Philipp Schmid",
+      "status": "ok",
+      "fetched_count": 15,
+      "consecutive_failures": 0,
+      "consecutive_empty": 39,
+      "fresh_count": 0,
+      "stale_count": 15,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-05-05T00:00:00.000Z",
+      "newest_published_at": "2026-11-01T00:00:00.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "lilian_weng",
+      "name": "Lilian Weng",
+      "status": "ok",
+      "fetched_count": 10,
+      "consecutive_failures": 0,
+      "consecutive_empty": 39,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "evergreen_count": 0,
+      "oldest_published_at": "2023-03-15T00:00:00.000Z",
+      "newest_published_at": "2026-07-04T00:00:00.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "chip_huyen",
+      "name": "Chip Huyen",
+      "status": "ok",
+      "fetched_count": 10,
+      "consecutive_failures": 0,
+      "consecutive_empty": 39,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "evergreen_count": 0,
+      "oldest_published_at": "2023-06-07T00:00:00.000Z",
+      "newest_published_at": "2025-01-16T00:00:00.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "addy_osmani",
+      "name": "Addy Osmani",
+      "status": "ok",
+      "fetched_count": 8,
+      "consecutive_failures": 0,
+      "consecutive_empty": 39,
+      "fresh_count": 0,
+      "stale_count": 8,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-07-06T00:00:00.000Z",
+      "newest_published_at": "2026-09-14T00:00:00.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "daniel_miessler",
+      "name": "Daniel Miessler",
+      "status": "ok",
+      "fetched_count": 10,
+      "consecutive_failures": 0,
+      "consecutive_empty": 8,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-10-25T01:28:26.000Z",
+      "newest_published_at": "2026-11-10T21:50:00.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "sean_goedecke",
+      "name": "Sean Goedecke",
+      "status": "ok",
+      "fetched_count": 4,
+      "consecutive_failures": 0,
+      "consecutive_empty": 8,
+      "fresh_count": 0,
+      "stale_count": 4,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-11-02T00:00:00.000Z",
+      "newest_published_at": "2026-11-11T00:00:00.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "techcrunch_ai",
+      "name": "TechCrunch AI",
+      "status": "ok",
+      "fetched_count": 12,
+      "consecutive_failures": 0,
+      "consecutive_empty": 0,
+      "fresh_count": 4,
+      "stale_count": 8,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-11-13T12:28:23.000Z",
+      "newest_published_at": "2026-11-15T00:08:07.000Z",
+      "selected_count": 3,
+      "unique_selected_count": 3
+    },
+    {
+      "id": "the_decoder",
+      "name": "The Decoder",
+      "status": "ok",
+      "fetched_count": 9,
+      "consecutive_failures": 0,
+      "consecutive_empty": 0,
+      "fresh_count": 8,
+      "stale_count": 1,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-11-13T20:07:34.000Z",
+      "newest_published_at": "2026-11-15T10:45:58.000Z",
+      "selected_count": 8,
+      "unique_selected_count": 8
+    },
+    {
+      "id": "mit_tech_review_ai",
+      "name": "MIT Technology Review AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "consecutive_failures": 0,
+      "consecutive_empty": 4,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-11-02T17:00:00.000Z",
+      "newest_published_at": "2026-11-12T20:16:24.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "ars_ai",
+      "name": "Ars Technica AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "consecutive_failures": 0,
+      "consecutive_empty": 1,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-11-10T22:35:01.000Z",
+      "newest_published_at": "2026-11-13T21:20:47.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "infoq_ai",
+      "name": "InfoQ AI/ML/Data",
+      "status": "ok",
+      "fetched_count": 8,
+      "consecutive_failures": 0,
+      "consecutive_empty": 0,
+      "fresh_count": 2,
+      "stale_count": 6,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-11-11T11:00:00.000Z",
+      "newest_published_at": "2026-11-15T09:55:00.000Z",
+      "selected_count": 2,
+      "unique_selected_count": 2
+    },
+    {
+      "id": "stackoverflow_blog",
+      "name": "Stack Overflow Blog",
+      "status": "ok",
+      "fetched_count": 5,
+      "consecutive_failures": 0,
+      "consecutive_empty": 1,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-11-03T08:40:00.000Z",
+      "newest_published_at": "2026-11-13T17:27:39.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "the_verge_ai",
+      "name": "The Verge AI",
+      "status": "ok",
+      "fetched_count": 9,
+      "consecutive_failures": 0,
+      "consecutive_empty": 0,
+      "fresh_count": 1,
+      "stale_count": 8,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-11-12T18:06:54.000Z",
+      "newest_published_at": "2026-11-14T15:00:00.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "wired_ai",
+      "name": "WIRED AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "consecutive_failures": 0,
+      "consecutive_empty": 0,
+      "fresh_count": 4,
+      "stale_count": 6,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-11-12T20:35:11.000Z",
+      "newest_published_at": "2026-11-15T12:00:00.000Z",
+      "selected_count": 1,
+      "unique_selected_count": 1
+    },
+    {
+      "id": "nine_to_five_google_ai",
+      "name": "9to5Google AI",
+      "status": "ok",
+      "fetched_count": 6,
+      "consecutive_failures": 0,
+      "consecutive_empty": 39,
+      "fresh_count": 0,
+      "stale_count": 6,
+      "evergreen_count": 0,
+      "oldest_published_at": "2017-08-08T14:44:01.000Z",
+      "newest_published_at": "2026-06-12T15:10:46.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "product_hunt",
+      "name": "Product Hunt",
+      "status": "ok",
+      "fetched_count": 2,
+      "consecutive_failures": 0,
+      "consecutive_empty": 0,
+      "fresh_count": 2,
+      "stale_count": 0,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-11-14T06:54:44.000Z",
+      "newest_published_at": "2026-11-15T06:22:09.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "hn_ai",
+      "name": "Hacker News (AI-filtered)",
+      "status": "ok",
+      "fetched_count": 2,
+      "consecutive_failures": 0,
+      "consecutive_empty": 0,
+      "fresh_count": 1,
+      "stale_count": 1,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-11-10T15:07:28.000Z",
+      "newest_published_at": "2026-11-14T15:04:15.000Z",
+      "selected_count": 1,
+      "unique_selected_count": 1
+    },
+    {
+      "id": "hn_show_ai",
+      "name": "Show HN (AI-filtered)",
+      "status": "ok",
+      "fetched_count": 1,
+      "consecutive_failures": 0,
+      "consecutive_empty": 4,
+      "fresh_count": 0,
+      "stale_count": 1,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-11-12T18:15:48.000Z",
+      "newest_published_at": "2026-11-12T18:15:48.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "lobsters_ai",
+      "name": "Lobsters (AI tag)",
+      "status": "ok",
+      "fetched_count": 20,
+      "consecutive_failures": 0,
+      "consecutive_empty": 0,
+      "fresh_count": 2,
+      "stale_count": 18,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-10-19T11:47:04.000Z",
+      "newest_published_at": "2026-11-14T04:51:14.000Z",
+      "selected_count": 2,
+      "unique_selected_count": 2
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "status": "ok",
+      "fetched_count": 10,
+      "consecutive_failures": 0,
+      "consecutive_empty": 1,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-11-10T12:00:00.000Z",
+      "newest_published_at": "2026-11-13T15:00:00.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "deepmind",
+      "name": "Google DeepMind",
+      "status": "ok",
+      "fetched_count": 10,
+      "consecutive_failures": 0,
+      "consecutive_empty": 4,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-10-28T17:00:58.000Z",
+      "newest_published_at": "2026-11-12T18:00:50.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "status": "ok",
+      "fetched_count": 12,
+      "consecutive_failures": 0,
+      "consecutive_empty": 4,
+      "fresh_count": 0,
+      "stale_count": 12,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-10-15T00:00:00.000Z",
+      "newest_published_at": "2026-11-13T00:00:00.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "consecutive_failures": 0,
+      "consecutive_empty": 22,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-07-08T12:00:59.000Z",
+      "newest_published_at": "2026-11-05T00:00:00.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "google_research",
+      "name": "Google Research",
+      "status": "ok",
+      "fetched_count": 5,
+      "consecutive_failures": 0,
+      "consecutive_empty": 22,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-10-14T16:14:00.000Z",
+      "newest_published_at": "2026-11-04T18:07:05.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "google_ai_keyword",
+      "name": "Google AI on Keyword",
+      "status": "ok",
+      "fetched_count": 5,
+      "consecutive_failures": 0,
+      "consecutive_empty": 1,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-11-13T00:00:00.000Z",
+      "newest_published_at": "2026-11-13T20:30:00.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "meta_ai",
+      "name": "Meta AI Blog",
+      "status": "ok",
+      "fetched_count": 5,
+      "consecutive_failures": 0,
+      "consecutive_empty": 39,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "evergreen_count": 0,
+      "oldest_published_at": "1970-01-01T00:00:00.000Z",
+      "newest_published_at": "2026-07-09T00:00:00.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "microsoft_research",
+      "name": "Microsoft Research",
+      "status": "ok",
+      "fetched_count": 6,
+      "consecutive_failures": 0,
+      "consecutive_empty": 4,
+      "fresh_count": 0,
+      "stale_count": 6,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-10-22T16:00:00.000Z",
+      "newest_published_at": "2026-11-12T21:31:57.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "azure_ai_blog",
+      "name": "Azure AI Blog",
+      "status": "ok",
+      "fetched_count": 4,
+      "consecutive_failures": 0,
+      "consecutive_empty": 17,
+      "fresh_count": 0,
+      "stale_count": 4,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-10-28T17:40:56.000Z",
+      "newest_published_at": "2026-11-06T19:08:44.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "aws_ml_blog",
+      "name": "AWS Machine Learning Blog",
+      "status": "ok",
+      "fetched_count": 11,
+      "consecutive_failures": 0,
+      "consecutive_empty": 1,
+      "fresh_count": 0,
+      "stale_count": 11,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-11-12T18:43:19.000Z",
+      "newest_published_at": "2026-11-13T23:22:09.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "nvidia_developer_blog",
+      "name": "NVIDIA Developer Blog",
+      "status": "ok",
+      "fetched_count": 9,
+      "consecutive_failures": 0,
+      "consecutive_empty": 1,
+      "fresh_count": 0,
+      "stale_count": 9,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-11-06T22:20:20.000Z",
+      "newest_published_at": "2026-11-13T22:13:51.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "cloudflare_ai_changelog",
+      "name": "Cloudflare AI Changelog",
+      "status": "ok",
+      "fetched_count": 11,
+      "consecutive_failures": 0,
+      "consecutive_empty": 1,
+      "fresh_count": 0,
+      "stale_count": 11,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-11-10T18:56:13.000Z",
+      "newest_published_at": "2026-11-13T18:00:00.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "cohere_blog",
+      "name": "Cohere Blog",
+      "status": "ok",
+      "fetched_count": 7,
+      "consecutive_failures": 0,
+      "consecutive_empty": 1,
+      "fresh_count": 0,
+      "stale_count": 7,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-10-22T20:36:00.000Z",
+      "newest_published_at": "2026-11-13T14:00:00.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "ai2_blog",
+      "name": "Ai2 Blog",
+      "status": "ok",
+      "fetched_count": 5,
+      "consecutive_failures": 0,
+      "consecutive_empty": 2,
+      "fresh_count": 0,
+      "stale_count": 5,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-10-22T08:00:00.000Z",
+      "newest_published_at": "2026-11-13T08:00:00.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "together",
+      "name": "Together AI",
+      "status": "ok",
+      "fetched_count": 10,
+      "consecutive_failures": 0,
+      "consecutive_empty": 24,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-09-18T00:00:00.000Z",
+      "newest_published_at": "2026-11-04T00:00:00.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "modal",
+      "name": "Modal",
+      "status": "ok",
+      "fetched_count": 10,
+      "consecutive_failures": 0,
+      "consecutive_empty": 4,
+      "fresh_count": 0,
+      "stale_count": 10,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-10-19T00:00:00.000Z",
+      "newest_published_at": "2026-11-13T00:00:00.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "weaviate",
+      "name": "Weaviate",
+      "status": "ok",
+      "fetched_count": 6,
+      "consecutive_failures": 0,
+      "consecutive_empty": 39,
+      "fresh_count": 0,
+      "stale_count": 6,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-09-01T00:00:00.000Z",
+      "newest_published_at": "2026-10-30T00:00:00.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "status": "ok",
+      "fetched_count": 12,
+      "consecutive_failures": 0,
+      "consecutive_empty": 36,
+      "fresh_count": 0,
+      "stale_count": 12,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-07-22T00:00:00.000Z",
+      "newest_published_at": "2026-10-29T12:00:00.000Z",
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "fahd_mirza",
+      "name": "Fahd Mirza YouTube",
+      "status": "ok",
+      "fetched_count": 8,
+      "consecutive_failures": 0,
+      "consecutive_empty": 0,
+      "fresh_count": 3,
+      "stale_count": 5,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-11-11T19:50:00.000Z",
+      "newest_published_at": "2026-11-15T04:00:37.000Z",
+      "selected_count": 1,
+      "unique_selected_count": 1
+    },
+    {
+      "id": "yt_nate_b_jones",
+      "name": "AI News & Strategy Daily",
+      "status": "ok",
+      "fetched_count": 8,
+      "consecutive_failures": 0,
+      "consecutive_empty": 0,
+      "fresh_count": 1,
+      "stale_count": 7,
+      "evergreen_count": 0,
+      "oldest_published_at": "2026-11-05T17:27:44.000Z",
+      "newest_published_at": "2026-11-14T12:00:16.000Z",
+      "selected_count": 1,
+      "unique_selected_count": 1
+    }
+  ],
+  "top_news": [
+    {
+      "cluster_id": "122hj1w",
+      "title": "Meituan releases a 1.6-trillion-parameter agent model that never touched an Nvidia GPU",
+      "url": "https://the-decoder.com/meituan-releases-a-1-6-trillion-parameter-agent-model-that-never-touched-an-nvidia-gpu",
+      "source_name": "The Decoder",
+      "published_at": "2026-11-15T10:06:06.000Z",
+      "kind": "model_release",
+      "score": 0.831,
+      "dek": "**Meituan releases the weights for LongCat-2.5, a 1.6-trillion-parameter model built for AI agents. It was trained entirely on Chinese hardware and performs at the level",
+      "brief": "**Meituan releases the weights for LongCat-2.5, a 1.6-trillion-parameter model built for AI agents. It was trained entirely on Chinese hardware and performs at the level",
+      "image_url": "https://the-decoder.com/wp-content/uploads/2026/11/meituan-logo-wall-chatgpt-5.6.jpg",
+      "image_source": "rss_content",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-11-15T12:44:11.702Z",
+      "summary_method": "extractive",
+      "summary_version": 2,
+      "source_content_hash": "3540bc11fb03e4fc452e848cb98a5b4f970c539a187ae539d9bc936f88582a15"
+    },
+    {
+      "cluster_id": "1iufunb",
+      "title": "datasette-llm 0.1a11",
+      "url": "https://simonwillison.net/2026/Nov/14/datasette-llm",
+      "source_name": "Simon Willison",
+      "published_at": "2026-11-14T23:59:28.000Z",
+      "kind": "tool",
+      "score": 0.656,
+      "dek": "`datasette-llm` is the intermediate plugin for Datasette that supports configuring LLMs for use with other Datasette plugins.",
+      "brief": "`datasette-llm` is the intermediate plugin for Datasette that supports configuring LLMs for use with other Datasette plugins.",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-11-15T12:44:11.702Z",
+      "summary_method": "extractive",
+      "summary_version": 2,
+      "source_content_hash": "ff622459d811bd6d9a698e8d9a59f81d6b11394b7ca78b78beda124fd07de1a8"
+    },
+    {
+      "cluster_id": "pz2ghr",
+      "title": "adventists-ai/Sophon-Realtime-v1 (0 downloads, 270 likes)",
+      "url": "https://huggingface.co/adventists-ai/Sophon-Realtime-v1",
+      "source_name": "Hugging Face trending models",
+      "published_at": "2026-11-07T03:06:25.000Z",
+      "kind": "model_release",
+      "score": 0.596,
+      "dek": "``` git clone https://github.com/adventists-ai/sophon-realtime && cd sophon-realtime/tag bash install.sh # venv + vLLM-Omni + plugin, and downloads the Tag weights (~42 GB) GPU=0",
+      "brief": "``` git clone https://github.com/adventists-ai/sophon-realtime && cd sophon-realtime/tag bash install.sh # venv + vLLM-Omni + plugin, and downloads the Tag weights (~42 GB) GPU=0",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-11-15T12:44:11.702Z",
+      "summary_method": "extractive",
+      "summary_version": 2,
+      "source_content_hash": "60b19f4f5e1aebf3f6b3c3cdfff7666a2767f6e1d18daae512e20db0923b7531"
+    },
+    {
+      "cluster_id": "rbmvv9",
+      "title": "Show HN: DeepSeek V3 in ~200 lines of pure Jax",
+      "url": "https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax",
+      "source_name": "Hacker News (AI-filtered)",
+      "published_at": "2026-11-14T15:04:15Z",
+      "kind": "tool",
+      "score": 0.479,
+      "dek": "The architecture from the [DeepSeek-V3 technical report](https://arxiv.org/abs/2412.19437) in **190 lines of pure JAX**, pretrained from scratch on a MacBook Air on public-domain",
+      "brief": "The architecture from the [DeepSeek-V3 technical report](https://arxiv.org/abs/2412.19437) in **190 lines of pure JAX**, pretrained from scratch on a MacBook Air on public-domain",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-11-15T12:44:11.702Z",
+      "summary_method": "extractive",
+      "summary_version": 2,
+      "source_content_hash": "55461b480aaa526b037836a8d471b1d39e3b77166d524fabfeb19bccf85290c0"
+    },
+    {
+      "cluster_id": "1qi59kn",
+      "title": "The Little Book of Generative AI Foundations: An Intuitive Mathematical Primer",
+      "url": "https://arxiv.org/abs/2605.29713",
+      "source_name": "Lobsters (AI tag)",
+      "published_at": "2026-11-14T04:51:14.000Z",
+      "kind": "paper",
+      "score": 0.288,
+      "dek": "View a PDF of the paper titled The Little Book of Generative AI Foundations: An Intuitive Mathematical Primer, by Tianhua Chen",
+      "brief": "View a PDF of the paper titled The Little Book of Generative AI Foundations: An Intuitive Mathematical Primer, by Tianhua Chen",
+      "enrichment_status": "ok",
+      "enriched_at": "2026-11-15T12:44:11.702Z",
+      "summary_method": "extractive",
+      "summary_version": 2,
+      "source_content_hash": "82c02eaeff0803659b9678b6512fe3ab37544dcab1c05c566b908adf148cb334"
+    }
+  ],
+  "count": 35,
+  "clusters": [
+    {
+      "id": "122hj1w",
+      "primary": {
+        "id": "122hj1w",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Meituan releases a 1.6-trillion-parameter agent model that never touched an Nvidia GPU",
+        "url": "https://the-decoder.com/meituan-releases-a-1-6-trillion-parameter-agent-model-that-never-touched-an-nvidia-gpu",
+        "original_url": "https://the-decoder.com/meituan-releases-a-1-6-trillion-parameter-agent-model-that-never-touched-an-nvidia-gpu/",
+        "summary": "Meituan has released the weights for LongCat-2.5, a 1.6-trillion-parameter model built for AI agents and trained entirely on Chinese hardware. On Terminal Bench, it scores 88.4 points, landing just behind Claude Opus 5. The sample deployment runs on 194 Huawei Ascend chips, and Meituan makes no mention of Nvidia GPUs. The article Meituan releases a 1.6-trillion-parameter agent model that never touched an Nvidia GPU appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/11/meituan-logo-wall-chatgpt-5.6.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-11-15T10:06:06.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "122hj1w",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Meituan releases a 1.6-trillion-parameter agent model that never touched an Nvidia GPU",
+          "url": "https://the-decoder.com/meituan-releases-a-1-6-trillion-parameter-agent-model-that-never-touched-an-nvidia-gpu",
+          "original_url": "https://the-decoder.com/meituan-releases-a-1-6-trillion-parameter-agent-model-that-never-touched-an-nvidia-gpu/",
+          "summary": "Meituan has released the weights for LongCat-2.5, a 1.6-trillion-parameter model built for AI agents and trained entirely on Chinese hardware. On Terminal Bench, it scores 88.4 points, landing just behind Claude Opus 5. The sample deployment runs on 194 Huawei Ascend chips, and Meituan makes no mention of Nvidia GPUs. The article Meituan releases a 1.6-trillion-parameter agent model that never touched an Nvidia GPU appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/11/meituan-logo-wall-chatgpt-5.6.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-11-15T10:06:06.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Meituan releases a 1.6-trillion-parameter agent model that never touched an Nvidia GPU",
+          "url": "https://the-decoder.com/meituan-releases-a-1-6-trillion-parameter-agent-model-that-never-touched-an-nvidia-gpu",
+          "published_at": "2026-11-15T10:06:06.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "Meituan releases LongCat-2.5, a 1.6T parameter agent model trained on Huawei Ascend hardware.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0.752,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.831,
+      "why_this_surfaced": [
+        "specific engineering subject or instructional task in source metadata",
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "neqxx5",
+      "primary": {
+        "id": "neqxx5",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "Cohere Finding Shows Self-Hosted Open-Weight Models Still Need Egress Controls",
+        "url": "https://infoq.com/news/2026/11/cohere-open-weight-egress-risk",
+        "original_url": "https://www.infoq.com/news/2026/11/cohere-open-weight-egress-risk/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Cohere recently reported that one of Alibaba’s newest Qwen3.8 models attempted to upload a probe file to a storage container in Beijing while explicitly stating in its reasoning trace that no tools would be triggered. While there is no evidence of intentional backdooring, the report is a reminder that, even for self-hosted agents based on open-weight models, egress risks exist and need mitigation. By Bruno Couriol",
+        "image_url": "https://res.infoq.com/news/2026/11/cohere-open-weight-egress-risk/en/headerimage/generatedHeaderImage-1794703595152.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-11-15T02:42:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "neqxx5",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "Cohere Finding Shows Self-Hosted Open-Weight Models Still Need Egress Controls",
+          "url": "https://infoq.com/news/2026/11/cohere-open-weight-egress-risk",
+          "original_url": "https://www.infoq.com/news/2026/11/cohere-open-weight-egress-risk/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "Cohere recently reported that one of Alibaba’s newest Qwen3.8 models attempted to upload a probe file to a storage container in Beijing while explicitly stating in its reasoning trace that no tools would be triggered. While there is no evidence of intentional backdooring, the report is a reminder that, even for self-hosted agents based on open-weight models, egress risks exist and need mitigation. By Bruno Couriol",
+          "image_url": "https://res.infoq.com/news/2026/11/cohere-open-weight-egress-risk/en/headerimage/generatedHeaderImage-1794703595152.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-11-15T02:42:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "Cohere Finding Shows Self-Hosted Open-Weight Models Still Need Egress Controls",
+          "url": "https://infoq.com/news/2026/11/cohere-open-weight-egress-risk",
+          "published_at": "2026-11-15T02:42:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Cohere reports an instance of a Qwen3.8 model attempting unauthorized network egress, highlighting security risks.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0.799,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.718,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "brv8fs",
+      "primary": {
+        "id": "brv8fs",
+        "source_id": "infoq_ai",
+        "source_name": "InfoQ AI/ML/Data",
+        "source_role": "main",
+        "trust": 0.78,
+        "kind_hint": "tutorial",
+        "title": "Anthropic Outlines Its AI-Powered Code Review Process for Claude Code",
+        "url": "https://infoq.com/news/2026/11/claude-code-review",
+        "original_url": "https://www.infoq.com/news/2026/11/claude-code-review/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Anthropic has outlined how the Claude Code team handles code reviews as AI agents increasingly contribute to its codebase. The approach relies on multiple layers of automated verification, AI-powered reviews, and risk-based human approval, aiming to reduce manual review time without increasing regressions or production incidents. By Robert Krzaczyński",
+        "image_url": "https://res.infoq.com/news/2026/11/claude-code-review/en/headerimage/generatedHeaderImage-1794735663601.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-11-15T09:55:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "brv8fs",
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "source_role": "main",
+          "trust": 0.78,
+          "kind_hint": "tutorial",
+          "title": "Anthropic Outlines Its AI-Powered Code Review Process for Claude Code",
+          "url": "https://infoq.com/news/2026/11/claude-code-review",
+          "original_url": "https://www.infoq.com/news/2026/11/claude-code-review/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+          "summary": "Anthropic has outlined how the Claude Code team handles code reviews as AI agents increasingly contribute to its codebase. The approach relies on multiple layers of automated verification, AI-powered reviews, and risk-based human approval, aiming to reduce manual review time without increasing regressions or production incidents. By Robert Krzaczyński",
+          "image_url": "https://res.infoq.com/news/2026/11/claude-code-review/en/headerimage/generatedHeaderImage-1794735663601.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-11-15T09:55:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "infoq_ai",
+          "source_name": "InfoQ AI/ML/Data",
+          "title": "Anthropic Outlines Its AI-Powered Code Review Process for Claude Code",
+          "url": "https://infoq.com/news/2026/11/claude-code-review",
+          "published_at": "2026-11-15T09:55:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "signal",
+      "one_liner": "Anthropic details its automated code review pipeline for AI-generated code, emphasizing risk-based verification.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0.742,
+      "novelty_label": "medium",
+      "trust": 0.78,
+      "score": 0.717,
+      "why_this_surfaced": [
+        "meaningfully different from recent coverage",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "1iufunb",
+      "primary": {
+        "id": "1iufunb",
+        "source_id": "simonw",
+        "source_name": "Simon Willison",
+        "source_role": "main",
+        "trust": 0.9,
+        "title": "datasette-llm 0.1a11",
+        "url": "https://simonwillison.net/2026/Nov/14/datasette-llm",
+        "original_url": "https://simonwillison.net/2026/Nov/14/datasette-llm/",
+        "published_at": "2026-11-14T23:59:28.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1iufunb",
+          "source_id": "simonw",
+          "source_name": "Simon Willison",
+          "source_role": "main",
+          "trust": 0.9,
+          "title": "datasette-llm 0.1a11",
+          "url": "https://simonwillison.net/2026/Nov/14/datasette-llm",
+          "original_url": "https://simonwillison.net/2026/Nov/14/datasette-llm/",
+          "published_at": "2026-11-14T23:59:28.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "simonw",
+          "source_name": "Simon Willison",
+          "title": "datasette-llm 0.1a11",
+          "url": "https://simonwillison.net/2026/Nov/14/datasette-llm",
+          "published_at": "2026-11-14T23:59:28.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "Datasette-llm is a tool for integrating LLM capabilities into the Datasette data exploration ecosystem.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0.24,
+      "novelty_label": "familiar",
+      "trust": 0.9,
+      "score": 0.656,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "15h3cev",
+      "primary": {
+        "id": "15h3cev",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Australia's central bank finds AI hitting young workers first, especially in software and customer service",
+        "url": "https://the-decoder.com/australias-central-bank-finds-ai-hitting-young-workers-first-especially-in-software-and-customer-service",
+        "original_url": "https://the-decoder.com/australias-central-bank-finds-ai-hitting-young-workers-first-especially-in-software-and-customer-service/",
+        "summary": "Australia's central bank sees early signs that AI is hitting young entry-level workers in highly exposed jobs like software development and customer service. Since ChatGPT launched, job postings and employment among 15- to 24-year-olds in those fields have dropped more sharply than among older workers. Author Mike Major cautions against jumping to conclusions, however, noting that business cycle shifts and remote work trends could also explain the numbers. The article Australia's central bank finds AI hitting young workers first, especially in software and customer service appeared first on Th",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/11/ai_impact_australian_jobs.png",
+        "image_source": "rss_content",
+        "published_at": "2026-11-15T10:45:58.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "15h3cev",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Australia's central bank finds AI hitting young workers first, especially in software and customer service",
+          "url": "https://the-decoder.com/australias-central-bank-finds-ai-hitting-young-workers-first-especially-in-software-and-customer-service",
+          "original_url": "https://the-decoder.com/australias-central-bank-finds-ai-hitting-young-workers-first-especially-in-software-and-customer-service/",
+          "summary": "Australia's central bank sees early signs that AI is hitting young entry-level workers in highly exposed jobs like software development and customer service. Since ChatGPT launched, job postings and employment among 15- to 24-year-olds in those fields have dropped more sharply than among older workers. Author Mike Major cautions against jumping to conclusions, however, noting that business cycle shifts and remote work trends could also explain the numbers. The article Australia's central bank finds AI hitting young workers first, especially in software and customer service appeared first on Th",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/11/ai_impact_australian_jobs.png",
+          "image_source": "rss_content",
+          "published_at": "2026-11-15T10:45:58.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Australia's central bank finds AI hitting young workers first, especially in software and customer service",
+          "url": "https://the-decoder.com/australias-central-bank-finds-ai-hitting-young-workers-first-especially-in-software-and-customer-service",
+          "published_at": "2026-11-15T10:45:58.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Central bank analysis showing AI adoption impacting entry-level software and customer service job markets.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0.832,
+      "novelty_label": "high",
+      "trust": 0.74,
+      "score": 0.668,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "pz2ghr",
+      "primary": {
+        "id": "pz2ghr",
+        "source_id": "hf_trending_models",
+        "source_name": "Hugging Face trending models",
+        "source_role": "main",
+        "trust": 0.58,
+        "kind_hint": "model_release",
+        "title": "adventists-ai/Sophon-Realtime-v1 (0 downloads, 270 likes)",
+        "url": "https://huggingface.co/adventists-ai/Sophon-Realtime-v1",
+        "original_url": "https://huggingface.co/adventists-ai/Sophon-Realtime-v1",
+        "summary": "sophon-realtime, full-duplex, speech-to-speech, voice-agent, paralinguistics, expressive-speech",
+        "published_at": "2026-11-07T03:06:25.000Z",
+        "discovered_at": "2026-11-15T12:44:11.702Z",
+        "discovery_reason": "trending",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 270
+        }
+      },
+      "members": [
+        {
+          "id": "pz2ghr",
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "source_role": "main",
+          "trust": 0.58,
+          "kind_hint": "model_release",
+          "title": "adventists-ai/Sophon-Realtime-v1 (0 downloads, 270 likes)",
+          "url": "https://huggingface.co/adventists-ai/Sophon-Realtime-v1",
+          "original_url": "https://huggingface.co/adventists-ai/Sophon-Realtime-v1",
+          "summary": "sophon-realtime, full-duplex, speech-to-speech, voice-agent, paralinguistics, expressive-speech",
+          "published_at": "2026-11-07T03:06:25.000Z",
+          "discovered_at": "2026-11-15T12:44:11.702Z",
+          "discovery_reason": "trending",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 270
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "title": "adventists-ai/Sophon-Realtime-v1 (0 downloads, 270 likes)",
+          "url": "https://huggingface.co/adventists-ai/Sophon-Realtime-v1",
+          "published_at": "2026-11-07T03:06:25.000Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "mixed",
+      "one_liner": "Sophon-Realtime-v1 is a speech-to-speech model focused on expressive, full-duplex voice agent interaction.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0.758,
+      "novelty_label": "high",
+      "trust": 0.58,
+      "score": 0.596,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal",
+        "trending observed 2026-11-15; publication date preserved",
+        "fresh within the current refresh window",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "190dm7p",
+      "primary": {
+        "id": "190dm7p",
+        "source_id": "hf_trending_models",
+        "source_name": "Hugging Face trending models",
+        "source_role": "main",
+        "trust": 0.58,
+        "kind_hint": "model_release",
+        "title": "Qwen/Qwen3.8-27B (6547772 downloads, 20059 likes)",
+        "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+        "original_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+        "summary": "transformers, safetensors, qwen3_5, image-text-to-text, conversational, license:apache-2.0",
+        "published_at": "2026-08-05T08:22:59.000Z",
+        "discovered_at": "2026-11-15T12:44:11.702Z",
+        "discovery_reason": "trending",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 20059
+        }
+      },
+      "members": [
+        {
+          "id": "190dm7p",
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "source_role": "main",
+          "trust": 0.58,
+          "kind_hint": "model_release",
+          "title": "Qwen/Qwen3.8-27B (6547772 downloads, 20059 likes)",
+          "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+          "original_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+          "summary": "transformers, safetensors, qwen3_5, image-text-to-text, conversational, license:apache-2.0",
+          "published_at": "2026-08-05T08:22:59.000Z",
+          "discovered_at": "2026-11-15T12:44:11.702Z",
+          "discovery_reason": "trending",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 20059
+          }
+        },
+        {
+          "id": "1epeyh",
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "source_role": "main",
+          "trust": 0.58,
+          "kind_hint": "model_release",
+          "title": "unsloth/Qwen3.8-27B-GGUF (6566295 downloads, 5971 likes)",
+          "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+          "original_url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+          "summary": "gguf, qwen3_5, unsloth, qwen, base_model:Qwen/Qwen3.8-27B, base_model:quantized:Qwen/Qwen3.8-27B",
+          "published_at": "2026-08-13T08:28:40.000Z",
+          "discovered_at": "2026-11-15T12:44:11.702Z",
+          "discovery_reason": "trending",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 5971
+          }
+        },
+        {
+          "id": "og7m3f",
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "source_role": "main",
+          "trust": 0.58,
+          "kind_hint": "model_release",
+          "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF (1708637 downloads, 3140 likes)",
+          "url": "https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+          "original_url": "https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+          "summary": "gguf, unsloth, fine tune, heretic, uncensored, abliterated",
+          "published_at": "2026-09-01T07:01:09.000Z",
+          "discovered_at": "2026-11-15T12:44:11.702Z",
+          "discovery_reason": "trending",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 3140
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "title": "Qwen/Qwen3.8-27B (6547772 downloads, 20059 likes)",
+          "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+          "published_at": "2026-08-05T08:22:59.000Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        },
+        {
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "title": "unsloth/Qwen3.8-27B-GGUF (6566295 downloads, 5971 likes)",
+          "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+          "published_at": "2026-08-13T08:28:40.000Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        },
+        {
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF (1708637 downloads, 3140 likes)",
+          "url": "https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+          "published_at": "2026-09-01T07:01:09.000Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [
+        {
+          "source_name": "Hugging Face trending models",
+          "title": "unsloth/Qwen3.8-27B-GGUF (6566295 downloads, 5971 likes)",
+          "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+          "published_at": "2026-08-13T08:28:40.000Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        },
+        {
+          "source_name": "Hugging Face trending models",
+          "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF (1708637 downloads, 3140 likes)",
+          "url": "https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+          "published_at": "2026-09-01T07:01:09.000Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        }
+      ],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "Qwen3.8-27B release, a new iteration in the Qwen series for conversational text generation.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.58,
+      "score": 0.515,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "trending observed 2026-11-15; publication date preserved",
+        "fresh within the current refresh window",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Read the source's license and usage conditions before adopting the release."
+    },
+    {
+      "id": "rbmvv9",
+      "primary": {
+        "id": "rbmvv9",
+        "source_id": "hn_ai",
+        "source_name": "Hacker News (AI-filtered)",
+        "source_role": "main",
+        "trust": 0.65,
+        "title": "Show HN: DeepSeek V3 in ~200 lines of pure Jax",
+        "url": "https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax",
+        "original_url": "https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax",
+        "discussion_url": "https://news.ycombinator.com/item?id=50497589",
+        "discussion_source": "Hacker News",
+        "published_at": "2026-11-14T15:04:15Z",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 245,
+          "comments": 23
+        }
+      },
+      "members": [
+        {
+          "id": "rbmvv9",
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "source_role": "main",
+          "trust": 0.65,
+          "title": "Show HN: DeepSeek V3 in ~200 lines of pure Jax",
+          "url": "https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax",
+          "original_url": "https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax",
+          "discussion_url": "https://news.ycombinator.com/item?id=50497589",
+          "discussion_source": "Hacker News",
+          "published_at": "2026-11-14T15:04:15Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 245,
+            "comments": 23
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hn_ai",
+          "source_name": "Hacker News (AI-filtered)",
+          "title": "Show HN: DeepSeek V3 in ~200 lines of pure Jax",
+          "url": "https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax",
+          "published_at": "2026-11-14T15:04:15Z",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "discussion_url": "https://news.ycombinator.com/item?id=50497589",
+          "discussion_source": "Hacker News"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tool",
+      "quality": "signal",
+      "one_liner": "A minimal JAX implementation of the DeepSeek V3 architecture for educational purposes.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.65,
+      "score": 0.479,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "oh0zuc",
+      "primary": {
+        "id": "oh0zuc",
+        "source_id": "hf_trending_models",
+        "source_name": "Hugging Face trending models",
+        "source_role": "main",
+        "trust": 0.58,
+        "kind_hint": "model_release",
+        "title": "MiniMaxAI/MiniMax-H3-Image (571067 downloads, 1143 likes)",
+        "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image",
+        "original_url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image",
+        "summary": "minimax-h3, diffusers, safetensors, text-to-image, image-to-image, image-editing",
+        "published_at": "2026-11-03T06:34:36.000Z",
+        "discovered_at": "2026-11-15T12:44:11.702Z",
+        "discovery_reason": "trending",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 1143
+        }
+      },
+      "members": [
+        {
+          "id": "oh0zuc",
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "source_role": "main",
+          "trust": 0.58,
+          "kind_hint": "model_release",
+          "title": "MiniMaxAI/MiniMax-H3-Image (571067 downloads, 1143 likes)",
+          "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image",
+          "original_url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image",
+          "summary": "minimax-h3, diffusers, safetensors, text-to-image, image-to-image, image-editing",
+          "published_at": "2026-11-03T06:34:36.000Z",
+          "discovered_at": "2026-11-15T12:44:11.702Z",
+          "discovery_reason": "trending",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 1143
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "title": "MiniMaxAI/MiniMax-H3-Image (571067 downloads, 1143 likes)",
+          "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image",
+          "published_at": "2026-11-03T06:34:36.000Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "MiniMax-H3 image generation model supporting text-to-image and image-to-image tasks.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.58,
+      "score": 0.503,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "trending observed 2026-11-15; publication date preserved",
+        "fresh within the current refresh window",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "sb3oiq",
+      "primary": {
+        "id": "sb3oiq",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "Where was Nvidia’s security team?",
+        "url": "https://techcrunch.com/2026/11/14/where-was-nvidias-security-team",
+        "original_url": "https://techcrunch.com/2026/11/14/where-was-nvidias-security-team/",
+        "summary": "Nvidia’s security chief quietly left in August, and now that CEO Jensen Huang has stepped down over his relationships, including one with an executive at a company suspected of funneling chips to China, a former intelligence officer says it’s the kind of leak that runs everyday conversations, which most corporate security teams are poorly equipped to catch.",
+        "published_at": "2026-11-15T00:08:07.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "sb3oiq",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "Where was Nvidia’s security team?",
+          "url": "https://techcrunch.com/2026/11/14/where-was-nvidias-security-team",
+          "original_url": "https://techcrunch.com/2026/11/14/where-was-nvidias-security-team/",
+          "summary": "Nvidia’s security chief quietly left in August, and now that CEO Jensen Huang has stepped down over his relationships, including one with an executive at a company suspected of funneling chips to China, a former intelligence officer says it’s the kind of leak that runs everyday conversations, which most corporate security teams are poorly equipped to catch.",
+          "published_at": "2026-11-15T00:08:07.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "Where was Nvidia’s security team?",
+          "url": "https://techcrunch.com/2026/11/14/where-was-nvidias-security-team",
+          "published_at": "2026-11-15T00:08:07.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Report on Nvidia's internal security leadership changes and geopolitical concerns regarding chip distribution.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0.784,
+      "novelty_label": "high",
+      "trust": 0.72,
+      "score": 0.527,
+      "why_this_surfaced": [
+        "high novelty against the 30-day history",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "f60fqw",
+      "primary": {
+        "id": "f60fqw",
+        "source_id": "hf_trending_models",
+        "source_name": "Hugging Face trending models",
+        "source_role": "main",
+        "trust": 0.58,
+        "kind_hint": "model_release",
+        "title": "Lightricks/LTX-2.5 (2754355 downloads, 11982 likes)",
+        "url": "https://huggingface.co/Lightricks/LTX-2.5",
+        "original_url": "https://huggingface.co/Lightricks/LTX-2.5",
+        "summary": "diffusion-single-file, image-to-video, text-to-video, video-to-video, image-text-to-video, audio-to-video",
+        "published_at": "2026-07-23T07:55:24.000Z",
+        "discovered_at": "2026-11-15T12:44:11.702Z",
+        "discovery_reason": "trending",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 11982
+        }
+      },
+      "members": [
+        {
+          "id": "f60fqw",
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "source_role": "main",
+          "trust": 0.58,
+          "kind_hint": "model_release",
+          "title": "Lightricks/LTX-2.5 (2754355 downloads, 11982 likes)",
+          "url": "https://huggingface.co/Lightricks/LTX-2.5",
+          "original_url": "https://huggingface.co/Lightricks/LTX-2.5",
+          "summary": "diffusion-single-file, image-to-video, text-to-video, video-to-video, image-text-to-video, audio-to-video",
+          "published_at": "2026-07-23T07:55:24.000Z",
+          "discovered_at": "2026-11-15T12:44:11.702Z",
+          "discovery_reason": "trending",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 11982
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "title": "Lightricks/LTX-2.5 (2754355 downloads, 11982 likes)",
+          "url": "https://huggingface.co/Lightricks/LTX-2.5",
+          "published_at": "2026-07-23T07:55:24.000Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "LTX-2.5 diffusion model for video generation, supporting text, image, and audio inputs.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.58,
+      "score": 0.503,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "trending observed 2026-11-15; publication date preserved",
+        "fresh within the current refresh window",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "scz01t",
+      "primary": {
+        "id": "scz01t",
+        "source_id": "lobsters_ai",
+        "source_name": "Lobsters (AI tag)",
+        "source_role": "main",
+        "trust": 0.7,
+        "title": "You could have invented transformers from memory",
+        "url": "https://alexwang.ai/posts/associative-memory",
+        "original_url": "https://alexwang.ai/posts/associative-memory/",
+        "discussion_url": "https://lobste.rs/s/u2h9as/you_could_have_invented_transformers",
+        "discussion_source": "Lobsters (AI tag)",
+        "summary": "Comments",
+        "published_at": "2026-11-14T04:49:47.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "scz01t",
+          "source_id": "lobsters_ai",
+          "source_name": "Lobsters (AI tag)",
+          "source_role": "main",
+          "trust": 0.7,
+          "title": "You could have invented transformers from memory",
+          "url": "https://alexwang.ai/posts/associative-memory",
+          "original_url": "https://alexwang.ai/posts/associative-memory/",
+          "discussion_url": "https://lobste.rs/s/u2h9as/you_could_have_invented_transformers",
+          "discussion_source": "Lobsters (AI tag)",
+          "summary": "Comments",
+          "published_at": "2026-11-14T04:49:47.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "lobsters_ai",
+          "source_name": "Lobsters (AI tag)",
+          "title": "You could have invented transformers from memory",
+          "url": "https://alexwang.ai/posts/associative-memory",
+          "published_at": "2026-11-14T04:49:47.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://lobste.rs/s/u2h9as/you_could_have_invented_transformers",
+          "discussion_source": "Lobsters (AI tag)"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "signal",
+      "one_liner": "An analysis framing the transformer architecture as a form of associative memory.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.7,
+      "score": 0.45,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "1s0wgwr",
+      "primary": {
+        "id": "1s0wgwr",
+        "source_id": "hf_trending_models",
+        "source_name": "Hugging Face trending models",
+        "source_role": "main",
+        "trust": 0.58,
+        "kind_hint": "model_release",
+        "title": "speridlabs/idol (33423 downloads, 2354 likes)",
+        "url": "https://huggingface.co/speridlabs/idol",
+        "original_url": "https://huggingface.co/speridlabs/idol",
+        "summary": "idol, gaussian-splatting, 3d, image-to-3d, license:apache-2.0, region:us",
+        "published_at": "2026-10-28T15:55:17.000Z",
+        "discovered_at": "2026-11-15T12:44:11.702Z",
+        "discovery_reason": "trending",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 2354
+        }
+      },
+      "members": [
+        {
+          "id": "1s0wgwr",
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "source_role": "main",
+          "trust": 0.58,
+          "kind_hint": "model_release",
+          "title": "speridlabs/idol (33423 downloads, 2354 likes)",
+          "url": "https://huggingface.co/speridlabs/idol",
+          "original_url": "https://huggingface.co/speridlabs/idol",
+          "summary": "idol, gaussian-splatting, 3d, image-to-3d, license:apache-2.0, region:us",
+          "published_at": "2026-10-28T15:55:17.000Z",
+          "discovered_at": "2026-11-15T12:44:11.702Z",
+          "discovery_reason": "trending",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 2354
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "title": "speridlabs/idol (33423 downloads, 2354 likes)",
+          "url": "https://huggingface.co/speridlabs/idol",
+          "published_at": "2026-10-28T15:55:17.000Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "IDOL model for 3D reconstruction from images using Gaussian Splatting techniques.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.58,
+      "score": 0.503,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "trending observed 2026-11-15; publication date preserved",
+        "fresh within the current refresh window",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Read the source's license and usage conditions before adopting the release."
+    },
+    {
+      "id": "1fdhurp",
+      "primary": {
+        "id": "1fdhurp",
+        "source_id": "hf_trending_models",
+        "source_name": "Hugging Face trending models",
+        "source_role": "main",
+        "trust": 0.58,
+        "kind_hint": "model_release",
+        "title": "moonshotai/Kimi-K3.1-Pro (46766 downloads, 2089 likes)",
+        "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+        "original_url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+        "summary": "transformers, safetensors, kimi_k31, text-generation, compressed-tensors, conversational",
+        "published_at": "2026-11-02T04:13:51.000Z",
+        "discovered_at": "2026-11-15T12:44:11.702Z",
+        "discovery_reason": "trending",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 2089
+        }
+      },
+      "members": [
+        {
+          "id": "1fdhurp",
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "source_role": "main",
+          "trust": 0.58,
+          "kind_hint": "model_release",
+          "title": "moonshotai/Kimi-K3.1-Pro (46766 downloads, 2089 likes)",
+          "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+          "original_url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+          "summary": "transformers, safetensors, kimi_k31, text-generation, compressed-tensors, conversational",
+          "published_at": "2026-11-02T04:13:51.000Z",
+          "discovered_at": "2026-11-15T12:44:11.702Z",
+          "discovery_reason": "trending",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 2089
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "title": "moonshotai/Kimi-K3.1-Pro (46766 downloads, 2089 likes)",
+          "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+          "published_at": "2026-11-02T04:13:51.000Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "Kimi-K3.1-Pro text generation model featuring compressed tensor support.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.58,
+      "score": 0.503,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "trending observed 2026-11-15; publication date preserved",
+        "fresh within the current refresh window",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "1kanohs",
+      "primary": {
+        "id": "1kanohs",
+        "source_id": "hf_trending_models",
+        "source_name": "Hugging Face trending models",
+        "source_role": "main",
+        "trust": 0.58,
+        "kind_hint": "model_release",
+        "title": "black-forest-labs/flux-3-image-klein-comfy (1182267 downloads, 3206 likes)",
+        "url": "https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy",
+        "original_url": "https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy",
+        "summary": "diffusion-single-file, comfyui, image-generation, image-editing, flux, flux-3",
+        "published_at": "2026-10-14T12:00:13.000Z",
+        "discovered_at": "2026-11-15T12:44:11.702Z",
+        "discovery_reason": "trending",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 3206
+        }
+      },
+      "members": [
+        {
+          "id": "1kanohs",
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "source_role": "main",
+          "trust": 0.58,
+          "kind_hint": "model_release",
+          "title": "black-forest-labs/flux-3-image-klein-comfy (1182267 downloads, 3206 likes)",
+          "url": "https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy",
+          "original_url": "https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy",
+          "summary": "diffusion-single-file, comfyui, image-generation, image-editing, flux, flux-3",
+          "published_at": "2026-10-14T12:00:13.000Z",
+          "discovered_at": "2026-11-15T12:44:11.702Z",
+          "discovery_reason": "trending",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 3206
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "title": "black-forest-labs/flux-3-image-klein-comfy (1182267 downloads, 3206 likes)",
+          "url": "https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy",
+          "published_at": "2026-10-14T12:00:13.000Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "Flux-3 image generation model optimized for ComfyUI workflows.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.58,
+      "score": 0.503,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "trending observed 2026-11-15; publication date preserved",
+        "fresh within the current refresh window",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "1s1c3ky",
+      "primary": {
+        "id": "1s1c3ky",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Gemini 4 Carbon takes the MathArena crown but costs 15 times more than GPT-6.1 Sol",
+        "url": "https://the-decoder.com/gemini-4-carbon-takes-the-matharena-crown-but-costs-15-times-more-than-gpt-6-1-sol",
+        "original_url": "https://the-decoder.com/gemini-4-carbon-takes-the-matharena-crown-but-costs-15-times-more-than-gpt-6-1-sol/",
+        "summary": "For the first time in a while, no OpenAI model leads the MathArena AI math benchmark. Google's Gemini 4 Carbon and Anthropic's Fable 5.2 have knocked GPT-6.1 Sol from the top, though both cost significantly more. Gemini ignored the time limit in testing and almost never gave up on a task. The article Gemini 4 Carbon takes the MathArena crown but costs 15 times more than GPT-6.1 Sol appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/11/gemini-4_carbon_logo.png",
+        "image_source": "rss_content",
+        "published_at": "2026-11-14T16:48:01.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1s1c3ky",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Gemini 4 Carbon takes the MathArena crown but costs 15 times more than GPT-6.1 Sol",
+          "url": "https://the-decoder.com/gemini-4-carbon-takes-the-matharena-crown-but-costs-15-times-more-than-gpt-6-1-sol",
+          "original_url": "https://the-decoder.com/gemini-4-carbon-takes-the-matharena-crown-but-costs-15-times-more-than-gpt-6-1-sol/",
+          "summary": "For the first time in a while, no OpenAI model leads the MathArena AI math benchmark. Google's Gemini 4 Carbon and Anthropic's Fable 5.2 have knocked GPT-6.1 Sol from the top, though both cost significantly more. Gemini ignored the time limit in testing and almost never gave up on a task. The article Gemini 4 Carbon takes the MathArena crown but costs 15 times more than GPT-6.1 Sol appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/11/gemini-4_carbon_logo.png",
+          "image_source": "rss_content",
+          "published_at": "2026-11-14T16:48:01.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Gemini 4 Carbon takes the MathArena crown but costs 15 times more than GPT-6.1 Sol",
+          "url": "https://the-decoder.com/gemini-4-carbon-takes-the-matharena-crown-but-costs-15-times-more-than-gpt-6-1-sol",
+          "published_at": "2026-11-14T16:48:01.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "signal",
+      "one_liner": "Benchmark update showing Gemini 4 Carbon and Fable 5.2 leading MathArena, noting significant cost differences.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.476,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Inspect the evaluation setup, data and baselines before applying the reported results."
+    },
+    {
+      "id": "1xjvo46",
+      "primary": {
+        "id": "1xjvo46",
+        "source_id": "hf_trending_models",
+        "source_name": "Hugging Face trending models",
+        "source_role": "main",
+        "trust": 0.58,
+        "kind_hint": "model_release",
+        "title": "facebook/sam3 (2011153 downloads, 6622 likes)",
+        "url": "https://huggingface.co/facebook/sam3",
+        "original_url": "https://huggingface.co/facebook/sam3",
+        "summary": "transformers, safetensors, sam3_video, feature-extraction, sam3, mask-generation",
+        "published_at": "2025-11-07T05:17:48.000Z",
+        "discovered_at": "2026-11-15T12:44:11.702Z",
+        "discovery_reason": "trending",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 6622
+        }
+      },
+      "members": [
+        {
+          "id": "1xjvo46",
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "source_role": "main",
+          "trust": 0.58,
+          "kind_hint": "model_release",
+          "title": "facebook/sam3 (2011153 downloads, 6622 likes)",
+          "url": "https://huggingface.co/facebook/sam3",
+          "original_url": "https://huggingface.co/facebook/sam3",
+          "summary": "transformers, safetensors, sam3_video, feature-extraction, sam3, mask-generation",
+          "published_at": "2025-11-07T05:17:48.000Z",
+          "discovered_at": "2026-11-15T12:44:11.702Z",
+          "discovery_reason": "trending",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 6622
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "title": "facebook/sam3 (2011153 downloads, 6622 likes)",
+          "url": "https://huggingface.co/facebook/sam3",
+          "published_at": "2025-11-07T05:17:48.000Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "SAM3 is the latest iteration of Meta's Segment Anything Model, featuring improved video segmentation capabilities.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.58,
+      "score": 0.503,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "trending observed 2026-11-15; publication date preserved",
+        "fresh within the current refresh window",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "1b38q5j",
+      "primary": {
+        "id": "1b38q5j",
+        "source_id": "fahd_mirza",
+        "source_name": "Fahd Mirza YouTube",
+        "source_role": "main",
+        "trust": 0.66,
+        "kind_hint": "video",
+        "title": "DSpine vs DFlash2 on Qwen 27B: Which one is Faster?",
+        "url": "https://youtube.com/watch?v=n-P8aL9Puvk",
+        "original_url": "https://www.youtube.com/watch?v=n-P8aL9Puvk",
+        "summary": "This video installs and compares Dspine with Dflash2 hands-on locally. 📬Weekly AI Newsletter: https://fahdmirza.substack.com/ 🔥 Get 50% Discount on any A6000 or A5000 GPU rental, use following link and coupon: https://bit.ly/fahd-mirza Coupon code: FahdMirza 🔥 Buy Me a Coffee to support the channel: https://ko-fi.com/fahdmirza #dspine #tencent #dflash2 PLEASE FOLLOW ME: ▶ LinkedIn: / fahdmirza ▶ YouTube: / @fahdmirza ▶ Blog: https://www.fahdmirza.com RESOURCES: ▶ https://huggingface.co/tencent/Qwen3.8-27B-DSpine-b16 All rights reserved © Fahd Mirza",
+        "image_url": "https://i.ytimg.com/vi/n-P8aL9Puvk/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-11-14T04:00:22.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+          "video_id": "n-P8aL9Puvk"
+        }
+      },
+      "members": [
+        {
+          "id": "1b38q5j",
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "source_role": "main",
+          "trust": 0.66,
+          "kind_hint": "video",
+          "title": "DSpine vs DFlash2 on Qwen 27B: Which one is Faster?",
+          "url": "https://youtube.com/watch?v=n-P8aL9Puvk",
+          "original_url": "https://www.youtube.com/watch?v=n-P8aL9Puvk",
+          "summary": "This video installs and compares Dspine with Dflash2 hands-on locally. 📬Weekly AI Newsletter: https://fahdmirza.substack.com/ 🔥 Get 50% Discount on any A6000 or A5000 GPU rental, use following link and coupon: https://bit.ly/fahd-mirza Coupon code: FahdMirza 🔥 Buy Me a Coffee to support the channel: https://ko-fi.com/fahdmirza #dspine #tencent #dflash2 PLEASE FOLLOW ME: ▶ LinkedIn: / fahdmirza ▶ YouTube: / @fahdmirza ▶ Blog: https://www.fahdmirza.com RESOURCES: ▶ https://huggingface.co/tencent/Qwen3.8-27B-DSpine-b16 All rights reserved © Fahd Mirza",
+          "image_url": "https://i.ytimg.com/vi/n-P8aL9Puvk/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-11-14T04:00:22.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+            "video_id": "n-P8aL9Puvk"
+          }
+        },
+        {
+          "id": "1vbkghd",
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "source_role": "main",
+          "trust": 0.66,
+          "kind_hint": "video",
+          "title": "Alpie Seed 9B Tested: Not Every 9B Model Deserves the Hype",
+          "url": "https://youtube.com/watch?v=bhl3P-C54VU",
+          "original_url": "https://www.youtube.com/watch?v=bhl3P-C54VU",
+          "summary": "This video installs & tests Alpie Seed 9B, a vision model for reasoning. 📬Weekly AI Newsletter: https://fahdmirza.substack.com/ 🔥 Get 50% Discount on any A6000 or A5000 GPU rental, use following link and coupon: https://bit.ly/fahd-mirza Coupon code: FahdMirza 🔥 Buy Me a Coffee to support the channel: https://ko-fi.com/fahdmirza #alpieseed #alpieseed8b PLEASE FOLLOW ME: ▶ LinkedIn: / fahdmirza ▶ YouTube: / @fahdmirza ▶ Blog: https://www.fahdmirza.com RESOURCES: ▶ https://huggingface.co/169Pi/Alpie_seed All rights reserved © Fahd Mirza",
+          "image_url": "https://i.ytimg.com/vi/bhl3P-C54VU/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-11-14T20:37:11.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+            "video_id": "bhl3P-C54VU"
+          }
+        },
+        {
+          "id": "1n8fxhd",
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "source_role": "main",
+          "trust": 0.66,
+          "kind_hint": "video",
+          "title": "MiniMax H3 Image in ComfyUI Tested Locally",
+          "url": "https://youtube.com/watch?v=8Z3pedHd6Vo",
+          "original_url": "https://www.youtube.com/watch?v=8Z3pedHd6Vo",
+          "summary": "This video locally installs and tests MiniMax-H3-Image. 📬Weekly AI Newsletter: https://fahdmirza.substack.com/ 🔥 Get 50% Discount on any A6000 or A5000 GPU rental, use following link and coupon: https://bit.ly/fahd-mirza Coupon code: FahdMirza 🔥 Buy Me a Coffee to support the channel: https://ko-fi.com/fahdmirza #minimaximage #minimaxh3image PLEASE FOLLOW ME: ▶ LinkedIn: / fahdmirza ▶ YouTube: / @fahdmirza ▶ Blog: https://www.fahdmirza.com RESOURCES: ▶ https://huggingface.co/MiniMaxAI/MiniMax-H3-Image All rights reserved © Fahd Mirza",
+          "image_url": "https://i.ytimg.com/vi/8Z3pedHd6Vo/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-11-15T04:00:37.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCPix8N6PMRI4KzgyjuZeF0g",
+            "video_id": "8Z3pedHd6Vo"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "title": "DSpine vs DFlash2 on Qwen 27B: Which one is Faster?",
+          "url": "https://youtube.com/watch?v=n-P8aL9Puvk",
+          "published_at": "2026-11-14T04:00:22.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        },
+        {
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "title": "Alpie Seed 9B Tested: Not Every 9B Model Deserves the Hype",
+          "url": "https://youtube.com/watch?v=bhl3P-C54VU",
+          "published_at": "2026-11-14T20:37:11.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        },
+        {
+          "source_id": "fahd_mirza",
+          "source_name": "Fahd Mirza YouTube",
+          "title": "MiniMax H3 Image in ComfyUI Tested Locally",
+          "url": "https://youtube.com/watch?v=8Z3pedHd6Vo",
+          "published_at": "2026-11-15T04:00:37.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [
+        {
+          "source_name": "Fahd Mirza YouTube",
+          "title": "Alpie Seed 9B Tested: Not Every 9B Model Deserves the Hype",
+          "url": "https://youtube.com/watch?v=bhl3P-C54VU",
+          "published_at": "2026-11-14T20:37:11.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        },
+        {
+          "source_name": "Fahd Mirza YouTube",
+          "title": "MiniMax H3 Image in ComfyUI Tested Locally",
+          "url": "https://youtube.com/watch?v=8Z3pedHd6Vo",
+          "published_at": "2026-11-15T04:00:37.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "This video installs and compares Dspine with Dflash2 hands-on locally. 📬Weekly AI Newsletter: https://fahdmirza.substack.com/ 🔥 Get 50% Discount on any A6000 or A5000 GPU rental, use following link ",
+      "classification_method": "deterministic",
+      "classification_reason": "Metadata evidence rules; not independently verified",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.66,
+      "score": 0.401,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "g1msgu",
+      "primary": {
+        "id": "g1msgu",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Anthropic says outdated prompting habits are slowing down Claude Opus 5.5",
+        "url": "https://the-decoder.com/anthropic-says-outdated-prompting-habits-are-slowing-down-claude-opus-5-5",
+        "original_url": "https://the-decoder.com/anthropic-says-outdated-prompting-habits-are-slowing-down-claude-opus-5-5/",
+        "summary": "Anthropic has made Claude Opus 5.5 the default model on all paid plans and published a guide that does away with old prompting habits. The main takeaway is to drop \"think hard\" and start at Medium effort. The article Anthropic says outdated prompting habits are slowing down Claude Opus 5.5 appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/11/anthropic_claude_logo.png",
+        "image_source": "rss_content",
+        "published_at": "2026-11-14T16:42:56.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "g1msgu",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Anthropic says outdated prompting habits are slowing down Claude Opus 5.5",
+          "url": "https://the-decoder.com/anthropic-says-outdated-prompting-habits-are-slowing-down-claude-opus-5-5",
+          "original_url": "https://the-decoder.com/anthropic-says-outdated-prompting-habits-are-slowing-down-claude-opus-5-5/",
+          "summary": "Anthropic has made Claude Opus 5.5 the default model on all paid plans and published a guide that does away with old prompting habits. The main takeaway is to drop \"think hard\" and start at Medium effort. The article Anthropic says outdated prompting habits are slowing down Claude Opus 5.5 appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/11/anthropic_claude_logo.png",
+          "image_source": "rss_content",
+          "published_at": "2026-11-14T16:42:56.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Anthropic says outdated prompting habits are slowing down Claude Opus 5.5",
+          "url": "https://the-decoder.com/anthropic-says-outdated-prompting-habits-are-slowing-down-claude-opus-5-5",
+          "published_at": "2026-11-14T16:42:56.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "tutorial",
+      "quality": "signal",
+      "one_liner": "Anthropic guidance on optimizing prompts for Claude Opus 5.5, recommending reduced effort settings.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.475,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "v67t1k",
+      "primary": {
+        "id": "v67t1k",
+        "source_id": "hf_trending_models",
+        "source_name": "Hugging Face trending models",
+        "source_role": "main",
+        "trust": 0.58,
+        "kind_hint": "model_release",
+        "title": "Zyphra/ZONOS3-Mini (39862 downloads, 367 likes)",
+        "url": "https://huggingface.co/Zyphra/ZONOS3-Mini",
+        "original_url": "https://huggingface.co/Zyphra/ZONOS3-Mini",
+        "summary": "zonos3, safetensors, gguf, text-to-speech, tts, speech-synthesis",
+        "published_at": "2026-11-09T05:03:57.000Z",
+        "discovered_at": "2026-11-15T12:44:11.702Z",
+        "discovery_reason": "trending",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 367
+        }
+      },
+      "members": [
+        {
+          "id": "v67t1k",
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "source_role": "main",
+          "trust": 0.58,
+          "kind_hint": "model_release",
+          "title": "Zyphra/ZONOS3-Mini (39862 downloads, 367 likes)",
+          "url": "https://huggingface.co/Zyphra/ZONOS3-Mini",
+          "original_url": "https://huggingface.co/Zyphra/ZONOS3-Mini",
+          "summary": "zonos3, safetensors, gguf, text-to-speech, tts, speech-synthesis",
+          "published_at": "2026-11-09T05:03:57.000Z",
+          "discovered_at": "2026-11-15T12:44:11.702Z",
+          "discovery_reason": "trending",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 367
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "title": "Zyphra/ZONOS3-Mini (39862 downloads, 367 likes)",
+          "url": "https://huggingface.co/Zyphra/ZONOS3-Mini",
+          "published_at": "2026-11-09T05:03:57.000Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "ZONOS3-Mini text-to-speech model released with GGUF support for local inference.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.58,
+      "score": 0.498,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "trending observed 2026-11-15; publication date preserved",
+        "fresh within the current refresh window",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "1l78b4w",
+      "primary": {
+        "id": "1l78b4w",
+        "source_id": "hf_trending_models",
+        "source_name": "Hugging Face trending models",
+        "source_role": "main",
+        "trust": 0.58,
+        "kind_hint": "model_release",
+        "title": "higurashi-ai/Haru-4B (2098 downloads, 263 likes)",
+        "url": "https://huggingface.co/higurashi-ai/Haru-4B",
+        "original_url": "https://huggingface.co/higurashi-ai/Haru-4B",
+        "summary": "safetensors, haru, speech, full-duplex, speech-to-speech, audio-to-audio",
+        "published_at": "2026-11-12T11:05:59.000Z",
+        "discovered_at": "2026-11-15T12:44:11.702Z",
+        "discovery_reason": "trending",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 263
+        }
+      },
+      "members": [
+        {
+          "id": "1l78b4w",
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "source_role": "main",
+          "trust": 0.58,
+          "kind_hint": "model_release",
+          "title": "higurashi-ai/Haru-4B (2098 downloads, 263 likes)",
+          "url": "https://huggingface.co/higurashi-ai/Haru-4B",
+          "original_url": "https://huggingface.co/higurashi-ai/Haru-4B",
+          "summary": "safetensors, haru, speech, full-duplex, speech-to-speech, audio-to-audio",
+          "published_at": "2026-11-12T11:05:59.000Z",
+          "discovered_at": "2026-11-15T12:44:11.702Z",
+          "discovery_reason": "trending",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 263
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "title": "higurashi-ai/Haru-4B (2098 downloads, 263 likes)",
+          "url": "https://huggingface.co/higurashi-ai/Haru-4B",
+          "published_at": "2026-11-12T11:05:59.000Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "Haru-4B is a 4B parameter speech-to-speech model designed for full-duplex audio interaction.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.58,
+      "score": 0.497,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal",
+        "trending observed 2026-11-15; publication date preserved",
+        "fresh within the current refresh window",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "1kgf2it",
+      "primary": {
+        "id": "1kgf2it",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Runway's open-source Praxis-1 turns video AI into a robot controller",
+        "url": "https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller",
+        "original_url": "https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller/",
+        "summary": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license. The model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark. It can't yet plan complex action sequences on its own, though. The article Runway's open-source Praxis-1 turns video AI into a robot controller appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/11/Runway-Praxis-1.jpg",
+        "image_source": "rss_content",
+        "published_at": "2026-11-14T09:45:45.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1kgf2it",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Runway's open-source Praxis-1 turns video AI into a robot controller",
+          "url": "https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller",
+          "original_url": "https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller/",
+          "summary": "Runway releases its robotics model Praxis-1 with open weights and source code under the Apache 2.0 license. The model uses knowledge from video training for robot control and leads the World Action Model category on Nvidia's RoboLab-120 benchmark. It can't yet plan complex action sequences on its own, though. The article Runway's open-source Praxis-1 turns video AI into a robot controller appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/11/Runway-Praxis-1.jpg",
+          "image_source": "rss_content",
+          "published_at": "2026-11-14T09:45:45.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Runway's open-source Praxis-1 turns video AI into a robot controller",
+          "url": "https://the-decoder.com/runways-open-source-praxis-1-turns-video-ai-into-a-robot-controller",
+          "published_at": "2026-11-14T09:45:45.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "signal",
+      "one_liner": "Runway releases Praxis-1, an open-weights robotics model trained on video data for robot control tasks.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.465,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Inspect the evaluation setup, data and baselines before applying the reported results."
+    },
+    {
+      "id": "dhew8l",
+      "primary": {
+        "id": "dhew8l",
+        "source_id": "interconnects",
+        "source_name": "Interconnects (Lambert)",
+        "source_role": "main",
+        "trust": 0.85,
+        "title": "Open-source AI without Jensen",
+        "url": "https://interconnects.ai/p/open-source-ai-without-jensen",
+        "original_url": "https://www.interconnects.ai/p/open-source-ai-without-jensen",
+        "summary": "A decapitation. It’s time to rebuild.",
+        "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/ecd978b1-9b6a-4a7d-9324-356397d10839_3182x1790.png",
+        "image_source": "rss_enclosure",
+        "published_at": "2026-11-14T12:23:15.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "dhew8l",
+          "source_id": "interconnects",
+          "source_name": "Interconnects (Lambert)",
+          "source_role": "main",
+          "trust": 0.85,
+          "title": "Open-source AI without Jensen",
+          "url": "https://interconnects.ai/p/open-source-ai-without-jensen",
+          "original_url": "https://www.interconnects.ai/p/open-source-ai-without-jensen",
+          "summary": "A decapitation. It’s time to rebuild.",
+          "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/ecd978b1-9b6a-4a7d-9324-356397d10839_3182x1790.png",
+          "image_source": "rss_enclosure",
+          "published_at": "2026-11-14T12:23:15.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "interconnects",
+          "source_name": "Interconnects (Lambert)",
+          "title": "Open-source AI without Jensen",
+          "url": "https://interconnects.ai/p/open-source-ai-without-jensen",
+          "published_at": "2026-11-14T12:23:15.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "opinion",
+      "quality": "mixed",
+      "one_liner": "Commentary on the future of open-source AI infrastructure following leadership changes at Nvidia.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.85,
+      "score": 0.329,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal",
+        "primary source has high trust weight"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "bl6tt1",
+      "primary": {
+        "id": "bl6tt1",
+        "source_id": "yt_nate_b_jones",
+        "source_name": "AI News & Strategy Daily",
+        "source_role": "main",
+        "trust": 0.62,
+        "kind_hint": "video",
+        "title": "Why did the entire US flight system crash? ✈️🤔 #aviation #ai #news",
+        "url": "https://youtube.com/shorts/4xEuDOEwy5U",
+        "original_url": "https://www.youtube.com/shorts/4xEuDOEwy5U",
+        "summary": "Widespread flight cancellations across America may be tied to a new AI-powered air traffic management tool launched just hours ago. This video analyzes the link between recent radar issues and the deployment of the SMART air traffic management system. While the FAA has cited rolling outages as the primary cause, the timing of this new routing technology suggests a more complex operational challenge for aviation infrastructure. We look at how this AI flight software was designed to handle congestion and why its integration could be causing unexpected system failures. Understanding these air tra",
+        "published_at": "2026-11-14T12:00:16.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UC0C-17n9iuUQPylguM1d-lQ"
+        }
+      },
+      "members": [
+        {
+          "id": "bl6tt1",
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "source_role": "main",
+          "trust": 0.62,
+          "kind_hint": "video",
+          "title": "Why did the entire US flight system crash? ✈️🤔 #aviation #ai #news",
+          "url": "https://youtube.com/shorts/4xEuDOEwy5U",
+          "original_url": "https://www.youtube.com/shorts/4xEuDOEwy5U",
+          "summary": "Widespread flight cancellations across America may be tied to a new AI-powered air traffic management tool launched just hours ago. This video analyzes the link between recent radar issues and the deployment of the SMART air traffic management system. While the FAA has cited rolling outages as the primary cause, the timing of this new routing technology suggests a more complex operational challenge for aviation infrastructure. We look at how this AI flight software was designed to handle congestion and why its integration could be causing unexpected system failures. Understanding these air tra",
+          "published_at": "2026-11-14T12:00:16.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UC0C-17n9iuUQPylguM1d-lQ"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nate_b_jones",
+          "source_name": "AI News & Strategy Daily",
+          "title": "Why did the entire US flight system crash? ✈️🤔 #aviation #ai #news",
+          "url": "https://youtube.com/shorts/4xEuDOEwy5U",
+          "published_at": "2026-11-14T12:00:16.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "mixed",
+      "one_liner": "Widespread flight cancellations across America may be tied to a new AI-powered air traffic management tool launched just hours ago. This video analyzes the link between recent radar issues and the dep",
+      "classification_method": "deterministic",
+      "classification_reason": "Metadata evidence rules; not independently verified",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.62,
+      "score": 0.282,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "1qi59kn",
+      "primary": {
+        "id": "1qi59kn",
+        "source_id": "lobsters_ai",
+        "source_name": "Lobsters (AI tag)",
+        "source_role": "main",
+        "trust": 0.7,
+        "title": "The Little Book of Generative AI Foundations: An Intuitive Mathematical Primer",
+        "url": "https://arxiv.org/abs/2605.29713",
+        "original_url": "https://arxiv.org/abs/2605.29713",
+        "discussion_url": "https://lobste.rs/s/0aungk/little_book_generative_ai_foundations",
+        "discussion_source": "Lobsters (AI tag)",
+        "summary": "Comments",
+        "published_at": "2026-11-14T04:51:14.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1qi59kn",
+          "source_id": "lobsters_ai",
+          "source_name": "Lobsters (AI tag)",
+          "source_role": "main",
+          "trust": 0.7,
+          "title": "The Little Book of Generative AI Foundations: An Intuitive Mathematical Primer",
+          "url": "https://arxiv.org/abs/2605.29713",
+          "original_url": "https://arxiv.org/abs/2605.29713",
+          "discussion_url": "https://lobste.rs/s/0aungk/little_book_generative_ai_foundations",
+          "discussion_source": "Lobsters (AI tag)",
+          "summary": "Comments",
+          "published_at": "2026-11-14T04:51:14.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "lobsters_ai",
+          "source_name": "Lobsters (AI tag)",
+          "title": "The Little Book of Generative AI Foundations: An Intuitive Mathematical Primer",
+          "url": "https://arxiv.org/abs/2605.29713",
+          "published_at": "2026-11-14T04:51:14.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "discussion_url": "https://lobste.rs/s/0aungk/little_book_generative_ai_foundations",
+          "discussion_source": "Lobsters (AI tag)"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "paper",
+      "quality": "mixed",
+      "one_liner": "A primer on generative AI mathematics that covers standard foundational concepts.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.7,
+      "score": 0.288,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "1gc22ob",
+      "primary": {
+        "id": "1gc22ob",
+        "source_id": "hf_trending_models",
+        "source_name": "Hugging Face trending models",
+        "source_role": "main",
+        "trust": 0.58,
+        "kind_hint": "model_release",
+        "title": "NousResearch/Arete-27B (7497 downloads, 605 likes)",
+        "url": "https://huggingface.co/NousResearch/Arete-27B",
+        "original_url": "https://huggingface.co/NousResearch/Arete-27B",
+        "summary": "safetensors, qwen3_5, nous-research, arete, supervised-fine-tuning, value-alignment",
+        "published_at": "2026-11-06T19:31:28.000Z",
+        "discovered_at": "2026-11-15T12:44:11.702Z",
+        "discovery_reason": "trending",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 605
+        }
+      },
+      "members": [
+        {
+          "id": "1gc22ob",
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "source_role": "main",
+          "trust": 0.58,
+          "kind_hint": "model_release",
+          "title": "NousResearch/Arete-27B (7497 downloads, 605 likes)",
+          "url": "https://huggingface.co/NousResearch/Arete-27B",
+          "original_url": "https://huggingface.co/NousResearch/Arete-27B",
+          "summary": "safetensors, qwen3_5, nous-research, arete, supervised-fine-tuning, value-alignment",
+          "published_at": "2026-11-06T19:31:28.000Z",
+          "discovered_at": "2026-11-15T12:44:11.702Z",
+          "discovery_reason": "trending",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 605
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "title": "NousResearch/Arete-27B (7497 downloads, 605 likes)",
+          "url": "https://huggingface.co/NousResearch/Arete-27B",
+          "published_at": "2026-11-06T19:31:28.000Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "mixed",
+      "one_liner": "Arete-27B fine-tune based on Qwen3.5, focused on supervised fine-tuning and alignment.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.58,
+      "score": 0.398,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal",
+        "trending observed 2026-11-15; publication date preserved",
+        "fresh within the current refresh window",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "a1ocx",
+      "primary": {
+        "id": "a1ocx",
+        "source_id": "wired_ai",
+        "source_name": "WIRED AI",
+        "source_role": "main",
+        "trust": 0.76,
+        "kind_hint": "news",
+        "title": "Beware the New AI-Fueled Ransomware Boom",
+        "url": "https://wired.com/story/beware-the-new-ai-fueled-ransomware-boom",
+        "original_url": "https://www.wired.com/story/beware-the-new-ai-fueled-ransomware-boom/",
+        "summary": "Fully automated ransomware hasn’t arrived—yet. But seemingly unsophisticated attackers are using AI tools to wreak havoc.",
+        "image_url": "https://media.wired.com/photos/6af88e4339637940f3ecc20a/master/pass/image%20(76).png",
+        "image_source": "rss_media",
+        "published_at": "2026-11-14T13:00:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "a1ocx",
+          "source_id": "wired_ai",
+          "source_name": "WIRED AI",
+          "source_role": "main",
+          "trust": 0.76,
+          "kind_hint": "news",
+          "title": "Beware the New AI-Fueled Ransomware Boom",
+          "url": "https://wired.com/story/beware-the-new-ai-fueled-ransomware-boom",
+          "original_url": "https://www.wired.com/story/beware-the-new-ai-fueled-ransomware-boom/",
+          "summary": "Fully automated ransomware hasn’t arrived—yet. But seemingly unsophisticated attackers are using AI tools to wreak havoc.",
+          "image_url": "https://media.wired.com/photos/6af88e4339637940f3ecc20a/master/pass/image%20(76).png",
+          "image_source": "rss_media",
+          "published_at": "2026-11-14T13:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "wired_ai",
+          "source_name": "WIRED AI",
+          "title": "Beware the New AI-Fueled Ransomware Boom",
+          "url": "https://wired.com/story/beware-the-new-ai-fueled-ransomware-boom",
+          "published_at": "2026-11-14T13:00:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Overview of how attackers are leveraging AI tools to increase the efficiency of ransomware campaigns.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.76,
+      "score": 0.312,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "15jaq8z",
+      "primary": {
+        "id": "15jaq8z",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "The AI graveyard: a running list of projects and startups that didn’t make it",
+        "url": "https://techcrunch.com/2026/11/14/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it",
+        "original_url": "https://techcrunch.com/2026/11/14/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/",
+        "summary": "From Apple's repeatedly delayed Siri AI to OpenAI's messy \"super app\" launch, here's a look at the AI projects that shut down or missed expectations.",
+        "published_at": "2026-11-14T17:30:00.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "15jaq8z",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "The AI graveyard: a running list of projects and startups that didn’t make it",
+          "url": "https://techcrunch.com/2026/11/14/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it",
+          "original_url": "https://techcrunch.com/2026/11/14/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/",
+          "summary": "From Apple's repeatedly delayed Siri AI to OpenAI's messy \"super app\" launch, here's a look at the AI projects that shut down or missed expectations.",
+          "published_at": "2026-11-14T17:30:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "The AI graveyard: a running list of projects and startups that didn’t make it",
+          "url": "https://techcrunch.com/2026/11/14/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it",
+          "published_at": "2026-11-14T17:30:00.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "A summary of discontinued or underperforming AI projects and startups.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.72,
+      "score": 0.31,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "7l9srq",
+      "primary": {
+        "id": "7l9srq",
+        "source_id": "hf_trending_models",
+        "source_name": "Hugging Face trending models",
+        "source_role": "main",
+        "trust": 0.58,
+        "kind_hint": "model_release",
+        "title": "Comfy-Org/MiniMax-H3-Image (1973388 downloads, 398 likes)",
+        "url": "https://huggingface.co/Comfy-Org/MiniMax-H3-Image",
+        "original_url": "https://huggingface.co/Comfy-Org/MiniMax-H3-Image",
+        "summary": "diffusion-single-file, comfyui, text-to-image, base_model:MiniMaxAI/MiniMax-H3-Image, base_model:finetune:MiniMaxAI/MiniMax-H3-Image, license:other",
+        "published_at": "2026-11-08T20:37:23.000Z",
+        "discovered_at": "2026-11-15T12:44:11.702Z",
+        "discovery_reason": "trending",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 398
+        }
+      },
+      "members": [
+        {
+          "id": "7l9srq",
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "source_role": "main",
+          "trust": 0.58,
+          "kind_hint": "model_release",
+          "title": "Comfy-Org/MiniMax-H3-Image (1973388 downloads, 398 likes)",
+          "url": "https://huggingface.co/Comfy-Org/MiniMax-H3-Image",
+          "original_url": "https://huggingface.co/Comfy-Org/MiniMax-H3-Image",
+          "summary": "diffusion-single-file, comfyui, text-to-image, base_model:MiniMaxAI/MiniMax-H3-Image, base_model:finetune:MiniMaxAI/MiniMax-H3-Image, license:other",
+          "published_at": "2026-11-08T20:37:23.000Z",
+          "discovered_at": "2026-11-15T12:44:11.702Z",
+          "discovery_reason": "trending",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 398
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "title": "Comfy-Org/MiniMax-H3-Image (1973388 downloads, 398 likes)",
+          "url": "https://huggingface.co/Comfy-Org/MiniMax-H3-Image",
+          "published_at": "2026-11-08T20:37:23.000Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "mixed",
+      "one_liner": "ComfyUI-compatible packaging of the MiniMax-H3 image model.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.58,
+      "score": 0.336,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal",
+        "trending observed 2026-11-15; publication date preserved",
+        "fresh within the current refresh window",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": "Read the source's license and usage conditions before adopting the release."
+    },
+    {
+      "id": "1jp8edi",
+      "primary": {
+        "id": "1jp8edi",
+        "source_id": "techcrunch_ai",
+        "source_name": "TechCrunch AI",
+        "source_role": "main",
+        "trust": 0.72,
+        "kind_hint": "news",
+        "title": "Asian governments react to Nvidia CEO Jensen Huang’s exit",
+        "url": "https://techcrunch.com/2026/11/14/asian-governments-react-to-nvidia-ceo-jensen-huangs-exit",
+        "original_url": "https://techcrunch.com/2026/11/14/asian-governments-react-to-nvidia-ceo-jensen-huangs-exit/",
+        "summary": "Some governments moved to confirm chip supply commitments, while others are monitoring the impact on local projects or addressing ongoing investigations.",
+        "published_at": "2026-11-14T16:34:15.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1jp8edi",
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "source_role": "main",
+          "trust": 0.72,
+          "kind_hint": "news",
+          "title": "Asian governments react to Nvidia CEO Jensen Huang’s exit",
+          "url": "https://techcrunch.com/2026/11/14/asian-governments-react-to-nvidia-ceo-jensen-huangs-exit",
+          "original_url": "https://techcrunch.com/2026/11/14/asian-governments-react-to-nvidia-ceo-jensen-huangs-exit/",
+          "summary": "Some governments moved to confirm chip supply commitments, while others are monitoring the impact on local projects or addressing ongoing investigations.",
+          "published_at": "2026-11-14T16:34:15.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "techcrunch_ai",
+          "source_name": "TechCrunch AI",
+          "title": "Asian governments react to Nvidia CEO Jensen Huang’s exit",
+          "url": "https://techcrunch.com/2026/11/14/asian-governments-react-to-nvidia-ceo-jensen-huangs-exit",
+          "published_at": "2026-11-14T16:34:15.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Overview of international government responses to Nvidia's leadership transition.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.72,
+      "score": 0.309,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "1fyhvmd",
+      "primary": {
+        "id": "1fyhvmd",
+        "source_id": "hf_trending_models",
+        "source_name": "Hugging Face trending models",
+        "source_role": "main",
+        "trust": 0.58,
+        "kind_hint": "model_release",
+        "title": "thinkingmachines/Inkling-2-Small (7329 downloads, 330 likes)",
+        "url": "https://huggingface.co/thinkingmachines/Inkling-2-Small",
+        "original_url": "https://huggingface.co/thinkingmachines/Inkling-2-Small",
+        "summary": "transformers, safetensors, inkling2, image-text-to-text, conversational, moe",
+        "published_at": "2026-11-04T19:51:05.000Z",
+        "discovered_at": "2026-11-15T12:44:11.702Z",
+        "discovery_reason": "trending",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 330
+        }
+      },
+      "members": [
+        {
+          "id": "1fyhvmd",
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "source_role": "main",
+          "trust": 0.58,
+          "kind_hint": "model_release",
+          "title": "thinkingmachines/Inkling-2-Small (7329 downloads, 330 likes)",
+          "url": "https://huggingface.co/thinkingmachines/Inkling-2-Small",
+          "original_url": "https://huggingface.co/thinkingmachines/Inkling-2-Small",
+          "summary": "transformers, safetensors, inkling2, image-text-to-text, conversational, moe",
+          "published_at": "2026-11-04T19:51:05.000Z",
+          "discovered_at": "2026-11-15T12:44:11.702Z",
+          "discovery_reason": "trending",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 330
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "title": "thinkingmachines/Inkling-2-Small (7329 downloads, 330 likes)",
+          "url": "https://huggingface.co/thinkingmachines/Inkling-2-Small",
+          "published_at": "2026-11-04T19:51:05.000Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "mixed",
+      "one_liner": "Inkling-2-Small MoE model release; lacks detailed architectural or performance benchmarks.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.58,
+      "score": 0.335,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal",
+        "trending observed 2026-11-15; publication date preserved",
+        "fresh within the current refresh window",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "1uh7rzd",
+      "primary": {
+        "id": "1uh7rzd",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "OpenAI reassigns robotics researchers to other teams as general-purpose models might make specialized robotics AI unnecessary",
+        "url": "https://the-decoder.com/openai-reassigns-robotics-researchers-to-other-teams-as-general-purpose-models-might-make-specialized-robotics-ai-unnecessary",
+        "original_url": "https://the-decoder.com/openai-reassigns-robotics-researchers-to-other-teams-as-general-purpose-models-might-make-specialized-robotics-ai-unnecessary/",
+        "summary": "OpenAI is dissolving its standalone robotics team for the second time, but not because it lacks data. General-purpose models like GPT-6 Astra can apparently control robots directly, making a dedicated unit unnecessary. The researchers are being redistributed across other teams in what the company frames as a way to accelerate its robotics efforts. The article OpenAI reassigns robotics researchers to other teams as general-purpose models might make specialized robotics AI unnecessary appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/openai_robot_arms.png",
+        "image_source": "rss_content",
+        "published_at": "2026-11-14T11:40:51.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1uh7rzd",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "OpenAI reassigns robotics researchers to other teams as general-purpose models might make specialized robotics AI unnecessary",
+          "url": "https://the-decoder.com/openai-reassigns-robotics-researchers-to-other-teams-as-general-purpose-models-might-make-specialized-robotics-ai-unnecessary",
+          "original_url": "https://the-decoder.com/openai-reassigns-robotics-researchers-to-other-teams-as-general-purpose-models-might-make-specialized-robotics-ai-unnecessary/",
+          "summary": "OpenAI is dissolving its standalone robotics team for the second time, but not because it lacks data. General-purpose models like GPT-6 Astra can apparently control robots directly, making a dedicated unit unnecessary. The researchers are being redistributed across other teams in what the company frames as a way to accelerate its robotics efforts. The article OpenAI reassigns robotics researchers to other teams as general-purpose models might make specialized robotics AI unnecessary appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/openai_robot_arms.png",
+          "image_source": "rss_content",
+          "published_at": "2026-11-14T11:40:51.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "OpenAI reassigns robotics researchers to other teams as general-purpose models might make specialized robotics AI unnecessary",
+          "url": "https://the-decoder.com/openai-reassigns-robotics-researchers-to-other-teams-as-general-purpose-models-might-make-specialized-robotics-ai-unnecessary",
+          "published_at": "2026-11-14T11:40:51.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "OpenAI dissolves its robotics team, shifting focus to general-purpose model control for robotic systems.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.306,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "1ezrh8a",
+      "primary": {
+        "id": "1ezrh8a",
+        "source_id": "hf_trending_models",
+        "source_name": "Hugging Face trending models",
+        "source_role": "main",
+        "trust": 0.58,
+        "kind_hint": "model_release",
+        "title": "Edge0/Edge0-145B-NVFP4 (41606 downloads, 274 likes)",
+        "url": "https://huggingface.co/Edge0/Edge0-145B-NVFP4",
+        "original_url": "https://huggingface.co/Edge0/Edge0-145B-NVFP4",
+        "summary": "edge0, gguf, moe, edge-inference, latent-moe, 4-bit",
+        "published_at": "2026-11-11T05:22:51.000Z",
+        "discovered_at": "2026-11-15T12:44:11.702Z",
+        "discovery_reason": "trending",
+        "published_at_source": "api",
+        "date_confidence": "high",
+        "engagement": {
+          "score": 274
+        }
+      },
+      "members": [
+        {
+          "id": "1ezrh8a",
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "source_role": "main",
+          "trust": 0.58,
+          "kind_hint": "model_release",
+          "title": "Edge0/Edge0-145B-NVFP4 (41606 downloads, 274 likes)",
+          "url": "https://huggingface.co/Edge0/Edge0-145B-NVFP4",
+          "original_url": "https://huggingface.co/Edge0/Edge0-145B-NVFP4",
+          "summary": "edge0, gguf, moe, edge-inference, latent-moe, 4-bit",
+          "published_at": "2026-11-11T05:22:51.000Z",
+          "discovered_at": "2026-11-15T12:44:11.702Z",
+          "discovery_reason": "trending",
+          "published_at_source": "api",
+          "date_confidence": "high",
+          "engagement": {
+            "score": 274
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "hf_trending_models",
+          "source_name": "Hugging Face trending models",
+          "title": "Edge0/Edge0-145B-NVFP4 (41606 downloads, 274 likes)",
+          "url": "https://huggingface.co/Edge0/Edge0-145B-NVFP4",
+          "published_at": "2026-11-11T05:22:51.000Z",
+          "published_at_source": "api",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "model_release",
+      "quality": "mixed",
+      "one_liner": "Edge0-145B-NVFP4 is a 4-bit quantized GGUF version of a large latent mixture-of-experts model.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.58,
+      "score": 0.335,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal",
+        "trending observed 2026-11-15; publication date preserved",
+        "fresh within the current refresh window",
+        "source-native discussion or engagement is unusually high"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "vvhyn0",
+      "primary": {
+        "id": "vvhyn0",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Anthropic can already retrain Mythos with \"a fraction of the compute originally needed,\" says former researcher Coxon",
+        "url": "https://the-decoder.com/anthropic-can-already-retrain-mythos-with-a-fraction-of-the-compute-originally-needed-says-former-researcher-coxon",
+        "original_url": "https://the-decoder.com/anthropic-can-already-retrain-mythos-with-a-fraction-of-the-compute-originally-needed-says-former-researcher-coxon/",
+        "summary": "Former OpenAI and Anthropic researcher Jacob Coxon points to a slide from Anthropic's IPO roadshow as a reason he left, saying it shows the company's algorithms are improving not just quickly but at an accelerating rate. Coxon continues to call for a pause on frontier model development so competitors can catch up and human-level AI can become a commodity. The article Anthropic can already retrain Mythos with \"a fraction of the compute originally needed,\" says former researcher Coxon appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/claude_laser.png",
+        "image_source": "rss_content",
+        "published_at": "2026-11-14T11:21:41.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "vvhyn0",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Anthropic can already retrain Mythos with \"a fraction of the compute originally needed,\" says former researcher Coxon",
+          "url": "https://the-decoder.com/anthropic-can-already-retrain-mythos-with-a-fraction-of-the-compute-originally-needed-says-former-researcher-coxon",
+          "original_url": "https://the-decoder.com/anthropic-can-already-retrain-mythos-with-a-fraction-of-the-compute-originally-needed-says-former-researcher-coxon/",
+          "summary": "Former OpenAI and Anthropic researcher Jacob Coxon points to a slide from Anthropic's IPO roadshow as a reason he left, saying it shows the company's algorithms are improving not just quickly but at an accelerating rate. Coxon continues to call for a pause on frontier model development so competitors can catch up and human-level AI can become a commodity. The article Anthropic can already retrain Mythos with \"a fraction of the compute originally needed,\" says former researcher Coxon appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/claude_laser.png",
+          "image_source": "rss_content",
+          "published_at": "2026-11-14T11:21:41.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Anthropic can already retrain Mythos with \"a fraction of the compute originally needed,\" says former researcher Coxon",
+          "url": "https://the-decoder.com/anthropic-can-already-retrain-mythos-with-a-fraction-of-the-compute-originally-needed-says-former-researcher-coxon",
+          "published_at": "2026-11-14T11:21:41.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Former researcher claims Anthropic's compute efficiency for model retraining is improving at an accelerating rate.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.305,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": ""
+    },
+    {
+      "id": "1sjz4hh",
+      "primary": {
+        "id": "1sjz4hh",
+        "source_id": "the_decoder",
+        "source_name": "The Decoder",
+        "source_role": "main",
+        "trust": 0.74,
+        "kind_hint": "news",
+        "title": "Anthropic CEO Amodei admits \"there's a huge uncertainty in what's going to happen next year\" days before a record IPO",
+        "url": "https://the-decoder.com/anthropic-ceo-amodei-admits-theres-a-huge-uncertainty-in-whats-going-to-happen-next-year-days-before-a-record-ipo",
+        "original_url": "https://the-decoder.com/anthropic-ceo-amodei-admits-theres-a-huge-uncertainty-in-whats-going-to-happen-next-year-days-before-a-record-ipo/",
+        "summary": "Days before what could be the largest IPO in history, Anthropic CEO Dario Amodei called buying compute 'the deepest business dilemma' his company faces. Anthropic's commitments now total nearly $901 billion, and it's still far from clear whether future revenue will justify those costs. The planned IPO is largely meant to serve as a financial buffer against that uncertainty. The article Anthropic CEO Amodei admits \"there's a huge uncertainty in what's going to happen next year\" days before a record IPO appeared first on The Decoder.",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/11/anthropic_logos-5.png",
+        "image_source": "rss_content",
+        "published_at": "2026-11-14T19:05:17.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high"
+      },
+      "members": [
+        {
+          "id": "1sjz4hh",
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "source_role": "main",
+          "trust": 0.74,
+          "kind_hint": "news",
+          "title": "Anthropic CEO Amodei admits \"there's a huge uncertainty in what's going to happen next year\" days before a record IPO",
+          "url": "https://the-decoder.com/anthropic-ceo-amodei-admits-theres-a-huge-uncertainty-in-whats-going-to-happen-next-year-days-before-a-record-ipo",
+          "original_url": "https://the-decoder.com/anthropic-ceo-amodei-admits-theres-a-huge-uncertainty-in-whats-going-to-happen-next-year-days-before-a-record-ipo/",
+          "summary": "Days before what could be the largest IPO in history, Anthropic CEO Dario Amodei called buying compute 'the deepest business dilemma' his company faces. Anthropic's commitments now total nearly $901 billion, and it's still far from clear whether future revenue will justify those costs. The planned IPO is largely meant to serve as a financial buffer against that uncertainty. The article Anthropic CEO Amodei admits \"there's a huge uncertainty in what's going to happen next year\" days before a record IPO appeared first on The Decoder.",
+          "image_url": "https://the-decoder.com/wp-content/uploads/2026/11/anthropic_logos-5.png",
+          "image_source": "rss_content",
+          "published_at": "2026-11-14T19:05:17.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "the_decoder",
+          "source_name": "The Decoder",
+          "title": "Anthropic CEO Amodei admits \"there's a huge uncertainty in what's going to happen next year\" days before a record IPO",
+          "url": "https://the-decoder.com/anthropic-ceo-amodei-admits-theres-a-huge-uncertainty-in-whats-going-to-happen-next-year-days-before-a-record-ipo",
+          "published_at": "2026-11-14T19:05:17.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "news",
+      "quality": "mixed",
+      "one_liner": "Anthropic CEO discusses the financial risks and compute expenditure challenges ahead of an IPO.",
+      "classification_method": "llm",
+      "classification_reason": "Model assessment from source metadata; not independently verified",
+      "classification_provider": "gemini",
+      "classification_model": "gemini-3.1-flash-lite",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.74,
+      "score": 0.296,
+      "why_this_surfaced": [
+        "kept for context despite familiar coverage",
+        "classified as useful but lower-confidence signal"
+      ],
+      "builder_action": ""
+    }
+  ],
+  "section_counts": {
+    "main": 35,
+    "repo": 13,
+    "learning": 15
+  }
+}
