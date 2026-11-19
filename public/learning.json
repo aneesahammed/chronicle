@@ -1,15 +1,15 @@
 {
-  "attempted_at": "2026-11-15T22:48:28.896Z",
+  "attempted_at": "2026-11-19T15:48:35.768Z",
   "selection_stats": {
-    "candidates": 15,
-    "reviewed": 15,
-    "selected": 15
+    "candidates": 12,
+    "reviewed": 12,
+    "selected": 12
   },
   "classification_counts": {
-    "deterministic": 15
+    "deterministic": 12
   },
-  "generated_at": "2026-11-15T22:48:28.896Z",
-  "last_successful_generated_at": "2026-11-15T22:48:28.896Z",
+  "generated_at": "2026-11-19T15:48:35.768Z",
+  "last_successful_generated_at": "2026-11-19T15:48:35.768Z",
   "refresh_status": "ok",
   "classification_mode": "deterministic",
   "window_hours": 720,
@@ -64,13 +64,13 @@
       "fetched_count": 3,
       "consecutive_failures": 0,
       "consecutive_empty": 0,
-      "fresh_count": 2,
-      "stale_count": 1,
+      "fresh_count": 1,
+      "stale_count": 2,
       "evergreen_count": 0,
       "oldest_published_at": "2026-09-22T19:32:17.000Z",
       "newest_published_at": "2026-11-04T11:00:19.000Z",
-      "selected_count": 2,
-      "unique_selected_count": 2
+      "selected_count": 1,
+      "unique_selected_count": 1
     },
     {
       "id": "yt_google_deepmind",
@@ -78,7 +78,7 @@
       "status": "ok",
       "fetched_count": 0,
       "consecutive_failures": 0,
-      "consecutive_empty": 13,
+      "consecutive_empty": 14,
       "fresh_count": 0,
       "stale_count": 0,
       "evergreen_count": 0,
@@ -89,44 +89,42 @@
       "id": "yt_openai",
       "name": "OpenAI YouTube",
       "status": "ok",
+      "fetched_count": 0,
+      "consecutive_failures": 0,
+      "consecutive_empty": 1,
+      "fresh_count": 0,
+      "stale_count": 0,
+      "evergreen_count": 0,
+      "selected_count": 0,
+      "unique_selected_count": 0
+    },
+    {
+      "id": "yt_nvidia_developer",
+      "name": "NVIDIA Developer YouTube",
+      "status": "ok",
       "fetched_count": 3,
       "consecutive_failures": 0,
       "consecutive_empty": 0,
       "fresh_count": 3,
       "stale_count": 0,
       "evergreen_count": 0,
-      "oldest_published_at": "2026-11-11T01:24:07.000Z",
-      "newest_published_at": "2026-11-11T01:24:08.000Z",
+      "oldest_published_at": "2026-11-09T18:33:34.000Z",
+      "newest_published_at": "2026-11-18T19:23:14.000Z",
       "selected_count": 3,
       "unique_selected_count": 3
-    },
-    {
-      "id": "yt_nvidia_developer",
-      "name": "NVIDIA Developer YouTube",
-      "status": "ok",
-      "fetched_count": 2,
-      "consecutive_failures": 0,
-      "consecutive_empty": 0,
-      "fresh_count": 2,
-      "stale_count": 0,
-      "evergreen_count": 0,
-      "oldest_published_at": "2026-11-06T06:21:34.000Z",
-      "newest_published_at": "2026-11-09T18:33:34.000Z",
-      "selected_count": 2,
-      "unique_selected_count": 2
     },
     {
       "id": "yt_huggingface",
       "name": "Hugging Face YouTube",
       "status": "ok",
-      "fetched_count": 2,
+      "fetched_count": 3,
       "consecutive_failures": 0,
       "consecutive_empty": 0,
       "fresh_count": 2,
-      "stale_count": 0,
+      "stale_count": 1,
       "evergreen_count": 0,
       "oldest_published_at": "2026-10-19T03:34:17.000Z",
-      "newest_published_at": "2026-10-26T14:32:20.000Z",
+      "newest_published_at": "2026-11-16T16:00:20.000Z",
       "selected_count": 2,
       "unique_selected_count": 2
     },
@@ -151,7 +149,7 @@
       "status": "ok",
       "fetched_count": 0,
       "consecutive_failures": 0,
-      "consecutive_empty": 13,
+      "consecutive_empty": 14,
       "fresh_count": 0,
       "stale_count": 0,
       "evergreen_count": 0,
@@ -159,63 +157,63 @@
       "unique_selected_count": 0
     }
   ],
-  "count": 15,
+  "count": 12,
   "clusters": [
     {
-      "id": "lob81n",
+      "id": "nigjq8",
       "primary": {
-        "id": "lob81n",
-        "source_id": "yt_openai",
-        "source_name": "OpenAI YouTube",
+        "id": "nigjq8",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
         "source_role": "learning",
-        "trust": 0.82,
+        "trust": 0.78,
         "kind_hint": "video",
-        "title": "Build What’s Next on the ChatGPT Platform with Plugins | DevDay 2026",
-        "url": "https://youtube.com/watch?v=pIW_8VyvCuQ",
-        "original_url": "https://www.youtube.com/watch?v=pIW_8VyvCuQ",
-        "summary": "Bring your tools, knowledge, and interfaces into ChatGPT and Codex with plugin extensions. Through live demos, learn how to turn an idea into a useful experience, share it, and reach new users.",
-        "image_url": "https://i.ytimg.com/vi/pIW_8VyvCuQ/hqdefault.jpg",
+        "title": "How to Build Training-Ready Datasets with NVIDIA Cosmos Data Factory Skills",
+        "url": "https://youtube.com/watch?v=D47jNWtzPsI",
+        "original_url": "https://www.youtube.com/watch?v=D47jNWtzPsI",
+        "summary": "See how a coding agent uses NVIDIA Cosmos Data Factory blueprints and skills to turn a single image into a training-ready dataset for physical AI. Follow along as the agent selects a blueprint, generates synthetic warehouse fall-event videos, and automatically annotates the results—all through a few prompts. NVIDIA Cosmos Data Factory is a collection of skills and blueprints for labeling, curating, augmenting, and evaluating data at scale. Explore five reference blueprints and six composable skills to build a data pipeline for your use case. Get started with Cosmos: ⚙️ Get the Code → https://g",
+        "image_url": "https://i.ytimg.com/vi/D47jNWtzPsI/hqdefault.jpg",
         "image_source": "youtube_thumbnail",
-        "published_at": "2026-11-11T01:24:08.000Z",
+        "published_at": "2026-11-18T19:23:14.000Z",
         "published_at_source": "feed",
         "date_confidence": "high",
         "learning": {
           "provider": "YouTube",
-          "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
-          "video_id": "pIW_8VyvCuQ"
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "D47jNWtzPsI"
         }
       },
       "members": [
         {
-          "id": "lob81n",
-          "source_id": "yt_openai",
-          "source_name": "OpenAI YouTube",
+          "id": "nigjq8",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
           "source_role": "learning",
-          "trust": 0.82,
+          "trust": 0.78,
           "kind_hint": "video",
-          "title": "Build What’s Next on the ChatGPT Platform with Plugins | DevDay 2026",
-          "url": "https://youtube.com/watch?v=pIW_8VyvCuQ",
-          "original_url": "https://www.youtube.com/watch?v=pIW_8VyvCuQ",
-          "summary": "Bring your tools, knowledge, and interfaces into ChatGPT and Codex with plugin extensions. Through live demos, learn how to turn an idea into a useful experience, share it, and reach new users.",
-          "image_url": "https://i.ytimg.com/vi/pIW_8VyvCuQ/hqdefault.jpg",
+          "title": "How to Build Training-Ready Datasets with NVIDIA Cosmos Data Factory Skills",
+          "url": "https://youtube.com/watch?v=D47jNWtzPsI",
+          "original_url": "https://www.youtube.com/watch?v=D47jNWtzPsI",
+          "summary": "See how a coding agent uses NVIDIA Cosmos Data Factory blueprints and skills to turn a single image into a training-ready dataset for physical AI. Follow along as the agent selects a blueprint, generates synthetic warehouse fall-event videos, and automatically annotates the results—all through a few prompts. NVIDIA Cosmos Data Factory is a collection of skills and blueprints for labeling, curating, augmenting, and evaluating data at scale. Explore five reference blueprints and six composable skills to build a data pipeline for your use case. Get started with Cosmos: ⚙️ Get the Code → https://g",
+          "image_url": "https://i.ytimg.com/vi/D47jNWtzPsI/hqdefault.jpg",
           "image_source": "youtube_thumbnail",
-          "published_at": "2026-11-11T01:24:08.000Z",
+          "published_at": "2026-11-18T19:23:14.000Z",
           "published_at_source": "feed",
           "date_confidence": "high",
           "learning": {
             "provider": "YouTube",
-            "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
-            "video_id": "pIW_8VyvCuQ"
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "D47jNWtzPsI"
           }
         }
       ],
       "source_trail": [
         {
-          "source_id": "yt_openai",
-          "source_name": "OpenAI YouTube",
-          "title": "Build What’s Next on the ChatGPT Platform with Plugins | DevDay 2026",
-          "url": "https://youtube.com/watch?v=pIW_8VyvCuQ",
-          "published_at": "2026-11-11T01:24:08.000Z",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "How to Build Training-Ready Datasets with NVIDIA Cosmos Data Factory Skills",
+          "url": "https://youtube.com/watch?v=D47jNWtzPsI",
+          "published_at": "2026-11-18T19:23:14.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -223,75 +221,75 @@
       "also_seen_on": [],
       "kind": "video",
       "quality": "signal",
-      "one_liner": "Bring your tools, knowledge, and interfaces into ChatGPT and Codex with plugin extensions. Through live demos, learn how to turn an idea into a useful experience, share it, and reach new users.",
+      "one_liner": "See how a coding agent uses NVIDIA Cosmos Data Factory blueprints and skills to turn a single image into a training-ready dataset for physical AI. Follow along as the agent selects a blueprint, genera",
       "classification_method": "deterministic",
       "classification_reason": "Metadata evidence rules; not independently verified",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.82,
-      "score": 0.631,
+      "novelty": 0.794,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.822,
       "why_this_surfaced": [
         "specific engineering subject or instructional task in source metadata",
-        "kept for context despite familiar coverage",
+        "high novelty against the 30-day history",
         "classified as concrete builder or research signal"
       ],
       "builder_action": "Work through the instructional example; check the source description for prerequisites."
     },
     {
-      "id": "1ymfzw4",
+      "id": "12qz9n7",
       "primary": {
-        "id": "1ymfzw4",
-        "source_id": "yt_openai",
-        "source_name": "OpenAI YouTube",
+        "id": "12qz9n7",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
         "source_role": "learning",
-        "trust": 0.82,
+        "trust": 0.78,
         "kind_hint": "video",
-        "title": "What Will You Build With Coding Agents That Don’t Quit? | DevDay 2026",
-        "url": "https://youtube.com/watch?v=U1IVZy9FhVQ",
-        "original_url": "https://www.youtube.com/watch?v=U1IVZy9FhVQ",
-        "summary": "Learn from a Codex run that spent over 1,000 hours keeping builds and tests passing. Explore how to choose recurring tasks, improve feedback, manage token budgets, and decide when engineers should step in.",
-        "image_url": "https://i.ytimg.com/vi/U1IVZy9FhVQ/hqdefault.jpg",
+        "title": "Build Physical AI Applications with Open Models on NVIDIA Jetson | Jetson Holiday Stream",
+        "url": "https://youtube.com/watch?v=2AssDCQ_128",
+        "original_url": "https://www.youtube.com/watch?v=2AssDCQ_128",
+        "summary": "Learn how to build Physical AI applications with open models on NVIDIA Jetson. In this livestream, community developers demonstrate their projects and walk through model selection, application architecture, and deployment on Jetson. Hear how they tackled implementation challenges, explore lessons you can apply to your own builds, and bring your questions for the featured developers.",
+        "image_url": "https://i.ytimg.com/vi/2AssDCQ_128/hqdefault.jpg",
         "image_source": "youtube_thumbnail",
-        "published_at": "2026-11-11T01:24:07.000Z",
+        "published_at": "2026-11-17T21:19:15.000Z",
         "published_at_source": "feed",
         "date_confidence": "high",
         "learning": {
           "provider": "YouTube",
-          "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
-          "video_id": "U1IVZy9FhVQ"
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "2AssDCQ_128"
         }
       },
       "members": [
         {
-          "id": "1ymfzw4",
-          "source_id": "yt_openai",
-          "source_name": "OpenAI YouTube",
+          "id": "12qz9n7",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
           "source_role": "learning",
-          "trust": 0.82,
+          "trust": 0.78,
           "kind_hint": "video",
-          "title": "What Will You Build With Coding Agents That Don’t Quit? | DevDay 2026",
-          "url": "https://youtube.com/watch?v=U1IVZy9FhVQ",
-          "original_url": "https://www.youtube.com/watch?v=U1IVZy9FhVQ",
-          "summary": "Learn from a Codex run that spent over 1,000 hours keeping builds and tests passing. Explore how to choose recurring tasks, improve feedback, manage token budgets, and decide when engineers should step in.",
-          "image_url": "https://i.ytimg.com/vi/U1IVZy9FhVQ/hqdefault.jpg",
+          "title": "Build Physical AI Applications with Open Models on NVIDIA Jetson | Jetson Holiday Stream",
+          "url": "https://youtube.com/watch?v=2AssDCQ_128",
+          "original_url": "https://www.youtube.com/watch?v=2AssDCQ_128",
+          "summary": "Learn how to build Physical AI applications with open models on NVIDIA Jetson. In this livestream, community developers demonstrate their projects and walk through model selection, application architecture, and deployment on Jetson. Hear how they tackled implementation challenges, explore lessons you can apply to your own builds, and bring your questions for the featured developers.",
+          "image_url": "https://i.ytimg.com/vi/2AssDCQ_128/hqdefault.jpg",
           "image_source": "youtube_thumbnail",
-          "published_at": "2026-11-11T01:24:07.000Z",
+          "published_at": "2026-11-17T21:19:15.000Z",
           "published_at_source": "feed",
           "date_confidence": "high",
           "learning": {
             "provider": "YouTube",
-            "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
-            "video_id": "U1IVZy9FhVQ"
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "2AssDCQ_128"
           }
         }
       ],
       "source_trail": [
         {
-          "source_id": "yt_openai",
-          "source_name": "OpenAI YouTube",
-          "title": "What Will You Build With Coding Agents That Don’t Quit? | DevDay 2026",
-          "url": "https://youtube.com/watch?v=U1IVZy9FhVQ",
-          "published_at": "2026-11-11T01:24:07.000Z",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "Build Physical AI Applications with Open Models on NVIDIA Jetson | Jetson Holiday Stream",
+          "url": "https://youtube.com/watch?v=2AssDCQ_128",
+          "published_at": "2026-11-17T21:19:15.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -299,75 +297,75 @@
       "also_seen_on": [],
       "kind": "video",
       "quality": "signal",
-      "one_liner": "Learn from a Codex run that spent over 1,000 hours keeping builds and tests passing. Explore how to choose recurring tasks, improve feedback, manage token budgets, and decide when engineers should ste",
+      "one_liner": "Learn how to build Physical AI applications with open models on NVIDIA Jetson. In this livestream, community developers demonstrate their projects and walk through model selection, application archite",
       "classification_method": "deterministic",
       "classification_reason": "Metadata evidence rules; not independently verified",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.82,
-      "score": 0.631,
+      "novelty": 0.828,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.796,
       "why_this_surfaced": [
         "specific engineering subject or instructional task in source metadata",
-        "kept for context despite familiar coverage",
+        "high novelty against the 30-day history",
         "classified as concrete builder or research signal"
       ],
       "builder_action": "Work through the instructional example; check the source description for prerequisites."
     },
     {
-      "id": "1vd19n7",
+      "id": "cdpgvz",
       "primary": {
-        "id": "1vd19n7",
-        "source_id": "yt_openai",
-        "source_name": "OpenAI YouTube",
+        "id": "cdpgvz",
+        "source_id": "yt_huggingface",
+        "source_name": "Hugging Face YouTube",
         "source_role": "learning",
-        "trust": 0.82,
+        "trust": 0.78,
         "kind_hint": "video",
-        "title": "Harness-as-a-Service: Building with the Agents API | DevDay 2026",
-        "url": "https://youtube.com/watch?v=b7l_Dhe1h8M",
-        "original_url": "https://www.youtube.com/watch?v=b7l_Dhe1h8M",
-        "summary": "Build with the Codex harness through the Agents API. Learn how to run agents in your environment, keep long-running tasks going, and understand which infrastructure OpenAI manages.",
-        "image_url": "https://i.ytimg.com/vi/b7l_Dhe1h8M/hqdefault.jpg",
+        "title": "Using Hugging Face Jobs to train a NanoGPT model",
+        "url": "https://youtube.com/watch?v=7Yx_7byZiFU",
+        "original_url": "https://www.youtube.com/watch?v=7Yx_7byZiFU",
+        "summary": "How to use 🤗 Jobs to run any kind of training task when your GPU is too small Code: https://github.com/scienceetonnante/nanogpt-jobs 00:00 Introduction 01:21 Model and training code 02:57 Using Jobs 04:15 The shell script 05:35 Run and results",
+        "image_url": "https://i.ytimg.com/vi/7Yx_7byZiFU/hqdefault.jpg",
         "image_source": "youtube_thumbnail",
-        "published_at": "2026-11-11T01:24:07.000Z",
+        "published_at": "2026-11-16T16:00:20.000Z",
         "published_at_source": "feed",
         "date_confidence": "high",
         "learning": {
           "provider": "YouTube",
-          "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
-          "video_id": "b7l_Dhe1h8M"
+          "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
+          "video_id": "7Yx_7byZiFU"
         }
       },
       "members": [
         {
-          "id": "1vd19n7",
-          "source_id": "yt_openai",
-          "source_name": "OpenAI YouTube",
+          "id": "cdpgvz",
+          "source_id": "yt_huggingface",
+          "source_name": "Hugging Face YouTube",
           "source_role": "learning",
-          "trust": 0.82,
+          "trust": 0.78,
           "kind_hint": "video",
-          "title": "Harness-as-a-Service: Building with the Agents API | DevDay 2026",
-          "url": "https://youtube.com/watch?v=b7l_Dhe1h8M",
-          "original_url": "https://www.youtube.com/watch?v=b7l_Dhe1h8M",
-          "summary": "Build with the Codex harness through the Agents API. Learn how to run agents in your environment, keep long-running tasks going, and understand which infrastructure OpenAI manages.",
-          "image_url": "https://i.ytimg.com/vi/b7l_Dhe1h8M/hqdefault.jpg",
+          "title": "Using Hugging Face Jobs to train a NanoGPT model",
+          "url": "https://youtube.com/watch?v=7Yx_7byZiFU",
+          "original_url": "https://www.youtube.com/watch?v=7Yx_7byZiFU",
+          "summary": "How to use 🤗 Jobs to run any kind of training task when your GPU is too small Code: https://github.com/scienceetonnante/nanogpt-jobs 00:00 Introduction 01:21 Model and training code 02:57 Using Jobs 04:15 The shell script 05:35 Run and results",
+          "image_url": "https://i.ytimg.com/vi/7Yx_7byZiFU/hqdefault.jpg",
           "image_source": "youtube_thumbnail",
-          "published_at": "2026-11-11T01:24:07.000Z",
+          "published_at": "2026-11-16T16:00:20.000Z",
           "published_at_source": "feed",
           "date_confidence": "high",
           "learning": {
             "provider": "YouTube",
-            "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
-            "video_id": "b7l_Dhe1h8M"
+            "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
+            "video_id": "7Yx_7byZiFU"
           }
         }
       ],
       "source_trail": [
         {
-          "source_id": "yt_openai",
-          "source_name": "OpenAI YouTube",
-          "title": "Harness-as-a-Service: Building with the Agents API | DevDay 2026",
-          "url": "https://youtube.com/watch?v=b7l_Dhe1h8M",
-          "published_at": "2026-11-11T01:24:07.000Z",
+          "source_id": "yt_huggingface",
+          "source_name": "Hugging Face YouTube",
+          "title": "Using Hugging Face Jobs to train a NanoGPT model",
+          "url": "https://youtube.com/watch?v=7Yx_7byZiFU",
+          "published_at": "2026-11-16T16:00:20.000Z",
           "published_at_source": "feed",
           "date_confidence": "high"
         }
@@ -375,16 +373,16 @@
       "also_seen_on": [],
       "kind": "video",
       "quality": "signal",
-      "one_liner": "Build with the Codex harness through the Agents API. Learn how to run agents in your environment, keep long-running tasks going, and understand which infrastructure OpenAI manages.",
+      "one_liner": "How to use 🤗 Jobs to run any kind of training task when your GPU is too small Code: https://github.com/scienceetonnante/nanogpt-jobs 00:00 Introduction 01:21 Model and training code 02:57 Using Jobs ",
       "classification_method": "deterministic",
       "classification_reason": "Metadata evidence rules; not independently verified",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.82,
-      "score": 0.631,
+      "novelty": 0.803,
+      "novelty_label": "high",
+      "trust": 0.78,
+      "score": 0.783,
       "why_this_surfaced": [
         "specific engineering subject or instructional task in source metadata",
-        "kept for context despite familiar coverage",
+        "high novelty against the 30-day history",
         "classified as concrete builder or research signal"
       ],
       "builder_action": "Work through the instructional example; check the source description for prerequisites."
@@ -452,82 +450,6 @@
       "kind": "video",
       "quality": "signal",
       "one_liner": "Learn More: https://bit.ly/4ikf9L0 Traditional software tests confirm that your code is working, but fall short when it comes to testing agents. Evals allow you to measure an agent’s decisions and act",
-      "classification_method": "deterministic",
-      "classification_reason": "Metadata evidence rules; not independently verified",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.623,
-      "why_this_surfaced": [
-        "specific engineering subject or instructional task in source metadata",
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Work through the instructional example; check the source description for prerequisites."
-    },
-    {
-      "id": "4410uv",
-      "primary": {
-        "id": "4410uv",
-        "source_id": "yt_deeplearning_ai",
-        "source_name": "DeepLearning.AI YouTube",
-        "source_role": "learning",
-        "trust": 0.78,
-        "kind_hint": "video",
-        "title": "Learn to build better AI Agents through better context",
-        "url": "https://youtube.com/watch?v=CUjHZlvQufk",
-        "original_url": "https://www.youtube.com/watch?v=CUjHZlvQufk",
-        "summary": "Learn More: https://bit.ly/4yy5iWP The longer an agent works, the more repeated, contradictory, or stale information builds up in its context. Models perform worse as their context grows, a problem Jeff Huber and his team at Chroma named Context Rot. In our new course, Context Engineering, taught by Jeff Huber alongside guest speaker Drew Breunig, you'll build agent harnesses from scratch in Python and learn to give agents the right information, in the right format, at the right time. In this course, you'll learn: - Agentic search: Retrieve data with multiple search tools from different source",
-        "image_url": "https://i.ytimg.com/vi/CUjHZlvQufk/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-10-20T15:16:35.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCcIXc5mJsHVYTZR1maL5l9w",
-          "video_id": "CUjHZlvQufk"
-        }
-      },
-      "members": [
-        {
-          "id": "4410uv",
-          "source_id": "yt_deeplearning_ai",
-          "source_name": "DeepLearning.AI YouTube",
-          "source_role": "learning",
-          "trust": 0.78,
-          "kind_hint": "video",
-          "title": "Learn to build better AI Agents through better context",
-          "url": "https://youtube.com/watch?v=CUjHZlvQufk",
-          "original_url": "https://www.youtube.com/watch?v=CUjHZlvQufk",
-          "summary": "Learn More: https://bit.ly/4yy5iWP The longer an agent works, the more repeated, contradictory, or stale information builds up in its context. Models perform worse as their context grows, a problem Jeff Huber and his team at Chroma named Context Rot. In our new course, Context Engineering, taught by Jeff Huber alongside guest speaker Drew Breunig, you'll build agent harnesses from scratch in Python and learn to give agents the right information, in the right format, at the right time. In this course, you'll learn: - Agentic search: Retrieve data with multiple search tools from different source",
-          "image_url": "https://i.ytimg.com/vi/CUjHZlvQufk/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-10-20T15:16:35.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCcIXc5mJsHVYTZR1maL5l9w",
-            "video_id": "CUjHZlvQufk"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_deeplearning_ai",
-          "source_name": "DeepLearning.AI YouTube",
-          "title": "Learn to build better AI Agents through better context",
-          "url": "https://youtube.com/watch?v=CUjHZlvQufk",
-          "published_at": "2026-10-20T15:16:35.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "Learn More: https://bit.ly/4yy5iWP The longer an agent works, the more repeated, contradictory, or stale information builds up in its context. Models perform worse as their context grows, a problem Je",
       "classification_method": "deterministic",
       "classification_reason": "Metadata evidence rules; not independently verified",
       "novelty": 0,
@@ -618,82 +540,6 @@
       "builder_action": "Work through the instructional example; check the source description for prerequisites."
     },
     {
-      "id": "1o9b2q3",
-      "primary": {
-        "id": "1o9b2q3",
-        "source_id": "yt_nvidia_developer",
-        "source_name": "NVIDIA Developer YouTube",
-        "source_role": "learning",
-        "trust": 0.78,
-        "kind_hint": "video",
-        "title": "Train, Simulate, and Serve World Models with NVIDIA Cosmos Framework and NIM | Cosmos Labs",
-        "url": "https://youtube.com/watch?v=8lNoGg_j8S8",
-        "original_url": "https://www.youtube.com/watch?v=8lNoGg_j8S8",
-        "summary": "NVIDIA Cosmos Framework is opening more of the training stack behind Cosmos models, giving developers reusable skills and recipes to build with Cosmos and other compatible models. Join NVIDIA experts for a practical walkthrough of how to choose a recipe, work with a compatible model, and point your coding agent to skills for training, customization, distillation, and quantization. We’ll also explore new support for offline and online reinforcement learning and what it enables for robotics developers. What You'll Learn: - How to build custom world models using Cosmos Framework - How to use offl",
-        "image_url": "https://i.ytimg.com/vi/8lNoGg_j8S8/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-11-06T06:21:34.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-          "video_id": "8lNoGg_j8S8"
-        }
-      },
-      "members": [
-        {
-          "id": "1o9b2q3",
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "source_role": "learning",
-          "trust": 0.78,
-          "kind_hint": "video",
-          "title": "Train, Simulate, and Serve World Models with NVIDIA Cosmos Framework and NIM | Cosmos Labs",
-          "url": "https://youtube.com/watch?v=8lNoGg_j8S8",
-          "original_url": "https://www.youtube.com/watch?v=8lNoGg_j8S8",
-          "summary": "NVIDIA Cosmos Framework is opening more of the training stack behind Cosmos models, giving developers reusable skills and recipes to build with Cosmos and other compatible models. Join NVIDIA experts for a practical walkthrough of how to choose a recipe, work with a compatible model, and point your coding agent to skills for training, customization, distillation, and quantization. We’ll also explore new support for offline and online reinforcement learning and what it enables for robotics developers. What You'll Learn: - How to build custom world models using Cosmos Framework - How to use offl",
-          "image_url": "https://i.ytimg.com/vi/8lNoGg_j8S8/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-11-06T06:21:34.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-            "video_id": "8lNoGg_j8S8"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "title": "Train, Simulate, and Serve World Models with NVIDIA Cosmos Framework and NIM | Cosmos Labs",
-          "url": "https://youtube.com/watch?v=8lNoGg_j8S8",
-          "published_at": "2026-11-06T06:21:34.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "NVIDIA Cosmos Framework is opening more of the training stack behind Cosmos models, giving developers reusable skills and recipes to build with Cosmos and other compatible models. Join NVIDIA experts ",
-      "classification_method": "deterministic",
-      "classification_reason": "Metadata evidence rules; not independently verified",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.623,
-      "why_this_surfaced": [
-        "specific engineering subject or instructional task in source metadata",
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Work through the instructional example; check the source description for prerequisites."
-    },
-    {
       "id": "q18e53",
       "primary": {
         "id": "q18e53",
@@ -756,82 +602,6 @@
       "kind": "video",
       "quality": "signal",
       "one_liner": "Training Agents IRL: four talks and a panel on post-training agents with open models Training Agents IRL is the in-person follow-up to the Training Agents livestream series. Speakers from Microsoft, M",
-      "classification_method": "deterministic",
-      "classification_reason": "Metadata evidence rules; not independently verified",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.623,
-      "why_this_surfaced": [
-        "specific engineering subject or instructional task in source metadata",
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Work through the instructional example; check the source description for prerequisites."
-    },
-    {
-      "id": "12439c0",
-      "primary": {
-        "id": "12439c0",
-        "source_id": "yt_huggingface",
-        "source_name": "Hugging Face YouTube",
-        "source_role": "learning",
-        "trust": 0.78,
-        "kind_hint": "video",
-        "title": "Pi Durable EXPLAINED: Build Always-On Agents with Local Models",
-        "url": "https://youtube.com/watch?v=ti3vVYwzW4A",
-        "original_url": "https://www.youtube.com/watch?v=ti3vVYwzW4A",
-        "summary": "Pi Durable is a building block for always-on agent applications, not a new coding-agent CLI. Learn how checkpoints, conversations, and storage support recovery after interruptions, where Durable fits in the Pi ecosystem, and the six steps to initialize a harness. Then follow a local llama.cpp demo with Qwen3.5-0.8B, including a second script that resumes interrupted work from SQLite. The APIs are experimental and may change; tool replay safety and restarting the host process remain important application responsibilities. --- 🔗 *Links* - Tutorial companion code (fresh chat and restart recovery",
-        "image_url": "https://i.ytimg.com/vi/ti3vVYwzW4A/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-10-19T03:34:17.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
-          "video_id": "ti3vVYwzW4A"
-        }
-      },
-      "members": [
-        {
-          "id": "12439c0",
-          "source_id": "yt_huggingface",
-          "source_name": "Hugging Face YouTube",
-          "source_role": "learning",
-          "trust": 0.78,
-          "kind_hint": "video",
-          "title": "Pi Durable EXPLAINED: Build Always-On Agents with Local Models",
-          "url": "https://youtube.com/watch?v=ti3vVYwzW4A",
-          "original_url": "https://www.youtube.com/watch?v=ti3vVYwzW4A",
-          "summary": "Pi Durable is a building block for always-on agent applications, not a new coding-agent CLI. Learn how checkpoints, conversations, and storage support recovery after interruptions, where Durable fits in the Pi ecosystem, and the six steps to initialize a harness. Then follow a local llama.cpp demo with Qwen3.5-0.8B, including a second script that resumes interrupted work from SQLite. The APIs are experimental and may change; tool replay safety and restarting the host process remain important application responsibilities. --- 🔗 *Links* - Tutorial companion code (fresh chat and restart recovery",
-          "image_url": "https://i.ytimg.com/vi/ti3vVYwzW4A/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-10-19T03:34:17.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCHlNU7kIZhRgSbhHvFoy72w",
-            "video_id": "ti3vVYwzW4A"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_huggingface",
-          "source_name": "Hugging Face YouTube",
-          "title": "Pi Durable EXPLAINED: Build Always-On Agents with Local Models",
-          "url": "https://youtube.com/watch?v=ti3vVYwzW4A",
-          "published_at": "2026-10-19T03:34:17.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "Pi Durable is a building block for always-on agent applications, not a new coding-agent CLI. Learn how checkpoints, conversations, and storage support recovery after interruptions, where Durable fits ",
       "classification_method": "deterministic",
       "classification_reason": "Metadata evidence rules; not independently verified",
       "novelty": 0,
@@ -1024,7 +794,7 @@
           "compatibility_status": "not_execution_tested",
           "compatibility": "Follow the course's current environment setup. Example notebooks have not been run by Chronicle.",
           "course_url": "https://huggingface.co/learn/llm-course/chapter1/1",
-          "last_checked_at": "2026-11-15T22:48:28.896Z"
+          "last_checked_at": "2026-11-19T15:48:35.768Z"
         }
       },
       "members": [
@@ -1053,7 +823,7 @@
             "compatibility_status": "not_execution_tested",
             "compatibility": "Follow the course's current environment setup. Example notebooks have not been run by Chronicle.",
             "course_url": "https://huggingface.co/learn/llm-course/chapter1/1",
-            "last_checked_at": "2026-11-15T22:48:28.896Z"
+            "last_checked_at": "2026-11-19T15:48:35.768Z"
           }
         }
       ],
@@ -1112,7 +882,7 @@
           "compatibility_status": "not_execution_tested",
           "compatibility": "Agent frameworks change quickly; use each unit's current setup instructions. Examples have not been run by Chronicle.",
           "course_url": "https://huggingface.co/learn/agents-course/unit0/introduction",
-          "last_checked_at": "2026-11-15T22:48:28.896Z"
+          "last_checked_at": "2026-11-19T15:48:35.768Z"
         }
       },
       "members": [
@@ -1141,7 +911,7 @@
             "compatibility_status": "not_execution_tested",
             "compatibility": "Agent frameworks change quickly; use each unit's current setup instructions. Examples have not been run by Chronicle.",
             "course_url": "https://huggingface.co/learn/agents-course/unit0/introduction",
-            "last_checked_at": "2026-11-15T22:48:28.896Z"
+            "last_checked_at": "2026-11-19T15:48:35.768Z"
           }
         }
       ],
@@ -1200,7 +970,7 @@
           "compatibility_status": "historical",
           "compatibility": "The publisher warns that tools and model capabilities have evolved. Treat the code as historical; examples have not been run by Chronicle.",
           "course_url": "https://fullstackdeeplearning.com/llm-bootcamp/",
-          "last_checked_at": "2026-11-15T22:48:28.896Z"
+          "last_checked_at": "2026-11-19T15:48:35.768Z"
         }
       },
       "members": [
@@ -1229,7 +999,7 @@
             "compatibility_status": "historical",
             "compatibility": "The publisher warns that tools and model capabilities have evolved. Treat the code as historical; examples have not been run by Chronicle.",
             "course_url": "https://fullstackdeeplearning.com/llm-bootcamp/",
-            "last_checked_at": "2026-11-15T22:48:28.896Z"
+            "last_checked_at": "2026-11-19T15:48:35.768Z"
           }
         }
       ],
@@ -1288,7 +1058,7 @@
           "compatibility_status": "historical",
           "compatibility": "The lessons are the 2022 edition. Check the course's setup guidance before running notebooks; examples have not been run by Chronicle.",
           "course_url": "https://course.fast.ai/",
-          "last_checked_at": "2026-11-15T22:48:28.896Z"
+          "last_checked_at": "2026-11-19T15:48:35.768Z"
         }
       },
       "members": [
@@ -1317,7 +1087,7 @@
             "compatibility_status": "historical",
             "compatibility": "The lessons are the 2022 edition. Check the course's setup guidance before running notebooks; examples have not been run by Chronicle.",
             "course_url": "https://course.fast.ai/",
-            "last_checked_at": "2026-11-15T22:48:28.896Z"
+            "last_checked_at": "2026-11-19T15:48:35.768Z"
           }
         }
       ],
