@@ -50,7 +50,7 @@ concurrency:
 jobs:
   refresh-build-deploy:
     if: github.event_name != 'push' || github.actor != 'github-actions[bot]'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04 # Playwright 1.59.1 does not support Ubuntu 26.04.
     timeout-minutes: 40
     environment:
       name: github-pages
