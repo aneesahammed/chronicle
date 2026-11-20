@@ -11,13 +11,16 @@ import {
   type LlmProvider,
 } from "../llm/providers.ts";
 
-export const TOP_NEWS_LIMIT = 5;
+export const TOP_NEWS_LIMIT = 3;
 export const TOP_NEWS_INPUT_CHARS = 12_000;
 export const TOP_NEWS_TIMEOUT_MS = 15_000;
 
 const CACHE_VERSION = 1;
+const SUMMARY_VERSION = 3;
 const MAX_CACHE_ENTRIES = 500;
 const OK_CACHE_TTL_MS = 6 * 36e5;
+const TOP_NEWS_MAX_AGE_MS = 36 * 36e5;
+const sentences = new Intl.Segmenter("en", { granularity: "sentence" });
 const PREFERRED_KINDS = new Set<Kind>(["news", "company_announcement", "model_release", "tool", "paper"]);
 
 interface EnrichmentCacheFile {
@@ -53,7 +56,7 @@ interface EnrichmentDraft {
 
 interface MetadataFallback {
   dek: string;
-  brief: string;
+  method: "classification" | "source_metadata";
   image_url?: string;
   image_source?: string;
 }
@@ -90,7 +93,7 @@ export async function buildTopNews(
   scored: ScoredCluster[],
   options: BuildTopNewsOptions,
 ): Promise<TopNewsItem[]> {
-  const candidates = selectTopNewsCandidates(scored);
+  const candidates = selectTopNewsCandidates(scored, options.now);
   if (candidates.length === 0) return [];
 
   const nowIso = options.now.toISOString();
@@ -109,7 +112,7 @@ export async function buildTopNews(
     const cached = cache.entries[candidate.primary.url];
     // Always re-read available source text before reusing a brief: same-title corrections matter.
     if (cached && !draft.failed && cached.input_hash === inputFingerprint(candidate)
-      && cached.source_content_hash === contentHash && cached.summary_version === 2 && shouldUseCached(cached, options.now)) {
+      && cached.source_content_hash === contentHash && cached.summary_version === SUMMARY_VERSION && shouldUseCached(cached, options.now)) {
       topNews.push(topNewsFromCache(candidate, cached, nowIso));
       continue;
     }
@@ -123,8 +126,8 @@ export async function buildTopNews(
       } catch { draft.failed = true; }
     }
     const item = topNewsFromDraft(draft, summary, nowIso);
-    item.summary_method = summary ? "extractive" : "source_metadata";
-    item.summary_version = 2;
+    item.summary_method = draft.metadata.method;
+    item.summary_version = SUMMARY_VERSION;
     item.source_content_hash = contentHash;
     topNews.push(item);
     cache.entries[candidate.primary.url] = cacheEntryFromItem(item, candidate, draft.failed, cached);
@@ -135,41 +138,57 @@ export async function buildTopNews(
 }
 
 function fingerprint(text: string): string { return createHash("sha256").update(text).digest("hex"); }
-function inputFingerprint(item: ScoredCluster): string { return fingerprint(JSON.stringify([item.primary.title, item.primary.summary, item.primary.url])); }
+function inputFingerprint(item: ScoredCluster): string {
+  return fingerprint(JSON.stringify([
+    item.primary.title, item.primary.summary, item.primary.url, item.one_liner, item.classification_method,
+  ]));
+}
+
 export function isGroundedExcerpt(summary: SummaryOutput, text: string): boolean {
   const normalized = text.replace(/\s+/g, " ").trim();
   const parts = [...new Set([summary.dek, summary.brief])];
-  return parts.every((part) => part.length >= 20 && normalized.includes(part))
+  return parts.every((part) => isCompleteSentence(part) && part.length >= 20 && part.length <= 240 && normalized.includes(part))
     && parts.join(" ").split(/\s+/).length <= 25;
 }
+
 function extractSummary(input: SummaryInput): SummaryOutput | undefined {
-  const titleWords = new Set(input.title.toLowerCase().match(/[a-z]{4,}/g) ?? []);
-  const paragraphs = input.reader_text.split(/\n\s*\n/).map((line) => line.replace(/\s+/g, " ").trim())
-    .filter((line) => line.length >= 60 && !/^(title:|url source:|published time:|#|\[|!)/i.test(line) && !/subscribe|cookie policy|sign up for/i.test(line));
-  paragraphs.sort((a,b) => [...titleWords].filter(w=>b.toLowerCase().includes(w)).length - [...titleWords].filter(w=>a.toLowerCase().includes(w)).length);
-  const paragraph = paragraphs[0];
-  if (!paragraph) return undefined;
-  let excerpt = paragraph.split(/\s+/).slice(0, 25).join(" ");
-  if (excerpt.length > 180) excerpt = excerpt.slice(0, 180).replace(/\s+\S*$/, "");
-  return { index: input.index, dek: excerpt, brief: excerpt };
+  const words = titleWords(input.title);
+  let best: SummaryOutput | undefined;
+  let bestOverlap = -1;
+  for (const paragraph of input.reader_text.split(/\n\s*\n/)) {
+    if (!isReadableProse(paragraph.trim())) continue;
+    for (const { segment } of sentences.segment(paragraph.replace(/\s+/g, " ").trim())) {
+      const excerpt = segment.trim();
+      const candidate = { index: input.index, dek: excerpt, brief: excerpt };
+      if (!isDistinctExpansion(excerpt, input.current_summary) || !isGroundedExcerpt(candidate, paragraph)) continue;
+      const overlap = [...titleWords(excerpt)].filter(word => words.has(word)).length;
+      if (overlap <= bestOverlap) continue;
+      best = candidate;
+      bestOverlap = overlap;
+    }
+  }
+  return best;
 }
 
-export function selectTopNewsCandidates(scored: ScoredCluster[]): ScoredCluster[] {
+export function selectTopNewsCandidates(scored: ScoredCluster[], now: Date): ScoredCluster[] {
   const selected: ScoredCluster[] = [];
-  const perSource = new Map<string, number>();
   const usedFamilies = new Set<string>();
   const titleFingerprints: Set<string>[] = [];
+  const eligible = scored.filter(item => {
+    const age = now.getTime() - Date.parse(item.primary.published_at);
+    return age >= 0 && age <= TOP_NEWS_MAX_AGE_MS && item.primary.date_confidence !== "low" && isEligibleTopNews(item);
+  });
+  const release = eligible.findIndex(item => item.quality === "signal" && (item.kind === "model_release" || item.kind === "tool"));
+  const lead = release >= 0 ? release : eligible.findIndex(item => item.kind !== "paper");
+  if (lead > 0) eligible.unshift(...eligible.splice(lead, 1));
 
-  for (const item of scored) {
-    if (!isEligibleTopNews(item)) continue;
-    const sourceId = item.primary.source_id;
-    const family = sourceFamily(sourceId);
-    if ((perSource.get(sourceId) ?? 0) >= 2) continue;
+  for (const item of eligible) {
+    const family = sourceFamily(item.primary.source_id);
     if (usedFamilies.has(family)) continue;
+    if (item.kind === "paper" && selected.some(story => story.kind === "paper")) continue;
     const fingerprint = titleWords(item.primary.title);
     if (titleFingerprints.some((existing) => jaccard(existing, fingerprint) >= 0.55)) continue;
     selected.push(item);
-    perSource.set(sourceId, (perSource.get(sourceId) ?? 0) + 1);
     usedFamilies.add(family);
     titleFingerprints.push(fingerprint);
     if (selected.length >= TOP_NEWS_LIMIT) break;
@@ -238,7 +257,7 @@ function summaryInput(draft: EnrichmentDraft, index: number): SummaryInput {
     title: draft.candidate.primary.title,
     source_name: draft.candidate.primary.source_name,
     url: draft.candidate.primary.url,
-    current_summary: draft.metadata.brief,
+    current_summary: draft.metadata.dek,
     reader_text: (draft.reader_text ?? "").slice(0, TOP_NEWS_INPUT_CHARS),
   };
 }
@@ -259,8 +278,8 @@ function topNewsFromDraft(
     published_at: draft.candidate.primary.published_at,
     kind: draft.candidate.kind,
     score: draft.candidate.score,
-    dek: summary?.dek ?? metadata.dek,
-    brief: summary?.brief ?? metadata.brief,
+    dek: metadata.dek,
+    brief: summary?.brief ?? metadata.dek,
     ...(image ? { image_url: image } : {}),
     ...(summary?.image_alt ? { image_alt: summary.image_alt } : {}),
     ...(image && metadata.image_source ? { image_source: metadata.image_source } : {}),
@@ -271,6 +290,7 @@ function topNewsFromDraft(
 
 function topNewsFromCache(candidate: ScoredCluster, cached: CachedEnrichment, nowIso: string): TopNewsItem {
   const image = sanitizeImageUrl(cached.image_url);
+  const dek = cached.dek || fallbackFor(candidate).dek;
   return {
     cluster_id: candidate.id,
     title: candidate.primary.title,
@@ -279,8 +299,8 @@ function topNewsFromCache(candidate: ScoredCluster, cached: CachedEnrichment, no
     published_at: candidate.primary.published_at,
     kind: candidate.kind,
     score: candidate.score,
-    dek: cached.dek || fallbackFor(candidate).dek,
-    brief: cached.brief || fallbackFor(candidate).brief,
+    dek,
+    brief: cached.brief || dek,
     ...(image ? { image_url: image } : {}),
     ...(cached.image_alt ? { image_alt: cached.image_alt } : {}),
     ...(image && cached.image_source ? { image_source: cached.image_source } : {}),
@@ -319,20 +339,34 @@ function cacheEntryFromItem(
 }
 
 function fallbackFor(item: ScoredCluster): MetadataFallback {
-  const line = cleanLine(item.primary.summary) || item.primary.title;
-  const summary = cleanLine(item.primary.summary);
-  const dek = clampText(line, 180) || item.primary.title;
-  const brief = summary && normalizeText(summary) !== normalizeText(item.primary.title)
-    ? summary
-    : line;
-  const distinctBrief = isDistinctExpansion(brief, dek) ? brief : dek;
+  const line = editorialSentence(item.one_liner);
+  const useLine = Boolean(line && isDistinctExpansion(line, item.primary.title));
   const image = firstClusterImage(item);
   return {
-    dek,
-    brief: clampText(distinctBrief, 420) || dek,
+    dek: (useLine ? line : editorialSentence(item.primary.summary)) || item.primary.title,
+    method: useLine && item.classification_method === "llm" ? "classification" : "source_metadata",
     ...(image?.url ? { image_url: image.url } : {}),
     ...(image?.source ? { image_source: image.source } : {}),
   };
+}
+
+export function editorialSentence(value: unknown, maxLength = 180): string | undefined {
+  const clean = cleanLine(value).replace(/^abstract:\s*/i, "");
+  if (!isReadableProse(clean)) return undefined;
+  for (const { segment } of sentences.segment(clean)) {
+    const sentence = segment.trim();
+    if (sentence.length <= maxLength && isCompleteSentence(sentence)) return sentence;
+  }
+  return undefined;
+}
+
+function isReadableProse(value: string): boolean {
+  return !/^(?:[#>*!|\x60-]|title:|url source:|published time:|view (?:a |the )?pdf\b)/i.test(value)
+    && !/\]\(|\*|__|\x60|<[^>]+>|https?:\/\/|\b(?:cookie policy|sign up for|subscribe to our)\b/i.test(value);
+}
+
+function isCompleteSentence(value: string): boolean {
+  return isReadableProse(value) && /[.!?]["”’)]?$/.test(value) && !/\.{2,}["”’)]?$/.test(value);
 }
 
 function firstClusterImage(item: ScoredCluster): { url: string; source: string } | undefined {
@@ -374,7 +408,7 @@ function sanitizeCacheEntries(entries: Record<string, unknown>): Record<string, 
       input_hash: typeof value.input_hash === "string" ? value.input_hash : undefined,
       source_content_hash: typeof value.source_content_hash === "string" ? value.source_content_hash : undefined,
       summary_version: typeof value.summary_version === "number" ? value.summary_version : undefined,
-      summary_method: value.summary_method === "extractive" ? "extractive" : "source_metadata",
+      summary_method: value.summary_method === "extractive" || value.summary_method === "classification" ? value.summary_method : "source_metadata",
       url,
       title: String(value.title ?? ""),
       source_name: String(value.source_name ?? ""),

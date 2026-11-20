@@ -229,7 +229,7 @@ export interface TopNewsItem {
   image_source?: string;
   enrichment_status: EnrichmentStatus;
   enriched_at: string;
-  summary_method?: "extractive" | "source_metadata";
+  summary_method?: "extractive" | "classification" | "source_metadata";
   source_content_hash?: string;
   summary_version?: number;
 }

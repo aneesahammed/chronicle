@@ -13,6 +13,8 @@ import {
 import { extractFirstImageFromHtml, sanitizeImageUrl } from "./images.ts";
 import type { Kind, Quality, RawItem, ScoredCluster } from "../types.ts";
 
+const editionTime = new Date("2026-05-03T12:00:00.000Z");
+
 test("selectTopNewsCandidates filters hype, caps sources, and suppresses near duplicates", () => {
   const items = [
     scored({ id: "a1", source_id: "openai", kind: "news", title: "Anthropic launches Claude Security scanner" }),
@@ -24,22 +26,32 @@ test("selectTopNewsCandidates filters hype, caps sources, and suppresses near du
     scored({ id: "b4", source_id: "the_decoder", kind: "news", url: "http://example.com/insecure", title: "Insecure source URL" }),
   ];
 
-  const selected = selectTopNewsCandidates(items);
+  const selected = selectTopNewsCandidates(items, editionTime);
 
-  assert.deepEqual(selected.map((item) => item.id), ["a1", "a3", "b3"]);
+  assert.deepEqual(selected.map((item) => item.id), ["a3", "a1", "b3"]);
 });
 
 test("selectTopNewsCandidates keeps Top News to one item per source family", () => {
   const items = [
     scored({ id: "paper1", source_id: "arxiv_lg", source_name: "arXiv cs.LG", kind: "paper", title: "Profit-aware crop advisory systems" }),
-    scored({ id: "paper2", source_id: "arxiv_cl", source_name: "arXiv cs.CL", kind: "paper", title: "Prompt-induced score variance in VLM safety" }),
+    scored({ id: "paper2", source_id: "hf_papers", source_name: "Hugging Face", kind: "paper", title: "Prompt-induced score variance in VLM safety" }),
     scored({ id: "cloud", source_id: "cloudflare_ai_changelog", kind: "tool", title: "Cloudflare pipelines now support Terraform" }),
+    scored({ id: "cloud2", source_id: "aws_ml_blog", kind: "news", title: "New GPU instance types" }),
     scored({ id: "lab", source_id: "openai", kind: "company_announcement", title: "OpenAI deployment venture expands" }),
   ];
 
-  const selected = selectTopNewsCandidates(items);
+  const selected = selectTopNewsCandidates(items, editionTime);
 
-  assert.deepEqual(selected.map((item) => item.id), ["paper1", "cloud", "lab"]);
+  assert.deepEqual(selected.map((item) => item.id), ["cloud", "paper1", "lab"]);
+});
+
+test("selectTopNewsCandidates uses publication time instead of discovery time", () => {
+  const rediscovered = scored({
+    id: "old-paper", source_id: "hf_papers", kind: "paper",
+    published_at: "2026-02-01T12:00:00.000Z", discovered_at: editionTime.toISOString(),
+  });
+  const freshPaper = scored({ id: "fresh-paper", source_id: "arxiv_lg", kind: "paper" });
+  assert.deepEqual(selectTopNewsCandidates([rediscovered, freshPaper], editionTime), [freshPaper]);
 });
 
 test("readerUrlFor wraps public URLs and rejects non-http URLs", () => {
@@ -107,6 +119,7 @@ test("buildTopNews falls back to metadata_only when excerpt generation fails", a
   const topNews = await buildTopNews([scored({
     id: "fallback",
     title: "Useful AI launch",
+    one_liner: "",
     summary: "A useful launch summary from the source feed.",
   })], {
     now: new Date("2026-05-03T12:00:00.000Z"),
@@ -224,6 +237,7 @@ function scored(overrides: Partial<RawItem> & {
     discussion_url: overrides.discussion_url,
     discussion_source: overrides.discussion_source,
     summary: overrides.summary ?? "Useful summary.",
+    discovered_at: overrides.discovered_at,
     image_url: overrides.image_url,
     image_source: overrides.image_source ?? (overrides.image_url ? "test" : undefined),
     published_at: overrides.published_at ?? "2026-05-03T10:00:00.000Z",
@@ -267,7 +281,7 @@ test("cache hits preserve unequal-score order and source corrections invalidate 
   const high = scored({ id: "high", source_id: "openai", score: 0.9, title: "Model release" });
   const low = scored({ id: "low", source_id: "hn_ai", score: 0.7, title: "Useful tool" });
   let body = "This source describes a useful tool for evaluating retrieval quality with reproducible examples and documented test cases.";
-  const options = { cachePath, now: new Date("2026-10-29T12:00:00Z"), env: {}, fetchImpl: async () => new Response(body) };
+  const options = { cachePath, now: editionTime, env: {}, fetchImpl: async () => new Response(body) };
   await buildTopNews([low], options);
   const first = await buildTopNews([high, low], options);
   assert.deepEqual(first.map(item => item.cluster_id), [high.id, low.id]);
@@ -275,13 +289,33 @@ test("cache hits preserve unequal-score order and source corrections invalidate 
   body = "The corrected source explains that the tool evaluates classification quality, using a public dataset and a reproducible test harness.";
   const second = await buildTopNews([low], options);
   assert.notEqual(second[0].source_content_hash, oldHash);
-  assert.match(second[0].dek, /corrected/);
+  assert.match(second[0].brief, /corrected/);
 });
 
 test("unsupported generated claims fall back to source metadata", async () => {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), "chronicle-grounding-"));
-  const result = await buildTopNews([scored({ summary: "A documented model release." })], { cachePath: path.join(root,"cache.json"), now: new Date(), env: {}, fetchImpl: async () => new Response("The source describes a model release but provides no benchmark claim."), summarize: async () => [{ index: 0, dek: "This model doubles accuracy on all tasks.", brief: "This model doubles accuracy on all tasks." }] });
+  const result = await buildTopNews([scored({ summary: "A documented model release." })], { cachePath: path.join(root,"cache.json"), now: editionTime, env: {}, fetchImpl: async () => new Response("The source describes a model release but provides no benchmark claim."), summarize: async () => [{ index: 0, dek: "This model doubles accuracy on all tasks.", brief: "This model doubles accuracy on all tasks." }] });
   assert.equal(result[0].enrichment_status, "metadata_only");
   assert.equal(result[0].summary_method, "source_metadata");
   assert.ok(!result[0].dek.includes("doubles"));
+});
+
+test("buildTopNews uses the classified short summary and skips PDF boilerplate, Markdown and fragments", async () => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), "chronicle-clean-excerpt-"));
+  const item = scored({ title: "Falcon tool evaluates model inference", one_liner: "Falcon tests inference latency across devices." });
+  item.classification_method = "llm";
+  const body = [
+    "View a PDF of the paper titled Falcon tool evaluates model inference.",
+    "* [English edition](https://example.com/) * [Spanish edition](https://example.com/es)",
+    "Falcon tool evaluates model inference and runs on",
+    "The runner supports reproducible comparisons on laptops, phones and servers.",
+  ].join("\n\n");
+  const [highlight] = await buildTopNews([item], {
+    cachePath: path.join(root, "cache.json"), now: editionTime, env: {},
+    fetchImpl: async () => new Response(body),
+  });
+  assert.equal(highlight.dek, item.one_liner);
+  assert.equal(highlight.brief, "The runner supports reproducible comparisons on laptops, phones and servers.");
+  assert.equal(highlight.summary_method, "classification");
+  assert.equal(highlight.summary_version, 3);
 });

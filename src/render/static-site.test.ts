@@ -16,6 +16,7 @@ test("writeRenderedHomePage renders escaped feed content into the template", asy
   const html = await fs.readFile(path.join(root, "index.html"), "utf8");
   assert.match(html, /<script type="application\/ld\+json">/);
   assert.match(html, /<title>Chronicle: Daily AI Signal for Builders<\/title>/);
+  assert.match(html, /<meta property="og:title" content="Chronicle: Daily AI Signal for Builders">/);
   assert.match(html, /<h1 id="page-title">Chronicle: Daily AI Signal for Builders<\/h1>/);
   assert.match(html, /Alpha &quot;Beta&quot; &amp; Co/);
   assert.match(html, /Read &#39;now&#39; &lt;tag&gt;/);
@@ -95,11 +96,11 @@ test("writeRenderedDailyPage renders date-specific SEO metadata", async () => {
   await fs.writeFile(path.join(root, "index.html"), feedTemplate());
   await fs.mkdir(path.join(root, "daily", "2026-05-05"), { recursive: true });
 
-  await writeRenderedDailyPage(root, feedFixture());
+  await writeRenderedDailyPage(root, feedFixture({ one_liner: "A complete description of the featured story." }));
 
   const html = await fs.readFile(path.join(root, "daily", "2026-05-05", "index.html"), "utf8");
   assert.match(html, /<title>Chronicle AI Brief, May 5, 2026<\/title>/);
-  assert.match(html, /<meta name="description" content="May 5, 2026 Chronicle AI brief:/);
+  assert.match(html, /<meta name="description" content="A complete description of the featured story\.">/);
   assert.match(html, /<h1 id="page-title">Chronicle AI Brief, May 5, 2026<\/h1>/);
   assert.match(html, /<link rel="canonical" href="https:\/\/chronicle\.tinycrafts\.ai\/daily\/2026-05-05\/">/);
 });

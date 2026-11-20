@@ -1,5 +1,6 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
+import { editorialSentence } from "../enrichment/top-news.ts";
 import { publishVersionedAssets } from "./assets.ts";
 import { publicFetchError } from "../sources/safe-fetch.ts";
 import { writeFileAtomic } from "../pipeline/atomic-write.ts";
@@ -150,7 +151,7 @@ function renderFeedPage(
   options: { canonicalUrl: string; title: string; description: string; h1: string; archiveDate?: string },
 ): string {
   const hasTopNews = Boolean(feed.top_news?.length);
-  const socialTitle = options.archiveDate ? options.title : "Chronicle";
+  const editionDate = options.archiveDate ?? feed.generated_at.slice(0, 10);
   let html = replaceRequired(
     template,
     /<title>[\s\S]*?<\/title>/,
@@ -178,7 +179,7 @@ function renderFeedPage(
   html = replaceRequired(
     html,
     /<meta property="og:title" content="[^"]*">/,
-    `<meta property="og:title" content="${escapeAttr(socialTitle)}">`,
+    `<meta property="og:title" content="${escapeAttr(options.title)}">`,
     "Open Graph title",
   );
   html = replaceRequired(
@@ -190,7 +191,7 @@ function renderFeedPage(
   html = replaceRequired(
     html,
     /<meta name="twitter:title" content="[^"]*">/,
-    `<meta name="twitter:title" content="${escapeAttr(socialTitle)}">`,
+    `<meta name="twitter:title" content="${escapeAttr(options.title)}">`,
     "Twitter title",
   );
   html = replaceRequired(
@@ -237,7 +238,7 @@ function renderFeedPage(
   );
 
   html = replaceBetween(html, TOP_NEWS_START, TOP_NEWS_END, renderTopNews(feed.top_news ?? []), "top news markers");
-  html = replaceBetween(html, FEED_START, FEED_END, renderFeed(feed), "feed markers");
+  html = replaceBetween(html, FEED_START, FEED_END, renderFeed(feed, editionDate), "feed markers");
   html = replaceBetween(html, JSONLD_START, JSONLD_END, itemListJsonLd(feed, options.canonicalUrl), "JSON-LD markers");
   const bootstrap = { ...feed, clusters: feed.clusters.map(({ members, ...item }) => item) };
   const payload = JSON.stringify(bootstrap).replaceAll("<", "\\u003c");
@@ -262,7 +263,7 @@ function renderTopStory(item: TopNewsItem): string {
     `<h2 class="top-story-title">${externalLink(item.url, item.title)}</h2>`,
     `<p class="top-story-dek">${escapeHtml(item.dek)}</p>`,
     item.brief && normalizeText(item.brief) !== normalizeText(item.dek)
-      ? `<p class="top-story-brief">${escapeHtml(item.brief)}</p>`
+      ? `<p class="top-story-brief">${item.summary_version === 3 ? "Source excerpt · " : ""}${escapeHtml(item.brief)}</p>`
       : "",
     `<div class="top-news-meta">${topNewsMeta(item)}</div>`,
     `</div>`,
@@ -282,7 +283,7 @@ function renderTopRow(item: TopNewsItem): string {
   ].join("\n");
 }
 
-function renderFeed(feed: FeedFile): string {
+function renderFeed(feed: FeedFile, editionDate: string): string {
   const items = feed.clusters ?? [];
   if (!items.length) {
     return `<div class="empty"><strong>No feed items</strong><p>The latest refresh did not publish ranked items.</p></div>`;
@@ -305,23 +306,23 @@ function renderFeed(feed: FeedFile): string {
     const sorted = bucket.items.sort((a, b) => b.score - a.score);
     return [
       `<div class="bucket-head">${escapeHtml(bucket.label)}<span class="count">(${bucket.items.length})</span></div>`,
-      `<ol class="feed-list">${sorted.map((item, index) => `<li>${renderItem(item, index + 1)}</li>`).join("\n")}</ol>`,
+      `<ol class="feed-list">${sorted.map((item, index) => `<li>${renderItem(item, index + 1, editionDate)}</li>`).join("\n")}</ol>`,
     ];
   });
   sections.push(`<div class="completion-row"><strong>You're caught up</strong><span>Next refresh follows the public schedule.</span></div>`);
   return sections.join("\n");
 }
 
-function renderItem(item: ScoredCluster, index: number): string {
+function renderItem(item: ScoredCluster, index: number, editionDate: string): string {
   const title = item.primary.title || "Untitled item";
   const line = readableLine(item.one_liner || item.primary.summary || "", title);
   const image = renderItemImage(item);
   return [
-    `<article class="item${image ? " has-image" : ""}" data-tier="${item.novelty >= 0.7 ? "top" : "normal"}" data-read-index="${index}">`,
+    `<article class="item${image ? " has-image" : ""}" id="story-${escapeAttr(item.id)}" data-tier="${item.novelty >= 0.7 ? "top" : "normal"}" data-read-index="${index}">`,
     `<div class="item-body">`,
     `<h3 class="item-title">${externalLink(item.primary.url, title)}</h3>`,
     line ? `<p class="item-line">${escapeHtml(line)}</p>` : "",
-    `<div class="item-meta">${itemMeta(item)}</div>`,
+    `<div class="item-meta">${itemMeta(item, editionDate)}</div>`,
     renderExplain(item),
     renderSourceTrail(item),
     `</div>`,
@@ -358,23 +359,11 @@ function archiveMetaDescription(): string {
 }
 
 function dailyMetaDescription(feed: FeedFile, date: string): string {
-  const topics = feed.clusters
-    .slice(0, 2)
-    .map((item) => metaTopic(item))
-    .filter(Boolean);
-  const prefix = `${longDate(date)} Chronicle AI brief`;
-  if (!topics.length) {
-    return `${prefix}: ranked AI news, papers, model releases, repos, and learning links for builders.`;
-  }
-  const extraCount = Math.max(0, feed.clusters.length - topics.length);
-  const extra = extraCount ? `, plus ${extraCount} more AI signals` : "";
-  return truncateText(`${prefix}: ${topics.join(", ")}${extra}.`, 160);
-}
-
-function metaTopic(item: ScoredCluster): string {
-  const title = item.primary.title || "";
-  const line = readableLine(item.one_liner || item.primary.summary || "", title);
-  return truncateText(compactText(line || title), 38);
+  const lead = feed.top_news?.[0];
+  const featured = feed.clusters.find(item => item.id === lead?.cluster_id) ?? feed.clusters[0];
+  return editorialSentence(lead?.summary_version === 3 ? lead.dek : featured?.one_liner, 160)
+    ?? editorialSentence(featured?.primary.summary, 160)
+    ?? `${longDate(date)} Chronicle AI brief. Explore ranked AI news, research, model releases, and tools for builders.`;
 }
 
 function truncateText(value: string, maxLength: number): string {
@@ -390,7 +379,7 @@ function compactText(value: string): string {
   return String(value || "").replace(/\s+/g, " ").trim();
 }
 
-function itemMeta(item: ScoredCluster): string {
+function itemMeta(item: ScoredCluster, editionDate: string): string {
   const parts = [
     sourceLabelHtml(item.primary),
     escapeHtml(relativeDate(item.primary.published_at)),
@@ -401,6 +390,7 @@ function itemMeta(item: ScoredCluster): string {
     !item.primary.repo?.stars_today && item.primary.repo?.stars_delta_30d
       ? escapeHtml(`+${formatNumber(item.primary.repo.stars_delta_30d)} stars`)
       : "",
+    `<a href="/daily/${escapeAttr(editionDate)}/#story-${escapeAttr(encodeURIComponent(item.id))}" aria-label="Chronicle link for ${escapeAttr(item.primary.title)}">Story link</a>`,
   ].filter(Boolean);
   const score = Number.isFinite(item.score) ? item.score.toFixed(2) : "--";
   const detail = `n ${item.novelty.toFixed(2)} · t ${item.trust.toFixed(2)}`;
@@ -742,7 +732,9 @@ function topNewsMeta(item: TopNewsItem): string {
     sourceLabelHtml(item),
     escapeHtml(relativeDate(item.published_at)),
     item.kind && item.kind !== "unknown" ? escapeHtml(item.kind.replaceAll("_", " ")) : "",
-    item.summary_method === "extractive" ? `source excerpt · checked ${escapeHtml(relativeDate(item.enriched_at))}` : item.summary_method === "source_metadata" ? "source metadata" : "legacy automated brief",
+    item.summary_method === "classification" ? "model summary"
+      : item.summary_method === "extractive" ? `source excerpt · checked ${escapeHtml(relativeDate(item.enriched_at))}`
+        : item.summary_method === "source_metadata" ? "source metadata" : "legacy automated brief",
   ].filter(Boolean).join(`<span class="sep">·</span>`);
 }
 

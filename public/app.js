@@ -96,6 +96,8 @@ wireRefreshControl();
 wireReadingControls();
 wirePullToRefresh();
 wireMobileReader();
+wireLinkTracking();
+window.addEventListener("hashchange", revealStoryLink);
 updateLedeText();
 document.getElementById("archiveCtaButton").href = rootUrl("daily/");
 document.getElementById("homeLink").href = rootUrl("");
@@ -116,7 +118,10 @@ modeButton.addEventListener("click", () => {
   state.readerMode = state.readerMode === "deck" ? "list" : "deck";
   try { localStorage.setItem("chronicle-reader-mode", state.readerMode); } catch (_) {}
   updateReaderModeButton();
-  if (state.data) renderFeed();
+  if (state.data) {
+    renderFeed();
+    revealStoryLink();
+  }
 });
 updateReaderModeButton();
 const bootstrap = JSON.parse(document.getElementById("feedBootstrap")?.textContent || "null");
@@ -127,8 +132,39 @@ if (bootstrap && state.activeFeed === "main") {
   updateStatus(); renderArchiveBanner(); renderFilterShell(); prefetchSectionCounts();
   if (shouldUseMobileReader() || state.kinds.size || state.highNovelty || state.discussionOnly) renderFeed();
   else scheduleFeedImageHydration(document.getElementById("feed"));
-} else loadFeed().finally(prefetchSectionCounts);
+  revealStoryLink();
+} else loadFeed().then(revealStoryLink).finally(prefetchSectionCounts);
 });
+
+function trackEvent(path) {
+  window.goatcounter?.count?.({ path, event: true });
+}
+
+function wireLinkTracking() {
+  const trackClick = (event) => {
+    if (event.button > 1) return;
+    const anchor = event.target.closest?.("a");
+    if (anchor?.matches(".top-story-title a, .top-row-title a, .item-title a, .reader-title a")
+        && /^https?:$/.test(anchor.protocol) && anchor.origin !== location.origin) trackEvent("open-source-story");
+    if (anchor?.matches("[data-chronicle-rss]")) trackEvent("open-rss");
+  };
+  document.addEventListener("click", trackClick);
+  document.addEventListener("auxclick", trackClick);
+}
+
+function revealStoryLink() {
+  const id = location.hash.match(/^#story-([\w-]+)$/)?.[1];
+  if (!id) return;
+  if (state.reader.active) {
+    const index = state.reader.items.findIndex(item => item.id === id);
+    if (index >= 0) {
+      hideResumePrompt();
+      setReaderIndex(index, { focus: true, jumpcut: true });
+    }
+  } else {
+    document.getElementById(`story-${id}`)?.scrollIntoView({ behavior: "instant" });
+  }
+}
 
 function initTheme() {
   const button = document.getElementById("themeToggle");
@@ -264,6 +300,7 @@ function wireStickyNav() {
 
 async function switchFeedTab(next) {
   if (!FEEDS[next] || state.activeFeed === next) return;
+  trackEvent(`select-feed-${next}`);
   state.activeFeed = next;
   state.kinds.clear();
   state.highNovelty = false;
@@ -325,6 +362,8 @@ function updateLedeText() {
   if (!node) return;
   const feed = FEEDS[state.activeFeed] ?? FEEDS.main;
   node.textContent = feed.lede;
+  const rss = document.querySelector("[data-chronicle-rss]");
+  if (rss) rss.hidden = state.activeFeed !== "main";
 }
 
 function updateSectionCount(role, count) {
@@ -611,7 +650,8 @@ function renderTopStory(item) {
   body.append(title);
   body.append(node("p", "top-story-dek", decodeText(item.dek)));
   if (item.brief && isDistinctExpansion(item.brief, item.dek)) {
-    body.append(node("p", "top-story-brief", decodeText(item.brief)));
+    const brief = decodeText(item.brief);
+    body.append(node("p", "top-story-brief", item.summary_version === 3 ? `Source excerpt · ${brief}` : brief));
   }
   body.append(renderTopNewsMeta(item));
   article.append(body);
@@ -639,9 +679,15 @@ function renderTopNewsMeta(item) {
   meta.append(sourceLabel(item));
   meta.append(sep(), document.createTextNode(relTime(parseDate(item.published_at)) || "unknown"));
   if (item.kind && item.kind !== "unknown") meta.append(sep(), document.createTextNode(KIND_LABELS[item.kind] || item.kind));
-  const score = Number(item.score);
-  meta.append(sep(), document.createTextNode(item.summary_method === "extractive" ? `source excerpt · checked ${relTime(parseDate(item.enriched_at))}` : item.summary_method === "source_metadata" ? "source metadata" : "legacy automated brief"));
+  meta.append(sep(), document.createTextNode(topNewsProvenance(item)));
   return meta;
+}
+
+function topNewsProvenance(item) {
+  if (item.summary_method === "classification") return "Model summary";
+  if (item.summary_method === "extractive") return "Source excerpt";
+  if (item.summary_method === "source_metadata") return "Source metadata";
+  return "Legacy automated brief";
 }
 
 function topNewsImage(item, className) {
@@ -1166,7 +1212,7 @@ function renderReaderCard(item, index, isCurrent, eagerImage) {
   if (item.top_news) {
     body.prepend(node("span", "reader-featured", "Top story"));
     body.append(node("p", "reader-line", item.top_news.dek));
-    body.append(node("p", "reader-provenance", item.top_news.summary_method === "extractive" ? "Source excerpt" : item.top_news.summary_method === "source_metadata" ? "Source metadata" : "Legacy automated brief"));
+    body.append(node("p", "reader-provenance", topNewsProvenance(item.top_news)));
   } else {
     const line = readableLine(item, title);
     if (line) body.appendChild(node("p", "reader-line", line));
@@ -1246,6 +1292,11 @@ function renderReaderExplain(item, reasons, firstReason) {
   if (item.builder_action && !rows.includes(item.builder_action)) {
     const row = document.createElement("li");
     row.textContent = item.builder_action;
+    list.appendChild(row);
+  }
+  if (state.activeFeed === "main" && item.id) {
+    const row = document.createElement("li");
+    row.append(storyLink(item));
     list.appendChild(row);
   }
   details.append(summary);
@@ -1810,6 +1861,7 @@ function updateReaderViewportHeight() {
 
 function renderItem(item, displayIndex) {
   const article = node("article", "item");
+  if (state.activeFeed === "main" && item.id) article.id = `story-${item.id}`;
   article.dataset.tier = Number(item.novelty || 0) >= NOVELTY_TOP ? "top" : "normal";
   article.dataset.readIndex = String(displayIndex);
   const body = node("div", "item-body");
@@ -1851,6 +1903,7 @@ function renderItem(item, displayIndex) {
       meta.append(link(d.url, d.label));
     });
   }
+  if (state.activeFeed === "main" && item.id) meta.append(sep(), storyLink(item));
   meta.append(node("span", "spacer"));
   const scoreNum = Number(item.score);
   const scoreSpan = node("span", "score", Number.isFinite(scoreNum) ? scoreNum.toFixed(2) : "—");
@@ -2179,6 +2232,10 @@ function initFiltersFromUrl() {
 
 function syncUrl() {
   const params = new URLSearchParams();
+  const previous = new URL(location.href);
+  for (const key of ["utm_source", "utm_medium", "utm_campaign", "utm_content"]) {
+    if (previous.searchParams.has(key)) params.set(key, previous.searchParams.get(key));
+  }
   if (state.kinds.size) params.set("kind", [...state.kinds].join(","));
   if (state.highNovelty) params.set("novelty", "high");
   if (state.discussionOnly) params.set("discussion", "1");
@@ -2188,7 +2245,18 @@ function syncUrl() {
   const base = state.archiveDate ? rootUrl(`daily/${state.archiveDate}/`) : rootUrl("");
   const next = new URL(base);
   next.search = params.toString();
+  if (previous.pathname === next.pathname && previous.searchParams.get("tab") === params.get("tab")
+      && ["kind", "novelty", "discussion", "track"].some(key => previous.searchParams.get(key) !== params.get(key))) {
+    trackEvent("change-filter");
+  }
   history.replaceState(null, "", next.toString());
+}
+
+function storyLink(item) {
+  const anchor = node("a", "", "Story link");
+  anchor.href = rootUrl(`daily/${currentFeedDay()}/#story-${encodeURIComponent(item.id)}`);
+  anchor.setAttribute("aria-label", `Chronicle link for ${item.primary.title}`);
+  return anchor;
 }
 
 function feedUrl() {
