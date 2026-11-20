@@ -1,0 +1,32 @@
+name: Check public Chronicle freshness
+
+on:
+  schedule:
+    - cron: "43 */3 * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  check-public-edition:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - name: Require a successful public edition within 24 hours
+        run: |
+          node --input-type=module <<'JS'
+          const url = "https://chronicle.tinycrafts.ai/feed.json";
+          const response = await fetch(url, {
+            headers: { "Cache-Control": "no-cache" },
+            signal: AbortSignal.timeout(15000),
+          });
+          if (!response.ok) throw new Error(`${url} responded with HTTP ${response.status}`);
+
+          const feed = await response.json();
+          const timestamp = feed.last_successful_generated_at;
+          const ageHours = (Date.now() - Date.parse(timestamp)) / 36e5;
+          if (!Number.isFinite(ageHours) || ageHours < 0 || ageHours > 24 || !(feed.count > 0)) {
+            throw new Error(`Public Chronicle feed lacks a successful edition within 24 hours. Last successful timestamp: ${timestamp ?? "missing"}`);
+          }
+          console.log(`Public Chronicle edition from ${timestamp} is ${ageHours.toFixed(1)} hours old.`);
+          JS
