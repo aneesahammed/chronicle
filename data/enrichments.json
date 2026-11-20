@@ -144,6 +144,23 @@
       "enriched_at": "2026-10-28T11:20:08.379Z",
       "failure_count": 0
     },
+    "https://anthropic.com/news/ipo-close": {
+      "input_hash": "904742bb423a028e97adf0da296a7d3a376b41e82806d08d74a75fc81a2d2a60",
+      "source_content_hash": "688d52231bc389773029f68f2d8e296a2eff98dc7771df4c680198f1940d1855",
+      "summary_version": 2,
+      "summary_method": "extractive",
+      "url": "https://anthropic.com/news/ipo-close",
+      "title": "Anthropic announces closing of initial public offering, including full exercise of underwriters’ option to purchase additional shares, and closing of concurrent private placement",
+      "source_name": "Anthropic",
+      "dek": "Today Anthropic, PBC announced the closing of its initial public offering of an aggregate of 1,127,000,000 shares of its Class A common stock at a",
+      "brief": "Today Anthropic, PBC announced the closing of its initial public offering of an aggregate of 1,127,000,000 shares of its Class A common stock at a",
+      "image_url": "https://assets.claude.com/6d4a0d28992ade92d6fa63646fd9c9d318245c6c.jpg",
+      "image_source": "page_metadata",
+      "status": "ok",
+      "attempted_at": "2026-11-20T14:00:38.100Z",
+      "enriched_at": "2026-11-20T14:00:38.100Z",
+      "failure_count": 0
+    },
     "https://anthropic.com/news/public-benefit-fund": {
       "summary_method": "source_metadata",
       "url": "https://anthropic.com/news/public-benefit-fund",
@@ -1669,6 +1686,36 @@
       "enriched_at": "2026-11-19T15:48:35.768Z",
       "failure_count": 0
     },
+    "https://arxiv.org/abs/2611.25000": {
+      "input_hash": "985c65b756116266a0f6c081b869c3933d9f7912ec0d3dd8e3a2aa65d5c785a6",
+      "source_content_hash": "9e40999d76567bd8aa3246ce2e9771a649c8275bea807167a19818209ad6c41f",
+      "summary_version": 2,
+      "summary_method": "extractive",
+      "url": "https://arxiv.org/abs/2611.25000",
+      "title": "Watch Where You Linearize: Predicting and Correcting Model-Merging Interference",
+      "source_name": "arXiv cs.LG",
+      "dek": "> Abstract:Model merging combines separately fine-tuned models by adding their task vectors to a shared backbone. Interference is typically assessed only after constructing and",
+      "brief": "> Abstract:Model merging combines separately fine-tuned models by adding their task vectors to a shared backbone. Interference is typically assessed only after constructing and",
+      "status": "ok",
+      "attempted_at": "2026-11-20T14:00:38.100Z",
+      "enriched_at": "2026-11-20T14:00:38.100Z",
+      "failure_count": 0
+    },
+    "https://arxiv.org/abs/2611.26073": {
+      "input_hash": "2f83df6c65e9a417c9667abe853213656f545fffd5f691eb8aa71efe4fc36ad7",
+      "source_content_hash": "082ef09195a009b21fce22533d25865058fa27c70568d42696a7d4fee453ab6b",
+      "summary_version": 2,
+      "summary_method": "extractive",
+      "url": "https://arxiv.org/abs/2611.26073",
+      "title": "AltRA-Test: An Alternative Annotator Test for LLM Judges Without Shared Annotators",
+      "source_name": "Hugging Face Daily Papers",
+      "dek": "> Abstract:Large language models (LLMs) are increasingly used as judges and graders to replace human annotators, raising the question of when such replacement is statistically",
+      "brief": "> Abstract:Large language models (LLMs) are increasingly used as judges and graders to replace human annotators, raising the question of when such replacement is statistically",
+      "status": "ok",
+      "attempted_at": "2026-11-20T14:00:38.100Z",
+      "enriched_at": "2026-11-20T14:00:38.100Z",
+      "failure_count": 0
+    },
     "https://arxiv.org/html/2610.05978v1": {
       "summary_method": "source_metadata",
       "url": "https://arxiv.org/html/2610.05978v1",
@@ -1693,8 +1740,8 @@
       "dek": "For HyperPod Inference, it listed additional routing strategies, broader support for model serving frameworks, and expanded multi-Region networking. The Inference Gateway delivers",
       "brief": "For HyperPod Inference, it listed additional routing strategies, broader support for model serving frameworks, and expanded multi-Region networking. The Inference Gateway delivers",
       "status": "ok",
-      "attempted_at": "2026-11-20T00:36:30.181Z",
-      "enriched_at": "2026-11-20T00:36:30.181Z",
+      "attempted_at": "2026-11-20T14:00:38.100Z",
+      "enriched_at": "2026-11-20T14:00:38.100Z",
       "failure_count": 0
     },
     "https://aws.amazon.com/blogs/machine-learning/announcing-new-ways-to-customize-models-with-sagemaker-ai-without-managing-gpus": {
@@ -2852,21 +2899,6 @@
       "enriched_at": "2026-10-24T15:57:27.782Z",
       "failure_count": 0
     },
-    "https://developer.nvidia.com/blog/simplifying-model-serving-across-multiple-gpus-with-nvidia-tensorrt-multi-device-integration-in-nvidia-dynamo-triton": {
-      "summary_method": "source_metadata",
-      "url": "https://developer.nvidia.com/blog/simplifying-model-serving-across-multiple-gpus-with-nvidia-tensorrt-multi-device-integration-in-nvidia-dynamo-triton",
-      "title": "Simplifying Model Serving Across Multiple GPUs with NVIDIA TensorRT Multi-Device Integration in NVIDIA Dynamo-Triton",
-      "source_name": "NVIDIA Developer Blog",
-      "dek": "NVIDIA TensorRT 11.0 introduces multi-device inference, allowing a single network to execute across multiple GPUs using NCCL-backed distributed collectives.",
-      "brief": "This update addresses memory and compute constraints for large generative AI models by enabling distributed execution. By leveraging NCCL, TensorRT maintains its inference optimizations while scaling across multiple GPUs. The feature is integrated into the NVIDIA Dynamo-Triton inference server.",
-      "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/09/grid-robot-arm-cleaning-plate-1-768x432.png",
-      "image_alt": "Diagram showing a single TensorRT network distributed across multiple GPU nodes.",
-      "image_source": "rss_content",
-      "status": "ok",
-      "attempted_at": "2026-09-21T21:58:42.641Z",
-      "enriched_at": "2026-09-21T21:58:42.641Z",
-      "failure_count": 0
-    },
     "https://developer.nvidia.com/blog/start-and-restore-gpu-workloads-in-seconds-with-nvidia-snapshot": {
       "input_hash": "14eb68cdb9a1c8b16cce5ff086cfc3e777ce1e3c6580e3f656be8657d400fe7f",
       "source_content_hash": "ce6f32c34e501fab07752268b3fd4b7cd24f2a3df044b66908a1fc612f7bb424",
@@ -3420,19 +3452,6 @@
       "status": "ok",
       "attempted_at": "2026-11-12T23:39:02.520Z",
       "enriched_at": "2026-11-12T23:39:02.520Z",
-      "failure_count": 0
-    },
-    "https://github.com/jaredpalmer/kev/tree/main": {
-      "summary_method": "source_metadata",
-      "url": "https://github.com/jaredpalmer/kev/tree/main",
-      "title": "Kev: Tiny Jev-like family of decision models built on top of Qwen3.5",
-      "source_name": "Hacker News (AI-filtered)",
-      "dek": "Kev is a new family of small, Jev-inspired decision-making models fine-tuned on Qwen3.5 for local training and execution.",
-      "brief": "Designed for task-specific decision-making, the Kev models are available in 0.8B, 4B, and 9B parameter sizes. The project provides a framework for developers to train and deploy these compact models on their own infrastructure.",
-      "image_alt": "GitHub repository badge showing model weights for Kev 0.8B, 4B, and 9B.",
-      "status": "ok",
-      "attempted_at": "2026-09-21T21:58:42.641Z",
-      "enriched_at": "2026-09-21T21:58:42.641Z",
       "failure_count": 0
     },
     "https://github.com/KrushnaVardhanReddy/PaperPilot": {
@@ -4155,6 +4174,23 @@
       "attempted_at": "2026-10-22T10:10:46.405Z",
       "enriched_at": "2026-10-22T10:10:46.405Z",
       "failure_count": 1
+    },
+    "https://infoq.com/news/2026/11/aws-emulator-local-testing": {
+      "input_hash": "cd2291a6e6ddd4e5add78ceede3aeca9c2faef838383c4f3f62d3e9ec46e361c",
+      "source_content_hash": "e2bf4a69dce888a23fd13bd76a2fd877cb254474caeed322b6a23079773fd6be",
+      "summary_version": 2,
+      "summary_method": "extractive",
+      "url": "https://infoq.com/news/2026/11/aws-emulator-local-testing",
+      "title": "AWS Releases a Free Local Emulator of AWS Built Entirely by Agents",
+      "source_name": "InfoQ AI/ML/Data",
+      "dek": "AWS has released [AWS Emulator](https://aws.amazon.com/blogs/aws/test-your-applications-against-aws-locally-with-aws-emulator/), a free local implementation of more than 200 of",
+      "brief": "AWS has released [AWS Emulator](https://aws.amazon.com/blogs/aws/test-your-applications-against-aws-locally-with-aws-emulator/), a free local implementation of more than 200 of",
+      "image_url": "https://res.infoq.com/news/2026/11/aws-emulator-local-testing/en/headerimage/generatedHeaderImage-1795086946449.jpg",
+      "image_source": "rss_content",
+      "status": "ok",
+      "attempted_at": "2026-11-20T14:00:38.100Z",
+      "enriched_at": "2026-11-20T14:00:38.100Z",
+      "failure_count": 0
     },
     "https://infoq.com/news/2026/11/discord-rust-rewrite-gpui-zed": {
       "input_hash": "6d0e9ec0cb952e31453fe5eff9c8ab4ce9cb1b8d74c716d10d1c762289db85f5",
@@ -5965,19 +6001,6 @@
       "enriched_at": "2026-09-29T11:22:14.280Z",
       "failure_count": 0
     },
-    "https://status.claude.com/incidents/7g1qpkyz5gxh": {
-      "summary_method": "source_metadata",
-      "url": "https://status.claude.com/incidents/7g1qpkyz5gxh",
-      "title": "Claude Status – Elevated errors for multiple models",
-      "source_name": "Hacker News (AI-filtered)",
-      "dek": "Anthropic has resolved an incident causing elevated error rates across several Claude models.",
-      "brief": "Anthropic reported a period of elevated error rates affecting Claude Fable 5, 5.1, Mythos 5, 5.1, and Opus 5. The issue, which began on September 22, 2026, was fully resolved after approximately 80 minutes of impact. Success rates have returned to normal levels.",
-      "image_alt": "Claude status page incident graph",
-      "status": "ok",
-      "attempted_at": "2026-09-22T09:57:54.187Z",
-      "enriched_at": "2026-09-22T09:57:54.187Z",
-      "failure_count": 0
-    },
     "https://surgehq.ai/blog/dayjob-tax": {
       "summary_method": "source_metadata",
       "url": "https://surgehq.ai/blog/dayjob-tax",
@@ -6825,21 +6848,6 @@
       "attempted_at": "2026-09-29T22:15:17.294Z",
       "enriched_at": "2026-09-29T22:15:17.294Z",
       "failure_count": 1
-    },
-    "https://the-decoder.com/us-and-china-agree-on-ai-dialogue-with-security-mechanism-ahead-of-trump-xi-summit": {
-      "summary_method": "source_metadata",
-      "url": "https://the-decoder.com/us-and-china-agree-on-ai-dialogue-with-security-mechanism-ahead-of-trump-xi-summit",
-      "title": "US and China agree on AI dialogue with security mechanism ahead of Trump-Xi summit",
-      "source_name": "The Decoder",
-      "dek": "The US and China have agreed to establish an official AI dialogue and a notification mechanism for national security-related AI incidents.",
-      "brief": "Ahead of the upcoming summit between Donald Trump and Xi Jinping, US Treasury Secretary Scott Bessent and Chinese Vice Premier He Lifeng announced the framework. The initiative aims to manage risks associated with AI development through formal communication channels.",
-      "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/china_usa_flag_AI.png",
-      "image_alt": "US and Chinese flags side by side.",
-      "image_source": "rss_content",
-      "status": "ok",
-      "attempted_at": "2026-09-21T21:58:42.641Z",
-      "enriched_at": "2026-09-21T21:58:42.641Z",
-      "failure_count": 0
     },
     "https://the-decoder.com/white-house-tells-openai-and-anthropic-to-let-u-s-review-new-models-before-sharing-them-with-british-testers": {
       "summary_method": "source_metadata",
