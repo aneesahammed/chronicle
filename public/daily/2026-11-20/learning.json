@@ -1,5 +1,5 @@
 {
-  "attempted_at": "2026-11-20T14:00:38.100Z",
+  "attempted_at": "2026-11-20T23:59:00.176Z",
   "selection_stats": {
     "candidates": 13,
     "reviewed": 13,
@@ -8,8 +8,8 @@
   "classification_counts": {
     "deterministic": 13
   },
-  "generated_at": "2026-11-20T14:00:38.100Z",
-  "last_successful_generated_at": "2026-11-20T14:00:38.100Z",
+  "generated_at": "2026-11-20T23:59:00.176Z",
+  "last_successful_generated_at": "2026-11-20T23:59:00.176Z",
   "refresh_status": "ok",
   "classification_mode": "deterministic",
   "window_hours": 720,
@@ -78,7 +78,7 @@
       "status": "ok",
       "fetched_count": 0,
       "consecutive_failures": 0,
-      "consecutive_empty": 16,
+      "consecutive_empty": 17,
       "fresh_count": 0,
       "stale_count": 0,
       "evergreen_count": 0,
@@ -89,14 +89,16 @@
       "id": "yt_openai",
       "name": "OpenAI YouTube",
       "status": "ok",
-      "fetched_count": 0,
+      "fetched_count": 1,
       "consecutive_failures": 0,
-      "consecutive_empty": 3,
-      "fresh_count": 0,
+      "consecutive_empty": 0,
+      "fresh_count": 1,
       "stale_count": 0,
       "evergreen_count": 0,
-      "selected_count": 0,
-      "unique_selected_count": 0
+      "oldest_published_at": "2026-11-20T20:48:27.000Z",
+      "newest_published_at": "2026-11-20T20:48:27.000Z",
+      "selected_count": 1,
+      "unique_selected_count": 1
     },
     {
       "id": "yt_nvidia_developer",
@@ -135,13 +137,13 @@
       "fetched_count": 2,
       "consecutive_failures": 0,
       "consecutive_empty": 0,
-      "fresh_count": 2,
-      "stale_count": 0,
+      "fresh_count": 1,
+      "stale_count": 1,
       "evergreen_count": 0,
       "oldest_published_at": "2026-10-21T19:00:23.000Z",
       "newest_published_at": "2026-10-28T15:08:11.000Z",
-      "selected_count": 2,
-      "unique_selected_count": 2
+      "selected_count": 1,
+      "unique_selected_count": 1
     },
     {
       "id": "yt_microsoft_365_developer",
@@ -149,7 +151,7 @@
       "status": "ok",
       "fetched_count": 0,
       "consecutive_failures": 0,
-      "consecutive_empty": 16,
+      "consecutive_empty": 17,
       "fresh_count": 0,
       "stale_count": 0,
       "evergreen_count": 0,
@@ -159,6 +161,83 @@
   ],
   "count": 13,
   "clusters": [
+    {
+      "id": "1n11c0u",
+      "primary": {
+        "id": "1n11c0u",
+        "source_id": "yt_openai",
+        "source_name": "OpenAI YouTube",
+        "source_role": "learning",
+        "trust": 0.82,
+        "kind_hint": "video",
+        "title": "How to claim your business in ChatGPT with Shopify",
+        "url": "https://youtube.com/watch?v=mX7wHNnsghs",
+        "original_url": "https://www.youtube.com/watch?v=mX7wHNnsghs",
+        "summary": "Claim your business in ChatGPT by connecting your Shopify store. This demo shows how to start in Business Hub or the Shopify App Store, then connect your store directly to ChatGPT. After that, you can manage your business information to shape how you show up in ChatGPT. Claim your business in Business Hub https://chatgpt.com/business-hub Connect through the Shopify App Store https://apps.shopify.com/chatgpt",
+        "image_url": "https://i.ytimg.com/vi/mX7wHNnsghs/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-11-20T20:48:27.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
+          "video_id": "mX7wHNnsghs"
+        }
+      },
+      "members": [
+        {
+          "id": "1n11c0u",
+          "source_id": "yt_openai",
+          "source_name": "OpenAI YouTube",
+          "source_role": "learning",
+          "trust": 0.82,
+          "kind_hint": "video",
+          "title": "How to claim your business in ChatGPT with Shopify",
+          "url": "https://youtube.com/watch?v=mX7wHNnsghs",
+          "original_url": "https://www.youtube.com/watch?v=mX7wHNnsghs",
+          "summary": "Claim your business in ChatGPT by connecting your Shopify store. This demo shows how to start in Business Hub or the Shopify App Store, then connect your store directly to ChatGPT. After that, you can manage your business information to shape how you show up in ChatGPT. Claim your business in Business Hub https://chatgpt.com/business-hub Connect through the Shopify App Store https://apps.shopify.com/chatgpt",
+          "image_url": "https://i.ytimg.com/vi/mX7wHNnsghs/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-11-20T20:48:27.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCXZCJLdBC09xxGZ6gcdrc6A",
+            "video_id": "mX7wHNnsghs"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_openai",
+          "source_name": "OpenAI YouTube",
+          "title": "How to claim your business in ChatGPT with Shopify",
+          "url": "https://youtube.com/watch?v=mX7wHNnsghs",
+          "published_at": "2026-11-20T20:48:27.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "Claim your business in ChatGPT by connecting your Shopify store. This demo shows how to start in Business Hub or the Shopify App Store, then connect your store directly to ChatGPT. After that, you can",
+      "classification_method": "deterministic",
+      "classification_reason": "Metadata evidence rules; not independently verified",
+      "novelty": 0.844,
+      "novelty_label": "high",
+      "trust": 0.82,
+      "score": 0.865,
+      "why_this_surfaced": [
+        "specific engineering subject or instructional task in source metadata",
+        "high novelty against the 30-day history",
+        "classified as concrete builder or research signal",
+        "fresh within the current refresh window"
+      ],
+      "builder_action": "Work through the instructional example; check the source description for prerequisites."
+    },
     {
       "id": "17ytqw9",
       "primary": {
@@ -227,7 +306,7 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.78,
-      "score": 0.668,
+      "score": 0.653,
       "why_this_surfaced": [
         "specific engineering subject or instructional task in source metadata",
         "kept for context despite familiar coverage",
@@ -303,83 +382,7 @@
       "novelty": 0,
       "novelty_label": "familiar",
       "trust": 0.78,
-      "score": 0.664,
-      "why_this_surfaced": [
-        "specific engineering subject or instructional task in source metadata",
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Work through the instructional example; check the source description for prerequisites."
-    },
-    {
-      "id": "nigjq8",
-      "primary": {
-        "id": "nigjq8",
-        "source_id": "yt_nvidia_developer",
-        "source_name": "NVIDIA Developer YouTube",
-        "source_role": "learning",
-        "trust": 0.78,
-        "kind_hint": "video",
-        "title": "How to Build Training-Ready Datasets with NVIDIA Cosmos Data Factory Skills",
-        "url": "https://youtube.com/watch?v=D47jNWtzPsI",
-        "original_url": "https://www.youtube.com/watch?v=D47jNWtzPsI",
-        "summary": "See how a coding agent uses NVIDIA Cosmos Data Factory blueprints and skills to turn a single image into a training-ready dataset for physical AI. Follow along as the agent selects a blueprint, generates synthetic warehouse fall-event videos, and automatically annotates the results—all through a few prompts. NVIDIA Cosmos Data Factory is a collection of skills and blueprints for labeling, curating, augmenting, and evaluating data at scale. Explore five reference blueprints and six composable skills to build a data pipeline for your use case. Get started with Cosmos: ⚙️ Get the Code → https://g",
-        "image_url": "https://i.ytimg.com/vi/D47jNWtzPsI/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-11-18T19:23:14.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-          "video_id": "D47jNWtzPsI"
-        }
-      },
-      "members": [
-        {
-          "id": "nigjq8",
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "source_role": "learning",
-          "trust": 0.78,
-          "kind_hint": "video",
-          "title": "How to Build Training-Ready Datasets with NVIDIA Cosmos Data Factory Skills",
-          "url": "https://youtube.com/watch?v=D47jNWtzPsI",
-          "original_url": "https://www.youtube.com/watch?v=D47jNWtzPsI",
-          "summary": "See how a coding agent uses NVIDIA Cosmos Data Factory blueprints and skills to turn a single image into a training-ready dataset for physical AI. Follow along as the agent selects a blueprint, generates synthetic warehouse fall-event videos, and automatically annotates the results—all through a few prompts. NVIDIA Cosmos Data Factory is a collection of skills and blueprints for labeling, curating, augmenting, and evaluating data at scale. Explore five reference blueprints and six composable skills to build a data pipeline for your use case. Get started with Cosmos: ⚙️ Get the Code → https://g",
-          "image_url": "https://i.ytimg.com/vi/D47jNWtzPsI/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-11-18T19:23:14.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
-            "video_id": "D47jNWtzPsI"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_nvidia_developer",
-          "source_name": "NVIDIA Developer YouTube",
-          "title": "How to Build Training-Ready Datasets with NVIDIA Cosmos Data Factory Skills",
-          "url": "https://youtube.com/watch?v=D47jNWtzPsI",
-          "published_at": "2026-11-18T19:23:14.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "See how a coding agent uses NVIDIA Cosmos Data Factory blueprints and skills to turn a single image into a training-ready dataset for physical AI. Follow along as the agent selects a blueprint, genera",
-      "classification_method": "deterministic",
-      "classification_reason": "Metadata evidence rules; not independently verified",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.78,
-      "score": 0.631,
+      "score": 0.649,
       "why_this_surfaced": [
         "specific engineering subject or instructional task in source metadata",
         "kept for context despite familiar coverage",
@@ -450,6 +453,82 @@
       "kind": "video",
       "quality": "signal",
       "one_liner": "Learn More: https://bit.ly/4ikf9L0 Traditional software tests confirm that your code is working, but fall short when it comes to testing agents. Evals allow you to measure an agent’s decisions and act",
+      "classification_method": "deterministic",
+      "classification_reason": "Metadata evidence rules; not independently verified",
+      "novelty": 0,
+      "novelty_label": "familiar",
+      "trust": 0.78,
+      "score": 0.623,
+      "why_this_surfaced": [
+        "specific engineering subject or instructional task in source metadata",
+        "kept for context despite familiar coverage",
+        "classified as concrete builder or research signal"
+      ],
+      "builder_action": "Work through the instructional example; check the source description for prerequisites."
+    },
+    {
+      "id": "nigjq8",
+      "primary": {
+        "id": "nigjq8",
+        "source_id": "yt_nvidia_developer",
+        "source_name": "NVIDIA Developer YouTube",
+        "source_role": "learning",
+        "trust": 0.78,
+        "kind_hint": "video",
+        "title": "How to Build Training-Ready Datasets with NVIDIA Cosmos Data Factory Skills",
+        "url": "https://youtube.com/watch?v=D47jNWtzPsI",
+        "original_url": "https://www.youtube.com/watch?v=D47jNWtzPsI",
+        "summary": "See how a coding agent uses NVIDIA Cosmos Data Factory blueprints and skills to turn a single image into a training-ready dataset for physical AI. Follow along as the agent selects a blueprint, generates synthetic warehouse fall-event videos, and automatically annotates the results—all through a few prompts. NVIDIA Cosmos Data Factory is a collection of skills and blueprints for labeling, curating, augmenting, and evaluating data at scale. Explore five reference blueprints and six composable skills to build a data pipeline for your use case. Get started with Cosmos: ⚙️ Get the Code → https://g",
+        "image_url": "https://i.ytimg.com/vi/D47jNWtzPsI/hqdefault.jpg",
+        "image_source": "youtube_thumbnail",
+        "published_at": "2026-11-18T19:23:14.000Z",
+        "published_at_source": "feed",
+        "date_confidence": "high",
+        "learning": {
+          "provider": "YouTube",
+          "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+          "video_id": "D47jNWtzPsI"
+        }
+      },
+      "members": [
+        {
+          "id": "nigjq8",
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "source_role": "learning",
+          "trust": 0.78,
+          "kind_hint": "video",
+          "title": "How to Build Training-Ready Datasets with NVIDIA Cosmos Data Factory Skills",
+          "url": "https://youtube.com/watch?v=D47jNWtzPsI",
+          "original_url": "https://www.youtube.com/watch?v=D47jNWtzPsI",
+          "summary": "See how a coding agent uses NVIDIA Cosmos Data Factory blueprints and skills to turn a single image into a training-ready dataset for physical AI. Follow along as the agent selects a blueprint, generates synthetic warehouse fall-event videos, and automatically annotates the results—all through a few prompts. NVIDIA Cosmos Data Factory is a collection of skills and blueprints for labeling, curating, augmenting, and evaluating data at scale. Explore five reference blueprints and six composable skills to build a data pipeline for your use case. Get started with Cosmos: ⚙️ Get the Code → https://g",
+          "image_url": "https://i.ytimg.com/vi/D47jNWtzPsI/hqdefault.jpg",
+          "image_source": "youtube_thumbnail",
+          "published_at": "2026-11-18T19:23:14.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high",
+          "learning": {
+            "provider": "YouTube",
+            "channel_id": "UCBHcMCGaiJhv-ESTcWGJPcw",
+            "video_id": "D47jNWtzPsI"
+          }
+        }
+      ],
+      "source_trail": [
+        {
+          "source_id": "yt_nvidia_developer",
+          "source_name": "NVIDIA Developer YouTube",
+          "title": "How to Build Training-Ready Datasets with NVIDIA Cosmos Data Factory Skills",
+          "url": "https://youtube.com/watch?v=D47jNWtzPsI",
+          "published_at": "2026-11-18T19:23:14.000Z",
+          "published_at_source": "feed",
+          "date_confidence": "high"
+        }
+      ],
+      "also_seen_on": [],
+      "kind": "video",
+      "quality": "signal",
+      "one_liner": "See how a coding agent uses NVIDIA Cosmos Data Factory blueprints and skills to turn a single image into a training-ready dataset for physical AI. Follow along as the agent selects a blueprint, genera",
       "classification_method": "deterministic",
       "classification_reason": "Metadata evidence rules; not independently verified",
       "novelty": 0,
@@ -768,82 +847,6 @@
       "builder_action": "Work through the instructional example; check the source description for prerequisites."
     },
     {
-      "id": "xs66r6",
-      "primary": {
-        "id": "xs66r6",
-        "source_id": "yt_google_developers",
-        "source_name": "Google for Developers YouTube",
-        "source_role": "learning",
-        "trust": 0.72,
-        "kind_hint": "video",
-        "title": "Design and replicate voices with Gemini 3.8 Flash TTS",
-        "url": "https://youtube.com/watch?v=SOF3_evPje8",
-        "original_url": "https://www.youtube.com/watch?v=SOF3_evPje8",
-        "summary": "See how Gemini 3.8 Flash TTS lets you design custom voices from a text prompt and replicate your own voice in Google AI Studio. Google DeepMind’s Thor Schaeff walks through: *Voice design *Voice replication *Multi-speaker dialogue generation *Building with the Gemini API across 100+ languages *Partner integrations with Agora, LiveKit, Pipecat, and Vercel Try it now at ai.studio/generate-speech. Have questions? Drop them in the comments. Chapters: 0:00 — Introduction to Gemini TTS 0:27 — Voice replication in Google AI Studio 1:00 — Voice design from a text prompt 2:19 — Using custom voices acro",
-        "image_url": "https://i.ytimg.com/vi/SOF3_evPje8/hqdefault.jpg",
-        "image_source": "youtube_thumbnail",
-        "published_at": "2026-10-21T19:00:23.000Z",
-        "published_at_source": "feed",
-        "date_confidence": "high",
-        "learning": {
-          "provider": "YouTube",
-          "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-          "video_id": "SOF3_evPje8"
-        }
-      },
-      "members": [
-        {
-          "id": "xs66r6",
-          "source_id": "yt_google_developers",
-          "source_name": "Google for Developers YouTube",
-          "source_role": "learning",
-          "trust": 0.72,
-          "kind_hint": "video",
-          "title": "Design and replicate voices with Gemini 3.8 Flash TTS",
-          "url": "https://youtube.com/watch?v=SOF3_evPje8",
-          "original_url": "https://www.youtube.com/watch?v=SOF3_evPje8",
-          "summary": "See how Gemini 3.8 Flash TTS lets you design custom voices from a text prompt and replicate your own voice in Google AI Studio. Google DeepMind’s Thor Schaeff walks through: *Voice design *Voice replication *Multi-speaker dialogue generation *Building with the Gemini API across 100+ languages *Partner integrations with Agora, LiveKit, Pipecat, and Vercel Try it now at ai.studio/generate-speech. Have questions? Drop them in the comments. Chapters: 0:00 — Introduction to Gemini TTS 0:27 — Voice replication in Google AI Studio 1:00 — Voice design from a text prompt 2:19 — Using custom voices acro",
-          "image_url": "https://i.ytimg.com/vi/SOF3_evPje8/hqdefault.jpg",
-          "image_source": "youtube_thumbnail",
-          "published_at": "2026-10-21T19:00:23.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high",
-          "learning": {
-            "provider": "YouTube",
-            "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
-            "video_id": "SOF3_evPje8"
-          }
-        }
-      ],
-      "source_trail": [
-        {
-          "source_id": "yt_google_developers",
-          "source_name": "Google for Developers YouTube",
-          "title": "Design and replicate voices with Gemini 3.8 Flash TTS",
-          "url": "https://youtube.com/watch?v=SOF3_evPje8",
-          "published_at": "2026-10-21T19:00:23.000Z",
-          "published_at_source": "feed",
-          "date_confidence": "high"
-        }
-      ],
-      "also_seen_on": [],
-      "kind": "video",
-      "quality": "signal",
-      "one_liner": "See how Gemini 3.8 Flash TTS lets you design custom voices from a text prompt and replicate your own voice in Google AI Studio. Google DeepMind’s Thor Schaeff walks through: *Voice design *Voice repli",
-      "classification_method": "deterministic",
-      "classification_reason": "Metadata evidence rules; not independently verified",
-      "novelty": 0,
-      "novelty_label": "familiar",
-      "trust": 0.72,
-      "score": 0.611,
-      "why_this_surfaced": [
-        "specific engineering subject or instructional task in source metadata",
-        "kept for context despite familiar coverage",
-        "classified as concrete builder or research signal"
-      ],
-      "builder_action": "Work through the instructional example; check the source description for prerequisites."
-    },
-    {
       "id": "89n5y6",
       "primary": {
         "id": "89n5y6",
@@ -870,7 +873,7 @@
           "compatibility_status": "not_execution_tested",
           "compatibility": "Follow the course's current environment setup. Example notebooks have not been run by Chronicle.",
           "course_url": "https://huggingface.co/learn/llm-course/chapter1/1",
-          "last_checked_at": "2026-11-20T14:00:38.100Z"
+          "last_checked_at": "2026-11-20T23:59:00.176Z"
         }
       },
       "members": [
@@ -899,7 +902,7 @@
             "compatibility_status": "not_execution_tested",
             "compatibility": "Follow the course's current environment setup. Example notebooks have not been run by Chronicle.",
             "course_url": "https://huggingface.co/learn/llm-course/chapter1/1",
-            "last_checked_at": "2026-11-20T14:00:38.100Z"
+            "last_checked_at": "2026-11-20T23:59:00.176Z"
           }
         }
       ],
@@ -958,7 +961,7 @@
           "compatibility_status": "not_execution_tested",
           "compatibility": "Agent frameworks change quickly; use each unit's current setup instructions. Examples have not been run by Chronicle.",
           "course_url": "https://huggingface.co/learn/agents-course/unit0/introduction",
-          "last_checked_at": "2026-11-20T14:00:38.100Z"
+          "last_checked_at": "2026-11-20T23:59:00.176Z"
         }
       },
       "members": [
@@ -987,7 +990,7 @@
             "compatibility_status": "not_execution_tested",
             "compatibility": "Agent frameworks change quickly; use each unit's current setup instructions. Examples have not been run by Chronicle.",
             "course_url": "https://huggingface.co/learn/agents-course/unit0/introduction",
-            "last_checked_at": "2026-11-20T14:00:38.100Z"
+            "last_checked_at": "2026-11-20T23:59:00.176Z"
           }
         }
       ],
@@ -1046,7 +1049,7 @@
           "compatibility_status": "historical",
           "compatibility": "The publisher warns that tools and model capabilities have evolved. Treat the code as historical; examples have not been run by Chronicle.",
           "course_url": "https://fullstackdeeplearning.com/llm-bootcamp/",
-          "last_checked_at": "2026-11-20T14:00:38.100Z"
+          "last_checked_at": "2026-11-20T23:59:00.176Z"
         }
       },
       "members": [
@@ -1075,7 +1078,7 @@
             "compatibility_status": "historical",
             "compatibility": "The publisher warns that tools and model capabilities have evolved. Treat the code as historical; examples have not been run by Chronicle.",
             "course_url": "https://fullstackdeeplearning.com/llm-bootcamp/",
-            "last_checked_at": "2026-11-20T14:00:38.100Z"
+            "last_checked_at": "2026-11-20T23:59:00.176Z"
           }
         }
       ],
@@ -1134,7 +1137,7 @@
           "compatibility_status": "historical",
           "compatibility": "The lessons are the 2022 edition. Check the course's setup guidance before running notebooks; examples have not been run by Chronicle.",
           "course_url": "https://course.fast.ai/",
-          "last_checked_at": "2026-11-20T14:00:38.100Z"
+          "last_checked_at": "2026-11-20T23:59:00.176Z"
         }
       },
       "members": [
@@ -1163,7 +1166,7 @@
             "compatibility_status": "historical",
             "compatibility": "The lessons are the 2022 edition. Check the course's setup guidance before running notebooks; examples have not been run by Chronicle.",
             "course_url": "https://course.fast.ai/",
-            "last_checked_at": "2026-11-20T14:00:38.100Z"
+            "last_checked_at": "2026-11-20T23:59:00.176Z"
           }
         }
       ],
