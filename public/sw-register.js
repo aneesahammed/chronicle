@@ -74,22 +74,28 @@
   function wireLifecycle(registration) {
     if (!registration || !("serviceWorker" in navigator)) return;
     var wasControlled = Boolean(navigator.serviceWorker.controller);
+    var offeredWorker = null;
 
-    if (registration.waiting && navigator.serviceWorker.controller) {
-      if (localPreview) registration.waiting.postMessage({ type: "SKIP_WAITING" });
+    function offerUpdate(worker) {
+      if (!worker || worker === offeredWorker || !navigator.serviceWorker.controller) return;
+      offeredWorker = worker;
+      if (localPreview) worker.postMessage({ type: "SKIP_WAITING" });
       else showUpdateToast(registration);
     }
 
-    registration.addEventListener("updatefound", function () {
-      var installing = registration.installing;
-      if (!installing) return;
-      installing.addEventListener("statechange", function () {
-        if (installing.state === "installed" && navigator.serviceWorker.controller) {
-          if (localPreview) installing.postMessage({ type: "SKIP_WAITING" });
-          else showUpdateToast(registration);
-        }
-      });
-    });
+    function onWorkerStateChange(event) {
+      var worker = event.currentTarget;
+      if (worker.state === "installed") offerUpdate(worker);
+    }
+
+    function checkForUpdate() {
+      offerUpdate(registration.waiting);
+      if (registration.installing) registration.installing.addEventListener("statechange", onWorkerStateChange);
+    }
+
+    registration.addEventListener("updatefound", checkForUpdate);
+    // The update may have started before register() resolved.
+    checkForUpdate();
 
     navigator.serviceWorker.addEventListener("controllerchange", function () {
       // First installation can claim this page without downloading it again.

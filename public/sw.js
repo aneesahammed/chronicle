@@ -1,4 +1,4 @@
-const CACHE_VERSION = "assets-7b86d2741acb2ba4";
+const CACHE_VERSION = "assets-28930c121b62a939";
 const CACHE_PREFIX = "chronicle-";
 const SHELL_CACHE = `${CACHE_PREFIX}shell-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `${CACHE_PREFIX}runtime-${CACHE_VERSION}`;
@@ -9,7 +9,7 @@ const VERSIONED_ASSETS = [
   "/assets/app.6d0c6c4a5b770ac8.css",
   "/assets/mobile-reader-state.90781e93f1bdf2c8.js",
   "/assets/theme.fd4e8737e08ec990.js",
-  "/assets/sw-register.6112dc51a5b513da.js",
+  "/assets/sw-register.f2d20f654bebd3b2.js",
   "/assets/archive.4a53bfc8b190730f.js",
   "/assets/policy.2f19d44b506ee5e3.js",
   "/assets/policy.685121eee2719fd5.css"
