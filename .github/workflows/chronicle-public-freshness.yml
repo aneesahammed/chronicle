@@ -1,32 +1,55 @@
 name: Check public Chronicle freshness
 
+# Recovers a stale site: runs when a scheduled refresh fails, and on a timer
+# because GitHub drops scheduled runs. Fails (and notifies) if it cannot recover.
 on:
   schedule:
     - cron: "43 */3 * * *"
   workflow_dispatch:
+  workflow_run:
+    workflows: [Refresh Chronicle]
+    types: [completed]
 
-permissions: {}
+permissions:
+  actions: write
+
+concurrency:
+  group: chronicle-freshness
 
 jobs:
-  check-public-edition:
+  keep-fresh:
+    # Only scheduled refreshes recover, so the refreshes started below cannot loop back here.
+    if: >-
+      github.event_name != 'workflow_run' ||
+      (github.event.workflow_run.event == 'schedule' &&
+      contains(fromJSON('["failure", "timed_out"]'), github.event.workflow_run.conclusion))
     runs-on: ubuntu-24.04
-    timeout-minutes: 3
+    timeout-minutes: 130
     steps:
-      - name: Require a successful public edition within 24 hours
+      - name: Refresh until a new edition is public
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          FAILED_RUN_AT: ${{ github.event.workflow_run.created_at }}
+          LC_ALL: C
         run: |
-          node --input-type=module <<'JS'
-          const url = "https://chronicle.tinycrafts.ai/feed.json";
-          const response = await fetch(url, {
-            headers: { "Cache-Control": "no-cache" },
-            signal: AbortSignal.timeout(15000),
-          });
-          if (!response.ok) throw new Error(`${url} responded with HTTP ${response.status}`);
+          cutoff="${FAILED_RUN_AT:-$(date -u -d '12 hours ago' +%Y-%m-%dT%H:%M:%SZ)}"
 
-          const feed = await response.json();
-          const timestamp = feed.last_successful_generated_at;
-          const ageHours = (Date.now() - Date.parse(timestamp)) / 36e5;
-          if (!Number.isFinite(ageHours) || ageHours < 0 || ageHours > 24 || !(feed.count > 0)) {
-            throw new Error(`Public Chronicle feed lacks a successful edition within 24 hours. Last successful timestamp: ${timestamp ?? "missing"}`);
+          is_fresh() {
+            published="$(curl -fsS --max-time 20 "https://chronicle.tinycrafts.ai/feed.json?$(date +%s)" |
+              jq -r 'select(.count > 0) | .last_successful_generated_at // empty')" || published=""
+            echo "Public edition: ${published:-unavailable}, needed after: $cutoff"
+            [[ "$published" > "$cutoff" ]]
           }
-          console.log(`Public Chronicle edition from ${timestamp} is ${ageHours.toFixed(1)} hours old.`);
-          JS
+
+          if is_fresh; then exit 0; fi
+          for delay in 5m 25m 60m; do
+            sleep "$delay"
+            if is_fresh; then exit 0; fi
+            gh workflow run chronicle.yml --ref main -f refresh_mode=full_refresh ||
+              echo "::warning::Could not start a refresh; trying again later."
+          done
+          sleep 25m
+          if is_fresh; then exit 0; fi
+          echo "::error::Chronicle is still stale after three refresh attempts."
+          exit 1

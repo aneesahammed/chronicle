@@ -54,7 +54,7 @@ jobs:
     timeout-minutes: 40
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url }}
 
     steps:
       - name: Checkout
@@ -62,6 +62,12 @@ jobs:
         with:
           ref: pages
           fetch-depth: 0
+
+      # The bot commits only after every required check passes, so its commit at the
+      # tip means only news has changed since the reader checks last passed.
+      - name: Read pages tip author
+        id: tip
+        run: echo "author=$(git log -1 --format=%an)" >> "$GITHUB_OUTPUT"
 
       - name: Setup Node
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
@@ -104,9 +110,11 @@ jobs:
         run: npm run evaluate
 
       - name: Install browser for reader checks
+        if: steps.tip.outputs.author != 'chronicle-bot'
         run: npx playwright install --with-deps chromium
 
       - name: Check reader and archive workflows
+        if: steps.tip.outputs.author != 'chronicle-bot'
         run: npm run test:e2e
 
       - name: Upload reader failure diagnostics
@@ -158,13 +166,11 @@ jobs:
             exit 1
           fi
           git commit -m "feed: chronicle $(date -u +%Y-%m-%dT%H:%MZ)"
-          if ! git pull --rebase origin pages; then
-            echo "::error::Could not rebase Chronicle feed commit onto origin/pages. Aborting rebase."
-            git status --short
-            git rebase --abort || true
+          # Do not rebase: code that landed during this run has not been checked.
+          if ! git push origin HEAD:pages; then
+            echo "::error::Could not push the Chronicle feed. If pages changed during this run, the next refresh checks and publishes it."
             exit 1
           fi
-          git push origin HEAD:pages
 
       - name: Setup Pages
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
@@ -176,4 +182,15 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
+        continue-on-error: true
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5
+
+      # GitHub sometimes returns a 502 or cannot see the artifact it just stored.
+      - name: Wait before retrying the deploy
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 60
+
+      - name: Retry deploy to GitHub Pages
+        id: deployment_retry
+        if: steps.deployment.outcome == 'failure'
         uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5
