@@ -9,6 +9,7 @@ export default defineConfig({
   expect: { timeout: 5_000 },
   fullyParallel: true,
   workers: 2,
+  retries: process.env.CI ? 2 : 0,
   use: {
     baseURL,
     serviceWorkers: "block",

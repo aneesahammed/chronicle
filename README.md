@@ -76,6 +76,12 @@ Scheduled workflows run from the repository default branch. Keep the workflow
 on `main`; it checks out `pages`, refreshes the feed there, commits the feed
 state back to `pages`, and deploys `public/` to GitHub Pages.
 
+Unit tests and feed validation gate every run. Browser tests gate any run where
+the tip of `pages` is not a `chronicle-bot` feed commit, so code changes are
+always tested and news-only refreshes skip them. A failed deploy is retried once.
+`Check public Chronicle freshness` starts new refreshes when a scheduled one
+fails or the public edition is more than 12 hours old.
+
 ## Tuning
 
 All knobs live in source. Compare changes with `npm run evaluate`, inspect
