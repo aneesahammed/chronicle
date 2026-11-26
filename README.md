@@ -80,7 +80,7 @@ Unit tests and feed validation gate every run. Browser tests gate any run where
 the tip of `pages` is not a `chronicle-bot` feed commit, so code changes are
 always tested and news-only refreshes skip them. A failed deploy is retried once.
 `Check public Chronicle freshness` starts new refreshes when a scheduled one
-fails or the public edition is more than 12 hours old.
+fails or the public edition is more than 6 hours old.
 
 ## Tuning
 
