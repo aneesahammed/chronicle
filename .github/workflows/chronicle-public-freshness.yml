@@ -33,7 +33,7 @@ jobs:
           FAILED_RUN_AT: ${{ github.event.workflow_run.created_at }}
           LC_ALL: C
         run: |
-          cutoff="${FAILED_RUN_AT:-$(date -u -d '12 hours ago' +%Y-%m-%dT%H:%M:%SZ)}"
+          cutoff="${FAILED_RUN_AT:-$(date -u -d '6 hours ago' +%Y-%m-%dT%H:%M:%SZ)}"
 
           is_fresh() {
             published="$(curl -fsS --max-time 20 "https://chronicle.tinycrafts.ai/feed.json?$(date +%s)" |
